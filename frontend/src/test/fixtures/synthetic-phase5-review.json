@@ -1,0 +1,6306 @@
+{
+  "schema_version": "1.0.0",
+  "engine_version": "0.5.0",
+  "rule_set_version": "2.0.0-phase5",
+  "report_id": "5da4d8d12ccc5325603dfa10f25d93f23ef9bd61509dd8a98beef23f798e8380",
+  "review_status": "DRAFT",
+  "intended_for": "CLINICIAN_REVIEW",
+  "notice": "Prototype — not for clinical use. DRAFT for clinician review. Descriptions concern programmed values, never achieved movement.",
+  "evidence_domain": "UNVERIFIED",
+  "clinical_analysis_enabled": false,
+  "raw_sha256": "236c3b0eb423fe380a09cd3f06e74f7ca57fe05ef6f1a4ca092f5ab3f3d67823",
+  "parser_version": "0.1.0",
+  "normalization_version": "0.1.0-disabled",
+  "source": {
+    "source_claim": "Unknown",
+    "detected_claims": [],
+    "claim_evidence": [],
+    "verification_status": "UNVERIFIED",
+    "adapter": {
+      "id": "generic-lexical-grid",
+      "version": "0.1.0",
+      "verified": false,
+      "verified_source_versions": []
+    },
+    "candidate_adapter": null,
+    "context": {
+      "source_version": null,
+      "notation": "UNKNOWN",
+      "dentition": "UNKNOWN",
+      "arch": "UNKNOWN",
+      "plan_mode": "UNKNOWN",
+      "reference_basis": "UNKNOWN",
+      "scope": "UNKNOWN",
+      "stage_index": null,
+      "coordinate_frame": null,
+      "case_id": null,
+      "plan_id": null,
+      "decimal_separator": "DOT"
+    },
+    "metadata_status": "USER_CLAIMS_UNVERIFIED"
+  },
+  "coverage": {
+    "declared_positions": 1,
+    "eligible_positions": 0,
+    "unavailable_positions": 1,
+    "eligible_explicit_zero": 0,
+    "eligible_nonzero": 0,
+    "expected_axes": null,
+    "lexical": {
+      "expected_axes": null,
+      "declared_measurements": 1,
+      "numeric_present": 1,
+      "explicit_zero": 0,
+      "missing": 0,
+      "invalid": 0,
+      "ambiguous": 0,
+      "unsupported": 0,
+      "unverified": 1
+    }
+  },
+  "requested_assessments": [],
+  "findings": [
+    {
+      "finding_id": "5fe8d7d9aa5bccc832db5ff182ae277098300ee944d0d3ded93f002ed13433bf",
+      "rule_id": "A01",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "A01",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "DISABLED",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "disabled",
+      "message": "This rule is disabled. No clinical predicate was evaluated.",
+      "input_refs": [],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "actual_attachment_tooth_surface_stage_map",
+        "intentional_removal_metadata",
+        "orthodontist_approved_policy",
+        "verified_tooth_and_stage_identity"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "NO_POLICY_OR_EXTRA_DATA_MODULE",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPROVED",
+      "policy_id": null,
+      "evidence_ids": [
+        "S05"
+      ]
+    },
+    {
+      "finding_id": "bc2913503912f012a8cb60d7b724d81cf5cbb474dc1bc1e047b94628cdb24f4b",
+      "rule_id": "A02",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "A02",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "DISABLED",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "disabled",
+      "message": "This rule is disabled. No clinical predicate was evaluated.",
+      "input_refs": [],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "actual_attachment_tooth_surface_stage_map",
+        "approved_attachment_indications",
+        "orthodontist_approved_policy",
+        "verified_stage_and_movements"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "NO_POLICY_OR_EXTRA_DATA_MODULE",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPROVED",
+      "policy_id": null,
+      "evidence_ids": [
+        "S05",
+        "S07",
+        "S13"
+      ]
+    },
+    {
+      "finding_id": "1b84472d7059519898042aeab264a6b41d8ba2fc38a88b2543804b0462e7a839",
+      "rule_id": "A03",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "A03",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "DISABLED",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "disabled",
+      "message": "This rule is disabled. No clinical predicate was evaluated.",
+      "input_refs": [],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "approved_conflict_resolution_policy",
+        "orthodontist_approved_policy",
+        "two_approved_attachment_proposals"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "NO_POLICY_OR_EXTRA_DATA_MODULE",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPROVED",
+      "policy_id": null,
+      "evidence_ids": [
+        "S03",
+        "S05"
+      ]
+    },
+    {
+      "finding_id": "efdbecdf29baeb5ceac9ee0942162f62c4832c216a60aa6200e8630c08283b05",
+      "rule_id": "A04",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "A04",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "DISABLED",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "disabled",
+      "message": "This rule is disabled. No clinical predicate was evaluated.",
+      "input_refs": [],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "actual_attachment_start_end_stages",
+        "approved_timing_policy",
+        "orthodontist_approved_policy",
+        "verified_plan_mode_and_stage_conventions"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "NO_POLICY_OR_EXTRA_DATA_MODULE",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPROVED",
+      "policy_id": null,
+      "evidence_ids": [
+        "S05",
+        "S07"
+      ]
+    },
+    {
+      "finding_id": "253975dba3e0d3b9cbce6c8183d226aeab9c073ee4eb143633c016f894d45a1a",
+      "rule_id": "A05",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "A05",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "OBSERVED",
+      "applicable": true,
+      "evaluated": true,
+      "finding_type": "SAFETY",
+      "template_id": "placement",
+      "message": "Exact attachment geometry, size, orientation and placement are withheld from TMT input.",
+      "input_refs": [],
+      "observed_measurements": [],
+      "missing_required_fields": [],
+      "evidence_refs": [],
+      "abstain_reason": null,
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": true,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": [
+        "S05",
+        "S13"
+      ]
+    },
+    {
+      "finding_id": "1cb471257fde96942c48afc70f4a0b6844b6fd456c3ded788dbc0777f4585b31",
+      "rule_id": "A06",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "A06",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "OBSERVED",
+      "applicable": true,
+      "evaluated": true,
+      "finding_type": "SAFETY",
+      "template_id": "superiority",
+      "message": "No universal attachment superiority or automatic attachment selection is asserted.",
+      "input_refs": [],
+      "observed_measurements": [],
+      "missing_required_fields": [],
+      "evidence_refs": [],
+      "abstain_reason": null,
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": true,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": [
+        "S13",
+        "S14"
+      ]
+    },
+    {
+      "finding_id": "25e253bdf6eaba28bc7c4edb5c9f36474f86214e7c63f3fdd00cf4db4e8835c1",
+      "rule_id": "D01",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "D01",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "SEMANTICS_UNKNOWN",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "unknown",
+      "message": "This assessment is unavailable because required source semantics are unverified.",
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "arch",
+        "axis",
+        "coordinate_frame",
+        "dentition",
+        "direction",
+        "notation",
+        "plan_mode",
+        "reference_basis",
+        "rule_movement_scope",
+        "rule_plan_mode",
+        "scope",
+        "sign",
+        "source_application",
+        "source_version",
+        "tooth_identifier",
+        "unit"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "SEMANTICS_NOT_AUTHORIZED",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": [
+        "S01",
+        "S04"
+      ]
+    },
+    {
+      "finding_id": "4e9dceb7246397d72b9c93aec6f3608d9d4cf2e6b148f51dd98ef424ca6cb02c",
+      "rule_id": "D02",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "D02",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "SEMANTICS_UNKNOWN",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "unknown",
+      "message": "This assessment is unavailable because required source semantics are unverified.",
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "arch",
+        "axis",
+        "coordinate_frame",
+        "dentition",
+        "direction",
+        "notation",
+        "plan_mode",
+        "reference_basis",
+        "rule_movement_scope",
+        "rule_plan_mode",
+        "scope",
+        "sign",
+        "source_application",
+        "source_version",
+        "tooth_identifier",
+        "unit"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "SEMANTICS_NOT_AUTHORIZED",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": [
+        "S03",
+        "S13"
+      ]
+    },
+    {
+      "finding_id": "bd33e49f608b04e32512db3d16eea725b7598be75a57851d27c478e6900f5c8f",
+      "rule_id": "D03",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "D03",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "SEMANTICS_UNKNOWN",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "unknown",
+      "message": "This assessment is unavailable because required source semantics are unverified.",
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "arch",
+        "axis",
+        "coordinate_frame",
+        "dentition",
+        "direction",
+        "notation",
+        "plan_mode",
+        "reference_basis",
+        "rule_movement_scope",
+        "rule_plan_mode",
+        "scope",
+        "sign",
+        "source_application",
+        "source_version",
+        "tooth_identifier",
+        "unit",
+        "verified_tooth_group_map"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "SEMANTICS_NOT_AUTHORIZED",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": [
+        "S09",
+        "S10"
+      ]
+    },
+    {
+      "finding_id": "8590c5208edd28110e15fda3b8b2f6ac81e03a25a67c5768d5b21629aea8488f",
+      "rule_id": "D04",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "D04",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "SEMANTICS_UNKNOWN",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "unknown",
+      "message": "This assessment is unavailable because required source semantics are unverified.",
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "arch",
+        "axis",
+        "coordinate_frame",
+        "dentition",
+        "direction",
+        "notation",
+        "plan_mode",
+        "reference_basis",
+        "rule_movement_scope",
+        "rule_plan_mode",
+        "scope",
+        "sign",
+        "source_application",
+        "source_version",
+        "tooth_identifier",
+        "unit",
+        "verified_tooth_group_map"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "SEMANTICS_NOT_AUTHORIZED",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": [
+        "S09",
+        "S13"
+      ]
+    },
+    {
+      "finding_id": "0bdfd47d1bf757094c7bea0500d20d3a945f699bf2c48fcc8a2ac0be1e56dc10",
+      "rule_id": "D05",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "D05",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "SEMANTICS_UNKNOWN",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "unknown",
+      "message": "This assessment is unavailable because required source semantics are unverified.",
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "arch",
+        "axis",
+        "coordinate_frame",
+        "dentition",
+        "direction",
+        "notation",
+        "plan_mode",
+        "reference_basis",
+        "rule_movement_scope",
+        "rule_plan_mode",
+        "scope",
+        "sign",
+        "source_application",
+        "source_version",
+        "tooth_identifier",
+        "unit",
+        "verified_tooth_group_map"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "SEMANTICS_NOT_AUTHORIZED",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": [
+        "S09",
+        "S11"
+      ]
+    },
+    {
+      "finding_id": "4d9785f8e1dcc662e6d358b5632406881188d9cfad1efd18059889e4cbdf0121",
+      "rule_id": "D06",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "D06",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "SEMANTICS_UNKNOWN",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "unknown",
+      "message": "This assessment is unavailable because required source semantics are unverified.",
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "arch",
+        "axis",
+        "coordinate_frame",
+        "dentition",
+        "direction",
+        "notation",
+        "plan_mode",
+        "reference_basis",
+        "rule_movement_scope",
+        "rule_plan_mode",
+        "scope",
+        "sign",
+        "source_application",
+        "source_version",
+        "tooth_identifier",
+        "unit"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "SEMANTICS_NOT_AUTHORIZED",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": [
+        "S01",
+        "S08"
+      ]
+    },
+    {
+      "finding_id": "7768032526d199b59f34c1d45a8de793823aeb4f49dd2594ed7ce129e7edd100",
+      "rule_id": "D07",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "D07",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "SEMANTICS_UNKNOWN",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "unknown",
+      "message": "This assessment is unavailable because required source semantics are unverified.",
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "arch",
+        "axis",
+        "coordinate_frame",
+        "dentition",
+        "direction",
+        "notation",
+        "plan_mode",
+        "reference_basis",
+        "rule_movement_scope",
+        "rule_plan_mode",
+        "scope",
+        "sign",
+        "source_application",
+        "source_version",
+        "tooth_identifier",
+        "unit"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "SEMANTICS_NOT_AUTHORIZED",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": [
+        "S01",
+        "S08"
+      ]
+    },
+    {
+      "finding_id": "113f246bafce28ef6dfa8f874d695e2a20126496cbb4bd281c143326fb17303d",
+      "rule_id": "D08",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "D08",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "SEMANTICS_UNKNOWN",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "unknown",
+      "message": "This assessment is unavailable because required source semantics are unverified.",
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "arch",
+        "axis",
+        "coordinate_frame",
+        "dentition",
+        "direction",
+        "notation",
+        "plan_mode",
+        "reference_basis",
+        "rule_movement_scope",
+        "rule_plan_mode",
+        "scope",
+        "sign",
+        "source_application",
+        "source_version",
+        "tooth_identifier",
+        "unit"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "SEMANTICS_NOT_AUTHORIZED",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": [
+        "S04",
+        "S12"
+      ]
+    },
+    {
+      "finding_id": "e532edb47af9134674ceb143a2068c9796ab1aef4656132ee1f3ed9accb80e71",
+      "rule_id": "D09",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "D09",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "SEMANTICS_UNKNOWN",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "unknown",
+      "message": "This assessment is unavailable because required source semantics are unverified.",
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "arch",
+        "axis",
+        "coordinate_frame",
+        "dentition",
+        "direction",
+        "notation",
+        "plan_mode",
+        "reference_basis",
+        "rule_movement_scope",
+        "rule_plan_mode",
+        "scope",
+        "sign",
+        "source_application",
+        "source_version",
+        "tooth_identifier",
+        "unit",
+        "verified_tooth_group_map"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "SEMANTICS_NOT_AUTHORIZED",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": [
+        "S12"
+      ]
+    },
+    {
+      "finding_id": "3c83c8c3fb9e53c36b0f8f14738e945f550acb6517a8b11d8abab56d2c0a806a",
+      "rule_id": "D10",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "D10",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "SEMANTICS_UNKNOWN",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "unknown",
+      "message": "This assessment is unavailable because required source semantics are unverified.",
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "arch",
+        "axis",
+        "coordinate_frame",
+        "dentition",
+        "direction",
+        "notation",
+        "plan_mode",
+        "reference_basis",
+        "rule_movement_scope",
+        "rule_plan_mode",
+        "scope",
+        "sign",
+        "source_application",
+        "source_version",
+        "tooth_identifier",
+        "unit"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "SEMANTICS_NOT_AUTHORIZED",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": [
+        "S10",
+        "S13"
+      ]
+    },
+    {
+      "finding_id": "ff77a4c35049855707e45026c7fa30829ccf44068ee33b37f868c14d4e1b33e1",
+      "rule_id": "D11",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "D11",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "SEMANTICS_UNKNOWN",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "unknown",
+      "message": "This assessment is unavailable because required source semantics are unverified.",
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "arch",
+        "axis",
+        "coordinate_frame",
+        "dentition",
+        "direction",
+        "notation",
+        "plan_mode",
+        "reference_basis",
+        "rule_movement_scope",
+        "rule_plan_mode",
+        "scope",
+        "sign",
+        "source_application",
+        "source_version",
+        "tooth_identifier",
+        "unit"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "SEMANTICS_NOT_AUTHORIZED",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": [
+        "S08",
+        "S13"
+      ]
+    },
+    {
+      "finding_id": "c5b5b816f406be98ace0d48d89dd171f407ae5a7e9b106afae368da5c28e1bf3",
+      "rule_id": "D12",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "D12",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "SEMANTICS_UNKNOWN",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "unknown",
+      "message": "This assessment is unavailable because required source semantics are unverified.",
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "arch",
+        "axis",
+        "coordinate_frame",
+        "dentition",
+        "direction",
+        "notation",
+        "plan_mode",
+        "reference_basis",
+        "rule_movement_scope",
+        "rule_plan_mode",
+        "scope",
+        "sign",
+        "source_application",
+        "source_version",
+        "tooth_identifier",
+        "unit"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "SEMANTICS_NOT_AUTHORIZED",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": [
+        "S01",
+        "S04"
+      ]
+    },
+    {
+      "finding_id": "5505ded80df2050b5a1350371a8fa69df8b5b74200d6650a4385cb51adfaa3d6",
+      "rule_id": "D13",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "D13",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "CONTEXT_REQUIRED",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "context",
+      "message": "This assessment is unavailable because required verified context is absent.",
+      "input_refs": [],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "verified_pair_map_and_mirror_operations"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "REQUIRED_CONTEXT_UNAVAILABLE",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": [
+        "S01",
+        "S04"
+      ]
+    },
+    {
+      "finding_id": "c214c1747340b12ea56e89409b6a8d36d53ca17b05d47f618002e8a01b391ad3",
+      "rule_id": "D14",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "D14",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "NOT_APPLICABLE",
+      "applicable": false,
+      "evaluated": false,
+      "finding_type": "SAFETY",
+      "template_id": "not_applicable",
+      "message": "The descriptive condition is not applicable to these eligible inputs; this is not a clinical assessment.",
+      "input_refs": [],
+      "observed_measurements": [],
+      "missing_required_fields": [],
+      "evidence_refs": [],
+      "abstain_reason": null,
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": false,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": [
+        "S15",
+        "S17",
+        "S18"
+      ]
+    },
+    {
+      "finding_id": "2291c10440c5919b7c3f3743fe6c6518918604af4b4fa170994692a91c1d5dea",
+      "rule_id": "D15",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "D15",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "SEMANTICS_UNKNOWN",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "unknown",
+      "message": "This assessment is unavailable because required source semantics are unverified.",
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "arch",
+        "axis",
+        "coordinate_frame",
+        "dentition",
+        "direction",
+        "notation",
+        "plan_mode",
+        "reference_basis",
+        "rule_movement_scope",
+        "rule_plan_mode",
+        "scope",
+        "sign",
+        "source_application",
+        "source_version",
+        "tooth_identifier",
+        "unit"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "SEMANTICS_NOT_AUTHORIZED",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": [
+        "S01",
+        "S04"
+      ]
+    },
+    {
+      "finding_id": "85377b152b85778e8c5a5f8ff017ddb2fabe98bc9b26645ebf9736fc1c096a33",
+      "rule_id": "D16",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "D16",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "CONTEXT_REQUIRED",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "context",
+      "message": "This assessment is unavailable because required verified context is absent.",
+      "input_refs": [],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "approved_comparison_operation",
+        "verified_baseline_geometry_and_operations",
+        "verified_case_plan_identity",
+        "verified_coordinate_frame"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "ADDITIONAL_VERIFIED_MAP_OR_GEOMETRY_REQUIRED",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": [
+        "S01",
+        "S04"
+      ]
+    },
+    {
+      "finding_id": "2cb362d1e105d310bd0ca1c240e1438580b8eb81367a40b1aee4d44869559a7b",
+      "rule_id": "G01",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "G01",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "OBSERVED",
+      "applicable": true,
+      "evaluated": true,
+      "finding_type": "TECHNICAL",
+      "template_id": "gate",
+      "message": "Existing parser and semantic validation evidence is reported without reinterpreting source values.",
+      "input_refs": [
+        "layout"
+      ],
+      "observed_measurements": [],
+      "missing_required_fields": [],
+      "evidence_refs": [],
+      "abstain_reason": null,
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": true,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": [
+        "S01",
+        "S04"
+      ]
+    },
+    {
+      "finding_id": "12373c471b80f0687db2368ca8f1cd9952c07567ef628d12dd7288a7d18687ad",
+      "rule_id": "G02",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "G02",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "SEMANTICS_UNKNOWN",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "unknown",
+      "message": "This assessment is unavailable because required source semantics are unverified.",
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "source_application",
+        "source_version"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "EXISTING_GATE_NOT_SATISFIED",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": [
+        "S01",
+        "S04"
+      ]
+    },
+    {
+      "finding_id": "7a1fb49c2698ed4a256c56bd77a0dd36b38a5a8096a62d17946f2d867efd7ecd",
+      "rule_id": "G03",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "G03",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "SEMANTICS_UNKNOWN",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "unknown",
+      "message": "This assessment is unavailable because required source semantics are unverified.",
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "arch",
+        "dentition",
+        "notation"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "EXISTING_GATE_NOT_SATISFIED",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": [
+        "S01",
+        "S04"
+      ]
+    },
+    {
+      "finding_id": "ab98f3d35dc239f1a23dd85cf4763f2b6ac056a2aa5550c6de0a8fb6ae01e888",
+      "rule_id": "G04",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "G04",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "SEMANTICS_UNKNOWN",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "unknown",
+      "message": "This assessment is unavailable because required source semantics are unverified.",
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "dentition",
+        "notation",
+        "tooth_identifier"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "EXISTING_GATE_NOT_SATISFIED",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": [
+        "S01",
+        "S04"
+      ]
+    },
+    {
+      "finding_id": "0dcf1f9b510a5d7f858144ac3aa2c4f8d222867447f6bf474f20544d6945b859",
+      "rule_id": "G05",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "G05",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "SEMANTICS_UNKNOWN",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "unknown",
+      "message": "This assessment is unavailable because required source semantics are unverified.",
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "arch"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "EXISTING_GATE_NOT_SATISFIED",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": [
+        "S01",
+        "S04"
+      ]
+    },
+    {
+      "finding_id": "fd7d8d803f3ed3b192d18f7d8ae803e1febb2ec2dd49714160a50263b4c24be6",
+      "rule_id": "G06",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "G06",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "OBSERVED",
+      "applicable": true,
+      "evaluated": true,
+      "finding_type": "TECHNICAL",
+      "template_id": "gate",
+      "message": "Existing parser and semantic validation evidence is reported without reinterpreting source values.",
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "observed_measurements": [],
+      "missing_required_fields": [],
+      "evidence_refs": [],
+      "abstain_reason": null,
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": true,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": [
+        "S01",
+        "S04"
+      ]
+    },
+    {
+      "finding_id": "3e7c4963f4297d6c476d66584686e2f16c3d88ce2b4783796b29fa87a3e2859f",
+      "rule_id": "G07",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "G07",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "SEMANTICS_UNKNOWN",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "unknown",
+      "message": "This assessment is unavailable because required source semantics are unverified.",
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "axis"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "EXISTING_GATE_NOT_SATISFIED",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": [
+        "S01",
+        "S04"
+      ]
+    },
+    {
+      "finding_id": "1684c67d79151ef102793e2893f512d8b099bf3ee2401600ceed0015951332a7",
+      "rule_id": "G08",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "G08",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "OBSERVED",
+      "applicable": true,
+      "evaluated": true,
+      "finding_type": "TECHNICAL",
+      "template_id": "gate",
+      "message": "Existing parser and semantic validation evidence is reported without reinterpreting source values.",
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "observed_measurements": [],
+      "missing_required_fields": [],
+      "evidence_refs": [],
+      "abstain_reason": null,
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": true,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": [
+        "S01",
+        "S04"
+      ]
+    },
+    {
+      "finding_id": "4360b32202abe380522512443ef8237e0d2173380700c95c7e025662b0017c0c",
+      "rule_id": "G09",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "G09",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "SEMANTICS_UNKNOWN",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "unknown",
+      "message": "This assessment is unavailable because required source semantics are unverified.",
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "direction",
+        "sign"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "EXISTING_GATE_NOT_SATISFIED",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": [
+        "S01",
+        "S04"
+      ]
+    },
+    {
+      "finding_id": "e9a861227178374fee6cbca88e07109275d70421c882326997d45d988c6f853a",
+      "rule_id": "G10",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "G10",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "OBSERVED",
+      "applicable": true,
+      "evaluated": true,
+      "finding_type": "TECHNICAL",
+      "template_id": "gate",
+      "message": "Existing parser and semantic validation evidence is reported without reinterpreting source values.",
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "observed_measurements": [],
+      "missing_required_fields": [],
+      "evidence_refs": [],
+      "abstain_reason": null,
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": true,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": [
+        "S01",
+        "S04"
+      ]
+    },
+    {
+      "finding_id": "31052fc87243aa35018b31f4fa5d82f98418ca71384e315800419348e6ac68da",
+      "rule_id": "G11",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "G11",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "SEMANTICS_UNKNOWN",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "unknown",
+      "message": "This assessment is unavailable because required source semantics are unverified.",
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "reference_basis"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "EXISTING_GATE_NOT_SATISFIED",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": [
+        "S01",
+        "S04"
+      ]
+    },
+    {
+      "finding_id": "acf3105f392424a634f5c971d41a9bcaa4d9c7cc08964639590530544f752bba",
+      "rule_id": "G12",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "G12",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "SEMANTICS_UNKNOWN",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "unknown",
+      "message": "This assessment is unavailable because required source semantics are unverified.",
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "scope"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "EXISTING_GATE_NOT_SATISFIED",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": [
+        "S01",
+        "S04"
+      ]
+    },
+    {
+      "finding_id": "fd2e35d680c22130aea39986880a07a6cf7c23c50dde529844b4e1dd96dd23d5",
+      "rule_id": "G13",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "G13",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "SEMANTICS_UNKNOWN",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "unknown",
+      "message": "This assessment is unavailable because required source semantics are unverified.",
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "plan_mode"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "EXISTING_GATE_NOT_SATISFIED",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": [
+        "S01"
+      ]
+    },
+    {
+      "finding_id": "0c24d7169c761fa85e4ca3879cf49261c447ba08e3aa76414f1e6d4b4e0947ff",
+      "rule_id": "G14",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "G14",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "SEMANTICS_UNKNOWN",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "unknown",
+      "message": "This assessment is unavailable because required source semantics are unverified.",
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "verified_external_tooth_status"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "EXISTING_GATE_NOT_SATISFIED",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": [
+        "S03",
+        "S04"
+      ]
+    },
+    {
+      "finding_id": "d9c5e01969d02ca1cc2857c8db404c971a1e971dbc36956fd50d89725d6d60d7",
+      "rule_id": "G15",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "G15",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "NOT_APPLICABLE",
+      "applicable": false,
+      "evaluated": false,
+      "finding_type": "TECHNICAL",
+      "template_id": "not_applicable",
+      "message": "The descriptive condition is not applicable to these eligible inputs; this is not a clinical assessment.",
+      "input_refs": [],
+      "observed_measurements": [],
+      "missing_required_fields": [],
+      "evidence_refs": [],
+      "abstain_reason": null,
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": false,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": [
+        "S04"
+      ]
+    },
+    {
+      "finding_id": "7c685ceba8fa1c2b208cbc6bafd740ac6bc020fef3caaee7a6fd7308a2fed21f",
+      "rule_id": "G16",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "G16",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "OBSERVED",
+      "applicable": true,
+      "evaluated": true,
+      "finding_type": "TECHNICAL",
+      "template_id": "gate",
+      "message": "Existing parser and semantic validation evidence is reported without reinterpreting source values.",
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "observed_measurements": [],
+      "missing_required_fields": [],
+      "evidence_refs": [],
+      "abstain_reason": null,
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": true,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": [
+        "S19"
+      ]
+    },
+    {
+      "finding_id": "0e9e0e43cde36abd9cd4b00d789f82e03f5d9062dfe2c42f9f0f60abbfe9f25c",
+      "rule_id": "G17",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "G17",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "SEMANTICS_UNKNOWN",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "unknown",
+      "message": "This assessment is unavailable because required source semantics are unverified.",
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "arch",
+        "axis",
+        "coordinate_frame",
+        "dentition",
+        "direction",
+        "notation",
+        "plan_mode",
+        "reference_basis",
+        "rule_movement_scope",
+        "rule_plan_mode",
+        "scope",
+        "sign",
+        "source_application",
+        "source_version",
+        "tooth_identifier",
+        "unit"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "EXISTING_GATE_NOT_SATISFIED",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": [
+        "S01",
+        "S04",
+        "S19"
+      ]
+    },
+    {
+      "finding_id": "ecea4e7a21a72f0bcea64507381701fac9f835b3b5ef4c12a9141702cd110e37",
+      "rule_id": "G18",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "G18",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "SEMANTICS_UNKNOWN",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "unknown",
+      "message": "This assessment is unavailable because required source semantics are unverified.",
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "verified_tooth_group_map"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "EXISTING_GATE_NOT_SATISFIED",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": [
+        "S01",
+        "S15"
+      ]
+    },
+    {
+      "finding_id": "ab1b2309fb84ab4df07aadd4081840ed258b07976b9cea4f0a1fa2ce1582518d",
+      "rule_id": "H01",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "H01",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "NOT_APPLICABLE",
+      "applicable": false,
+      "evaluated": false,
+      "finding_type": "SAFETY",
+      "template_id": "not_applicable",
+      "message": "The descriptive condition is not applicable to these eligible inputs; this is not a clinical assessment.",
+      "input_refs": [],
+      "observed_measurements": [],
+      "missing_required_fields": [],
+      "evidence_refs": [],
+      "abstain_reason": null,
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": false,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": [
+        "S15",
+        "S16",
+        "S18"
+      ]
+    },
+    {
+      "finding_id": "d7991d9d5049982693c66e6bc890c8c2c47c811b3c68206c8a1f30d975ebc872",
+      "rule_id": "H02",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "H02",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "NOT_APPLICABLE",
+      "applicable": false,
+      "evaluated": false,
+      "finding_type": "SAFETY",
+      "template_id": "not_applicable",
+      "message": "The descriptive condition is not applicable to these eligible inputs; this is not a clinical assessment.",
+      "input_refs": [],
+      "observed_measurements": [],
+      "missing_required_fields": [],
+      "evidence_refs": [],
+      "abstain_reason": null,
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": false,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": [
+        "S17",
+        "S18"
+      ]
+    },
+    {
+      "finding_id": "b11b15a10356638f625ae2b913a6a0fa18002a1589b0908c23074f0a9c5cf9ac",
+      "rule_id": "H03",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "H03",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "NOT_APPLICABLE",
+      "applicable": false,
+      "evaluated": false,
+      "finding_type": "SAFETY",
+      "template_id": "not_applicable",
+      "message": "The descriptive condition is not applicable to these eligible inputs; this is not a clinical assessment.",
+      "input_refs": [],
+      "observed_measurements": [],
+      "missing_required_fields": [],
+      "evidence_refs": [],
+      "abstain_reason": null,
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": false,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": [
+        "S15",
+        "S17",
+        "S21"
+      ]
+    },
+    {
+      "finding_id": "294a53a4b892822947e34c70dc55f4d11754680014aee410f6f7fd0fb65cbc9e",
+      "rule_id": "H04",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "H04",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "NOT_APPLICABLE",
+      "applicable": false,
+      "evaluated": false,
+      "finding_type": "SAFETY",
+      "template_id": "not_applicable",
+      "message": "The descriptive condition is not applicable to these eligible inputs; this is not a clinical assessment.",
+      "input_refs": [],
+      "observed_measurements": [],
+      "missing_required_fields": [],
+      "evidence_refs": [],
+      "abstain_reason": null,
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": false,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": [
+        "S04",
+        "S15"
+      ]
+    },
+    {
+      "finding_id": "28aa175625a05856afbb5e21701f7e09b5dd8245e4c52ed697724fd35cd3cdd9",
+      "rule_id": "H05",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "H05",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "NOT_APPLICABLE",
+      "applicable": false,
+      "evaluated": false,
+      "finding_type": "SAFETY",
+      "template_id": "not_applicable",
+      "message": "The descriptive condition is not applicable to these eligible inputs; this is not a clinical assessment.",
+      "input_refs": [],
+      "observed_measurements": [],
+      "missing_required_fields": [],
+      "evidence_refs": [],
+      "abstain_reason": null,
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": false,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": [
+        "S06",
+        "S15"
+      ]
+    },
+    {
+      "finding_id": "05836f2e21431b268dca2897a173de91e0614b2c4e73d460768b6db8d31b1691",
+      "rule_id": "H06",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "H06",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "NOT_APPLICABLE",
+      "applicable": false,
+      "evaluated": false,
+      "finding_type": "SAFETY",
+      "template_id": "not_applicable",
+      "message": "The descriptive condition is not applicable to these eligible inputs; this is not a clinical assessment.",
+      "input_refs": [],
+      "observed_measurements": [],
+      "missing_required_fields": [],
+      "evidence_refs": [],
+      "abstain_reason": null,
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": false,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": [
+        "S15",
+        "S16",
+        "S18"
+      ]
+    },
+    {
+      "finding_id": "19b7b090741878940f5d44b39255c47b89c65aa8c15d7affe12e5056720c2c96",
+      "rule_id": "H07",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "H07",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "NOT_APPLICABLE",
+      "applicable": false,
+      "evaluated": false,
+      "finding_type": "SAFETY",
+      "template_id": "not_applicable",
+      "message": "The descriptive condition is not applicable to these eligible inputs; this is not a clinical assessment.",
+      "input_refs": [],
+      "observed_measurements": [],
+      "missing_required_fields": [],
+      "evidence_refs": [],
+      "abstain_reason": null,
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": false,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": [
+        "S08",
+        "S21"
+      ]
+    },
+    {
+      "finding_id": "2986c0ca76b6668f2e48b9591b0d872b0580a40ac63d0e830df0818a34936e07",
+      "rule_id": "H08",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "H08",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "NOT_APPLICABLE",
+      "applicable": false,
+      "evaluated": false,
+      "finding_type": "SAFETY",
+      "template_id": "not_applicable",
+      "message": "The descriptive condition is not applicable to these eligible inputs; this is not a clinical assessment.",
+      "input_refs": [],
+      "observed_measurements": [],
+      "missing_required_fields": [],
+      "evidence_refs": [],
+      "abstain_reason": null,
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": false,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": [
+        "S05",
+        "S07",
+        "S13"
+      ]
+    },
+    {
+      "finding_id": "aff5763469840a904a454310bcf937418587a22ebb31a035a1e54f7d43e52222",
+      "rule_id": "H09",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "H09",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "NOT_APPLICABLE",
+      "applicable": false,
+      "evaluated": false,
+      "finding_type": "SAFETY",
+      "template_id": "not_applicable",
+      "message": "The descriptive condition is not applicable to these eligible inputs; this is not a clinical assessment.",
+      "input_refs": [],
+      "observed_measurements": [],
+      "missing_required_fields": [],
+      "evidence_refs": [],
+      "abstain_reason": null,
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": false,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": [
+        "S04"
+      ]
+    },
+    {
+      "finding_id": "3e3126dd33eb986d24b1505686d1c935bf2561fea55d724ab13a41fef577e82f",
+      "rule_id": "H10",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "H10",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "OBSERVED",
+      "applicable": true,
+      "evaluated": true,
+      "finding_type": "SAFETY",
+      "template_id": "draft",
+      "message": "DRAFT for clinician review. No authorized sign-off exists; source evidence and limitations must be inspected.",
+      "input_refs": [
+        "report/review_status"
+      ],
+      "observed_measurements": [],
+      "missing_required_fields": [],
+      "evidence_refs": [],
+      "abstain_reason": null,
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": true,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": [
+        "S18",
+        "S19"
+      ]
+    },
+    {
+      "finding_id": "eef646c590473261f4fc0e3c70bef8ddd4e284e58d9eb36e8c530fd309d8e203",
+      "rule_id": "H11",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "H11",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "NOT_APPLICABLE",
+      "applicable": false,
+      "evaluated": false,
+      "finding_type": "SAFETY",
+      "template_id": "not_applicable",
+      "message": "The descriptive condition is not applicable to these eligible inputs; this is not a clinical assessment.",
+      "input_refs": [],
+      "observed_measurements": [],
+      "missing_required_fields": [],
+      "evidence_refs": [],
+      "abstain_reason": null,
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": false,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": [
+        "S15",
+        "S16"
+      ]
+    },
+    {
+      "finding_id": "92d4f27d4c18efe1f4b9a3160e074c76ccaad2151946693266a2d2a3b0f6e9bd",
+      "rule_id": "H12",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "H12",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "OBSERVED",
+      "applicable": true,
+      "evaluated": true,
+      "finding_type": "SAFETY",
+      "template_id": "privacy",
+      "message": "Synthetic-data intake only; application processing is in memory without input persistence. External recovery is restricted to server-authorized generated synthetic fixtures; report wording is separately gated. This is not PHI detection or production privacy certification.",
+      "input_refs": [
+        "intake/synthetic_data_confirmed"
+      ],
+      "observed_measurements": [],
+      "missing_required_fields": [],
+      "evidence_refs": [],
+      "abstain_reason": null,
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": true,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": [
+        "S18",
+        "S20"
+      ]
+    },
+    {
+      "finding_id": "92c94bc08914364ab2a056e1cd72d2d15313fd88a54352e31a9573e1b0d5bb2a",
+      "rule_id": "L01",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "L01",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "OBSERVED",
+      "applicable": true,
+      "evaluated": true,
+      "finding_type": "OUTPUT",
+      "template_id": "gate",
+      "message": "Existing parser and semantic validation evidence is reported without reinterpreting source values.",
+      "input_refs": [
+        "report/findings"
+      ],
+      "observed_measurements": [],
+      "missing_required_fields": [],
+      "evidence_refs": [],
+      "abstain_reason": null,
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": true,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": [
+        "S19",
+        "S20"
+      ]
+    },
+    {
+      "finding_id": "fb86b65309045b51b1c2cc67a7cb00b17fb3ba9debf0fcd44df87a5f87f43562",
+      "rule_id": "L02",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "L02",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "OBSERVED",
+      "applicable": true,
+      "evaluated": true,
+      "finding_type": "OUTPUT",
+      "template_id": "gate",
+      "message": "Existing parser and semantic validation evidence is reported without reinterpreting source values.",
+      "input_refs": [
+        "report/findings"
+      ],
+      "observed_measurements": [],
+      "missing_required_fields": [],
+      "evidence_refs": [],
+      "abstain_reason": null,
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": true,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": [
+        "S01",
+        "S19"
+      ]
+    },
+    {
+      "finding_id": "657f6339cb658ffb312d5e6d1c96d9d790a79b22d2fc85db77d09305fe6253a5",
+      "rule_id": "L03",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "L03",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "OBSERVED",
+      "applicable": true,
+      "evaluated": true,
+      "finding_type": "OUTPUT",
+      "template_id": "gate",
+      "message": "Existing parser and semantic validation evidence is reported without reinterpreting source values.",
+      "input_refs": [
+        "report/findings"
+      ],
+      "observed_measurements": [],
+      "missing_required_fields": [],
+      "evidence_refs": [],
+      "abstain_reason": null,
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": true,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": [
+        "S19"
+      ]
+    },
+    {
+      "finding_id": "111bac01a934840eb4f9bea5c25e8cf06d15305990fc9e2564e557f52e16eb8b",
+      "rule_id": "L04",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "L04",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "OBSERVED",
+      "applicable": true,
+      "evaluated": true,
+      "finding_type": "OUTPUT",
+      "template_id": "gate",
+      "message": "Existing parser and semantic validation evidence is reported without reinterpreting source values.",
+      "input_refs": [
+        "report/findings"
+      ],
+      "observed_measurements": [],
+      "missing_required_fields": [],
+      "evidence_refs": [],
+      "abstain_reason": null,
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": true,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": [
+        "S03",
+        "S19"
+      ]
+    },
+    {
+      "finding_id": "0c3c2e95f2fb046c12f36ab268378cedf2887b8a101a6e0e53aa595235bbe0b8",
+      "rule_id": "L05",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "L05",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "OBSERVED",
+      "applicable": true,
+      "evaluated": true,
+      "finding_type": "OUTPUT",
+      "template_id": "gate",
+      "message": "Existing parser and semantic validation evidence is reported without reinterpreting source values.",
+      "input_refs": [
+        "report/findings"
+      ],
+      "observed_measurements": [],
+      "missing_required_fields": [],
+      "evidence_refs": [],
+      "abstain_reason": null,
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": true,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": [
+        "S08",
+        "S19"
+      ]
+    },
+    {
+      "finding_id": "9511353961baae0d3dbb598eff60b71b1cad89bd793727d9ec96a6ed98a630ee",
+      "rule_id": "L06",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "L06",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "OBSERVED",
+      "applicable": true,
+      "evaluated": true,
+      "finding_type": "OUTPUT",
+      "template_id": "draft",
+      "message": "DRAFT for clinician review. No authorized sign-off exists; source evidence and limitations must be inspected.",
+      "input_refs": [
+        "report/review_status"
+      ],
+      "observed_measurements": [],
+      "missing_required_fields": [],
+      "evidence_refs": [],
+      "abstain_reason": null,
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": true,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": [
+        "S18",
+        "S19"
+      ]
+    },
+    {
+      "finding_id": "e356860b71ff1c44cfb889581866cad92f326c617b2a0107ce9637d6ad46942a",
+      "rule_id": "N01",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "N01",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "CONTEXT_REQUIRED",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "context",
+      "message": "This assessment is unavailable because required verified context is absent.",
+      "input_refs": [],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "verified_expected_axis_coverage"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "EXPECTED_COVERAGE_UNKNOWN",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": []
+    },
+    {
+      "finding_id": "8d44ebb43301aaa880fed8f158e4143b3cf3ec74c9d62fb97afb6226c1969e9c",
+      "rule_id": "N02",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "N02",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "SEMANTICS_UNKNOWN",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "unknown",
+      "message": "This assessment is unavailable because required source semantics are unverified.",
+      "input_refs": [
+        "source/adapter"
+      ],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "released_source_version"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "NO_VERIFIED_VENDOR_RELEASE",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": []
+    },
+    {
+      "finding_id": "3d2c9b0b0b6330c1bafe8c65af78c4f4291bf8853dd21adb9d122244f242beeb",
+      "rule_id": "N03",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "N03",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "OBSERVED",
+      "applicable": true,
+      "evaluated": true,
+      "finding_type": "SAFETY",
+      "template_id": "gate",
+      "message": "Existing parser and semantic validation evidence is reported without reinterpreting source values.",
+      "input_refs": [
+        "report/limitations"
+      ],
+      "observed_measurements": [],
+      "missing_required_fields": [],
+      "evidence_refs": [],
+      "abstain_reason": null,
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": true,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": []
+    },
+    {
+      "finding_id": "9b43419dbdb0ae231fa978adedf0b2c996ed4c10b19a3f530daee621c13a3c0a",
+      "rule_id": "N04",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "N04",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "OBSERVED",
+      "applicable": true,
+      "evaluated": true,
+      "finding_type": "SAFETY",
+      "template_id": "gate",
+      "message": "Existing parser and semantic validation evidence is reported without reinterpreting source values.",
+      "input_refs": [
+        "raw_sha256"
+      ],
+      "observed_measurements": [],
+      "missing_required_fields": [],
+      "evidence_refs": [],
+      "abstain_reason": null,
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": true,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": []
+    },
+    {
+      "finding_id": "0fdf1392730d6a38744dc0ff579be11b11ff49076ead1e3785b5e9dded47ced4",
+      "rule_id": "N05",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "N05",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "CONTEXT_REQUIRED",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "context",
+      "message": "This assessment is unavailable because required verified context is absent.",
+      "input_refs": [],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "verified_pair_map_and_mirror_operations"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "MIRROR_OPERATIONS_NOT_ASSUMED",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": []
+    },
+    {
+      "finding_id": "dea008052fc9c5ec1c2ec8e816ec54b665dc5a651ea6f1ccdda3704e0cc627b5",
+      "rule_id": "N06",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "N06",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "CONTEXT_REQUIRED",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "context",
+      "message": "This assessment is unavailable because required verified context is absent.",
+      "input_refs": [],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "verified_external_tooth_status"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "TOOTH_STATUS_NOT_INFERRED",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": []
+    },
+    {
+      "finding_id": "e45ec9d5986a591d4d22d64460fc22a45702888f8270ab02798b155e777dc145",
+      "rule_id": "N07",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "N07",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "NOT_APPLICABLE",
+      "applicable": false,
+      "evaluated": false,
+      "finding_type": "SAFETY",
+      "template_id": "not_applicable",
+      "message": "The descriptive condition is not applicable to these eligible inputs; this is not a clinical assessment.",
+      "input_refs": [],
+      "observed_measurements": [],
+      "missing_required_fields": [],
+      "evidence_refs": [],
+      "abstain_reason": null,
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": false,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": []
+    },
+    {
+      "finding_id": "fd08ac1b845d67dfddcb7b62c49ff1c75dc83e54b4cbe3845dbfb9edd7ecbf68",
+      "rule_id": "N08",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "N08",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "SEMANTICS_UNKNOWN",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "unknown",
+      "message": "This assessment is unavailable because required source semantics are unverified.",
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "arch",
+        "axis",
+        "coordinate_frame",
+        "dentition",
+        "direction",
+        "notation",
+        "plan_mode",
+        "reference_basis",
+        "rule_movement_scope",
+        "rule_plan_mode",
+        "scope",
+        "sign",
+        "source_application",
+        "source_version",
+        "tooth_identifier",
+        "unit",
+        "verified_coordinate_frame_and_operations"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "SEMANTICS_NOT_AUTHORIZED",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": []
+    },
+    {
+      "finding_id": "70fd6d817f26c3ac576a56f6041c187bf29ca6e557b33ecf41ebf81d4458666a",
+      "rule_id": "N09",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "N09",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "SEMANTICS_UNKNOWN",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "unknown",
+      "message": "This assessment is unavailable because required source semantics are unverified.",
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "arch",
+        "axis",
+        "coordinate_frame",
+        "dentition",
+        "direction",
+        "notation",
+        "plan_mode",
+        "reference_basis",
+        "rule_movement_scope",
+        "rule_plan_mode",
+        "scope",
+        "sign",
+        "source_application",
+        "source_version",
+        "tooth_identifier",
+        "unit"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "SEMANTICS_NOT_AUTHORIZED",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": []
+    },
+    {
+      "finding_id": "a4a9a3081e830e3a98c2acf4a0376a701aaed3227fcc2f36deecb79e60fce631",
+      "rule_id": "N10",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "N10",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "OBSERVED",
+      "applicable": true,
+      "evaluated": true,
+      "finding_type": "SAFETY",
+      "template_id": "gate",
+      "message": "Existing parser and semantic validation evidence is reported without reinterpreting source values.",
+      "input_refs": [
+        "report/limitations"
+      ],
+      "observed_measurements": [],
+      "missing_required_fields": [],
+      "evidence_refs": [],
+      "abstain_reason": null,
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": true,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": []
+    },
+    {
+      "finding_id": "9b1afd8bacdd57a8b2e5eb078f6d18b5528864c7389dfaf5b1ca61b5223f88a6",
+      "rule_id": "N11",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "N11",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "CONTEXT_REQUIRED",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "context",
+      "message": "This assessment is unavailable because required verified context is absent.",
+      "input_refs": [],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "approval_invalidation_workflow",
+        "authenticated_reviewer_identity",
+        "immutable_versioned_review_events"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "FUTURE_AUTHORIZED_WORKFLOW_REQUIRED",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": []
+    },
+    {
+      "finding_id": "9a45589f677d28c4125646a0c92f87e3e7f82481e2c4e4f59e131d1df0a1939a",
+      "rule_id": "N12",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "N12",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "NOT_APPLICABLE",
+      "applicable": false,
+      "evaluated": false,
+      "finding_type": "SAFETY",
+      "template_id": "not_applicable",
+      "message": "The descriptive condition is not applicable to these eligible inputs; this is not a clinical assessment.",
+      "input_refs": [],
+      "observed_measurements": [],
+      "missing_required_fields": [],
+      "evidence_refs": [],
+      "abstain_reason": null,
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": false,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": []
+    },
+    {
+      "finding_id": "e638b5df10783232ff545bf69e156558f91899c343c651ad6097ccad6d3fac24",
+      "rule_id": "N13",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "N13",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "OBSERVED",
+      "applicable": true,
+      "evaluated": true,
+      "finding_type": "SAFETY",
+      "template_id": "gate",
+      "message": "Existing parser and semantic validation evidence is reported without reinterpreting source values.",
+      "input_refs": [
+        "report/limitations"
+      ],
+      "observed_measurements": [],
+      "missing_required_fields": [],
+      "evidence_refs": [],
+      "abstain_reason": null,
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": true,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": []
+    },
+    {
+      "finding_id": "848c4bffbb9b2af66bc510740195feb9ed9ced252ff91adad376cacc650dddb9",
+      "rule_id": "N14",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "N14",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "CONTEXT_REQUIRED",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "context",
+      "message": "This assessment is unavailable because required verified context is absent.",
+      "input_refs": [],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "approved_escalation_workflow",
+        "incident_severity_policy",
+        "reviewed_rollback_release_process"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "FUTURE_AUTHORIZED_WORKFLOW_REQUIRED",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": []
+    },
+    {
+      "finding_id": "c125e6eb15114625716ab646767065e665826bed51bb2333edade982850dfbb0",
+      "rule_id": "R01",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "R01",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "DISABLED",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "disabled",
+      "message": "This rule is disabled. No clinical predicate was evaluated.",
+      "input_refs": [],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "approved_exceptions_and_intent",
+        "orthodontist_approved_policy",
+        "source_specific_review_policy",
+        "verified_rotation",
+        "verified_tooth_group"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "NO_APPROVED_CLINICAL_POLICY",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPROVED",
+      "policy_id": null,
+      "evidence_ids": [
+        "S08",
+        "S09",
+        "S10"
+      ]
+    },
+    {
+      "finding_id": "7c34bd6d832abe3cf6f93af4746ec4b42e59ea98539e37880d1bd2a0b5bd062a",
+      "rule_id": "R02",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "R02",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "DISABLED",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "disabled",
+      "message": "This rule is disabled. No clinical predicate was evaluated.",
+      "input_refs": [],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "approved_movement_size_bands",
+        "orthodontist_approved_policy",
+        "verified_rotation",
+        "verified_tooth_group"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "NO_APPROVED_CLINICAL_POLICY",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPROVED",
+      "policy_id": null,
+      "evidence_ids": [
+        "S02",
+        "S10"
+      ]
+    },
+    {
+      "finding_id": "90d3a31b328ef9004d7632996b9f82a5bcd5167c406801aafe33915074a7cfe4",
+      "rule_id": "R03",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "R03",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "DISABLED",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "disabled",
+      "message": "This rule is disabled. No clinical predicate was evaluated.",
+      "input_refs": [],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "approved_extrusion_policy",
+        "orthodontist_approved_policy",
+        "verified_anterior_group",
+        "verified_extrusion"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "NO_APPROVED_CLINICAL_POLICY",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPROVED",
+      "policy_id": null,
+      "evidence_ids": [
+        "S09",
+        "S13"
+      ]
+    },
+    {
+      "finding_id": "930b5d354e0cda4e9309baa3849855852b260009d5bb38dfdd01c5427c613bf7",
+      "rule_id": "R04",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "R04",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "DISABLED",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "disabled",
+      "message": "This rule is disabled. No clinical predicate was evaluated.",
+      "input_refs": [],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "approved_device_specific_policy",
+        "orthodontist_approved_policy",
+        "verified_extrusion",
+        "verified_posterior_group"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "NO_APPROVED_CLINICAL_POLICY",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPROVED",
+      "policy_id": null,
+      "evidence_ids": [
+        "S02",
+        "S09"
+      ]
+    },
+    {
+      "finding_id": "c92ccf46fcf8a0099dd8ba4c5ad4477f3b6705234ebfe526a7caa8e8389e6880",
+      "rule_id": "R05",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "R05",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "DISABLED",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "disabled",
+      "message": "This rule is disabled. No clinical predicate was evaluated.",
+      "input_refs": [],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "approved_intrusion_policy",
+        "orthodontist_approved_policy",
+        "verified_intrusion",
+        "verified_lower_incisor_identity"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "NO_APPROVED_CLINICAL_POLICY",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPROVED",
+      "policy_id": null,
+      "evidence_ids": [
+        "S09",
+        "S11"
+      ]
+    },
+    {
+      "finding_id": "91d04f3414379dcc88a231a554072069bf985693a71ab74539155594725d2281",
+      "rule_id": "R06",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "R06",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "DISABLED",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "disabled",
+      "message": "This rule is disabled. No clinical predicate was evaluated.",
+      "input_refs": [],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "approved_intrusion_policy",
+        "orthodontist_approved_policy",
+        "root_support_and_occlusal_objectives",
+        "verified_intrusion",
+        "verified_tooth_group"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "NO_APPROVED_CLINICAL_POLICY",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPROVED",
+      "policy_id": null,
+      "evidence_ids": [
+        "S08",
+        "S09"
+      ]
+    },
+    {
+      "finding_id": "75ec80aceac0470d53399672d58b3682fb6b589f78131d0a39084c9d11621803",
+      "rule_id": "R07",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "R07",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "DISABLED",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "disabled",
+      "message": "This rule is disabled. No clinical predicate was evaluated.",
+      "input_refs": [],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "approved_root_control_review_policy",
+        "orthodontist_approved_policy",
+        "root_position_and_geometry",
+        "verified_incisor_identity",
+        "verified_inclination"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "NO_APPROVED_CLINICAL_POLICY",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPROVED",
+      "policy_id": null,
+      "evidence_ids": [
+        "S08",
+        "S13"
+      ]
+    },
+    {
+      "finding_id": "40df398dbb6b53c872e1759c350f5535095e9fb548f4ee4f76e2a941b99c9565",
+      "rule_id": "R08",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "R08",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "DISABLED",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "disabled",
+      "message": "This rule is disabled. No clinical predicate was evaluated.",
+      "input_refs": [],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "approved_angulation_review_policy",
+        "orthodontist_approved_policy",
+        "verified_angulation",
+        "verified_tooth_group"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "NO_APPROVED_CLINICAL_POLICY",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPROVED",
+      "policy_id": null,
+      "evidence_ids": [
+        "S08",
+        "S13"
+      ]
+    },
+    {
+      "finding_id": "0f8d0f2325cf6aef8b57385a343c2059ad3c4a007c337ead98db4133d51f32dc",
+      "rule_id": "R09",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "R09",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "DISABLED",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "disabled",
+      "message": "This rule is disabled. No clinical predicate was evaluated.",
+      "input_refs": [],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "approved_transverse_review_policy",
+        "bone_and_root_assessment",
+        "orthodontist_approved_policy",
+        "verified_buccolingual_movement",
+        "verified_posterior_group"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "NO_APPROVED_CLINICAL_POLICY",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPROVED",
+      "policy_id": null,
+      "evidence_ids": [
+        "S08",
+        "S15"
+      ]
+    },
+    {
+      "finding_id": "1ff3c8c47d543e9eb4a37a4a188854c588db6e0ef162ee9ddd6be65de2b22a31",
+      "rule_id": "R10",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "R10",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "DISABLED",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "disabled",
+      "message": "This rule is disabled. No clinical predicate was evaluated.",
+      "input_refs": [],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "approved_distalization_policy",
+        "orthodontist_approved_policy",
+        "staged_anchorage_context",
+        "verified_distal_direction",
+        "verified_upper_molar_identity"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "NO_APPROVED_CLINICAL_POLICY",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPROVED",
+      "policy_id": null,
+      "evidence_ids": [
+        "S03",
+        "S12"
+      ]
+    },
+    {
+      "finding_id": "96b2576d77b124b268111e1d2824b73b59c6c49767cd0fcf0c3824aef0dbec88",
+      "rule_id": "R11",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "R11",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "DISABLED",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "disabled",
+      "message": "This rule is disabled. No clinical predicate was evaluated.",
+      "input_refs": [],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "approved_mesialization_policy",
+        "extraction_space_and_root_context",
+        "orthodontist_approved_policy",
+        "verified_mesial_direction",
+        "verified_molar_identity"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "NO_APPROVED_CLINICAL_POLICY",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPROVED",
+      "policy_id": null,
+      "evidence_ids": [
+        "S12",
+        "S15"
+      ]
+    },
+    {
+      "finding_id": "9ef0d41eb72dd7b9d1a3dfd7f5c4cee68439325a0ce8dabdb188d31ba4432f4b",
+      "rule_id": "R12",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "R12",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "DISABLED",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "disabled",
+      "message": "This rule is disabled. No clinical predicate was evaluated.",
+      "input_refs": [],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "approved_validated_interaction_matrix",
+        "orthodontist_approved_policy",
+        "verified_combination_axes",
+        "verified_directions_and_groups"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "NO_APPROVED_CLINICAL_POLICY",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPROVED",
+      "policy_id": null,
+      "evidence_ids": [
+        "S03",
+        "S13"
+      ]
+    },
+    {
+      "finding_id": "f989fba4a39d7cda05da9ec3a2d49e336b79176075fd56280c8f6922f4d25479",
+      "rule_id": "R13",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "R13",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "DISABLED",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "disabled",
+      "message": "This rule is disabled. No clinical predicate was evaluated.",
+      "input_refs": [],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "actual_stage_dataset",
+        "approved_stage_policy",
+        "orthodontist_approved_policy",
+        "verified_device_version_profile"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "NO_APPROVED_CLINICAL_POLICY",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPROVED",
+      "policy_id": null,
+      "evidence_ids": [
+        "S03",
+        "S04",
+        "S06"
+      ]
+    },
+    {
+      "finding_id": "70f2aaafddcc8510bdbd9a3df82dcfff104da4696b2862eca20540e8a1b346f0",
+      "rule_id": "R14",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "R14",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "NOT_APPLICABLE",
+      "applicable": false,
+      "evaluated": false,
+      "finding_type": "SAFETY",
+      "template_id": "not_applicable",
+      "message": "The descriptive condition is not applicable to these eligible inputs; this is not a clinical assessment.",
+      "input_refs": [],
+      "observed_measurements": [],
+      "missing_required_fields": [],
+      "evidence_refs": [],
+      "abstain_reason": null,
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": false,
+      "approval_status": "NOT APPLICABLE",
+      "policy_id": null,
+      "evidence_ids": [
+        "S15",
+        "S16",
+        "S17"
+      ]
+    },
+    {
+      "finding_id": "5b31c2487c86ce9aa1afae195fb361309fdfb51aa419ce2e668783a4fcd544cb",
+      "rule_id": "R15",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "R15",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "DISABLED",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "disabled",
+      "message": "This rule is disabled. No clinical predicate was evaluated.",
+      "input_refs": [],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "actual_attachment_plan",
+        "approved_open_ended_review_policy",
+        "orthodontist_approved_policy",
+        "verified_movement_group"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "NO_APPROVED_CLINICAL_POLICY",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPROVED",
+      "policy_id": null,
+      "evidence_ids": [
+        "S07",
+        "S13",
+        "S14"
+      ]
+    },
+    {
+      "finding_id": "999f6646317d3244a2db46c1bb6ff2853c3397676860fdad7f409e2288699b68",
+      "rule_id": "R16",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "R16",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "DISABLED",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "disabled",
+      "message": "This rule is disabled. No clinical predicate was evaluated.",
+      "input_refs": [],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "approved_full_case_rubric",
+        "full_clinical_examination",
+        "occlusion_and_skeletal_periodontal_context",
+        "orthodontist_approved_policy",
+        "treatment_objectives"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "NO_APPROVED_CLINICAL_POLICY",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPROVED",
+      "policy_id": null,
+      "evidence_ids": [
+        "S08",
+        "S15",
+        "S16"
+      ]
+    },
+    {
+      "finding_id": "85cb64e6b55a65a0d3c2accbf66d43c90198155d9ad37bbf1cc568de72428efa",
+      "rule_id": "T01",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "T01",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "DISABLED",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "disabled",
+      "message": "This rule is disabled. No clinical predicate was evaluated.",
+      "input_refs": [],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "actual_per_stage_values",
+        "orthodontist_approved_policy",
+        "orthodontist_approved_stage_limits",
+        "verified_device_profile"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "NO_POLICY_OR_EXTRA_DATA_MODULE",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPROVED",
+      "policy_id": null,
+      "evidence_ids": [
+        "S03",
+        "S04",
+        "S06"
+      ]
+    },
+    {
+      "finding_id": "50cc39cbd457fe48c1b7376ac9e640c8934e071aad9b23a3f95323e518bc6beb",
+      "rule_id": "T02",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "T02",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "DISABLED",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "disabled",
+      "message": "This rule is disabled. No clinical predicate was evaluated.",
+      "input_refs": [],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "actual_stage_dataset",
+        "approved_composition_operations_and_tolerance",
+        "orthodontist_approved_policy",
+        "verified_baseline_geometry",
+        "verified_coordinate_transforms"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "NO_POLICY_OR_EXTRA_DATA_MODULE",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPROVED",
+      "policy_id": null,
+      "evidence_ids": [
+        "S04"
+      ]
+    },
+    {
+      "finding_id": "d8dd7804ce6cfd7cf79eb94bff6421f50468de1b83718211cfd528f0cbfabc23",
+      "rule_id": "T03",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "T03",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "DISABLED",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "disabled",
+      "message": "This rule is disabled. No clinical predicate was evaluated.",
+      "input_refs": [],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "actual_per_stage_values",
+        "approved_stage_policy",
+        "configuration_history",
+        "orthodontist_approved_policy",
+        "verified_configured_constraint"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "NO_POLICY_OR_EXTRA_DATA_MODULE",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPROVED",
+      "policy_id": null,
+      "evidence_ids": [
+        "S03"
+      ]
+    },
+    {
+      "finding_id": "c7416b44b7f04ec21ccba8f2d7287f24cef32b350a6a7f767d30e18e67f9ac8e",
+      "rule_id": "T04",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "T04",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "DISABLED",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "disabled",
+      "message": "This rule is disabled. No clinical predicate was evaluated.",
+      "input_refs": [],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "actual_stage_dataset",
+        "approved_anchorage_protocol",
+        "orthodontist_approved_policy",
+        "verified_intended_distalization_sequence"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "NO_POLICY_OR_EXTRA_DATA_MODULE",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPROVED",
+      "policy_id": null,
+      "evidence_ids": [
+        "S03",
+        "S12"
+      ]
+    },
+    {
+      "finding_id": "94fe95550679195685f5efbdd74a70c4570d4df414a9528c6eeb91fbf56094ae",
+      "rule_id": "T05",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "T05",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "DISABLED",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "disabled",
+      "message": "This rule is disabled. No clinical predicate was evaluated.",
+      "input_refs": [],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "actual_stage_overlap",
+        "approved_interaction_policy",
+        "device_specific_validated_interaction_matrix",
+        "orthodontist_approved_policy"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "NO_POLICY_OR_EXTRA_DATA_MODULE",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPROVED",
+      "policy_id": null,
+      "evidence_ids": [
+        "S03"
+      ]
+    },
+    {
+      "finding_id": "49b9a100876c17bf0368bd2e5e5cd9e5a037ad548448efcda54bcaec64a76893",
+      "rule_id": "T06",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "T06",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "DISABLED",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "disabled",
+      "message": "This rule is disabled. No clinical predicate was evaluated.",
+      "input_refs": [],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "orthodontist_approved_policy",
+        "validated_3d_geometry",
+        "validated_contact_engine",
+        "verified_alignment_and_staged_paths"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "NO_POLICY_OR_EXTRA_DATA_MODULE",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPROVED",
+      "policy_id": null,
+      "evidence_ids": [
+        "S04"
+      ]
+    },
+    {
+      "finding_id": "1141e7c9c3f21941266d26237f7ed49a7f5c256cd07a49e7db21c5827d65cc60",
+      "rule_id": "T07",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "T07",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "DISABLED",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "disabled",
+      "message": "This rule is disabled. No clinical predicate was evaluated.",
+      "input_refs": [],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "approved_ipr_plan",
+        "clinical_review",
+        "enamel_and_interproximal_contacts",
+        "orthodontist_approved_policy",
+        "stage_timing"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "NO_POLICY_OR_EXTRA_DATA_MODULE",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPROVED",
+      "policy_id": null,
+      "evidence_ids": [
+        "S06",
+        "S15"
+      ]
+    },
+    {
+      "finding_id": "578aabea51ec4ab4b065da49adbc3c144f81a2709bc1a065043ec2cdba91b2af",
+      "rule_id": "T08",
+      "rule_version": "2.0.0",
+      "triggering_rules": [
+        {
+          "rule_id": "T08",
+          "version": "2.0.0"
+        }
+      ],
+      "tooth_id": null,
+      "status": "DISABLED",
+      "applicable": null,
+      "evaluated": false,
+      "finding_type": "UNAVAILABLE",
+      "template_id": "disabled",
+      "message": "This rule is disabled. No clinical predicate was evaluated.",
+      "input_refs": [],
+      "observed_measurements": [],
+      "missing_required_fields": [
+        "approved_protocol",
+        "crown_root_coordinates",
+        "orthodontist_approved_policy",
+        "staged_force_and_anchorage_strategy"
+      ],
+      "evidence_refs": [],
+      "abstain_reason": "NO_POLICY_OR_EXTRA_DATA_MODULE",
+      "review_status": "DRAFT",
+      "conflict_group": null,
+      "summary_counts": {},
+      "predicate_result": null,
+      "approval_status": "NOT APPROVED",
+      "policy_id": null,
+      "evidence_ids": [
+        "S03",
+        "S12",
+        "S15"
+      ]
+    }
+  ],
+  "evaluations": [
+    {
+      "rule_id": "A01",
+      "version": "2.0.0",
+      "status": "DISABLED",
+      "finding_ids": [
+        "5fe8d7d9aa5bccc832db5ff182ae277098300ee944d0d3ded93f002ed13433bf"
+      ],
+      "missing_required_fields": [
+        "actual_attachment_tooth_surface_stage_map",
+        "intentional_removal_metadata",
+        "orthodontist_approved_policy",
+        "verified_tooth_and_stage_identity"
+      ],
+      "abstain_reason": "NO_POLICY_OR_EXTRA_DATA_MODULE",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [],
+      "approval_status": "NOT APPROVED",
+      "execution": "DISABLED",
+      "implementation_kind": "REQUIRED_DATA_GUARD",
+      "priority": 70,
+      "evidence_ids": [
+        "S05"
+      ]
+    },
+    {
+      "rule_id": "A02",
+      "version": "2.0.0",
+      "status": "DISABLED",
+      "finding_ids": [
+        "bc2913503912f012a8cb60d7b724d81cf5cbb474dc1bc1e047b94628cdb24f4b"
+      ],
+      "missing_required_fields": [
+        "actual_attachment_tooth_surface_stage_map",
+        "approved_attachment_indications",
+        "orthodontist_approved_policy",
+        "verified_stage_and_movements"
+      ],
+      "abstain_reason": "NO_POLICY_OR_EXTRA_DATA_MODULE",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [],
+      "approval_status": "NOT APPROVED",
+      "execution": "DISABLED",
+      "implementation_kind": "REQUIRED_DATA_GUARD",
+      "priority": 70,
+      "evidence_ids": [
+        "S05",
+        "S07",
+        "S13"
+      ]
+    },
+    {
+      "rule_id": "A03",
+      "version": "2.0.0",
+      "status": "DISABLED",
+      "finding_ids": [
+        "1b84472d7059519898042aeab264a6b41d8ba2fc38a88b2543804b0462e7a839"
+      ],
+      "missing_required_fields": [
+        "approved_conflict_resolution_policy",
+        "orthodontist_approved_policy",
+        "two_approved_attachment_proposals"
+      ],
+      "abstain_reason": "NO_POLICY_OR_EXTRA_DATA_MODULE",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [],
+      "approval_status": "NOT APPROVED",
+      "execution": "DISABLED",
+      "implementation_kind": "REQUIRED_DATA_GUARD",
+      "priority": 70,
+      "evidence_ids": [
+        "S03",
+        "S05"
+      ]
+    },
+    {
+      "rule_id": "A04",
+      "version": "2.0.0",
+      "status": "DISABLED",
+      "finding_ids": [
+        "efdbecdf29baeb5ceac9ee0942162f62c4832c216a60aa6200e8630c08283b05"
+      ],
+      "missing_required_fields": [
+        "actual_attachment_start_end_stages",
+        "approved_timing_policy",
+        "orthodontist_approved_policy",
+        "verified_plan_mode_and_stage_conventions"
+      ],
+      "abstain_reason": "NO_POLICY_OR_EXTRA_DATA_MODULE",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [],
+      "approval_status": "NOT APPROVED",
+      "execution": "DISABLED",
+      "implementation_kind": "REQUIRED_DATA_GUARD",
+      "priority": 70,
+      "evidence_ids": [
+        "S05",
+        "S07"
+      ]
+    },
+    {
+      "rule_id": "A05",
+      "version": "2.0.0",
+      "status": "OBSERVED",
+      "finding_ids": [
+        "253975dba3e0d3b9cbce6c8183d226aeab9c073ee4eb143633c016f894d45a1a"
+      ],
+      "missing_required_fields": [],
+      "abstain_reason": null,
+      "evaluated": true,
+      "triggered": true,
+      "input_refs": [],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "OUTPUT_GUARD",
+      "priority": 70,
+      "evidence_ids": [
+        "S05",
+        "S13"
+      ]
+    },
+    {
+      "rule_id": "A06",
+      "version": "2.0.0",
+      "status": "OBSERVED",
+      "finding_ids": [
+        "1cb471257fde96942c48afc70f4a0b6844b6fd456c3ded788dbc0777f4585b31"
+      ],
+      "missing_required_fields": [],
+      "abstain_reason": null,
+      "evaluated": true,
+      "triggered": true,
+      "input_refs": [],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "OUTPUT_GUARD",
+      "priority": 70,
+      "evidence_ids": [
+        "S13",
+        "S14"
+      ]
+    },
+    {
+      "rule_id": "D01",
+      "version": "2.0.0",
+      "status": "SEMANTICS_UNKNOWN",
+      "finding_ids": [
+        "25e253bdf6eaba28bc7c4edb5c9f36474f86214e7c63f3fdd00cf4db4e8835c1"
+      ],
+      "missing_required_fields": [
+        "arch",
+        "axis",
+        "coordinate_frame",
+        "dentition",
+        "direction",
+        "notation",
+        "plan_mode",
+        "reference_basis",
+        "rule_movement_scope",
+        "rule_plan_mode",
+        "scope",
+        "sign",
+        "source_application",
+        "source_version",
+        "tooth_identifier",
+        "unit"
+      ],
+      "abstain_reason": "SEMANTICS_NOT_AUTHORIZED",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "EXECUTABLE",
+      "priority": 40,
+      "evidence_ids": [
+        "S01",
+        "S04"
+      ]
+    },
+    {
+      "rule_id": "D02",
+      "version": "2.0.0",
+      "status": "SEMANTICS_UNKNOWN",
+      "finding_ids": [
+        "4e9dceb7246397d72b9c93aec6f3608d9d4cf2e6b148f51dd98ef424ca6cb02c"
+      ],
+      "missing_required_fields": [
+        "arch",
+        "axis",
+        "coordinate_frame",
+        "dentition",
+        "direction",
+        "notation",
+        "plan_mode",
+        "reference_basis",
+        "rule_movement_scope",
+        "rule_plan_mode",
+        "scope",
+        "sign",
+        "source_application",
+        "source_version",
+        "tooth_identifier",
+        "unit"
+      ],
+      "abstain_reason": "SEMANTICS_NOT_AUTHORIZED",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "EXECUTABLE",
+      "priority": 40,
+      "evidence_ids": [
+        "S03",
+        "S13"
+      ]
+    },
+    {
+      "rule_id": "D03",
+      "version": "2.0.0",
+      "status": "SEMANTICS_UNKNOWN",
+      "finding_ids": [
+        "bd33e49f608b04e32512db3d16eea725b7598be75a57851d27c478e6900f5c8f"
+      ],
+      "missing_required_fields": [
+        "arch",
+        "axis",
+        "coordinate_frame",
+        "dentition",
+        "direction",
+        "notation",
+        "plan_mode",
+        "reference_basis",
+        "rule_movement_scope",
+        "rule_plan_mode",
+        "scope",
+        "sign",
+        "source_application",
+        "source_version",
+        "tooth_identifier",
+        "unit",
+        "verified_tooth_group_map"
+      ],
+      "abstain_reason": "SEMANTICS_NOT_AUTHORIZED",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "REQUIRED_DATA_GUARD",
+      "priority": 40,
+      "evidence_ids": [
+        "S09",
+        "S10"
+      ]
+    },
+    {
+      "rule_id": "D04",
+      "version": "2.0.0",
+      "status": "SEMANTICS_UNKNOWN",
+      "finding_ids": [
+        "8590c5208edd28110e15fda3b8b2f6ac81e03a25a67c5768d5b21629aea8488f"
+      ],
+      "missing_required_fields": [
+        "arch",
+        "axis",
+        "coordinate_frame",
+        "dentition",
+        "direction",
+        "notation",
+        "plan_mode",
+        "reference_basis",
+        "rule_movement_scope",
+        "rule_plan_mode",
+        "scope",
+        "sign",
+        "source_application",
+        "source_version",
+        "tooth_identifier",
+        "unit",
+        "verified_tooth_group_map"
+      ],
+      "abstain_reason": "SEMANTICS_NOT_AUTHORIZED",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "REQUIRED_DATA_GUARD",
+      "priority": 40,
+      "evidence_ids": [
+        "S09",
+        "S13"
+      ]
+    },
+    {
+      "rule_id": "D05",
+      "version": "2.0.0",
+      "status": "SEMANTICS_UNKNOWN",
+      "finding_ids": [
+        "0bdfd47d1bf757094c7bea0500d20d3a945f699bf2c48fcc8a2ac0be1e56dc10"
+      ],
+      "missing_required_fields": [
+        "arch",
+        "axis",
+        "coordinate_frame",
+        "dentition",
+        "direction",
+        "notation",
+        "plan_mode",
+        "reference_basis",
+        "rule_movement_scope",
+        "rule_plan_mode",
+        "scope",
+        "sign",
+        "source_application",
+        "source_version",
+        "tooth_identifier",
+        "unit",
+        "verified_tooth_group_map"
+      ],
+      "abstain_reason": "SEMANTICS_NOT_AUTHORIZED",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "REQUIRED_DATA_GUARD",
+      "priority": 40,
+      "evidence_ids": [
+        "S09",
+        "S11"
+      ]
+    },
+    {
+      "rule_id": "D06",
+      "version": "2.0.0",
+      "status": "SEMANTICS_UNKNOWN",
+      "finding_ids": [
+        "4d9785f8e1dcc662e6d358b5632406881188d9cfad1efd18059889e4cbdf0121"
+      ],
+      "missing_required_fields": [
+        "arch",
+        "axis",
+        "coordinate_frame",
+        "dentition",
+        "direction",
+        "notation",
+        "plan_mode",
+        "reference_basis",
+        "rule_movement_scope",
+        "rule_plan_mode",
+        "scope",
+        "sign",
+        "source_application",
+        "source_version",
+        "tooth_identifier",
+        "unit"
+      ],
+      "abstain_reason": "SEMANTICS_NOT_AUTHORIZED",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "EXECUTABLE",
+      "priority": 40,
+      "evidence_ids": [
+        "S01",
+        "S08"
+      ]
+    },
+    {
+      "rule_id": "D07",
+      "version": "2.0.0",
+      "status": "SEMANTICS_UNKNOWN",
+      "finding_ids": [
+        "7768032526d199b59f34c1d45a8de793823aeb4f49dd2594ed7ce129e7edd100"
+      ],
+      "missing_required_fields": [
+        "arch",
+        "axis",
+        "coordinate_frame",
+        "dentition",
+        "direction",
+        "notation",
+        "plan_mode",
+        "reference_basis",
+        "rule_movement_scope",
+        "rule_plan_mode",
+        "scope",
+        "sign",
+        "source_application",
+        "source_version",
+        "tooth_identifier",
+        "unit"
+      ],
+      "abstain_reason": "SEMANTICS_NOT_AUTHORIZED",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "EXECUTABLE",
+      "priority": 40,
+      "evidence_ids": [
+        "S01",
+        "S08"
+      ]
+    },
+    {
+      "rule_id": "D08",
+      "version": "2.0.0",
+      "status": "SEMANTICS_UNKNOWN",
+      "finding_ids": [
+        "113f246bafce28ef6dfa8f874d695e2a20126496cbb4bd281c143326fb17303d"
+      ],
+      "missing_required_fields": [
+        "arch",
+        "axis",
+        "coordinate_frame",
+        "dentition",
+        "direction",
+        "notation",
+        "plan_mode",
+        "reference_basis",
+        "rule_movement_scope",
+        "rule_plan_mode",
+        "scope",
+        "sign",
+        "source_application",
+        "source_version",
+        "tooth_identifier",
+        "unit"
+      ],
+      "abstain_reason": "SEMANTICS_NOT_AUTHORIZED",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "EXECUTABLE",
+      "priority": 40,
+      "evidence_ids": [
+        "S04",
+        "S12"
+      ]
+    },
+    {
+      "rule_id": "D09",
+      "version": "2.0.0",
+      "status": "SEMANTICS_UNKNOWN",
+      "finding_ids": [
+        "e532edb47af9134674ceb143a2068c9796ab1aef4656132ee1f3ed9accb80e71"
+      ],
+      "missing_required_fields": [
+        "arch",
+        "axis",
+        "coordinate_frame",
+        "dentition",
+        "direction",
+        "notation",
+        "plan_mode",
+        "reference_basis",
+        "rule_movement_scope",
+        "rule_plan_mode",
+        "scope",
+        "sign",
+        "source_application",
+        "source_version",
+        "tooth_identifier",
+        "unit",
+        "verified_tooth_group_map"
+      ],
+      "abstain_reason": "SEMANTICS_NOT_AUTHORIZED",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "REQUIRED_DATA_GUARD",
+      "priority": 40,
+      "evidence_ids": [
+        "S12"
+      ]
+    },
+    {
+      "rule_id": "D10",
+      "version": "2.0.0",
+      "status": "SEMANTICS_UNKNOWN",
+      "finding_ids": [
+        "3c83c8c3fb9e53c36b0f8f14738e945f550acb6517a8b11d8abab56d2c0a806a"
+      ],
+      "missing_required_fields": [
+        "arch",
+        "axis",
+        "coordinate_frame",
+        "dentition",
+        "direction",
+        "notation",
+        "plan_mode",
+        "reference_basis",
+        "rule_movement_scope",
+        "rule_plan_mode",
+        "scope",
+        "sign",
+        "source_application",
+        "source_version",
+        "tooth_identifier",
+        "unit"
+      ],
+      "abstain_reason": "SEMANTICS_NOT_AUTHORIZED",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "EXECUTABLE",
+      "priority": 40,
+      "evidence_ids": [
+        "S10",
+        "S13"
+      ]
+    },
+    {
+      "rule_id": "D11",
+      "version": "2.0.0",
+      "status": "SEMANTICS_UNKNOWN",
+      "finding_ids": [
+        "ff77a4c35049855707e45026c7fa30829ccf44068ee33b37f868c14d4e1b33e1"
+      ],
+      "missing_required_fields": [
+        "arch",
+        "axis",
+        "coordinate_frame",
+        "dentition",
+        "direction",
+        "notation",
+        "plan_mode",
+        "reference_basis",
+        "rule_movement_scope",
+        "rule_plan_mode",
+        "scope",
+        "sign",
+        "source_application",
+        "source_version",
+        "tooth_identifier",
+        "unit"
+      ],
+      "abstain_reason": "SEMANTICS_NOT_AUTHORIZED",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "EXECUTABLE",
+      "priority": 40,
+      "evidence_ids": [
+        "S08",
+        "S13"
+      ]
+    },
+    {
+      "rule_id": "D12",
+      "version": "2.0.0",
+      "status": "SEMANTICS_UNKNOWN",
+      "finding_ids": [
+        "c5b5b816f406be98ace0d48d89dd171f407ae5a7e9b106afae368da5c28e1bf3"
+      ],
+      "missing_required_fields": [
+        "arch",
+        "axis",
+        "coordinate_frame",
+        "dentition",
+        "direction",
+        "notation",
+        "plan_mode",
+        "reference_basis",
+        "rule_movement_scope",
+        "rule_plan_mode",
+        "scope",
+        "sign",
+        "source_application",
+        "source_version",
+        "tooth_identifier",
+        "unit"
+      ],
+      "abstain_reason": "SEMANTICS_NOT_AUTHORIZED",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "EXECUTABLE",
+      "priority": 40,
+      "evidence_ids": [
+        "S01",
+        "S04"
+      ]
+    },
+    {
+      "rule_id": "D13",
+      "version": "2.0.0",
+      "status": "CONTEXT_REQUIRED",
+      "finding_ids": [
+        "5505ded80df2050b5a1350371a8fa69df8b5b74200d6650a4385cb51adfaa3d6"
+      ],
+      "missing_required_fields": [
+        "verified_pair_map_and_mirror_operations"
+      ],
+      "abstain_reason": "REQUIRED_CONTEXT_UNAVAILABLE",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "REQUIRED_DATA_GUARD",
+      "priority": 40,
+      "evidence_ids": [
+        "S01",
+        "S04"
+      ]
+    },
+    {
+      "rule_id": "D14",
+      "version": "2.0.0",
+      "status": "NOT_APPLICABLE",
+      "finding_ids": [
+        "c214c1747340b12ea56e89409b6a8d36d53ca17b05d47f618002e8a01b391ad3"
+      ],
+      "missing_required_fields": [],
+      "abstain_reason": null,
+      "evaluated": false,
+      "triggered": false,
+      "input_refs": [],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "EXECUTABLE",
+      "priority": 30,
+      "evidence_ids": [
+        "S15",
+        "S17",
+        "S18"
+      ]
+    },
+    {
+      "rule_id": "D15",
+      "version": "2.0.0",
+      "status": "SEMANTICS_UNKNOWN",
+      "finding_ids": [
+        "2291c10440c5919b7c3f3743fe6c6518918604af4b4fa170994692a91c1d5dea"
+      ],
+      "missing_required_fields": [
+        "arch",
+        "axis",
+        "coordinate_frame",
+        "dentition",
+        "direction",
+        "notation",
+        "plan_mode",
+        "reference_basis",
+        "rule_movement_scope",
+        "rule_plan_mode",
+        "scope",
+        "sign",
+        "source_application",
+        "source_version",
+        "tooth_identifier",
+        "unit"
+      ],
+      "abstain_reason": "SEMANTICS_NOT_AUTHORIZED",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "EXECUTABLE",
+      "priority": 40,
+      "evidence_ids": [
+        "S01",
+        "S04"
+      ]
+    },
+    {
+      "rule_id": "D16",
+      "version": "2.0.0",
+      "status": "CONTEXT_REQUIRED",
+      "finding_ids": [
+        "85377b152b85778e8c5a5f8ff017ddb2fabe98bc9b26645ebf9736fc1c096a33"
+      ],
+      "missing_required_fields": [
+        "approved_comparison_operation",
+        "verified_baseline_geometry_and_operations",
+        "verified_case_plan_identity",
+        "verified_coordinate_frame"
+      ],
+      "abstain_reason": "ADDITIONAL_VERIFIED_MAP_OR_GEOMETRY_REQUIRED",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "DEFERRED",
+      "implementation_kind": "DEFERRED",
+      "priority": 40,
+      "evidence_ids": [
+        "S01",
+        "S04"
+      ]
+    },
+    {
+      "rule_id": "G01",
+      "version": "2.0.0",
+      "status": "OBSERVED",
+      "finding_ids": [
+        "2cb362d1e105d310bd0ca1c240e1438580b8eb81367a40b1aee4d44869559a7b"
+      ],
+      "missing_required_fields": [],
+      "abstain_reason": null,
+      "evaluated": true,
+      "triggered": true,
+      "input_refs": [
+        "layout"
+      ],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "EXECUTABLE",
+      "priority": 10,
+      "evidence_ids": [
+        "S01",
+        "S04"
+      ]
+    },
+    {
+      "rule_id": "G02",
+      "version": "2.0.0",
+      "status": "SEMANTICS_UNKNOWN",
+      "finding_ids": [
+        "12373c471b80f0687db2368ca8f1cd9952c07567ef628d12dd7288a7d18687ad"
+      ],
+      "missing_required_fields": [
+        "source_application",
+        "source_version"
+      ],
+      "abstain_reason": "EXISTING_GATE_NOT_SATISFIED",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "EXECUTABLE",
+      "priority": 20,
+      "evidence_ids": [
+        "S01",
+        "S04"
+      ]
+    },
+    {
+      "rule_id": "G03",
+      "version": "2.0.0",
+      "status": "SEMANTICS_UNKNOWN",
+      "finding_ids": [
+        "7a1fb49c2698ed4a256c56bd77a0dd36b38a5a8096a62d17946f2d867efd7ecd"
+      ],
+      "missing_required_fields": [
+        "arch",
+        "dentition",
+        "notation"
+      ],
+      "abstain_reason": "EXISTING_GATE_NOT_SATISFIED",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "EXECUTABLE",
+      "priority": 20,
+      "evidence_ids": [
+        "S01",
+        "S04"
+      ]
+    },
+    {
+      "rule_id": "G04",
+      "version": "2.0.0",
+      "status": "SEMANTICS_UNKNOWN",
+      "finding_ids": [
+        "ab98f3d35dc239f1a23dd85cf4763f2b6ac056a2aa5550c6de0a8fb6ae01e888"
+      ],
+      "missing_required_fields": [
+        "dentition",
+        "notation",
+        "tooth_identifier"
+      ],
+      "abstain_reason": "EXISTING_GATE_NOT_SATISFIED",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "EXECUTABLE",
+      "priority": 20,
+      "evidence_ids": [
+        "S01",
+        "S04"
+      ]
+    },
+    {
+      "rule_id": "G05",
+      "version": "2.0.0",
+      "status": "SEMANTICS_UNKNOWN",
+      "finding_ids": [
+        "0dcf1f9b510a5d7f858144ac3aa2c4f8d222867447f6bf474f20544d6945b859"
+      ],
+      "missing_required_fields": [
+        "arch"
+      ],
+      "abstain_reason": "EXISTING_GATE_NOT_SATISFIED",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "EXECUTABLE",
+      "priority": 20,
+      "evidence_ids": [
+        "S01",
+        "S04"
+      ]
+    },
+    {
+      "rule_id": "G06",
+      "version": "2.0.0",
+      "status": "OBSERVED",
+      "finding_ids": [
+        "fd7d8d803f3ed3b192d18f7d8ae803e1febb2ec2dd49714160a50263b4c24be6"
+      ],
+      "missing_required_fields": [],
+      "abstain_reason": null,
+      "evaluated": true,
+      "triggered": true,
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "EXECUTABLE",
+      "priority": 20,
+      "evidence_ids": [
+        "S01",
+        "S04"
+      ]
+    },
+    {
+      "rule_id": "G07",
+      "version": "2.0.0",
+      "status": "SEMANTICS_UNKNOWN",
+      "finding_ids": [
+        "3e7c4963f4297d6c476d66584686e2f16c3d88ce2b4783796b29fa87a3e2859f"
+      ],
+      "missing_required_fields": [
+        "axis"
+      ],
+      "abstain_reason": "EXISTING_GATE_NOT_SATISFIED",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "EXECUTABLE",
+      "priority": 20,
+      "evidence_ids": [
+        "S01",
+        "S04"
+      ]
+    },
+    {
+      "rule_id": "G08",
+      "version": "2.0.0",
+      "status": "OBSERVED",
+      "finding_ids": [
+        "1684c67d79151ef102793e2893f512d8b099bf3ee2401600ceed0015951332a7"
+      ],
+      "missing_required_fields": [],
+      "abstain_reason": null,
+      "evaluated": true,
+      "triggered": true,
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "EXECUTABLE",
+      "priority": 20,
+      "evidence_ids": [
+        "S01",
+        "S04"
+      ]
+    },
+    {
+      "rule_id": "G09",
+      "version": "2.0.0",
+      "status": "SEMANTICS_UNKNOWN",
+      "finding_ids": [
+        "4360b32202abe380522512443ef8237e0d2173380700c95c7e025662b0017c0c"
+      ],
+      "missing_required_fields": [
+        "direction",
+        "sign"
+      ],
+      "abstain_reason": "EXISTING_GATE_NOT_SATISFIED",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "EXECUTABLE",
+      "priority": 20,
+      "evidence_ids": [
+        "S01",
+        "S04"
+      ]
+    },
+    {
+      "rule_id": "G10",
+      "version": "2.0.0",
+      "status": "OBSERVED",
+      "finding_ids": [
+        "e9a861227178374fee6cbca88e07109275d70421c882326997d45d988c6f853a"
+      ],
+      "missing_required_fields": [],
+      "abstain_reason": null,
+      "evaluated": true,
+      "triggered": true,
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "EXECUTABLE",
+      "priority": 20,
+      "evidence_ids": [
+        "S01",
+        "S04"
+      ]
+    },
+    {
+      "rule_id": "G11",
+      "version": "2.0.0",
+      "status": "SEMANTICS_UNKNOWN",
+      "finding_ids": [
+        "31052fc87243aa35018b31f4fa5d82f98418ca71384e315800419348e6ac68da"
+      ],
+      "missing_required_fields": [
+        "reference_basis"
+      ],
+      "abstain_reason": "EXISTING_GATE_NOT_SATISFIED",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "EXECUTABLE",
+      "priority": 20,
+      "evidence_ids": [
+        "S01",
+        "S04"
+      ]
+    },
+    {
+      "rule_id": "G12",
+      "version": "2.0.0",
+      "status": "SEMANTICS_UNKNOWN",
+      "finding_ids": [
+        "acf3105f392424a634f5c971d41a9bcaa4d9c7cc08964639590530544f752bba"
+      ],
+      "missing_required_fields": [
+        "scope"
+      ],
+      "abstain_reason": "EXISTING_GATE_NOT_SATISFIED",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "EXECUTABLE",
+      "priority": 20,
+      "evidence_ids": [
+        "S01",
+        "S04"
+      ]
+    },
+    {
+      "rule_id": "G13",
+      "version": "2.0.0",
+      "status": "SEMANTICS_UNKNOWN",
+      "finding_ids": [
+        "fd2e35d680c22130aea39986880a07a6cf7c23c50dde529844b4e1dd96dd23d5"
+      ],
+      "missing_required_fields": [
+        "plan_mode"
+      ],
+      "abstain_reason": "EXISTING_GATE_NOT_SATISFIED",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "EXECUTABLE",
+      "priority": 20,
+      "evidence_ids": [
+        "S01"
+      ]
+    },
+    {
+      "rule_id": "G14",
+      "version": "2.0.0",
+      "status": "SEMANTICS_UNKNOWN",
+      "finding_ids": [
+        "0c24d7169c761fa85e4ca3879cf49261c447ba08e3aa76414f1e6d4b4e0947ff"
+      ],
+      "missing_required_fields": [
+        "verified_external_tooth_status"
+      ],
+      "abstain_reason": "EXISTING_GATE_NOT_SATISFIED",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "REQUIRED_DATA_GUARD",
+      "priority": 20,
+      "evidence_ids": [
+        "S03",
+        "S04"
+      ]
+    },
+    {
+      "rule_id": "G15",
+      "version": "2.0.0",
+      "status": "NOT_APPLICABLE",
+      "finding_ids": [
+        "d9c5e01969d02ca1cc2857c8db404c971a1e971dbc36956fd50d89725d6d60d7"
+      ],
+      "missing_required_fields": [],
+      "abstain_reason": null,
+      "evaluated": false,
+      "triggered": false,
+      "input_refs": [],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "REQUIRED_DATA_GUARD",
+      "priority": 20,
+      "evidence_ids": [
+        "S04"
+      ]
+    },
+    {
+      "rule_id": "G16",
+      "version": "2.0.0",
+      "status": "OBSERVED",
+      "finding_ids": [
+        "7c685ceba8fa1c2b208cbc6bafd740ac6bc020fef3caaee7a6fd7308a2fed21f"
+      ],
+      "missing_required_fields": [],
+      "abstain_reason": null,
+      "evaluated": true,
+      "triggered": true,
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "EXECUTABLE",
+      "priority": 10,
+      "evidence_ids": [
+        "S19"
+      ]
+    },
+    {
+      "rule_id": "G17",
+      "version": "2.0.0",
+      "status": "SEMANTICS_UNKNOWN",
+      "finding_ids": [
+        "0e9e0e43cde36abd9cd4b00d789f82e03f5d9062dfe2c42f9f0f60abbfe9f25c"
+      ],
+      "missing_required_fields": [
+        "arch",
+        "axis",
+        "coordinate_frame",
+        "dentition",
+        "direction",
+        "notation",
+        "plan_mode",
+        "reference_basis",
+        "rule_movement_scope",
+        "rule_plan_mode",
+        "scope",
+        "sign",
+        "source_application",
+        "source_version",
+        "tooth_identifier",
+        "unit"
+      ],
+      "abstain_reason": "EXISTING_GATE_NOT_SATISFIED",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "EXECUTABLE",
+      "priority": 20,
+      "evidence_ids": [
+        "S01",
+        "S04",
+        "S19"
+      ]
+    },
+    {
+      "rule_id": "G18",
+      "version": "2.0.0",
+      "status": "SEMANTICS_UNKNOWN",
+      "finding_ids": [
+        "ecea4e7a21a72f0bcea64507381701fac9f835b3b5ef4c12a9141702cd110e37"
+      ],
+      "missing_required_fields": [
+        "verified_tooth_group_map"
+      ],
+      "abstain_reason": "EXISTING_GATE_NOT_SATISFIED",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "REQUIRED_DATA_GUARD",
+      "priority": 20,
+      "evidence_ids": [
+        "S01",
+        "S15"
+      ]
+    },
+    {
+      "rule_id": "H01",
+      "version": "2.0.0",
+      "status": "NOT_APPLICABLE",
+      "finding_ids": [
+        "ab1b2309fb84ab4df07aadd4081840ed258b07976b9cea4f0a1fa2ce1582518d"
+      ],
+      "missing_required_fields": [],
+      "abstain_reason": null,
+      "evaluated": false,
+      "triggered": false,
+      "input_refs": [],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "EXECUTABLE",
+      "priority": 80,
+      "evidence_ids": [
+        "S15",
+        "S16",
+        "S18"
+      ]
+    },
+    {
+      "rule_id": "H02",
+      "version": "2.0.0",
+      "status": "NOT_APPLICABLE",
+      "finding_ids": [
+        "d7991d9d5049982693c66e6bc890c8c2c47c811b3c68206c8a1f30d975ebc872"
+      ],
+      "missing_required_fields": [],
+      "abstain_reason": null,
+      "evaluated": false,
+      "triggered": false,
+      "input_refs": [],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "EXECUTABLE",
+      "priority": 80,
+      "evidence_ids": [
+        "S17",
+        "S18"
+      ]
+    },
+    {
+      "rule_id": "H03",
+      "version": "2.0.0",
+      "status": "NOT_APPLICABLE",
+      "finding_ids": [
+        "b11b15a10356638f625ae2b913a6a0fa18002a1589b0908c23074f0a9c5cf9ac"
+      ],
+      "missing_required_fields": [],
+      "abstain_reason": null,
+      "evaluated": false,
+      "triggered": false,
+      "input_refs": [],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "EXECUTABLE",
+      "priority": 80,
+      "evidence_ids": [
+        "S15",
+        "S17",
+        "S21"
+      ]
+    },
+    {
+      "rule_id": "H04",
+      "version": "2.0.0",
+      "status": "NOT_APPLICABLE",
+      "finding_ids": [
+        "294a53a4b892822947e34c70dc55f4d11754680014aee410f6f7fd0fb65cbc9e"
+      ],
+      "missing_required_fields": [],
+      "abstain_reason": null,
+      "evaluated": false,
+      "triggered": false,
+      "input_refs": [],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "EXECUTABLE",
+      "priority": 80,
+      "evidence_ids": [
+        "S04",
+        "S15"
+      ]
+    },
+    {
+      "rule_id": "H05",
+      "version": "2.0.0",
+      "status": "NOT_APPLICABLE",
+      "finding_ids": [
+        "28aa175625a05856afbb5e21701f7e09b5dd8245e4c52ed697724fd35cd3cdd9"
+      ],
+      "missing_required_fields": [],
+      "abstain_reason": null,
+      "evaluated": false,
+      "triggered": false,
+      "input_refs": [],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "EXECUTABLE",
+      "priority": 80,
+      "evidence_ids": [
+        "S06",
+        "S15"
+      ]
+    },
+    {
+      "rule_id": "H06",
+      "version": "2.0.0",
+      "status": "NOT_APPLICABLE",
+      "finding_ids": [
+        "05836f2e21431b268dca2897a173de91e0614b2c4e73d460768b6db8d31b1691"
+      ],
+      "missing_required_fields": [],
+      "abstain_reason": null,
+      "evaluated": false,
+      "triggered": false,
+      "input_refs": [],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "EXECUTABLE",
+      "priority": 80,
+      "evidence_ids": [
+        "S15",
+        "S16",
+        "S18"
+      ]
+    },
+    {
+      "rule_id": "H07",
+      "version": "2.0.0",
+      "status": "NOT_APPLICABLE",
+      "finding_ids": [
+        "19b7b090741878940f5d44b39255c47b89c65aa8c15d7affe12e5056720c2c96"
+      ],
+      "missing_required_fields": [],
+      "abstain_reason": null,
+      "evaluated": false,
+      "triggered": false,
+      "input_refs": [],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "EXECUTABLE",
+      "priority": 80,
+      "evidence_ids": [
+        "S08",
+        "S21"
+      ]
+    },
+    {
+      "rule_id": "H08",
+      "version": "2.0.0",
+      "status": "NOT_APPLICABLE",
+      "finding_ids": [
+        "2986c0ca76b6668f2e48b9591b0d872b0580a40ac63d0e830df0818a34936e07"
+      ],
+      "missing_required_fields": [],
+      "abstain_reason": null,
+      "evaluated": false,
+      "triggered": false,
+      "input_refs": [],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "EXECUTABLE",
+      "priority": 80,
+      "evidence_ids": [
+        "S05",
+        "S07",
+        "S13"
+      ]
+    },
+    {
+      "rule_id": "H09",
+      "version": "2.0.0",
+      "status": "NOT_APPLICABLE",
+      "finding_ids": [
+        "aff5763469840a904a454310bcf937418587a22ebb31a035a1e54f7d43e52222"
+      ],
+      "missing_required_fields": [],
+      "abstain_reason": null,
+      "evaluated": false,
+      "triggered": false,
+      "input_refs": [],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "EXECUTABLE",
+      "priority": 80,
+      "evidence_ids": [
+        "S04"
+      ]
+    },
+    {
+      "rule_id": "H10",
+      "version": "2.0.0",
+      "status": "OBSERVED",
+      "finding_ids": [
+        "3e3126dd33eb986d24b1505686d1c935bf2561fea55d724ab13a41fef577e82f"
+      ],
+      "missing_required_fields": [],
+      "abstain_reason": null,
+      "evaluated": true,
+      "triggered": true,
+      "input_refs": [
+        "report/review_status"
+      ],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "PARTIAL_SYSTEM_CONTROL",
+      "priority": 80,
+      "evidence_ids": [
+        "S18",
+        "S19"
+      ]
+    },
+    {
+      "rule_id": "H11",
+      "version": "2.0.0",
+      "status": "NOT_APPLICABLE",
+      "finding_ids": [
+        "eef646c590473261f4fc0e3c70bef8ddd4e284e58d9eb36e8c530fd309d8e203"
+      ],
+      "missing_required_fields": [],
+      "abstain_reason": null,
+      "evaluated": false,
+      "triggered": false,
+      "input_refs": [],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "EXECUTABLE",
+      "priority": 80,
+      "evidence_ids": [
+        "S15",
+        "S16"
+      ]
+    },
+    {
+      "rule_id": "H12",
+      "version": "2.0.0",
+      "status": "OBSERVED",
+      "finding_ids": [
+        "92d4f27d4c18efe1f4b9a3160e074c76ccaad2151946693266a2d2a3b0f6e9bd"
+      ],
+      "missing_required_fields": [],
+      "abstain_reason": null,
+      "evaluated": true,
+      "triggered": true,
+      "input_refs": [
+        "intake/synthetic_data_confirmed"
+      ],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "PARTIAL_SYSTEM_CONTROL",
+      "priority": 80,
+      "evidence_ids": [
+        "S18",
+        "S20"
+      ]
+    },
+    {
+      "rule_id": "L01",
+      "version": "2.0.0",
+      "status": "OBSERVED",
+      "finding_ids": [
+        "92c94bc08914364ab2a056e1cd72d2d15313fd88a54352e31a9573e1b0d5bb2a"
+      ],
+      "missing_required_fields": [],
+      "abstain_reason": null,
+      "evaluated": true,
+      "triggered": true,
+      "input_refs": [
+        "report/findings"
+      ],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "OUTPUT_GUARD",
+      "priority": 90,
+      "evidence_ids": [
+        "S19",
+        "S20"
+      ]
+    },
+    {
+      "rule_id": "L02",
+      "version": "2.0.0",
+      "status": "OBSERVED",
+      "finding_ids": [
+        "fb86b65309045b51b1c2cc67a7cb00b17fb3ba9debf0fcd44df87a5f87f43562"
+      ],
+      "missing_required_fields": [],
+      "abstain_reason": null,
+      "evaluated": true,
+      "triggered": true,
+      "input_refs": [
+        "report/findings"
+      ],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "OUTPUT_GUARD",
+      "priority": 90,
+      "evidence_ids": [
+        "S01",
+        "S19"
+      ]
+    },
+    {
+      "rule_id": "L03",
+      "version": "2.0.0",
+      "status": "OBSERVED",
+      "finding_ids": [
+        "657f6339cb658ffb312d5e6d1c96d9d790a79b22d2fc85db77d09305fe6253a5"
+      ],
+      "missing_required_fields": [],
+      "abstain_reason": null,
+      "evaluated": true,
+      "triggered": true,
+      "input_refs": [
+        "report/findings"
+      ],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "OUTPUT_GUARD",
+      "priority": 90,
+      "evidence_ids": [
+        "S19"
+      ]
+    },
+    {
+      "rule_id": "L04",
+      "version": "2.0.0",
+      "status": "OBSERVED",
+      "finding_ids": [
+        "111bac01a934840eb4f9bea5c25e8cf06d15305990fc9e2564e557f52e16eb8b"
+      ],
+      "missing_required_fields": [],
+      "abstain_reason": null,
+      "evaluated": true,
+      "triggered": true,
+      "input_refs": [
+        "report/findings"
+      ],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "OUTPUT_GUARD",
+      "priority": 90,
+      "evidence_ids": [
+        "S03",
+        "S19"
+      ]
+    },
+    {
+      "rule_id": "L05",
+      "version": "2.0.0",
+      "status": "OBSERVED",
+      "finding_ids": [
+        "0c3c2e95f2fb046c12f36ab268378cedf2887b8a101a6e0e53aa595235bbe0b8"
+      ],
+      "missing_required_fields": [],
+      "abstain_reason": null,
+      "evaluated": true,
+      "triggered": true,
+      "input_refs": [
+        "report/findings"
+      ],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "OUTPUT_GUARD",
+      "priority": 90,
+      "evidence_ids": [
+        "S08",
+        "S19"
+      ]
+    },
+    {
+      "rule_id": "L06",
+      "version": "2.0.0",
+      "status": "OBSERVED",
+      "finding_ids": [
+        "9511353961baae0d3dbb598eff60b71b1cad89bd793727d9ec96a6ed98a630ee"
+      ],
+      "missing_required_fields": [],
+      "abstain_reason": null,
+      "evaluated": true,
+      "triggered": true,
+      "input_refs": [
+        "report/review_status"
+      ],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "PARTIAL_SYSTEM_CONTROL",
+      "priority": 90,
+      "evidence_ids": [
+        "S18",
+        "S19"
+      ]
+    },
+    {
+      "rule_id": "N01",
+      "version": "2.0.0",
+      "status": "CONTEXT_REQUIRED",
+      "finding_ids": [
+        "e356860b71ff1c44cfb889581866cad92f326c617b2a0107ce9637d6ad46942a"
+      ],
+      "missing_required_fields": [
+        "verified_expected_axis_coverage"
+      ],
+      "abstain_reason": "EXPECTED_COVERAGE_UNKNOWN",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "EXECUTABLE",
+      "priority": 25,
+      "evidence_ids": []
+    },
+    {
+      "rule_id": "N02",
+      "version": "2.0.0",
+      "status": "SEMANTICS_UNKNOWN",
+      "finding_ids": [
+        "8d44ebb43301aaa880fed8f158e4143b3cf3ec74c9d62fb97afb6226c1969e9c"
+      ],
+      "missing_required_fields": [
+        "released_source_version"
+      ],
+      "abstain_reason": "NO_VERIFIED_VENDOR_RELEASE",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [
+        "source/adapter"
+      ],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "EXECUTABLE",
+      "priority": 25,
+      "evidence_ids": []
+    },
+    {
+      "rule_id": "N03",
+      "version": "2.0.0",
+      "status": "OBSERVED",
+      "finding_ids": [
+        "3d2c9b0b0b6330c1bafe8c65af78c4f4291bf8853dd21adb9d122244f242beeb"
+      ],
+      "missing_required_fields": [],
+      "abstain_reason": null,
+      "evaluated": true,
+      "triggered": true,
+      "input_refs": [
+        "report/limitations"
+      ],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "PARTIAL_SYSTEM_CONTROL",
+      "priority": 25,
+      "evidence_ids": []
+    },
+    {
+      "rule_id": "N04",
+      "version": "2.0.0",
+      "status": "OBSERVED",
+      "finding_ids": [
+        "9b43419dbdb0ae231fa978adedf0b2c996ed4c10b19a3f530daee621c13a3c0a"
+      ],
+      "missing_required_fields": [],
+      "abstain_reason": null,
+      "evaluated": true,
+      "triggered": true,
+      "input_refs": [
+        "raw_sha256"
+      ],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "PARTIAL_SYSTEM_CONTROL",
+      "priority": 10,
+      "evidence_ids": []
+    },
+    {
+      "rule_id": "N05",
+      "version": "2.0.0",
+      "status": "CONTEXT_REQUIRED",
+      "finding_ids": [
+        "0fdf1392730d6a38744dc0ff579be11b11ff49076ead1e3785b5e9dded47ced4"
+      ],
+      "missing_required_fields": [
+        "verified_pair_map_and_mirror_operations"
+      ],
+      "abstain_reason": "MIRROR_OPERATIONS_NOT_ASSUMED",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "EXECUTABLE",
+      "priority": 25,
+      "evidence_ids": []
+    },
+    {
+      "rule_id": "N06",
+      "version": "2.0.0",
+      "status": "CONTEXT_REQUIRED",
+      "finding_ids": [
+        "dea008052fc9c5ec1c2ec8e816ec54b665dc5a651ea6f1ccdda3704e0cc627b5"
+      ],
+      "missing_required_fields": [
+        "verified_external_tooth_status"
+      ],
+      "abstain_reason": "TOOTH_STATUS_NOT_INFERRED",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "EXECUTABLE",
+      "priority": 25,
+      "evidence_ids": []
+    },
+    {
+      "rule_id": "N07",
+      "version": "2.0.0",
+      "status": "NOT_APPLICABLE",
+      "finding_ids": [
+        "e45ec9d5986a591d4d22d64460fc22a45702888f8270ab02798b155e777dc145"
+      ],
+      "missing_required_fields": [],
+      "abstain_reason": null,
+      "evaluated": false,
+      "triggered": false,
+      "input_refs": [],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "EXECUTABLE",
+      "priority": 25,
+      "evidence_ids": []
+    },
+    {
+      "rule_id": "N08",
+      "version": "2.0.0",
+      "status": "SEMANTICS_UNKNOWN",
+      "finding_ids": [
+        "fd08ac1b845d67dfddcb7b62c49ff1c75dc83e54b4cbe3845dbfb9edd7ecbf68"
+      ],
+      "missing_required_fields": [
+        "arch",
+        "axis",
+        "coordinate_frame",
+        "dentition",
+        "direction",
+        "notation",
+        "plan_mode",
+        "reference_basis",
+        "rule_movement_scope",
+        "rule_plan_mode",
+        "scope",
+        "sign",
+        "source_application",
+        "source_version",
+        "tooth_identifier",
+        "unit",
+        "verified_coordinate_frame_and_operations"
+      ],
+      "abstain_reason": "SEMANTICS_NOT_AUTHORIZED",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "EXECUTABLE",
+      "priority": 25,
+      "evidence_ids": []
+    },
+    {
+      "rule_id": "N09",
+      "version": "2.0.0",
+      "status": "SEMANTICS_UNKNOWN",
+      "finding_ids": [
+        "70fd6d817f26c3ac576a56f6041c187bf29ca6e557b33ecf41ebf81d4458666a"
+      ],
+      "missing_required_fields": [
+        "arch",
+        "axis",
+        "coordinate_frame",
+        "dentition",
+        "direction",
+        "notation",
+        "plan_mode",
+        "reference_basis",
+        "rule_movement_scope",
+        "rule_plan_mode",
+        "scope",
+        "sign",
+        "source_application",
+        "source_version",
+        "tooth_identifier",
+        "unit"
+      ],
+      "abstain_reason": "SEMANTICS_NOT_AUTHORIZED",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [
+        "measurements/measurement-1"
+      ],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "EXECUTABLE",
+      "priority": 25,
+      "evidence_ids": []
+    },
+    {
+      "rule_id": "N10",
+      "version": "2.0.0",
+      "status": "OBSERVED",
+      "finding_ids": [
+        "a4a9a3081e830e3a98c2acf4a0376a701aaed3227fcc2f36deecb79e60fce631"
+      ],
+      "missing_required_fields": [],
+      "abstain_reason": null,
+      "evaluated": true,
+      "triggered": true,
+      "input_refs": [
+        "report/limitations"
+      ],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "OUTPUT_GUARD",
+      "priority": 80,
+      "evidence_ids": []
+    },
+    {
+      "rule_id": "N11",
+      "version": "2.0.0",
+      "status": "CONTEXT_REQUIRED",
+      "finding_ids": [
+        "9b1afd8bacdd57a8b2e5eb078f6d18b5528864c7389dfaf5b1ca61b5223f88a6"
+      ],
+      "missing_required_fields": [
+        "approval_invalidation_workflow",
+        "authenticated_reviewer_identity",
+        "immutable_versioned_review_events"
+      ],
+      "abstain_reason": "FUTURE_AUTHORIZED_WORKFLOW_REQUIRED",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "DEFERRED",
+      "implementation_kind": "DEFERRED",
+      "priority": 80,
+      "evidence_ids": []
+    },
+    {
+      "rule_id": "N12",
+      "version": "2.0.0",
+      "status": "NOT_APPLICABLE",
+      "finding_ids": [
+        "9a45589f677d28c4125646a0c92f87e3e7f82481e2c4e4f59e131d1df0a1939a"
+      ],
+      "missing_required_fields": [],
+      "abstain_reason": null,
+      "evaluated": false,
+      "triggered": false,
+      "input_refs": [],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "REQUIRED_DATA_GUARD",
+      "priority": 30,
+      "evidence_ids": []
+    },
+    {
+      "rule_id": "N13",
+      "version": "2.0.0",
+      "status": "OBSERVED",
+      "finding_ids": [
+        "e638b5df10783232ff545bf69e156558f91899c343c651ad6097ccad6d3fac24"
+      ],
+      "missing_required_fields": [],
+      "abstain_reason": null,
+      "evaluated": true,
+      "triggered": true,
+      "input_refs": [
+        "report/limitations"
+      ],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "EXECUTABLE",
+      "priority": 25,
+      "evidence_ids": []
+    },
+    {
+      "rule_id": "N14",
+      "version": "2.0.0",
+      "status": "CONTEXT_REQUIRED",
+      "finding_ids": [
+        "848c4bffbb9b2af66bc510740195feb9ed9ced252ff91adad376cacc650dddb9"
+      ],
+      "missing_required_fields": [
+        "approved_escalation_workflow",
+        "incident_severity_policy",
+        "reviewed_rollback_release_process"
+      ],
+      "abstain_reason": "FUTURE_AUTHORIZED_WORKFLOW_REQUIRED",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "DEFERRED",
+      "implementation_kind": "DEFERRED",
+      "priority": 80,
+      "evidence_ids": []
+    },
+    {
+      "rule_id": "R01",
+      "version": "2.0.0",
+      "status": "DISABLED",
+      "finding_ids": [
+        "c125e6eb15114625716ab646767065e665826bed51bb2333edade982850dfbb0"
+      ],
+      "missing_required_fields": [
+        "approved_exceptions_and_intent",
+        "orthodontist_approved_policy",
+        "source_specific_review_policy",
+        "verified_rotation",
+        "verified_tooth_group"
+      ],
+      "abstain_reason": "NO_APPROVED_CLINICAL_POLICY",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [],
+      "approval_status": "NOT APPROVED",
+      "execution": "DISABLED",
+      "implementation_kind": "REQUIRED_DATA_GUARD",
+      "priority": 50,
+      "evidence_ids": [
+        "S08",
+        "S09",
+        "S10"
+      ]
+    },
+    {
+      "rule_id": "R02",
+      "version": "2.0.0",
+      "status": "DISABLED",
+      "finding_ids": [
+        "7c34bd6d832abe3cf6f93af4746ec4b42e59ea98539e37880d1bd2a0b5bd062a"
+      ],
+      "missing_required_fields": [
+        "approved_movement_size_bands",
+        "orthodontist_approved_policy",
+        "verified_rotation",
+        "verified_tooth_group"
+      ],
+      "abstain_reason": "NO_APPROVED_CLINICAL_POLICY",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [],
+      "approval_status": "NOT APPROVED",
+      "execution": "DISABLED",
+      "implementation_kind": "REQUIRED_DATA_GUARD",
+      "priority": 50,
+      "evidence_ids": [
+        "S02",
+        "S10"
+      ]
+    },
+    {
+      "rule_id": "R03",
+      "version": "2.0.0",
+      "status": "DISABLED",
+      "finding_ids": [
+        "90d3a31b328ef9004d7632996b9f82a5bcd5167c406801aafe33915074a7cfe4"
+      ],
+      "missing_required_fields": [
+        "approved_extrusion_policy",
+        "orthodontist_approved_policy",
+        "verified_anterior_group",
+        "verified_extrusion"
+      ],
+      "abstain_reason": "NO_APPROVED_CLINICAL_POLICY",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [],
+      "approval_status": "NOT APPROVED",
+      "execution": "DISABLED",
+      "implementation_kind": "REQUIRED_DATA_GUARD",
+      "priority": 50,
+      "evidence_ids": [
+        "S09",
+        "S13"
+      ]
+    },
+    {
+      "rule_id": "R04",
+      "version": "2.0.0",
+      "status": "DISABLED",
+      "finding_ids": [
+        "930b5d354e0cda4e9309baa3849855852b260009d5bb38dfdd01c5427c613bf7"
+      ],
+      "missing_required_fields": [
+        "approved_device_specific_policy",
+        "orthodontist_approved_policy",
+        "verified_extrusion",
+        "verified_posterior_group"
+      ],
+      "abstain_reason": "NO_APPROVED_CLINICAL_POLICY",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [],
+      "approval_status": "NOT APPROVED",
+      "execution": "DISABLED",
+      "implementation_kind": "REQUIRED_DATA_GUARD",
+      "priority": 50,
+      "evidence_ids": [
+        "S02",
+        "S09"
+      ]
+    },
+    {
+      "rule_id": "R05",
+      "version": "2.0.0",
+      "status": "DISABLED",
+      "finding_ids": [
+        "c92ccf46fcf8a0099dd8ba4c5ad4477f3b6705234ebfe526a7caa8e8389e6880"
+      ],
+      "missing_required_fields": [
+        "approved_intrusion_policy",
+        "orthodontist_approved_policy",
+        "verified_intrusion",
+        "verified_lower_incisor_identity"
+      ],
+      "abstain_reason": "NO_APPROVED_CLINICAL_POLICY",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [],
+      "approval_status": "NOT APPROVED",
+      "execution": "DISABLED",
+      "implementation_kind": "REQUIRED_DATA_GUARD",
+      "priority": 50,
+      "evidence_ids": [
+        "S09",
+        "S11"
+      ]
+    },
+    {
+      "rule_id": "R06",
+      "version": "2.0.0",
+      "status": "DISABLED",
+      "finding_ids": [
+        "91d04f3414379dcc88a231a554072069bf985693a71ab74539155594725d2281"
+      ],
+      "missing_required_fields": [
+        "approved_intrusion_policy",
+        "orthodontist_approved_policy",
+        "root_support_and_occlusal_objectives",
+        "verified_intrusion",
+        "verified_tooth_group"
+      ],
+      "abstain_reason": "NO_APPROVED_CLINICAL_POLICY",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [],
+      "approval_status": "NOT APPROVED",
+      "execution": "DISABLED",
+      "implementation_kind": "REQUIRED_DATA_GUARD",
+      "priority": 50,
+      "evidence_ids": [
+        "S08",
+        "S09"
+      ]
+    },
+    {
+      "rule_id": "R07",
+      "version": "2.0.0",
+      "status": "DISABLED",
+      "finding_ids": [
+        "75ec80aceac0470d53399672d58b3682fb6b589f78131d0a39084c9d11621803"
+      ],
+      "missing_required_fields": [
+        "approved_root_control_review_policy",
+        "orthodontist_approved_policy",
+        "root_position_and_geometry",
+        "verified_incisor_identity",
+        "verified_inclination"
+      ],
+      "abstain_reason": "NO_APPROVED_CLINICAL_POLICY",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [],
+      "approval_status": "NOT APPROVED",
+      "execution": "DISABLED",
+      "implementation_kind": "REQUIRED_DATA_GUARD",
+      "priority": 50,
+      "evidence_ids": [
+        "S08",
+        "S13"
+      ]
+    },
+    {
+      "rule_id": "R08",
+      "version": "2.0.0",
+      "status": "DISABLED",
+      "finding_ids": [
+        "40df398dbb6b53c872e1759c350f5535095e9fb548f4ee4f76e2a941b99c9565"
+      ],
+      "missing_required_fields": [
+        "approved_angulation_review_policy",
+        "orthodontist_approved_policy",
+        "verified_angulation",
+        "verified_tooth_group"
+      ],
+      "abstain_reason": "NO_APPROVED_CLINICAL_POLICY",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [],
+      "approval_status": "NOT APPROVED",
+      "execution": "DISABLED",
+      "implementation_kind": "REQUIRED_DATA_GUARD",
+      "priority": 50,
+      "evidence_ids": [
+        "S08",
+        "S13"
+      ]
+    },
+    {
+      "rule_id": "R09",
+      "version": "2.0.0",
+      "status": "DISABLED",
+      "finding_ids": [
+        "0f8d0f2325cf6aef8b57385a343c2059ad3c4a007c337ead98db4133d51f32dc"
+      ],
+      "missing_required_fields": [
+        "approved_transverse_review_policy",
+        "bone_and_root_assessment",
+        "orthodontist_approved_policy",
+        "verified_buccolingual_movement",
+        "verified_posterior_group"
+      ],
+      "abstain_reason": "NO_APPROVED_CLINICAL_POLICY",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [],
+      "approval_status": "NOT APPROVED",
+      "execution": "DISABLED",
+      "implementation_kind": "REQUIRED_DATA_GUARD",
+      "priority": 50,
+      "evidence_ids": [
+        "S08",
+        "S15"
+      ]
+    },
+    {
+      "rule_id": "R10",
+      "version": "2.0.0",
+      "status": "DISABLED",
+      "finding_ids": [
+        "1ff3c8c47d543e9eb4a37a4a188854c588db6e0ef162ee9ddd6be65de2b22a31"
+      ],
+      "missing_required_fields": [
+        "approved_distalization_policy",
+        "orthodontist_approved_policy",
+        "staged_anchorage_context",
+        "verified_distal_direction",
+        "verified_upper_molar_identity"
+      ],
+      "abstain_reason": "NO_APPROVED_CLINICAL_POLICY",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [],
+      "approval_status": "NOT APPROVED",
+      "execution": "DISABLED",
+      "implementation_kind": "REQUIRED_DATA_GUARD",
+      "priority": 50,
+      "evidence_ids": [
+        "S03",
+        "S12"
+      ]
+    },
+    {
+      "rule_id": "R11",
+      "version": "2.0.0",
+      "status": "DISABLED",
+      "finding_ids": [
+        "96b2576d77b124b268111e1d2824b73b59c6c49767cd0fcf0c3824aef0dbec88"
+      ],
+      "missing_required_fields": [
+        "approved_mesialization_policy",
+        "extraction_space_and_root_context",
+        "orthodontist_approved_policy",
+        "verified_mesial_direction",
+        "verified_molar_identity"
+      ],
+      "abstain_reason": "NO_APPROVED_CLINICAL_POLICY",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [],
+      "approval_status": "NOT APPROVED",
+      "execution": "DISABLED",
+      "implementation_kind": "REQUIRED_DATA_GUARD",
+      "priority": 50,
+      "evidence_ids": [
+        "S12",
+        "S15"
+      ]
+    },
+    {
+      "rule_id": "R12",
+      "version": "2.0.0",
+      "status": "DISABLED",
+      "finding_ids": [
+        "9ef0d41eb72dd7b9d1a3dfd7f5c4cee68439325a0ce8dabdb188d31ba4432f4b"
+      ],
+      "missing_required_fields": [
+        "approved_validated_interaction_matrix",
+        "orthodontist_approved_policy",
+        "verified_combination_axes",
+        "verified_directions_and_groups"
+      ],
+      "abstain_reason": "NO_APPROVED_CLINICAL_POLICY",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [],
+      "approval_status": "NOT APPROVED",
+      "execution": "DISABLED",
+      "implementation_kind": "REQUIRED_DATA_GUARD",
+      "priority": 50,
+      "evidence_ids": [
+        "S03",
+        "S13"
+      ]
+    },
+    {
+      "rule_id": "R13",
+      "version": "2.0.0",
+      "status": "DISABLED",
+      "finding_ids": [
+        "f989fba4a39d7cda05da9ec3a2d49e336b79176075fd56280c8f6922f4d25479"
+      ],
+      "missing_required_fields": [
+        "actual_stage_dataset",
+        "approved_stage_policy",
+        "orthodontist_approved_policy",
+        "verified_device_version_profile"
+      ],
+      "abstain_reason": "NO_APPROVED_CLINICAL_POLICY",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [],
+      "approval_status": "NOT APPROVED",
+      "execution": "DISABLED",
+      "implementation_kind": "REQUIRED_DATA_GUARD",
+      "priority": 50,
+      "evidence_ids": [
+        "S03",
+        "S04",
+        "S06"
+      ]
+    },
+    {
+      "rule_id": "R14",
+      "version": "2.0.0",
+      "status": "NOT_APPLICABLE",
+      "finding_ids": [
+        "70f2aaafddcc8510bdbd9a3df82dcfff104da4696b2862eca20540e8a1b346f0"
+      ],
+      "missing_required_fields": [],
+      "abstain_reason": null,
+      "evaluated": false,
+      "triggered": false,
+      "input_refs": [],
+      "approval_status": "NOT APPLICABLE",
+      "execution": "ACTIVE",
+      "implementation_kind": "EXECUTABLE",
+      "priority": 30,
+      "evidence_ids": [
+        "S15",
+        "S16",
+        "S17"
+      ]
+    },
+    {
+      "rule_id": "R15",
+      "version": "2.0.0",
+      "status": "DISABLED",
+      "finding_ids": [
+        "5b31c2487c86ce9aa1afae195fb361309fdfb51aa419ce2e668783a4fcd544cb"
+      ],
+      "missing_required_fields": [
+        "actual_attachment_plan",
+        "approved_open_ended_review_policy",
+        "orthodontist_approved_policy",
+        "verified_movement_group"
+      ],
+      "abstain_reason": "NO_APPROVED_CLINICAL_POLICY",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [],
+      "approval_status": "NOT APPROVED",
+      "execution": "DISABLED",
+      "implementation_kind": "REQUIRED_DATA_GUARD",
+      "priority": 50,
+      "evidence_ids": [
+        "S07",
+        "S13",
+        "S14"
+      ]
+    },
+    {
+      "rule_id": "R16",
+      "version": "2.0.0",
+      "status": "DISABLED",
+      "finding_ids": [
+        "999f6646317d3244a2db46c1bb6ff2853c3397676860fdad7f409e2288699b68"
+      ],
+      "missing_required_fields": [
+        "approved_full_case_rubric",
+        "full_clinical_examination",
+        "occlusion_and_skeletal_periodontal_context",
+        "orthodontist_approved_policy",
+        "treatment_objectives"
+      ],
+      "abstain_reason": "NO_APPROVED_CLINICAL_POLICY",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [],
+      "approval_status": "NOT APPROVED",
+      "execution": "DISABLED",
+      "implementation_kind": "REQUIRED_DATA_GUARD",
+      "priority": 50,
+      "evidence_ids": [
+        "S08",
+        "S15",
+        "S16"
+      ]
+    },
+    {
+      "rule_id": "T01",
+      "version": "2.0.0",
+      "status": "DISABLED",
+      "finding_ids": [
+        "85cb64e6b55a65a0d3c2accbf66d43c90198155d9ad37bbf1cc568de72428efa"
+      ],
+      "missing_required_fields": [
+        "actual_per_stage_values",
+        "orthodontist_approved_policy",
+        "orthodontist_approved_stage_limits",
+        "verified_device_profile"
+      ],
+      "abstain_reason": "NO_POLICY_OR_EXTRA_DATA_MODULE",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [],
+      "approval_status": "NOT APPROVED",
+      "execution": "DISABLED",
+      "implementation_kind": "REQUIRED_DATA_GUARD",
+      "priority": 50,
+      "evidence_ids": [
+        "S03",
+        "S04",
+        "S06"
+      ]
+    },
+    {
+      "rule_id": "T02",
+      "version": "2.0.0",
+      "status": "DISABLED",
+      "finding_ids": [
+        "50cc39cbd457fe48c1b7376ac9e640c8934e071aad9b23a3f95323e518bc6beb"
+      ],
+      "missing_required_fields": [
+        "actual_stage_dataset",
+        "approved_composition_operations_and_tolerance",
+        "orthodontist_approved_policy",
+        "verified_baseline_geometry",
+        "verified_coordinate_transforms"
+      ],
+      "abstain_reason": "NO_POLICY_OR_EXTRA_DATA_MODULE",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [],
+      "approval_status": "NOT APPROVED",
+      "execution": "DISABLED",
+      "implementation_kind": "REQUIRED_DATA_GUARD",
+      "priority": 50,
+      "evidence_ids": [
+        "S04"
+      ]
+    },
+    {
+      "rule_id": "T03",
+      "version": "2.0.0",
+      "status": "DISABLED",
+      "finding_ids": [
+        "d8dd7804ce6cfd7cf79eb94bff6421f50468de1b83718211cfd528f0cbfabc23"
+      ],
+      "missing_required_fields": [
+        "actual_per_stage_values",
+        "approved_stage_policy",
+        "configuration_history",
+        "orthodontist_approved_policy",
+        "verified_configured_constraint"
+      ],
+      "abstain_reason": "NO_POLICY_OR_EXTRA_DATA_MODULE",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [],
+      "approval_status": "NOT APPROVED",
+      "execution": "DISABLED",
+      "implementation_kind": "REQUIRED_DATA_GUARD",
+      "priority": 50,
+      "evidence_ids": [
+        "S03"
+      ]
+    },
+    {
+      "rule_id": "T04",
+      "version": "2.0.0",
+      "status": "DISABLED",
+      "finding_ids": [
+        "c7416b44b7f04ec21ccba8f2d7287f24cef32b350a6a7f767d30e18e67f9ac8e"
+      ],
+      "missing_required_fields": [
+        "actual_stage_dataset",
+        "approved_anchorage_protocol",
+        "orthodontist_approved_policy",
+        "verified_intended_distalization_sequence"
+      ],
+      "abstain_reason": "NO_POLICY_OR_EXTRA_DATA_MODULE",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [],
+      "approval_status": "NOT APPROVED",
+      "execution": "DISABLED",
+      "implementation_kind": "REQUIRED_DATA_GUARD",
+      "priority": 50,
+      "evidence_ids": [
+        "S03",
+        "S12"
+      ]
+    },
+    {
+      "rule_id": "T05",
+      "version": "2.0.0",
+      "status": "DISABLED",
+      "finding_ids": [
+        "94fe95550679195685f5efbdd74a70c4570d4df414a9528c6eeb91fbf56094ae"
+      ],
+      "missing_required_fields": [
+        "actual_stage_overlap",
+        "approved_interaction_policy",
+        "device_specific_validated_interaction_matrix",
+        "orthodontist_approved_policy"
+      ],
+      "abstain_reason": "NO_POLICY_OR_EXTRA_DATA_MODULE",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [],
+      "approval_status": "NOT APPROVED",
+      "execution": "DISABLED",
+      "implementation_kind": "REQUIRED_DATA_GUARD",
+      "priority": 50,
+      "evidence_ids": [
+        "S03"
+      ]
+    },
+    {
+      "rule_id": "T06",
+      "version": "2.0.0",
+      "status": "DISABLED",
+      "finding_ids": [
+        "49b9a100876c17bf0368bd2e5e5cd9e5a037ad548448efcda54bcaec64a76893"
+      ],
+      "missing_required_fields": [
+        "orthodontist_approved_policy",
+        "validated_3d_geometry",
+        "validated_contact_engine",
+        "verified_alignment_and_staged_paths"
+      ],
+      "abstain_reason": "NO_POLICY_OR_EXTRA_DATA_MODULE",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [],
+      "approval_status": "NOT APPROVED",
+      "execution": "DISABLED",
+      "implementation_kind": "REQUIRED_DATA_GUARD",
+      "priority": 50,
+      "evidence_ids": [
+        "S04"
+      ]
+    },
+    {
+      "rule_id": "T07",
+      "version": "2.0.0",
+      "status": "DISABLED",
+      "finding_ids": [
+        "1141e7c9c3f21941266d26237f7ed49a7f5c256cd07a49e7db21c5827d65cc60"
+      ],
+      "missing_required_fields": [
+        "approved_ipr_plan",
+        "clinical_review",
+        "enamel_and_interproximal_contacts",
+        "orthodontist_approved_policy",
+        "stage_timing"
+      ],
+      "abstain_reason": "NO_POLICY_OR_EXTRA_DATA_MODULE",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [],
+      "approval_status": "NOT APPROVED",
+      "execution": "DISABLED",
+      "implementation_kind": "REQUIRED_DATA_GUARD",
+      "priority": 50,
+      "evidence_ids": [
+        "S06",
+        "S15"
+      ]
+    },
+    {
+      "rule_id": "T08",
+      "version": "2.0.0",
+      "status": "DISABLED",
+      "finding_ids": [
+        "578aabea51ec4ab4b065da49adbc3c144f81a2709bc1a065043ec2cdba91b2af"
+      ],
+      "missing_required_fields": [
+        "approved_protocol",
+        "crown_root_coordinates",
+        "orthodontist_approved_policy",
+        "staged_force_and_anchorage_strategy"
+      ],
+      "abstain_reason": "NO_POLICY_OR_EXTRA_DATA_MODULE",
+      "evaluated": false,
+      "triggered": null,
+      "input_refs": [],
+      "approval_status": "NOT APPROVED",
+      "execution": "DISABLED",
+      "implementation_kind": "REQUIRED_DATA_GUARD",
+      "priority": 50,
+      "evidence_ids": [
+        "S03",
+        "S12",
+        "S15"
+      ]
+    }
+  ],
+  "limitations": [
+    "Prototype — not for clinical use. DRAFT for clinician review; no authorized sign-off workflow is implemented.",
+    "No authentic ClinCheck or SureSmile clipboard oracles or approved vendor semantic releases exist.",
+    "Unverified and missing fields are not evaluated and do not mean normal, low risk or no concern.",
+    "Programmed values are not achieved movement. Total co-programming does not establish simultaneity or staging.",
+    "No cross-basis comparisons, plan subtraction, angular composition, stage summation or total/stage-count division is performed.",
+    "No suitability, periodontal/root/bone, occlusion, IPR, extraction/surgery, prognosis, attachment or collision conclusions are produced.",
+    "Clinical predicates and attachment/staging assessments remain disabled. Counts are not clinical difficulty or risk scores.",
+    "Single capture only; no cross-case/plan joins. Expected axis coverage and unlisted tooth status remain unknown."
+  ]
+}

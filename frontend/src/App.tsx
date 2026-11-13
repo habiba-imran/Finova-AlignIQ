@@ -99,7 +99,7 @@ export default function App() {
           </div>
           <div className="flex items-center gap-3 text-xs font-medium text-muted">
             <span className="hidden sm:inline">TMT review workspace</span>
-            <span className="rounded-md border border-line bg-canvas px-2.5 py-1.5 tracking-wide">PHASE 4</span>
+            <span className="rounded-md border border-line bg-canvas px-2.5 py-1.5 tracking-wide">PHASE 5</span>
           </div>
         </div>
       </header>

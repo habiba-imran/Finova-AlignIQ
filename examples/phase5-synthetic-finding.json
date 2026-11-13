@@ -1,0 +1,632 @@
+{
+  "finding_id": "cfdfbf2101f055f0fca95e6016d40b31b65152255fd90796cb7519ae123d1be2",
+  "rule_id": "D03",
+  "rule_version": "2.0.0",
+  "triggering_rules": [
+    {
+      "rule_id": "D03",
+      "version": "2.0.0"
+    }
+  ],
+  "tooth_id": null,
+  "status": "OBSERVED",
+  "applicable": true,
+  "evaluated": true,
+  "finding_type": "DESCRIPTIVE",
+  "template_id": "group_rotation",
+  "message": "Source-reported programmed rotation with independently supplied tooth-group context. No failure or risk prediction is made.",
+  "input_refs": [
+    "measurements/measurement-1",
+    "source/context",
+    "teeth/tooth-1"
+  ],
+  "observed_measurements": [
+    {
+      "measurement_id": "measurement-1",
+      "tooth_ref": "tooth-1",
+      "raw_tooth_identifier": "13",
+      "raw_label": "Rotation (deg)",
+      "raw_value": "−1.2300 M",
+      "raw_number": "−1.2300",
+      "raw_sign": "−",
+      "raw_direction": "M",
+      "signed_decimal": "-1.2300",
+      "magnitude": "1.2300",
+      "verification": "TEST_ONLY",
+      "components": [
+        {
+          "name": "source_application",
+          "status": "TEST_ONLY",
+          "claim_value": "Unknown",
+          "canonical_value": "TEST_ONLY",
+          "evidence": [
+            {
+              "fixture_id": "TEST_ONLY-fixture",
+              "release_digest": "8bebb02e77b9f54cea70f18238e3a2bfcb54523f498299c3253a27dee037a4db",
+              "raw_sha256": "8c56432e47a9dd0e8eda246620aa1e1c52ed7f8b875c6f0e2ce32e113c52e98b",
+              "expected_sha256": "788c8900113cafa2f00a60082122478a0bdc5d7b871b571e9eda94723a36ca38",
+              "source_evidence_sha256": null,
+              "locator": "TEST_ONLY:measurement-1:source_application"
+            }
+          ],
+          "abstain_reasons": [],
+          "input_refs": [
+            "measurements/measurement-1",
+            "teeth/tooth-1",
+            "source/context/source_application"
+          ],
+          "source_spans": []
+        },
+        {
+          "name": "source_version",
+          "status": "TEST_ONLY",
+          "claim_value": "TEST_ONLY-1",
+          "canonical_value": "TEST_ONLY-1",
+          "evidence": [
+            {
+              "fixture_id": "TEST_ONLY-fixture",
+              "release_digest": "8bebb02e77b9f54cea70f18238e3a2bfcb54523f498299c3253a27dee037a4db",
+              "raw_sha256": "8c56432e47a9dd0e8eda246620aa1e1c52ed7f8b875c6f0e2ce32e113c52e98b",
+              "expected_sha256": "788c8900113cafa2f00a60082122478a0bdc5d7b871b571e9eda94723a36ca38",
+              "source_evidence_sha256": null,
+              "locator": "TEST_ONLY:measurement-1:source_version"
+            }
+          ],
+          "abstain_reasons": [],
+          "input_refs": [
+            "measurements/measurement-1",
+            "teeth/tooth-1",
+            "source/context/source_version"
+          ],
+          "source_spans": []
+        },
+        {
+          "name": "tooth_identifier",
+          "status": "TEST_ONLY",
+          "claim_value": "13",
+          "canonical_value": "TEST_TOOTH_tooth-1",
+          "evidence": [
+            {
+              "fixture_id": "TEST_ONLY-fixture",
+              "release_digest": "8bebb02e77b9f54cea70f18238e3a2bfcb54523f498299c3253a27dee037a4db",
+              "raw_sha256": "8c56432e47a9dd0e8eda246620aa1e1c52ed7f8b875c6f0e2ce32e113c52e98b",
+              "expected_sha256": "788c8900113cafa2f00a60082122478a0bdc5d7b871b571e9eda94723a36ca38",
+              "source_evidence_sha256": null,
+              "locator": "TEST_ONLY:measurement-1:tooth_identifier"
+            }
+          ],
+          "abstain_reasons": [],
+          "input_refs": [
+            "measurements/measurement-1",
+            "teeth/tooth-1",
+            "source/context/tooth_identifier"
+          ],
+          "source_spans": [
+            {
+              "line": 3,
+              "column_start": 4,
+              "column_end": 13,
+              "start": 107,
+              "end": 116,
+              "cell_index": 2
+            },
+            {
+              "line": 2,
+              "column_start": 7,
+              "column_end": 21,
+              "start": 74,
+              "end": 88,
+              "cell_index": 2
+            },
+            {
+              "line": 3,
+              "column_start": 1,
+              "column_end": 3,
+              "start": 104,
+              "end": 106,
+              "cell_index": 1
+            }
+          ]
+        },
+        {
+          "name": "notation",
+          "status": "TEST_ONLY",
+          "claim_value": "UNKNOWN",
+          "canonical_value": "TEST_NOTATION",
+          "evidence": [
+            {
+              "fixture_id": "TEST_ONLY-fixture",
+              "release_digest": "8bebb02e77b9f54cea70f18238e3a2bfcb54523f498299c3253a27dee037a4db",
+              "raw_sha256": "8c56432e47a9dd0e8eda246620aa1e1c52ed7f8b875c6f0e2ce32e113c52e98b",
+              "expected_sha256": "788c8900113cafa2f00a60082122478a0bdc5d7b871b571e9eda94723a36ca38",
+              "source_evidence_sha256": null,
+              "locator": "TEST_ONLY:measurement-1:notation"
+            }
+          ],
+          "abstain_reasons": [],
+          "input_refs": [
+            "measurements/measurement-1",
+            "teeth/tooth-1",
+            "source/context/notation"
+          ],
+          "source_spans": []
+        },
+        {
+          "name": "dentition",
+          "status": "TEST_ONLY",
+          "claim_value": "UNKNOWN",
+          "canonical_value": "TEST_DENTITION",
+          "evidence": [
+            {
+              "fixture_id": "TEST_ONLY-fixture",
+              "release_digest": "8bebb02e77b9f54cea70f18238e3a2bfcb54523f498299c3253a27dee037a4db",
+              "raw_sha256": "8c56432e47a9dd0e8eda246620aa1e1c52ed7f8b875c6f0e2ce32e113c52e98b",
+              "expected_sha256": "788c8900113cafa2f00a60082122478a0bdc5d7b871b571e9eda94723a36ca38",
+              "source_evidence_sha256": null,
+              "locator": "TEST_ONLY:measurement-1:dentition"
+            }
+          ],
+          "abstain_reasons": [],
+          "input_refs": [
+            "measurements/measurement-1",
+            "teeth/tooth-1",
+            "source/context/dentition"
+          ],
+          "source_spans": []
+        },
+        {
+          "name": "arch",
+          "status": "TEST_ONLY",
+          "claim_value": "UNKNOWN",
+          "canonical_value": "TEST_ARCH",
+          "evidence": [
+            {
+              "fixture_id": "TEST_ONLY-fixture",
+              "release_digest": "8bebb02e77b9f54cea70f18238e3a2bfcb54523f498299c3253a27dee037a4db",
+              "raw_sha256": "8c56432e47a9dd0e8eda246620aa1e1c52ed7f8b875c6f0e2ce32e113c52e98b",
+              "expected_sha256": "788c8900113cafa2f00a60082122478a0bdc5d7b871b571e9eda94723a36ca38",
+              "source_evidence_sha256": null,
+              "locator": "TEST_ONLY:measurement-1:arch"
+            }
+          ],
+          "abstain_reasons": [],
+          "input_refs": [
+            "measurements/measurement-1",
+            "teeth/tooth-1",
+            "source/context/arch"
+          ],
+          "source_spans": []
+        },
+        {
+          "name": "axis",
+          "status": "TEST_ONLY",
+          "claim_value": "rotation",
+          "canonical_value": "ROTATION",
+          "evidence": [
+            {
+              "fixture_id": "TEST_ONLY-fixture",
+              "release_digest": "8bebb02e77b9f54cea70f18238e3a2bfcb54523f498299c3253a27dee037a4db",
+              "raw_sha256": "8c56432e47a9dd0e8eda246620aa1e1c52ed7f8b875c6f0e2ce32e113c52e98b",
+              "expected_sha256": "788c8900113cafa2f00a60082122478a0bdc5d7b871b571e9eda94723a36ca38",
+              "source_evidence_sha256": null,
+              "locator": "TEST_ONLY:measurement-1:axis"
+            }
+          ],
+          "abstain_reasons": [],
+          "input_refs": [
+            "measurements/measurement-1",
+            "teeth/tooth-1",
+            "source/context/axis"
+          ],
+          "source_spans": [
+            {
+              "line": 3,
+              "column_start": 4,
+              "column_end": 13,
+              "start": 107,
+              "end": 116,
+              "cell_index": 2
+            },
+            {
+              "line": 2,
+              "column_start": 7,
+              "column_end": 21,
+              "start": 74,
+              "end": 88,
+              "cell_index": 2
+            },
+            {
+              "line": 3,
+              "column_start": 1,
+              "column_end": 3,
+              "start": 104,
+              "end": 106,
+              "cell_index": 1
+            }
+          ]
+        },
+        {
+          "name": "unit",
+          "status": "TEST_ONLY",
+          "claim_value": "deg",
+          "canonical_value": "deg",
+          "evidence": [
+            {
+              "fixture_id": "TEST_ONLY-fixture",
+              "release_digest": "8bebb02e77b9f54cea70f18238e3a2bfcb54523f498299c3253a27dee037a4db",
+              "raw_sha256": "8c56432e47a9dd0e8eda246620aa1e1c52ed7f8b875c6f0e2ce32e113c52e98b",
+              "expected_sha256": "788c8900113cafa2f00a60082122478a0bdc5d7b871b571e9eda94723a36ca38",
+              "source_evidence_sha256": null,
+              "locator": "TEST_ONLY:measurement-1:unit"
+            }
+          ],
+          "abstain_reasons": [],
+          "input_refs": [
+            "measurements/measurement-1",
+            "teeth/tooth-1",
+            "source/context/unit"
+          ],
+          "source_spans": [
+            {
+              "line": 3,
+              "column_start": 4,
+              "column_end": 13,
+              "start": 107,
+              "end": 116,
+              "cell_index": 2
+            },
+            {
+              "line": 2,
+              "column_start": 7,
+              "column_end": 21,
+              "start": 74,
+              "end": 88,
+              "cell_index": 2
+            },
+            {
+              "line": 3,
+              "column_start": 1,
+              "column_end": 3,
+              "start": 104,
+              "end": 106,
+              "cell_index": 1
+            }
+          ]
+        },
+        {
+          "name": "sign",
+          "status": "TEST_ONLY",
+          "claim_value": "−",
+          "canonical_value": "TEST_SIGN_ALPHA",
+          "evidence": [
+            {
+              "fixture_id": "TEST_ONLY-fixture",
+              "release_digest": "8bebb02e77b9f54cea70f18238e3a2bfcb54523f498299c3253a27dee037a4db",
+              "raw_sha256": "8c56432e47a9dd0e8eda246620aa1e1c52ed7f8b875c6f0e2ce32e113c52e98b",
+              "expected_sha256": "788c8900113cafa2f00a60082122478a0bdc5d7b871b571e9eda94723a36ca38",
+              "source_evidence_sha256": null,
+              "locator": "TEST_ONLY:measurement-1:sign"
+            }
+          ],
+          "abstain_reasons": [],
+          "input_refs": [
+            "measurements/measurement-1",
+            "teeth/tooth-1",
+            "source/context/sign"
+          ],
+          "source_spans": [
+            {
+              "line": 3,
+              "column_start": 4,
+              "column_end": 13,
+              "start": 107,
+              "end": 116,
+              "cell_index": 2
+            },
+            {
+              "line": 2,
+              "column_start": 7,
+              "column_end": 21,
+              "start": 74,
+              "end": 88,
+              "cell_index": 2
+            },
+            {
+              "line": 3,
+              "column_start": 1,
+              "column_end": 3,
+              "start": 104,
+              "end": 106,
+              "cell_index": 1
+            }
+          ]
+        },
+        {
+          "name": "direction",
+          "status": "TEST_ONLY",
+          "claim_value": "M",
+          "canonical_value": "TEST_DIRECTION_ALPHA",
+          "evidence": [
+            {
+              "fixture_id": "TEST_ONLY-fixture",
+              "release_digest": "8bebb02e77b9f54cea70f18238e3a2bfcb54523f498299c3253a27dee037a4db",
+              "raw_sha256": "8c56432e47a9dd0e8eda246620aa1e1c52ed7f8b875c6f0e2ce32e113c52e98b",
+              "expected_sha256": "788c8900113cafa2f00a60082122478a0bdc5d7b871b571e9eda94723a36ca38",
+              "source_evidence_sha256": null,
+              "locator": "TEST_ONLY:measurement-1:direction"
+            }
+          ],
+          "abstain_reasons": [],
+          "input_refs": [
+            "measurements/measurement-1",
+            "teeth/tooth-1",
+            "source/context/direction"
+          ],
+          "source_spans": [
+            {
+              "line": 3,
+              "column_start": 4,
+              "column_end": 13,
+              "start": 107,
+              "end": 116,
+              "cell_index": 2
+            },
+            {
+              "line": 2,
+              "column_start": 7,
+              "column_end": 21,
+              "start": 74,
+              "end": 88,
+              "cell_index": 2
+            },
+            {
+              "line": 3,
+              "column_start": 1,
+              "column_end": 3,
+              "start": 104,
+              "end": 106,
+              "cell_index": 1
+            }
+          ]
+        },
+        {
+          "name": "plan_mode",
+          "status": "TEST_ONLY",
+          "claim_value": "UNKNOWN",
+          "canonical_value": "TEST_PLAN_MODE",
+          "evidence": [
+            {
+              "fixture_id": "TEST_ONLY-fixture",
+              "release_digest": "8bebb02e77b9f54cea70f18238e3a2bfcb54523f498299c3253a27dee037a4db",
+              "raw_sha256": "8c56432e47a9dd0e8eda246620aa1e1c52ed7f8b875c6f0e2ce32e113c52e98b",
+              "expected_sha256": "788c8900113cafa2f00a60082122478a0bdc5d7b871b571e9eda94723a36ca38",
+              "source_evidence_sha256": null,
+              "locator": "TEST_ONLY:measurement-1:plan_mode"
+            }
+          ],
+          "abstain_reasons": [],
+          "input_refs": [
+            "measurements/measurement-1",
+            "teeth/tooth-1",
+            "source/context/plan_mode"
+          ],
+          "source_spans": []
+        },
+        {
+          "name": "reference_basis",
+          "status": "TEST_ONLY",
+          "claim_value": "UNKNOWN",
+          "canonical_value": "TEST_REFERENCE_A",
+          "evidence": [
+            {
+              "fixture_id": "TEST_ONLY-fixture",
+              "release_digest": "8bebb02e77b9f54cea70f18238e3a2bfcb54523f498299c3253a27dee037a4db",
+              "raw_sha256": "8c56432e47a9dd0e8eda246620aa1e1c52ed7f8b875c6f0e2ce32e113c52e98b",
+              "expected_sha256": "788c8900113cafa2f00a60082122478a0bdc5d7b871b571e9eda94723a36ca38",
+              "source_evidence_sha256": null,
+              "locator": "TEST_ONLY:measurement-1:reference_basis"
+            }
+          ],
+          "abstain_reasons": [],
+          "input_refs": [
+            "measurements/measurement-1",
+            "teeth/tooth-1",
+            "source/context/reference_basis"
+          ],
+          "source_spans": []
+        },
+        {
+          "name": "scope",
+          "status": "TEST_ONLY",
+          "claim_value": "UNKNOWN",
+          "canonical_value": "TOTAL",
+          "evidence": [
+            {
+              "fixture_id": "TEST_ONLY-fixture",
+              "release_digest": "8bebb02e77b9f54cea70f18238e3a2bfcb54523f498299c3253a27dee037a4db",
+              "raw_sha256": "8c56432e47a9dd0e8eda246620aa1e1c52ed7f8b875c6f0e2ce32e113c52e98b",
+              "expected_sha256": "788c8900113cafa2f00a60082122478a0bdc5d7b871b571e9eda94723a36ca38",
+              "source_evidence_sha256": null,
+              "locator": "TEST_ONLY:measurement-1:scope"
+            }
+          ],
+          "abstain_reasons": [],
+          "input_refs": [
+            "measurements/measurement-1",
+            "teeth/tooth-1",
+            "source/context/scope"
+          ],
+          "source_spans": []
+        },
+        {
+          "name": "stage_index",
+          "status": "UNKNOWN",
+          "claim_value": null,
+          "canonical_value": null,
+          "evidence": [],
+          "abstain_reasons": [
+            "FIELD_EVIDENCE_MISSING"
+          ],
+          "input_refs": [
+            "measurements/measurement-1",
+            "teeth/tooth-1",
+            "source/context/stage_index"
+          ],
+          "source_spans": []
+        },
+        {
+          "name": "stage_kind",
+          "status": "UNKNOWN",
+          "claim_value": null,
+          "canonical_value": null,
+          "evidence": [],
+          "abstain_reasons": [
+            "FIELD_EVIDENCE_MISSING"
+          ],
+          "input_refs": [
+            "measurements/measurement-1",
+            "teeth/tooth-1",
+            "source/context/stage_kind"
+          ],
+          "source_spans": []
+        },
+        {
+          "name": "coordinate_frame",
+          "status": "TEST_ONLY",
+          "claim_value": null,
+          "canonical_value": "TEST_FRAME_A",
+          "evidence": [
+            {
+              "fixture_id": "TEST_ONLY-fixture",
+              "release_digest": "8bebb02e77b9f54cea70f18238e3a2bfcb54523f498299c3253a27dee037a4db",
+              "raw_sha256": "8c56432e47a9dd0e8eda246620aa1e1c52ed7f8b875c6f0e2ce32e113c52e98b",
+              "expected_sha256": "788c8900113cafa2f00a60082122478a0bdc5d7b871b571e9eda94723a36ca38",
+              "source_evidence_sha256": null,
+              "locator": "TEST_ONLY:measurement-1:coordinate_frame"
+            }
+          ],
+          "abstain_reasons": [],
+          "input_refs": [
+            "measurements/measurement-1",
+            "teeth/tooth-1",
+            "source/context/coordinate_frame"
+          ],
+          "source_spans": []
+        },
+        {
+          "name": "comparison_left_plan",
+          "status": "UNKNOWN",
+          "claim_value": null,
+          "canonical_value": null,
+          "evidence": [],
+          "abstain_reasons": [
+            "FIELD_EVIDENCE_MISSING"
+          ],
+          "input_refs": [
+            "measurements/measurement-1",
+            "teeth/tooth-1",
+            "source/context/comparison_left_plan"
+          ],
+          "source_spans": []
+        },
+        {
+          "name": "comparison_right_plan",
+          "status": "UNKNOWN",
+          "claim_value": null,
+          "canonical_value": null,
+          "evidence": [],
+          "abstain_reasons": [
+            "FIELD_EVIDENCE_MISSING"
+          ],
+          "input_refs": [
+            "measurements/measurement-1",
+            "teeth/tooth-1",
+            "source/context/comparison_right_plan"
+          ],
+          "source_spans": []
+        },
+        {
+          "name": "comparison_operation",
+          "status": "UNKNOWN",
+          "claim_value": null,
+          "canonical_value": null,
+          "evidence": [],
+          "abstain_reasons": [
+            "FIELD_EVIDENCE_MISSING"
+          ],
+          "input_refs": [
+            "measurements/measurement-1",
+            "teeth/tooth-1",
+            "source/context/comparison_operation"
+          ],
+          "source_spans": []
+        }
+      ],
+      "input_refs": [
+        "measurements/measurement-1",
+        "teeth/tooth-1",
+        "source/context"
+      ],
+      "source_spans": [
+        {
+          "line": 3,
+          "column_start": 1,
+          "column_end": 3,
+          "start": 104,
+          "end": 106,
+          "cell_index": 1
+        },
+        {
+          "line": 2,
+          "column_start": 7,
+          "column_end": 21,
+          "start": 74,
+          "end": 88,
+          "cell_index": 2
+        },
+        {
+          "line": 3,
+          "column_start": 4,
+          "column_end": 13,
+          "start": 107,
+          "end": 116,
+          "cell_index": 2
+        }
+      ],
+      "tooth_group": "CANINE",
+      "additional_evidence_refs": [
+        "TEST_ONLY:independent-group-oracle"
+      ],
+      "pair_evidence_ref": null
+    }
+  ],
+  "missing_required_fields": [],
+  "evidence_refs": [
+    "TEST_ONLY-fixture:8bebb02e77b9f54cea70f18238e3a2bfcb54523f498299c3253a27dee037a4db:TEST_ONLY:measurement-1:arch",
+    "TEST_ONLY-fixture:8bebb02e77b9f54cea70f18238e3a2bfcb54523f498299c3253a27dee037a4db:TEST_ONLY:measurement-1:axis",
+    "TEST_ONLY-fixture:8bebb02e77b9f54cea70f18238e3a2bfcb54523f498299c3253a27dee037a4db:TEST_ONLY:measurement-1:coordinate_frame",
+    "TEST_ONLY-fixture:8bebb02e77b9f54cea70f18238e3a2bfcb54523f498299c3253a27dee037a4db:TEST_ONLY:measurement-1:dentition",
+    "TEST_ONLY-fixture:8bebb02e77b9f54cea70f18238e3a2bfcb54523f498299c3253a27dee037a4db:TEST_ONLY:measurement-1:direction",
+    "TEST_ONLY-fixture:8bebb02e77b9f54cea70f18238e3a2bfcb54523f498299c3253a27dee037a4db:TEST_ONLY:measurement-1:notation",
+    "TEST_ONLY-fixture:8bebb02e77b9f54cea70f18238e3a2bfcb54523f498299c3253a27dee037a4db:TEST_ONLY:measurement-1:plan_mode",
+    "TEST_ONLY-fixture:8bebb02e77b9f54cea70f18238e3a2bfcb54523f498299c3253a27dee037a4db:TEST_ONLY:measurement-1:reference_basis",
+    "TEST_ONLY-fixture:8bebb02e77b9f54cea70f18238e3a2bfcb54523f498299c3253a27dee037a4db:TEST_ONLY:measurement-1:scope",
+    "TEST_ONLY-fixture:8bebb02e77b9f54cea70f18238e3a2bfcb54523f498299c3253a27dee037a4db:TEST_ONLY:measurement-1:sign",
+    "TEST_ONLY-fixture:8bebb02e77b9f54cea70f18238e3a2bfcb54523f498299c3253a27dee037a4db:TEST_ONLY:measurement-1:source_application",
+    "TEST_ONLY-fixture:8bebb02e77b9f54cea70f18238e3a2bfcb54523f498299c3253a27dee037a4db:TEST_ONLY:measurement-1:source_version",
+    "TEST_ONLY-fixture:8bebb02e77b9f54cea70f18238e3a2bfcb54523f498299c3253a27dee037a4db:TEST_ONLY:measurement-1:tooth_identifier",
+    "TEST_ONLY-fixture:8bebb02e77b9f54cea70f18238e3a2bfcb54523f498299c3253a27dee037a4db:TEST_ONLY:measurement-1:unit",
+    "TEST_ONLY:independent-group-oracle"
+  ],
+  "abstain_reason": null,
+  "review_status": "DRAFT",
+  "conflict_group": null,
+  "summary_counts": {},
+  "predicate_result": true,
+  "approval_status": "NOT APPLICABLE",
+  "policy_id": null,
+  "evidence_ids": [
+    "S09",
+    "S10"
+  ]
+}

@@ -1,0 +1,411 @@
+{
+  "title": "PMCEASY | The A.I. Companion",
+  "headings": [
+    {
+      "level": "H1",
+      "text": "THE EASY WAY TO PLAN\nYOUR ALIGNER CASES WITH A.I."
+    },
+    {
+      "level": "H3",
+      "text": "EXPAND YOUR COMFORT ZONE WITH\nTHE REAL-TIME \nA.I. COMPANION"
+    },
+    {
+      "level": "H2",
+      "text": "A.I. Planning Assistant"
+    },
+    {
+      "level": "H3",
+      "text": "1. Copy the Tooth Mov. Table"
+    },
+    {
+      "level": "H3",
+      "text": "2. Paste and run the table"
+    },
+    {
+      "level": "H3",
+      "text": "3. Send the A.I. aided comments to the CAD designer"
+    },
+    {
+      "level": "H3",
+      "text": "NOW SUPPORTS FUNCTIONAL TREATMENTS"
+    },
+    {
+      "level": "H2",
+      "text": "A.I. Attachment Interface"
+    },
+    {
+      "level": "H3",
+      "text": "1. Copy the Tooth Mov. Table"
+    },
+    {
+      "level": "H3",
+      "text": "2. Paste and run the table"
+    },
+    {
+      "level": "H3",
+      "text": "3. Place the suggested attachments on your plan"
+    },
+    {
+      "level": "H2",
+      "text": "A.I. Sequencer"
+    },
+    {
+      "level": "H3",
+      "text": "1. Copy the Tooth Mov. Table"
+    },
+    {
+      "level": "H3",
+      "text": "2. Paste and run the table"
+    },
+    {
+      "level": "H3",
+      "text": "3. Verify / Modify the plan according to the A.I. aided staging and make a note of the anchorage suggestions"
+    }
+  ],
+  "controls": [
+    {
+      "tag": "A",
+      "role": null,
+      "label": null,
+      "href": "https://www.pmceasy.com",
+      "type": null
+    },
+    {
+      "tag": "A",
+      "role": null,
+      "label": "Companion",
+      "href": "https://www.pmceasy.com/companion",
+      "type": null
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "label": "More Companion pages",
+      "type": null
+    },
+    {
+      "tag": "A",
+      "role": null,
+      "label": "How To",
+      "href": "https://www.pmceasy.com/how-to",
+      "type": null
+    },
+    {
+      "tag": "A",
+      "role": null,
+      "label": "Start Planning",
+      "href": "https://www.pmceasy.com/start-planning",
+      "type": null
+    },
+    {
+      "tag": "A",
+      "role": null,
+      "label": "Plan My Case",
+      "href": "http://www.planmycase.com",
+      "type": null
+    },
+    {
+      "tag": "A",
+      "role": null,
+      "label": "About",
+      "href": "https://www.pmceasy.com/about",
+      "type": null
+    },
+    {
+      "tag": "A",
+      "role": null,
+      "label": "Pricing",
+      "href": "https://www.pmceasy.com/pricing-plans/pricing",
+      "type": null
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "label": "Log In",
+      "type": null
+    },
+    {
+      "tag": "A",
+      "role": null,
+      "label": "START PLANNING",
+      "href": "https://www.pmceasy.com/start-planning",
+      "type": null
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "label": "request a demo ",
+      "type": "button"
+    },
+    {
+      "tag": "INPUT",
+      "role": null,
+      "label": "First name",
+      "type": "text"
+    },
+    {
+      "tag": "INPUT",
+      "role": null,
+      "label": "Last name",
+      "type": "text"
+    },
+    {
+      "tag": "INPUT",
+      "role": null,
+      "label": "Email",
+      "type": "email"
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "label": "Phone. Phone. Select a country code",
+      "type": "button"
+    },
+    {
+      "tag": "INPUT",
+      "role": null,
+      "label": "Phone. Phone",
+      "type": "phone"
+    },
+    {
+      "tag": "INPUT",
+      "role": null,
+      "label": null,
+      "type": "checkbox"
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "label": "Submit",
+      "type": "button"
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "label": "Close",
+      "type": "button"
+    },
+    {
+      "tag": "A",
+      "role": null,
+      "label": "Read More",
+      "href": "https://www.pmceasy.com/read-more",
+      "type": null
+    },
+    {
+      "tag": "A",
+      "role": null,
+      "label": null,
+      "href": "https://www.pmceasy.com/read-more",
+      "type": null
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "label": "Previous",
+      "type": null
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "label": "Next",
+      "type": null
+    },
+    {
+      "tag": "A",
+      "role": null,
+      "label": "Section1SlideShowItem1MediaImage1RuleNoFaceImage",
+      "href": "./#comp-mlflygci4",
+      "type": null
+    },
+    {
+      "tag": "A",
+      "role": null,
+      "label": "Section1SlideShowItem2MediaImage1RuleNoFaceImage",
+      "href": "./#comp-mlflygcn8",
+      "type": null
+    },
+    {
+      "tag": "A",
+      "role": null,
+      "label": "Section1SlideShowItem3MediaImage1RuleNoFaceImage",
+      "href": "./#comp-mlflygcs",
+      "type": null
+    },
+    {
+      "tag": "A",
+      "role": null,
+      "label": "info@planmycase.com",
+      "href": "mailto:info@planmycase.com",
+      "type": null
+    },
+    {
+      "tag": "A",
+      "role": null,
+      "label": "www.planmycase.com",
+      "href": "http://www.planmycase.com",
+      "type": null
+    },
+    {
+      "tag": "A",
+      "role": null,
+      "label": "Instagram",
+      "href": "https://www.instagram.com/planmycase/?hl=en",
+      "type": null
+    },
+    {
+      "tag": "A",
+      "role": null,
+      "label": "LinkedIn",
+      "href": "https://tr.linkedin.com/in/arda-dingiloglu-21880b67",
+      "type": null
+    },
+    {
+      "tag": "A",
+      "role": null,
+      "label": "YouTube",
+      "href": "https://www.youtube.com/channel/UCibaxZc4yIFkitH9zHmy3eg",
+      "type": null
+    },
+    {
+      "tag": "A",
+      "role": null,
+      "label": "Terms",
+      "href": "https://www.pmceasy.com/terms-conditions",
+      "type": null
+    },
+    {
+      "tag": "A",
+      "role": null,
+      "label": "Privacy",
+      "href": "https://www.pmceasy.com/privacy-policy",
+      "type": null
+    }
+  ],
+  "images": [
+    {
+      "alt": "",
+      "src": "https://static.wixstatic.com/media/3e6ccf_a3ebf6fb1a6e4bb9b017c65d44b1ca3d~mv2.png/v1/fill/w_58,h_57,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/3e6ccf_a3ebf6fb1a6e4bb9b017c65d44b1ca3d~mv2.png"
+    },
+    {
+      "alt": "hero1.jpeg",
+      "src": "https://static.wixstatic.com/media/3e6ccf_bd2393fbf81148c5b05d5158242c21dc~mv2.jpeg/v1/fill/w_1440,h_825,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/3e6ccf_bd2393fbf81148c5b05d5158242c21dc~mv2.jpeg"
+    },
+    {
+      "alt": "",
+      "src": "https://static.parastorage.com/services/linguist-flags/1.1005.0/assets/flags/square/USA.png"
+    },
+    {
+      "alt": "meshblue.jpeg",
+      "src": "https://static.wixstatic.com/media/3e6ccf_838133d897ce4d43b0386e67344918ab~mv2.jpeg/v1/fill/w_720,h_984,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/3e6ccf_838133d897ce4d43b0386e67344918ab~mv2.jpeg"
+    },
+    {
+      "alt": "TMT.jpeg",
+      "src": "https://static.wixstatic.com/media/3e6ccf_5f290142e1414e518171635642f3a08b~mv2.jpeg/v1/fill/w_297,h_170,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/TMT.jpeg"
+    },
+    {
+      "alt": "TMT paste.jpg",
+      "src": "https://static.wixstatic.com/media/3e6ccf_54fade0cfea04ce394fb18748155aae6~mv2.jpg/v1/fill/w_297,h_170,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/TMT%20paste.jpg"
+    },
+    {
+      "alt": "comments.png",
+      "src": "https://static.wixstatic.com/media/3e6ccf_38c1c632f3f64d198199c70bc94ab24a~mv2.png/v1/fill/w_297,h_170,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/comments.png"
+    },
+    {
+      "alt": "functional.png",
+      "src": "https://static.wixstatic.com/media/3e6ccf_8cfe0f31111c4943b6f6aca7e323d53c~mv2.png/v1/fill/w_297,h_143,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/functional.png"
+    },
+    {
+      "alt": "TMT.jpeg",
+      "src": "https://static.wixstatic.com/media/3e6ccf_5f290142e1414e518171635642f3a08b~mv2.jpeg/v1/fill/w_297,h_170,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/TMT.jpeg"
+    },
+    {
+      "alt": "aiai paste.png",
+      "src": "https://static.wixstatic.com/media/3e6ccf_66e4c6964d59404c84a20a3cbc3e6808~mv2.png/v1/fill/w_297,h_170,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/aiai%20paste.png"
+    },
+    {
+      "alt": "aiai output.png",
+      "src": "https://static.wixstatic.com/media/3e6ccf_c8d85f7deea64cb9a6450c92c3a4de64~mv2.png/v1/fill/w_297,h_170,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/aiai%20output.png"
+    },
+    {
+      "alt": "TMT.jpeg",
+      "src": "https://static.wixstatic.com/media/3e6ccf_5f290142e1414e518171635642f3a08b~mv2.jpeg/v1/fill/w_297,h_170,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/TMT.jpeg"
+    },
+    {
+      "alt": "ai sequencer.png",
+      "src": "https://static.wixstatic.com/media/3e6ccf_29beda4ea67f4943975f6117063df82c~mv2.png/v1/fill/w_297,h_170,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/ai%20sequencer.png"
+    },
+    {
+      "alt": "ai sequencer output.png",
+      "src": "https://static.wixstatic.com/media/3e6ccf_040682902f9c4662b8bd6b610942923c~mv2.png/v1/fill/w_297,h_170,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/ai%20sequencer%20output.png"
+    },
+    {
+      "alt": "",
+      "src": "https://static.wixstatic.com/media/3e6ccf_a3ebf6fb1a6e4bb9b017c65d44b1ca3d~mv2.png/v1/fill/w_90,h_89,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/3e6ccf_a3ebf6fb1a6e4bb9b017c65d44b1ca3d~mv2.png"
+    },
+    {
+      "alt": "Instagram",
+      "src": "https://static.wixstatic.com/media/01c3aff52f2a4dffa526d7a9843d46ea.png/v1/fill/w_69,h_69,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/01c3aff52f2a4dffa526d7a9843d46ea.png"
+    },
+    {
+      "alt": "LinkedIn",
+      "src": "https://static.wixstatic.com/media/6ea5b4a88f0b4f91945b40499aa0af00.png/v1/fill/w_69,h_69,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/6ea5b4a88f0b4f91945b40499aa0af00.png"
+    },
+    {
+      "alt": "YouTube",
+      "src": "https://static.wixstatic.com/media/78aa2057f0cb42fbbaffcbc36280a64a.png/v1/fill/w_69,h_69,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/78aa2057f0cb42fbbaffcbc36280a64a.png"
+    },
+    {
+      "alt": "logo_band_colored_3x.png",
+      "src": "https://static.wixstatic.com/media/3e6ccf_fe4281c239e14843aa2f6da77dcda92c~mv2.png/v1/fill/w_381,h_28,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo_band_colored_3x.png"
+    }
+  ],
+  "script_urls": [
+    "https://static.parastorage.com/unpkg/core-js-bundle@3.2.1/minified.js",
+    "https://static.parastorage.com/unpkg/focus-within-polyfill@5.0.9/dist/focus-within-polyfill.js",
+    "https://static.parastorage.com/services/form-app/1.3356.0/client-viewer/4660.chunk.min.js",
+    "https://static.parastorage.com/services/form-app/1.3356.0/client-viewer/8509.chunk.min.js",
+    "https://static.parastorage.com/services/form-app/1.3356.0/client-viewer/8174.chunk.min.js",
+    "https://static.parastorage.com/services/form-app/1.3356.0/client-viewer/5995.chunk.min.js",
+    "https://static.parastorage.com/services/form-app/1.3356.0/client-viewer/3931.chunk.min.js",
+    "https://static.parastorage.com/services/form-app/1.3356.0/client-viewer/4308.chunk.min.js",
+    "https://static.parastorage.com/services/form-app/1.3356.0/client-viewer/7757.chunk.min.js",
+    "https://static.parastorage.com/services/form-app/1.3356.0/client-viewer/form-app-contacts-phone.chunk.min.js",
+    "https://static.parastorage.com/services/form-app/1.3356.0/client-viewer/6087.chunk.min.js",
+    "https://static.parastorage.com/services/form-app/1.3356.0/client-viewer/form-app-checkbox.chunk.min.js",
+    "https://static.parastorage.com/services/form-app/1.3356.0/client-viewer/1693.chunk.min.js",
+    "https://static.parastorage.com/services/form-app/1.3356.0/client-viewer/form-app-wix-ricos-viewer.chunk.min.js",
+    "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/wix-image-kit.dc28718f.bundle.min.js",
+    "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/htmlparser2-xml.4f17eecc.bundle.min.js",
+    "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt[SkipToContentButton].d886e6d7.bundle.min.js",
+    "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt[LanguageSelector].396cf3b2.bundle.min.js",
+    "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt_bootstrap-responsive.1bfc1371.bundle.min.js",
+    "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt[AppWidget_Classic].c3a0ae5c.bundle.min.js",
+    "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt[MeshGroup].012bc6b1.bundle.min.js",
+    "https://static.parastorage.com/unpkg/requirejs-bolt@2.3.6/requirejs.min.js",
+    "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt[Container_DefaultAreaSkin].3eaf4c42.bundle.min.js",
+    "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt[SlideShowContainer].128d4d0e.bundle.min.js",
+    "https://static.parastorage.com/services/cookie-consent-banner-for-uou/1.871.0//app.bundle.min.js",
+    "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt_bootstrap.da83ff7e.bundle.min.js",
+    "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt[HeaderContainer_DefaultWithFillLayers].576d702c.bundle.min.js",
+    "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt[StripColumnsContainer_Default].119e0578.bundle.min.js",
+    "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt_bootstrap-classic.f10d1f20.bundle.min.js",
+    "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt[LoginSocialBar].cb3aa151.bundle.min.js",
+    "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt[ClassicSection].95b2f0f2.bundle.min.js",
+    "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt[StylableButton_Default].773a433c.bundle.min.js",
+    "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt[StripColumnsContainer_DesignedStrip].68bb5b58.bundle.min.js",
+    "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt[Column_DesignedColumn].3fc62da9.bundle.min.js",
+    "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt[SlideShowSlide].fb5fc58e.bundle.min.js",
+    "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt[WPhoto_RoundPhoto].920b774e.bundle.min.js",
+    "https://static.parastorage.com/services/form-app/1.3356.0/FormViewerWidgetNoCss.bundle.min.js",
+    "https://browser.sentry-cdn.com/7.120.3/modulemetadata.es5.min.js",
+    "https://static.parastorage.com/unpkg/react@18.3.1/umd/react.production.min.js",
+    "https://static.parastorage.com/unpkg/react-dom@18.3.1/umd/react-dom.production.min.js",
+    "https://static.parastorage.com/unpkg/lodash@4.18.1/lodash.min.js",
+    "https://static.parastorage.com/services/wix-thunderbolt/dist/thunderbolt-commons.119e7569.bundle.min.js",
+    "https://static.parastorage.com/services/wix-thunderbolt/dist/main.1f64d56d.bundle.min.js",
+    "https://static.parastorage.com/services/wix-thunderbolt/dist/main.renderer.b325a058.bundle.min.js",
+    "https://static.parastorage.com/services/wix-thunderbolt/dist/browser-deprecation.bundle.es5.js",
+    "https://static.parastorage.com/services/tag-manager-client/1.1075.0/siteTags.bundle.min.js"
+  ]
+}

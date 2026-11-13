@@ -1,0 +1,50 @@
+{
+  "additionalProperties": false,
+  "description": "Evidence checklist, never a clinical predicate, recommendation or Finding.",
+  "properties": {
+    "rule_id": {
+      "title": "Rule Id",
+      "type": "string"
+    },
+    "measurement_id": {
+      "title": "Measurement Id",
+      "type": "string"
+    },
+    "structural_fields_satisfied": {
+      "title": "Structural Fields Satisfied",
+      "type": "boolean"
+    },
+    "missing_required_fields": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Missing Required Fields",
+      "type": "array"
+    },
+    "predicate_result": {
+      "default": null,
+      "title": "Predicate Result",
+      "type": "null"
+    },
+    "production_enabled": {
+      "const": false,
+      "default": false,
+      "title": "Production Enabled",
+      "type": "boolean"
+    },
+    "approval_status": {
+      "const": "NOT APPROVED",
+      "default": "NOT APPROVED",
+      "title": "Approval Status",
+      "type": "string"
+    }
+  },
+  "required": [
+    "rule_id",
+    "measurement_id",
+    "structural_fields_satisfied",
+    "missing_required_fields"
+  ],
+  "title": "CandidateInputReadiness",
+  "type": "object"
+}

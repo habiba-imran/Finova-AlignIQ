@@ -1,0 +1,30 @@
+{
+  "title": "PMCEASY",
+  "headings": [],
+  "controls": [],
+  "images": [],
+  "script_urls": [
+    "https://static.parastorage.com/unpkg/core-js-bundle@3.2.1/minified.js",
+    "https://static.parastorage.com/unpkg/focus-within-polyfill@5.0.9/dist/focus-within-polyfill.js",
+    "https://www.google.com/recaptcha/enterprise.js",
+    "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/wix-image-kit.dc28718f.bundle.min.js",
+    "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/htmlparser2-xml.4f17eecc.bundle.min.js",
+    "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt[MeshGroup].012bc6b1.bundle.min.js",
+    "https://static.parastorage.com/services/wix-thunderbolt/dist/group_11.eeaeabf5.chunk.min.js",
+    "https://static.parastorage.com/services/wix-thunderbolt/dist/mobileFullScreen.6c6d1392.chunk.min.js",
+    "https://static.parastorage.com/unpkg/requirejs-bolt@2.3.6/requirejs.min.js",
+    "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt[SkipToContentButton].d886e6d7.bundle.min.js",
+    "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt[LanguageSelector].396cf3b2.bundle.min.js",
+    "https://static.parastorage.com/services/cookie-consent-banner-for-uou/1.871.0//app.bundle.min.js",
+    "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt_bootstrap-responsive.1bfc1371.bundle.min.js",
+    "https://browser.sentry-cdn.com/7.120.3/modulemetadata.es5.min.js",
+    "https://static.parastorage.com/unpkg/react@18.3.1/umd/react.production.min.js",
+    "https://static.parastorage.com/unpkg/react-dom@18.3.1/umd/react-dom.production.min.js",
+    "https://static.parastorage.com/unpkg/lodash@4.18.1/lodash.min.js",
+    "https://static.parastorage.com/services/wix-thunderbolt/dist/thunderbolt-commons.119e7569.bundle.min.js",
+    "https://static.parastorage.com/services/wix-thunderbolt/dist/main.1f64d56d.bundle.min.js",
+    "https://static.parastorage.com/services/wix-thunderbolt/dist/main.renderer.b325a058.bundle.min.js",
+    "https://static.parastorage.com/services/wix-thunderbolt/dist/browser-deprecation.bundle.es5.js",
+    "https://static.parastorage.com/services/tag-manager-client/1.1075.0/siteTags.bundle.min.js"
+  ]
+}

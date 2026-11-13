@@ -1,22 +1,26 @@
 # Finova AlignIQ
 
-Phase 4: deterministic-first generic TMT parsing, structural quality assessment, automatic validated recovery for controlled synthetic development fixtures, and the existing descriptive DRAFT review/report workflow. **Prototype — not for clinical use. Do not paste real patient data.**
+Phase 5: audited 96-rule inventory, deterministic engineering/descriptive checks, explicit required-data guards and clinical-policy preparation, integrated with the Phase 4 parser and Phase 3 DRAFT reports. **Prototype — not for clinical use. Do not paste real patient data.**
 
 The React/TypeScript/Vite/Tailwind frontend preserves raw input and submits it only through explicit actions after synthetic-data confirmation. Python/FastAPI/Pydantic returns exact Decimal evidence, traceable findings and draft reports. **Arbitrary pasted input never goes to Groq.** Parse Table may automatically recover a server-reproduced generated synthetic fixture only when development cloud testing is explicitly enabled. There is no second AI action or cloud checkbox. Accepted source associations are independently checked and can reach reviews/reports through a short-lived receipt, followed by the unchanged semantic gates. Comment generation retains its separate key and approved-wording validation. Clinical predicates remain disabled; no clinical recommendations, ML, authentication, database, patient-data persistence or Chrome extension is implemented.
 
-See [PARSER_PHASE4_REPORT.md](PARSER_PHASE4_REPORT.md) and [the Phase 4 architecture note](docs/PARSER_PHASE4_ARCHITECTURE.md) for the current contracts, exact formats/limits, independent gold, benchmark, live results and remaining restrictions. The oracle-mocked benchmark improves 96/240 to 240/240 positions; final live probes recovered 10/12, with the other positions quarantined. Neither result verifies a vendor.
+See [the Phase 5 implementation report](RULE_ENGINE_PHASE5_REPORT.md), [the complete 96-rule inventory](docs/RULE_ENGINE_PHASE5_INVENTORY.md), [the clinical approval register](docs/CLINICAL_RULE_APPROVAL_REGISTER.md) and [the feasibility matrix](docs/RULE_FEASIBILITY_MATRIX.md). There are **66 active engineering handlers/guards, 27 disabled clinical predicates and 3 deferred controls**. Active does not mean clinically approved. Extra tooth-group/status, pair, coverage and stage evidence currently has only a private, exact-input-bound TEST_ONLY library path. Public HTTP requests cannot authorize it or activate policies.
 
-See [PARSER_FINALIZATION_REPORT.md](PARSER_FINALIZATION_REPORT.md) for the historical parser-finalization work. Phase 4 replaces its two-example/manual-action/preview-only limitations in the normal intake pipeline. Earlier phase reports below record historical results.
+The standalone original 82-rule research document is unavailable in this checkout. The corrected v2 retains original-proposal trace paragraphs; those are historical context only. The independent audit and corrected v2 govern the inventory and behavior.
 
-See [the Phase 3 implementation report](REPORT_PHASE3.md) for the pipeline, configuration, API/schemas, changed files, examples, validation and limitations. Copy Report and Download Report (TXT) make explicit local exports with draft status, disclaimers and provenance.
+See [the Phase 4 report](docs/PARSER_PHASE4_REPORT.md) and [the Phase 4 architecture note](docs/PARSER_PHASE4_ARCHITECTURE.md) for the parser contracts, exact formats/limits, independent gold, benchmark, live results and remaining restrictions. The oracle-mocked benchmark improves 96/240 to 240/240 positions; final live probes recovered 10/12, with the other positions quarantined. Neither result verifies a vendor.
+
+See [PARSER_FINALIZATION_REPORT.md](docs/PARSER_FINALIZATION_REPORT.md) for the historical parser-finalization work. Phase 4 replaces its two-example/manual-action/preview-only limitations in the normal intake pipeline. Earlier phase reports below record historical results.
+
+See [the Phase 3 implementation report](docs/REPORT_PHASE3.md) for the pipeline, configuration, API/schemas, changed files, examples, validation and limitations. Copy Report and Download Report (TXT) make explicit local exports with draft status, disclaimers and provenance.
 
 **Vendor compatibility is unverified.** Generic structure/number recognition does not establish ClinCheck or SureSmile semantics. Existing parser canonical fields remain null. The new review endpoint returns unavailable movement assessments for unverified pasted input. Authentic vendor fixtures are still required before the audited vendor-release gate can close. Development observations use isolated TEST_ONLY evidence, never vendor mappings.
 
-See [Phase 2A architecture, exact rule dispositions, output examples and remaining gates](ENGINE_PHASE2A.md). Phase 3 does not activate Phase 2B/clinical policies or authorize an additional phase.
+See [Phase 2A architecture, exact rule dispositions, output examples and remaining gates](docs/ENGINE_PHASE2A.md). Phase 3 does not activate Phase 2B/clinical policies or authorize an additional phase.
 
-See [the Phase 1 architecture and contract](PARSER_PHASE1.md) for the schema, supported/unsupported formats, field states, engineering limits, decisions requiring review, and vendor verification checklist.
+See [the Phase 1 architecture and contract](docs/PARSER_PHASE1.md) for the schema, supported/unsupported formats, field states, engineering limits, decisions requiring review, and vendor verification checklist.
 
-Phase 1.5 added a separate offline/library semantic assessment, strict fixture/review contracts, read-only oracle verification and an **empty** code-controlled release registry. These remain unchanged, as do all existing schemas. See [the Phase 1.5 architecture and compatibility review](PARSER_PHASE1_5.md) and [the precise authentic-capture workflow/matrix](backend/vendor_verification/README.md). Authentic captures, independently reviewed vendor expected outputs and approved releases are all **zero**.
+Phase 1.5 added a separate offline/library semantic assessment, strict fixture/review contracts, read-only oracle verification and an **empty** code-controlled release registry. These remain unchanged, as do all existing schemas. See [the Phase 1.5 architecture and compatibility review](docs/PARSER_PHASE1_5.md) and [the precise authentic-capture workflow/matrix](backend/vendor_verification/README.md). Authentic captures, independently reviewed vendor expected outputs and approved releases are all **zero**.
 
 ## Deployment
 
@@ -255,7 +259,7 @@ Final Phase 1.5 validation: **192 backend tests passed** (all 120 existing tests
 
 Final checks: **288 backend tests**, **55 frontend tests**, **16 browser tests** and **production TypeScript/Vite build** passed. `pip check` and `git diff --check` passed. Browser tests used fresh backend startup and all four existing viewport sizes. Sandboxed startup stalled for browser checks and one final backend invocation; approved normal local execution passed the final complete suites. Existing upstream deprecation/color warnings remain non-failing. AST-only Graphify refresh completed without LLM extraction.
 
-The sole existing test scope change is expanding the exact route allowlist for the authorized observations endpoint. Parser and semantic algorithms, prior schema contracts and original documentation are unchanged. All 96 audit rule IDs are retained; clinical predicates are disabled, with R14 retained only as the audit-corrected abstention control. Reports are DRAFT only, with no sign-off action. Review has an explicit **512-position engineering limit** to bound output expansion; the parser's existing limits and full input retention remain unchanged. See [the complete implementation/disposition report](ENGINE_PHASE2A.md) for exact active, disabled and deferred IDs, architecture, changed files, structured examples, limitations and authentic-sample requirements.
+The sole existing test scope change is expanding the exact route allowlist for the authorized observations endpoint. Parser and semantic algorithms, prior schema contracts and original documentation are unchanged. All 96 audit rule IDs are retained; clinical predicates are disabled, with R14 retained only as the audit-corrected abstention control. Reports are DRAFT only, with no sign-off action. Review has an explicit **512-position engineering limit** to bound output expansion; the parser's existing limits and full input retention remain unchanged. See [the complete implementation/disposition report](docs/ENGINE_PHASE2A.md) for exact active, disabled and deferred IDs, architecture, changed files, structured examples, limitations and authentic-sample requirements.
 
 Vendor verification remains unavailable. No Phase 2B functionality has been started.
 
@@ -282,7 +286,7 @@ Then start/restart the backend using the existing command. The key and server sy
 
 Retries default to zero. At most one optional retry honors a valid short `Retry-After` on 429/503; longer/unknown waits, timeouts, malformed/unsafe output or missing settings fall back to templates. Every accepted phrase must exactly match an approved alternative for its finding; measured values, original signs/directions, context, uncertainty and provenance are rendered locally. No unrestricted LLM comments are accepted.
 
-**Real-patient transmission remains disabled with no environment/request override.** Vendor verification, approved privacy/data-handling controls and separately approved clinical policies remain open gates. No key setting activates them. Copy/download is local and explicit; Windows clipboard line endings may differ while TXT downloads preserve the server's UTF-8 text. See [REPORT_PHASE3.md](REPORT_PHASE3.md) for all settings, safeguards, schema details and limitations.
+**Real-patient transmission remains disabled with no environment/request override.** Vendor verification, approved privacy/data-handling controls and separately approved clinical policies remain open gates. No key setting activates them. Copy/download is local and explicit; Windows clipboard line endings may differ while TXT downloads preserve the server's UTF-8 text. See [REPORT_PHASE3.md](docs/REPORT_PHASE3.md) for all settings, safeguards, schema details and limitations.
 
 ## Historical Phase 3 final validation
 
@@ -327,7 +331,7 @@ Live results on 2026-11-13: comments **PASSED**, HTTP 200, **2.2139 s**, **531 t
 
 Final parser-finalization validation: **453 backend tests, 101 frontend tests, 32 browser tests and the TypeScript/production build passed**. Dependency/formatting checks passed; new desktop/mobile screens were inspected. The authentic-fixture verifier still returns `NO_AUTHENTIC_ORACLES` (Python exit 2). The graph was refreshed using AST extraction only. No clinical activation, vendor verification, deployment, commit or push was performed.
 
-## Current Phase 4 development and verification
+## Phase 4 parser development and verification
 
 Normal installation and two-terminal startup commands above are unchanged. Cloud recovery defaults to disabled. To intentionally enable generated-synthetic development recovery, use the existing private parser key `GROQ_API_KEY_2` and start the backend as follows; do not overwrite `.env.local` or the separate comment key:
 
@@ -369,3 +373,35 @@ Set-Location 'C:\Finova AlignIQ\backend'
 The Phase 4 report records the initial rejected probes as well as the final 10/12 recovery result. The 240/240 deterministic test comparison uses independently declared gold proposals under mocked transport and is explicitly not live model accuracy. Vendor verification, real-input privacy authorization and clinical-rule activation remain separate, uncompleted release gates.
 
 Phase 4 validation: **584 backend tests, 104 frontend tests, 40 browser tests, TypeScript and production build passed**. Dependency/formatting checks passed. The authentic-fixture gate still returns `NO_AUTHENTIC_ORACLES`; vendor mappings and clinical R predicates remain disabled. See the Phase 4 report for the supported formats, validation results and remaining requirements.
+
+## Phase 5 rule review and verification
+
+The UI now includes a collapsible 96-rule evaluation ledger, missing prerequisites, execution/implementation kind, approval status, literature IDs and field provenance. Descriptive programmed movements remain separate from unavailable clinical assessments. **DRAFT — Requires Orthodontist Review** and the absence of clinical approval remain visible. Copy Report and Download Report (TXT) are preserved.
+
+The [Phase 5 report](RULE_ENGINE_PHASE5_REPORT.md) includes the complete implementation matrix, dependencies/priorities, schema changes, additional-input designs, changed files and precise remaining blockers. All 27 clinical predicates remain disabled. D16, N11 and N14 remain deferred. Tooth-group/status, pairing, expected-coverage and stage positive examples use private, exact-input-bound TEST_ONLY evidence; no public request, environment setting or Groq output can grant clinical or semantic authorization. A READY audit disposition or an ACTIVE engineering guard is not clinical approval. No thresholds were populated.
+
+Rebuild documentation/schemas and run the complete checks in PowerShell:
+
+```powershell
+Set-Location 'C:\Finova AlignIQ\backend'
+.\.venv\Scripts\python.exe scripts\build_rule_catalog.py
+.\.venv\Scripts\python.exe scripts\export_schemas.py
+.\.venv\Scripts\python.exe scripts\build_phase5_artifacts.py
+.\.venv\Scripts\python.exe -m pytest -q
+.\.venv\Scripts\python.exe -m pip check
+
+Set-Location 'C:\Finova AlignIQ\frontend'
+npm ci
+npm test
+npm run build
+npm run test:e2e
+npm ls --depth=0
+npm audit --audit-level=high
+
+Set-Location 'C:\Finova AlignIQ'
+graphify update .
+```
+
+Current validation: **781 backend tests, 112 frontend tests, 40 browser tests, TypeScript and production build passed**. `pip check` passed; npm audit reports **0 vulnerabilities** after patching Vite to 7.3.8 and Vitest to 4.1.12. The AST-only graph update performs no LLM extraction. Existing upstream Starlette/httpx and test color-environment warnings remain non-failing. No live Groq call was needed for Phase 5.
+
+Inspect [the complete synthetic draft report](examples/phase5-synthetic-draft-report.txt) and [its finding JSON](examples/phase5-synthetic-finding.json). These are explicitly synthetic TEST_ONLY illustrations; they provide no vendor or clinical validation. Authentic captures/independent expected outputs, versioned vendor semantic releases, approved clinical policies and additional verified examination/geometry data remain required. Phase 5 stops here.

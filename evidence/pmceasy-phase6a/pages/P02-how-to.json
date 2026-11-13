@@ -1,0 +1,167 @@
+{
+  "title": "PMCEASY",
+  "headings": [
+    {
+      "level": "H1",
+      "text": "How To Use\nThe A.I. Companion"
+    }
+  ],
+  "controls": [
+    {
+      "tag": "A",
+      "role": null,
+      "label": null,
+      "href": "https://www.pmceasy.com",
+      "type": null
+    },
+    {
+      "tag": "A",
+      "role": null,
+      "label": "Companion",
+      "href": "https://www.pmceasy.com/companion",
+      "type": null
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "label": "More Companion pages",
+      "type": null
+    },
+    {
+      "tag": "A",
+      "role": null,
+      "label": "How To",
+      "href": "https://www.pmceasy.com/how-to",
+      "type": null
+    },
+    {
+      "tag": "A",
+      "role": null,
+      "label": "Start Planning",
+      "href": "https://www.pmceasy.com/start-planning",
+      "type": null
+    },
+    {
+      "tag": "A",
+      "role": null,
+      "label": "Plan My Case",
+      "href": "http://www.planmycase.com",
+      "type": null
+    },
+    {
+      "tag": "A",
+      "role": null,
+      "label": "About",
+      "href": "https://www.pmceasy.com/about",
+      "type": null
+    },
+    {
+      "tag": "A",
+      "role": null,
+      "label": "Pricing",
+      "href": "https://www.pmceasy.com/pricing-plans/pricing",
+      "type": null
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "label": "Log In",
+      "type": null
+    },
+    {
+      "tag": "A",
+      "role": null,
+      "label": "START PLANNING NOW!",
+      "href": "https://www.pmceasy.com/start-planning",
+      "type": null
+    },
+    {
+      "tag": "A",
+      "role": null,
+      "label": "info@planmycase.com",
+      "href": "mailto:info@planmycase.com",
+      "type": null
+    },
+    {
+      "tag": "A",
+      "role": null,
+      "label": "www.planmycase.com",
+      "href": "http://www.planmycase.com",
+      "type": null
+    },
+    {
+      "tag": "A",
+      "role": null,
+      "label": "Instagram",
+      "href": "https://www.instagram.com/planmycase/?hl=en",
+      "type": null
+    },
+    {
+      "tag": "A",
+      "role": null,
+      "label": "LinkedIn",
+      "href": "https://tr.linkedin.com/in/arda-dingiloglu-21880b67",
+      "type": null
+    },
+    {
+      "tag": "A",
+      "role": null,
+      "label": "YouTube",
+      "href": "https://www.youtube.com/channel/UCibaxZc4yIFkitH9zHmy3eg",
+      "type": null
+    },
+    {
+      "tag": "A",
+      "role": null,
+      "label": "Terms",
+      "href": "https://www.pmceasy.com/terms-conditions",
+      "type": null
+    },
+    {
+      "tag": "A",
+      "role": null,
+      "label": "Privacy",
+      "href": "https://www.pmceasy.com/privacy-policy",
+      "type": null
+    }
+  ],
+  "images": [
+    {
+      "alt": "",
+      "src": "https://static.wixstatic.com/media/3e6ccf_a3ebf6fb1a6e4bb9b017c65d44b1ca3d~mv2.png/v1/fill/w_58,h_57,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/3e6ccf_a3ebf6fb1a6e4bb9b017c65d44b1ca3d~mv2.png"
+    },
+    {
+      "alt": "",
+      "src": "https://static.wixstatic.com/media/3e6ccf_a3ebf6fb1a6e4bb9b017c65d44b1ca3d~mv2.png/v1/fill/w_90,h_89,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/3e6ccf_a3ebf6fb1a6e4bb9b017c65d44b1ca3d~mv2.png"
+    },
+    {
+      "alt": "Instagram",
+      "src": "https://static.wixstatic.com/media/01c3aff52f2a4dffa526d7a9843d46ea.png/v1/fill/w_69,h_69,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/01c3aff52f2a4dffa526d7a9843d46ea.png"
+    },
+    {
+      "alt": "LinkedIn",
+      "src": "https://static.wixstatic.com/media/6ea5b4a88f0b4f91945b40499aa0af00.png/v1/fill/w_69,h_69,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/6ea5b4a88f0b4f91945b40499aa0af00.png"
+    },
+    {
+      "alt": "YouTube",
+      "src": "https://static.wixstatic.com/media/78aa2057f0cb42fbbaffcbc36280a64a.png/v1/fill/w_69,h_69,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/78aa2057f0cb42fbbaffcbc36280a64a.png"
+    },
+    {
+      "alt": "logo_band_colored_3x.png",
+      "src": "https://static.wixstatic.com/media/3e6ccf_fe4281c239e14843aa2f6da77dcda92c~mv2.png/v1/fill/w_381,h_28,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo_band_colored_3x.png"
+    }
+  ],
+  "script_urls": [
+    "https://static.parastorage.com/unpkg/core-js-bundle@3.2.1/minified.js",
+    "https://static.parastorage.com/unpkg/focus-within-polyfill@5.0.9/dist/focus-within-polyfill.js",
+    "https://browser.sentry-cdn.com/7.120.3/modulemetadata.es5.min.js",
+    "https://static.parastorage.com/unpkg/react@18.3.1/umd/react.production.min.js",
+    "https://static.parastorage.com/unpkg/react-dom@18.3.1/umd/react-dom.production.min.js",
+    "https://static.parastorage.com/unpkg/lodash@4.18.1/lodash.min.js",
+    "https://static.parastorage.com/services/wix-thunderbolt/dist/thunderbolt-commons.119e7569.bundle.min.js",
+    "https://static.parastorage.com/services/wix-thunderbolt/dist/main.1f64d56d.bundle.min.js",
+    "https://static.parastorage.com/services/wix-thunderbolt/dist/main.renderer.b325a058.bundle.min.js",
+    "https://static.parastorage.com/services/wix-thunderbolt/dist/browser-deprecation.bundle.es5.js",
+    "https://static.parastorage.com/services/tag-manager-client/1.1075.0/siteTags.bundle.min.js"
+  ]
+}

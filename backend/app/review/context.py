@@ -38,7 +38,7 @@ class PairedTeeth(EvidenceContract):
 
 class ExpectedCoverage(EvidenceContract):
     canonical_tooth_id: str
-    expected_axes: tuple[str, ...]
+    expected_axes: tuple[str, ...] = Field(min_length=1)
     evidence_ref: str = Field(min_length=1)
 
 
@@ -78,6 +78,10 @@ class TestRuleContext(EvidenceContract):
         ids=[t.canonical_tooth_id for t in self.teeth]
         if len(ids)!=len(set(ids)): raise ValueError("DUPLICATE_TOOTH_CONTEXT")
         if any(p.left_id==p.right_id for p in self.pairs): raise ValueError("PAIR_REQUIRES_DISTINCT_TEETH")
+        participants=[(tooth,p.axis) for p in self.pairs for tooth in (p.left_id,p.right_id)]
+        if len(participants)!=len(set(participants)): raise ValueError("CONFLICTING_PAIR_CONTEXT")
+        coverage=[(c.canonical_tooth_id,axis) for c in self.coverage for axis in c.expected_axes]
+        if len(coverage)!=len(set(coverage)): raise ValueError("DUPLICATE_COVERAGE_CONTEXT")
         return self
 
 

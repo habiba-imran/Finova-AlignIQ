@@ -39,7 +39,8 @@ for m in re.finditer(r'\*\*(N\d{2}) — (.*?)\.\*\* ([^\n]+)',section):
         original_trace='Additional safeguard, not one of the legacy 82 proposals.',migration=clean(correction)))
 expected={f'{p}{i:02}' for p,n in [('G',18),('D',16),('R',16),('T',8),('A',6),('H',12),('L',6),('N',14)] for i in range(1,n+1)}
 if {r['rule_id'] for r in records}!=expected or len(records)!=96: raise ValueError('INCOMPLETE_CATALOG')
-output={'source_spec_sha256':sha256(spec.read_bytes()).hexdigest(),'source_audit_sha256':sha256(audit.read_bytes()).hexdigest(),
+output={'source_hash_basis':'UTF8_DOCUMENT_TEXT_WITH_LF_NEWLINES; not an authentic clipboard evidence hash',
+        'source_spec_sha256':sha256(text.encode('utf-8')).hexdigest(),'source_audit_sha256':sha256(audit_text.encode('utf-8')).hexdigest(),
         'original_v1_document':'UNAVAILABLE_STANDALONE; v2 original-trace paragraphs only','rules':sorted(records,key=lambda r:r['rule_id'])}
 (ROOT/'backend/app/review/catalog.json').write_text(json.dumps(output,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
 print('CORRECTED_CATALOG: 96 exact IDs; audit dispositions checked; no clinical policy imported.')

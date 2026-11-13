@@ -9,6 +9,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from app.domain.models import ParseResult, RawTMTSubmission  # noqa: E402
 from app.semantics.models import FixtureExpectedOutput, FixtureManifest, SemanticAssessment  # noqa: E402
 from app.review.models import DraftReview, ReviewSubmission, RuleDefinition  # noqa: E402
+from app.review.clinical import ClinicalPreparation, CandidateInputReadiness  # noqa: E402
+from app.review.context import AdditionalInputRequirements, TestRuleContext  # noqa: E402
 from app.reports.models import FinalDraftReport, ReportSubmission, WordingBatch  # noqa: E402
 from app.parser.contracts import AssistedSubmission, AutomaticParseResult, StructuralProposal, PipelineSubmission, RecoveryProposal, SyntheticFixture  # noqa: E402
 
@@ -23,6 +25,10 @@ for name, model, mode in [
     ("review-request.v1.json", ReviewSubmission, "validation"),
     ("draft-review.v1.json", DraftReview, "serialization"),
     ("rule-definition.v1.json", RuleDefinition, "serialization"),
+    ("clinical-preparation.v1.json", ClinicalPreparation, "serialization"),
+    ("candidate-input-readiness.v1.json", CandidateInputReadiness, "serialization"),
+    ("additional-input-requirements.v1.json", AdditionalInputRequirements, "serialization"),
+    ("test-only-rule-context.v1.json", TestRuleContext, "validation"),
     ("report-request.v1.json", ReportSubmission, "validation"),
     ("final-draft-report.v1.json", FinalDraftReport, "serialization"),
     ("groq-wording.v1.json", WordingBatch, "validation"),

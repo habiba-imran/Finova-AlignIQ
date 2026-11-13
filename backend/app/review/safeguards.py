@@ -132,7 +132,8 @@ def apply_output_safeguards(findings: list[Finding], authorized: dict[str, Obser
             data = prior.model_dump()
             data.update(triggering_rules=tuple(RuleRef(rule_id=rid) for rid in sorted({r.rule_id for r in prior.triggering_rules + f.triggering_rules})),
                         input_refs=tuple(sorted(set(prior.input_refs + f.input_refs))),
-                        evidence_refs=tuple(sorted(set(prior.evidence_refs + f.evidence_refs))))
+                        evidence_refs=tuple(sorted(set(prior.evidence_refs + f.evidence_refs))),
+                        evidence_ids=tuple(sorted(set(prior.evidence_ids + f.evidence_ids))))
             merged[key] = Finding.model_validate(data)
         else:
             merged[key] = f

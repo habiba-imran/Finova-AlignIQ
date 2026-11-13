@@ -62,7 +62,7 @@ def preparation(rid: str) -> ClinicalPreparation:
     impossible=rid.startswith('T') or rid in {'R13','R16','A01','A02','A03','A04'}
     classification='WITHHOLDING_ONLY' if withholding else 'UNSUPPORTED_INTERACTION' if rid=='R12' else 'NOT_TMT_EVALUABLE' if impossible else 'EXTRA_CONTEXT_REQUIRED' if extra else 'POLICY_REQUIRED'
     inputs=AdditionalInputRequirements(
-        stage_sequence=rid.startswith('T') or rid in {'R13','A01','A02','A04'},
+        stage_sequence=rid.startswith('T') or rid in {'R10','R13','R15','A01','A02','A04'},
         attachment_tooth_surface_stage_map=rid.startswith('A') or rid=='R15',
         initial_final_crown_root_geometry=rid in {'R07','R09','T02','T06','T08','A05'},
         coordinate_frame_and_validated_operations=rid in {'T02','T06','T08'},
@@ -75,6 +75,50 @@ def preparation(rid: str) -> ClinicalPreparation:
     if rid in {'R12','T05'}: parameters+=('validated_interaction_matrix',)
     if rid=='T02': parameters+=('composition_operation','numeric_tolerance',)
     return ClinicalPreparation(rule_id=rid,classification=classification,required_fields=REQUIREMENTS[rid],unapproved_parameters=parameters,additional_inputs=inputs)
+
+
+# Structural preconditions only. No tooth-number lookup, vendor sign mapping or cutoff.
+MOVEMENT_REQUIREMENTS = {
+    'R01': (('ROTATION',), ('CANINE','PREMOLAR'), ()),
+    'R02': (('ROTATION',), ('INCISOR','CANINE','PREMOLAR','MOLAR'), ()),
+    'R03': (('EXTRUSION','VERTICAL'), ('INCISOR','CANINE'), ('EXTRUSION',)),
+    'R04': (('EXTRUSION','VERTICAL'), ('PREMOLAR','MOLAR'), ('EXTRUSION',)),
+    'R05': (('INTRUSION','VERTICAL'), ('INCISOR',), ('INTRUSION',)),
+    'R06': (('INTRUSION','VERTICAL'), ('INCISOR','CANINE','PREMOLAR','MOLAR'), ('INTRUSION',)),
+    'R07': (('INCLINATION',), ('INCISOR',), ()),
+    'R08': (('ANGULATION',), ('INCISOR','CANINE','PREMOLAR','MOLAR'), ()),
+    'R09': (('BUCCOLINGUAL',), ('PREMOLAR','MOLAR'), ()),
+    'R10': (('MESIODISTAL',), ('MOLAR',), ('DISTAL',)),
+    'R11': (('MESIODISTAL',), ('MOLAR',), ('MESIAL',)),
+}
+
+
+class CandidateInputReadiness(EvidenceContract):
+    """Evidence checklist, never a clinical predicate, recommendation or Finding."""
+    rule_id: str
+    measurement_id: str
+    structural_fields_satisfied: bool
+    missing_required_fields: tuple[str, ...]
+    predicate_result: None = None
+    production_enabled: Literal[False] = False
+    approval_status: Literal['NOT APPROVED'] = 'NOT APPROVED'
+
+
+def inspect_candidate_inputs(rid: str, observation: ObservedMeasurement) -> CandidateInputReadiness:
+    if rid not in MOVEMENT_REQUIREMENTS: raise ValueError('NO_TMT_MOVEMENT_PRECONDITIONS')
+    v={c.name:c.canonical_value for c in observation.components}
+    axes,groups,directions=MOVEMENT_REQUIREMENTS[rid]
+    structural=[]
+    if v.get('axis') not in axes: structural.append('rule_specific_movement_axis')
+    if observation.tooth_group not in groups or not observation.additional_evidence_refs:
+        structural.append('independently_verified_tooth_group')
+    if directions and v.get('direction') not in directions: structural.append('rule_specific_direction')
+    if observation.magnitude.is_zero(): structural.append('nonzero_programmed_movement')
+    # No anatomical arch identity is inferred from an opaque or vendor identifier.
+    if rid in {'R05','R10'}: structural.append('independently_verified_lower_or_upper_arch_identity')
+    missing=tuple(sorted(set(structural+list(REQUIREMENTS[rid])+['orthodontist_approved_policy'])))
+    return CandidateInputReadiness(rule_id=rid,measurement_id=observation.measurement_id,
+        structural_fields_satisfied=not structural,missing_required_fields=missing)
 
 
 class IllustrativePolicy(EvidenceContract):

@@ -1,0 +1,126 @@
+{
+  "date": "2026-11-14 Asia/Karachi",
+  "scope": "In-process library/model synthetic probes, not HTTP/browser tests; no external provider requests",
+  "rule_counts": {
+    "DISABLED": 27,
+    "ACTIVE": 66,
+    "DEFERRED": 3
+  },
+  "cases": {
+    "tabs_rows": {
+      "raw_sha256": "5f908e96905fe05e62790c5c35f7e2cf6bc74e546056f5d2005926a581c5abee",
+      "parse_status": "PARSED_UNVERIFIED",
+      "orientation": "TEETH_IN_ROWS",
+      "raw_preserved": true,
+      "measurements": 2,
+      "lexical_decimals": [
+        "-1.2300",
+        "0.00"
+      ],
+      "canonical_axes": [
+        null,
+        null
+      ],
+      "engine_version": "0.5.0",
+      "domain": "UNVERIFIED",
+      "eligible_positions": 0,
+      "ledger_records": 96,
+      "report_domain": "UNVERIFIED",
+      "report_mode": "STANDARD_TEMPLATES",
+      "report_reason": "NO_ELIGIBLE_FINDINGS",
+      "provider_attempts": 0,
+      "comment_sections": {
+        "UNAVAILABLE": 50
+      },
+      "draft_status": "DRAFT \u2014 Requires Orthodontist Review"
+    },
+    "tabs_columns": {
+      "raw_sha256": "1457a2cc3e1e622bf84bc8d9fcf23fb7f0fdc3456d56e1a5addf14791081f895",
+      "parse_status": "PARSED_UNVERIFIED",
+      "orientation": "TEETH_IN_COLUMNS",
+      "raw_preserved": true,
+      "measurements": 2,
+      "lexical_decimals": [
+        "-1.2300",
+        "0.00"
+      ],
+      "canonical_axes": [
+        null,
+        null
+      ],
+      "engine_version": "0.5.0",
+      "domain": "UNVERIFIED",
+      "eligible_positions": 0,
+      "ledger_records": 96,
+      "report_domain": "UNVERIFIED",
+      "report_mode": "STANDARD_TEMPLATES",
+      "report_reason": "NO_ELIGIBLE_FINDINGS",
+      "provider_attempts": 0,
+      "comment_sections": {
+        "UNAVAILABLE": 50
+      },
+      "draft_status": "DRAFT \u2014 Requires Orthodontist Review"
+    },
+    "markdown": {
+      "raw_sha256": "3155491d7008147f71b2cda1ff058c4d7e0dd9cde930c842ae6c241d33883d7b",
+      "parse_status": "PARSED_UNVERIFIED",
+      "orientation": "TEETH_IN_ROWS",
+      "raw_preserved": true,
+      "measurements": 1,
+      "lexical_decimals": [
+        "-1.2300"
+      ],
+      "canonical_axes": [
+        null
+      ],
+      "engine_version": "0.5.0",
+      "domain": "UNVERIFIED",
+      "eligible_positions": 0,
+      "ledger_records": 96,
+      "report_domain": "UNVERIFIED",
+      "report_mode": "STANDARD_TEMPLATES",
+      "report_reason": "NO_ELIGIBLE_FINDINGS",
+      "provider_attempts": 0,
+      "comment_sections": {
+        "UNAVAILABLE": 50
+      },
+      "draft_status": "DRAFT \u2014 Requires Orthodontist Review"
+    },
+    "unanchored": {
+      "raw_sha256": "ecb4c3066310080e13fe6e54289114dfa2bb4c672cf884e1b4808d66f387693a",
+      "parse_status": "UNSUPPORTED",
+      "orientation": "UNKNOWN",
+      "raw_preserved": true,
+      "measurements": 0,
+      "lexical_decimals": [],
+      "canonical_axes": [],
+      "engine_version": "0.5.0",
+      "domain": "UNVERIFIED",
+      "eligible_positions": 0,
+      "ledger_records": 96,
+      "report_domain": "UNVERIFIED",
+      "report_mode": "STANDARD_TEMPLATES",
+      "report_reason": "NO_ELIGIBLE_FINDINGS",
+      "provider_attempts": 0,
+      "comment_sections": {
+        "UNAVAILABLE": 54
+      },
+      "draft_status": "DRAFT \u2014 Requires Orthodontist Review"
+    }
+  },
+  "notes": [
+    "An earlier local TestClient probe stalled under sandbox and was stopped; no API pass claim is made from it."
+  ],
+  "claimed_vendor": {
+    "domain": "UNVERIFIED",
+    "eligible_positions": 0
+  },
+  "rejection_checks": {
+    "test_only": "MODEL_VALIDATION_REJECTED",
+    "test_context": "MODEL_VALIDATION_REJECTED",
+    "checked": "MODEL_VALIDATION_REJECTED",
+    "clinical_analysis_enabled": "MODEL_VALIDATION_REJECTED",
+    "threshold": "MODEL_VALIDATION_REJECTED"
+  },
+  "provider_method_calls": 0
+}

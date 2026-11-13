@@ -14,6 +14,7 @@ interface Observation {
   raw_number: string; raw_sign: string | null; raw_direction: string | null; signed_decimal: string; magnitude: string
   verification: 'VERIFIED' | 'TEST_ONLY'; components: Component[]; input_refs: string[]
   source_spans: { line: number; column_start: number }[]
+  tooth_group?: string | null; additional_evidence_refs?: string[]; pair_evidence_ref?: string | null
 }
 export interface ReviewFinding {
   finding_id: string; rule_id: string; rule_version: '2.0.0'; triggering_rules: { rule_id: string; version: '2.0.0' }[]
@@ -21,6 +22,7 @@ export interface ReviewFinding {
   evaluated: boolean; applicable: boolean | null; observed_measurements: Observation[]; input_refs: string[]
   missing_required_fields: string[]; evidence_refs: string[]; abstain_reason: string | null; conflict_group: string | null
   summary_counts: Record<string, number>
+  approval_status?: 'NOT APPROVED' | 'NOT APPLICABLE'; evidence_ids?: string[]; predicate_result?: boolean | null
 }
 export interface DraftReview {
   schema_version: '1.0.0'; engine_version: '0.2.0' | '0.5.0'; rule_set_version: '2.0.0-phase2a' | '2.0.0-phase5'; report_id: string
@@ -29,7 +31,9 @@ export interface DraftReview {
   requested_assessments: AssessmentQuestion[]
   source: { source_claim: SourceClaim; verification_status: 'UNVERIFIED'; context: ContextClaims }
   coverage: { declared_positions: number; eligible_positions: number; unavailable_positions: number; eligible_explicit_zero: number; eligible_nonzero: number; expected_axes: null }
-  findings: ReviewFinding[]; evaluations: { rule_id: string; status: string; finding_ids: string[] }[]; limitations: string[]
+  findings: ReviewFinding[]; evaluations: { rule_id: string; status: string; finding_ids: string[]; evaluated?: boolean; triggered?: boolean | null;
+    approval_status?: 'NOT APPROVED' | 'NOT APPLICABLE'; execution?: 'ACTIVE' | 'DISABLED' | 'DEFERRED'; implementation_kind?: string;
+    input_refs?: string[]; priority?: number; evidence_ids?: string[]; missing_required_fields?: string[]; abstain_reason?: string | null }[]; limitations: string[]
 }
 const obj = (v: unknown): v is Record<string, unknown> => typeof v === 'object' && v !== null && !Array.isArray(v)
 const str = (v: unknown): v is string => typeof v === 'string'
@@ -41,7 +45,7 @@ const statuses = ['OBSERVED', 'SEMANTICS_UNKNOWN', 'CONTEXT_REQUIRED', 'DISABLED
 
 // Validate every rendered field and the draft/clinical boundaries before displaying a response.
 export function isDraftReview(v: unknown): v is DraftReview {
-  if (!obj(v) || v.schema_version !== '1.0.0' || v.engine_version !== '0.2.0' || v.rule_set_version !== '2.0.0-phase2a'
+  if (!obj(v) || v.schema_version !== '1.0.0' || !((v.engine_version === '0.2.0' && v.rule_set_version === '2.0.0-phase2a') || (v.engine_version === '0.5.0' && v.rule_set_version === '2.0.0-phase5'))
     || v.review_status !== 'DRAFT' || v.intended_for !== 'CLINICIAN_REVIEW' || v.clinical_analysis_enabled !== false
     || !digest(v.report_id) || !digest(v.raw_sha256) || !str(v.notice)
     || !['UNVERIFIED', 'AUTHORIZED_VENDOR', 'TEST_ONLY'].includes(String(v.evidence_domain)) || !strings(v.limitations)
@@ -59,11 +63,16 @@ export function isDraftReview(v: unknown): v is DraftReview {
       || !obj(f.summary_counts) || !Object.values(f.summary_counts).every(n => Number.isInteger(n) && Number(n) >= 0)
       || !Array.isArray(f.triggering_rules) || !f.triggering_rules.length || !f.triggering_rules.every(r => obj(r) && rule(r.rule_id) && r.version === '2.0.0')
       || !Array.isArray(f.observed_measurements)) return false
+    if ((f.approval_status !== undefined && !['NOT APPROVED', 'NOT APPLICABLE'].includes(String(f.approval_status)))
+      || (f.evidence_ids !== undefined && !strings(f.evidence_ids))
+      || (f.predicate_result !== undefined && f.predicate_result !== null && typeof f.predicate_result !== 'boolean')) return false
     if (f.status !== 'OBSERVED' && (f.evaluated || f.observed_measurements.length || f.tooth_id !== null)) return false
     if (f.finding_type === 'DESCRIPTIVE' && f.status === 'OBSERVED' && (!String(f.rule_id).startsWith('D') || !f.observed_measurements.length)) return false
     if (f.observed_measurements.length && v.evidence_domain === 'UNVERIFIED') return false
     return f.observed_measurements.every(o => obj(o) && ['measurement_id', 'raw_tooth_identifier', 'raw_label', 'raw_value', 'raw_number', 'signed_decimal', 'magnitude'].every(k => str(o[k]))
       && nullable(o.raw_sign) && nullable(o.raw_direction) && ['VERIFIED', 'TEST_ONLY'].includes(String(o.verification)) && strings(o.input_refs)
+      && (o.tooth_group === undefined || o.tooth_group === null || ['INCISOR','CANINE','PREMOLAR','MOLAR','PRIMARY','SUPERNUMERARY','NON_TOOTH'].includes(String(o.tooth_group)))
+      && (o.additional_evidence_refs === undefined || strings(o.additional_evidence_refs)) && (o.pair_evidence_ref === undefined || nullable(o.pair_evidence_ref))
       && o.verification === (v.evidence_domain === 'TEST_ONLY' ? 'TEST_ONLY' : 'VERIFIED')
       && /^[+-]?[0-9]+(?:\.[0-9]+)?$/.test(String(o.signed_decimal)) && /^[0-9]+(?:\.[0-9]+)?$/.test(String(o.magnitude))
       && Array.isArray(o.components) && o.components.every(c => obj(c) && str(c.name) && nullable(c.canonical_value) && ['VERIFIED', 'TEST_ONLY', 'UNKNOWN', 'CONFLICT', 'INVALID'].includes(String(c.status)))
@@ -74,8 +83,15 @@ export function isDraftReview(v: unknown): v is DraftReview {
       && Array.isArray(o.source_spans) && o.source_spans.every(s => obj(s) && Number.isInteger(s.line) && Number.isInteger(s.column_start)))
   })) return false
   const ids = new Set(v.findings.map(f => (f as ReviewFinding).finding_id))
-  return Array.isArray(v.evaluations) && v.evaluations.every(e => obj(e) && rule(e.rule_id) && statuses.includes(String(e.status))
-    && strings(e.finding_ids) && e.finding_ids.every(id => ids.has(id)))
+  return Array.isArray(v.evaluations) && (v.engine_version !== '0.5.0' || (v.evaluations.length === 96 && new Set(v.evaluations.map(e => obj(e) ? e.rule_id : null)).size === 96))
+    && v.evaluations.every(e => obj(e) && rule(e.rule_id) && statuses.includes(String(e.status))
+    && strings(e.finding_ids) && e.finding_ids.every(id => ids.has(id))
+    && (v.engine_version !== '0.5.0' || (typeof e.evaluated === 'boolean' && (e.triggered === null || typeof e.triggered === 'boolean')
+      && ['NOT APPROVED', 'NOT APPLICABLE'].includes(String(e.approval_status)) && ['ACTIVE', 'DISABLED', 'DEFERRED'].includes(String(e.execution))
+      && ['EXECUTABLE','REQUIRED_DATA_GUARD','OUTPUT_GUARD','PARTIAL_SYSTEM_CONTROL','DEFERRED'].includes(String(e.implementation_kind))
+      && Number.isInteger(e.priority) && strings(e.input_refs) && strings(e.evidence_ids)
+      && (e.missing_required_fields === undefined || strings(e.missing_required_fields)) && (e.abstain_reason === undefined || nullable(e.abstain_reason))
+      && !(e.execution !== 'ACTIVE' && (e.evaluated || e.triggered !== null)))))
 }
 
 export async function requestReview(rawText: string, source: SourceClaim, context: ContextClaims, rawHash: string,

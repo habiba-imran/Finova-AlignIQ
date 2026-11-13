@@ -18,12 +18,13 @@ function FindingCard({ finding }: { finding: ReviewFinding }) {
         <p>Original tooth / label: <code className="raw-text">{o.raw_tooth_identifier} / {o.raw_label}</code></p>
         <p>Original cell: <code className="raw-text">{o.raw_value}</code> · Lexical scalar: {o.signed_decimal} · Original sign/direction: {o.raw_sign ?? '(unsigned)'} / {o.raw_direction ?? '(absent)'}</p>
         <p>Source locations: {o.source_spans.map(s => `L${s.line}:C${s.column_start}`).join(', ')}</p>
+        {o.tooth_group && <p>Additional tooth-group evidence: {o.tooth_group} · {o.additional_evidence_refs?.join(', ')}</p>}
       </div>
     })}
     {finding.missing_required_fields.length > 0 && <p className="mt-2 text-muted">Required: {finding.missing_required_fields.join(', ')}</p>}
     {finding.abstain_reason && <p className="mt-1 text-muted">Withheld: {finding.abstain_reason}</p>}
     {finding.conflict_group && <p className="text-notice-ink">Conflict: {finding.conflict_group}</p>}
-    <details className="mt-2"><summary className="cursor-pointer text-muted">Traceability</summary><p className="raw-text">Finding: {finding.finding_id}</p><p className="raw-text">Input: {finding.input_refs.join(', ') || 'System control'}</p><p className="raw-text">Evidence: {finding.evidence_refs.join(', ') || 'No accepted measurement evidence'}</p></details>
+    <details className="mt-2"><summary className="cursor-pointer text-muted">Traceability</summary><p className="raw-text">Finding: {finding.finding_id}</p><p className="raw-text">Input: {finding.input_refs.join(', ') || 'System control'}</p><p className="raw-text">Evidence: {finding.evidence_refs.join(', ') || 'No accepted measurement evidence'}</p>{finding.approval_status && <p>Clinical approval: {finding.approval_status}</p>}{!!finding.evidence_ids?.length && <p>Literature references: {finding.evidence_ids.join(', ')}. These are not patient-specific verification.</p>}</details>
   </li>
 }
 
@@ -83,6 +84,8 @@ export default function DraftReviewPanel({ rawText, source, context, rawHash, re
       {error && <p role="alert" className="mt-3 text-sm text-notice-ink">{error}</p>}
       {report && <div className="mt-6" aria-label="Draft review results">
         <p role="status" className="rounded-lg border border-notice-line bg-notice p-4 text-sm leading-6 text-notice-ink">{report.notice}</p>
+        <p className="mt-3 text-sm font-semibold">DRAFT — Requires Orthodontist Review</p>
+        <p className="mt-1 text-xs leading-6 text-muted">Unavailable or disabled rules do not indicate a normal result. No clinical recommendation has been generated.</p>
         <p className="raw-text mt-4 text-xs leading-6 text-muted">Evidence domain: {report.evidence_domain} · Source claim: {report.source.source_claim} · Version claim: {report.source.context.source_version ?? 'unavailable'} · Lexical source status: {report.source.verification_status}</p>
         <p className="my-3 text-xs text-muted">{report.coverage.eligible_positions} eligible / {report.coverage.declared_positions} declared positions · {report.coverage.unavailable_positions} unavailable · Expected axis coverage unknown</p>
         <h3 className="mb-3 mt-5 text-sm font-semibold">Descriptive findings</h3>
@@ -91,6 +94,7 @@ export default function DraftReviewPanel({ rawText, source, context, rawHash, re
         <ul className="grid gap-3 lg:grid-cols-2">{unavailable.slice(0, limit).map(f => <FindingCard key={f.finding_id} finding={f} />)}</ul>
         {unavailable.length > limit && <button type="button" className="button button-clear mt-4" onClick={() => setLimit(limit + 25)}>Show more unavailable assessments ({unavailable.length - limit} remaining)</button>}
         <h3 className="mb-3 mt-6 text-sm font-semibold">Limitations</h3><ul className="list-disc space-y-2 pl-5 text-xs leading-6 text-muted">{report.limitations.map(item => <li key={item}>{item}</li>)}</ul>
+        <details className="mt-5 rounded-lg border border-line p-4"><summary className="cursor-pointer text-sm font-medium">Rule evaluation ledger ({report.evaluations.length} rules)</summary><ul className="mt-3 space-y-3 text-xs leading-6">{report.evaluations.map(e => <li key={e.rule_id} className="border-b border-line pb-2"><p className="font-medium">{e.rule_id} · {e.status}</p><p>{e.execution ?? 'Legacy registry'} · {e.implementation_kind ?? 'See finding traceability'} · Clinical approval: {e.approval_status ?? 'Unavailable in legacy response'}</p>{!!e.missing_required_fields?.length && <p>Required: {e.missing_required_fields.join(', ')}</p>}{e.abstain_reason && <p>Withheld: {e.abstain_reason}</p>}</li>)}</ul></details>
         <details className="mt-5 rounded-lg border border-line p-4"><summary className="cursor-pointer text-sm font-medium">Complete DRAFT findings and rule statuses (JSON, in memory)</summary><pre tabIndex={0} aria-label="Full draft review JSON" className="raw-text mt-4 max-h-96 overflow-auto text-xs">{JSON.stringify(report, null, 2)}</pre></details>
         <FinalReportPanel rawText={rawText} source={source} context={context} rawHash={rawHash} questions={question ? [question] : []} recoveryReceipt={recoveryReceipt} />
       </div>}

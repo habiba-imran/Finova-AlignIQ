@@ -68,6 +68,31 @@ _PROTECTIONS = (
     "Incident and rollback workflow",
 )
 
+_CONTROL_INPUTS = {
+    'D14': ('requested_assessments','verified_clinical_context'),
+    'A05': ('output_attachment_placement_claims',), 'A06': ('output_attachment_superiority_claims',),
+    'H01': ('requested_suitability_assessment','clinical_examination'),
+    'H02': ('requested_periodontal_assessment','periodontal_records'),
+    'H03': ('requested_root_bone_assessment','root_bone_records'),
+    'H04': ('requested_occlusion_assessment','occlusal_records'),
+    'H05': ('requested_ipr_assessment','contact_enamel_and_ipr_plan'),
+    'H06': ('requested_extraction_surgery_assessment','clinical_diagnosis'),
+    'H07': ('requested_prognosis','validated_patient_specific_outcomes'),
+    'H08': ('requested_attachment_assessment','actual_attachment_plan'),
+    'H09': ('requested_collision_assessment','validated_staged_geometry'),
+    'H10': ('report_review_status',), 'H11': ('requested_intervention_assessment','verified_clinical_exclusions'),
+    'H12': ('synthetic_data_confirmed','separate_server_cloud_authorization'),
+    'L01': ('structured_findings','closed_output_templates'), 'L02': ('exact_observation_snapshot',),
+    'L03': ('finding_input_refs','source_evidence_refs'), 'L04': ('finding_propositions','conflict_keys'),
+    'L05': ('field_scoped_verification_states',), 'L06': ('report_review_status',),
+    'N01': ('verified_expected_axis_coverage',), 'N02': ('released_source_version',),
+    'N03': ('single_capture_boundary',), 'N04': ('raw_text','raw_sha256','source_spans'),
+    'N05': ('verified_pair_map_and_mirror_operations',), 'N06': ('verified_external_tooth_status',),
+    'N07': ('verified_stage_dataset',), 'N08': ('verified_coordinate_frame_and_operations',),
+    'N09': ('field_verification_states',), 'N10': ('trusted_structured_context','untrusted_literal_text'),
+    'N12': ('verified_treatment_objectives','clinical_endpoint'), 'N13': ('rule_specific_eligibility_contract',),
+}
+
 
 def _build_registry() -> tuple[RuleDefinition, ...]:
     rules = []
@@ -112,6 +137,7 @@ def _build_registry() -> tuple[RuleDefinition, ...]:
 def _complete(rule: RuleDefinition) -> RuleDefinition:
     from app.review.clinical import REQUIREMENTS
     rid=rule.rule_id; data=rule.model_dump(); source=CATALOG[rid]
+    if rid in _CONTROL_INPUTS: data['required_fields']=_CONTROL_INPUTS[rid]
     priority=10 if rid in {'G01','G16','N04'} else 20 if rid.startswith('G') else 30 if rid in {'D14','R14'} else 40 if rid.startswith('D') else 50 if rid.startswith(('R','T')) else 70 if rid.startswith('A') else 80 if rid.startswith(('H','N')) else 90
     if rid in {'N01','N02','N03','N05','N06','N07','N08','N09','N13'}: priority=25
     if rid=='N12': priority=30

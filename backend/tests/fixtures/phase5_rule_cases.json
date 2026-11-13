@@ -1,0 +1,24 @@
+{
+  "kind": "SYNTHETIC_TEST_ONLY_INDEPENDENT_EXPECTATIONS",
+  "note": "Hand-specified toy cases, not vendor mappings or clinical thresholds.",
+  "disabled": ["R01","R02","R03","R04","R05","R06","R07","R08","R09","R10","R11","R12","R13","R15","R16","T01","T02","T03","T04","T05","T06","T07","T08","A01","A02","A03","A04"],
+  "deferred": ["D16","N11","N14"],
+  "groups": [
+    {"rule":"D03","axis":"ROTATION","direction":"TOY_ROTATION","group":"CANINE","value":"1.2300","observed":true},
+    {"rule":"D03","axis":"ROTATION","direction":"TOY_ROTATION","group":"NON_TOOTH","value":"1.2300","observed":false},
+    {"rule":"D03","axis":"ROTATION","direction":"TOY_ROTATION","group":"CANINE","value":"0.0000","observed":false},
+    {"rule":"D04","axis":"VERTICAL","direction":"EXTRUSION","group":"INCISOR","value":"1.2300","observed":true},
+    {"rule":"D04","axis":"VERTICAL","direction":"UNKNOWN_TOY","group":"INCISOR","value":"1.2300","observed":false},
+    {"rule":"D05","axis":"VERTICAL","direction":"INTRUSION","group":"PREMOLAR","value":"1.2300","observed":true},
+    {"rule":"D05","axis":"VERTICAL","direction":"EXTRUSION","group":"PREMOLAR","value":"1.2300","observed":false},
+    {"rule":"D09","axis":"MESIODISTAL","direction":"DISTAL","group":"MOLAR","value":"1.2300","observed":true},
+    {"rule":"D09","axis":"MESIODISTAL","direction":"MESIAL","group":"MOLAR","value":"1.2300","observed":true},
+    {"rule":"D09","axis":"MESIODISTAL","direction":"DISTAL","group":"INCISOR","value":"1.2300","observed":false}
+  ],
+  "paired_values": [
+    {"left":"1.2300","right":"2.0000","observed":true},
+    {"left":"1.2300","right":"1.23","observed":false},
+    {"left":"0.0000","right":"2.0000","observed":true},
+    {"left":"0.0000","right":"0.00","observed":false}
+  ]
+}

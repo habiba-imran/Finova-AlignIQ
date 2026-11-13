@@ -1,0 +1,251 @@
+{
+  "$defs": {
+    "ExpectedCoverage": {
+      "additionalProperties": false,
+      "properties": {
+        "canonical_tooth_id": {
+          "title": "Canonical Tooth Id",
+          "type": "string"
+        },
+        "expected_axes": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Expected Axes",
+          "type": "array"
+        },
+        "evidence_ref": {
+          "minLength": 1,
+          "title": "Evidence Ref",
+          "type": "string"
+        }
+      },
+      "required": [
+        "canonical_tooth_id",
+        "expected_axes",
+        "evidence_ref"
+      ],
+      "title": "ExpectedCoverage",
+      "type": "object"
+    },
+    "PairedTeeth": {
+      "additionalProperties": false,
+      "properties": {
+        "left_id": {
+          "title": "Left Id",
+          "type": "string"
+        },
+        "right_id": {
+          "title": "Right Id",
+          "type": "string"
+        },
+        "axis": {
+          "title": "Axis",
+          "type": "string"
+        },
+        "left_direction": {
+          "title": "Left Direction",
+          "type": "string"
+        },
+        "right_direction": {
+          "title": "Right Direction",
+          "type": "string"
+        },
+        "equivalent_plan_basis_scope_frame": {
+          "const": true,
+          "title": "Equivalent Plan Basis Scope Frame",
+          "type": "boolean"
+        },
+        "equivalent_direction_meaning": {
+          "const": true,
+          "title": "Equivalent Direction Meaning",
+          "type": "boolean"
+        },
+        "evidence_ref": {
+          "minLength": 1,
+          "title": "Evidence Ref",
+          "type": "string"
+        }
+      },
+      "required": [
+        "left_id",
+        "right_id",
+        "axis",
+        "left_direction",
+        "right_direction",
+        "equivalent_plan_basis_scope_frame",
+        "equivalent_direction_meaning",
+        "evidence_ref"
+      ],
+      "title": "PairedTeeth",
+      "type": "object"
+    },
+    "StageRecord": {
+      "additionalProperties": false,
+      "properties": {
+        "stage_id": {
+          "minLength": 1,
+          "title": "Stage Id",
+          "type": "string"
+        },
+        "index": {
+          "minimum": 0,
+          "title": "Index",
+          "type": "integer"
+        },
+        "arch": {
+          "minLength": 1,
+          "title": "Arch",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "BASELINE",
+            "ACTIVE",
+            "ACCOMMODATION",
+            "CORRECTION",
+            "OVERCORRECTION",
+            "PASSIVE"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "evidence_ref": {
+          "minLength": 1,
+          "title": "Evidence Ref",
+          "type": "string"
+        }
+      },
+      "required": [
+        "stage_id",
+        "index",
+        "arch",
+        "kind",
+        "evidence_ref"
+      ],
+      "title": "StageRecord",
+      "type": "object"
+    },
+    "ToothContext": {
+      "additionalProperties": false,
+      "properties": {
+        "canonical_tooth_id": {
+          "title": "Canonical Tooth Id",
+          "type": "string"
+        },
+        "group": {
+          "anyOf": [
+            {
+              "enum": [
+                "INCISOR",
+                "CANINE",
+                "PREMOLAR",
+                "MOLAR",
+                "PRIMARY",
+                "SUPERNUMERARY",
+                "NON_TOOTH"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Group"
+        },
+        "status": {
+          "default": "UNKNOWN",
+          "enum": [
+            "PRESENT",
+            "PONTIC",
+            "UNERUPTED",
+            "IMPACTED",
+            "EXTRACTED",
+            "EXCLUDED",
+            "FIXED",
+            "UNKNOWN"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "movement_permitted": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Movement Permitted"
+        },
+        "evidence_ref": {
+          "minLength": 1,
+          "title": "Evidence Ref",
+          "type": "string"
+        }
+      },
+      "required": [
+        "canonical_tooth_id",
+        "evidence_ref"
+      ],
+      "title": "ToothContext",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "Explicit illustrative evidence. Cannot represent VERIFIED or clinical approval.\n\nAdmission additionally requires the private test_only switch, TEST_ONLY\nsemantic domain, exact input/context binding and an unknown source claim.",
+  "properties": {
+    "kind": {
+      "const": "TEST_ONLY",
+      "default": "TEST_ONLY",
+      "title": "Kind",
+      "type": "string"
+    },
+    "input_digest": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Input Digest",
+      "type": "string"
+    },
+    "teeth": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/ToothContext"
+      },
+      "title": "Teeth",
+      "type": "array"
+    },
+    "stages": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/StageRecord"
+      },
+      "title": "Stages",
+      "type": "array"
+    },
+    "pairs": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/PairedTeeth"
+      },
+      "title": "Pairs",
+      "type": "array"
+    },
+    "coverage": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/ExpectedCoverage"
+      },
+      "title": "Coverage",
+      "type": "array"
+    }
+  },
+  "required": [
+    "input_digest"
+  ],
+  "title": "TestRuleContext",
+  "type": "object"
+}

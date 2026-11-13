@@ -1,0 +1,143 @@
+{
+  "$defs": {
+    "AdditionalInputRequirements": {
+      "additionalProperties": false,
+      "description": "Prerequisite design only; none of these fields is exposed on HTTP submissions.",
+      "properties": {
+        "source_and_version": {
+          "default": true,
+          "title": "Source And Version",
+          "type": "boolean"
+        },
+        "patient_and_plan_binding": {
+          "default": true,
+          "title": "Patient And Plan Binding",
+          "type": "boolean"
+        },
+        "stage_sequence": {
+          "default": false,
+          "title": "Stage Sequence",
+          "type": "boolean"
+        },
+        "attachment_tooth_surface_stage_map": {
+          "default": false,
+          "title": "Attachment Tooth Surface Stage Map",
+          "type": "boolean"
+        },
+        "initial_final_crown_root_geometry": {
+          "default": false,
+          "title": "Initial Final Crown Root Geometry",
+          "type": "boolean"
+        },
+        "coordinate_frame_and_validated_operations": {
+          "default": false,
+          "title": "Coordinate Frame And Validated Operations",
+          "type": "boolean"
+        },
+        "interproximal_contact_and_enamel_assessment": {
+          "default": false,
+          "title": "Interproximal Contact And Enamel Assessment",
+          "type": "boolean"
+        },
+        "approved_ipr_plan": {
+          "default": false,
+          "title": "Approved Ipr Plan",
+          "type": "boolean"
+        },
+        "verified_occlusal_examination": {
+          "default": false,
+          "title": "Verified Occlusal Examination",
+          "type": "boolean"
+        },
+        "periodontal_and_root_assessment": {
+          "default": false,
+          "title": "Periodontal And Root Assessment",
+          "type": "boolean"
+        },
+        "patient_objectives_and_exclusions": {
+          "default": false,
+          "title": "Patient Objectives And Exclusions",
+          "type": "boolean"
+        },
+        "device_profile_and_config_history": {
+          "default": false,
+          "title": "Device Profile And Config History",
+          "type": "boolean"
+        },
+        "orthodontist_approved_policy": {
+          "default": true,
+          "title": "Orthodontist Approved Policy",
+          "type": "boolean"
+        }
+      },
+      "title": "AdditionalInputRequirements",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "rule_id": {
+      "title": "Rule Id",
+      "type": "string"
+    },
+    "classification": {
+      "enum": [
+        "POLICY_REQUIRED",
+        "EXTRA_CONTEXT_REQUIRED",
+        "NOT_TMT_EVALUABLE",
+        "UNSUPPORTED_INTERACTION",
+        "WITHHOLDING_ONLY"
+      ],
+      "title": "Classification",
+      "type": "string"
+    },
+    "required_fields": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Required Fields",
+      "type": "array"
+    },
+    "unapproved_parameters": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Unapproved Parameters",
+      "type": "array"
+    },
+    "additional_inputs": {
+      "$ref": "#/$defs/AdditionalInputRequirements"
+    },
+    "production_enabled": {
+      "const": false,
+      "default": false,
+      "title": "Production Enabled",
+      "type": "boolean"
+    },
+    "approval_status": {
+      "const": "NOT APPROVED",
+      "default": "NOT APPROVED",
+      "title": "Approval Status",
+      "type": "string"
+    },
+    "policy_id": {
+      "default": null,
+      "title": "Policy Id",
+      "type": "null"
+    },
+    "clinical_approver": {
+      "default": null,
+      "title": "Clinical Approver",
+      "type": "null"
+    }
+  },
+  "required": [
+    "rule_id",
+    "classification",
+    "required_fields",
+    "unapproved_parameters",
+    "additional_inputs"
+  ],
+  "title": "ClinicalPreparation",
+  "type": "object"
+}

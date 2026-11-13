@@ -27,7 +27,8 @@ def _finding(rid, status, template, *, refs=(), observations=(), missing=(), rea
     kind = "DESCRIPTIVE" if observations else "TECHNICAL" if rid.startswith("G") else "OUTPUT" if rid.startswith("L") else "SAFETY"
     if status not in {"OBSERVED", "NOT_APPLICABLE"}:
         kind = "UNAVAILABLE"
-    evidence = tuple(sorted({f"{e.fixture_id}:{e.release_digest}:{e.locator}" for o in observations for c in o.components for e in c.evidence}))
+    evidence = tuple(sorted({f"{e.fixture_id}:{e.release_digest}:{e.locator}" for o in observations for c in o.components for e in c.evidence}
+                            | {ref for o in observations for ref in o.additional_evidence_refs}))
     body = dict(rule_id=rid, rule_version="2.0.0", triggering_rules=(RuleRef(rule_id=rid),),
                 tooth_id=next(iter(tooth_ids)) if len(tooth_ids) == 1 else None,
                 status=status, applicable=False if status == "NOT_APPLICABLE" else True if status == "OBSERVED" else None,
@@ -96,6 +97,10 @@ def review_table(submission: RawTMTSubmission, *, requested_assessments: tuple[A
         if v.get("plan_mode") == "COMPARISON" or sm.value_kind == "SOURCE_REPORTED_COMPARISON":
             reasons.append("COMPARISON_NOT_ABSOLUTE")
             missing.add("absolute_programmed_plan")
+        if v.get('plan_mode') not in RULE_BY_ID['D01'].allowed_modes:
+            missing.add('rule_plan_mode')
+        if v.get('scope') not in RULE_BY_ID['D01'].allowed_scopes:
+            missing.add('rule_movement_scope')
         if m.numeric_status not in {"PARSED", "EXPLICIT_ZERO"}:
             missing.add("numeric_value")
         extra_tooth=tooth_context.get(v.get('tooth_identifier'))
