@@ -27,6 +27,7 @@ def suppress(finding: Finding, reason: str, *, conflict: str | None = None) -> F
                 observed_measurements=(), tooth_id=None, abstain_reason=reason,
                 template_id="conflict" if conflict else "suppressed", message=TEMPLATES["conflict" if conflict else "suppressed"],
                 conflict_group=conflict, summary_counts={})
+    data['predicate_result']=None
     return Finding.model_validate(data)
 
 
@@ -37,14 +38,27 @@ def _descriptive_contract(f: Finding) -> bool:
         return False
     axes = {values(o).get("axis") for o in obs}
     templates = {"D01": "inventory", "D02": "co_programmed", "D10": "co_programmed", "D11": "co_programmed",
-                 "D06": "angular", "D07": "bl", "D08": "md", "D12": "distribution", "D15": "zero"}
+                 "D06": "angular", "D07": "bl", "D08": "md", "D12": "distribution", "D15": "zero",
+                 'D03':'group_rotation','D04':'group_extrusion','D05':'group_intrusion','D09':'molar_md','D13':'paired_difference'}
     if any(templates.get(r.rule_id) != f.template_id for r in f.triggering_rules):
         return False
     if f.template_id == "zero":
         return all(o.magnitude.is_zero() for o in obs) and len({context_key(o) for o in obs}) == 1
-    if any(o.magnitude.is_zero() for o in obs):
+    if any(o.magnitude.is_zero() for o in obs) and f.template_id!='paired_difference':
         return False
+    groups={'INCISOR','CANINE','PREMOLAR','MOLAR'}
     for ref in f.triggering_rules:
+        if ref.rule_id in {'D03','D04','D05','D09'} and any(o.tooth_group not in groups or not o.additional_evidence_refs for o in obs): return False
+        if ref.rule_id=='D03' and axes!={'ROTATION'}: return False
+        if ref.rule_id in {'D04','D05'}:
+            if not axes<=({'EXTRUSION','VERTICAL'} if ref.rule_id=='D04' else {'INTRUSION','VERTICAL'}): return False
+            if any(values(o)['direction']!=('EXTRUSION' if ref.rule_id=='D04' else 'INTRUSION') for o in obs): return False
+        if ref.rule_id=='D09' and (axes!={'MESIODISTAL'} or any(o.tooth_group!='MOLAR' or values(o)['direction'] not in {'MESIAL','DISTAL'} for o in obs)): return False
+        if ref.rule_id=='D13':
+            comparable=lambda o:tuple(v for i,v in enumerate(context_key(o)) if i!=2)
+            if len(obs)!=2 or len(axes)!=1 or len({comparable(o) for o in obs})!=1: return False
+            if not obs[0].pair_evidence_ref or obs[0].pair_evidence_ref!=obs[1].pair_evidence_ref: return False
+            if values(obs[0])['unit']!=values(obs[1])['unit'] or obs[0].magnitude==obs[1].magnitude: return False
         if ref.rule_id == "D06" and not axes <= {"INCLINATION", "ANGULATION"}:
             return False
         if ref.rule_id == "D07" and axes != {"BUCCOLINGUAL"}:
@@ -83,6 +97,10 @@ def apply_output_safeguards(findings: list[Finding], authorized: dict[str, Obser
             valid = valid and _descriptive_contract(f)
             ids = {values(o).get("tooth_identifier") for o in f.observed_measurements if o.verification == "VERIFIED"}
             valid = valid and f.tooth_id == (next(iter(ids)) if len(ids) == 1 else None)
+        elif f.status=='OBSERVED':
+            # Prevent a caller disguising a descriptive/clinical claim as a technical result.
+            allowed='draft' if f.rule_id in {'H10','L06'} else 'privacy' if f.rule_id=='H12' else 'placement' if f.rule_id=='A05' else 'superiority' if f.rule_id=='A06' else 'gate'
+            valid=valid and rule.category!='DESCRIPTIVE' and not f.observed_measurements and f.template_id==allowed
         # Disabled/deferred policies can never produce evaluated facts, including via an internal caller.
         if f.status == "OBSERVED" and any(RULE_BY_ID[r].execution != "ACTIVE" for r in refs if r in RULE_BY_ID):
             valid = False

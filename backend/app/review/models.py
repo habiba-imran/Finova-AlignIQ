@@ -48,6 +48,20 @@ class RuleDefinition(RuleRef):
     policy_id: None = None
     clinical_approver: None = None
     threshold: None = None
+    priority: int = Field(default=40, ge=0, le=100)
+    purpose: str = ""
+    source_title: str = ""
+    source_locator: str = ""
+    evidence_ids: tuple[str, ...] = ()
+    audit_required: str = ""
+    tmt_dependence: str = ""
+    applicability: str = ""
+    exclusions: tuple[str, ...] = ()
+    conflicting_rules: tuple[str, ...] = ()
+    predicate_id: str = "WITHHOLD_ONLY"
+    implementation_kind: Literal["EXECUTABLE", "REQUIRED_DATA_GUARD", "OUTPUT_GUARD", "PARTIAL_SYSTEM_CONTROL", "DEFERRED"] = "DEFERRED"
+    approval_status: Literal["NOT APPROVED", "NOT APPLICABLE"] = "NOT APPLICABLE"
+    clinical_review_requirements: tuple[str, ...] = ()
 
 
 class ObservedMeasurement(EvidenceContract):
@@ -65,6 +79,9 @@ class ObservedMeasurement(EvidenceContract):
     components: tuple[SemanticComponent, ...]
     input_refs: tuple[str, ...]
     source_spans: tuple[SourceSpan, ...]
+    tooth_group: Literal["INCISOR", "CANINE", "PREMOLAR", "MOLAR", "PRIMARY", "SUPERNUMERARY", "NON_TOOTH"] | None = None
+    additional_evidence_refs: tuple[str, ...] = ()
+    pair_evidence_ref: str | None = None
 
 
 class Finding(EvidenceContract):
@@ -87,6 +104,10 @@ class Finding(EvidenceContract):
     review_status: Literal["DRAFT"] = "DRAFT"
     conflict_group: str | None = None
     summary_counts: dict[str, int] = Field(default_factory=dict)
+    predicate_result: bool | None = None
+    approval_status: Literal["NOT APPROVED", "NOT APPLICABLE"] = "NOT APPLICABLE"
+    policy_id: None = None
+    evidence_ids: tuple[str, ...] = ()
 
     @model_validator(mode="after")
     def abstention_is_not_a_negative_finding(self):
@@ -110,6 +131,14 @@ class RuleEvaluation(RuleRef):
     finding_ids: tuple[str, ...]
     missing_required_fields: tuple[str, ...] = ()
     abstain_reason: str | None = None
+    evaluated: bool = False
+    triggered: bool | None = None
+    input_refs: tuple[str, ...] = ()
+    approval_status: Literal["NOT APPROVED", "NOT APPLICABLE"] = "NOT APPLICABLE"
+    execution: Literal["ACTIVE", "DISABLED", "DEFERRED"] = "DEFERRED"
+    implementation_kind: str = "DEFERRED"
+    priority: int = 0
+    evidence_ids: tuple[str, ...] = ()
 
 
 class ReviewCoverage(EvidenceContract):
@@ -124,8 +153,8 @@ class ReviewCoverage(EvidenceContract):
 
 class DraftReview(EvidenceContract):
     schema_version: Literal["1.0.0"] = "1.0.0"
-    engine_version: Literal["0.2.0"] = "0.2.0"
-    rule_set_version: Literal["2.0.0-phase2a"] = "2.0.0-phase2a"
+    engine_version: Literal["0.2.0", "0.5.0"] = "0.5.0"
+    rule_set_version: Literal["2.0.0-phase2a", "2.0.0-phase5"] = "2.0.0-phase5"
     report_id: Digest
     review_status: Literal["DRAFT"] = "DRAFT"
     intended_for: Literal["CLINICIAN_REVIEW"] = "CLINICIAN_REVIEW"

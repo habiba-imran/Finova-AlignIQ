@@ -1,6 +1,10 @@
 """Audit IDs retained. No numerical policy or path to enable clinical predicates."""
 
 from app.review.models import RuleDefinition
+import json
+from pathlib import Path
+
+CATALOG = {r['rule_id']: r for r in json.loads(Path(__file__).with_name('catalog.json').read_text(encoding='utf-8'))['rules']}
 
 _GATES = (
     ("Non-empty structured input", ("lexical_structure",)),
@@ -105,7 +109,47 @@ def _build_registry() -> tuple[RuleDefinition, ...]:
     return tuple(sorted(rules, key=lambda r: r.rule_id))
 
 
-RULES = _build_registry()
+def _complete(rule: RuleDefinition) -> RuleDefinition:
+    from app.review.clinical import REQUIREMENTS
+    rid=rule.rule_id; data=rule.model_dump(); source=CATALOG[rid]
+    priority=10 if rid in {'G01','G16','N04'} else 20 if rid.startswith('G') else 30 if rid in {'D14','R14'} else 40 if rid.startswith('D') else 50 if rid.startswith(('R','T')) else 70 if rid.startswith('A') else 80 if rid.startswith(('H','N')) else 90
+    if rid in {'N01','N02','N03','N05','N06','N07','N08','N09','N13'}: priority=25
+    if rid=='N12': priority=30
+    guarded=rid in {'G14','G15','G18','D03','D04','D05','D09','D13'}
+    clinical=(rid.startswith('R') and rid!='R14') or rid.startswith('T') or rid in {'A01','A02','A03','A04'}
+    if guarded: data.update(execution='ACTIVE',reason='VERIFIED_ADDITIONAL_INPUT_OR_LOCALIZED_ABSTENTION')
+    if clinical: data['required_fields']=('orthodontist_approved_policy',)+REQUIREMENTS[rid]
+    if rid=='D13': data['required_fields']=('authorized_semantic_measurement','verified_pair_map_and_mirror_operations')
+    if rid in {'D03','D04','D05','D09'}: data['required_fields']=('authorized_semantic_measurement','verified_tooth_group_map')
+    if rid=='D16': data['required_fields']=('verified_case_plan_identity','verified_baseline_geometry_and_operations','verified_coordinate_frame','approved_comparison_operation')
+    if rid=='G15': data['required_fields']=('verified_stage_dataset',)
+    if rid=='G18': data['required_fields']=('verified_tooth_group_map',)
+    if rid=='G14': data['required_fields']=('verified_external_tooth_status',)
+    if rid=='N11': data['required_fields']=('authenticated_reviewer_identity','immutable_versioned_review_events','approval_invalidation_workflow')
+    if rid=='N14': data['required_fields']=('incident_severity_policy','approved_escalation_workflow','reviewed_rollback_release_process')
+    dependencies=data['dependencies']
+    if rid.startswith('D') and rid not in {'D01','D14','D16'}: dependencies=('D01',)
+    if rid=='D01': dependencies=('G01','G16','G17')
+    if rid=='R13': dependencies=('T01',)
+    if rid in {'D03','D04','D05','D09'}: dependencies+=('G18',)
+    if rid=='D13': dependencies+=('N05',)
+    kind='DEFERRED' if data['execution']=='DEFERRED' else 'REQUIRED_DATA_GUARD' if clinical or guarded or rid=='N12' else 'EXECUTABLE'
+    if rid.startswith('L') or rid in {'A05','A06','N10'}: kind='OUTPUT_GUARD'
+    if rid in {'H10','H12','L06','N03','N04'}: kind='PARTIAL_SYSTEM_CONTROL'
+    data.update(priority=priority,purpose=source['audit_required'],source_title=source['source_title'],
+                source_locator=f"docs/FINOVA_RULE_ENGINE_V2_AUDIT_CORRECTED.md:{source['source_line']}",
+                evidence_ids=tuple(source['evidence_ids']),audit_required=source['audit_required'],
+                disposition=source['disposition'],tmt_dependence=source['tmt_dependence'],
+                applicability='Verified rule-specific fields and compatible source/version/mode/basis/scope; otherwise abstain.',
+                exclusions=('Unverified or ambiguous dependent fields','Cross-basis/mode/frame operations without verified mapping','No inference of achieved movement'),
+                dependencies=dependencies,conflicting_rules=('T01',) if rid=='R13' else ('R13',) if rid=='T01' else (),
+                predicate_id=rid.lower()+'_v2',implementation_kind=kind,
+                approval_status='NOT APPROVED' if clinical else 'NOT APPLICABLE',
+                clinical_review_requirements=('Exact policy and exclusions','Orthodontist approval','Independent multi-reader case evaluation','Controlled release and rollback') if clinical else ())
+    return RuleDefinition.model_validate(data)
+
+
+RULES = tuple(_complete(rule) for rule in _build_registry())
 
 
 def execution_order(rules: tuple[RuleDefinition, ...] = RULES) -> tuple[RuleDefinition, ...]:
@@ -116,12 +160,13 @@ def execution_order(rules: tuple[RuleDefinition, ...] = RULES) -> tuple[RuleDefi
     ordered = []
     done = set()
     while remaining:
-        ready = sorted(rid for rid, rule in remaining.items() if set(rule.dependencies) <= done)
+        ready = sorted((rid for rid, rule in remaining.items() if set(rule.dependencies) <= done),key=lambda rid:(remaining[rid].priority,rid))
         if not ready:
             raise ValueError("CYCLIC_RULE_DEPENDENCIES")
-        for rid in ready:
-            ordered.append(remaining.pop(rid))
-            done.add(rid)
+        # Recompute after each node so newly unblocked earlier-priority gates run first.
+        rid=ready[0]
+        ordered.append(remaining.pop(rid))
+        done.add(rid)
     return tuple(ordered)
 
 

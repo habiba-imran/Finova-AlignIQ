@@ -289,6 +289,40 @@
           },
           "title": "Summary Counts",
           "type": "object"
+        },
+        "predicate_result": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Predicate Result"
+        },
+        "approval_status": {
+          "default": "NOT APPLICABLE",
+          "enum": [
+            "NOT APPROVED",
+            "NOT APPLICABLE"
+          ],
+          "title": "Approval Status",
+          "type": "string"
+        },
+        "policy_id": {
+          "default": null,
+          "title": "Policy Id",
+          "type": "null"
+        },
+        "evidence_ids": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Ids",
+          "type": "array"
         }
       },
       "required": [
@@ -392,6 +426,47 @@
           },
           "title": "Source Spans",
           "type": "array"
+        },
+        "tooth_group": {
+          "anyOf": [
+            {
+              "enum": [
+                "INCISOR",
+                "CANINE",
+                "PREMOLAR",
+                "MOLAR",
+                "PRIMARY",
+                "SUPERNUMERARY",
+                "NON_TOOTH"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Tooth Group"
+        },
+        "additional_evidence_refs": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Additional Evidence Refs",
+          "type": "array"
+        },
+        "pair_evidence_ref": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Pair Evidence Ref"
         }
       },
       "required": [
@@ -526,6 +601,68 @@
           ],
           "default": null,
           "title": "Abstain Reason"
+        },
+        "evaluated": {
+          "default": false,
+          "title": "Evaluated",
+          "type": "boolean"
+        },
+        "triggered": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Triggered"
+        },
+        "input_refs": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Input Refs",
+          "type": "array"
+        },
+        "approval_status": {
+          "default": "NOT APPLICABLE",
+          "enum": [
+            "NOT APPROVED",
+            "NOT APPLICABLE"
+          ],
+          "title": "Approval Status",
+          "type": "string"
+        },
+        "execution": {
+          "default": "DEFERRED",
+          "enum": [
+            "ACTIVE",
+            "DISABLED",
+            "DEFERRED"
+          ],
+          "title": "Execution",
+          "type": "string"
+        },
+        "implementation_kind": {
+          "default": "DEFERRED",
+          "title": "Implementation Kind",
+          "type": "string"
+        },
+        "priority": {
+          "default": 0,
+          "title": "Priority",
+          "type": "integer"
+        },
+        "evidence_ids": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Ids",
+          "type": "array"
         }
       },
       "required": [
@@ -934,14 +1071,20 @@
       "type": "string"
     },
     "engine_version": {
-      "const": "0.2.0",
-      "default": "0.2.0",
+      "default": "0.5.0",
+      "enum": [
+        "0.2.0",
+        "0.5.0"
+      ],
       "title": "Engine Version",
       "type": "string"
     },
     "rule_set_version": {
-      "const": "2.0.0-phase2a",
-      "default": "2.0.0-phase2a",
+      "default": "2.0.0-phase5",
+      "enum": [
+        "2.0.0-phase2a",
+        "2.0.0-phase5"
+      ],
       "title": "Rule Set Version",
       "type": "string"
     },

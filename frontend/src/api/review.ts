@@ -23,7 +23,7 @@ export interface ReviewFinding {
   summary_counts: Record<string, number>
 }
 export interface DraftReview {
-  schema_version: '1.0.0'; engine_version: '0.2.0'; rule_set_version: '2.0.0-phase2a'; report_id: string
+  schema_version: '1.0.0'; engine_version: '0.2.0' | '0.5.0'; rule_set_version: '2.0.0-phase2a' | '2.0.0-phase5'; report_id: string
   review_status: 'DRAFT'; intended_for: 'CLINICIAN_REVIEW'; clinical_analysis_enabled: false
   evidence_domain: 'UNVERIFIED' | 'AUTHORIZED_VENDOR' | 'TEST_ONLY'; raw_sha256: string; notice: string
   requested_assessments: AssessmentQuestion[]

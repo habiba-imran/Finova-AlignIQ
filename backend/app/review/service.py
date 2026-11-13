@@ -7,9 +7,11 @@ from app.parser.receipts import resolve
 from app.review.models import (
     AssessmentQuestion, DraftReview, Finding, ObservedMeasurement, ReviewCoverage, RuleEvaluation, RuleRef,
 )
-from app.review.registry import RULES, execution_order
+from app.review.registry import RULES, RULE_BY_ID, execution_order
 from app.review.safeguards import apply_output_safeguards, context_key, values
 from app.review.templates import CONTEXT_MATRIX, LIMITATIONS, TEMPLATES
+from app.review.context import TestRuleContext, admit_test_context, stage_errors
+from app.review.checks import provenance_errors, rule_eligibility
 from app.semantics.fixtures import CheckedFixture, digest_json
 from app.semantics.models import required_components
 from app.semantics.normalization import assess_semantics
@@ -31,14 +33,17 @@ def _finding(rid, status, template, *, refs=(), observations=(), missing=(), rea
                 status=status, applicable=False if status == "NOT_APPLICABLE" else True if status == "OBSERVED" else None,
                 evaluated=status == "OBSERVED", finding_type=kind, template_id=template, message=TEMPLATES[template],
                 input_refs=refs, observed_measurements=observations, missing_required_fields=tuple(sorted(set(missing))),
-                evidence_refs=evidence, abstain_reason=reason, summary_counts=counts or {})
+                evidence_refs=evidence, abstain_reason=reason, summary_counts=counts or {},
+                predicate_result=True if status=='OBSERVED' else False if status=='NOT_APPLICABLE' else None,
+                approval_status=RULE_BY_ID[rid].approval_status, evidence_ids=RULE_BY_ID[rid].evidence_ids)
     fid = digest_json({**body, "triggering_rules": [r.model_dump(mode="json") for r in body['triggering_rules']],
                        "observed_measurements": [o.model_dump(mode="json") for o in observations]})
     return Finding(finding_id=fid, **body)
 
 
 def review_table(submission: RawTMTSubmission, *, requested_assessments: tuple[AssessmentQuestion, ...] = (),
-                 checked: CheckedFixture | None = None, test_only: bool = False) -> DraftReview:
+                 checked: CheckedFixture | None = None, test_only: bool = False,
+                 test_context: TestRuleContext | None = None) -> DraftReview:
     """HTTP supplies raw submission only. Evidence/test switches are library-only, never request fields.
 
     No release lookup/generalizing adapter is implemented: production has no approved vendor mappings.
@@ -61,6 +66,11 @@ def review_table(submission: RawTMTSubmission, *, requested_assessments: tuple[A
         return _finish(lexical, "0.1.0-disabled", "UNVERIFIED", {}, apply_output_safeguards(limited, {}), requested_assessments)
     assessment = assess_semantics(lexical, checked, allow_test_only=test_only)
     domain = "TEST_ONLY" if assessment.status == "TEST_ONLY" else "AUTHORIZED_VENDOR" if any(m.canonical_measurement_ready for m in assessment.measurements) else "UNVERIFIED"
+    additional=admit_test_context(test_context,submission,test_only=test_only,domain=domain)
+    tooth_context={t.canonical_tooth_id:t for t in additional.teeth} if additional else {}
+    stage_problems=stage_errors(additional.stages) if additional and additional.stages else ()
+    global_provenance,bad_provenance=provenance_errors(lexical)
+    global_valid=lexical.status not in {'INVALID','UNSUPPORTED'} and not global_provenance
     raw_measurements = {m.id: m for m in lexical.measurements}
     teeth = {t.id: t for t in lexical.teeth}
     semantics = {m.measurement_id: m for m in assessment.measurements}
@@ -74,6 +84,10 @@ def review_table(submission: RawTMTSubmission, *, requested_assessments: tuple[A
         authority = "TEST_ONLY" if domain == "TEST_ONLY" else "VERIFIED"
         missing = {name for name in required_components(v) if component[name].status != authority}
         reasons = []
+        if not global_valid:
+            reasons.append('GLOBAL_PARSE_OR_PROVENANCE_INVALID'); missing.add('valid_structural_source')
+        if m.id in bad_provenance:
+            reasons.append('FIELD_PROVENANCE_INVALID'); missing.add('source_provenance')
         if domain == "TEST_ONLY" and (not test_only or lexical.source.source_claim != "Unknown" or lexical.source.detected_claims or v.get("source_application") != "TEST_ONLY"):
             reasons.append("SYNTHETIC_VENDOR_BOUNDARY")
         ready = sm.evidence_complete_for_test if domain == "TEST_ONLY" else sm.canonical_measurement_ready
@@ -84,6 +98,11 @@ def review_table(submission: RawTMTSubmission, *, requested_assessments: tuple[A
             missing.add("absolute_programmed_plan")
         if m.numeric_status not in {"PARSED", "EXPLICIT_ZERO"}:
             missing.add("numeric_value")
+        extra_tooth=tooth_context.get(v.get('tooth_identifier'))
+        if extra_tooth and extra_tooth.movement_permitted is False and m.magnitude_decimal is not None and not m.magnitude_decimal.is_zero():
+            reasons.append('TOOTH_STATUS_CONTRADICTION'); missing.add('consistent_external_tooth_status')
+        if stage_problems and v.get('scope') in {'CUMULATIVE','INCREMENTAL','STAGE_SPECIFIC'}:
+            reasons.append('STAGE_DATASET_INVALID'); missing.add('consistent_stage_dataset')
         if missing or reasons:
             missing_by_id[m.id] = tuple(sorted(missing))
             reasons_by_id[m.id] = "COMPARISON_NOT_ABSOLUTE" if "COMPARISON_NOT_ABSOLUTE" in reasons else reasons[0] if reasons else "REQUIRED_FIELDS_UNVERIFIED"
@@ -97,7 +116,23 @@ def review_table(submission: RawTMTSubmission, *, requested_assessments: tuple[A
             raw_direction=m.raw_direction, signed_decimal=m.signed_decimal,
             magnitude=m.magnitude_decimal, verification=authority, components=sm.components,
             input_refs=refs, source_spans=spans,
+            tooth_group=extra_tooth.group if extra_tooth else None,
+            additional_evidence_refs=(extra_tooth.evidence_ref,) if extra_tooth else (),
         )
+
+    # Pair proof is additional evidence, never inferred from numeric tooth tokens/signs.
+    if additional:
+        for pair in additional.pairs:
+            candidates=[o for o in eligible.values() if values(o)['axis']==pair.axis and values(o)['tooth_identifier'] in {pair.left_id,pair.right_id}]
+            if len(candidates)!=2: continue
+            left=next((o for o in candidates if values(o)['tooth_identifier']==pair.left_id),None)
+            right=next((o for o in candidates if values(o)['tooth_identifier']==pair.right_id),None)
+            if not left or not right: continue
+            comparable=lambda o:tuple(v for i,v in enumerate(context_key(o)) if i!=2)
+            if comparable(left)!=comparable(right) or values(left)['unit']!=values(right)['unit']: continue
+            if values(left)['direction']!=pair.left_direction or values(right)['direction']!=pair.right_direction: continue
+            for o in (left,right):
+                eligible[o.measurement_id]=o.model_copy(update={'pair_evidence_ref':pair.evidence_ref,'additional_evidence_refs':o.additional_evidence_refs+(pair.evidence_ref,)})
 
     findings = []
 
@@ -122,7 +157,8 @@ def review_table(submission: RawTMTSubmission, *, requested_assessments: tuple[A
                        "G09": ("sign", "direction"), "G11": ("reference_basis",), "G12": ("scope",), "G13": ("plan_mode",)}
     for rule in execution_order():
         rid = rule.rule_id
-        if rid == "G15" and lexical.source.context.scope not in {"CUMULATIVE", "INCREMENTAL"} and lexical.source.context.stage_index is None:
+        stage_context=any(values(o)['scope'] in {'CUMULATIVE','INCREMENTAL','STAGE_SPECIFIC'} for o in eligible.values()) or lexical.source.context.scope in {'CUMULATIVE','INCREMENTAL'} or lexical.source.context.stage_index is not None
+        if rid == "G15" and not stage_context and not (additional and additional.stages):
             emit(rid, "NOT_APPLICABLE", "not_applicable")
             continue
         if rule.execution != "ACTIVE":
@@ -130,9 +166,15 @@ def review_table(submission: RawTMTSubmission, *, requested_assessments: tuple[A
                  missing=rule.required_fields, reason=rule.reason)
             continue
         if rid == "G01":
-            valid = bool(lexical.measurements) and lexical.status not in {"INVALID", "UNSUPPORTED"}
+            valid = bool(lexical.measurements) and global_valid
             emit(rid, "OBSERVED" if valid else "PARSE_INVALID", "gate" if valid else "context", refs=("layout",),
                  missing=() if valid else ("lexical_structure",), reason=None if valid else "LEXICAL_STRUCTURE_UNAVAILABLE")
+        elif rid=='G15':
+            if not additional or not additional.stages:
+                emit(rid,'CONTEXT_REQUIRED','context',missing=('verified_stage_dataset',),reason='ACTUAL_STAGE_DATASET_REQUIRED')
+            elif stage_problems:
+                emit(rid,'PARSE_INVALID','context',missing=stage_problems,reason='STAGE_DATASET_INVALID')
+            else: emit(rid,'OBSERVED','gate',refs=('additional/stages',))
         elif rid.startswith("G"):
             for m in lexical.measurements:
                 fields = ()
@@ -151,9 +193,16 @@ def review_table(submission: RawTMTSubmission, *, requested_assessments: tuple[A
                     if rid == "G08" and m.unit is None:
                         fields += ("unit",)
                 elif rid == "G16":
-                    fields = ("source_provenance",) if m.span is None or not lexical.raw_sha256 else ()
+                    fields = ("source_provenance",) if m.id in bad_provenance or global_provenance or m.span is None else ()
                 elif rid == "G17":
                     fields = missing_by_id.get(m.id, ()) or (("field_semantic_eligibility",) if m.id not in eligible else ())
+                elif rid=='G14':
+                    o=eligible.get(m.id)
+                    extra=tooth_context.get(values(o)['tooth_identifier']) if o else None
+                    fields=('verified_external_tooth_status',) if extra is None or extra.movement_permitted is None else ()
+                    if 'consistent_external_tooth_status' in missing_by_id.get(m.id,()): fields=('consistent_external_tooth_status',)
+                elif rid=='G18':
+                    fields=('verified_tooth_group_map',) if m.id not in eligible or eligible[m.id].tooth_group not in {'INCISOR','CANINE','PREMOLAR','MOLAR'} else ()
                 emit(rid, "SEMANTICS_UNKNOWN" if fields else "OBSERVED", "unknown" if fields else "gate",
                      refs=(f"measurements/{m.id}",), missing=fields, reason="EXISTING_GATE_NOT_SATISFIED" if fields else None)
             if not lexical.measurements:
@@ -169,6 +218,38 @@ def review_table(submission: RawTMTSubmission, *, requested_assessments: tuple[A
                     emit(rid, "OBSERVED", "inventory", refs=o.input_refs, observations=(o,))
             if not lexical.measurements:
                 unavailable(rid, (), missing=("measurement_positions",))
+        elif rid in {'D03','D04','D05','D09'}:
+            axes={'D03':{'ROTATION'},'D04':{'EXTRUSION','VERTICAL'},'D05':{'INTRUSION','VERTICAL'},'D09':{'MESIODISTAL'}}[rid]
+            produced=False
+            for m in lexical.measurements:
+                o=eligible.get(m.id)
+                if not o:
+                    unavailable(rid,(m.id,),missing=('verified_tooth_group_map',)); produced=True; continue
+                v=values(o)
+                if v['axis'] not in axes or o.magnitude.is_zero(): continue
+                if rule_eligibility(rule,o) or o.tooth_group not in {'INCISOR','CANINE','PREMOLAR','MOLAR'}:
+                    unavailable(rid,(m.id,),missing=('verified_tooth_group_map',)+rule_eligibility(rule,o)); produced=True; continue
+                if rid in {'D04','D05'} and v['direction']!= {'D04':'EXTRUSION','D05':'INTRUSION'}[rid]:
+                    unavailable(rid,(m.id,),missing=('verified_vertical_direction',)); produced=True; continue
+                if rid=='D09' and o.tooth_group!='MOLAR': continue
+                if rid=='D09' and v['direction'] not in {'MESIAL','DISTAL'}:
+                    unavailable(rid,(m.id,),missing=('verified_mesiodistal_direction',)); produced=True; continue
+                emit(rid,'OBSERVED',{'D03':'group_rotation','D04':'group_extrusion','D05':'group_intrusion','D09':'molar_md'}[rid],refs=o.input_refs,observations=(o,)); produced=True
+            if not produced:
+                # Preserve explicit missing-group requirements even with no matching eligible axis.
+                if not additional: unavailable(rid,(),missing=('verified_tooth_group_map',))
+                else: emit(rid,'NOT_APPLICABLE','not_applicable')
+        elif rid=='D13':
+            produced=False
+            pairs={o.pair_evidence_ref for o in eligible.values() if o.pair_evidence_ref}
+            for proof in sorted(pairs):
+                group=[o for o in eligible.values() if o.pair_evidence_ref==proof]
+                if len(group)!=2: continue
+                if group[0].magnitude!=group[1].magnitude:
+                    emit(rid,'OBSERVED','paired_difference',refs=tuple(r for o in group for r in o.input_refs),observations=group)
+                else: emit(rid,'NOT_APPLICABLE','not_applicable',refs=tuple(r for o in group for r in o.input_refs))
+                produced=True
+            if not produced: unavailable(rid,(),missing=('verified_pair_map_and_mirror_operations',))
         elif rid in {"D06", "D07", "D08"}:
             target = {"D06": {"INCLINATION", "ANGULATION"}, "D07": {"BUCCOLINGUAL"}, "D08": {"MESIODISTAL"}}[rid]
             matches = [o for o in eligible.values() if values(o)['axis'] in target and not o.magnitude.is_zero()]
@@ -249,10 +330,42 @@ def review_table(submission: RawTMTSubmission, *, requested_assessments: tuple[A
             # These success records are appended only after the actual output validator below succeeds.
             continue
         elif rid.startswith("N"):
-            if rid in {"N05", "N07"} and missing_by_id:
-                unavailable(rid, missing_by_id)
+            if rid=='N01':
+                if not additional or not additional.coverage:
+                    emit(rid,'CONTEXT_REQUIRED','context',missing=('verified_expected_axis_coverage',),reason='EXPECTED_COVERAGE_UNKNOWN')
+                else:
+                    observed={(values(o)['tooth_identifier'],values(o)['axis']) for o in eligible.values()}
+                    expected={(c.canonical_tooth_id,axis) for c in additional.coverage for axis in c.expected_axes}
+                    gaps=expected-observed
+                    emit(rid,'CONTEXT_REQUIRED' if gaps else 'OBSERVED','context' if gaps else 'gate',refs=('coverage',),
+                         missing=tuple(sorted(f'expected_axis:{t}:{a}' for t,a in gaps)),reason='EXPECTED_AXES_NOT_OBSERVED' if gaps else None,
+                         counts={'expected_positions':len(expected),'independently_observed':len(expected&observed)})
+            elif rid=='N02':
+                if domain=='AUTHORIZED_VENDOR': emit(rid,'OBSERVED','gate',refs=('source/adapter',))
+                else: emit(rid,'SEMANTICS_UNKNOWN','unknown',refs=('source/adapter',),missing=('released_source_version',),reason='NO_VERIFIED_VENDOR_RELEASE')
+            elif rid=='N04':
+                emit(rid,'PARSE_INVALID' if global_provenance else 'OBSERVED','context' if global_provenance else 'gate',refs=('raw_sha256',),
+                     missing=global_provenance,reason='RAW_EVIDENCE_INVALID' if global_provenance else None)
+            elif rid=='N05':
+                if any(o.pair_evidence_ref for o in eligible.values()): emit(rid,'OBSERVED','gate',refs=('additional/pairs',))
+                else: emit(rid,'CONTEXT_REQUIRED','context',missing=('verified_pair_map_and_mirror_operations',),reason='MIRROR_OPERATIONS_NOT_ASSUMED')
+            elif rid=='N07':
+                if not stage_context: emit(rid,'NOT_APPLICABLE','not_applicable')
+                elif not additional or not additional.stages: emit(rid,'CONTEXT_REQUIRED','context',missing=('verified_stage_dataset',),reason='STAGE_KIND_AND_SEQUENCE_REQUIRED')
+                elif stage_problems: emit(rid,'PARSE_INVALID','context',missing=stage_problems,reason='STAGE_DATASET_INVALID')
+                else: emit(rid,'OBSERVED','gate',refs=('additional/stages',))
+            elif rid=='N08' and missing_by_id:
+                unavailable(rid,missing_by_id,missing=('verified_coordinate_frame_and_operations',))
+            elif rid=='N09' and missing_by_id:
+                unavailable(rid,missing_by_id)
             elif rid == "N06":
-                emit(rid, "CONTEXT_REQUIRED", "context", missing=("verified_external_tooth_status",), reason="TOOTH_STATUS_NOT_INFERRED")
+                needed={values(o)['tooth_identifier'] for o in eligible.values()}
+                if not needed or not needed<=tooth_context.keys() or any(tooth_context[t].status=='UNKNOWN' for t in needed):
+                    emit(rid, "CONTEXT_REQUIRED", "context", missing=("verified_external_tooth_status",), reason="TOOTH_STATUS_NOT_INFERRED")
+                else: emit(rid,'OBSERVED','gate',refs=('additional/teeth',))
+            elif rid=='N12':
+                if requested_assessments: emit(rid,'CONTEXT_REQUIRED','context',refs=('requested_assessments',),missing=('verified_treatment_objectives','clinical_endpoint'),reason='MAGNITUDE_IS_NOT_CLINICAL_PURPOSE')
+                else: emit(rid,'NOT_APPLICABLE','not_applicable')
             else:
                 emit(rid, "OBSERVED", "gate", refs=("report/limitations",))
 
@@ -274,7 +387,10 @@ def _finish(lexical: ParseResult, normalization_version: str, domain: str,
         status = next(s for s in priority if any(f.status == s for f in fs))
         evaluations.append(RuleEvaluation(rule_id=rule.rule_id, status=status, finding_ids=tuple(f.finding_id for f in fs),
                                           missing_required_fields=tuple(sorted({n for f in fs for n in f.missing_required_fields})),
-                                          abstain_reason=next((f.abstain_reason for f in fs if f.status == status and f.abstain_reason), None)))
+                                          abstain_reason=next((f.abstain_reason for f in fs if f.status == status and f.abstain_reason), None),
+                                          evaluated=any(f.evaluated for f in fs),triggered=True if any(f.status=='OBSERVED' for f in fs) else False if all(f.status=='NOT_APPLICABLE' for f in fs) else None,
+                                          input_refs=tuple(sorted({r for f in fs for r in f.input_refs})),approval_status=rule.approval_status,
+                                          execution=rule.execution,implementation_kind=rule.implementation_kind,priority=rule.priority,evidence_ids=rule.evidence_ids))
     coverage = ReviewCoverage(declared_positions=len(lexical.measurements), eligible_positions=len(eligible),
                               unavailable_positions=len(lexical.measurements) - len(eligible),
                               eligible_explicit_zero=sum(o.magnitude.is_zero() for o in eligible.values()),

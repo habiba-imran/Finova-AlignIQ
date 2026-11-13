@@ -121,6 +121,101 @@
       "default": null,
       "title": "Threshold",
       "type": "null"
+    },
+    "priority": {
+      "default": 40,
+      "maximum": 100,
+      "minimum": 0,
+      "title": "Priority",
+      "type": "integer"
+    },
+    "purpose": {
+      "default": "",
+      "title": "Purpose",
+      "type": "string"
+    },
+    "source_title": {
+      "default": "",
+      "title": "Source Title",
+      "type": "string"
+    },
+    "source_locator": {
+      "default": "",
+      "title": "Source Locator",
+      "type": "string"
+    },
+    "evidence_ids": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Evidence Ids",
+      "type": "array"
+    },
+    "audit_required": {
+      "default": "",
+      "title": "Audit Required",
+      "type": "string"
+    },
+    "tmt_dependence": {
+      "default": "",
+      "title": "Tmt Dependence",
+      "type": "string"
+    },
+    "applicability": {
+      "default": "",
+      "title": "Applicability",
+      "type": "string"
+    },
+    "exclusions": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Exclusions",
+      "type": "array"
+    },
+    "conflicting_rules": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Conflicting Rules",
+      "type": "array"
+    },
+    "predicate_id": {
+      "default": "WITHHOLD_ONLY",
+      "title": "Predicate Id",
+      "type": "string"
+    },
+    "implementation_kind": {
+      "default": "DEFERRED",
+      "enum": [
+        "EXECUTABLE",
+        "REQUIRED_DATA_GUARD",
+        "OUTPUT_GUARD",
+        "PARTIAL_SYSTEM_CONTROL",
+        "DEFERRED"
+      ],
+      "title": "Implementation Kind",
+      "type": "string"
+    },
+    "approval_status": {
+      "default": "NOT APPLICABLE",
+      "enum": [
+        "NOT APPROVED",
+        "NOT APPLICABLE"
+      ],
+      "title": "Approval Status",
+      "type": "string"
+    },
+    "clinical_review_requirements": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Clinical Review Requirements",
+      "type": "array"
     }
   },
   "required": [

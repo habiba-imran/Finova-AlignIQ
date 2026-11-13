@@ -14,6 +14,7 @@ from app.review.models import AssessmentQuestion, DraftReview, Finding, RuleRef
 from app.review.registry import RULE_BY_ID
 from app.review.safeguards import context_key, values
 from app.review.service import review_table
+from app.review.context import TestRuleContext
 from app.review.templates import TEMPLATES
 from app.semantics.fixtures import CheckedFixture, digest_json
 from app.semantics.models import required_components
@@ -71,7 +72,7 @@ def comment_units(review: DraftReview) -> tuple[CommentUnit, ...]:
             # Identical unavailable propositions share wording while retaining every finding/rule/reference.
             groups[("UNAVAILABLE", f.template_id, f.status, f.missing_required_fields, f.abstain_reason)].append(f)
     units = []
-    priority = {name: i for i, name in enumerate(("co_programmed", "angular", "bl", "md", "zero", "inventory", "distribution"))}
+    priority = {name: i for i, name in enumerate(("paired_difference", "co_programmed", "group_rotation", "group_extrusion", "group_intrusion", "molar_md", "angular", "bl", "md", "zero", "inventory", "distribution"))}
     for key, fs in groups.items():
         fs = tuple(sorted(fs, key=lambda f: f.finding_id))
         primary = min(fs, key=lambda f: (priority.get(f.template_id, 99), f.finding_id))
@@ -182,9 +183,10 @@ def _assemble(review: DraftReview, mode: CommentMode, settings: ReportSettings |
 
 def generate_report(submission: RawTMTSubmission, *, mode: CommentMode = "AUTO",
                     requested_assessments: tuple[AssessmentQuestion, ...] = (), checked: CheckedFixture | None = None,
-                    test_only: bool = False, settings: ReportSettings | None = None, client: GroqClient | None = None) -> FinalDraftReport:
+                    test_only: bool = False, settings: ReportSettings | None = None, client: GroqClient | None = None,
+                    test_context: TestRuleContext | None = None) -> FinalDraftReport:
     """Only raw submissions enter HTTP. Fixture and mock-client injection is library-only."""
     if mode not in {"AUTO", "GROQ", "TEMPLATES"}:
         raise ValueError("UNSUPPORTED_COMMENT_MODE")
-    review = review_table(submission, requested_assessments=requested_assessments, checked=checked, test_only=test_only)
+    review = review_table(submission, requested_assessments=requested_assessments, checked=checked, test_only=test_only,test_context=test_context)
     return _assemble(review, mode, settings, client)
