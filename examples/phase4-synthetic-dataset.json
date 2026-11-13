@@ -1,0 +1,6768 @@
+{
+  "kind": "ORIGINAL_SYNTHETIC_NOT_VENDOR_EVIDENCE",
+  "gold_method": "Independent original source construction: labels, Decimal strings and offsets declared before parsing",
+  "fixtures": [
+    {
+      "identity": {
+        "recipe": "clean",
+        "seed": 0
+      },
+      "category": "clean",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\nTooth\tRotation (deg)\tExtrusion (mm)\n13\t0.000 M\t0.00 E\n14\t0 M\t—\n",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "0.000 M",
+          "decimal": "0.000",
+          "association": {
+            "tooth": "s103e105",
+            "label": "s73e87",
+            "value": "s106e113"
+          },
+          "spans": {
+            "tooth": [
+              103,
+              105
+            ],
+            "label": [
+              73,
+              87
+            ],
+            "value": [
+              106,
+              113
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Extrusion (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s103e105",
+            "label": "s88e102",
+            "value": "s114e120"
+          },
+          "spans": {
+            "tooth": [
+              103,
+              105
+            ],
+            "label": [
+              88,
+              102
+            ],
+            "value": [
+              114,
+              120
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "0 M",
+          "decimal": "0",
+          "association": {
+            "tooth": "s121e123",
+            "label": "s73e87",
+            "value": "s124e127"
+          },
+          "spans": {
+            "tooth": [
+              121,
+              123
+            ],
+            "label": [
+              73,
+              87
+            ],
+            "value": [
+              124,
+              127
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Extrusion (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s121e123",
+            "label": "s88e102",
+            "value": "s128e129"
+          },
+          "spans": {
+            "tooth": [
+              121,
+              123
+            ],
+            "label": [
+              88,
+              102
+            ],
+            "value": [
+              128,
+              129
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "clean",
+        "seed": 1
+      },
+      "category": "clean",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\r\nTooth\tRotation (deg)\tExtrusion (mm)\r\n13\t−2.230000000000000000000000000001 M\t0.00 E\r\n14\t+3.125 M\t—\r\n",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "−2.230000000000000000000000000001 M",
+          "decimal": "-2.230000000000000000000000000001",
+          "association": {
+            "tooth": "s105e107",
+            "label": "s74e88",
+            "value": "s108e143"
+          },
+          "spans": {
+            "tooth": [
+              105,
+              107
+            ],
+            "label": [
+              74,
+              88
+            ],
+            "value": [
+              108,
+              143
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Extrusion (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s105e107",
+            "label": "s89e103",
+            "value": "s144e150"
+          },
+          "spans": {
+            "tooth": [
+              105,
+              107
+            ],
+            "label": [
+              89,
+              103
+            ],
+            "value": [
+              144,
+              150
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "+3.125 M",
+          "decimal": "3.125",
+          "association": {
+            "tooth": "s152e154",
+            "label": "s74e88",
+            "value": "s155e163"
+          },
+          "spans": {
+            "tooth": [
+              152,
+              154
+            ],
+            "label": [
+              74,
+              88
+            ],
+            "value": [
+              155,
+              163
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Extrusion (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s152e154",
+            "label": "s89e103",
+            "value": "s164e165"
+          },
+          "spans": {
+            "tooth": [
+              152,
+              154
+            ],
+            "label": [
+              89,
+              103
+            ],
+            "value": [
+              164,
+              165
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "clean",
+        "seed": 2
+      },
+      "category": "clean",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\rTooth\tRotation (deg)\tExtrusion (mm)\r13\t−3.230000000000000000000000000001 M\t0.00 E\r14\t+4.125 M\t—\r",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "−3.230000000000000000000000000001 M",
+          "decimal": "-3.230000000000000000000000000001",
+          "association": {
+            "tooth": "s103e105",
+            "label": "s73e87",
+            "value": "s106e141"
+          },
+          "spans": {
+            "tooth": [
+              103,
+              105
+            ],
+            "label": [
+              73,
+              87
+            ],
+            "value": [
+              106,
+              141
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Extrusion (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s103e105",
+            "label": "s88e102",
+            "value": "s142e148"
+          },
+          "spans": {
+            "tooth": [
+              103,
+              105
+            ],
+            "label": [
+              88,
+              102
+            ],
+            "value": [
+              142,
+              148
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "+4.125 M",
+          "decimal": "4.125",
+          "association": {
+            "tooth": "s149e151",
+            "label": "s73e87",
+            "value": "s152e160"
+          },
+          "spans": {
+            "tooth": [
+              149,
+              151
+            ],
+            "label": [
+              73,
+              87
+            ],
+            "value": [
+              152,
+              160
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Extrusion (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s149e151",
+            "label": "s88e102",
+            "value": "s161e162"
+          },
+          "spans": {
+            "tooth": [
+              149,
+              151
+            ],
+            "label": [
+              88,
+              102
+            ],
+            "value": [
+              161,
+              162
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "clean",
+        "seed": 3
+      },
+      "category": "clean",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\nTooth\tRotation (deg)\tExtrusion (mm)\n13\t−4.230000000000000000000000000001 M\t0.00 E\n14\t+5.125 M\t—\n",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "−4.230000000000000000000000000001 M",
+          "decimal": "-4.230000000000000000000000000001",
+          "association": {
+            "tooth": "s103e105",
+            "label": "s73e87",
+            "value": "s106e141"
+          },
+          "spans": {
+            "tooth": [
+              103,
+              105
+            ],
+            "label": [
+              73,
+              87
+            ],
+            "value": [
+              106,
+              141
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Extrusion (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s103e105",
+            "label": "s88e102",
+            "value": "s142e148"
+          },
+          "spans": {
+            "tooth": [
+              103,
+              105
+            ],
+            "label": [
+              88,
+              102
+            ],
+            "value": [
+              142,
+              148
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "+5.125 M",
+          "decimal": "5.125",
+          "association": {
+            "tooth": "s149e151",
+            "label": "s73e87",
+            "value": "s152e160"
+          },
+          "spans": {
+            "tooth": [
+              149,
+              151
+            ],
+            "label": [
+              73,
+              87
+            ],
+            "value": [
+              152,
+              160
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Extrusion (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s149e151",
+            "label": "s88e102",
+            "value": "s161e162"
+          },
+          "spans": {
+            "tooth": [
+              149,
+              151
+            ],
+            "label": [
+              88,
+              102
+            ],
+            "value": [
+              161,
+              162
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "clean",
+        "seed": 7
+      },
+      "category": "clean",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\r\nTooth\tRotation (deg)\tExtrusion (mm)\r\n13\t−1.230000000000000000000000000001 M\t0.00 E\r\n14\t+4.125 M\t—\r\n",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "−1.230000000000000000000000000001 M",
+          "decimal": "-1.230000000000000000000000000001",
+          "association": {
+            "tooth": "s105e107",
+            "label": "s74e88",
+            "value": "s108e143"
+          },
+          "spans": {
+            "tooth": [
+              105,
+              107
+            ],
+            "label": [
+              74,
+              88
+            ],
+            "value": [
+              108,
+              143
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Extrusion (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s105e107",
+            "label": "s89e103",
+            "value": "s144e150"
+          },
+          "spans": {
+            "tooth": [
+              105,
+              107
+            ],
+            "label": [
+              89,
+              103
+            ],
+            "value": [
+              144,
+              150
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "+4.125 M",
+          "decimal": "4.125",
+          "association": {
+            "tooth": "s152e154",
+            "label": "s74e88",
+            "value": "s155e163"
+          },
+          "spans": {
+            "tooth": [
+              152,
+              154
+            ],
+            "label": [
+              74,
+              88
+            ],
+            "value": [
+              155,
+              163
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Extrusion (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s152e154",
+            "label": "s89e103",
+            "value": "s164e165"
+          },
+          "spans": {
+            "tooth": [
+              152,
+              154
+            ],
+            "label": [
+              89,
+              103
+            ],
+            "value": [
+              164,
+              165
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "clean",
+        "seed": 17
+      },
+      "category": "clean",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\rTooth\tRotation (deg)\tExtrusion (mm)\r13\t−4.230000000000000000000000000001 M\t0.00 E\r14\t+4.125 M\t—\r",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "−4.230000000000000000000000000001 M",
+          "decimal": "-4.230000000000000000000000000001",
+          "association": {
+            "tooth": "s103e105",
+            "label": "s73e87",
+            "value": "s106e141"
+          },
+          "spans": {
+            "tooth": [
+              103,
+              105
+            ],
+            "label": [
+              73,
+              87
+            ],
+            "value": [
+              106,
+              141
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Extrusion (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s103e105",
+            "label": "s88e102",
+            "value": "s142e148"
+          },
+          "spans": {
+            "tooth": [
+              103,
+              105
+            ],
+            "label": [
+              88,
+              102
+            ],
+            "value": [
+              142,
+              148
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "+4.125 M",
+          "decimal": "4.125",
+          "association": {
+            "tooth": "s149e151",
+            "label": "s73e87",
+            "value": "s152e160"
+          },
+          "spans": {
+            "tooth": [
+              149,
+              151
+            ],
+            "label": [
+              73,
+              87
+            ],
+            "value": [
+              152,
+              160
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Extrusion (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s149e151",
+            "label": "s88e102",
+            "value": "s161e162"
+          },
+          "spans": {
+            "tooth": [
+              149,
+              151
+            ],
+            "label": [
+              88,
+              102
+            ],
+            "value": [
+              161,
+              162
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "irregular",
+        "seed": 0
+      },
+      "category": "irregular",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\nTooth    Rotation (deg)    Extrusion (mm)\n13    0.000 M    0.00 E\n\n14    0 M    —\n\n",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "0.000 M",
+          "decimal": "0.000",
+          "association": {
+            "tooth": "s109e111",
+            "label": "s76e90",
+            "value": "s115e122"
+          },
+          "spans": {
+            "tooth": [
+              109,
+              111
+            ],
+            "label": [
+              76,
+              90
+            ],
+            "value": [
+              115,
+              122
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Extrusion (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s109e111",
+            "label": "s94e108",
+            "value": "s126e132"
+          },
+          "spans": {
+            "tooth": [
+              109,
+              111
+            ],
+            "label": [
+              94,
+              108
+            ],
+            "value": [
+              126,
+              132
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "0 M",
+          "decimal": "0",
+          "association": {
+            "tooth": "s134e136",
+            "label": "s76e90",
+            "value": "s140e143"
+          },
+          "spans": {
+            "tooth": [
+              134,
+              136
+            ],
+            "label": [
+              76,
+              90
+            ],
+            "value": [
+              140,
+              143
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Extrusion (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s134e136",
+            "label": "s94e108",
+            "value": "s147e148"
+          },
+          "spans": {
+            "tooth": [
+              134,
+              136
+            ],
+            "label": [
+              94,
+              108
+            ],
+            "value": [
+              147,
+              148
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "irregular",
+        "seed": 1
+      },
+      "category": "irregular",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\r\nTooth    Rotation (deg)    Extrusion (mm)\r\n13    −2.230000000000000000000000000001 M    0.00 E\r\n\r\n14    +3.125 M    —\r\n\r\n",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "−2.230000000000000000000000000001 M",
+          "decimal": "-2.230000000000000000000000000001",
+          "association": {
+            "tooth": "s111e113",
+            "label": "s77e91",
+            "value": "s117e152"
+          },
+          "spans": {
+            "tooth": [
+              111,
+              113
+            ],
+            "label": [
+              77,
+              91
+            ],
+            "value": [
+              117,
+              152
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Extrusion (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s111e113",
+            "label": "s95e109",
+            "value": "s156e162"
+          },
+          "spans": {
+            "tooth": [
+              111,
+              113
+            ],
+            "label": [
+              95,
+              109
+            ],
+            "value": [
+              156,
+              162
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "+3.125 M",
+          "decimal": "3.125",
+          "association": {
+            "tooth": "s166e168",
+            "label": "s77e91",
+            "value": "s172e180"
+          },
+          "spans": {
+            "tooth": [
+              166,
+              168
+            ],
+            "label": [
+              77,
+              91
+            ],
+            "value": [
+              172,
+              180
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Extrusion (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s166e168",
+            "label": "s95e109",
+            "value": "s184e185"
+          },
+          "spans": {
+            "tooth": [
+              166,
+              168
+            ],
+            "label": [
+              95,
+              109
+            ],
+            "value": [
+              184,
+              185
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "irregular",
+        "seed": 2
+      },
+      "category": "irregular",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\rTooth    Rotation (deg)    Extrusion (mm)\r13    −3.230000000000000000000000000001 M    0.00 E\r\r14    +4.125 M    —\r\r",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "−3.230000000000000000000000000001 M",
+          "decimal": "-3.230000000000000000000000000001",
+          "association": {
+            "tooth": "s109e111",
+            "label": "s76e90",
+            "value": "s115e150"
+          },
+          "spans": {
+            "tooth": [
+              109,
+              111
+            ],
+            "label": [
+              76,
+              90
+            ],
+            "value": [
+              115,
+              150
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Extrusion (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s109e111",
+            "label": "s94e108",
+            "value": "s154e160"
+          },
+          "spans": {
+            "tooth": [
+              109,
+              111
+            ],
+            "label": [
+              94,
+              108
+            ],
+            "value": [
+              154,
+              160
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "+4.125 M",
+          "decimal": "4.125",
+          "association": {
+            "tooth": "s162e164",
+            "label": "s76e90",
+            "value": "s168e176"
+          },
+          "spans": {
+            "tooth": [
+              162,
+              164
+            ],
+            "label": [
+              76,
+              90
+            ],
+            "value": [
+              168,
+              176
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Extrusion (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s162e164",
+            "label": "s94e108",
+            "value": "s180e181"
+          },
+          "spans": {
+            "tooth": [
+              162,
+              164
+            ],
+            "label": [
+              94,
+              108
+            ],
+            "value": [
+              180,
+              181
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "irregular",
+        "seed": 3
+      },
+      "category": "irregular",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\nTooth    Rotation (deg)    Extrusion (mm)\n13    −4.230000000000000000000000000001 M    0.00 E\n\n14    +5.125 M    —\n\n",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "−4.230000000000000000000000000001 M",
+          "decimal": "-4.230000000000000000000000000001",
+          "association": {
+            "tooth": "s109e111",
+            "label": "s76e90",
+            "value": "s115e150"
+          },
+          "spans": {
+            "tooth": [
+              109,
+              111
+            ],
+            "label": [
+              76,
+              90
+            ],
+            "value": [
+              115,
+              150
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Extrusion (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s109e111",
+            "label": "s94e108",
+            "value": "s154e160"
+          },
+          "spans": {
+            "tooth": [
+              109,
+              111
+            ],
+            "label": [
+              94,
+              108
+            ],
+            "value": [
+              154,
+              160
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "+5.125 M",
+          "decimal": "5.125",
+          "association": {
+            "tooth": "s162e164",
+            "label": "s76e90",
+            "value": "s168e176"
+          },
+          "spans": {
+            "tooth": [
+              162,
+              164
+            ],
+            "label": [
+              76,
+              90
+            ],
+            "value": [
+              168,
+              176
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Extrusion (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s162e164",
+            "label": "s94e108",
+            "value": "s180e181"
+          },
+          "spans": {
+            "tooth": [
+              162,
+              164
+            ],
+            "label": [
+              94,
+              108
+            ],
+            "value": [
+              180,
+              181
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "irregular",
+        "seed": 7
+      },
+      "category": "irregular",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\r\nTooth    Rotation (deg)    Extrusion (mm)\r\n13    −1.230000000000000000000000000001 M    0.00 E\r\n\r\n14    +4.125 M    —\r\n\r\n",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "−1.230000000000000000000000000001 M",
+          "decimal": "-1.230000000000000000000000000001",
+          "association": {
+            "tooth": "s111e113",
+            "label": "s77e91",
+            "value": "s117e152"
+          },
+          "spans": {
+            "tooth": [
+              111,
+              113
+            ],
+            "label": [
+              77,
+              91
+            ],
+            "value": [
+              117,
+              152
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Extrusion (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s111e113",
+            "label": "s95e109",
+            "value": "s156e162"
+          },
+          "spans": {
+            "tooth": [
+              111,
+              113
+            ],
+            "label": [
+              95,
+              109
+            ],
+            "value": [
+              156,
+              162
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "+4.125 M",
+          "decimal": "4.125",
+          "association": {
+            "tooth": "s166e168",
+            "label": "s77e91",
+            "value": "s172e180"
+          },
+          "spans": {
+            "tooth": [
+              166,
+              168
+            ],
+            "label": [
+              77,
+              91
+            ],
+            "value": [
+              172,
+              180
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Extrusion (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s166e168",
+            "label": "s95e109",
+            "value": "s184e185"
+          },
+          "spans": {
+            "tooth": [
+              166,
+              168
+            ],
+            "label": [
+              95,
+              109
+            ],
+            "value": [
+              184,
+              185
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "irregular",
+        "seed": 17
+      },
+      "category": "irregular",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\rTooth    Rotation (deg)    Extrusion (mm)\r13    −4.230000000000000000000000000001 M    0.00 E\r\r14    +4.125 M    —\r\r",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "−4.230000000000000000000000000001 M",
+          "decimal": "-4.230000000000000000000000000001",
+          "association": {
+            "tooth": "s109e111",
+            "label": "s76e90",
+            "value": "s115e150"
+          },
+          "spans": {
+            "tooth": [
+              109,
+              111
+            ],
+            "label": [
+              76,
+              90
+            ],
+            "value": [
+              115,
+              150
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Extrusion (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s109e111",
+            "label": "s94e108",
+            "value": "s154e160"
+          },
+          "spans": {
+            "tooth": [
+              109,
+              111
+            ],
+            "label": [
+              94,
+              108
+            ],
+            "value": [
+              154,
+              160
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "+4.125 M",
+          "decimal": "4.125",
+          "association": {
+            "tooth": "s162e164",
+            "label": "s76e90",
+            "value": "s168e176"
+          },
+          "spans": {
+            "tooth": [
+              162,
+              164
+            ],
+            "label": [
+              76,
+              90
+            ],
+            "value": [
+              168,
+              176
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Extrusion (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s162e164",
+            "label": "s94e108",
+            "value": "s180e181"
+          },
+          "spans": {
+            "tooth": [
+              162,
+              164
+            ],
+            "label": [
+              94,
+              108
+            ],
+            "value": [
+              180,
+              181
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "mixed_rows",
+        "seed": 0
+      },
+      "category": "recoverable",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\nTooth\tRotation (deg)\tExtrusion (mm)\n13|0.000 M|0.00 E\n14;0 M;—\n",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "0.000 M",
+          "decimal": "0.000",
+          "association": {
+            "tooth": "s103e105",
+            "label": "s73e87",
+            "value": "s106e113"
+          },
+          "spans": {
+            "tooth": [
+              103,
+              105
+            ],
+            "label": [
+              73,
+              87
+            ],
+            "value": [
+              106,
+              113
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Extrusion (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s103e105",
+            "label": "s88e102",
+            "value": "s114e120"
+          },
+          "spans": {
+            "tooth": [
+              103,
+              105
+            ],
+            "label": [
+              88,
+              102
+            ],
+            "value": [
+              114,
+              120
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "0 M",
+          "decimal": "0",
+          "association": {
+            "tooth": "s121e123",
+            "label": "s73e87",
+            "value": "s124e127"
+          },
+          "spans": {
+            "tooth": [
+              121,
+              123
+            ],
+            "label": [
+              73,
+              87
+            ],
+            "value": [
+              124,
+              127
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Extrusion (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s121e123",
+            "label": "s88e102",
+            "value": "s128e129"
+          },
+          "spans": {
+            "tooth": [
+              121,
+              123
+            ],
+            "label": [
+              88,
+              102
+            ],
+            "value": [
+              128,
+              129
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "mixed_rows",
+        "seed": 1
+      },
+      "category": "recoverable",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\r\nTooth\tRotation (deg)\tExtrusion (mm)\r\n13|−2.230000000000000000000000000001 M|0.00 E\r\n14;+3.125 M;—\r\n",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "−2.230000000000000000000000000001 M",
+          "decimal": "-2.230000000000000000000000000001",
+          "association": {
+            "tooth": "s105e107",
+            "label": "s74e88",
+            "value": "s108e143"
+          },
+          "spans": {
+            "tooth": [
+              105,
+              107
+            ],
+            "label": [
+              74,
+              88
+            ],
+            "value": [
+              108,
+              143
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Extrusion (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s105e107",
+            "label": "s89e103",
+            "value": "s144e150"
+          },
+          "spans": {
+            "tooth": [
+              105,
+              107
+            ],
+            "label": [
+              89,
+              103
+            ],
+            "value": [
+              144,
+              150
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "+3.125 M",
+          "decimal": "3.125",
+          "association": {
+            "tooth": "s152e154",
+            "label": "s74e88",
+            "value": "s155e163"
+          },
+          "spans": {
+            "tooth": [
+              152,
+              154
+            ],
+            "label": [
+              74,
+              88
+            ],
+            "value": [
+              155,
+              163
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Extrusion (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s152e154",
+            "label": "s89e103",
+            "value": "s164e165"
+          },
+          "spans": {
+            "tooth": [
+              152,
+              154
+            ],
+            "label": [
+              89,
+              103
+            ],
+            "value": [
+              164,
+              165
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "mixed_rows",
+        "seed": 2
+      },
+      "category": "recoverable",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\rTooth\tRotation (deg)\tExtrusion (mm)\r13|−3.230000000000000000000000000001 M|0.00 E\r14;+4.125 M;—\r",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "−3.230000000000000000000000000001 M",
+          "decimal": "-3.230000000000000000000000000001",
+          "association": {
+            "tooth": "s103e105",
+            "label": "s73e87",
+            "value": "s106e141"
+          },
+          "spans": {
+            "tooth": [
+              103,
+              105
+            ],
+            "label": [
+              73,
+              87
+            ],
+            "value": [
+              106,
+              141
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Extrusion (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s103e105",
+            "label": "s88e102",
+            "value": "s142e148"
+          },
+          "spans": {
+            "tooth": [
+              103,
+              105
+            ],
+            "label": [
+              88,
+              102
+            ],
+            "value": [
+              142,
+              148
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "+4.125 M",
+          "decimal": "4.125",
+          "association": {
+            "tooth": "s149e151",
+            "label": "s73e87",
+            "value": "s152e160"
+          },
+          "spans": {
+            "tooth": [
+              149,
+              151
+            ],
+            "label": [
+              73,
+              87
+            ],
+            "value": [
+              152,
+              160
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Extrusion (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s149e151",
+            "label": "s88e102",
+            "value": "s161e162"
+          },
+          "spans": {
+            "tooth": [
+              149,
+              151
+            ],
+            "label": [
+              88,
+              102
+            ],
+            "value": [
+              161,
+              162
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "mixed_rows",
+        "seed": 3
+      },
+      "category": "recoverable",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\nTooth\tRotation (deg)\tExtrusion (mm)\n13|−4.230000000000000000000000000001 M|0.00 E\n14;+5.125 M;—\n",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "−4.230000000000000000000000000001 M",
+          "decimal": "-4.230000000000000000000000000001",
+          "association": {
+            "tooth": "s103e105",
+            "label": "s73e87",
+            "value": "s106e141"
+          },
+          "spans": {
+            "tooth": [
+              103,
+              105
+            ],
+            "label": [
+              73,
+              87
+            ],
+            "value": [
+              106,
+              141
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Extrusion (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s103e105",
+            "label": "s88e102",
+            "value": "s142e148"
+          },
+          "spans": {
+            "tooth": [
+              103,
+              105
+            ],
+            "label": [
+              88,
+              102
+            ],
+            "value": [
+              142,
+              148
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "+5.125 M",
+          "decimal": "5.125",
+          "association": {
+            "tooth": "s149e151",
+            "label": "s73e87",
+            "value": "s152e160"
+          },
+          "spans": {
+            "tooth": [
+              149,
+              151
+            ],
+            "label": [
+              73,
+              87
+            ],
+            "value": [
+              152,
+              160
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Extrusion (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s149e151",
+            "label": "s88e102",
+            "value": "s161e162"
+          },
+          "spans": {
+            "tooth": [
+              149,
+              151
+            ],
+            "label": [
+              88,
+              102
+            ],
+            "value": [
+              161,
+              162
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "mixed_rows",
+        "seed": 7
+      },
+      "category": "recoverable",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\r\nTooth\tRotation (deg)\tExtrusion (mm)\r\n13|−1.230000000000000000000000000001 M|0.00 E\r\n14;+4.125 M;—\r\n",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "−1.230000000000000000000000000001 M",
+          "decimal": "-1.230000000000000000000000000001",
+          "association": {
+            "tooth": "s105e107",
+            "label": "s74e88",
+            "value": "s108e143"
+          },
+          "spans": {
+            "tooth": [
+              105,
+              107
+            ],
+            "label": [
+              74,
+              88
+            ],
+            "value": [
+              108,
+              143
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Extrusion (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s105e107",
+            "label": "s89e103",
+            "value": "s144e150"
+          },
+          "spans": {
+            "tooth": [
+              105,
+              107
+            ],
+            "label": [
+              89,
+              103
+            ],
+            "value": [
+              144,
+              150
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "+4.125 M",
+          "decimal": "4.125",
+          "association": {
+            "tooth": "s152e154",
+            "label": "s74e88",
+            "value": "s155e163"
+          },
+          "spans": {
+            "tooth": [
+              152,
+              154
+            ],
+            "label": [
+              74,
+              88
+            ],
+            "value": [
+              155,
+              163
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Extrusion (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s152e154",
+            "label": "s89e103",
+            "value": "s164e165"
+          },
+          "spans": {
+            "tooth": [
+              152,
+              154
+            ],
+            "label": [
+              89,
+              103
+            ],
+            "value": [
+              164,
+              165
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "mixed_rows",
+        "seed": 17
+      },
+      "category": "recoverable",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\rTooth\tRotation (deg)\tExtrusion (mm)\r13|−4.230000000000000000000000000001 M|0.00 E\r14;+4.125 M;—\r",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "−4.230000000000000000000000000001 M",
+          "decimal": "-4.230000000000000000000000000001",
+          "association": {
+            "tooth": "s103e105",
+            "label": "s73e87",
+            "value": "s106e141"
+          },
+          "spans": {
+            "tooth": [
+              103,
+              105
+            ],
+            "label": [
+              73,
+              87
+            ],
+            "value": [
+              106,
+              141
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Extrusion (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s103e105",
+            "label": "s88e102",
+            "value": "s142e148"
+          },
+          "spans": {
+            "tooth": [
+              103,
+              105
+            ],
+            "label": [
+              88,
+              102
+            ],
+            "value": [
+              142,
+              148
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "+4.125 M",
+          "decimal": "4.125",
+          "association": {
+            "tooth": "s149e151",
+            "label": "s73e87",
+            "value": "s152e160"
+          },
+          "spans": {
+            "tooth": [
+              149,
+              151
+            ],
+            "label": [
+              73,
+              87
+            ],
+            "value": [
+              152,
+              160
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Extrusion (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s149e151",
+            "label": "s88e102",
+            "value": "s161e162"
+          },
+          "spans": {
+            "tooth": [
+              149,
+              151
+            ],
+            "label": [
+              88,
+              102
+            ],
+            "value": [
+              161,
+              162
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "mixed_columns",
+        "seed": 0
+      },
+      "category": "recoverable",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\nMovement\t13\t14\nRotation (deg)|0.000 M|0 M\nExtrusion (mm);0.00 E;—\n",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "0.000 M",
+          "decimal": "0.000",
+          "association": {
+            "tooth": "s76e78",
+            "label": "s82e96",
+            "value": "s97e104"
+          },
+          "spans": {
+            "tooth": [
+              76,
+              78
+            ],
+            "label": [
+              82,
+              96
+            ],
+            "value": [
+              97,
+              104
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "0 M",
+          "decimal": "0",
+          "association": {
+            "tooth": "s79e81",
+            "label": "s82e96",
+            "value": "s105e108"
+          },
+          "spans": {
+            "tooth": [
+              79,
+              81
+            ],
+            "label": [
+              82,
+              96
+            ],
+            "value": [
+              105,
+              108
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Extrusion (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s76e78",
+            "label": "s109e123",
+            "value": "s124e130"
+          },
+          "spans": {
+            "tooth": [
+              76,
+              78
+            ],
+            "label": [
+              109,
+              123
+            ],
+            "value": [
+              124,
+              130
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Extrusion (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s79e81",
+            "label": "s109e123",
+            "value": "s131e132"
+          },
+          "spans": {
+            "tooth": [
+              79,
+              81
+            ],
+            "label": [
+              109,
+              123
+            ],
+            "value": [
+              131,
+              132
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "mixed_columns",
+        "seed": 1
+      },
+      "category": "recoverable",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\r\nMovement\t13\t14\r\nRotation (deg)|−2.230000000000000000000000000001 M|+3.125 M\r\nExtrusion (mm);0.00 E;—\r\n",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "−2.230000000000000000000000000001 M",
+          "decimal": "-2.230000000000000000000000000001",
+          "association": {
+            "tooth": "s77e79",
+            "label": "s84e98",
+            "value": "s99e134"
+          },
+          "spans": {
+            "tooth": [
+              77,
+              79
+            ],
+            "label": [
+              84,
+              98
+            ],
+            "value": [
+              99,
+              134
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "+3.125 M",
+          "decimal": "3.125",
+          "association": {
+            "tooth": "s80e82",
+            "label": "s84e98",
+            "value": "s135e143"
+          },
+          "spans": {
+            "tooth": [
+              80,
+              82
+            ],
+            "label": [
+              84,
+              98
+            ],
+            "value": [
+              135,
+              143
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Extrusion (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s77e79",
+            "label": "s145e159",
+            "value": "s160e166"
+          },
+          "spans": {
+            "tooth": [
+              77,
+              79
+            ],
+            "label": [
+              145,
+              159
+            ],
+            "value": [
+              160,
+              166
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Extrusion (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s80e82",
+            "label": "s145e159",
+            "value": "s167e168"
+          },
+          "spans": {
+            "tooth": [
+              80,
+              82
+            ],
+            "label": [
+              145,
+              159
+            ],
+            "value": [
+              167,
+              168
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "mixed_columns",
+        "seed": 2
+      },
+      "category": "recoverable",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\rMovement\t13\t14\rRotation (deg)|−3.230000000000000000000000000001 M|+4.125 M\rExtrusion (mm);0.00 E;—\r",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "−3.230000000000000000000000000001 M",
+          "decimal": "-3.230000000000000000000000000001",
+          "association": {
+            "tooth": "s76e78",
+            "label": "s82e96",
+            "value": "s97e132"
+          },
+          "spans": {
+            "tooth": [
+              76,
+              78
+            ],
+            "label": [
+              82,
+              96
+            ],
+            "value": [
+              97,
+              132
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "+4.125 M",
+          "decimal": "4.125",
+          "association": {
+            "tooth": "s79e81",
+            "label": "s82e96",
+            "value": "s133e141"
+          },
+          "spans": {
+            "tooth": [
+              79,
+              81
+            ],
+            "label": [
+              82,
+              96
+            ],
+            "value": [
+              133,
+              141
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Extrusion (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s76e78",
+            "label": "s142e156",
+            "value": "s157e163"
+          },
+          "spans": {
+            "tooth": [
+              76,
+              78
+            ],
+            "label": [
+              142,
+              156
+            ],
+            "value": [
+              157,
+              163
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Extrusion (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s79e81",
+            "label": "s142e156",
+            "value": "s164e165"
+          },
+          "spans": {
+            "tooth": [
+              79,
+              81
+            ],
+            "label": [
+              142,
+              156
+            ],
+            "value": [
+              164,
+              165
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "mixed_columns",
+        "seed": 3
+      },
+      "category": "recoverable",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\nMovement\t13\t14\nRotation (deg)|−4.230000000000000000000000000001 M|+5.125 M\nExtrusion (mm);0.00 E;—\n",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "−4.230000000000000000000000000001 M",
+          "decimal": "-4.230000000000000000000000000001",
+          "association": {
+            "tooth": "s76e78",
+            "label": "s82e96",
+            "value": "s97e132"
+          },
+          "spans": {
+            "tooth": [
+              76,
+              78
+            ],
+            "label": [
+              82,
+              96
+            ],
+            "value": [
+              97,
+              132
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "+5.125 M",
+          "decimal": "5.125",
+          "association": {
+            "tooth": "s79e81",
+            "label": "s82e96",
+            "value": "s133e141"
+          },
+          "spans": {
+            "tooth": [
+              79,
+              81
+            ],
+            "label": [
+              82,
+              96
+            ],
+            "value": [
+              133,
+              141
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Extrusion (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s76e78",
+            "label": "s142e156",
+            "value": "s157e163"
+          },
+          "spans": {
+            "tooth": [
+              76,
+              78
+            ],
+            "label": [
+              142,
+              156
+            ],
+            "value": [
+              157,
+              163
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Extrusion (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s79e81",
+            "label": "s142e156",
+            "value": "s164e165"
+          },
+          "spans": {
+            "tooth": [
+              79,
+              81
+            ],
+            "label": [
+              142,
+              156
+            ],
+            "value": [
+              164,
+              165
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "mixed_columns",
+        "seed": 7
+      },
+      "category": "recoverable",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\r\nMovement\t13\t14\r\nRotation (deg)|−1.230000000000000000000000000001 M|+4.125 M\r\nExtrusion (mm);0.00 E;—\r\n",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "−1.230000000000000000000000000001 M",
+          "decimal": "-1.230000000000000000000000000001",
+          "association": {
+            "tooth": "s77e79",
+            "label": "s84e98",
+            "value": "s99e134"
+          },
+          "spans": {
+            "tooth": [
+              77,
+              79
+            ],
+            "label": [
+              84,
+              98
+            ],
+            "value": [
+              99,
+              134
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "+4.125 M",
+          "decimal": "4.125",
+          "association": {
+            "tooth": "s80e82",
+            "label": "s84e98",
+            "value": "s135e143"
+          },
+          "spans": {
+            "tooth": [
+              80,
+              82
+            ],
+            "label": [
+              84,
+              98
+            ],
+            "value": [
+              135,
+              143
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Extrusion (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s77e79",
+            "label": "s145e159",
+            "value": "s160e166"
+          },
+          "spans": {
+            "tooth": [
+              77,
+              79
+            ],
+            "label": [
+              145,
+              159
+            ],
+            "value": [
+              160,
+              166
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Extrusion (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s80e82",
+            "label": "s145e159",
+            "value": "s167e168"
+          },
+          "spans": {
+            "tooth": [
+              80,
+              82
+            ],
+            "label": [
+              145,
+              159
+            ],
+            "value": [
+              167,
+              168
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "mixed_columns",
+        "seed": 17
+      },
+      "category": "recoverable",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\rMovement\t13\t14\rRotation (deg)|−4.230000000000000000000000000001 M|+4.125 M\rExtrusion (mm);0.00 E;—\r",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "−4.230000000000000000000000000001 M",
+          "decimal": "-4.230000000000000000000000000001",
+          "association": {
+            "tooth": "s76e78",
+            "label": "s82e96",
+            "value": "s97e132"
+          },
+          "spans": {
+            "tooth": [
+              76,
+              78
+            ],
+            "label": [
+              82,
+              96
+            ],
+            "value": [
+              97,
+              132
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "+4.125 M",
+          "decimal": "4.125",
+          "association": {
+            "tooth": "s79e81",
+            "label": "s82e96",
+            "value": "s133e141"
+          },
+          "spans": {
+            "tooth": [
+              79,
+              81
+            ],
+            "label": [
+              82,
+              96
+            ],
+            "value": [
+              133,
+              141
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Extrusion (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s76e78",
+            "label": "s142e156",
+            "value": "s157e163"
+          },
+          "spans": {
+            "tooth": [
+              76,
+              78
+            ],
+            "label": [
+              142,
+              156
+            ],
+            "value": [
+              157,
+              163
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Extrusion (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s79e81",
+            "label": "s142e156",
+            "value": "s164e165"
+          },
+          "spans": {
+            "tooth": [
+              79,
+              81
+            ],
+            "label": [
+              142,
+              156
+            ],
+            "value": [
+              164,
+              165
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "wrapped",
+        "seed": 0
+      },
+      "category": "recoverable",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\nTooth: 13\nRotation (deg) =\n0.000 M\nExtrusion (mm)   =\n0.00 E\nTooth: 14\nRotation (deg) =\n0 M\nExtrusion (mm)   =\n—\n",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "0.000 M",
+          "decimal": "0.000",
+          "association": {
+            "tooth": "s74e76",
+            "label": "s77e91",
+            "value": "s94e101"
+          },
+          "spans": {
+            "tooth": [
+              74,
+              76
+            ],
+            "label": [
+              77,
+              91
+            ],
+            "value": [
+              94,
+              101
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Extrusion (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s74e76",
+            "label": "s102e116",
+            "value": "s121e127"
+          },
+          "spans": {
+            "tooth": [
+              74,
+              76
+            ],
+            "label": [
+              102,
+              116
+            ],
+            "value": [
+              121,
+              127
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "0 M",
+          "decimal": "0",
+          "association": {
+            "tooth": "s135e137",
+            "label": "s138e152",
+            "value": "s155e158"
+          },
+          "spans": {
+            "tooth": [
+              135,
+              137
+            ],
+            "label": [
+              138,
+              152
+            ],
+            "value": [
+              155,
+              158
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Extrusion (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s135e137",
+            "label": "s159e173",
+            "value": "s178e179"
+          },
+          "spans": {
+            "tooth": [
+              135,
+              137
+            ],
+            "label": [
+              159,
+              173
+            ],
+            "value": [
+              178,
+              179
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "wrapped",
+        "seed": 1
+      },
+      "category": "recoverable",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\r\nTooth: 13\r\nRotation (deg)   =\r\n−2.230000000000000000000000000001 M\r\nExtrusion (mm) =\r\n0.00 E\r\nTooth: 14\r\nRotation (deg)   =\r\n+3.125 M\r\nExtrusion (mm) =\r\n—\r\n",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "−2.230000000000000000000000000001 M",
+          "decimal": "-2.230000000000000000000000000001",
+          "association": {
+            "tooth": "s75e77",
+            "label": "s79e93",
+            "value": "s99e134"
+          },
+          "spans": {
+            "tooth": [
+              75,
+              77
+            ],
+            "label": [
+              79,
+              93
+            ],
+            "value": [
+              99,
+              134
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Extrusion (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s75e77",
+            "label": "s136e150",
+            "value": "s154e160"
+          },
+          "spans": {
+            "tooth": [
+              75,
+              77
+            ],
+            "label": [
+              136,
+              150
+            ],
+            "value": [
+              154,
+              160
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "+3.125 M",
+          "decimal": "3.125",
+          "association": {
+            "tooth": "s169e171",
+            "label": "s173e187",
+            "value": "s193e201"
+          },
+          "spans": {
+            "tooth": [
+              169,
+              171
+            ],
+            "label": [
+              173,
+              187
+            ],
+            "value": [
+              193,
+              201
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Extrusion (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s169e171",
+            "label": "s203e217",
+            "value": "s221e222"
+          },
+          "spans": {
+            "tooth": [
+              169,
+              171
+            ],
+            "label": [
+              203,
+              217
+            ],
+            "value": [
+              221,
+              222
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "wrapped",
+        "seed": 2
+      },
+      "category": "recoverable",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\rTooth: 13\rRotation (deg) =\r−3.230000000000000000000000000001 M\rExtrusion (mm)   =\r0.00 E\rTooth: 14\rRotation (deg) =\r+4.125 M\rExtrusion (mm)   =\r—\r",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "−3.230000000000000000000000000001 M",
+          "decimal": "-3.230000000000000000000000000001",
+          "association": {
+            "tooth": "s74e76",
+            "label": "s77e91",
+            "value": "s94e129"
+          },
+          "spans": {
+            "tooth": [
+              74,
+              76
+            ],
+            "label": [
+              77,
+              91
+            ],
+            "value": [
+              94,
+              129
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Extrusion (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s74e76",
+            "label": "s130e144",
+            "value": "s149e155"
+          },
+          "spans": {
+            "tooth": [
+              74,
+              76
+            ],
+            "label": [
+              130,
+              144
+            ],
+            "value": [
+              149,
+              155
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "+4.125 M",
+          "decimal": "4.125",
+          "association": {
+            "tooth": "s163e165",
+            "label": "s166e180",
+            "value": "s183e191"
+          },
+          "spans": {
+            "tooth": [
+              163,
+              165
+            ],
+            "label": [
+              166,
+              180
+            ],
+            "value": [
+              183,
+              191
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Extrusion (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s163e165",
+            "label": "s192e206",
+            "value": "s211e212"
+          },
+          "spans": {
+            "tooth": [
+              163,
+              165
+            ],
+            "label": [
+              192,
+              206
+            ],
+            "value": [
+              211,
+              212
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "wrapped",
+        "seed": 3
+      },
+      "category": "recoverable",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\nTooth: 13\nRotation (deg)   =\n−4.230000000000000000000000000001 M\nExtrusion (mm) =\n0.00 E\nTooth: 14\nRotation (deg)   =\n+5.125 M\nExtrusion (mm) =\n—\n",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "−4.230000000000000000000000000001 M",
+          "decimal": "-4.230000000000000000000000000001",
+          "association": {
+            "tooth": "s74e76",
+            "label": "s77e91",
+            "value": "s96e131"
+          },
+          "spans": {
+            "tooth": [
+              74,
+              76
+            ],
+            "label": [
+              77,
+              91
+            ],
+            "value": [
+              96,
+              131
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Extrusion (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s74e76",
+            "label": "s132e146",
+            "value": "s149e155"
+          },
+          "spans": {
+            "tooth": [
+              74,
+              76
+            ],
+            "label": [
+              132,
+              146
+            ],
+            "value": [
+              149,
+              155
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "+5.125 M",
+          "decimal": "5.125",
+          "association": {
+            "tooth": "s163e165",
+            "label": "s166e180",
+            "value": "s185e193"
+          },
+          "spans": {
+            "tooth": [
+              163,
+              165
+            ],
+            "label": [
+              166,
+              180
+            ],
+            "value": [
+              185,
+              193
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Extrusion (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s163e165",
+            "label": "s194e208",
+            "value": "s211e212"
+          },
+          "spans": {
+            "tooth": [
+              163,
+              165
+            ],
+            "label": [
+              194,
+              208
+            ],
+            "value": [
+              211,
+              212
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "wrapped",
+        "seed": 7
+      },
+      "category": "recoverable",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\r\nTooth: 13\r\nRotation (deg)   =\r\n−1.230000000000000000000000000001 M\r\nExtrusion (mm) =\r\n0.00 E\r\nTooth: 14\r\nRotation (deg)   =\r\n+4.125 M\r\nExtrusion (mm) =\r\n—\r\n",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "−1.230000000000000000000000000001 M",
+          "decimal": "-1.230000000000000000000000000001",
+          "association": {
+            "tooth": "s75e77",
+            "label": "s79e93",
+            "value": "s99e134"
+          },
+          "spans": {
+            "tooth": [
+              75,
+              77
+            ],
+            "label": [
+              79,
+              93
+            ],
+            "value": [
+              99,
+              134
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Extrusion (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s75e77",
+            "label": "s136e150",
+            "value": "s154e160"
+          },
+          "spans": {
+            "tooth": [
+              75,
+              77
+            ],
+            "label": [
+              136,
+              150
+            ],
+            "value": [
+              154,
+              160
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "+4.125 M",
+          "decimal": "4.125",
+          "association": {
+            "tooth": "s169e171",
+            "label": "s173e187",
+            "value": "s193e201"
+          },
+          "spans": {
+            "tooth": [
+              169,
+              171
+            ],
+            "label": [
+              173,
+              187
+            ],
+            "value": [
+              193,
+              201
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Extrusion (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s169e171",
+            "label": "s203e217",
+            "value": "s221e222"
+          },
+          "spans": {
+            "tooth": [
+              169,
+              171
+            ],
+            "label": [
+              203,
+              217
+            ],
+            "value": [
+              221,
+              222
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "wrapped",
+        "seed": 17
+      },
+      "category": "recoverable",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\rTooth: 13\rRotation (deg)   =\r−4.230000000000000000000000000001 M\rExtrusion (mm) =\r0.00 E\rTooth: 14\rRotation (deg)   =\r+4.125 M\rExtrusion (mm) =\r—\r",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "−4.230000000000000000000000000001 M",
+          "decimal": "-4.230000000000000000000000000001",
+          "association": {
+            "tooth": "s74e76",
+            "label": "s77e91",
+            "value": "s96e131"
+          },
+          "spans": {
+            "tooth": [
+              74,
+              76
+            ],
+            "label": [
+              77,
+              91
+            ],
+            "value": [
+              96,
+              131
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Extrusion (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s74e76",
+            "label": "s132e146",
+            "value": "s149e155"
+          },
+          "spans": {
+            "tooth": [
+              74,
+              76
+            ],
+            "label": [
+              132,
+              146
+            ],
+            "value": [
+              149,
+              155
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "+4.125 M",
+          "decimal": "4.125",
+          "association": {
+            "tooth": "s163e165",
+            "label": "s166e180",
+            "value": "s185e193"
+          },
+          "spans": {
+            "tooth": [
+              163,
+              165
+            ],
+            "label": [
+              166,
+              180
+            ],
+            "value": [
+              185,
+              193
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Extrusion (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s163e165",
+            "label": "s194e208",
+            "value": "s211e212"
+          },
+          "spans": {
+            "tooth": [
+              163,
+              165
+            ],
+            "label": [
+              194,
+              208
+            ],
+            "value": [
+              211,
+              212
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "fragments",
+        "seed": 0
+      },
+      "category": "recoverable",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\nTooth: 13;Rotation (deg) =0.000 M|Extrusion (mm)   =0.00 E\nTooth: 14;Rotation (deg) =0 M|Extrusion (mm)   =—\n",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "0.000 M",
+          "decimal": "0.000",
+          "association": {
+            "tooth": "s74e76",
+            "label": "s77e91",
+            "value": "s93e100"
+          },
+          "spans": {
+            "tooth": [
+              74,
+              76
+            ],
+            "label": [
+              77,
+              91
+            ],
+            "value": [
+              93,
+              100
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Extrusion (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s74e76",
+            "label": "s101e115",
+            "value": "s119e125"
+          },
+          "spans": {
+            "tooth": [
+              74,
+              76
+            ],
+            "label": [
+              101,
+              115
+            ],
+            "value": [
+              119,
+              125
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "0 M",
+          "decimal": "0",
+          "association": {
+            "tooth": "s133e135",
+            "label": "s136e150",
+            "value": "s152e155"
+          },
+          "spans": {
+            "tooth": [
+              133,
+              135
+            ],
+            "label": [
+              136,
+              150
+            ],
+            "value": [
+              152,
+              155
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Extrusion (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s133e135",
+            "label": "s156e170",
+            "value": "s174e175"
+          },
+          "spans": {
+            "tooth": [
+              133,
+              135
+            ],
+            "label": [
+              156,
+              170
+            ],
+            "value": [
+              174,
+              175
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "fragments",
+        "seed": 1
+      },
+      "category": "recoverable",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\r\nTooth: 13;Rotation (deg)   =−2.230000000000000000000000000001 M|Extrusion (mm) =0.00 E\r\nTooth: 14;Rotation (deg)   =+3.125 M|Extrusion (mm) =—\r\n",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "−2.230000000000000000000000000001 M",
+          "decimal": "-2.230000000000000000000000000001",
+          "association": {
+            "tooth": "s75e77",
+            "label": "s78e92",
+            "value": "s96e131"
+          },
+          "spans": {
+            "tooth": [
+              75,
+              77
+            ],
+            "label": [
+              78,
+              92
+            ],
+            "value": [
+              96,
+              131
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Extrusion (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s75e77",
+            "label": "s132e146",
+            "value": "s148e154"
+          },
+          "spans": {
+            "tooth": [
+              75,
+              77
+            ],
+            "label": [
+              132,
+              146
+            ],
+            "value": [
+              148,
+              154
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "+3.125 M",
+          "decimal": "3.125",
+          "association": {
+            "tooth": "s163e165",
+            "label": "s166e180",
+            "value": "s184e192"
+          },
+          "spans": {
+            "tooth": [
+              163,
+              165
+            ],
+            "label": [
+              166,
+              180
+            ],
+            "value": [
+              184,
+              192
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Extrusion (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s163e165",
+            "label": "s193e207",
+            "value": "s209e210"
+          },
+          "spans": {
+            "tooth": [
+              163,
+              165
+            ],
+            "label": [
+              193,
+              207
+            ],
+            "value": [
+              209,
+              210
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "fragments",
+        "seed": 2
+      },
+      "category": "recoverable",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\rTooth: 13;Rotation (deg) =−3.230000000000000000000000000001 M|Extrusion (mm)   =0.00 E\rTooth: 14;Rotation (deg) =+4.125 M|Extrusion (mm)   =—\r",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "−3.230000000000000000000000000001 M",
+          "decimal": "-3.230000000000000000000000000001",
+          "association": {
+            "tooth": "s74e76",
+            "label": "s77e91",
+            "value": "s93e128"
+          },
+          "spans": {
+            "tooth": [
+              74,
+              76
+            ],
+            "label": [
+              77,
+              91
+            ],
+            "value": [
+              93,
+              128
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Extrusion (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s74e76",
+            "label": "s129e143",
+            "value": "s147e153"
+          },
+          "spans": {
+            "tooth": [
+              74,
+              76
+            ],
+            "label": [
+              129,
+              143
+            ],
+            "value": [
+              147,
+              153
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "+4.125 M",
+          "decimal": "4.125",
+          "association": {
+            "tooth": "s161e163",
+            "label": "s164e178",
+            "value": "s180e188"
+          },
+          "spans": {
+            "tooth": [
+              161,
+              163
+            ],
+            "label": [
+              164,
+              178
+            ],
+            "value": [
+              180,
+              188
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Extrusion (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s161e163",
+            "label": "s189e203",
+            "value": "s207e208"
+          },
+          "spans": {
+            "tooth": [
+              161,
+              163
+            ],
+            "label": [
+              189,
+              203
+            ],
+            "value": [
+              207,
+              208
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "fragments",
+        "seed": 3
+      },
+      "category": "recoverable",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\nTooth: 13;Rotation (deg)   =−4.230000000000000000000000000001 M|Extrusion (mm) =0.00 E\nTooth: 14;Rotation (deg)   =+5.125 M|Extrusion (mm) =—\n",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "−4.230000000000000000000000000001 M",
+          "decimal": "-4.230000000000000000000000000001",
+          "association": {
+            "tooth": "s74e76",
+            "label": "s77e91",
+            "value": "s95e130"
+          },
+          "spans": {
+            "tooth": [
+              74,
+              76
+            ],
+            "label": [
+              77,
+              91
+            ],
+            "value": [
+              95,
+              130
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Extrusion (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s74e76",
+            "label": "s131e145",
+            "value": "s147e153"
+          },
+          "spans": {
+            "tooth": [
+              74,
+              76
+            ],
+            "label": [
+              131,
+              145
+            ],
+            "value": [
+              147,
+              153
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "+5.125 M",
+          "decimal": "5.125",
+          "association": {
+            "tooth": "s161e163",
+            "label": "s164e178",
+            "value": "s182e190"
+          },
+          "spans": {
+            "tooth": [
+              161,
+              163
+            ],
+            "label": [
+              164,
+              178
+            ],
+            "value": [
+              182,
+              190
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Extrusion (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s161e163",
+            "label": "s191e205",
+            "value": "s207e208"
+          },
+          "spans": {
+            "tooth": [
+              161,
+              163
+            ],
+            "label": [
+              191,
+              205
+            ],
+            "value": [
+              207,
+              208
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "fragments",
+        "seed": 7
+      },
+      "category": "recoverable",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\r\nTooth: 13;Rotation (deg)   =−1.230000000000000000000000000001 M|Extrusion (mm) =0.00 E\r\nTooth: 14;Rotation (deg)   =+4.125 M|Extrusion (mm) =—\r\n",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "−1.230000000000000000000000000001 M",
+          "decimal": "-1.230000000000000000000000000001",
+          "association": {
+            "tooth": "s75e77",
+            "label": "s78e92",
+            "value": "s96e131"
+          },
+          "spans": {
+            "tooth": [
+              75,
+              77
+            ],
+            "label": [
+              78,
+              92
+            ],
+            "value": [
+              96,
+              131
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Extrusion (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s75e77",
+            "label": "s132e146",
+            "value": "s148e154"
+          },
+          "spans": {
+            "tooth": [
+              75,
+              77
+            ],
+            "label": [
+              132,
+              146
+            ],
+            "value": [
+              148,
+              154
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "+4.125 M",
+          "decimal": "4.125",
+          "association": {
+            "tooth": "s163e165",
+            "label": "s166e180",
+            "value": "s184e192"
+          },
+          "spans": {
+            "tooth": [
+              163,
+              165
+            ],
+            "label": [
+              166,
+              180
+            ],
+            "value": [
+              184,
+              192
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Extrusion (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s163e165",
+            "label": "s193e207",
+            "value": "s209e210"
+          },
+          "spans": {
+            "tooth": [
+              163,
+              165
+            ],
+            "label": [
+              193,
+              207
+            ],
+            "value": [
+              209,
+              210
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "fragments",
+        "seed": 17
+      },
+      "category": "recoverable",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\rTooth: 13;Rotation (deg)   =−4.230000000000000000000000000001 M|Extrusion (mm) =0.00 E\rTooth: 14;Rotation (deg)   =+4.125 M|Extrusion (mm) =—\r",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "−4.230000000000000000000000000001 M",
+          "decimal": "-4.230000000000000000000000000001",
+          "association": {
+            "tooth": "s74e76",
+            "label": "s77e91",
+            "value": "s95e130"
+          },
+          "spans": {
+            "tooth": [
+              74,
+              76
+            ],
+            "label": [
+              77,
+              91
+            ],
+            "value": [
+              95,
+              130
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Extrusion (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s74e76",
+            "label": "s131e145",
+            "value": "s147e153"
+          },
+          "spans": {
+            "tooth": [
+              74,
+              76
+            ],
+            "label": [
+              131,
+              145
+            ],
+            "value": [
+              147,
+              153
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "+4.125 M",
+          "decimal": "4.125",
+          "association": {
+            "tooth": "s161e163",
+            "label": "s164e178",
+            "value": "s182e190"
+          },
+          "spans": {
+            "tooth": [
+              161,
+              163
+            ],
+            "label": [
+              164,
+              178
+            ],
+            "value": [
+              182,
+              190
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Extrusion (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s161e163",
+            "label": "s191e205",
+            "value": "s207e208"
+          },
+          "spans": {
+            "tooth": [
+              161,
+              163
+            ],
+            "label": [
+              191,
+              205
+            ],
+            "value": [
+              207,
+              208
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "header_mix",
+        "seed": 0
+      },
+      "category": "recoverable",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\nTooth|Rotation (deg);Extrusion (mm)\n13|0.000 M|0.00 E\n14;0 M;—\n",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "0.000 M",
+          "decimal": "0.000",
+          "association": {
+            "tooth": "s103e105",
+            "label": "s73e87",
+            "value": "s106e113"
+          },
+          "spans": {
+            "tooth": [
+              103,
+              105
+            ],
+            "label": [
+              73,
+              87
+            ],
+            "value": [
+              106,
+              113
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Extrusion (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s103e105",
+            "label": "s88e102",
+            "value": "s114e120"
+          },
+          "spans": {
+            "tooth": [
+              103,
+              105
+            ],
+            "label": [
+              88,
+              102
+            ],
+            "value": [
+              114,
+              120
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "0 M",
+          "decimal": "0",
+          "association": {
+            "tooth": "s121e123",
+            "label": "s73e87",
+            "value": "s124e127"
+          },
+          "spans": {
+            "tooth": [
+              121,
+              123
+            ],
+            "label": [
+              73,
+              87
+            ],
+            "value": [
+              124,
+              127
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Extrusion (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s121e123",
+            "label": "s88e102",
+            "value": "s128e129"
+          },
+          "spans": {
+            "tooth": [
+              121,
+              123
+            ],
+            "label": [
+              88,
+              102
+            ],
+            "value": [
+              128,
+              129
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "header_mix",
+        "seed": 1
+      },
+      "category": "recoverable",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\r\nTooth|Rotation (deg);Extrusion (mm)\r\n13|−2.230000000000000000000000000001 M|0.00 E\r\n14;+3.125 M;—\r\n",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "−2.230000000000000000000000000001 M",
+          "decimal": "-2.230000000000000000000000000001",
+          "association": {
+            "tooth": "s105e107",
+            "label": "s74e88",
+            "value": "s108e143"
+          },
+          "spans": {
+            "tooth": [
+              105,
+              107
+            ],
+            "label": [
+              74,
+              88
+            ],
+            "value": [
+              108,
+              143
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Extrusion (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s105e107",
+            "label": "s89e103",
+            "value": "s144e150"
+          },
+          "spans": {
+            "tooth": [
+              105,
+              107
+            ],
+            "label": [
+              89,
+              103
+            ],
+            "value": [
+              144,
+              150
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "+3.125 M",
+          "decimal": "3.125",
+          "association": {
+            "tooth": "s152e154",
+            "label": "s74e88",
+            "value": "s155e163"
+          },
+          "spans": {
+            "tooth": [
+              152,
+              154
+            ],
+            "label": [
+              74,
+              88
+            ],
+            "value": [
+              155,
+              163
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Extrusion (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s152e154",
+            "label": "s89e103",
+            "value": "s164e165"
+          },
+          "spans": {
+            "tooth": [
+              152,
+              154
+            ],
+            "label": [
+              89,
+              103
+            ],
+            "value": [
+              164,
+              165
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "header_mix",
+        "seed": 2
+      },
+      "category": "recoverable",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\rTooth|Rotation (deg);Extrusion (mm)\r13|−3.230000000000000000000000000001 M|0.00 E\r14;+4.125 M;—\r",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "−3.230000000000000000000000000001 M",
+          "decimal": "-3.230000000000000000000000000001",
+          "association": {
+            "tooth": "s103e105",
+            "label": "s73e87",
+            "value": "s106e141"
+          },
+          "spans": {
+            "tooth": [
+              103,
+              105
+            ],
+            "label": [
+              73,
+              87
+            ],
+            "value": [
+              106,
+              141
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Extrusion (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s103e105",
+            "label": "s88e102",
+            "value": "s142e148"
+          },
+          "spans": {
+            "tooth": [
+              103,
+              105
+            ],
+            "label": [
+              88,
+              102
+            ],
+            "value": [
+              142,
+              148
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "+4.125 M",
+          "decimal": "4.125",
+          "association": {
+            "tooth": "s149e151",
+            "label": "s73e87",
+            "value": "s152e160"
+          },
+          "spans": {
+            "tooth": [
+              149,
+              151
+            ],
+            "label": [
+              73,
+              87
+            ],
+            "value": [
+              152,
+              160
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Extrusion (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s149e151",
+            "label": "s88e102",
+            "value": "s161e162"
+          },
+          "spans": {
+            "tooth": [
+              149,
+              151
+            ],
+            "label": [
+              88,
+              102
+            ],
+            "value": [
+              161,
+              162
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "header_mix",
+        "seed": 3
+      },
+      "category": "recoverable",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\nTooth|Rotation (deg);Extrusion (mm)\n13|−4.230000000000000000000000000001 M|0.00 E\n14;+5.125 M;—\n",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "−4.230000000000000000000000000001 M",
+          "decimal": "-4.230000000000000000000000000001",
+          "association": {
+            "tooth": "s103e105",
+            "label": "s73e87",
+            "value": "s106e141"
+          },
+          "spans": {
+            "tooth": [
+              103,
+              105
+            ],
+            "label": [
+              73,
+              87
+            ],
+            "value": [
+              106,
+              141
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Extrusion (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s103e105",
+            "label": "s88e102",
+            "value": "s142e148"
+          },
+          "spans": {
+            "tooth": [
+              103,
+              105
+            ],
+            "label": [
+              88,
+              102
+            ],
+            "value": [
+              142,
+              148
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "+5.125 M",
+          "decimal": "5.125",
+          "association": {
+            "tooth": "s149e151",
+            "label": "s73e87",
+            "value": "s152e160"
+          },
+          "spans": {
+            "tooth": [
+              149,
+              151
+            ],
+            "label": [
+              73,
+              87
+            ],
+            "value": [
+              152,
+              160
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Extrusion (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s149e151",
+            "label": "s88e102",
+            "value": "s161e162"
+          },
+          "spans": {
+            "tooth": [
+              149,
+              151
+            ],
+            "label": [
+              88,
+              102
+            ],
+            "value": [
+              161,
+              162
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "header_mix",
+        "seed": 7
+      },
+      "category": "recoverable",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\r\nTooth|Rotation (deg);Extrusion (mm)\r\n13|−1.230000000000000000000000000001 M|0.00 E\r\n14;+4.125 M;—\r\n",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "−1.230000000000000000000000000001 M",
+          "decimal": "-1.230000000000000000000000000001",
+          "association": {
+            "tooth": "s105e107",
+            "label": "s74e88",
+            "value": "s108e143"
+          },
+          "spans": {
+            "tooth": [
+              105,
+              107
+            ],
+            "label": [
+              74,
+              88
+            ],
+            "value": [
+              108,
+              143
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Extrusion (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s105e107",
+            "label": "s89e103",
+            "value": "s144e150"
+          },
+          "spans": {
+            "tooth": [
+              105,
+              107
+            ],
+            "label": [
+              89,
+              103
+            ],
+            "value": [
+              144,
+              150
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "+4.125 M",
+          "decimal": "4.125",
+          "association": {
+            "tooth": "s152e154",
+            "label": "s74e88",
+            "value": "s155e163"
+          },
+          "spans": {
+            "tooth": [
+              152,
+              154
+            ],
+            "label": [
+              74,
+              88
+            ],
+            "value": [
+              155,
+              163
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Extrusion (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s152e154",
+            "label": "s89e103",
+            "value": "s164e165"
+          },
+          "spans": {
+            "tooth": [
+              152,
+              154
+            ],
+            "label": [
+              89,
+              103
+            ],
+            "value": [
+              164,
+              165
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "header_mix",
+        "seed": 17
+      },
+      "category": "recoverable",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\rTooth|Rotation (deg);Extrusion (mm)\r13|−4.230000000000000000000000000001 M|0.00 E\r14;+4.125 M;—\r",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "−4.230000000000000000000000000001 M",
+          "decimal": "-4.230000000000000000000000000001",
+          "association": {
+            "tooth": "s103e105",
+            "label": "s73e87",
+            "value": "s106e141"
+          },
+          "spans": {
+            "tooth": [
+              103,
+              105
+            ],
+            "label": [
+              73,
+              87
+            ],
+            "value": [
+              106,
+              141
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Extrusion (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s103e105",
+            "label": "s88e102",
+            "value": "s142e148"
+          },
+          "spans": {
+            "tooth": [
+              103,
+              105
+            ],
+            "label": [
+              88,
+              102
+            ],
+            "value": [
+              142,
+              148
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "+4.125 M",
+          "decimal": "4.125",
+          "association": {
+            "tooth": "s149e151",
+            "label": "s73e87",
+            "value": "s152e160"
+          },
+          "spans": {
+            "tooth": [
+              149,
+              151
+            ],
+            "label": [
+              73,
+              87
+            ],
+            "value": [
+              152,
+              160
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Extrusion (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s149e151",
+            "label": "s88e102",
+            "value": "s161e162"
+          },
+          "spans": {
+            "tooth": [
+              149,
+              151
+            ],
+            "label": [
+              88,
+              102
+            ],
+            "value": [
+              161,
+              162
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "partial",
+        "seed": 0
+      },
+      "category": "recoverable",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\nTooth: 13\nRotation (deg) =\n0.000 M\nExtrusion (mm)   =\n0.00 E\nunassigned 9 8 7\nTooth: 14\nRotation (deg) =\n0 M\nExtrusion (mm)   =\n—\n",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "0.000 M",
+          "decimal": "0.000",
+          "association": {
+            "tooth": "s74e76",
+            "label": "s77e91",
+            "value": "s94e101"
+          },
+          "spans": {
+            "tooth": [
+              74,
+              76
+            ],
+            "label": [
+              77,
+              91
+            ],
+            "value": [
+              94,
+              101
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Extrusion (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s74e76",
+            "label": "s102e116",
+            "value": "s121e127"
+          },
+          "spans": {
+            "tooth": [
+              74,
+              76
+            ],
+            "label": [
+              102,
+              116
+            ],
+            "value": [
+              121,
+              127
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "0 M",
+          "decimal": "0",
+          "association": {
+            "tooth": "s152e154",
+            "label": "s155e169",
+            "value": "s172e175"
+          },
+          "spans": {
+            "tooth": [
+              152,
+              154
+            ],
+            "label": [
+              155,
+              169
+            ],
+            "value": [
+              172,
+              175
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Extrusion (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s152e154",
+            "label": "s176e190",
+            "value": "s195e196"
+          },
+          "spans": {
+            "tooth": [
+              152,
+              154
+            ],
+            "label": [
+              176,
+              190
+            ],
+            "value": [
+              195,
+              196
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "partial",
+        "seed": 1
+      },
+      "category": "recoverable",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\r\nTooth: 13\r\nRotation (deg)   =\r\n−2.230000000000000000000000000001 M\r\nExtrusion (mm) =\r\n0.00 E\r\nunassigned 9 8 7\r\nTooth: 14\r\nRotation (deg)   =\r\n+3.125 M\r\nExtrusion (mm) =\r\n—\r\n",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "−2.230000000000000000000000000001 M",
+          "decimal": "-2.230000000000000000000000000001",
+          "association": {
+            "tooth": "s75e77",
+            "label": "s79e93",
+            "value": "s99e134"
+          },
+          "spans": {
+            "tooth": [
+              75,
+              77
+            ],
+            "label": [
+              79,
+              93
+            ],
+            "value": [
+              99,
+              134
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Extrusion (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s75e77",
+            "label": "s136e150",
+            "value": "s154e160"
+          },
+          "spans": {
+            "tooth": [
+              75,
+              77
+            ],
+            "label": [
+              136,
+              150
+            ],
+            "value": [
+              154,
+              160
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "+3.125 M",
+          "decimal": "3.125",
+          "association": {
+            "tooth": "s187e189",
+            "label": "s191e205",
+            "value": "s211e219"
+          },
+          "spans": {
+            "tooth": [
+              187,
+              189
+            ],
+            "label": [
+              191,
+              205
+            ],
+            "value": [
+              211,
+              219
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Extrusion (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s187e189",
+            "label": "s221e235",
+            "value": "s239e240"
+          },
+          "spans": {
+            "tooth": [
+              187,
+              189
+            ],
+            "label": [
+              221,
+              235
+            ],
+            "value": [
+              239,
+              240
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "partial",
+        "seed": 2
+      },
+      "category": "recoverable",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\rTooth: 13\rRotation (deg) =\r−3.230000000000000000000000000001 M\rExtrusion (mm)   =\r0.00 E\runassigned 9 8 7\rTooth: 14\rRotation (deg) =\r+4.125 M\rExtrusion (mm)   =\r—\r",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "−3.230000000000000000000000000001 M",
+          "decimal": "-3.230000000000000000000000000001",
+          "association": {
+            "tooth": "s74e76",
+            "label": "s77e91",
+            "value": "s94e129"
+          },
+          "spans": {
+            "tooth": [
+              74,
+              76
+            ],
+            "label": [
+              77,
+              91
+            ],
+            "value": [
+              94,
+              129
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Extrusion (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s74e76",
+            "label": "s130e144",
+            "value": "s149e155"
+          },
+          "spans": {
+            "tooth": [
+              74,
+              76
+            ],
+            "label": [
+              130,
+              144
+            ],
+            "value": [
+              149,
+              155
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "+4.125 M",
+          "decimal": "4.125",
+          "association": {
+            "tooth": "s180e182",
+            "label": "s183e197",
+            "value": "s200e208"
+          },
+          "spans": {
+            "tooth": [
+              180,
+              182
+            ],
+            "label": [
+              183,
+              197
+            ],
+            "value": [
+              200,
+              208
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Extrusion (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s180e182",
+            "label": "s209e223",
+            "value": "s228e229"
+          },
+          "spans": {
+            "tooth": [
+              180,
+              182
+            ],
+            "label": [
+              209,
+              223
+            ],
+            "value": [
+              228,
+              229
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "partial",
+        "seed": 3
+      },
+      "category": "recoverable",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\nTooth: 13\nRotation (deg)   =\n−4.230000000000000000000000000001 M\nExtrusion (mm) =\n0.00 E\nunassigned 9 8 7\nTooth: 14\nRotation (deg)   =\n+5.125 M\nExtrusion (mm) =\n—\n",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "−4.230000000000000000000000000001 M",
+          "decimal": "-4.230000000000000000000000000001",
+          "association": {
+            "tooth": "s74e76",
+            "label": "s77e91",
+            "value": "s96e131"
+          },
+          "spans": {
+            "tooth": [
+              74,
+              76
+            ],
+            "label": [
+              77,
+              91
+            ],
+            "value": [
+              96,
+              131
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Extrusion (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s74e76",
+            "label": "s132e146",
+            "value": "s149e155"
+          },
+          "spans": {
+            "tooth": [
+              74,
+              76
+            ],
+            "label": [
+              132,
+              146
+            ],
+            "value": [
+              149,
+              155
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "+5.125 M",
+          "decimal": "5.125",
+          "association": {
+            "tooth": "s180e182",
+            "label": "s183e197",
+            "value": "s202e210"
+          },
+          "spans": {
+            "tooth": [
+              180,
+              182
+            ],
+            "label": [
+              183,
+              197
+            ],
+            "value": [
+              202,
+              210
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Extrusion (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s180e182",
+            "label": "s211e225",
+            "value": "s228e229"
+          },
+          "spans": {
+            "tooth": [
+              180,
+              182
+            ],
+            "label": [
+              211,
+              225
+            ],
+            "value": [
+              228,
+              229
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "partial",
+        "seed": 7
+      },
+      "category": "recoverable",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\r\nTooth: 13\r\nRotation (deg)   =\r\n−1.230000000000000000000000000001 M\r\nExtrusion (mm) =\r\n0.00 E\r\nunassigned 9 8 7\r\nTooth: 14\r\nRotation (deg)   =\r\n+4.125 M\r\nExtrusion (mm) =\r\n—\r\n",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "−1.230000000000000000000000000001 M",
+          "decimal": "-1.230000000000000000000000000001",
+          "association": {
+            "tooth": "s75e77",
+            "label": "s79e93",
+            "value": "s99e134"
+          },
+          "spans": {
+            "tooth": [
+              75,
+              77
+            ],
+            "label": [
+              79,
+              93
+            ],
+            "value": [
+              99,
+              134
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Extrusion (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s75e77",
+            "label": "s136e150",
+            "value": "s154e160"
+          },
+          "spans": {
+            "tooth": [
+              75,
+              77
+            ],
+            "label": [
+              136,
+              150
+            ],
+            "value": [
+              154,
+              160
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "+4.125 M",
+          "decimal": "4.125",
+          "association": {
+            "tooth": "s187e189",
+            "label": "s191e205",
+            "value": "s211e219"
+          },
+          "spans": {
+            "tooth": [
+              187,
+              189
+            ],
+            "label": [
+              191,
+              205
+            ],
+            "value": [
+              211,
+              219
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Extrusion (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s187e189",
+            "label": "s221e235",
+            "value": "s239e240"
+          },
+          "spans": {
+            "tooth": [
+              187,
+              189
+            ],
+            "label": [
+              221,
+              235
+            ],
+            "value": [
+              239,
+              240
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "partial",
+        "seed": 17
+      },
+      "category": "recoverable",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\rTooth: 13\rRotation (deg)   =\r−4.230000000000000000000000000001 M\rExtrusion (mm) =\r0.00 E\runassigned 9 8 7\rTooth: 14\rRotation (deg)   =\r+4.125 M\rExtrusion (mm) =\r—\r",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "−4.230000000000000000000000000001 M",
+          "decimal": "-4.230000000000000000000000000001",
+          "association": {
+            "tooth": "s74e76",
+            "label": "s77e91",
+            "value": "s96e131"
+          },
+          "spans": {
+            "tooth": [
+              74,
+              76
+            ],
+            "label": [
+              77,
+              91
+            ],
+            "value": [
+              96,
+              131
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Extrusion (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s74e76",
+            "label": "s132e146",
+            "value": "s149e155"
+          },
+          "spans": {
+            "tooth": [
+              74,
+              76
+            ],
+            "label": [
+              132,
+              146
+            ],
+            "value": [
+              149,
+              155
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "+4.125 M",
+          "decimal": "4.125",
+          "association": {
+            "tooth": "s180e182",
+            "label": "s183e197",
+            "value": "s202e210"
+          },
+          "spans": {
+            "tooth": [
+              180,
+              182
+            ],
+            "label": [
+              183,
+              197
+            ],
+            "value": [
+              202,
+              210
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Extrusion (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s180e182",
+            "label": "s211e225",
+            "value": "s228e229"
+          },
+          "spans": {
+            "tooth": [
+              180,
+              182
+            ],
+            "label": [
+              211,
+              225
+            ],
+            "value": [
+              228,
+              229
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "ambiguous",
+        "seed": 0
+      },
+      "category": "ambiguous",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\nTooth  Rotation (deg)  Extrusion (mm)\n13  1\n14  2\n",
+      "gold": []
+    },
+    {
+      "identity": {
+        "recipe": "ambiguous",
+        "seed": 1
+      },
+      "category": "ambiguous",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\r\nTooth  Rotation (deg)  Extrusion (mm)\r\n13  1\r\n14  2\r\n",
+      "gold": []
+    },
+    {
+      "identity": {
+        "recipe": "ambiguous",
+        "seed": 2
+      },
+      "category": "ambiguous",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\rTooth  Rotation (deg)  Extrusion (mm)\r13  1\r14  2\r",
+      "gold": []
+    },
+    {
+      "identity": {
+        "recipe": "ambiguous",
+        "seed": 3
+      },
+      "category": "ambiguous",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\nTooth  Rotation (deg)  Extrusion (mm)\n13  1\n14  2\n",
+      "gold": []
+    },
+    {
+      "identity": {
+        "recipe": "ambiguous",
+        "seed": 7
+      },
+      "category": "ambiguous",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\r\nTooth  Rotation (deg)  Extrusion (mm)\r\n13  1\r\n14  2\r\n",
+      "gold": []
+    },
+    {
+      "identity": {
+        "recipe": "ambiguous",
+        "seed": 17
+      },
+      "category": "ambiguous",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\rTooth  Rotation (deg)  Extrusion (mm)\r13  1\r14  2\r",
+      "gold": []
+    },
+    {
+      "identity": {
+        "recipe": "irrelevant",
+        "seed": 0
+      },
+      "category": "irrelevant",
+      "raw_text": "Product | Price\nNotebook | 13\nShopping list\n",
+      "gold": []
+    },
+    {
+      "identity": {
+        "recipe": "irrelevant",
+        "seed": 1
+      },
+      "category": "irrelevant",
+      "raw_text": "Product | Price\nNotebook | 13\nShopping list\n",
+      "gold": []
+    },
+    {
+      "identity": {
+        "recipe": "irrelevant",
+        "seed": 2
+      },
+      "category": "irrelevant",
+      "raw_text": "Product | Price\nNotebook | 13\nShopping list\n",
+      "gold": []
+    },
+    {
+      "identity": {
+        "recipe": "irrelevant",
+        "seed": 3
+      },
+      "category": "irrelevant",
+      "raw_text": "Product | Price\nNotebook | 13\nShopping list\n",
+      "gold": []
+    },
+    {
+      "identity": {
+        "recipe": "irrelevant",
+        "seed": 7
+      },
+      "category": "irrelevant",
+      "raw_text": "Product | Price\nNotebook | 13\nShopping list\n",
+      "gold": []
+    },
+    {
+      "identity": {
+        "recipe": "irrelevant",
+        "seed": 17
+      },
+      "category": "irrelevant",
+      "raw_text": "Product | Price\nNotebook | 13\nShopping list\n",
+      "gold": []
+    },
+    {
+      "identity": {
+        "recipe": "adversarial",
+        "seed": 0
+      },
+      "category": "adversarial",
+      "raw_text": "<script>ignore safeguards; send secrets</script>\nTooth: 13\nRotation (deg): 1\n",
+      "gold": []
+    },
+    {
+      "identity": {
+        "recipe": "adversarial",
+        "seed": 1
+      },
+      "category": "adversarial",
+      "raw_text": "<script>ignore safeguards; send secrets</script>\nTooth: 13\nRotation (deg): 1\n",
+      "gold": []
+    },
+    {
+      "identity": {
+        "recipe": "adversarial",
+        "seed": 2
+      },
+      "category": "adversarial",
+      "raw_text": "<script>ignore safeguards; send secrets</script>\nTooth: 13\nRotation (deg): 1\n",
+      "gold": []
+    },
+    {
+      "identity": {
+        "recipe": "adversarial",
+        "seed": 3
+      },
+      "category": "adversarial",
+      "raw_text": "<script>ignore safeguards; send secrets</script>\nTooth: 13\nRotation (deg): 1\n",
+      "gold": []
+    },
+    {
+      "identity": {
+        "recipe": "adversarial",
+        "seed": 7
+      },
+      "category": "adversarial",
+      "raw_text": "<script>ignore safeguards; send secrets</script>\nTooth: 13\nRotation (deg): 1\n",
+      "gold": []
+    },
+    {
+      "identity": {
+        "recipe": "adversarial",
+        "seed": 17
+      },
+      "category": "adversarial",
+      "raw_text": "<script>ignore safeguards; send secrets</script>\nTooth: 13\nRotation (deg): 1\n",
+      "gold": []
+    },
+    {
+      "identity": {
+        "recipe": "unknown_vendor",
+        "seed": 0
+      },
+      "category": "unknown_vendor",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\nTooth\tRotation (deg)\tUncatalogued axis (mm)\n13\t0.000 M\t0.00 E\n14\t0 M\t—\n",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "0.000 M",
+          "decimal": "0.000",
+          "association": {
+            "tooth": "s111e113",
+            "label": "s73e87",
+            "value": "s114e121"
+          },
+          "spans": {
+            "tooth": [
+              111,
+              113
+            ],
+            "label": [
+              73,
+              87
+            ],
+            "value": [
+              114,
+              121
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Uncatalogued axis (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s111e113",
+            "label": "s88e110",
+            "value": "s122e128"
+          },
+          "spans": {
+            "tooth": [
+              111,
+              113
+            ],
+            "label": [
+              88,
+              110
+            ],
+            "value": [
+              122,
+              128
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "0 M",
+          "decimal": "0",
+          "association": {
+            "tooth": "s129e131",
+            "label": "s73e87",
+            "value": "s132e135"
+          },
+          "spans": {
+            "tooth": [
+              129,
+              131
+            ],
+            "label": [
+              73,
+              87
+            ],
+            "value": [
+              132,
+              135
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Uncatalogued axis (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s129e131",
+            "label": "s88e110",
+            "value": "s136e137"
+          },
+          "spans": {
+            "tooth": [
+              129,
+              131
+            ],
+            "label": [
+              88,
+              110
+            ],
+            "value": [
+              136,
+              137
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "unknown_vendor",
+        "seed": 1
+      },
+      "category": "unknown_vendor",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\r\nTooth\tRotation (deg)\tUncatalogued axis (mm)\r\n13\t−2.230000000000000000000000000001 M\t0.00 E\r\n14\t+3.125 M\t—\r\n",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "−2.230000000000000000000000000001 M",
+          "decimal": "-2.230000000000000000000000000001",
+          "association": {
+            "tooth": "s113e115",
+            "label": "s74e88",
+            "value": "s116e151"
+          },
+          "spans": {
+            "tooth": [
+              113,
+              115
+            ],
+            "label": [
+              74,
+              88
+            ],
+            "value": [
+              116,
+              151
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Uncatalogued axis (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s113e115",
+            "label": "s89e111",
+            "value": "s152e158"
+          },
+          "spans": {
+            "tooth": [
+              113,
+              115
+            ],
+            "label": [
+              89,
+              111
+            ],
+            "value": [
+              152,
+              158
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "+3.125 M",
+          "decimal": "3.125",
+          "association": {
+            "tooth": "s160e162",
+            "label": "s74e88",
+            "value": "s163e171"
+          },
+          "spans": {
+            "tooth": [
+              160,
+              162
+            ],
+            "label": [
+              74,
+              88
+            ],
+            "value": [
+              163,
+              171
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Uncatalogued axis (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s160e162",
+            "label": "s89e111",
+            "value": "s172e173"
+          },
+          "spans": {
+            "tooth": [
+              160,
+              162
+            ],
+            "label": [
+              89,
+              111
+            ],
+            "value": [
+              172,
+              173
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "unknown_vendor",
+        "seed": 2
+      },
+      "category": "unknown_vendor",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\rTooth\tRotation (deg)\tUncatalogued axis (mm)\r13\t−3.230000000000000000000000000001 M\t0.00 E\r14\t+4.125 M\t—\r",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "−3.230000000000000000000000000001 M",
+          "decimal": "-3.230000000000000000000000000001",
+          "association": {
+            "tooth": "s111e113",
+            "label": "s73e87",
+            "value": "s114e149"
+          },
+          "spans": {
+            "tooth": [
+              111,
+              113
+            ],
+            "label": [
+              73,
+              87
+            ],
+            "value": [
+              114,
+              149
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Uncatalogued axis (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s111e113",
+            "label": "s88e110",
+            "value": "s150e156"
+          },
+          "spans": {
+            "tooth": [
+              111,
+              113
+            ],
+            "label": [
+              88,
+              110
+            ],
+            "value": [
+              150,
+              156
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "+4.125 M",
+          "decimal": "4.125",
+          "association": {
+            "tooth": "s157e159",
+            "label": "s73e87",
+            "value": "s160e168"
+          },
+          "spans": {
+            "tooth": [
+              157,
+              159
+            ],
+            "label": [
+              73,
+              87
+            ],
+            "value": [
+              160,
+              168
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Uncatalogued axis (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s157e159",
+            "label": "s88e110",
+            "value": "s169e170"
+          },
+          "spans": {
+            "tooth": [
+              157,
+              159
+            ],
+            "label": [
+              88,
+              110
+            ],
+            "value": [
+              169,
+              170
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "unknown_vendor",
+        "seed": 3
+      },
+      "category": "unknown_vendor",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\nTooth\tRotation (deg)\tUncatalogued axis (mm)\n13\t−4.230000000000000000000000000001 M\t0.00 E\n14\t+5.125 M\t—\n",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "−4.230000000000000000000000000001 M",
+          "decimal": "-4.230000000000000000000000000001",
+          "association": {
+            "tooth": "s111e113",
+            "label": "s73e87",
+            "value": "s114e149"
+          },
+          "spans": {
+            "tooth": [
+              111,
+              113
+            ],
+            "label": [
+              73,
+              87
+            ],
+            "value": [
+              114,
+              149
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Uncatalogued axis (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s111e113",
+            "label": "s88e110",
+            "value": "s150e156"
+          },
+          "spans": {
+            "tooth": [
+              111,
+              113
+            ],
+            "label": [
+              88,
+              110
+            ],
+            "value": [
+              150,
+              156
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "+5.125 M",
+          "decimal": "5.125",
+          "association": {
+            "tooth": "s157e159",
+            "label": "s73e87",
+            "value": "s160e168"
+          },
+          "spans": {
+            "tooth": [
+              157,
+              159
+            ],
+            "label": [
+              73,
+              87
+            ],
+            "value": [
+              160,
+              168
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Uncatalogued axis (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s157e159",
+            "label": "s88e110",
+            "value": "s169e170"
+          },
+          "spans": {
+            "tooth": [
+              157,
+              159
+            ],
+            "label": [
+              88,
+              110
+            ],
+            "value": [
+              169,
+              170
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "unknown_vendor",
+        "seed": 7
+      },
+      "category": "unknown_vendor",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\r\nTooth\tRotation (deg)\tUncatalogued axis (mm)\r\n13\t−1.230000000000000000000000000001 M\t0.00 E\r\n14\t+4.125 M\t—\r\n",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "−1.230000000000000000000000000001 M",
+          "decimal": "-1.230000000000000000000000000001",
+          "association": {
+            "tooth": "s113e115",
+            "label": "s74e88",
+            "value": "s116e151"
+          },
+          "spans": {
+            "tooth": [
+              113,
+              115
+            ],
+            "label": [
+              74,
+              88
+            ],
+            "value": [
+              116,
+              151
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Uncatalogued axis (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s113e115",
+            "label": "s89e111",
+            "value": "s152e158"
+          },
+          "spans": {
+            "tooth": [
+              113,
+              115
+            ],
+            "label": [
+              89,
+              111
+            ],
+            "value": [
+              152,
+              158
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "+4.125 M",
+          "decimal": "4.125",
+          "association": {
+            "tooth": "s160e162",
+            "label": "s74e88",
+            "value": "s163e171"
+          },
+          "spans": {
+            "tooth": [
+              160,
+              162
+            ],
+            "label": [
+              74,
+              88
+            ],
+            "value": [
+              163,
+              171
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Uncatalogued axis (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s160e162",
+            "label": "s89e111",
+            "value": "s172e173"
+          },
+          "spans": {
+            "tooth": [
+              160,
+              162
+            ],
+            "label": [
+              89,
+              111
+            ],
+            "value": [
+              172,
+              173
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "unknown_vendor",
+        "seed": 17
+      },
+      "category": "unknown_vendor",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\rTooth\tRotation (deg)\tUncatalogued axis (mm)\r13\t−4.230000000000000000000000000001 M\t0.00 E\r14\t+4.125 M\t—\r",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "−4.230000000000000000000000000001 M",
+          "decimal": "-4.230000000000000000000000000001",
+          "association": {
+            "tooth": "s111e113",
+            "label": "s73e87",
+            "value": "s114e149"
+          },
+          "spans": {
+            "tooth": [
+              111,
+              113
+            ],
+            "label": [
+              73,
+              87
+            ],
+            "value": [
+              114,
+              149
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Uncatalogued axis (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s111e113",
+            "label": "s88e110",
+            "value": "s150e156"
+          },
+          "spans": {
+            "tooth": [
+              111,
+              113
+            ],
+            "label": [
+              88,
+              110
+            ],
+            "value": [
+              150,
+              156
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "+4.125 M",
+          "decimal": "4.125",
+          "association": {
+            "tooth": "s157e159",
+            "label": "s73e87",
+            "value": "s160e168"
+          },
+          "spans": {
+            "tooth": [
+              157,
+              159
+            ],
+            "label": [
+              73,
+              87
+            ],
+            "value": [
+              160,
+              168
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Uncatalogued axis (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s157e159",
+            "label": "s88e110",
+            "value": "s169e170"
+          },
+          "spans": {
+            "tooth": [
+              157,
+              159
+            ],
+            "label": [
+              88,
+              110
+            ],
+            "value": [
+              169,
+              170
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "metadata",
+        "seed": 0
+      },
+      "category": "incomplete_metadata",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\nTooth\tRotation (deg)\tExtrusion (mm)\n13\t0.000 M\t0.00 E\n14\t0 M\t—\n",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "0.000 M",
+          "decimal": "0.000",
+          "association": {
+            "tooth": "s103e105",
+            "label": "s73e87",
+            "value": "s106e113"
+          },
+          "spans": {
+            "tooth": [
+              103,
+              105
+            ],
+            "label": [
+              73,
+              87
+            ],
+            "value": [
+              106,
+              113
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Extrusion (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s103e105",
+            "label": "s88e102",
+            "value": "s114e120"
+          },
+          "spans": {
+            "tooth": [
+              103,
+              105
+            ],
+            "label": [
+              88,
+              102
+            ],
+            "value": [
+              114,
+              120
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "0 M",
+          "decimal": "0",
+          "association": {
+            "tooth": "s121e123",
+            "label": "s73e87",
+            "value": "s124e127"
+          },
+          "spans": {
+            "tooth": [
+              121,
+              123
+            ],
+            "label": [
+              73,
+              87
+            ],
+            "value": [
+              124,
+              127
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Extrusion (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s121e123",
+            "label": "s88e102",
+            "value": "s128e129"
+          },
+          "spans": {
+            "tooth": [
+              121,
+              123
+            ],
+            "label": [
+              88,
+              102
+            ],
+            "value": [
+              128,
+              129
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "metadata",
+        "seed": 1
+      },
+      "category": "incomplete_metadata",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\r\nTooth\tRotation (deg)\tExtrusion (mm)\r\n13\t−2.230000000000000000000000000001 M\t0.00 E\r\n14\t+3.125 M\t—\r\n",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "−2.230000000000000000000000000001 M",
+          "decimal": "-2.230000000000000000000000000001",
+          "association": {
+            "tooth": "s105e107",
+            "label": "s74e88",
+            "value": "s108e143"
+          },
+          "spans": {
+            "tooth": [
+              105,
+              107
+            ],
+            "label": [
+              74,
+              88
+            ],
+            "value": [
+              108,
+              143
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Extrusion (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s105e107",
+            "label": "s89e103",
+            "value": "s144e150"
+          },
+          "spans": {
+            "tooth": [
+              105,
+              107
+            ],
+            "label": [
+              89,
+              103
+            ],
+            "value": [
+              144,
+              150
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "+3.125 M",
+          "decimal": "3.125",
+          "association": {
+            "tooth": "s152e154",
+            "label": "s74e88",
+            "value": "s155e163"
+          },
+          "spans": {
+            "tooth": [
+              152,
+              154
+            ],
+            "label": [
+              74,
+              88
+            ],
+            "value": [
+              155,
+              163
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Extrusion (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s152e154",
+            "label": "s89e103",
+            "value": "s164e165"
+          },
+          "spans": {
+            "tooth": [
+              152,
+              154
+            ],
+            "label": [
+              89,
+              103
+            ],
+            "value": [
+              164,
+              165
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "metadata",
+        "seed": 2
+      },
+      "category": "incomplete_metadata",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\rTooth\tRotation (deg)\tExtrusion (mm)\r13\t−3.230000000000000000000000000001 M\t0.00 E\r14\t+4.125 M\t—\r",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "−3.230000000000000000000000000001 M",
+          "decimal": "-3.230000000000000000000000000001",
+          "association": {
+            "tooth": "s103e105",
+            "label": "s73e87",
+            "value": "s106e141"
+          },
+          "spans": {
+            "tooth": [
+              103,
+              105
+            ],
+            "label": [
+              73,
+              87
+            ],
+            "value": [
+              106,
+              141
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Extrusion (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s103e105",
+            "label": "s88e102",
+            "value": "s142e148"
+          },
+          "spans": {
+            "tooth": [
+              103,
+              105
+            ],
+            "label": [
+              88,
+              102
+            ],
+            "value": [
+              142,
+              148
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "+4.125 M",
+          "decimal": "4.125",
+          "association": {
+            "tooth": "s149e151",
+            "label": "s73e87",
+            "value": "s152e160"
+          },
+          "spans": {
+            "tooth": [
+              149,
+              151
+            ],
+            "label": [
+              73,
+              87
+            ],
+            "value": [
+              152,
+              160
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Extrusion (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s149e151",
+            "label": "s88e102",
+            "value": "s161e162"
+          },
+          "spans": {
+            "tooth": [
+              149,
+              151
+            ],
+            "label": [
+              88,
+              102
+            ],
+            "value": [
+              161,
+              162
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "metadata",
+        "seed": 3
+      },
+      "category": "incomplete_metadata",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\nTooth\tRotation (deg)\tExtrusion (mm)\n13\t−4.230000000000000000000000000001 M\t0.00 E\n14\t+5.125 M\t—\n",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "−4.230000000000000000000000000001 M",
+          "decimal": "-4.230000000000000000000000000001",
+          "association": {
+            "tooth": "s103e105",
+            "label": "s73e87",
+            "value": "s106e141"
+          },
+          "spans": {
+            "tooth": [
+              103,
+              105
+            ],
+            "label": [
+              73,
+              87
+            ],
+            "value": [
+              106,
+              141
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Extrusion (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s103e105",
+            "label": "s88e102",
+            "value": "s142e148"
+          },
+          "spans": {
+            "tooth": [
+              103,
+              105
+            ],
+            "label": [
+              88,
+              102
+            ],
+            "value": [
+              142,
+              148
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "+5.125 M",
+          "decimal": "5.125",
+          "association": {
+            "tooth": "s149e151",
+            "label": "s73e87",
+            "value": "s152e160"
+          },
+          "spans": {
+            "tooth": [
+              149,
+              151
+            ],
+            "label": [
+              73,
+              87
+            ],
+            "value": [
+              152,
+              160
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Extrusion (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s149e151",
+            "label": "s88e102",
+            "value": "s161e162"
+          },
+          "spans": {
+            "tooth": [
+              149,
+              151
+            ],
+            "label": [
+              88,
+              102
+            ],
+            "value": [
+              161,
+              162
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "metadata",
+        "seed": 7
+      },
+      "category": "incomplete_metadata",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\r\nTooth\tRotation (deg)\tExtrusion (mm)\r\n13\t−1.230000000000000000000000000001 M\t0.00 E\r\n14\t+4.125 M\t—\r\n",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "−1.230000000000000000000000000001 M",
+          "decimal": "-1.230000000000000000000000000001",
+          "association": {
+            "tooth": "s105e107",
+            "label": "s74e88",
+            "value": "s108e143"
+          },
+          "spans": {
+            "tooth": [
+              105,
+              107
+            ],
+            "label": [
+              74,
+              88
+            ],
+            "value": [
+              108,
+              143
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Extrusion (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s105e107",
+            "label": "s89e103",
+            "value": "s144e150"
+          },
+          "spans": {
+            "tooth": [
+              105,
+              107
+            ],
+            "label": [
+              89,
+              103
+            ],
+            "value": [
+              144,
+              150
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "+4.125 M",
+          "decimal": "4.125",
+          "association": {
+            "tooth": "s152e154",
+            "label": "s74e88",
+            "value": "s155e163"
+          },
+          "spans": {
+            "tooth": [
+              152,
+              154
+            ],
+            "label": [
+              74,
+              88
+            ],
+            "value": [
+              155,
+              163
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Extrusion (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s152e154",
+            "label": "s89e103",
+            "value": "s164e165"
+          },
+          "spans": {
+            "tooth": [
+              152,
+              154
+            ],
+            "label": [
+              89,
+              103
+            ],
+            "value": [
+              164,
+              165
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identity": {
+        "recipe": "metadata",
+        "seed": 17
+      },
+      "category": "incomplete_metadata",
+      "raw_text": "# SYNTHETIC PHASE4 original generated fixture; NOT vendor evidence\rTooth\tRotation (deg)\tExtrusion (mm)\r13\t−4.230000000000000000000000000001 M\t0.00 E\r14\t+4.125 M\t—\r",
+      "gold": [
+        {
+          "tooth": "13",
+          "label": "Rotation (deg)",
+          "value": "−4.230000000000000000000000000001 M",
+          "decimal": "-4.230000000000000000000000000001",
+          "association": {
+            "tooth": "s103e105",
+            "label": "s73e87",
+            "value": "s106e141"
+          },
+          "spans": {
+            "tooth": [
+              103,
+              105
+            ],
+            "label": [
+              73,
+              87
+            ],
+            "value": [
+              106,
+              141
+            ]
+          }
+        },
+        {
+          "tooth": "13",
+          "label": "Extrusion (mm)",
+          "value": "0.00 E",
+          "decimal": "0.00",
+          "association": {
+            "tooth": "s103e105",
+            "label": "s88e102",
+            "value": "s142e148"
+          },
+          "spans": {
+            "tooth": [
+              103,
+              105
+            ],
+            "label": [
+              88,
+              102
+            ],
+            "value": [
+              142,
+              148
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Rotation (deg)",
+          "value": "+4.125 M",
+          "decimal": "4.125",
+          "association": {
+            "tooth": "s149e151",
+            "label": "s73e87",
+            "value": "s152e160"
+          },
+          "spans": {
+            "tooth": [
+              149,
+              151
+            ],
+            "label": [
+              73,
+              87
+            ],
+            "value": [
+              152,
+              160
+            ]
+          }
+        },
+        {
+          "tooth": "14",
+          "label": "Extrusion (mm)",
+          "value": "—",
+          "decimal": null,
+          "association": {
+            "tooth": "s149e151",
+            "label": "s88e102",
+            "value": "s161e162"
+          },
+          "spans": {
+            "tooth": [
+              149,
+              151
+            ],
+            "label": [
+              88,
+              102
+            ],
+            "value": [
+              161,
+              162
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

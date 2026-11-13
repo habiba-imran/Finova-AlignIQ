@@ -1,0 +1,451 @@
+{
+  "$defs": {
+    "Artifact": {
+      "additionalProperties": false,
+      "properties": {
+        "path": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Path",
+          "type": "string"
+        },
+        "sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Sha256",
+          "type": "string"
+        }
+      },
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "title": "Artifact",
+      "type": "object"
+    },
+    "FixtureRecord": {
+      "additionalProperties": false,
+      "properties": {
+        "fixture_id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Fixture Id",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "AUTHENTIC",
+            "SYNTHETIC"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "application": {
+          "enum": [
+            "ClinCheck",
+            "SureSmile",
+            "TEST_ONLY"
+          ],
+          "title": "Application",
+          "type": "string"
+        },
+        "source_version": {
+          "anyOf": [
+            {
+              "maxLength": 64,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Version"
+        },
+        "status": {
+          "default": "PENDING",
+          "enum": [
+            "PENDING",
+            "REVIEWED",
+            "REVOKED",
+            "TEST_ONLY"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "captured_by": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_.:-]+$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Captured By"
+        },
+        "captured_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Captured At"
+        },
+        "consent_ref": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_.:-]+$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Consent Ref"
+        },
+        "deidentification_ref": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_.:-]+$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Deidentification Ref"
+        },
+        "raw": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Artifact"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "expected": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Artifact"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "source_evidence": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Artifact"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "submission_context": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/LexicalInput"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "reviews": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/IndependentReview"
+          },
+          "title": "Reviews",
+          "type": "array"
+        }
+      },
+      "required": [
+        "fixture_id",
+        "kind",
+        "application"
+      ],
+      "title": "FixtureRecord",
+      "type": "object"
+    },
+    "IndependentReview": {
+      "additionalProperties": false,
+      "properties": {
+        "reviewer_id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Reviewer Id",
+          "type": "string"
+        },
+        "role": {
+          "enum": [
+            "ORTHODONTIST",
+            "INDEPENDENT_DATA_REVIEWER"
+          ],
+          "title": "Role",
+          "type": "string"
+        },
+        "reviewed_at": {
+          "format": "date-time",
+          "title": "Reviewed At",
+          "type": "string"
+        },
+        "decision": {
+          "enum": [
+            "APPROVE",
+            "REJECT"
+          ],
+          "title": "Decision",
+          "type": "string"
+        },
+        "raw_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Raw Sha256",
+          "type": "string"
+        },
+        "expected_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Expected Sha256",
+          "type": "string"
+        },
+        "source_evidence_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Source Evidence Sha256",
+          "type": "string"
+        }
+      },
+      "required": [
+        "reviewer_id",
+        "role",
+        "reviewed_at",
+        "decision",
+        "raw_sha256",
+        "expected_sha256",
+        "source_evidence_sha256"
+      ],
+      "title": "IndependentReview",
+      "type": "object"
+    },
+    "LexicalInput": {
+      "additionalProperties": false,
+      "properties": {
+        "raw_text": {
+          "maxLength": 100000,
+          "title": "Raw Text",
+          "type": "string"
+        },
+        "source_claim": {
+          "default": "Unknown",
+          "enum": [
+            "Unknown",
+            "ClinCheck",
+            "SureSmile"
+          ],
+          "title": "Source Claim",
+          "type": "string"
+        },
+        "context": {
+          "$ref": "#/$defs/SourceContext"
+        }
+      },
+      "required": [
+        "raw_text"
+      ],
+      "title": "LexicalInput",
+      "type": "object"
+    },
+    "SourceContext": {
+      "additionalProperties": false,
+      "description": "All supplied metadata are unverified claims, including notation.",
+      "properties": {
+        "source_version": {
+          "anyOf": [
+            {
+              "maxLength": 64,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Version"
+        },
+        "notation": {
+          "default": "UNKNOWN",
+          "enum": [
+            "UNKNOWN",
+            "FDI",
+            "UNIVERSAL",
+            "PALMER"
+          ],
+          "title": "Notation",
+          "type": "string"
+        },
+        "dentition": {
+          "default": "UNKNOWN",
+          "enum": [
+            "UNKNOWN",
+            "PERMANENT",
+            "PRIMARY",
+            "MIXED"
+          ],
+          "title": "Dentition",
+          "type": "string"
+        },
+        "arch": {
+          "default": "UNKNOWN",
+          "enum": [
+            "UNKNOWN",
+            "UPPER",
+            "LOWER",
+            "BOTH"
+          ],
+          "title": "Arch",
+          "type": "string"
+        },
+        "plan_mode": {
+          "default": "UNKNOWN",
+          "enum": [
+            "UNKNOWN",
+            "ALIGN_FINAL",
+            "DOCTOR_FINAL",
+            "COMPARISON"
+          ],
+          "title": "Plan Mode",
+          "type": "string"
+        },
+        "reference_basis": {
+          "default": "UNKNOWN",
+          "enum": [
+            "UNKNOWN",
+            "CROWN_CENTER",
+            "VIRTUAL_ROOT_APEX",
+            "CUSP_TIP"
+          ],
+          "title": "Reference Basis",
+          "type": "string"
+        },
+        "scope": {
+          "default": "UNKNOWN",
+          "enum": [
+            "UNKNOWN",
+            "TOTAL",
+            "CUMULATIVE",
+            "INCREMENTAL"
+          ],
+          "title": "Scope",
+          "type": "string"
+        },
+        "stage_index": {
+          "anyOf": [
+            {
+              "maximum": 2147483647,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Stage Index"
+        },
+        "coordinate_frame": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Coordinate Frame"
+        },
+        "case_id": {
+          "anyOf": [
+            {
+              "maxLength": 64,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Case Id"
+        },
+        "plan_id": {
+          "anyOf": [
+            {
+              "maxLength": 64,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Plan Id"
+        },
+        "decimal_separator": {
+          "default": "DOT",
+          "enum": [
+            "DOT",
+            "COMMA"
+          ],
+          "title": "Decimal Separator",
+          "type": "string"
+        }
+      },
+      "title": "SourceContext",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "fixtures": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/FixtureRecord"
+      },
+      "title": "Fixtures",
+      "type": "array"
+    }
+  },
+  "title": "FixtureManifest",
+  "type": "object"
+}

@@ -1,0 +1,1504 @@
+{
+  "source_spec_sha256": "2b220bd601456fd58762e3d5da624698823b4a098b9513e26fedfa8939267ce4",
+  "source_audit_sha256": "56f46c37f1c200dc20ff69f2518efb1241eb424baea6437d14a59a2afb86db9d",
+  "original_v1_document": "UNAVAILABLE_STANDALONE; v2 original-trace paragraphs only",
+  "rules": [
+    {
+      "rule_id": "A01",
+      "source_title": "Attachment presence audit",
+      "version": "2.0.0",
+      "disposition": "MORE DATA",
+      "tmt_dependence": "No",
+      "source_line": 730,
+      "evidence_ids": [
+        "S05"
+      ],
+      "audit_required": "Attachment presence cannot be audited from ordinary total TMT. Need independently imported attachment-tooth-and-stage map and handle intentional removal, lingual surfaces and multiple attachments.",
+      "audit_assessment": "Attachment presence cannot be audited from ordinary total TMT. Need independently imported attachment-tooth-and-stage map and handle intentional removal, lingual surfaces and multiple attachments.",
+      "original_trace": "Needs attachment plan, tooth ID, stage. Proposed trigger: Attachment listed for tooth outside accepted tooth/stage mapping.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "A02",
+      "source_title": "Attachment-to-movement review",
+      "version": "2.0.0",
+      "disposition": "MORE DATA",
+      "tmt_dependence": "No",
+      "source_line": 740,
+      "evidence_ids": [
+        "S05",
+        "S07",
+        "S13"
+      ],
+      "audit_required": "Clinician-approved indications plus actual attachment presence and stage are required to assert omission. Literature on attachment performance is heterogeneous; do not promote a movement amount into a mandatory attachment rule.",
+      "audit_assessment": "Clinician-approved indications plus actual attachment presence and stage are required to assert omission. Literature on attachment performance is heterogeneous; do not promote a movement amount into a mandatoryattachment rule. l",
+      "original_trace": "Needs clinician-approved attachment indications, measured movements. Proposed trigger: Approved indication met and planned attachment absent.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "A03",
+      "source_title": "Conflicting attachment preferences",
+      "version": "2.0.0",
+      "disposition": "MORE DATA",
+      "tmt_dependence": "No",
+      "source_line": 750,
+      "evidence_ids": [
+        "S03",
+        "S05"
+      ],
+      "audit_required": "Conflict-resolution is an engine policy and only meaningful when two approved attachment proposals exist. Do not select an attachment automatically based on arbitrary priority.",
+      "audit_assessment": "Conflict-resolution is an engine policy and only meaningful when two approved attachment proposals exist. Do not select an attachment automaticallybased on arbitrary priority.",
+      "original_trace": "Needs attachment candidate priorities, tooth type, rule set. Proposed trigger: Two approved attachment rules conflict on same tooth.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "A04",
+      "source_title": "Attachment stage scheduling",
+      "version": "2.0.0",
+      "disposition": "MORE DATA",
+      "tmt_dependence": "No",
+      "source_line": 764,
+      "evidence_ids": [
+        "S05",
+        "S07"
+      ],
+      "audit_required": "Attachment timing demands start/end stage data, plan mode and stage conventions. Not part of a total TMT.",
+      "audit_assessment": "Attachment timing demands start/end stage data, plan mode and stage conventions. Not part of a total TMT.",
+      "original_trace": "Needs attachment start/end stages and staging plan. Proposed trigger: Planned attachment stage differs from clinician-configured timing.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "A05",
+      "source_title": "Attachment geometry placement guard",
+      "version": "2.0.0",
+      "disposition": "MORE DATA",
+      "tmt_dependence": "No",
+      "source_line": 774,
+      "evidence_ids": [
+        "S05",
+        "S13"
+      ],
+      "audit_required": "Correct prohibition on numerical geometry placement from a TMT. Even with meshes, clinical/geometry validation is necessary; make the withholding guard globally active rather than waiting for geometry input.",
+      "audit_assessment": "Correct prohibition on numerical geometry placement from a TMT. Even with meshes, clinical/geometry validation is necessary; make the withholding guard globally active rather than waitingforgeometryinput.",
+      "original_trace": "Needs 3D crowns, surfaces, attachment geometry. Proposed trigger: A proposed placement cannot be verified without surface geometry.",
+      "migration": "Make withholding exact placement from TMT a globally enabled safety guard; geometry-dependent placement remains separate."
+    },
+    {
+      "rule_id": "A06",
+      "source_title": "Conventional vs optimized comparison",
+      "version": "2.0.0",
+      "disposition": "READY",
+      "tmt_dependence": "System",
+      "source_line": 786,
+      "evidence_ids": [
+        "S13",
+        "S14"
+      ],
+      "audit_required": "A universal-superiority claim should be blocked immediately as an output safeguard, not treated as an automatic attachment selection candidate. S14 finds no significant overall superiority; note subgroup uncertainty.",
+      "audit_assessment": "A universal-superiority claim should be blocked immediately as an output safeguard, not treated as an automatic attachment selection candidate. S14 finds no significant overall superiority; note subgroupuncertainty.",
+      "original_trace": "Needs attachment type and validated case-specific evidence. Proposed trigger: System asked to claim one shape is universally superior.",
+      "migration": "Reclassify as universal-superiority claim filter, always enabled, not a recommendation engine. ### H01–H12 • Safety/abstention"
+    },
+    {
+      "rule_id": "D01",
+      "source_title": "Movement inventory per tooth",
+      "version": "2.0.0",
+      "disposition": "READY",
+      "tmt_dependence": "Yes",
+      "source_line": 306,
+      "evidence_ids": [
+        "S01",
+        "S04"
+      ],
+      "audit_required": "Accurate if strictly a report of programmed, not achieved, movements with original basis, scope, plan mode and direction. Report omitted/missing dimensions separately.",
+      "audit_assessment": "Accurate if strictly a report of programmed, not achieved, movements with original basis, scope, plan mode and direction. Report omitted/missingdimensions separately.",
+      "original_trace": "Needs tooth ID; all verified movement fields. Proposed trigger: One or more nonzero, verified planned movement values exist.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "D02",
+      "source_title": "Multiple concurrent movement types",
+      "version": "2.0.0",
+      "disposition": "REVISE",
+      "tmt_dependence": "Yes",
+      "source_line": 316,
+      "evidence_ids": [
+        "S03",
+        "S13"
+      ],
+      "audit_required": "Rename to co-programmed movement axes, not concurrent movement. Total TMT does not show temporal overlap; simultaneity is a staging question.",
+      "audit_assessment": "Rename to co-programmed movement axes, not concurrent movement. Total TMT does not show temporal overlap;simultaneityis a staging question. i",
+      "original_trace": "Needs D01 inventory. Proposed trigger: Two or more distinct movement axes are programmed in the same scope.",
+      "migration": "Use term co-programmed within the same total plan. Do NOT assert concurrency; D10 and D11 should reuse this logic."
+    },
+    {
+      "rule_id": "D03",
+      "source_title": "Rotation by tooth group",
+      "version": "2.0.0",
+      "disposition": "READY",
+      "tmt_dependence": "Yes",
+      "source_line": 326,
+      "evidence_ids": [
+        "S09",
+        "S10"
+      ],
+      "audit_required": "Safe tooth-group description, subject to verified numbering and rotation sign mapping. No inference that canine/premolar rotation will fail.",
+      "audit_assessment": "Safe tooth-group description, subject to verified numbering and rotation sign mapping. No inference that canine/premolar rotation will fail.",
+      "original_trace": "Needs rotationdeg; tooth class. Proposed trigger: Any verified nonzero rotation.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "D04",
+      "source_title": "Extrusion by tooth group",
+      "version": "2.0.0",
+      "disposition": "READY",
+      "tmt_dependence": "Yes",
+      "source_line": 336,
+      "evidence_ids": [
+        "S09",
+        "S13"
+      ],
+      "audit_required": "Safe description of programmed extrusion; anterior/posterior grouping must rely on tooth map, and no clinical interpretation should follow automatically.",
+      "audit_assessment": "Safe description of programmed extrusion; anterior/posterior grouping must rely on tooth map, and no clinical interpretation should follow automatically.",
+      "original_trace": "Needs verticalmm; direction; tooth class. Proposed trigger: Any verified extrusion.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "D05",
+      "source_title": "Intrusion by tooth group",
+      "version": "2.0.0",
+      "disposition": "READY",
+      "tmt_dependence": "Yes",
+      "source_line": 346,
+      "evidence_ids": [
+        "S09",
+        "S11"
+      ],
+      "audit_required": "Safe description of programmed intrusion. Highlighting mandibular incisors is a navigation preference, not evidence of danger.",
+      "audit_assessment": "Safe description of programmed intrusion. Highlighting mandibular incisors is a navigation preference,not evidence of danger. i",
+      "original_trace": "Needs verticalmm; direction; tooth class. Proposed trigger: Any verified intrusion.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "D06",
+      "source_title": "Crown inclination/angulation inventory",
+      "version": "2.0.0",
+      "disposition": "READY",
+      "tmt_dependence": "Yes",
+      "source_line": 356,
+      "evidence_ids": [
+        "S01",
+        "S08"
+      ],
+      "audit_required": "Keep source-specific terms inclination and angulation. ClinCheck angular values are not changed by crown/root basis selection; neither alone specifies achieved root movement or torque control.",
+      "audit_assessment": "Keep source-specific terms inclination and angulation. ClinCheck angular values are not changed by crown/root basis selection;neither alone specifies achieved root movement or torque control.",
+      "original_trace": "Needs angulation; inclination; reference definitions. Proposed trigger: One or both verified angular movements nonzero.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "D07",
+      "source_title": "Buccolingual translation inventory",
+      "version": "2.0.0",
+      "disposition": "READY",
+      "tmt_dependence": "Yes",
+      "source_line": 370,
+      "evidence_ids": [
+        "S01",
+        "S08"
+      ],
+      "audit_required": "Descriptive buccolingual displacement only. Neither skeletal/dental expansion nor bodily translation can be established from one-axis crown movement.",
+      "audit_assessment": "Descriptive buccolingual displacement only. Neither skeletal/dental expansion nor bodily translation can be established from one-axis crown movement.",
+      "original_trace": "Needs BL magnitude & direction; tooth class. Proposed trigger: Any verified BL translation.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "D08",
+      "source_title": "Mesiodistal translation inventory",
+      "version": "2.0.0",
+      "disposition": "READY",
+      "tmt_dependence": "Yes",
+      "source_line": 380,
+      "evidence_ids": [
+        "S04",
+        "S12"
+      ],
+      "audit_required": "Descriptive mesiodistal displacement only. Do not infer space closure, anchorage loss, root movement or treatment speed.",
+      "audit_assessment": "Descriptive mesiodistal displacement only. Do not infer space closure, anchorage loss, root movement or treatment speed. i",
+      "original_trace": "Needs MD magnitude & direction; tooth class. Proposed trigger: Any verified MD translation.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "D09",
+      "source_title": "Molar distalization or mesialization indicator",
+      "version": "2.0.0",
+      "disposition": "READY",
+      "tmt_dependence": "Yes",
+      "source_line": 390,
+      "evidence_ids": [
+        "S12"
+      ],
+      "audit_required": "Valid molar movement label if mesial/distal convention is confirmed for that arch. Not a proof of sequential distalization or Class II correction.",
+      "audit_assessment": "Valid molar movement label if mesial/distal convention is confirmed for that arch. Not a proof of sequential distalization or Class II correction.",
+      "original_trace": "Needs molar class; MD movement. Proposed trigger: Verified molar MD direction.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "D10",
+      "source_title": "Combined rotation and vertical movement",
+      "version": "2.0.0",
+      "disposition": "REVISE",
+      "tmt_dependence": "Yes",
+      "source_line": 400,
+      "evidence_ids": [
+        "S10",
+        "S13"
+      ],
+      "audit_required": "Same-tooth rotation and vertical movement can co-exist in a total plan, but cannot be called temporally combined without stage values. Pure fact only; arguably redundant with D02.",
+      "audit_assessment": "Same-tooth rotation and vertical movement can co-exist in a total plan, but cannot be called temporallycombined without stage values. Pure fact only;arguablyredundant with D02.",
+      "original_trace": "Needs rotation and extrusion/intrusion. Proposed trigger: Both rotation and verified vertical movement exist for same tooth.",
+      "migration": "Keep ID for traceability; implement via D02 shared co-programming logic, with no staging/concurrency claims."
+    },
+    {
+      "rule_id": "D11",
+      "source_title": "Combined angular and translational movement",
+      "version": "2.0.0",
+      "disposition": "REVISE",
+      "tmt_dependence": "Yes",
+      "source_line": 410,
+      "evidence_ids": [
+        "S08",
+        "S13"
+      ],
+      "audit_required": "The same total-vs-staged problem. Avoid implying bodily motion, root control or force-system interaction. Merge into a generic co-programming observation.",
+      "audit_assessment": "The same total-vs-staged problem. Avoid implying bodily motion, root control or force-system interaction. Merge into ageneric co-programmingobservation. i",
+      "original_trace": "Needs inclination/angulation; MD/BL translation. Proposed trigger: An angular movement co-occurs with translation.",
+      "migration": "Keep ID for traceability; implement via D02 shared co-programming logic, no root/bodily motion inference."
+    },
+    {
+      "rule_id": "D12",
+      "source_title": "Movement distribution summary",
+      "version": "2.0.0",
+      "disposition": "READY",
+      "tmt_dependence": "Yes",
+      "source_line": 420,
+      "evidence_ids": [
+        "S01",
+        "S04"
+      ],
+      "audit_required": "Count verified nonzero axes/tooth groups/arches with separate data-coverage denominators. Never sum degrees with millimeters or present case difficulty from counts.",
+      "audit_assessment": "Count verified nonzero axes/tooth groups/arches with separate data-coverage denominators. Never sum degrees with millimeters orpresent case difficultyfrom counts.",
+      "original_trace": "Needs all verified per-tooth movements. Proposed trigger: A table contains movements across one or both arches.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "D13",
+      "source_title": "Opposite-side comparison (descriptive only)",
+      "version": "2.0.0",
+      "disposition": "READY",
+      "tmt_dependence": "Yes",
+      "source_line": 430,
+      "evidence_ids": [
+        "S01",
+        "S04"
+      ],
+      "audit_required": "Numerically compare paired anatomic teeth only within equivalent plan, basis and axis. Mirrored left/right signs require explicit convention; difference does not imply pathologic asymmetry.",
+      "audit_assessment": "Numerically compare paired anatomic teeth only within equivalent plan, basis and axis. Mirrored left/right signs require explicit convention;difference does not imply pathologic asymmetry.",
+      "original_trace": "Needs equivalent left/right tooth IDs and same scope. Proposed trigger: Corresponding teeth have different planned movements.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "D14",
+      "source_title": "Missing key clinical context inventory",
+      "version": "2.0.0",
+      "disposition": "READY",
+      "tmt_dependence": "System",
+      "source_line": 444,
+      "evidence_ids": [
+        "S15",
+        "S17",
+        "S18"
+      ],
+      "audit_required": "Useful data-availability report, but missing-context entries should be derived from requested decisions, not a generic exhaustive list on every paste.",
+      "audit_assessment": "Useful data-availability report, but missing-context entries should be derived from requested decisions,not ageneric exhaustive list on every paste.",
+      "original_trace": "Needs source TMT and optional metadata. Proposed trigger: A fact needed by a prospective advanced rule is unavailable.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "D15",
+      "source_title": "Single tooth zero movement",
+      "version": "2.0.0",
+      "disposition": "READY",
+      "tmt_dependence": "Yes",
+      "source_line": 454,
+      "evidence_ids": [
+        "S01",
+        "S04"
+      ],
+      "audit_required": "Use wording 'all supported, observed axes are zero'; missing/unsupported axes and absent teeth prevent a categorical 'no movement' conclusion.",
+      "audit_assessment": "Use wording 'all supported, observed axes are zero'; missing/unsupported axes and absent teeth prevent a categorical 'no movement' conclusion.",
+      "original_trace": "Needs verified zero values for tooth. Proposed trigger: All supported movement axes explicitly zero in a verified scope.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "D16",
+      "source_title": "Historical plan difference",
+      "version": "2.0.0",
+      "disposition": "REVISE",
+      "tmt_dependence": "Extra",
+      "source_line": 464,
+      "evidence_ids": [
+        "S01",
+        "S04"
+      ],
+      "audit_required": "Two plans need same patient, tooth, starting geometry/reference, compatible coordinates, stage and movement semantics. Equal basis alone does not make two rotations/paths subtractable; compute scalar deltas only where justified.",
+      "audit_assessment": "Two plans need same patient, tooth, starting geometry/reference, compatible coordinates, stage and movement semantics. Equal basis alone does not make two rotations/paths subtractable; compute scalar deltas onlywherejustified.",
+      "original_trace": "Needs two explicit comparable plans. Proposed trigger: Two plans of same tooth, basis, and movement scope available.",
+      "migration": "Disable numeric plan deltas until same patient, verified baseline geometry and source-compatible coordinate frame and operations. ### R01–R16 • Candidate clinical review"
+    },
+    {
+      "rule_id": "G01",
+      "source_title": "Non-empty structured input",
+      "version": "2.0.0",
+      "disposition": "READY",
+      "tmt_dependence": "Yes",
+      "source_line": 108,
+      "evidence_ids": [
+        "S01",
+        "S04"
+      ],
+      "audit_required": "Sound structural gate. Define recognizable headers, minimum row/column cardinality, encoding and payload limits; an empty but valid zero-movement table must not be rejected merely for lacking nonzero values.",
+      "audit_assessment": "Sound structural gate. Define recognizable headers, minimum row/column cardinality, encoding and payload limits; an empty but valid zero-movement table must not be rejected merely for lacking nonzero values.",
+      "original_trace": "Needs raw clipboard payload. Proposed trigger: No tooth-movement cells or no recognizable table structure.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "G02",
+      "source_title": "Reliable source identity",
+      "version": "2.0.0",
+      "disposition": "READY",
+      "tmt_dependence": "Metadata",
+      "source_line": 122,
+      "evidence_ids": [
+        "S01",
+        "S04"
+      ],
+      "audit_required": "Necessary but a pasted table may not identify its source; user-selected source is a claim, not verification. Confirm against signatures and make unmatched versions UNVERIFIED, not ClinCheck by default.",
+      "audit_assessment": "Necessary but a pasted table may not identify its source; user-selected source is a claim, not verification. Confirm against signatures and make unmatched versions UNVERIFIED, not ClinCheck bydefault.",
+      "original_trace": "Needs source metadata / detected format. Proposed trigger: Source label unknown or conflicting with evidence in table.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "G03",
+      "source_title": "Tooth numbering convention",
+      "version": "2.0.0",
+      "disposition": "READY",
+      "tmt_dependence": "Metadata",
+      "source_line": 132,
+      "evidence_ids": [
+        "S01",
+        "S04"
+      ],
+      "audit_required": "Critical. ClinCheck permits Universal, Palmer and FDI numbering; numeric 13 is ambiguous across systems. Require verified notation, plus arch context and a normalization lookup with exhaustive examples.",
+      "audit_assessment": "Critical. ClinCheck permits Universal, Palmer and FDI numbering; numeric 13 is ambiguous across systems. Require verified notation, plus arch context and a normalization lookup with exhaustive examples.",
+      "original_trace": "Needs source, numbering system, tooth IDs. Proposed trigger: Numbering convention unspecified/ambiguous (e.g. 13 means FDI vs Universal).",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "G04",
+      "source_title": "Tooth ID validity",
+      "version": "2.0.0",
+      "disposition": "READY",
+      "tmt_dependence": "Yes",
+      "source_line": 142,
+      "evidence_ids": [
+        "S01",
+        "S04"
+      ],
+      "audit_required": "Sound technical validation only after notation and dentition are known. Support optional third molars, deciduous teeth, pontics and explicit unsupported identifiers; do not treat an absent row as an invalid tooth.",
+      "audit_assessment": "Sound technical validation only after notation and dentition are known. Support optional third molars, deciduous teeth, pontics and explicit unsupported identifiers; do not treat an absent row as an invalid tooth.",
+      "original_trace": "Needs normalized tooth ID, dentition. Proposed trigger: Identifier outside permitted system, invalid quadrant/tooth, or unresolvable.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "G05",
+      "source_title": "Arch association",
+      "version": "2.0.0",
+      "disposition": "READY",
+      "tmt_dependence": "Metadata",
+      "source_line": 152,
+      "evidence_ids": [
+        "S01",
+        "S04"
+      ],
+      "audit_required": "Useful if the source actually provides an independent arch marker. A mismatch should quarantine an affected record rather than reinterpret its quadrant automatically.",
+      "audit_assessment": "Useful if the source actually provides an independent arch marker. A mismatch should quarantine an affected record rather than reinterpret itsquadrant automatically.",
+      "original_trace": "Needs tooth ID, arch marker. Proposed trigger: A tooth ID and stated arch disagree.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "G06",
+      "source_title": "Duplicate tooth records",
+      "version": "2.0.0",
+      "disposition": "READY",
+      "tmt_dependence": "Yes",
+      "source_line": 162,
+      "evidence_ids": [
+        "S01",
+        "S04"
+      ],
+      "audit_required": "Detect duplicate (case, plan, basis, scope, stage, tooth, axis) keys, not just repeated tooth numbers. Repeated columns may be legitimate plan comparisons and must not be combined.",
+      "audit_assessment": "f Detect duplicate (case, plan, basis, scope, stage, tooth, axis) keys, not just repeated tooth numbers. Repeated columns maybe legitimateplan comparisons and must not be combined.",
+      "original_trace": "Needs tooth + stage + plan scope. Proposed trigger: Same tooth/metric/stage repeated with inconsistent values.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "G07",
+      "source_title": "Canonical movement label mapping",
+      "version": "2.0.0",
+      "disposition": "READY",
+      "tmt_dependence": "Metadata",
+      "source_line": 172,
+      "evidence_ids": [
+        "S01",
+        "S04"
+      ],
+      "audit_required": "Essential. Make an explicit adapter-specific dictionary for extrusion/intrusion, B/L, M/D, rotation, angulation and inclination. Preserve source name and axis; no generic cross-vendor conversion by label similarity alone.",
+      "audit_assessment": "Essential. Make an explicit adapter-specific dictionary for extrusion/intrusion, B/L, M/D, rotation, angulation and inclination. Preserve source name and axis; no generic cross-vendor conversion by label similarityalone.",
+      "original_trace": "Needs raw movement header; source adapter. Proposed trigger: Movement label cannot be mapped unambiguously to named axis/movement.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "G08",
+      "source_title": "Numeric, unit and precision integrity",
+      "version": "2.0.0",
+      "disposition": "READY",
+      "tmt_dependence": "Yes",
+      "source_line": 186,
+      "evidence_ids": [
+        "S01",
+        "S04"
+      ],
+      "audit_required": "Correct engineering principle; specify decimal comma, unicode minus, empty cell, whitespace, thousands separators, exponent notation, NaN/Infinity and unexpected degree signs. Units may be implicit in a verified row header; lack of per-cell unit is not always an error.",
+      "audit_assessment": "Correct engineering principle; specify decimal comma, unicode minus, empty cell, whitespace, thousands separators, exponent notation, NaN/Infinity and unexpected degree signs. Units may be implicit in a verified row header;lack ofper-cell unit is not always an error.",
+      "original_trace": "Needs raw numeric cell, declared unit. Proposed trigger: Non-numeric, mixed units, locale separator ambiguous, or physical units absent.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "G09",
+      "source_title": "Directional meaning verified",
+      "version": "2.0.0",
+      "disposition": "READY",
+      "tmt_dependence": "Metadata",
+      "source_line": 196,
+      "evidence_ids": [
+        "S01",
+        "S04"
+      ],
+      "audit_required": "Top priority: validate letters and sign convention for each MOVEMENT axis, arch, tooth, platform and version. Direction labels for ClinCheck refer to the crown even in root basis; do not translate B inclination to lingual root torque without validated semantics.",
+      "audit_assessment": "i Top priority: validate letters and sign convention for each MOVEMENT axis, arch, tooth, platform and version. Direction labels for ClinCheck refer to the crown even in root basis; do not translate B inclination to lingual root torque without validated semantics.",
+      "original_trace": "Needs source sign/direction mapping. Proposed trigger: Signed values or letter codes cannot be mapped to a known direction.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "G10",
+      "source_title": "Missing versus zero",
+      "version": "2.0.0",
+      "disposition": "READY",
+      "tmt_dependence": "Yes",
+      "source_line": 206,
+      "evidence_ids": [
+        "S01",
+        "S04"
+      ],
+      "audit_required": "Essential: distinguish explicit 0, blank, dash, excluded/absent tooth, and an unsupported movement field. Introduce an observed/expected axis coverage mask; nonlisted axes cannot be assumed zero.",
+      "audit_assessment": "Essential: distinguish explicit 0, blank, dash, excluded/absent tooth, and an unsupported movement field. Introduce an observed/expected axis coverage mask;nonlisted axes cannot be assumed zero.",
+      "original_trace": "Needs all movement values. Proposed trigger: Blank, dash, missing tooth, 0 and explicit no-movement are conflated.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "G11",
+      "source_title": "Reference basis: crown/root/cusp",
+      "version": "2.0.0",
+      "disposition": "READY",
+      "tmt_dependence": "Metadata",
+      "source_line": 216,
+      "evidence_ids": [
+        "S01",
+        "S04"
+      ],
+      "audit_required": "Verified ClinCheck crown-center vs virtual-root-apex affects linear, not angular values. SureSmile crown center vs cusp tip is also distinct. Require basis metadata and disallow cross-basis arithmetic/comparisons.",
+      "audit_assessment": "i Verified ClinCheck crown-center vs virtual-root-apex affects linear, not angular values. SureSmile crown center vs cusp tip is also distinct. Require basis metadata and disallow cross-basis arithmetic/comparisons.",
+      "original_trace": "Needs source mode, displacement basis. Proposed trigger: Tooth basis missing or mixed when interpreting linear values.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "G12",
+      "source_title": "Total versus stage mode",
+      "version": "2.0.0",
+      "disposition": "READY",
+      "tmt_dependence": "Metadata",
+      "source_line": 226,
+      "evidence_ids": [
+        "S01",
+        "S04"
+      ],
+      "audit_required": "Verified SureSmile incremental/cumulative/total distinction. Total ClinCheck and last cumulative SureSmile stage are not automatically equivalent without same start/end, coordinate frame and content. No stage limits on a total-only paste.",
+      "audit_assessment": "Verified SureSmile incremental/cumulative/total distinction. Total ClinCheck and last cumulative SureSmile stage are not automatically equivalent without same start/end, coordinate frame and content. No stage limits on a total-only paste.",
+      "original_trace": "Needs plan stage info, cumulative/incremental. Proposed trigger: Stage-scope or comparison mode is ambiguous.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "G13",
+      "source_title": "Plan/comparison mode",
+      "version": "2.0.0",
+      "disposition": "READY",
+      "tmt_dependence": "Metadata",
+      "source_line": 240,
+      "evidence_ids": [
+        "S01"
+      ],
+      "audit_required": "Verified Align final, Doctor final and Comparison/difference distinction; a difference row is never the absolute programmed plan. Store plan ID and comparison operands; hold clinical rules if mode unconfirmed.",
+      "audit_assessment": "Verified Align final, Doctor final and Comparison/difference distinction; a difference row is never the absolute programmed plan. Store plan ID and comparison operands; hold clinical rules if mode unconfirmed.",
+      "original_trace": "Needs plan mode Align/Doctor/Difference. Proposed trigger: A difference/comparison view is treated as absolute planned movement.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "G14",
+      "source_title": "Absent/unmovable teeth",
+      "version": "2.0.0",
+      "disposition": "REVISE",
+      "tmt_dependence": "Extra",
+      "source_line": 250,
+      "evidence_ids": [
+        "S03",
+        "S04"
+      ],
+      "audit_required": "The TMT alone cannot confirm that a tooth is absent, excluded, fixed or truly unmovable. A dash, pontic or absent column is insufficient. Only check contradictions against independently supplied verified presence/exclusion metadata.",
+      "audit_assessment": "i The TMT alone cannot confirm that a tooth is absent, excluded, fixed or truly unmovable. A dash, pontic or absent column is insufficient. Only check contradictions against independently supplied verifiedpresence/exclusion metadata.",
+      "original_trace": "Needs tooth present/absent status. Proposed trigger: Missing/excluded/fixed tooth carries movement.",
+      "migration": "Only enable consistency check when verified external tooth-status metadata exists; missing tooth columns/dashes prove nothing."
+    },
+    {
+      "rule_id": "G15",
+      "source_title": "Stage ordering and identifiers",
+      "version": "2.0.0",
+      "disposition": "READY",
+      "tmt_dependence": "Extra",
+      "source_line": 258,
+      "evidence_ids": [
+        "S04"
+      ],
+      "audit_required": "Sound only for actual stage datasets. Define indexed stages, stage zero, optional accommodation/overcorrection/passive stages, skipped stages, arch alignment, and duplicate handling; don't impose staged checks on total-only data.",
+      "audit_assessment": "i Sound only for actual stage datasets. Define indexed stages, stage zero, optional accommodation/overcorrection/passive stages, skipped stages, arch alignment, and duplicate handling;don't impose staged checks on total-onlydata.",
+      "original_trace": "Needs ordered stage indices if supplied. Proposed trigger: Duplicate/missing/out-of-sequence stages prevent verified timeline.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "G16",
+      "source_title": "Schema version and original evidence",
+      "version": "2.0.0",
+      "disposition": "READY",
+      "tmt_dependence": "System",
+      "source_line": 270,
+      "evidence_ids": [
+        "S19"
+      ],
+      "audit_required": "Strong provenance gate, but raw value retention and rule-version checks are system-owned metadata rather than TMT measurements. Block clinical comments for unverifiable findings; a parse-error message should still be deliverable.",
+      "audit_assessment": "Strong provenance gate, but raw value retention and rule-version checks are system-owned metadata rather than TMT measurements. Block clinical comments for unverifiable findings; a parse-error message should still be deliverable.",
+      "original_trace": "Needs raw excerpt, normalized record, adapter version. Proposed trigger: Any output is missing source, raw evidence, rule-set version or parse provenance.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "G17",
+      "source_title": "Conflict and unsupported input handling",
+      "version": "2.0.0",
+      "disposition": "READY",
+      "tmt_dependence": "System",
+      "source_line": 280,
+      "evidence_ids": [
+        "S01",
+        "S04",
+        "S19"
+      ],
+      "audit_required": "Correct fail-closed principle, yet use partial abstention: an unverified rotation must not suppress independently verified extrusion for the same case. Implement field-scoped blocking and report coverage.",
+      "audit_assessment": "Correct fail-closed principle, yet use partial abstention: an unverified rotation must not suppress independently verified extrusion for the same case. Implement field-scoped blocking and report coverage.",
+      "original_trace": "Needs all parsed fields. Proposed trigger: Platform fields are semantically inconsistent or adapter uncertain.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "G18",
+      "source_title": "Recognized tooth types only",
+      "version": "2.0.0",
+      "disposition": "READY",
+      "tmt_dependence": "Metadata",
+      "source_line": 290,
+      "evidence_ids": [
+        "S01",
+        "S15"
+      ],
+      "audit_required": "Appropriate: tooth-group logic requires verified adult/primary mapping. Distinguish permanent vs primary, mixed dentition, supernumeraries and nonteeth; avoid treating unexpected IDs as normal molars.",
+      "audit_assessment": "Appropriate: tooth-group logic requires verified adult/primary mapping. Distinguish permanent vs primary, mixed dentition, supernumeraries and nonteeth; avoid treating unexpected IDs as normal molars.",
+      "original_trace": "Needs dentition, FDI tooth map. Proposed trigger: Tooth type cannot be derived or user supplies primary dentition without supported pathway.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim. ### D01–D16 • Descriptive observations"
+    },
+    {
+      "rule_id": "H01",
+      "source_title": "No clinical suitability diagnosis from TMT",
+      "version": "2.0.0",
+      "disposition": "READY",
+      "tmt_dependence": "Request",
+      "source_line": 798,
+      "evidence_ids": [
+        "S15",
+        "S16",
+        "S18"
+      ],
+      "audit_required": "Clinically appropriate scope guard. No plan suitability, diagnosis or guarantee from a movement table; visible on exported reports and API responses.",
+      "audit_assessment": "Clinically appropriate scope guard. No plan suitability, diagnosis or guarantee from a movement table;visible on exported reports and API responses.",
+      "original_trace": "Needs TMT-only request. Proposed trigger: User asks if patient is safe/eligible for aligners from movement numbers alone.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "H02",
+      "source_title": "Periodontal condition unknown",
+      "version": "2.0.0",
+      "disposition": "READY",
+      "tmt_dependence": "Request",
+      "source_line": 808,
+      "evidence_ids": [
+        "S17",
+        "S18"
+      ],
+      "audit_required": "Sound withholding guard for periodontal claims; periodontium cannot be assessed from TMT or virtual root coordinates. Do not interpret missing data as healthy periodontium.",
+      "audit_assessment": "Sound withholding guard for periodontal claims; periodontium cannot be assessed from TMT or",
+      "original_trace": "Needs periodontal examination/radiography absent. Proposed trigger: Specific plan relies on periodontal support not included in TMT.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "H03",
+      "source_title": "Root resorption/bone boundary unknown",
+      "version": "2.0.0",
+      "disposition": "READY",
+      "tmt_dependence": "Request",
+      "source_line": 818,
+      "evidence_ids": [
+        "S15",
+        "S17",
+        "S21"
+      ],
+      "audit_required": "Sound withholding guard for root resorption, root proximity and bone housing. A virtual root apex position is not a radiographic/biological risk assessment.",
+      "audit_assessment": "Sound withholding guard for root resorption,rootproximityand bone housing. A virtual root apex",
+      "original_trace": "Needs root and alveolar bone assessment absent. Proposed trigger: Requested judgment requires roots or alveolar housing.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "H04",
+      "source_title": "Occlusal contacts not inferable",
+      "version": "2.0.0",
+      "disposition": "READY",
+      "tmt_dependence": "Request",
+      "source_line": 832,
+      "evidence_ids": [
+        "S04",
+        "S15"
+      ],
+      "audit_required": "Sound; total movement does not show occlusal contact distribution or final bite. Neither transverse nor vertical TMT arithmetic is an occlusion simulator.",
+      "audit_assessment": "Sound; total movement does not show occlusal contact distribution or final bite. Neither transverse nor vertical TMT arithmetic is an occlusion simulator.",
+      "original_trace": "Needs occlusion/3D contacts not supplied. Proposed trigger: Asked to claim final occlusion, contact or interference from total TMT.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "H05",
+      "source_title": "No unseen IPR planning",
+      "version": "2.0.0",
+      "disposition": "READY",
+      "tmt_dependence": "Request",
+      "source_line": 842,
+      "evidence_ids": [
+        "S06",
+        "S15"
+      ],
+      "audit_required": "Sound; even when movement suggests crowding or space creation, no IPR amount/site may be derived from total TMT alone.",
+      "audit_assessment": "Sound; even when movement suggests crowding or space creation, no IPR amount/site may be derived from total TMT alone.",
+      "original_trace": "Needs IPR and enamel/contact data absent. Proposed trigger: Asked to prescribe precise interproximal reduction.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "H06",
+      "source_title": "No extraction/surgery recommendations",
+      "version": "2.0.0",
+      "disposition": "READY",
+      "tmt_dependence": "Request",
+      "source_line": 852,
+      "evidence_ids": [
+        "S15",
+        "S16",
+        "S18"
+      ],
+      "audit_required": "Sound; do not recommend extractions, surgery, adjunctive device substitution or contraindications from TMT without full assessment.",
+      "audit_assessment": "Sound; do not recommend extractions, surgery, adjunctive device substitution or contraindications from TMT without full assessment.",
+      "original_trace": "Needs patient history, radiographs, full setup unavailable. Proposed trigger: Asked for extraction, surgical or appliance replacement decision.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "H07",
+      "source_title": "No predicted success probability",
+      "version": "2.0.0",
+      "disposition": "READY",
+      "tmt_dependence": "Request",
+      "source_line": 862,
+      "evidence_ids": [
+        "S08",
+        "S21"
+      ],
+      "audit_required": "Sound. No patient-level success rate, treatment duration or risk percentage from clinical population averages or rules; any future predictor needs separate validated data and evaluation.",
+      "audit_assessment": "Sound. No patient-level success rate, treatment duration or risk percentage from clinical population averages or rules;anyfuturepredictor needs separate validated data and evaluation.",
+      "original_trace": "Needs TMT only; no validated model. Proposed trigger: Output suggests a patient-specific probability or time-to-result.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "H08",
+      "source_title": "No absolute attachment prescriptions",
+      "version": "2.0.0",
+      "disposition": "READY",
+      "tmt_dependence": "Request",
+      "source_line": 872,
+      "evidence_ids": [
+        "S05",
+        "S07",
+        "S13"
+      ],
+      "audit_required": "Sound; no mandatory size, orientation or tooth-surface location from movement table. Avoid 'missing attachment' claims when attachment plan unobserved.",
+      "audit_assessment": "Sound; no mandatory size, orientation or tooth-surface location from movement table. Avoid 'missingattachment' claims when attachmentplan unobserved.",
+      "original_trace": "Needs movement data without approved clinical + 3D input. Proposed trigger: Asked for mandatory attachment type/size/position.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "H09",
+      "source_title": "No claims of collision-free staging",
+      "version": "2.0.0",
+      "disposition": "READY",
+      "tmt_dependence": "Request",
+      "source_line": 882,
+      "evidence_ids": [
+        "S04"
+      ],
+      "audit_required": "Sound; cannot promise collision-free motion or safe stage transitions without 3D models and path validation.",
+      "audit_assessment": "Sound; cannot promise collision-free motion or safe stage transitions without 3D models and path validation.",
+      "original_trace": "Needs no 3D geometry and staged path. Proposed trigger: Asked whether movements are collision free.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "H10",
+      "source_title": "Monitoring and clinician sign-off",
+      "version": "2.0.0",
+      "disposition": "READY",
+      "tmt_dependence": "System",
+      "source_line": 894,
+      "evidence_ids": [
+        "S18",
+        "S19"
+      ],
+      "audit_required": "Required draft/review label and sign-off workflow. Human-review flag alone is insufficient if clinicians cannot inspect the numeric evidence and rationale.",
+      "audit_assessment": "Required draft/review label and sign-off workflow. Human-review flag alone is insufficient if clinicians cannot inspect the numeric evidence and rationale.",
+      "original_trace": "Needs any clinical output. Proposed trigger: A report includes patient-specific planning comments.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "H11",
+      "source_title": "Context-dependent exclusions",
+      "version": "2.0.0",
+      "disposition": "READY",
+      "tmt_dependence": "Request",
+      "source_line": 902,
+      "evidence_ids": [
+        "S15",
+        "S16"
+      ],
+      "audit_required": "Appropriate abstention but overlaps H01-H03/H06; consolidate implementation as a contextrequirement matrix while preserving distinct audit codes.",
+      "audit_assessment": "Appropriate abstention but overlaps H01-H03/H06; consolidate implementation as a context- requirement matrix whilepreservingdistinct audit codes.",
+      "original_trace": "Needs dentition, crown morphology, compliance unknown. Proposed trigger: Asked to determine appropriateness of complex intervention.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "H12",
+      "source_title": "Privacy and data minimization",
+      "version": "2.0.0",
+      "disposition": "READY",
+      "tmt_dependence": "System",
+      "source_line": 912,
+      "evidence_ids": [
+        "S18",
+        "S20"
+      ],
+      "audit_required": "Privacy guard essential but source S18 is not a jurisdiction-specific data-protection law. Require explicit PHI policy, redaction, retention, encryption, access control and no unsanctioned LLM transmission.",
+      "audit_assessment": "Privacy guard essential but source S18 is not a jurisdiction-specific data-protection law. Require explicit PHI policy, redaction, retention, encryption, access control and no unsanctioned LLM transmission.",
+      "original_trace": "Needs TMT input and user-supplied metadata. Proposed trigger: Patient identifying data present when unnecessary for analysis.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim. ### L01–L06 • Output/sign-off"
+    },
+    {
+      "rule_id": "L01",
+      "source_title": "Only rule-approved facts in comments",
+      "version": "2.0.0",
+      "disposition": "READY",
+      "tmt_dependence": "System",
+      "source_line": 924,
+      "evidence_ids": [
+        "S19",
+        "S20"
+      ],
+      "audit_required": "Important invariant. Prefer templates backed by typed structured findings; unconstrained LLM prose cannot be guaranteed clinically correct by prompt instructions alone. Validate/reject generated claims if any LLM is used.",
+      "audit_assessment": "Important invariant. Prefer templates backed by typed structured findings; unconstrained LLM prose cannot be guaranteed clinically correct by prompt instructions alone. Validate/reject generated claims if anyLLM is used.",
+      "original_trace": "Needs structured findings. Proposed trigger: Generator proposes a new diagnosis, threshold, or intervention.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "L02",
+      "source_title": "Measurement exactness",
+      "version": "2.0.0",
+      "disposition": "READY",
+      "tmt_dependence": "System",
+      "source_line": 934,
+      "evidence_ids": [
+        "S01",
+        "S19"
+      ],
+      "audit_required": "Essential deterministic token/measurement preservation: compare normalized tooth, numeric value, sign/direction, scope and basis, not approximate prose similarity. Never silently alter precision.",
+      "audit_assessment": "Essential deterministic token/measurement preservation: compare normalized tooth, numeric value, sign/direction, scope and basis, not approximate prose similarity. Never silently alter precision.",
+      "original_trace": "Needs provenance values. Proposed trigger: Comment changes tooth ID, unit, direction, stage, or rounding outside policy.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "L03",
+      "source_title": "Per-finding traceability",
+      "version": "2.0.0",
+      "disposition": "READY",
+      "tmt_dependence": "System",
+      "source_line": 944,
+      "evidence_ids": [
+        "S19"
+      ],
+      "audit_required": "Require finding-to-source map for each clinical sentence; labels from literature are provenance, not evidence of a patient-specific conclusion. Keep raw display links.",
+      "audit_assessment": "Require finding-to-source map for each clinical sentence; labels from literature are provenance, not evidence of apatient-specific conclusion. Keepraw displaylinks.",
+      "original_trace": "Needs finding ID, source ID, version. Proposed trigger: A sentence has no corresponding rule finding.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "L04",
+      "source_title": "Deduplicate and resolve conflicts",
+      "version": "2.0.0",
+      "disposition": "READY",
+      "tmt_dependence": "System",
+      "source_line": 956,
+      "evidence_ids": [
+        "S03",
+        "S19"
+      ],
+      "audit_required": "Deduplicate only identical clinical propositions; retain all triggering rule IDs and source fields. Report real contradictions instead of dropping lower-priority findings silently.",
+      "audit_assessment": "Deduplicate only identical clinical propositions; retain all triggering rule IDs and source fields. Report real contradictions instead of droppinglower-priorityfindings silently.",
+      "original_trace": "Needs ordered findings. Proposed trigger: Rules generate duplicate or contradictory review comments.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "L05",
+      "source_title": "Uncertainty disclosure",
+      "version": "2.0.0",
+      "disposition": "READY",
+      "tmt_dependence": "System",
+      "source_line": 964,
+      "evidence_ids": [
+        "S08",
+        "S19"
+      ],
+      "audit_required": "Make unsupported/missing-context states explicit and localized to each finding; distinguish 'not evaluated' from 'evaluated and no concern flagged'.",
+      "audit_assessment": "Make unsupported/missing-context states explicit and localized to each finding; distinguish 'not evaluated' from 'evaluated and no concern flagged'.",
+      "original_trace": "Needs missing inputs and evidence strength. Proposed trigger: A clinical decision is unsupported or evidence is indirect.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "L06",
+      "source_title": "Final clinician review status",
+      "version": "2.0.0",
+      "disposition": "READY",
+      "tmt_dependence": "System",
+      "source_line": 974,
+      "evidence_ids": [
+        "S18",
+        "S19"
+      ],
+      "audit_required": "Maintain Draft -> Reviewed -> Approved or Rejected with authorized reviewer identity, timestamps, immutable version and reapproval on content changes. Approval is not delegated to the LLM.",
+      "audit_assessment": "l Maintain Draft -> Reviewed -> Approved or Rejected with authorized reviewer identity, timestamps, immutable version and reapproval on content changes. Approval is not delegated to the LLM.",
+      "original_trace": "Needs report workflow and reviewer. Proposed trigger: No authorized clinician sign-off exists.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "N01",
+      "source_title": "Table completeness / expected coverage",
+      "version": "2.0.0",
+      "disposition": "ADDITIONAL",
+      "tmt_dependence": "System",
+      "source_line": 986,
+      "evidence_ids": [],
+      "audit_required": "Define required headers, tooth columns, arch, expected axes and a coverage mask; partial inputs remain explicitly partial.",
+      "audit_assessment": "Define required headers, tooth columns, arch, expected axes and a coverage mask; partial inputs remain explicitly partial.",
+      "original_trace": "Additional safeguard, not one of the legacy 82 proposals.",
+      "migration": "Define required headers, tooth columns, arch, expected axes and a coverage mask; partial inputs remain explicitly partial."
+    },
+    {
+      "rule_id": "N02",
+      "source_title": "Unknown format and layout drift",
+      "version": "2.0.0",
+      "disposition": "ADDITIONAL",
+      "tmt_dependence": "System",
+      "source_line": 988,
+      "evidence_ids": [],
+      "audit_required": "Detect unrecognized revisions, reordered and transposed variants; never silently select a closest-match adapter.",
+      "audit_assessment": "Detect unrecognized revisions, reordered and transposed variants; never silently select a closest-match adapter.",
+      "original_trace": "Additional safeguard, not one of the legacy 82 proposals.",
+      "migration": "Detect unrecognized revisions, reordered and transposed variants; never silently select a closest-match adapter."
+    },
+    {
+      "rule_id": "N03",
+      "source_title": "Case / plan identity isolation",
+      "version": "2.0.0",
+      "disposition": "ADDITIONAL",
+      "tmt_dependence": "System",
+      "source_line": 990,
+      "evidence_ids": [],
+      "audit_required": "Use separate pseudonymous case and plan identities, protect against cross-patient and crossplan joins.",
+      "audit_assessment": "Use separate pseudonymous case and plan identities, protect against cross-patient and crossplan joins.",
+      "original_trace": "Additional safeguard, not one of the legacy 82 proposals.",
+      "migration": "Use separate pseudonymous case and plan identities, protect against cross-patient and crossplan joins."
+    },
+    {
+      "rule_id": "N04",
+      "source_title": "Unicode and raw evidence preservation",
+      "version": "2.0.0",
+      "disposition": "ADDITIONAL",
+      "tmt_dependence": "System",
+      "source_line": 992,
+      "evidence_ids": [],
+      "audit_required": "Retain original clipboard text in controlled memory; normalize unicode minus, NBSP and decimal conventions only in derived tokens.",
+      "audit_assessment": "Retain original clipboard text in controlled memory; normalize unicode minus, NBSP and decimal conventions only in derived tokens.",
+      "original_trace": "Additional safeguard, not one of the legacy 82 proposals.",
+      "migration": "Retain original clipboard text in controlled memory; normalize unicode minus, NBSP and decimal conventions only in derived tokens."
+    },
+    {
+      "rule_id": "N05",
+      "source_title": "Mirrored tooth sign conventions",
+      "version": "2.0.0",
+      "disposition": "ADDITIONAL",
+      "tmt_dependence": "System",
+      "source_line": 994,
+      "evidence_ids": [],
+      "audit_required": "Apply signed direction logic only through verified source-, tooth-, arch- and version-specific maps.",
+      "audit_assessment": "Apply signed direction logic only through verified source-, tooth-, arch- and version-specific maps.",
+      "original_trace": "Additional safeguard, not one of the legacy 82 proposals.",
+      "migration": "Apply signed direction logic only through verified source-, tooth-, arch- and version-specific maps."
+    },
+    {
+      "rule_id": "N06",
+      "source_title": "External tooth-status metadata",
+      "version": "2.0.0",
+      "disposition": "ADDITIONAL",
+      "tmt_dependence": "System",
+      "source_line": 996,
+      "evidence_ids": [],
+      "audit_required": "Keep pontic, unerupted, impacted, extracted, excluded, fixed and mixed-dentition statuses from verified external data only.",
+      "audit_assessment": "Keep pontic, unerupted, impacted, extracted, excluded, fixed and mixed-dentition statuses from verified external data only.",
+      "original_trace": "Additional safeguard, not one of the legacy 82 proposals.",
+      "migration": "Keep pontic, unerupted, impacted, extracted, excluded, fixed and mixed-dentition statuses from verified external data only."
+    },
+    {
+      "rule_id": "N07",
+      "source_title": "Stage and overcorrection states",
+      "version": "2.0.0",
+      "disposition": "ADDITIONAL",
+      "tmt_dependence": "System",
+      "source_line": 998,
+      "evidence_ids": [],
+      "audit_required": "Represent baseline/zero, active, accommodation, correction, overcorrection and passive stages explicitly.",
+      "audit_assessment": "Represent baseline/zero, active, accommodation, correction, overcorrection and passive stages explicitly.",
+      "original_trace": "Additional safeguard, not one of the legacy 82 proposals.",
+      "migration": "Represent baseline/zero, active, accommodation, correction, overcorrection and passive stages explicitly."
+    },
+    {
+      "rule_id": "N08",
+      "source_title": "Coordinate frame and composition",
+      "version": "2.0.0",
+      "disposition": "ADDITIONAL",
+      "tmt_dependence": "System",
+      "source_line": 1000,
+      "evidence_ids": [],
+      "audit_required": "Track coordinate frame, initial geometry and supported transform operations; ban unproven sum/subtraction of movements.",
+      "audit_assessment": "Track coordinate frame, initial geometry and supported transform operations; ban unproven sum/subtraction of movements.",
+      "original_trace": "Additional safeguard, not one of the legacy 82 proposals.",
+      "migration": "Track coordinate frame, initial geometry and supported transform operations; ban unproven sum/subtraction of movements."
+    },
+    {
+      "rule_id": "N09",
+      "source_title": "Field-scoped abstention",
+      "version": "2.0.0",
+      "disposition": "ADDITIONAL",
+      "tmt_dependence": "System",
+      "source_line": 1002,
+      "evidence_ids": [],
+      "audit_required": "Suppress only findings that depend on an unverified metric; report coverage for unaffected fields.",
+      "audit_assessment": "Suppress only findings that depend on an unverified metric; report coverage for unaffected fields.",
+      "original_trace": "Additional safeguard, not one of the legacy 82 proposals.",
+      "migration": "Suppress only findings that depend on an unverified metric; report coverage for unaffected fields."
+    },
+    {
+      "rule_id": "N10",
+      "source_title": "Input/output claims filter",
+      "version": "2.0.0",
+      "disposition": "ADDITIONAL",
+      "tmt_dependence": "System",
+      "source_line": 1004,
+      "evidence_ids": [],
+      "audit_required": "Treat pasted text as untrusted data; prevent unsupported advice and prompt-injection instructions from altering outputs.",
+      "audit_assessment": "Treat pasted text as untrusted data; prevent unsupported advice and prompt-injection instructions from altering outputs.",
+      "original_trace": "Additional safeguard, not one of the legacy 82 proposals.",
+      "migration": "Treat pasted text as untrusted data; prevent unsupported advice and prompt-injection instructions from altering outputs."
+    },
+    {
+      "rule_id": "N11",
+      "source_title": "Immutable report amendments",
+      "version": "2.0.0",
+      "disposition": "ADDITIONAL",
+      "tmt_dependence": "System",
+      "source_line": 1006,
+      "evidence_ids": [],
+      "audit_required": "Tie signed report to content, rules, source and version; revoke sign-off after material changes.",
+      "audit_assessment": "Tie signed report to content, rules, source and version; revoke sign-off after material changes.",
+      "original_trace": "Additional safeguard, not one of the legacy 82 proposals.",
+      "migration": "Tie signed report to content, rules, source and version; revoke sign-off after material changes."
+    },
+    {
+      "rule_id": "N12",
+      "source_title": "Clinical intended purpose",
+      "version": "2.0.0",
+      "disposition": "ADDITIONAL",
+      "tmt_dependence": "System",
+      "source_line": 1012,
+      "evidence_ids": [],
+      "audit_required": "Record the requested clinical question, treatment objective and endpoint separately from movement magnitudes.",
+      "audit_assessment": "Record the requested clinical question, treatment objective and endpoint separately from movement magnitudes.",
+      "original_trace": "Additional safeguard, not one of the legacy 82 proposals.",
+      "migration": "Record the requested clinical question, treatment objective and endpoint separately from movement magnitudes."
+    },
+    {
+      "rule_id": "N13",
+      "source_title": "Rule-dependent eligibility",
+      "version": "2.0.0",
+      "disposition": "ADDITIONAL",
+      "tmt_dependence": "System",
+      "source_line": 1014,
+      "evidence_ids": [],
+      "audit_required": "Require each rule to declare source/version, required fields, valid basis, scope, plan mode, semantics and abstention outcome.",
+      "audit_assessment": "Require each rule to declare source/version, required fields, valid basis, scope, plan mode, semantics and abstention outcome.",
+      "original_trace": "Additional safeguard, not one of the legacy 82 proposals.",
+      "migration": "Require each rule to declare source/version, required fields, valid basis, scope, plan mode, semantics and abstention outcome."
+    },
+    {
+      "rule_id": "N14",
+      "source_title": "Incident and rollback workflow",
+      "version": "2.0.0",
+      "disposition": "ADDITIONAL",
+      "tmt_dependence": "System",
+      "source_line": 1016,
+      "evidence_ids": [],
+      "audit_required": "Before any clinical use, define error severity, incident logging, escalation, remediation and rapid rollback.",
+      "audit_assessment": "Before any clinical use, define error severity, incident logging, escalation, remediation and rapid rollback.",
+      "original_trace": "Additional safeguard, not one of the legacy 82 proposals.",
+      "migration": "Before any clinical use, define error severity, incident logging, escalation, remediation and rapid rollback."
+    },
+    {
+      "rule_id": "R01",
+      "source_title": "Canine/premolar rotation review",
+      "version": "2.0.0",
+      "disposition": "VALIDATE",
+      "tmt_dependence": "Yes",
+      "source_line": 476,
+      "evidence_ids": [
+        "S08",
+        "S09",
+        "S10"
+      ],
+      "audit_required": "Review prompt is plausible because rotational predictability varies; cited studies do not establish universal canine/premolar cutoffs. Needs tooth-, platform-, basis- and intent-specific trigger, exception list and blinded case validation.",
+      "audit_assessment": "Review prompt is plausible because rotational predictability varies; cited studies do not establish universal canine/premolar cutoffs. Needs tooth-, platform-, basis- and intent-specific trigger, exception list and blinded case validation.",
+      "original_trace": "Needs tooth group, verified rotation magnitude, policy. Proposed trigger: Magnitude meets clinicianapproved tooth-specific review criterion.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "R02",
+      "source_title": "Rotation magnitude band by tooth type",
+      "version": "2.0.0",
+      "disposition": "VALIDATE",
+      "tmt_dependence": "Yes",
+      "source_line": 484,
+      "evidence_ids": [
+        "S02",
+        "S10"
+      ],
+      "audit_required": "Only acceptable as a clearly labeled clinician-selected movement-size category, never a validated risk tier. Historical Invisalign categories are not contemporary cross-platform clinical thresholds.",
+      "audit_assessment": "Only acceptable as a clearly labeled clinician-selected movement-size category, never a validated risk tier. Historical Invisalign categories are not contemporarycross-platform clinical thresholds.",
+      "original_trace": "Needs tooth group, rotation magnitude, approved band set. Proposed trigger: Comparable verified movement crosses an approved category boundary.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "R03",
+      "source_title": "Anterior extrusion review",
+      "version": "2.0.0",
+      "disposition": "VALIDATE",
+      "tmt_dependence": "Yes",
+      "source_line": 494,
+      "evidence_ids": [
+        "S09",
+        "S13"
+      ],
+      "audit_required": "Potential movement review only. Anterior extrusion studies are heterogeneous; absence of attachments/staging/occlusion means no specific auxiliary recommendation or prediction.",
+      "audit_assessment": "Potential movement review only. Anterior extrusion studies are heterogeneous; absence of attachments/staging/occlusion means no specific auxiliaryrecommendation orprediction.",
+      "original_trace": "Needs anterior type, verified extrusion, policy. Proposed trigger: Relevant verified extrusion matches clinician-approved check.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "R04",
+      "source_title": "Posterior extrusion review",
+      "version": "2.0.0",
+      "disposition": "VALIDATE",
+      "tmt_dependence": "Yes",
+      "source_line": 508,
+      "evidence_ids": [
+        "S02",
+        "S09"
+      ],
+      "audit_required": "Posterior extrusion review is a candidate; historic manufacturer colors are a poor universal basis. Require device-specific rationale and limit language to 'review planned extrusion'.",
+      "audit_assessment": "i Posterior extrusion review is a candidate; historic manufacturer colors are a poor universal basis. Require device-specific rationale and limit language to 'reviewplanned extrusion'.",
+      "original_trace": "Needs posterior type, verified extrusion, policy. Proposed trigger: Relevant verified extrusion matches clinician-approved check.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "R05",
+      "source_title": "Lower incisor intrusion review",
+      "version": "2.0.0",
+      "disposition": "VALIDATE",
+      "tmt_dependence": "Yes",
+      "source_line": 518,
+      "evidence_ids": [
+        "S09",
+        "S11"
+      ],
+      "audit_required": "Lower-incisor intrusion deserves focused review, but S11 includes only eight studies, seven with serious bias, and measurement heterogeneity; do not derive a 1.5/2.0 mm default cutoff or a safety flag from its summary.",
+      "audit_assessment": "Lower-incisor intrusion deserves focused review, but S11 includes only eight studies, seven with serious bias, and measurement heterogeneity; do not derive a 1.5/2.0 mm default cutoff or a safety flagfrom its summary.",
+      "original_trace": "Needs lower incisor, verified intrusion, policy. Proposed trigger: Intrusion meets clinician-approved review criterion.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "R06",
+      "source_title": "Other intrusion review",
+      "version": "2.0.0",
+      "disposition": "VALIDATE",
+      "tmt_dependence": "Yes",
+      "source_line": 526,
+      "evidence_ids": [
+        "S08",
+        "S09"
+      ],
+      "audit_required": "Other intrusion by group is a plausible policy only; root support, occlusal objectives, staging, baseline bite and appliance details are absent. No generalized success rating.",
+      "audit_assessment": "Other intrusion by group is a plausible policy only; root support, occlusal objectives, staging, baseline bite and appliance details are absent. Nogeneralized success rating.",
+      "original_trace": "Needs tooth class, verified intrusion, policy. Proposed trigger: Intrusion exceeds a validated clinicianconfigured criterion.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "R07",
+      "source_title": "Incisor inclination / root control review",
+      "version": "2.0.0",
+      "disposition": "VALIDATE",
+      "tmt_dependence": "Partial",
+      "source_line": 536,
+      "evidence_ids": [
+        "S08",
+        "S13"
+      ],
+      "audit_required": "Risk of misinterpreting crown inclination as root torque or periodontal root risk. Without actual rootposition/geometry, allow only a conditional 'review inclination/root-control strategy' prompt approved by an orthodontist.",
+      "audit_assessment": "Risk of misinterpreting crown inclination as root torque or periodontal root risk. Without actual root- position/geometry, allow only a conditional 'review inclination/root-control strategy' prompt approved byan orthodontist.",
+      "original_trace": "Needs incisor, source-specific inclination, root basis if available. Proposed trigger: Clinician-approved inclination pattern/amount present.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "R08",
+      "source_title": "Mesiodistal tipping/angulation review",
+      "version": "2.0.0",
+      "disposition": "VALIDATE",
+      "tmt_dependence": "Yes",
+      "source_line": 546,
+      "evidence_ids": [
+        "S08",
+        "S13"
+      ],
+      "audit_required": "Angular movement is observable, but space closure and control of roots are unobserved. Require a movement-specific criterion and do not infer need for mechanics.",
+      "audit_assessment": "Angular movement is observable, but space closure and control of roots are unobserved. Require a movement-specific criterion and do not infer need for mechanics.",
+      "original_trace": "Needs verified MD angulation, tooth type, policy. Proposed trigger: Clinician-approved MD angulation review condition met.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "R09",
+      "source_title": "Posterior transverse movement review",
+      "version": "2.0.0",
+      "disposition": "VALIDATE",
+      "tmt_dependence": "Yes",
+      "source_line": 556,
+      "evidence_ids": [
+        "S08",
+        "S15"
+      ],
+      "audit_required": "Posterior buccolingual displacement may invite review; TMT is insufficient to distinguish tipping/bodily expansion, assess bone envelope or compute arch expansion. Avoid threshold masquerading as periodontal safety.",
+      "audit_assessment": "Posterior buccolingual displacement may invite review; TMT is insufficient to distinguish tipping/bodily expansion, assess bone envelope or compute arch expansion. Avoid threshold masqueradingasperiodontal safety.",
+      "original_trace": "Needs posterior BL translation, tooth type, policy. Proposed trigger: Configured review criterion met.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "R10",
+      "source_title": "Maxillary molar distalization review",
+      "version": "2.0.0",
+      "disposition": "VALIDATE",
+      "tmt_dependence": "Yes",
+      "source_line": 568,
+      "evidence_ids": [
+        "S03",
+        "S12"
+      ],
+      "audit_required": "Upper molar distal movement can be identified. S12 finds very-low-certainty evidence and cannot justify cross-system anchorage or overcorrection instructions; stage/anchorage adequacy requires more data.",
+      "audit_assessment": "Upper molar distal movement can be identified. S12 finds very-low-certainty evidence and cannot justify cross-system anchorage or overcorrection instructions; stage/anchorage adequacy requires more data.",
+      "original_trace": "Needs verified upper molar distal MD movement; policy. Proposed trigger: Movement matches approved clinician-defined review condition.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "R11",
+      "source_title": "Molar mesialization review",
+      "version": "2.0.0",
+      "disposition": "VALIDATE",
+      "tmt_dependence": "Yes",
+      "source_line": 578,
+      "evidence_ids": [
+        "S12",
+        "S15"
+      ],
+      "audit_required": "Molar mesial movement can be identified, but extraction status, space closure, anchorage and root trajectory are absent. Do not prescribe control mechanics.",
+      "audit_assessment": "Molar mesial movement can be identified, but extraction status, space closure, anchorage and root trajectoryare absent. Do notprescribe control mechanics.",
+      "original_trace": "Needs molar mesial MD movement; policy. Proposed trigger: Movement meets approved review criterion.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "R12",
+      "source_title": "Complex movement combination review",
+      "version": "2.0.0",
+      "disposition": "VALIDATE",
+      "tmt_dependence": "Partial",
+      "source_line": 588,
+      "evidence_ids": [
+        "S03",
+        "S13"
+      ],
+      "audit_required": "Proposed interaction matrix is unbuilt and unsupported by transferable clinical validation. Vendor antagonistic/synergistic staging settings demonstrate configurability, not a scientifically validated universal matrix.",
+      "audit_assessment": "Proposed interaction matrix is unbuilt and unsupported by transferable clinical validation. Vendor antagonistic/synergistic staging settings demonstrate configurability, not a scientifically validated universal matrix.",
+      "original_trace": "Needs D02, movement directions, tooth group, combination matrix. Proposed trigger: Combination appears in expert-approved interacting-movement matrix.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "R13",
+      "source_title": "Staged versus total movement concern",
+      "version": "2.0.0",
+      "disposition": "MORE DATA",
+      "tmt_dependence": "No",
+      "source_line": 598,
+      "evidence_ids": [
+        "S03",
+        "S04",
+        "S06"
+      ],
+      "audit_required": "Misclassified under TMT-only clinician rules: per-stage scrutiny requires stage-level input, a devicespecific profile and clinician approval. Merge with T01; never divide a total by stage count as a substitute.",
+      "audit_assessment": "Misclassified under TMT-only clinician rules: per-stage scrutiny requires stage-level input, a device- specific profile and clinician approval. Merge with T01; never divide a total by stage count as a substitute. f",
+      "original_trace": "Needs stage context, configured movement limits. Proposed trigger: Only when per-stage values and approved limits exist.",
+      "migration": "Move to staged T01 module; never operate from total movement or total/stage-count division."
+    },
+    {
+      "rule_id": "R14",
+      "source_title": "Clinical-context-sensitive threshold withheld",
+      "version": "2.0.0",
+      "disposition": "READY",
+      "tmt_dependence": "System",
+      "source_line": 608,
+      "evidence_ids": [
+        "S15",
+        "S16",
+        "S17"
+      ],
+      "audit_required": "Sound abstention control, not a clinical numeric threshold. Move into global data-sufficiency/safety policy; absent patient context must yield 'cannot assess', not normal/low risk.",
+      "audit_assessment": "Sound abstention control, not a clinical numeric threshold. Move into global data-sufficiency/safety policy;absentpatient context mustyield 'cannot assess',not normal/low risk.",
+      "original_trace": "Needs patient clinical context; clinician policy. Proposed trigger: Review policy requires patient data absent from TMT.",
+      "migration": "Reclassify as system sufficiency/abstention control; not a numeric clinical review rule."
+    },
+    {
+      "rule_id": "R15",
+      "source_title": "Attachment strategy merits review",
+      "version": "2.0.0",
+      "disposition": "VALIDATE",
+      "tmt_dependence": "Partial",
+      "source_line": 618,
+      "evidence_ids": [
+        "S07",
+        "S13",
+        "S14"
+      ],
+      "audit_required": "Review question from movement alone is permissible only as open-ended, not as implied attachment deficiency. To check whether a required attachment is absent, acquire an actual attachment plan as in A02.",
+      "audit_assessment": "Review question from movement alone is permissible only as open-ended, not as implied attachment deficiency. To check whether a required attachment is absent, acquire an actual attachmentplan as in A02.",
+      "original_trace": "Needs verified movement group, approved attachment policy. Proposed trigger: Approved movementspecific attachment-review criterion met. #####",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "R16",
+      "source_title": "Potential complexity of whole case",
+      "version": "2.0.0",
+      "disposition": "MORE DATA",
+      "tmt_dependence": "No",
+      "source_line": 632,
+      "evidence_ids": [
+        "S08",
+        "S15",
+        "S16"
+      ],
+      "audit_required": "Whole-case clinical complexity requires occlusion, malocclusion, skeletal/periodontal assessment and treatment objectives. Keep disabled as case score; S15's CAT-CAT classification itself uses models, radiographs and examinations.",
+      "audit_assessment": "Whole-case clinical complexity requires occlusion, malocclusion, skeletal/periodontal assessment and treatment objectives. Keep disabled as case score; S15's CAT-CAT classification itself uses models,radiographs and examinations.",
+      "original_trace": "Needs verified findings, patient context if available. Proposed trigger: Clinician-approved rubric has all required data.",
+      "migration": "No whole-case complexity score from TMT; defer until full patient/geometry/clinical rubric. ### T01–T08 • Stage/geometry/IPR"
+    },
+    {
+      "rule_id": "T01",
+      "source_title": "Per-stage movement ceilings",
+      "version": "2.0.0",
+      "disposition": "MORE DATA",
+      "tmt_dependence": "No",
+      "source_line": 642,
+      "evidence_ids": [
+        "S03",
+        "S04",
+        "S06"
+      ],
+      "audit_required": "Valid technical comparison only with actual per-stage values, manufacturer/version profile and clinician-approved limit. ClearCorrect 0.3 mm/3 deg is a setting, not a safety limit; source profile must match.",
+      "audit_assessment": "Valid technical comparison only with actual per-stage values, manufacturer/version profile and clinician-approved limit. ClearCorrect 0.3 mm/3 deg is a setting, not a safety limit; source profile must match. i",
+      "original_trace": "Needs per-stage magnitudes, source profile, verified configured limits. Proposed trigger: Any movement at stage k exceeds approved configured ceiling.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "T02",
+      "source_title": "Cumulative/incremental consistency",
+      "version": "2.0.0",
+      "disposition": "MORE DATA",
+      "tmt_dependence": "No",
+      "source_line": 652,
+      "evidence_ids": [
+        "S04"
+      ],
+      "audit_required": "Do not blindly sum angular increments or mixed-reference translations. Define coordinate frames and valid source operations; compare only values whose composition semantics are demonstrated, with a justified numeric tolerance.",
+      "audit_assessment": "Do not blindly sum angular increments or mixed-reference translations. Define coordinate frames and valid source operations; compare only values whose composition semantics are demonstrated, with ajustified numeric tolerance.",
+      "original_trace": "Needs both cumulative and incremental for each stage. Proposed trigger: Sum of increments fails to reconcile to cumulative under defined axis conventions and tolerance.",
+      "migration": "No naive sums of signed rotations or mixed coordinate frames; use proven transforms only."
+    },
+    {
+      "rule_id": "T03",
+      "source_title": "Maximal stages override warning",
+      "version": "2.0.0",
+      "disposition": "MORE DATA",
+      "tmt_dependence": "No",
+      "source_line": 662,
+      "evidence_ids": [
+        "S03"
+      ],
+      "audit_required": "An observed threshold exceedance can be reported if actual stage values exist, but the claim that 'maximal stages override caused it' needs staging config/history or counterfactual evidence. Rephrase as observed constraint exceedance.",
+      "audit_assessment": "An observed threshold exceedance can be reported if actual stage values exist, but the claim that 'maximal stages override caused it' needs staging config/history or counterfactual evidence. Rephrase as observed constraint exceedance. i",
+      "original_trace": "Needs stage count, configured policy, actual stage movements. Proposed trigger: A stage-count setting results in an observed limit exceedance.",
+      "migration": "If valid staged data and approved policy, say observed configured limit exceedance; never infer causal stagecount override."
+    },
+    {
+      "rule_id": "T04",
+      "source_title": "Sequential distalization pattern review",
+      "version": "2.0.0",
+      "disposition": "MORE DATA",
+      "tmt_dependence": "No",
+      "source_line": 672,
+      "evidence_ids": [
+        "S03",
+        "S12"
+      ],
+      "audit_required": "Sequence comparison needs stage-by-stage positions plus a verified intended distalization/anchorage protocol; total TMT has no order. No universal sequence shall be hardcoded.",
+      "audit_assessment": "Sequence comparison needs stage-by-stage positions plus a verified intended distalization/anchorage protocol; total TMT has no order. No universal sequence shall be hardcoded. i",
+      "original_trace": "Needs full stage order, molar sequence, anchorage plan. Proposed trigger: Observed order differs from clinician-approved intended protocol.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "T05",
+      "source_title": "Movement overlap interaction review",
+      "version": "2.0.0",
+      "disposition": "MORE DATA",
+      "tmt_dependence": "No",
+      "source_line": 684,
+      "evidence_ids": [
+        "S03"
+      ],
+      "audit_required": "Requires staged overlap and an expert-approved, device-specific interaction policy. A cliniciandesigned rule is not proven beneficial absent case evaluations.",
+      "audit_assessment": "Requires staged overlap and an expert-approved, device-specific interaction policy. A clinician- designed rule is notproven beneficial absent case evaluations.",
+      "original_trace": "Needs stage events per tooth, approved antagonistic/synergistic matrix. Proposed trigger: Clinicianapproved interaction constraint violated.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "T06",
+      "source_title": "Staging interferences from supplied geometry",
+      "version": "2.0.0",
+      "disposition": "MORE DATA",
+      "tmt_dependence": "No",
+      "source_line": 698,
+      "evidence_ids": [
+        "S04"
+      ],
+      "audit_required": "TMT lacks shape/surface data. Require independently validated geometry/contact engine, accurate alignment and numeric output; vendor colored UI cells alone are not portable collision evidence.",
+      "audit_assessment": "TMT lacks shape/surface data. Require independently validated geometry/contact engine, accurate alignment and numeric output;vendor colored UI cells alone are notportable collision evidence.",
+      "original_trace": "Needs validated 3D meshes/contact/interference results. Proposed trigger: Geometry tool provides measured collision/interference.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "T07",
+      "source_title": "IPR timing and quantity review",
+      "version": "2.0.0",
+      "disposition": "MORE DATA",
+      "tmt_dependence": "No",
+      "source_line": 708,
+      "evidence_ids": [
+        "S06",
+        "S15"
+      ],
+      "audit_required": "IPR sites and quantities require approved IPR/contact plan, crown/enamel considerations, stage timing and clinician review. Never infer site or amount by summing mesiodistal displacement.",
+      "audit_assessment": "IPR sites and quantities require approved IPR/contact plan, crown/enamel considerations, stage timingand clinician review. Never infer site or amount bysummingmesiodistal displacement.",
+      "original_trace": "Needs approved interproximal IPR plan + tooth geometry/contacts. Proposed trigger: Patient and devicespecific approved constraints violated.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim."
+    },
+    {
+      "rule_id": "T08",
+      "source_title": "Anchorage and root balancing review",
+      "version": "2.0.0",
+      "disposition": "MORE DATA",
+      "tmt_dependence": "No",
+      "source_line": 718,
+      "evidence_ids": [
+        "S03",
+        "S12",
+        "S15"
+      ],
+      "audit_required": "Anchorage/root balancing requires staged force strategy and root/crown coordinates; virtual apex movement is not a periodontal exam. Policy mismatch only, not automatic biomechanical diagnosis.",
+      "audit_assessment": "Anchorage/root balancing requires staged force strategy and root/crown coordinates; virtual apex movement is not aperiodontal exam. Policymismatch only,not automatic biomechanical diagnosis.",
+      "original_trace": "Needs stage plan, anchorage plan, root/crown movement data. Proposed trigger: Clinician-approved protocol finds a constraint mismatch.",
+      "migration": "Implement only under the audit conditions and the global source/field eligibility gates; do not copy the legacy trigger verbatim. ### A01–A06 • Attachments"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "additionalProperties": false,
+  "description": "IDs reference immutable original-text spans, not model-authored cell values.\n\nAll properties required for strict provider structured outputs. Complete row\norder and column association are checked against an independently proven grid.",
+  "properties": {
+    "grammar": {
+      "const": "MARKDOWN_PIPE_V1",
+      "title": "Grammar",
+      "type": "string"
+    },
+    "orientation": {
+      "enum": [
+        "TEETH_IN_ROWS",
+        "TEETH_IN_COLUMNS"
+      ],
+      "title": "Orientation",
+      "type": "string"
+    },
+    "rows": {
+      "items": {
+        "items": {
+          "type": "string"
+        },
+        "type": "array"
+      },
+      "title": "Rows",
+      "type": "array"
+    }
+  },
+  "required": [
+    "grammar",
+    "orientation",
+    "rows"
+  ],
+  "title": "StructuralProposal",
+  "type": "object"
+}

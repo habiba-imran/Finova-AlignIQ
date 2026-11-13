@@ -1,0 +1,30 @@
+# Render Blueprint for the FastAPI backend.
+# Import this repository in Render and it will create the service below.
+# If you prefer the dashboard, use the same values manually (see docs/DEPLOYMENT.md).
+services:
+  - type: web
+    name: finova-aligniq-api
+    runtime: python
+    plan: free
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT --no-access-log
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.10
+      - key: PYTHONUNBUFFERED
+        value: "1"
+      # Safe public-deployment defaults: deterministic parsing/templates only.
+      # Leave AI features disabled unless you have reviewed the privacy gates.
+      - key: FINOVA_ENVIRONMENT
+        value: production
+      - key: FINOVA_GROQ_SYNTHETIC_ENABLED
+        value: "false"
+      - key: FINOVA_PARSER_GROQ_ENABLED
+        value: "false"
+      # Optional, only if you intentionally enable the Groq-backed features.
+      # - key: GROQ_API_KEY
+      #   sync: false
+      # - key: GROQ_API_KEY_2
+      #   sync: false

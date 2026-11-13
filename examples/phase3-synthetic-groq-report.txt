@@ -1,0 +1,247 @@
+FINOVA ALIGNIQ
+Descriptive Planning Report
+DRAFT — Requires Orthodontist Review
+Prototype — not for clinical use
+
+Report ID: 0bbfd827904f7227c632fea9d54ee2533bb5571e57894147c8d5fa630b877766
+Engine review: 4c557d6c9010df4c020a109dc8dde80491a4c7db547ba9500cd581789a554953
+Source evidence domain: TEST_ONLY
+Source platform claim (unverified): "Unknown"
+Source version claim (unverified): "TEST_ONLY-1"
+Verified source/mode/basis/scope: listed with each accepted observation; otherwise UNKNOWN.
+Input SHA-256: 35a73c323f12a411f768b20e24091b90fdb5e91af59611cda8fca7d8189942ff
+Versions: parser 0.1.0; semantics 0.1.0-disabled; engine 0.2.0; rules 2.0.0-phase2a
+Wording mode: GROQ_AI; reason: GROQ_VALIDATED; provider attempts: 1
+
+AVAILABLE OBSERVATIONS
+Eligible positions: 2/2; unavailable: 0.
+Expected axis coverage: UNKNOWN. No finding is not a finding of no clinical concern.
+
+TOOTH-WISE DESCRIPTIVE COMMENTS
+
+The source-reported programmed value is listed in its stated mode, basis and scope. Achieved movement is not assessed.
+Programmed magnitude: 1.2300; lexical signed scalar: -1.2300. Evidence: TEST_ONLY. tooth_identifier: "TEST_TOOTH_tooth-1"; notation: "TEST_NOTATION"; dentition: "TEST_DENTITION"; arch: "TEST_ARCH"; axis: "TEST_AXIS_measurement-1"; unit: "deg"; sign: "TEST_SIGN_ALPHA"; direction: "TEST_DIRECTION_ALPHA"; source_application: "TEST_ONLY"; source_version: "TEST_ONLY-1"; plan_mode: "TEST_PLAN_MODE"; reference_basis: "TEST_REFERENCE_A"; scope: "TOTAL"; stage_index: UNKNOWN; stage_kind: UNKNOWN; coordinate_frame: "TEST_FRAME_A". Original tooth: "13"; original label: "Rotation (deg)"; original cell: "−1.2300 M"; original number: "−1.2300"; original sign: "−"; original direction: "M". Source position: measurement-1; L3:C1-C3 [offsets 58:60], L2:C7-C21 [offsets 28:42], L3:C4-C13 [offsets 61:70]
+Rules: D01 v2.0.0
+Findings: f1dbcc585d59c63a3e0b419d6128b09a8e9f1c33d3c88d37bc735a39d6a2d67a
+Input references: measurements/measurement-1, source/context, teeth/tooth-1
+Evidence references: TEST_ONLY-fixture:a12540ebf46391212da7aafd0e4a011851f3c1ff8f4eb8351bd864e6142e6b02:TEST_ONLY:measurement-1:arch, TEST_ONLY-fixture:a12540ebf46391212da7aafd0e4a011851f3c1ff8f4eb8351bd864e6142e6b02:TEST_ONLY:measurement-1:axis, TEST_ONLY-fixture:a12540ebf46391212da7aafd0e4a011851f3c1ff8f4eb8351bd864e6142e6b02:TEST_ONLY:measurement-1:coordinate_frame, TEST_ONLY-fixture:a12540ebf46391212da7aafd0e4a011851f3c1ff8f4eb8351bd864e6142e6b02:TEST_ONLY:measurement-1:dentition, TEST_ONLY-fixture:a12540ebf46391212da7aafd0e4a011851f3c1ff8f4eb8351bd864e6142e6b02:TEST_ONLY:measurement-1:direction, TEST_ONLY-fixture:a12540ebf46391212da7aafd0e4a011851f3c1ff8f4eb8351bd864e6142e6b02:TEST_ONLY:measurement-1:notation, TEST_ONLY-fixture:a12540ebf46391212da7aafd0e4a011851f3c1ff8f4eb8351bd864e6142e6b02:TEST_ONLY:measurement-1:plan_mode, TEST_ONLY-fixture:a12540ebf46391212da7aafd0e4a011851f3c1ff8f4eb8351bd864e6142e6b02:TEST_ONLY:measurement-1:reference_basis, TEST_ONLY-fixture:a12540ebf46391212da7aafd0e4a011851f3c1ff8f4eb8351bd864e6142e6b02:TEST_ONLY:measurement-1:scope, TEST_ONLY-fixture:a12540ebf46391212da7aafd0e4a011851f3c1ff8f4eb8351bd864e6142e6b02:TEST_ONLY:measurement-1:sign, TEST_ONLY-fixture:a12540ebf46391212da7aafd0e4a011851f3c1ff8f4eb8351bd864e6142e6b02:TEST_ONLY:measurement-1:source_application, TEST_ONLY-fixture:a12540ebf46391212da7aafd0e4a011851f3c1ff8f4eb8351bd864e6142e6b02:TEST_ONLY:measurement-1:source_version, TEST_ONLY-fixture:a12540ebf46391212da7aafd0e4a011851f3c1ff8f4eb8351bd864e6142e6b02:TEST_ONLY:measurement-1:tooth_identifier, TEST_ONLY-fixture:a12540ebf46391212da7aafd0e4a011851f3c1ff8f4eb8351bd864e6142e6b02:TEST_ONLY:measurement-1:unit
+Evaluation: OBSERVED
+Wording: GROQ_VALIDATED
+
+DISTRIBUTION SUMMARY
+
+This capture's eligible nonzero positions and distinct axes, teeth and arches are counted within compatible context. Magnitudes are not added.
+Coverage counts: distinct_arches=1; distinct_axes=1; distinct_teeth=1; eligible_positions_in_context=2; nonzero_positions=1.
+Programmed magnitude: 1.2300; lexical signed scalar: -1.2300. Evidence: TEST_ONLY. tooth_identifier: "TEST_TOOTH_tooth-1"; notation: "TEST_NOTATION"; dentition: "TEST_DENTITION"; arch: "TEST_ARCH"; axis: "TEST_AXIS_measurement-1"; unit: "deg"; sign: "TEST_SIGN_ALPHA"; direction: "TEST_DIRECTION_ALPHA"; source_application: "TEST_ONLY"; source_version: "TEST_ONLY-1"; plan_mode: "TEST_PLAN_MODE"; reference_basis: "TEST_REFERENCE_A"; scope: "TOTAL"; stage_index: UNKNOWN; stage_kind: UNKNOWN; coordinate_frame: "TEST_FRAME_A". Original tooth: "13"; original label: "Rotation (deg)"; original cell: "−1.2300 M"; original number: "−1.2300"; original sign: "−"; original direction: "M". Source position: measurement-1; L3:C1-C3 [offsets 58:60], L2:C7-C21 [offsets 28:42], L3:C4-C13 [offsets 61:70]
+Rules: D12 v2.0.0
+Findings: 861e2c0f0d26966dd2f40b03306f9455160b8e25b60d5e78846ca0b3cdd47014
+Input references: measurements/measurement-1, source/context, teeth/tooth-1
+Evidence references: TEST_ONLY-fixture:a12540ebf46391212da7aafd0e4a011851f3c1ff8f4eb8351bd864e6142e6b02:TEST_ONLY:measurement-1:arch, TEST_ONLY-fixture:a12540ebf46391212da7aafd0e4a011851f3c1ff8f4eb8351bd864e6142e6b02:TEST_ONLY:measurement-1:axis, TEST_ONLY-fixture:a12540ebf46391212da7aafd0e4a011851f3c1ff8f4eb8351bd864e6142e6b02:TEST_ONLY:measurement-1:coordinate_frame, TEST_ONLY-fixture:a12540ebf46391212da7aafd0e4a011851f3c1ff8f4eb8351bd864e6142e6b02:TEST_ONLY:measurement-1:dentition, TEST_ONLY-fixture:a12540ebf46391212da7aafd0e4a011851f3c1ff8f4eb8351bd864e6142e6b02:TEST_ONLY:measurement-1:direction, TEST_ONLY-fixture:a12540ebf46391212da7aafd0e4a011851f3c1ff8f4eb8351bd864e6142e6b02:TEST_ONLY:measurement-1:notation, TEST_ONLY-fixture:a12540ebf46391212da7aafd0e4a011851f3c1ff8f4eb8351bd864e6142e6b02:TEST_ONLY:measurement-1:plan_mode, TEST_ONLY-fixture:a12540ebf46391212da7aafd0e4a011851f3c1ff8f4eb8351bd864e6142e6b02:TEST_ONLY:measurement-1:reference_basis, TEST_ONLY-fixture:a12540ebf46391212da7aafd0e4a011851f3c1ff8f4eb8351bd864e6142e6b02:TEST_ONLY:measurement-1:scope, TEST_ONLY-fixture:a12540ebf46391212da7aafd0e4a011851f3c1ff8f4eb8351bd864e6142e6b02:TEST_ONLY:measurement-1:sign, TEST_ONLY-fixture:a12540ebf46391212da7aafd0e4a011851f3c1ff8f4eb8351bd864e6142e6b02:TEST_ONLY:measurement-1:source_application, TEST_ONLY-fixture:a12540ebf46391212da7aafd0e4a011851f3c1ff8f4eb8351bd864e6142e6b02:TEST_ONLY:measurement-1:source_version, TEST_ONLY-fixture:a12540ebf46391212da7aafd0e4a011851f3c1ff8f4eb8351bd864e6142e6b02:TEST_ONLY:measurement-1:tooth_identifier, TEST_ONLY-fixture:a12540ebf46391212da7aafd0e4a011851f3c1ff8f4eb8351bd864e6142e6b02:TEST_ONLY:measurement-1:unit
+Evaluation: OBSERVED
+Wording: GROQ_VALIDATED
+
+UNAVAILABLE ASSESSMENTS / MISSING INFORMATION
+
+This rule is disabled. No clinical predicate was evaluated.
+Required information: approved_policy_and_verified_extra_data.
+Assessment withheld: NO_POLICY_OR_EXTRA_DATA_MODULE.
+Rules: A01 v2.0.0, A02 v2.0.0, A03 v2.0.0, A04 v2.0.0, T01 v2.0.0, T02 v2.0.0, T03 v2.0.0, T04 v2.0.0, T05 v2.0.0, T06 v2.0.0, T07 v2.0.0, T08 v2.0.0
+Findings: 0181f0158f80adb34ea5ef5a8739051e121649b77897b117a4ece7b0d284af24, 061141fc49d77f9baa7c9ba96c260e4f7ec0258821547a5311dded1301bcd554, 148ca5bff2bad52f2840a3314b74e84cf20bfa2ea83b4166fae102aa371ca29d, 4b1e4a49c2baae1b673e2bd60bd0e37110043c4103148ecdfe0ff78835785af7, 6f08f874fcb51cbd85a767815f8a4c085db1e64cac4b629485e9f79344f95686, 8d8b8c276d260cfd4b9884bb30007be29dd31a3360d4fb7ed450ee06f338cc3b, 971fec5045b0b85f5ffff6d444a49ac46939a18dbf66d5b93d0ce30c405c2441, 99e320ab08ee3ef13d1bf17bba1e28ca3d5c1859c5099e124d9c44327edafe2e, 9ba2397e9ac169e9e4f7ce9dbb13cff6d27e694315e98dc2156b22402e96f597, c3689f0672d7890a230ea654d39e54ef7b44fc50d7ff727532111b60e42fa32a, df67a8fc78ed3c47a8b2550b7d6eb15cff858697575a0e7fe4b81d64b87b03a0, eae3d726080096521eb20c93e663b33cc17279242dca9112d7dae157086a0cdb
+Input references: System control
+Evidence references: No accepted measurement evidence
+Evaluation: DISABLED
+Wording: STANDARD_TEMPLATE
+
+This assessment is unavailable because required verified context is absent.
+Required information: verified_external_tooth_status.
+Assessment withheld: TOOTH_STATUS_NOT_INFERRED.
+Rules: N06 v2.0.0
+Findings: 05aede724ec6e1191ef21758723167592f3d669a0d04a5f608210a1f0a7e74f1
+Input references: System control
+Evidence references: No accepted measurement evidence
+Evaluation: CONTEXT_REQUIRED
+Wording: STANDARD_TEMPLATE
+
+This rule is disabled. No clinical predicate was evaluated.
+Required information: orthodontist_approved_policy, policy_specific_verified_context.
+Assessment withheld: NO_APPROVED_CLINICAL_POLICY.
+Rules: R01 v2.0.0, R02 v2.0.0, R03 v2.0.0, R04 v2.0.0, R05 v2.0.0, R06 v2.0.0, R07 v2.0.0, R08 v2.0.0, R09 v2.0.0, R10 v2.0.0, R11 v2.0.0, R12 v2.0.0, R13 v2.0.0, R15 v2.0.0, R16 v2.0.0
+Findings: 165b98f94c19ebe6928915e57eb23074f7fffdde3d2bd98f4069d27ca2ade66b, 2377357654922e82f31af813bad701ab164e3a3bfcd26357ea86d8dcf400c6d9, 280def001218c769af60d55589b1ba10be7fc0b0f902a4383d83f498dceb518e, 40576e0e33acd7892a841f9c85d1ed1f7c219d6bd3604e3c6f9ada8742431f66, 41ed91037b138f33317fea87e86ea3fcb7150fcf07ac6632d8c28fe3813bf0b3, 4dbb023b1db873ec92f5bb083defc7571e2e4f1213efbbf2ace667cdcace4e41, 5bf72b1c115889b0cab2fd3ad6d96c5bb30bee2e187f3d8c00af9ea3e3291622, a7c268ceefa63261a851aecac94cffcbcae668b63d3aad32f837d9ae61d43efa, ac74e0722727a5d97a4695bc398d1ef72e1c3da9903960260694760ac2478afa, b08bb9c4a285651f41e380cdfb761bf8dd206c38a4ea51e8e6168156880d859d, c78c4093fc08232cd0a84ee95272dadb0b2722db9f9bb04d5e2bf214bc18b1b3, c9ad596fc91432eae83356d896028730103110048449df663fad03513b1faf17, e037d63d1d626d9bc637d719f39ff78f72b7ab6d3dc7fd7641a26decf87c4fcf, e7cddfef81c333c4d0ebabe70b384151a94289ac9d8411da1fb0092c14451c36, f14b368858cedc3f2380a6990eaa9286cd913b34d26df4f91677c577d691e977
+Input references: System control
+Evidence references: No accepted measurement evidence
+Evaluation: DISABLED
+Wording: STANDARD_TEMPLATE
+
+This assessment is unavailable because required verified context is absent.
+Assessment withheld: FUTURE_AUTHORIZED_WORKFLOW_REQUIRED.
+Rules: N11 v2.0.0, N14 v2.0.0
+Findings: c19d7340e7f8e7c21fcb476251e51a6c15327310ea1b21bbda1c29f8937fab02, fa4c95962322a5030ef98feac9b9d55c881c31df4c0130fd7d3f21bbd2124e65
+Input references: System control
+Evidence references: No accepted measurement evidence
+Evaluation: CONTEXT_REQUIRED
+Wording: STANDARD_TEMPLATE
+
+This assessment is unavailable because required verified context is absent.
+Required information: verified_external_tooth_status.
+Assessment withheld: VERIFIED_EXTERNAL_DATA_CONTRACT_REQUIRED.
+Rules: G14 v2.0.0
+Findings: 1e54c2c1e003acd69e4d4aac5058ad08585d3c360ba94881987871ace7406fe6
+Input references: System control
+Evidence references: No accepted measurement evidence
+Evaluation: CONTEXT_REQUIRED
+Wording: STANDARD_TEMPLATE
+
+This assessment is unavailable because required verified context is absent.
+Required information: verified_tooth_group_map.
+Assessment withheld: VERIFIED_EXTERNAL_DATA_CONTRACT_REQUIRED.
+Rules: G18 v2.0.0
+Findings: 84d11869850e3cc41c6a338d9e377ddf068ac946cbb8fbaec5b3ef1fbd5893ae
+Input references: System control
+Evidence references: No accepted measurement evidence
+Evaluation: CONTEXT_REQUIRED
+Wording: STANDARD_TEMPLATE
+
+This assessment is unavailable because required verified context is absent.
+Required information: verified_tooth_group_map.
+Assessment withheld: ADDITIONAL_VERIFIED_MAP_OR_GEOMETRY_REQUIRED.
+Rules: D03 v2.0.0, D04 v2.0.0, D05 v2.0.0, D09 v2.0.0
+Findings: 716210794c024391ae2934d0cd0501f3a2406b8dae45c0f0827c1914730d0a2f, 7a87293a3cb03213b2abafe5be45a8a45bfb94fd5d7f1d11bda11a6d093694c2, 822b94bf8a616498e7212db79f314d56b73771bf7fbcdda276b8015dda882cf1, dc4fe93a73b634bb38db3b52cf5d84756109c126b5e1a5973957e516f86a9370
+Input references: System control
+Evidence references: No accepted measurement evidence
+Evaluation: CONTEXT_REQUIRED
+Wording: STANDARD_TEMPLATE
+
+This assessment is unavailable because required verified context is absent.
+Required information: verified_pair_map_and_mirror_operations.
+Assessment withheld: ADDITIONAL_VERIFIED_MAP_OR_GEOMETRY_REQUIRED.
+Rules: D13 v2.0.0
+Findings: 681fbc6dacd10cbda94bffc98756e0fbebe838308def1b65674a07a6701d99c6
+Input references: System control
+Evidence references: No accepted measurement evidence
+Evaluation: CONTEXT_REQUIRED
+Wording: STANDARD_TEMPLATE
+
+This assessment is unavailable because required verified context is absent.
+Required information: verified_baseline_geometry_and_operations.
+Assessment withheld: ADDITIONAL_VERIFIED_MAP_OR_GEOMETRY_REQUIRED.
+Rules: D16 v2.0.0
+Findings: 709a46b0aab8670a887222fed9d7742e2ce36d3cd327225cc9741d5bf716a202
+Input references: System control
+Evidence references: No accepted measurement evidence
+Evaluation: CONTEXT_REQUIRED
+Wording: STANDARD_TEMPLATE
+
+RULE EVALUATION LEDGER
+A01 v2.0.0: DISABLED; findings: 4b1e4a49c2baae1b673e2bd60bd0e37110043c4103148ecdfe0ff78835785af7
+A02 v2.0.0: DISABLED; findings: 6f08f874fcb51cbd85a767815f8a4c085db1e64cac4b629485e9f79344f95686
+A03 v2.0.0: DISABLED; findings: eae3d726080096521eb20c93e663b33cc17279242dca9112d7dae157086a0cdb
+A04 v2.0.0: DISABLED; findings: 061141fc49d77f9baa7c9ba96c260e4f7ec0258821547a5311dded1301bcd554
+A05 v2.0.0: OBSERVED; findings: fb8f46e97b356a8e19b83b1b62da3e15f6dc3a4642d4042235fd395246b76ebb
+A06 v2.0.0: OBSERVED; findings: f252631c3d19ba804dd23e2ceb06484f85557a45479b306a7b48ae3ab036e6de
+D01 v2.0.0: OBSERVED; findings: b1507f85450a2693bfd0ad5145e417df1088de246d70a66890f6fdb45da959ac, f1dbcc585d59c63a3e0b419d6128b09a8e9f1c33d3c88d37bc735a39d6a2d67a
+D02 v2.0.0: NOT_APPLICABLE; findings: 940548b84474b2650d1d10f276e8a64cebbeca493de6bbe0a598fa745fc89f65
+D03 v2.0.0: CONTEXT_REQUIRED; findings: 822b94bf8a616498e7212db79f314d56b73771bf7fbcdda276b8015dda882cf1
+D04 v2.0.0: CONTEXT_REQUIRED; findings: 716210794c024391ae2934d0cd0501f3a2406b8dae45c0f0827c1914730d0a2f
+D05 v2.0.0: CONTEXT_REQUIRED; findings: 7a87293a3cb03213b2abafe5be45a8a45bfb94fd5d7f1d11bda11a6d093694c2
+D06 v2.0.0: NOT_APPLICABLE; findings: ea718f25573ab9bc145fb9674ddf613c9907aab7a3c87ed39ca0edde52d6b540
+D07 v2.0.0: NOT_APPLICABLE; findings: 7cabd9e455c0f9fcfd6a1e71e2425dee69f5e6746a0786dca4f2a786516c031e
+D08 v2.0.0: NOT_APPLICABLE; findings: 0fb238e0fbfe90c0be73f96778c50edf24cb9d70fe2134a03a4ec527e515ae17
+D09 v2.0.0: CONTEXT_REQUIRED; findings: dc4fe93a73b634bb38db3b52cf5d84756109c126b5e1a5973957e516f86a9370
+D10 v2.0.0: NOT_APPLICABLE; findings: 3e08bf0a3c0987743e3889c4c7d8f7e148cc9bd3b7aafa44801eb732a3035d92
+D11 v2.0.0: NOT_APPLICABLE; findings: 8f1c80e963eb7c9af4e639cef34fb1d43c1daa60ed4e5a079f20195803dafcff
+D12 v2.0.0: OBSERVED; findings: 861e2c0f0d26966dd2f40b03306f9455160b8e25b60d5e78846ca0b3cdd47014
+D13 v2.0.0: CONTEXT_REQUIRED; findings: 681fbc6dacd10cbda94bffc98756e0fbebe838308def1b65674a07a6701d99c6
+D14 v2.0.0: NOT_APPLICABLE; findings: d8eb32ab26485731ebf924aa6dbe46292aabe7688f8d0c25fccb78d73d142588
+D15 v2.0.0: NOT_APPLICABLE; findings: 94e17c5fc9234a5424f68e73fbdf58b7ec0ace98a5401311d41d9b7669f6a6f4
+D16 v2.0.0: CONTEXT_REQUIRED; findings: 709a46b0aab8670a887222fed9d7742e2ce36d3cd327225cc9741d5bf716a202
+G01 v2.0.0: OBSERVED; findings: c2f242d2aac4abb5599a65a5d7fc96f8406d8fb6f860b2b39ee3474f44948e31
+G02 v2.0.0: OBSERVED; findings: 1c02848a3a175c2bd3b42e693c5d18651f8c5ccc2b1eddfd20a1047e88c202da, c73839136c10f349afe2f3e82e91c5deb13a2b898a969da1afe846b0f4a60cf7
+G03 v2.0.0: OBSERVED; findings: 054aa382b4eb9884a5ccb79507774d487128bef647248a20f8397307d70da1ac, 814f16d99c6f9eab906b7c89273d967a449ee79c427a6cef6ec3bbe3fc8b05e5
+G04 v2.0.0: OBSERVED; findings: 057805617c2762197a22531486ee374247e6f0cbb5877e9936276321949c1aa9, a954d653c6a0f237caae6f7556c00866d1aa261f3db435acb34c2e2bd8b12af7
+G05 v2.0.0: OBSERVED; findings: 31eb6188eaed7196fbdb31d0a75ba4365046e699fa8e71e148f7ae24d3f1e63a, c9cd1c1f5ea0724da98df930d239fd307a885e71ddf70339a1f7ff5ed12234cd
+G06 v2.0.0: OBSERVED; findings: 059880eafe66403c42b3ad0856c1fbc27669a680aa308ac165da7a2d3b90e4af, fc0f55b42bec054118fab6a7327aaec4835c5f55f2613c1c8d4a2e6363a9bda9
+G07 v2.0.0: OBSERVED; findings: 1ee08653c67ce26d7128ac86cf673609bb03b64dfefc81b514ad56be3d563b40, b1f60b95b5f737b9ef9ef7d3e8b9b43387b5de937fda61c311a9cd23ffaac959
+G08 v2.0.0: OBSERVED; findings: ca1a3f2e415625d63a160438417cdebe8c585b59aff47a55afaf4619c4c3a741, e45c0a2384deb341ab087a1b3c3de26c3aeacd7264d8a3db28082c5519c851d0
+G09 v2.0.0: OBSERVED; findings: a960b455ac50921111fb73a96a58583b03f38ef6bbd7123e4d666113e93e3558, ee76aef89304d85ec02f0bf9c34b02624384349085cc860c871e66e999749236
+G10 v2.0.0: OBSERVED; findings: 3ff47ac054d8995b7fd4ae6cd6772b949411423ad1bb8fd7e69dce05f3884d36, e3c9c03dee3d0bfc974287a491ec0651c698b66fa5505b72d7da1eb337eae9e8
+G11 v2.0.0: OBSERVED; findings: 5394a48aa56ddc61cc5e16a4eb69f9bc4926d4d6974f7974e07bd9e5095ae6a1, b54b6c03f137f65b390e47b2bad3c8d9beb1c3b8d79844d6d9e04495215590b9
+G12 v2.0.0: OBSERVED; findings: 2b9f91ca48823a72f2281933a4a9cdc5293cc7768f661dee545d47710b76aabc, c54363648e0b510301cd5ad2dfc8cd5698a01bf4ef3b337158befe55c13caf68
+G13 v2.0.0: OBSERVED; findings: ceb95370db12415a2cefd8a83d8619bf6b940dae48a81994ac30eff996dab6c6, f5d1311d261ba05f6f67aa7eba601bced68ca38c2421346365e5cd6dbad65cbe
+G14 v2.0.0: CONTEXT_REQUIRED; findings: 1e54c2c1e003acd69e4d4aac5058ad08585d3c360ba94881987871ace7406fe6
+G15 v2.0.0: NOT_APPLICABLE; findings: 8c9e7ee390ebed4c7b8ae0717b545f9bcb127e6c9f274d2c08afb88a80a3674f
+G16 v2.0.0: OBSERVED; findings: 42213b02aa32867980adbc6c3f7b48ab6b3a4f7594dc98e4cc776f0c40459bdd, 73e3103f95d1c59518da9ffcda5134bcef3f252f8b8a4a1e08175df75f7fe3cc
+G17 v2.0.0: OBSERVED; findings: 5440a7430c41295810bddc1745f8f79f0a5f95a47039f4010b0649033001d43d, fc83849f9c6acff8367f1c2a6dbb545eee7b6fc06ad9190ea86f77b533ef3280
+G18 v2.0.0: CONTEXT_REQUIRED; findings: 84d11869850e3cc41c6a338d9e377ddf068ac946cbb8fbaec5b3ef1fbd5893ae
+H01 v2.0.0: NOT_APPLICABLE; findings: a04d5cf9a2e354c8a762d4e52de01d49123fbbbea37e5995563b7687505f56c0
+H02 v2.0.0: NOT_APPLICABLE; findings: 5c313c5e69656e6d69d1910e1d2180a0facc8183aa242d12ac1be97a5afeb089
+H03 v2.0.0: NOT_APPLICABLE; findings: 7c5a634b112a03411d8c96b849e8fb3b592f9cd694ac11247d80bff62d293901
+H04 v2.0.0: NOT_APPLICABLE; findings: a9a559f98789896ab02cee1aa5247cbfd318c96faff307b656116de07b679ff2
+H05 v2.0.0: NOT_APPLICABLE; findings: 79f0db464b6d10c6c0954e0e83f0d12e4c5c6f41fd58880fb5561f37bebbd98f
+H06 v2.0.0: NOT_APPLICABLE; findings: fd3efcc042edde72736e57877788f7d01a99629cab240abd8f18c2795dbf4134
+H07 v2.0.0: NOT_APPLICABLE; findings: ca7176d6628cb69bcdbc5f30b7cd93dfbe98b048d671e234fb06f9246dfb0961
+H08 v2.0.0: NOT_APPLICABLE; findings: 9922db8bee1562bcf21d7dcd0a0d90ccc667f4c03a1c1a0c759092a06a5a3838
+H09 v2.0.0: NOT_APPLICABLE; findings: 11a50115d70b4281f73d4d1540fda5b82639d0864dc420b13d2de9c0a47d8f7e
+H10 v2.0.0: OBSERVED; findings: c81b57c4e7df3cb39e1d19653b130ef6ffa91efaba8529ec430c0cc45807fddb
+H11 v2.0.0: NOT_APPLICABLE; findings: 2751a9b9ffca3b1df5483d034bf3fd08dc701e01869e38c7ab7e9798696c2179
+H12 v2.0.0: OBSERVED; findings: 940317c72a4a7afa3c347c0666bd9a645296d1852ea7ccacb75f663f2900c7b8
+L01 v2.0.0: OBSERVED; findings: 24102d5da147284fee8b45817613be75809b1bef656b84d2578c449cb3881cf9
+L02 v2.0.0: OBSERVED; findings: 08432344df074e3cced551f863f6b98199eb078b960d03f1552c3674ec4d4e21
+L03 v2.0.0: OBSERVED; findings: 2bf88bb5fe27a9db4faf9c754ea978b7bc71c4450c1e82da11c52d8ea71cecdc
+L04 v2.0.0: OBSERVED; findings: b0292ef46dbe678478df3e98fec5be6c3c44d2cdd694eaac52c8fc00443d7f73
+L05 v2.0.0: OBSERVED; findings: b75028bebefa440cc794df0ab794ed2267e21f12c5ab688622d1ef09a10355e1
+L06 v2.0.0: OBSERVED; findings: 0152e71fce2502363536d81d02edc3814cc41b165afc1fc18faea9f5d735d409
+N01 v2.0.0: OBSERVED; findings: 4319b9eb06c815f56b2f47180de8f6c5195fed30d54ffeebdf87142e0c4603ec
+N02 v2.0.0: OBSERVED; findings: 5193246a8b826ab96c332edfb3e4d22848de6f8b17984fd1265d705e4bd1c0cb
+N03 v2.0.0: OBSERVED; findings: 2c344e03493bbaba64977679bf899c391e0488a9a06ee8551458878f065c8910
+N04 v2.0.0: OBSERVED; findings: 970c1257e7b5d8911f48a87ef5c34f423283edabf674bbccd05e76e316fc1895
+N05 v2.0.0: OBSERVED; findings: 7bffd39b81e31809f15c97f316e080e3d7e72c989a1cd925302d14353c94dcec
+N06 v2.0.0: CONTEXT_REQUIRED; findings: 05aede724ec6e1191ef21758723167592f3d669a0d04a5f608210a1f0a7e74f1
+N07 v2.0.0: OBSERVED; findings: 03a52e1530ed08be8c40a724ecfa1e4cf9cd83a348ea5bdff0dd2d46e54d73bd
+N08 v2.0.0: OBSERVED; findings: 17f67cb17e234f0caf7d49ac3b46ad192fa76ced967f142e22e8c3ce19b4f3be
+N09 v2.0.0: OBSERVED; findings: 7bbe66e7c38e8f5b98581be72704b03dafd898a8044921d101b0e83638293b7d
+N10 v2.0.0: OBSERVED; findings: f2a9c8dc9b0453dc146e703b6937db71c8446bdf593240b2d66882d394b9688e
+N11 v2.0.0: CONTEXT_REQUIRED; findings: c19d7340e7f8e7c21fcb476251e51a6c15327310ea1b21bbda1c29f8937fab02
+N12 v2.0.0: OBSERVED; findings: 4a6ef115d2665b4569444c5c412cf587a7993f90d52fbc5d0b2c55f79976f775
+N13 v2.0.0: OBSERVED; findings: 330a8e54bc4ed55cb9603a800406ca8aface38d9cb6d5c7ecaf6e7023f9af4b8
+N14 v2.0.0: CONTEXT_REQUIRED; findings: fa4c95962322a5030ef98feac9b9d55c881c31df4c0130fd7d3f21bbd2124e65
+R01 v2.0.0: DISABLED; findings: 280def001218c769af60d55589b1ba10be7fc0b0f902a4383d83f498dceb518e
+R02 v2.0.0: DISABLED; findings: 4dbb023b1db873ec92f5bb083defc7571e2e4f1213efbbf2ace667cdcace4e41
+R03 v2.0.0: DISABLED; findings: 5bf72b1c115889b0cab2fd3ad6d96c5bb30bee2e187f3d8c00af9ea3e3291622
+R04 v2.0.0: DISABLED; findings: 165b98f94c19ebe6928915e57eb23074f7fffdde3d2bd98f4069d27ca2ade66b
+R05 v2.0.0: DISABLED; findings: f14b368858cedc3f2380a6990eaa9286cd913b34d26df4f91677c577d691e977
+R06 v2.0.0: DISABLED; findings: b08bb9c4a285651f41e380cdfb761bf8dd206c38a4ea51e8e6168156880d859d
+R07 v2.0.0: DISABLED; findings: c78c4093fc08232cd0a84ee95272dadb0b2722db9f9bb04d5e2bf214bc18b1b3
+R08 v2.0.0: DISABLED; findings: e037d63d1d626d9bc637d719f39ff78f72b7ab6d3dc7fd7641a26decf87c4fcf
+R09 v2.0.0: DISABLED; findings: a7c268ceefa63261a851aecac94cffcbcae668b63d3aad32f837d9ae61d43efa
+R10 v2.0.0: DISABLED; findings: 40576e0e33acd7892a841f9c85d1ed1f7c219d6bd3604e3c6f9ada8742431f66
+R11 v2.0.0: DISABLED; findings: e7cddfef81c333c4d0ebabe70b384151a94289ac9d8411da1fb0092c14451c36
+R12 v2.0.0: DISABLED; findings: 2377357654922e82f31af813bad701ab164e3a3bfcd26357ea86d8dcf400c6d9
+R13 v2.0.0: DISABLED; findings: c9ad596fc91432eae83356d896028730103110048449df663fad03513b1faf17
+R14 v2.0.0: NOT_APPLICABLE; findings: 9c4d729d07e53453624333d715b92d0f764d94cd9f3bf938addc33fc88525ef6
+R15 v2.0.0: DISABLED; findings: 41ed91037b138f33317fea87e86ea3fcb7150fcf07ac6632d8c28fe3813bf0b3
+R16 v2.0.0: DISABLED; findings: ac74e0722727a5d97a4695bc398d1ef72e1c3da9903960260694760ac2478afa
+T01 v2.0.0: DISABLED; findings: c3689f0672d7890a230ea654d39e54ef7b44fc50d7ff727532111b60e42fa32a
+T02 v2.0.0: DISABLED; findings: 148ca5bff2bad52f2840a3314b74e84cf20bfa2ea83b4166fae102aa371ca29d
+T03 v2.0.0: DISABLED; findings: 9ba2397e9ac169e9e4f7ce9dbb13cff6d27e694315e98dc2156b22402e96f597
+T04 v2.0.0: DISABLED; findings: df67a8fc78ed3c47a8b2550b7d6eb15cff858697575a0e7fe4b81d64b87b03a0
+T05 v2.0.0: DISABLED; findings: 971fec5045b0b85f5ffff6d444a49ac46939a18dbf66d5b93d0ce30c405c2441
+T06 v2.0.0: DISABLED; findings: 8d8b8c276d260cfd4b9884bb30007be29dd31a3360d4fb7ed450ee06f338cc3b
+T07 v2.0.0: DISABLED; findings: 0181f0158f80adb34ea5ef5a8739051e121649b77897b117a4ece7b0d284af24
+T08 v2.0.0: DISABLED; findings: 99e320ab08ee3ef13d1bf17bba1e28ca3d5c1859c5099e124d9c44327edafe2e
+
+CLINICAL LIMITATIONS / SCOPE
+- DRAFT — Requires Orthodontist Review. No diagnosis, prescription, clinical validation or authorized sign-off is provided.
+- Groq may select approved wording only. All facts, measurements, uncertainty, provenance and limitations are assembled locally.
+- Real-patient transmission is disabled. Raw tables, identifiers, measurements, source claims and clinical records are never sent to Groq.
+- Synthetic confirmation is not PHI detection. Use synthetic data only; application data remain in memory until an explicit local copy/download.
+- Prototype — not for clinical use. DRAFT for clinician review; no authorized sign-off workflow is implemented.
+- No authentic ClinCheck or SureSmile clipboard oracles or approved vendor semantic releases exist.
+- Unverified and missing fields are not evaluated and do not mean normal, low risk or no concern.
+- Programmed values are not achieved movement. Total co-programming does not establish simultaneity or staging.
+- No cross-basis comparisons, plan subtraction, angular composition, stage summation or total/stage-count division is performed.
+- No suitability, periodontal/root/bone, occlusion, IPR, extraction/surgery, prognosis, attachment or collision conclusions are produced.
+- Clinical predicates and attachment/staging assessments remain disabled. Counts are not clinical difficulty or risk scores.
+- Single capture only; no cross-case/plan joins. Expected axis coverage and unlisted tooth status remain unknown.
+
+DRAFT — Requires Orthodontist Review
+No clinician approval or sign-off is recorded.

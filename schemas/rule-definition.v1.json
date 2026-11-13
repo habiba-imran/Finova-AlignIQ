@@ -1,0 +1,136 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "rule_id": {
+      "title": "Rule Id",
+      "type": "string"
+    },
+    "version": {
+      "const": "2.0.0",
+      "default": "2.0.0",
+      "title": "Version",
+      "type": "string"
+    },
+    "name": {
+      "title": "Name",
+      "type": "string"
+    },
+    "category": {
+      "enum": [
+        "TECHNICAL",
+        "DESCRIPTIVE",
+        "SAFETY",
+        "OUTPUT",
+        "CLINICAL",
+        "STAGING",
+        "ATTACHMENT",
+        "PROTECTION"
+      ],
+      "title": "Category",
+      "type": "string"
+    },
+    "disposition": {
+      "enum": [
+        "READY",
+        "REVISE",
+        "VALIDATE",
+        "MORE DATA",
+        "ADDITIONAL"
+      ],
+      "title": "Disposition",
+      "type": "string"
+    },
+    "execution": {
+      "enum": [
+        "ACTIVE",
+        "DISABLED",
+        "DEFERRED"
+      ],
+      "title": "Execution",
+      "type": "string"
+    },
+    "required_fields": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Required Fields",
+      "type": "array"
+    },
+    "dependencies": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Dependencies",
+      "type": "array"
+    },
+    "allowed_evidence": {
+      "default": [],
+      "items": {
+        "enum": [
+          "AUTHORIZED_VENDOR",
+          "TEST_ONLY"
+        ],
+        "type": "string"
+      },
+      "title": "Allowed Evidence",
+      "type": "array"
+    },
+    "allowed_modes": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Allowed Modes",
+      "type": "array"
+    },
+    "allowed_scopes": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Allowed Scopes",
+      "type": "array"
+    },
+    "basis_policy": {
+      "default": "NO_CROSS_BASIS_OPERATIONS",
+      "title": "Basis Policy",
+      "type": "string"
+    },
+    "source_policy": {
+      "default": "EXACT_RELEASED_SOURCE_VERSION_MODE_BASIS_SCOPE_ONLY",
+      "title": "Source Policy",
+      "type": "string"
+    },
+    "reason": {
+      "title": "Reason",
+      "type": "string"
+    },
+    "policy_id": {
+      "default": null,
+      "title": "Policy Id",
+      "type": "null"
+    },
+    "clinical_approver": {
+      "default": null,
+      "title": "Clinical Approver",
+      "type": "null"
+    },
+    "threshold": {
+      "default": null,
+      "title": "Threshold",
+      "type": "null"
+    }
+  },
+  "required": [
+    "rule_id",
+    "name",
+    "category",
+    "disposition",
+    "execution",
+    "reason"
+  ],
+  "title": "RuleDefinition",
+  "type": "object"
+}

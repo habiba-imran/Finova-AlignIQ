@@ -1,0 +1,43 @@
+{
+  "$defs": {
+    "Association": {
+      "additionalProperties": false,
+      "properties": {
+        "tooth": {
+          "title": "Tooth",
+          "type": "string"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "type": "string"
+        }
+      },
+      "required": [
+        "tooth",
+        "label",
+        "value"
+      ],
+      "title": "Association",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "associations": {
+      "items": {
+        "$ref": "#/$defs/Association"
+      },
+      "title": "Associations",
+      "type": "array"
+    }
+  },
+  "required": [
+    "associations"
+  ],
+  "title": "RecoveryProposal",
+  "type": "object"
+}

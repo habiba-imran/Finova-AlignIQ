@@ -1,0 +1,41 @@
+{
+  "kind": "SYNTHETIC_ONLY_NOT_CLIPBOARD_EVIDENCE",
+  "description": "Original invented numbers and text. Documentation-inspired structures, never transcribed vendor captures. Expected positions and decimals specified independently of parser execution.",
+  "fixtures": [
+    {
+      "id": "synthetic-clincheck-style-rows",
+      "reference": "ClinCheck Pro 6 guide section 3.15, PDF page 14: distinct plan/basis views; no clipboard serialization specified.",
+      "cloud_allowed": false,
+      "raw_text": "# SYNTHETIC — invented ClinCheck-style structure, NOT a vendor export\nAlign Final / Doctor Final / Comparison\nTooth\tRotation (deg)\tExtrusion (mm)\n13\t−2.7500\t0.00\n14\t\t—\n",
+      "expected": {"orientation": "TEETH_IN_ROWS", "detected_source": "ClinCheck", "raw_values": ["−2.7500", "0.00", "", "—"], "decimals": ["-2.7500", "0.00", null, null]}
+    },
+    {
+      "id": "synthetic-suresmile-style-columns",
+      "reference": "SureSmile Tooth Movements help: tooth/movement intersections, displacement type and cusp-tip context. Plan revisions are not aligner stage indices.",
+      "cloud_allowed": false,
+      "raw_text": "# SYNTHETIC — invented example, NOT a vendor clipboard capture\nDisplacement Type: Cusp Tip\nMovement\tUR1\tUL1\nRotation (°)\t−3.1250\t0\nTranslation (mm)\t0.450\t?\n",
+      "expected": {"orientation": "TEETH_IN_COLUMNS", "detected_source": "SureSmile", "raw_values": ["−3.1250", "0", "0.450", "?"], "decimals": ["-3.1250", "0", "0.450", null]}
+    },
+    {
+      "id": "synthetic-markdown-rows",
+      "reference": "Original synthetic Markdown wrapper, not a format documented or verified for either vendor.",
+      "cloud_allowed": true,
+      "raw_text": "# SYNTHETIC — invented Markdown example; no vendor compatibility\n| Tooth | Rotation (deg) | Extrusion (mm) |\n| --- | --- | --- |\n| 13 | −1.2500 | 0.00 |\n| 14 |  | — |\n",
+      "expected": {"orientation": "TEETH_IN_ROWS", "detected_source": "Unknown", "raw_values": [" −1.2500 ", " 0.00 ", "  ", " — "], "decimals": ["-1.2500", "0.00", null, null]}
+    },
+    {
+      "id": "synthetic-markdown-columns",
+      "reference": "Original synthetic Markdown wrapper, not authentic clipboard evidence.",
+      "cloud_allowed": true,
+      "raw_text": "# SYNTHETIC — invented column example; no vendor compatibility\n| Movement | 13 | 14 |\n| --- | --- | --- |\n| Rotation (°) | −0.7500 | 0 |\n",
+      "expected": {"orientation": "TEETH_IN_COLUMNS", "detected_source": "Unknown", "raw_values": [" −0.7500 ", " 0 "], "decimals": ["-0.7500", "0"]}
+    },
+    {
+      "id": "synthetic-corrupted-alignment",
+      "reference": "Original synthetic corruption; omitted middle position has no reliable association.",
+      "cloud_allowed": false,
+      "raw_text": "# SYNTHETIC corrupted alignment\nTooth  Rotation (deg)  Extrusion (mm)\n13  1.75\n",
+      "expected": {"orientation": "TEETH_IN_ROWS", "detected_source": "Unknown", "raw_values": [], "decimals": []}
+    }
+  ]
+}

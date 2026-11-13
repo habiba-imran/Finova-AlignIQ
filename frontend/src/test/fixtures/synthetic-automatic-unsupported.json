@@ -1,0 +1,236 @@
+{
+  "schema_version": "1.0.0",
+  "parser_version": "0.1.0",
+  "status": "UNSUPPORTED",
+  "notice": "Prototype — not for clinical use. Lexical parsing only; source semantics are unverified.",
+  "raw_text": "# SYNTHETIC — invented Markdown example; no vendor compatibility\n| Tooth | Rotation (deg) | Extrusion (mm) |\n| --- | --- | --- |\n| 13 | −1.2500 | 0.00 |\n| 14 |  | — |\n",
+  "raw_sha256": "cf96d50be36997b49b2743e6377559f3873befd113736a0bd2ab5a5935670fe7",
+  "source": {
+    "source_claim": "Unknown",
+    "detected_claims": [],
+    "claim_evidence": [],
+    "verification_status": "UNVERIFIED",
+    "adapter": {
+      "id": "generic-lexical-grid",
+      "version": "0.1.0",
+      "verified": false,
+      "verified_source_versions": []
+    },
+    "candidate_adapter": null,
+    "context": {
+      "source_version": null,
+      "notation": "UNKNOWN",
+      "dentition": "UNKNOWN",
+      "arch": "UNKNOWN",
+      "plan_mode": "UNKNOWN",
+      "reference_basis": "UNKNOWN",
+      "scope": "UNKNOWN",
+      "stage_index": null,
+      "coordinate_frame": null,
+      "case_id": null,
+      "plan_id": null,
+      "decimal_separator": "DOT"
+    },
+    "metadata_status": "USER_CLAIMS_UNVERIFIED"
+  },
+  "layout": {
+    "orientation": "UNKNOWN",
+    "delimiter": null,
+    "header_line": null,
+    "header_cells": [],
+    "declared_column_count": 0
+  },
+  "teeth": [],
+  "measurements": [],
+  "coverage": {
+    "expected_axes": null,
+    "declared_measurements": 0,
+    "numeric_present": 0,
+    "explicit_zero": 0,
+    "missing": 0,
+    "invalid": 0,
+    "ambiguous": 0,
+    "unsupported": 0,
+    "unverified": 0
+  },
+  "issues": [
+    {
+      "code": "SOURCE_UNVERIFIED",
+      "severity": "WARNING",
+      "message": "No authentic clipboard fixtures have verified any vendor adapter. Results are lexical only.",
+      "span": null,
+      "measurement_ids": [],
+      "field": "source"
+    },
+    {
+      "code": "UNSUPPORTED_LAYOUT",
+      "severity": "ERROR",
+      "message": "Exactly one explicit table header/orientation/delimiter is required; no closest layout is selected.",
+      "span": null,
+      "measurement_ids": [],
+      "field": null
+    }
+  ],
+  "clarification_fields": [
+    "source_verification",
+    "source_version",
+    "notation",
+    "dentition",
+    "arch",
+    "plan_mode",
+    "reference_basis",
+    "scope",
+    "coordinate_frame",
+    "direction_mapping"
+  ],
+  "unparsed_lines": [
+    {
+      "raw": "# SYNTHETIC — invented Markdown example; no vendor compatibility",
+      "span": {
+        "line": 1,
+        "column_start": 1,
+        "column_end": 65,
+        "start": 0,
+        "end": 64,
+        "cell_index": null
+      },
+      "reason": "LAYOUT_UNRESOLVED"
+    },
+    {
+      "raw": "| Tooth | Rotation (deg) | Extrusion (mm) |",
+      "span": {
+        "line": 2,
+        "column_start": 1,
+        "column_end": 44,
+        "start": 65,
+        "end": 108,
+        "cell_index": null
+      },
+      "reason": "LAYOUT_UNRESOLVED"
+    },
+    {
+      "raw": "| --- | --- | --- |",
+      "span": {
+        "line": 3,
+        "column_start": 1,
+        "column_end": 20,
+        "start": 109,
+        "end": 128,
+        "cell_index": null
+      },
+      "reason": "LAYOUT_UNRESOLVED"
+    },
+    {
+      "raw": "| 13 | −1.2500 | 0.00 |",
+      "span": {
+        "line": 4,
+        "column_start": 1,
+        "column_end": 24,
+        "start": 129,
+        "end": 152,
+        "cell_index": null
+      },
+      "reason": "LAYOUT_UNRESOLVED"
+    },
+    {
+      "raw": "| 14 |  | — |",
+      "span": {
+        "line": 5,
+        "column_start": 1,
+        "column_end": 14,
+        "start": 153,
+        "end": 166,
+        "cell_index": null
+      },
+      "reason": "LAYOUT_UNRESOLVED"
+    }
+  ],
+  "pipeline": {
+    "version": "1.0.0",
+    "detection": {
+      "detected_source": "Unknown",
+      "verified_source": null,
+      "status": "UNKNOWN",
+      "indicators": [],
+      "notation_candidates": [],
+      "layout_recognized": false
+    },
+    "assistance": {
+      "available": true,
+      "status": "NOT_REQUESTED",
+      "reason": "READY_FOR_EXPLICIT_CONSENT",
+      "attempts": 0,
+      "certificate": null,
+      "origin": "DETERMINISTIC",
+      "real_patient_transmission_enabled": false
+    },
+    "clarifications": [
+      {
+        "code": "SOURCE_EVIDENCE_REQUIRED",
+        "field": "source_verification",
+        "measurement_ids": [],
+        "message": "Authentic independently reviewed clipboard evidence is required; a detected indicator is not vendor verification."
+      },
+      {
+        "code": "METADATA_REQUIRED",
+        "field": "source_version",
+        "measurement_ids": [],
+        "message": "Provide the exact source application/build/version with capture evidence."
+      },
+      {
+        "code": "METADATA_REQUIRED",
+        "field": "notation",
+        "measurement_ids": [],
+        "message": "Confirm the numbering system and quadrant/arch context; numeric tooth tokens may fit multiple systems."
+      },
+      {
+        "code": "METADATA_REQUIRED",
+        "field": "dentition",
+        "measurement_ids": [],
+        "message": "Confirm permanent, primary or mixed dentition from source evidence."
+      },
+      {
+        "code": "METADATA_REQUIRED",
+        "field": "arch",
+        "measurement_ids": [],
+        "message": "Confirm the source arch; no arch is inferred from unknown numbering."
+      },
+      {
+        "code": "METADATA_REQUIRED",
+        "field": "plan_mode",
+        "measurement_ids": [],
+        "message": "Identify original/final/comparison mode; comparison needs operand plans and the source-defined operation."
+      },
+      {
+        "code": "METADATA_REQUIRED",
+        "field": "reference_basis",
+        "measurement_ids": [],
+        "message": "Confirm the reference point for each field (crown, root, cusp, bracket or other); bases are not interchangeable."
+      },
+      {
+        "code": "METADATA_REQUIRED",
+        "field": "scope",
+        "measurement_ids": [],
+        "message": "Confirm total/cumulative/incremental scope and any stage identifiers/kinds; a setup revision is not an aligner stage."
+      },
+      {
+        "code": "METADATA_REQUIRED",
+        "field": "coordinate_frame",
+        "measurement_ids": [],
+        "message": "Provide the source coordinate frame and independently verified sign/direction conventions."
+      },
+      {
+        "code": "STRUCTURE_REQUIRED",
+        "field": "layout",
+        "measurement_ids": [],
+        "message": "Provide explicit complete row/column delimiters. Ambiguous alignment cannot be reconstructed by guessing."
+      },
+      {
+        "code": "UNSUPPORTED_LAYOUT",
+        "field": "layout",
+        "measurement_ids": [],
+        "message": "Exactly one explicit table header/orientation/delimiter is required; no closest layout is selected."
+      }
+    ]
+  }
+}

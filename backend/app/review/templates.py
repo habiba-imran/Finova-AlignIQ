@@ -1,0 +1,57 @@
+"""Closed template set. Pasted instructions and arbitrary generated prose never execute."""
+
+TEMPLATES = {
+    "gate": "Existing parser and semantic validation evidence is reported without reinterpreting source values.",
+    "unknown": "This assessment is unavailable because required source semantics are unverified.",
+    "context": "This assessment is unavailable because required verified context is absent.",
+    "disabled": "This rule is disabled. No clinical predicate was evaluated.",
+    "not_applicable": "The descriptive condition is not applicable to these eligible inputs; this is not a clinical assessment.",
+    "inventory": "Source-reported programmed value in the stated mode, basis and scope. Achieved movement is not assessed.",
+    "co_programmed": "Distinct axes are co-programmed within the same total plan scope. Temporal overlap is unknown.",
+    "distribution": "Counts describe eligible nonzero positions and distinct axes, teeth and arches within this capture and context. Magnitudes are not added.",
+    "zero": "All supported, observed axes are explicitly zero in this scope. Unlisted axes remain unknown.",
+    "angular": "Source-reported programmed inclination or angulation; achieved root movement and torque control are not assessed.",
+    "bl": "Source-reported buccolingual displacement; expansion and bodily movement are not assessed.",
+    "md": "Source-reported mesiodistal displacement; anchorage, space closure and root movement are not assessed.",
+    "suppressed": "This output was suppressed because its structured facts or provenance could not be established.",
+    "conflict": "Contradictory structured observations were retained as a conflict and withheld from descriptive output.",
+    "draft": "DRAFT for clinician review. No authorized sign-off exists; source evidence and limitations must be inspected.",
+    "privacy": "Synthetic-data intake only; application processing is in memory, without input persistence or third-party transmission. This is not PHI detection or production privacy certification.",
+    "placement": "Exact attachment geometry, size, orientation and placement are withheld from TMT input.",
+    "superiority": "No universal attachment superiority or automatic attachment selection is asserted.",
+    "suitability": "Clinical suitability, diagnosis and treatment guarantees cannot be assessed from a movement table.",
+    "periodontal": "Periodontal condition cannot be assessed from TMT values or virtual root coordinates.",
+    "root_bone": "Root resorption, root proximity and bone housing require independent clinical and imaging assessment.",
+    "occlusion": "Occlusal contacts, final bite and interference cannot be assessed from this movement table.",
+    "ipr": "IPR sites, amounts and timing are withheld; verified contact/enamel data and an approved plan are required.",
+    "extraction_surgery": "Extraction, surgery and appliance substitution decisions require a full clinical assessment.",
+    "prognosis": "Patient-specific success probabilities, risk percentages and treatment duration are not assessed.",
+    "attachments": "Attachment requirements or omissions cannot be assessed without an actual verified attachment plan and approved policy.",
+    "collisions": "Collision-free motion and stage-transition safety require independently validated geometry and path data.",
+    "complex_intervention": "Intervention appropriateness requires independently verified patient context and an approved clinical policy.",
+}
+
+# Requested-decision context only, never inferred from raw text or movement size.
+CONTEXT_MATRIX = {
+    "SUITABILITY": ("H01", "suitability", ("full_clinical_assessment", "treatment_objectives")),
+    "PERIODONTAL": ("H02", "periodontal", ("periodontal_examination", "appropriate_imaging")),
+    "ROOT_BONE": ("H03", "root_bone", ("root_and_bone_assessment", "appropriate_imaging")),
+    "OCCLUSION": ("H04", "occlusion", ("verified_occlusion_and_contacts",)),
+    "IPR": ("H05", "ipr", ("approved_ipr_plan", "enamel_and_contact_assessment")),
+    "EXTRACTION_SURGERY": ("H06", "extraction_surgery", ("full_clinical_assessment", "approved_clinical_policy")),
+    "PROGNOSIS": ("H07", "prognosis", ("independently_validated_outcome_model",)),
+    "ATTACHMENTS": ("H08", "attachments", ("verified_attachment_plan", "approved_clinical_policy", "validated_geometry")),
+    "COLLISIONS": ("H09", "collisions", ("validated_geometry_and_staged_path",)),
+    "COMPLEX_INTERVENTION": ("H11", "complex_intervention", ("full_patient_context", "approved_clinical_policy")),
+}
+
+LIMITATIONS = (
+    "Prototype — not for clinical use. DRAFT for clinician review; no authorized sign-off workflow is implemented.",
+    "No authentic ClinCheck or SureSmile clipboard oracles or approved vendor semantic releases exist.",
+    "Unverified and missing fields are not evaluated and do not mean normal, low risk or no concern.",
+    "Programmed values are not achieved movement. Total co-programming does not establish simultaneity or staging.",
+    "No cross-basis comparisons, plan subtraction, angular composition, stage summation or total/stage-count division is performed.",
+    "No suitability, periodontal/root/bone, occlusion, IPR, extraction/surgery, prognosis, attachment or collision conclusions are produced.",
+    "Clinical predicates and attachment/staging assessments remain disabled. Counts are not clinical difficulty or risk scores.",
+    "Single capture only; no cross-case/plan joins. Expected axis coverage and unlisted tooth status remain unknown.",
+)

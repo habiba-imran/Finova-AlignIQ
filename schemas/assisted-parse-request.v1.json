@@ -1,0 +1,189 @@
+{
+  "$defs": {
+    "SourceContext": {
+      "additionalProperties": false,
+      "description": "All supplied metadata are unverified claims, including notation.",
+      "properties": {
+        "source_version": {
+          "anyOf": [
+            {
+              "maxLength": 64,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Version"
+        },
+        "notation": {
+          "default": "UNKNOWN",
+          "enum": [
+            "UNKNOWN",
+            "FDI",
+            "UNIVERSAL",
+            "PALMER"
+          ],
+          "title": "Notation",
+          "type": "string"
+        },
+        "dentition": {
+          "default": "UNKNOWN",
+          "enum": [
+            "UNKNOWN",
+            "PERMANENT",
+            "PRIMARY",
+            "MIXED"
+          ],
+          "title": "Dentition",
+          "type": "string"
+        },
+        "arch": {
+          "default": "UNKNOWN",
+          "enum": [
+            "UNKNOWN",
+            "UPPER",
+            "LOWER",
+            "BOTH"
+          ],
+          "title": "Arch",
+          "type": "string"
+        },
+        "plan_mode": {
+          "default": "UNKNOWN",
+          "enum": [
+            "UNKNOWN",
+            "ALIGN_FINAL",
+            "DOCTOR_FINAL",
+            "COMPARISON"
+          ],
+          "title": "Plan Mode",
+          "type": "string"
+        },
+        "reference_basis": {
+          "default": "UNKNOWN",
+          "enum": [
+            "UNKNOWN",
+            "CROWN_CENTER",
+            "VIRTUAL_ROOT_APEX",
+            "CUSP_TIP"
+          ],
+          "title": "Reference Basis",
+          "type": "string"
+        },
+        "scope": {
+          "default": "UNKNOWN",
+          "enum": [
+            "UNKNOWN",
+            "TOTAL",
+            "CUMULATIVE",
+            "INCREMENTAL"
+          ],
+          "title": "Scope",
+          "type": "string"
+        },
+        "stage_index": {
+          "anyOf": [
+            {
+              "maximum": 2147483647,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Stage Index"
+        },
+        "coordinate_frame": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Coordinate Frame"
+        },
+        "case_id": {
+          "anyOf": [
+            {
+              "maxLength": 64,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Case Id"
+        },
+        "plan_id": {
+          "anyOf": [
+            {
+              "maxLength": 64,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Plan Id"
+        },
+        "decimal_separator": {
+          "default": "DOT",
+          "enum": [
+            "DOT",
+            "COMMA"
+          ],
+          "title": "Decimal Separator",
+          "type": "string"
+        }
+      },
+      "title": "SourceContext",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "raw_text": {
+      "maxLength": 100000,
+      "title": "Raw Text",
+      "type": "string"
+    },
+    "source_claim": {
+      "default": "Unknown",
+      "enum": [
+        "Unknown",
+        "ClinCheck",
+        "SureSmile"
+      ],
+      "title": "Source Claim",
+      "type": "string"
+    },
+    "context": {
+      "$ref": "#/$defs/SourceContext"
+    },
+    "synthetic_data_confirmed": {
+      "title": "Synthetic Data Confirmed",
+      "type": "boolean"
+    },
+    "cloud_synthetic_consent": {
+      "title": "Cloud Synthetic Consent",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "raw_text",
+    "synthetic_data_confirmed",
+    "cloud_synthetic_consent"
+  ],
+  "title": "AssistedSubmission",
+  "type": "object"
+}

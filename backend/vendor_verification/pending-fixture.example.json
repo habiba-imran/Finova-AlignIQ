@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0.0",
+  "fixtures": [
+    {
+      "fixture_id": "replace-with-approved-capture-id",
+      "kind": "AUTHENTIC",
+      "application": "ClinCheck",
+      "status": "PENDING",
+      "source_version": null,
+      "raw": null,
+      "expected": null,
+      "source_evidence": null,
+      "reviews": []
+    }
+  ]
+}

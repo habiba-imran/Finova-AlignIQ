@@ -1,0 +1,47 @@
+{
+  "$defs": {
+    "WordingChoice": {
+      "additionalProperties": false,
+      "properties": {
+        "finding_ids": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 1,
+          "minItems": 1,
+          "title": "Finding Ids",
+          "type": "array"
+        },
+        "text": {
+          "maxLength": 1000,
+          "minLength": 1,
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "finding_ids",
+        "text"
+      ],
+      "title": "WordingChoice",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "comments": {
+      "items": {
+        "$ref": "#/$defs/WordingChoice"
+      },
+      "maxItems": 24,
+      "minItems": 1,
+      "title": "Comments",
+      "type": "array"
+    }
+  },
+  "required": [
+    "comments"
+  ],
+  "title": "WordingBatch",
+  "type": "object"
+}

@@ -1,0 +1,317 @@
+{
+  "communities": {
+    "0": [
+      "frontend_package",
+      "frontend_package_devdependencies",
+      "frontend_package_devdependencies_autoprefixer",
+      "frontend_package_devdependencies_jsdom",
+      "frontend_package_devdependencies_postcss",
+      "frontend_package_devdependencies_tailwindcss",
+      "frontend_package_devdependencies_testing_library_jest_dom",
+      "frontend_package_devdependencies_testing_library_react",
+      "frontend_package_devdependencies_types_react",
+      "frontend_package_devdependencies_types_react_dom",
+      "frontend_package_devdependencies_typescript",
+      "frontend_package_devdependencies_vite",
+      "frontend_package_devdependencies_vitejs_plugin_react",
+      "frontend_package_devdependencies_vitest",
+      "frontend_package_engines",
+      "frontend_package_engines_node",
+      "frontend_package_name",
+      "frontend_package_private",
+      "frontend_package_type",
+      "frontend_package_version",
+      "frontend_src_test_setup",
+      "frontend_tailwind_config",
+      "frontend_vite_config",
+      "ref_autoprefixer",
+      "ref_jsdom",
+      "ref_postcss",
+      "ref_tailwindcss",
+      "ref_testing_library_jest_dom",
+      "ref_testing_library_react",
+      "ref_types_react",
+      "ref_types_react_dom",
+      "ref_typescript",
+      "ref_vite",
+      "ref_vitejs_plugin_react",
+      "ref_vitest"
+    ],
+    "1": [
+      "backend_app_domain_models_axiscoverage",
+      "backend_app_domain_models_layoutinfo",
+      "backend_app_domain_models_parsedmeasurement",
+      "backend_app_domain_models_parseissue",
+      "backend_app_domain_models_parseresult",
+      "backend_app_domain_models_rationale_152",
+      "backend_app_domain_models_toothidentifier",
+      "backend_app_domain_models_unparsedline",
+      "backend_app_parser_service",
+      "backend_app_parser_service_mark_duplicates",
+      "backend_app_parser_service_parse_table",
+      "backend_app_parser_service_parse_table_add_tooth",
+      "backend_app_parser_service_parse_table_reject_line",
+      "backend_app_parser_service_rationale_1",
+      "backend_app_parser_service_rationale_129",
+      "backend_app_parser_teeth",
+      "backend_app_parser_teeth_parse_tooth",
+      "backend_app_parser_teeth_parse_tooth_issue",
+      "backend_app_parser_teeth_rationale_1",
+      "backend_app_parser_values_parse_value",
+      "backend_app_parser_values_parse_value_issue",
+      "collections",
+      "hashlib"
+    ],
+    "2": [
+      "backend_app_domain_models_rationale_56",
+      "backend_app_domain_models_rawcell",
+      "backend_app_domain_models_sourcespan",
+      "backend_app_parser_labels",
+      "backend_app_parser_labels_label",
+      "backend_app_parser_labels_rationale_1",
+      "backend_app_parser_labels_recognize_label",
+      "backend_app_parser_labels_token",
+      "backend_app_parser_layouts",
+      "backend_app_parser_layouts_detect_layout",
+      "backend_app_parser_layouts_layout",
+      "backend_app_parser_layouts_rationale_1",
+      "backend_app_parser_tokenize",
+      "backend_app_parser_tokenize_cells",
+      "backend_app_parser_tokenize_line",
+      "backend_app_parser_tokenize_line_span",
+      "backend_app_parser_tokenize_lines",
+      "backend_app_parser_tokenize_rationale_1",
+      "backend_app_parser_values",
+      "backend_app_parser_values_rationale_1",
+      "dataclasses",
+      "re"
+    ],
+    "3": [
+      "backend_app_domain_models_adapterinfo",
+      "backend_app_domain_models_contract",
+      "backend_app_domain_models_py_basemodel",
+      "backend_app_domain_models_rationale_25",
+      "backend_app_domain_models_rawtmtsubmission",
+      "backend_app_domain_models_rawtmtsubmission_require_synthetic_confirmation",
+      "backend_app_domain_models_sourcecontext",
+      "backend_app_domain_models_sourceinfo",
+      "backend_app_parser_adapters_base",
+      "backend_app_parser_adapters_base_rationale_1",
+      "backend_app_parser_adapters_base_sourceadapter",
+      "backend_app_parser_adapters_base_sourceadapter_context_conflicts",
+      "backend_app_parser_adapters_base_sourceadapter_info",
+      "backend_app_parser_adapters_clincheck",
+      "backend_app_parser_adapters_init",
+      "backend_app_parser_adapters_init_source_info",
+      "backend_app_parser_adapters_suresmile",
+      "field_validator"
+    ],
+    "4": [
+      "backend_app_domain_models",
+      "backend_app_domain_models_rationale_1",
+      "backend_app_main",
+      "backend_app_main_health",
+      "backend_app_main_healthresponse",
+      "backend_app_main_py_basemodel",
+      "backend_app_main_rationale_1",
+      "backend_tests_test_health",
+      "backend_tests_test_health_test_health",
+      "backend_tests_test_health_test_no_input_submission_endpoint",
+      "backend_tests_test_health_test_only_health_route_exists",
+      "decimal",
+      "fastapi",
+      "fastapi_testclient",
+      "get",
+      "pydantic",
+      "typing"
+    ],
+    "5": [
+      "frontend_package_dependencies",
+      "frontend_package_dependencies_lucide_react",
+      "frontend_package_dependencies_react",
+      "frontend_package_dependencies_react_dom",
+      "frontend_src_app",
+      "frontend_src_app_app",
+      "frontend_src_app_app_cleartext",
+      "frontend_src_app_app_loadexample",
+      "frontend_src_app_test",
+      "frontend_src_app_test_setup",
+      "frontend_src_main",
+      "frontend_src_styles",
+      "frontend_src_syntheticexample",
+      "frontend_src_syntheticexample_synthetic_example",
+      "ref_lucide_react",
+      "ref_react",
+      "ref_react_dom"
+    ],
+    "6": [
+      "frontend_tsconfig",
+      "frontend_tsconfig_compileroptions",
+      "frontend_tsconfig_compileroptions_esmoduleinterop",
+      "frontend_tsconfig_compileroptions_isolatedmodules",
+      "frontend_tsconfig_compileroptions_jsx",
+      "frontend_tsconfig_compileroptions_lib",
+      "frontend_tsconfig_compileroptions_module",
+      "frontend_tsconfig_compileroptions_moduleresolution",
+      "frontend_tsconfig_compileroptions_noemit",
+      "frontend_tsconfig_compileroptions_nounusedlocals",
+      "frontend_tsconfig_compileroptions_nounusedparameters",
+      "frontend_tsconfig_compileroptions_resolvejsonmodule",
+      "frontend_tsconfig_compileroptions_skiplibcheck",
+      "frontend_tsconfig_compileroptions_strict",
+      "frontend_tsconfig_compileroptions_target",
+      "frontend_tsconfig_compileroptions_types",
+      "frontend_tsconfig_include"
+    ],
+    "7": [
+      "frontend_package_scripts",
+      "frontend_package_scripts_build",
+      "frontend_package_scripts_dev",
+      "frontend_package_scripts_preview",
+      "frontend_package_scripts_test",
+      "frontend_package_scripts_test_watch"
+    ],
+    "8": [
+      "backend_app_domain_init",
+      "backend_app_domain_init_rationale_1"
+    ],
+    "9": [
+      "backend_app_init",
+      "backend_app_init_rationale_1"
+    ],
+    "10": [
+      "backend_app_parser_init",
+      "backend_app_parser_init_rationale_1"
+    ],
+    "11": [
+      "frontend_postcss_config"
+    ]
+  },
+  "cohesion": {
+    "0": 0.08235294117647059,
+    "1": 0.17391304347826086,
+    "2": 0.21645021645021645,
+    "3": 0.20261437908496732,
+    "4": 0.1323529411764706,
+    "5": 0.18382352941176472,
+    "6": 0.11764705882352941,
+    "7": 0.3333333333333333,
+    "8": 1.0,
+    "9": 1.0,
+    "10": 1.0,
+    "11": 1.0
+  },
+  "gods": [
+    {
+      "id": "backend_app_parser_service_parse_table",
+      "label": "parse_table()",
+      "degree": 16
+    },
+    {
+      "id": "backend_app_domain_models_contract",
+      "label": "Contract",
+      "degree": 15
+    },
+    {
+      "id": "frontend_tsconfig_compileroptions",
+      "label": "compilerOptions",
+      "degree": 15
+    },
+    {
+      "id": "backend_app_domain_models_parseissue",
+      "label": "ParseIssue",
+      "degree": 14
+    },
+    {
+      "id": "backend_app_domain_models_rawcell",
+      "label": "RawCell",
+      "degree": 10
+    },
+    {
+      "id": "backend_app_parser_teeth_parse_tooth",
+      "label": "parse_tooth()",
+      "degree": 10
+    },
+    {
+      "id": "backend_app_parser_adapters_init_source_info",
+      "label": "source_info()",
+      "degree": 9
+    },
+    {
+      "id": "backend_app_parser_tokenize_line",
+      "label": "Line",
+      "degree": 9
+    },
+    {
+      "id": "backend_app_parser_tokenize_cells",
+      "label": "cells()",
+      "degree": 9
+    },
+    {
+      "id": "backend_app_parser_values_parse_value",
+      "label": "parse_value()",
+      "degree": 9
+    }
+  ],
+  "surprises": [
+    {
+      "source": "parse_tooth()",
+      "target": "SourceContext",
+      "source_files": [
+        "backend/app/parser/teeth.py",
+        "backend/app/domain/models.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "uses",
+      "why": "inferred connection - not explicitly stated in source; bridges separate communities"
+    },
+    {
+      "source": "parse_table()",
+      "target": "RawTMTSubmission",
+      "source_files": [
+        "backend/app/parser/service.py",
+        "backend/app/domain/models.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "uses",
+      "why": "inferred connection - not explicitly stated in source; bridges separate communities"
+    },
+    {
+      "source": "parse_tooth()",
+      "target": "RawCell",
+      "source_files": [
+        "backend/app/parser/teeth.py",
+        "backend/app/domain/models.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "uses",
+      "why": "inferred connection - not explicitly stated in source; bridges separate communities"
+    },
+    {
+      "source": "parse_value()",
+      "target": "RawCell",
+      "source_files": [
+        "backend/app/parser/values.py",
+        "backend/app/domain/models.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "uses",
+      "why": "inferred connection - not explicitly stated in source; bridges separate communities"
+    },
+    {
+      "source": "source_info()",
+      "target": "Line",
+      "source_files": [
+        "backend/app/parser/adapters/__init__.py",
+        "backend/app/parser/tokenize.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "uses",
+      "why": "inferred connection - not explicitly stated in source; bridges separate communities"
+    }
+  ],
+  "tokens": {
+    "input": 0,
+    "output": 0
+  }
+}

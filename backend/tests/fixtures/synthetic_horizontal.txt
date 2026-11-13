@@ -1,0 +1,4 @@
+# SYNTHETIC fixture — invented values; not a vendor export.
+Movement;13;14
+Rotation (degrees);−1.2300 M;
+Extrusion (mm);0.00;—

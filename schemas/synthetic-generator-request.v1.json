@@ -1,0 +1,36 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "recipe": {
+      "enum": [
+        "clean",
+        "irregular",
+        "mixed_rows",
+        "mixed_columns",
+        "wrapped",
+        "fragments",
+        "header_mix",
+        "partial",
+        "ambiguous",
+        "irrelevant",
+        "adversarial",
+        "unknown_vendor",
+        "metadata"
+      ],
+      "title": "Recipe",
+      "type": "string"
+    },
+    "seed": {
+      "maximum": 1000000,
+      "minimum": 0,
+      "title": "Seed",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "recipe",
+    "seed"
+  ],
+  "title": "SyntheticFixture",
+  "type": "object"
+}

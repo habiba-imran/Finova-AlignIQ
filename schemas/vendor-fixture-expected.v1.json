@@ -1,0 +1,1067 @@
+{
+  "$defs": {
+    "AdapterInfo": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "version": {
+          "title": "Version",
+          "type": "string"
+        },
+        "verified": {
+          "const": false,
+          "default": false,
+          "title": "Verified",
+          "type": "boolean"
+        },
+        "verified_source_versions": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Verified Source Versions",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "version"
+      ],
+      "title": "AdapterInfo",
+      "type": "object"
+    },
+    "AxisCoverage": {
+      "additionalProperties": false,
+      "description": "Declared positions only; no expected clinical axes are invented.",
+      "properties": {
+        "expected_axes": {
+          "default": null,
+          "title": "Expected Axes",
+          "type": "null"
+        },
+        "declared_measurements": {
+          "default": 0,
+          "title": "Declared Measurements",
+          "type": "integer"
+        },
+        "numeric_present": {
+          "default": 0,
+          "title": "Numeric Present",
+          "type": "integer"
+        },
+        "explicit_zero": {
+          "default": 0,
+          "title": "Explicit Zero",
+          "type": "integer"
+        },
+        "missing": {
+          "default": 0,
+          "title": "Missing",
+          "type": "integer"
+        },
+        "invalid": {
+          "default": 0,
+          "title": "Invalid",
+          "type": "integer"
+        },
+        "ambiguous": {
+          "default": 0,
+          "title": "Ambiguous",
+          "type": "integer"
+        },
+        "unsupported": {
+          "default": 0,
+          "title": "Unsupported",
+          "type": "integer"
+        },
+        "unverified": {
+          "default": 0,
+          "title": "Unverified",
+          "type": "integer"
+        }
+      },
+      "title": "AxisCoverage",
+      "type": "object"
+    },
+    "ExpectedComponent": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "enum": [
+            "source_application",
+            "source_version",
+            "tooth_identifier",
+            "notation",
+            "dentition",
+            "arch",
+            "axis",
+            "unit",
+            "sign",
+            "direction",
+            "plan_mode",
+            "reference_basis",
+            "scope",
+            "stage_index",
+            "stage_kind",
+            "coordinate_frame",
+            "comparison_left_plan",
+            "comparison_right_plan",
+            "comparison_operation"
+          ],
+          "title": "Name",
+          "type": "string"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "maxLength": 256,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        },
+        "evidence_locator": {
+          "anyOf": [
+            {
+              "maxLength": 256,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Evidence Locator"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "title": "ExpectedComponent",
+      "type": "object"
+    },
+    "ExpectedMeasurement": {
+      "additionalProperties": false,
+      "properties": {
+        "measurement_id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Measurement Id",
+          "type": "string"
+        },
+        "components": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/ExpectedComponent"
+          },
+          "title": "Components",
+          "type": "array"
+        }
+      },
+      "required": [
+        "measurement_id"
+      ],
+      "title": "ExpectedMeasurement",
+      "type": "object"
+    },
+    "LayoutInfo": {
+      "additionalProperties": false,
+      "properties": {
+        "orientation": {
+          "default": "UNKNOWN",
+          "enum": [
+            "TEETH_IN_ROWS",
+            "TEETH_IN_COLUMNS",
+            "UNKNOWN"
+          ],
+          "title": "Orientation",
+          "type": "string"
+        },
+        "delimiter": {
+          "anyOf": [
+            {
+              "enum": [
+                "TAB",
+                "PIPE",
+                "SEMICOLON",
+                "MULTISPACE"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Delimiter"
+        },
+        "header_line": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Header Line"
+        },
+        "header_cells": {
+          "items": {
+            "$ref": "#/$defs/RawCell"
+          },
+          "title": "Header Cells",
+          "type": "array"
+        },
+        "declared_column_count": {
+          "default": 0,
+          "title": "Declared Column Count",
+          "type": "integer"
+        }
+      },
+      "title": "LayoutInfo",
+      "type": "object"
+    },
+    "ParseIssue": {
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "title": "Code",
+          "type": "string"
+        },
+        "severity": {
+          "enum": [
+            "INFO",
+            "WARNING",
+            "ERROR"
+          ],
+          "title": "Severity",
+          "type": "string"
+        },
+        "message": {
+          "title": "Message",
+          "type": "string"
+        },
+        "span": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SourceSpan"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "measurement_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Measurement Ids",
+          "type": "array"
+        },
+        "field": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Field"
+        }
+      },
+      "required": [
+        "code",
+        "severity",
+        "message"
+      ],
+      "title": "ParseIssue",
+      "type": "object"
+    },
+    "ParseResult": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0",
+          "default": "1.0.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "parser_version": {
+          "const": "0.1.0",
+          "default": "0.1.0",
+          "title": "Parser Version",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "PARSED_UNVERIFIED",
+            "PARTIAL",
+            "UNSUPPORTED",
+            "INVALID"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "notice": {
+          "const": "Prototype — not for clinical use. Lexical parsing only; source semantics are unverified.",
+          "default": "Prototype — not for clinical use. Lexical parsing only; source semantics are unverified.",
+          "title": "Notice",
+          "type": "string"
+        },
+        "raw_text": {
+          "title": "Raw Text",
+          "type": "string"
+        },
+        "raw_sha256": {
+          "title": "Raw Sha256",
+          "type": "string"
+        },
+        "source": {
+          "$ref": "#/$defs/SourceInfo"
+        },
+        "layout": {
+          "$ref": "#/$defs/LayoutInfo"
+        },
+        "teeth": {
+          "items": {
+            "$ref": "#/$defs/ToothIdentifier"
+          },
+          "title": "Teeth",
+          "type": "array"
+        },
+        "measurements": {
+          "items": {
+            "$ref": "#/$defs/ParsedMeasurement"
+          },
+          "title": "Measurements",
+          "type": "array"
+        },
+        "coverage": {
+          "$ref": "#/$defs/AxisCoverage"
+        },
+        "issues": {
+          "items": {
+            "$ref": "#/$defs/ParseIssue"
+          },
+          "title": "Issues",
+          "type": "array"
+        },
+        "clarification_fields": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Clarification Fields",
+          "type": "array"
+        },
+        "unparsed_lines": {
+          "items": {
+            "$ref": "#/$defs/UnparsedLine"
+          },
+          "title": "Unparsed Lines",
+          "type": "array"
+        }
+      },
+      "required": [
+        "status",
+        "raw_text",
+        "raw_sha256",
+        "source",
+        "layout"
+      ],
+      "title": "ParseResult",
+      "type": "object"
+    },
+    "ParsedMeasurement": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "tooth_ref": {
+          "title": "Tooth Ref",
+          "type": "string"
+        },
+        "raw_label": {
+          "title": "Raw Label",
+          "type": "string"
+        },
+        "recognized_label": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Recognized Label"
+        },
+        "raw_value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Raw Value"
+        },
+        "raw_number": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Raw Number"
+        },
+        "signed_decimal": {
+          "anyOf": [
+            {
+              "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Signed Decimal"
+        },
+        "magnitude_decimal": {
+          "anyOf": [
+            {
+              "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Magnitude Decimal"
+        },
+        "raw_sign": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Raw Sign"
+        },
+        "raw_unit": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Raw Unit"
+        },
+        "header_unit": {
+          "anyOf": [
+            {
+              "enum": [
+                "mm",
+                "deg"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Header Unit"
+        },
+        "cell_unit": {
+          "anyOf": [
+            {
+              "enum": [
+                "mm",
+                "deg"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Cell Unit"
+        },
+        "unit": {
+          "anyOf": [
+            {
+              "enum": [
+                "mm",
+                "deg"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Unit"
+        },
+        "raw_direction": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Raw Direction"
+        },
+        "raw_suffix": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Raw Suffix"
+        },
+        "canonical_axis": {
+          "default": null,
+          "title": "Canonical Axis",
+          "type": "null"
+        },
+        "canonical_direction": {
+          "default": null,
+          "title": "Canonical Direction",
+          "type": "null"
+        },
+        "mapping_id": {
+          "default": null,
+          "title": "Mapping Id",
+          "type": "null"
+        },
+        "numeric_status": {
+          "enum": [
+            "PARSED",
+            "EXPLICIT_ZERO",
+            "MISSING",
+            "NOT_PRESENT",
+            "INVALID",
+            "AMBIGUOUS"
+          ],
+          "title": "Numeric Status",
+          "type": "string"
+        },
+        "field_status": {
+          "enum": [
+            "SEMANTICS_UNKNOWN",
+            "EXPLICIT_ZERO",
+            "NOT_PRESENT",
+            "PARSE_INVALID",
+            "UNSUPPORTED",
+            "AMBIGUOUS"
+          ],
+          "title": "Field Status",
+          "type": "string"
+        },
+        "missing_kind": {
+          "anyOf": [
+            {
+              "enum": [
+                "BLANK",
+                "DASH",
+                "NOT_REPORTED",
+                "NOT_APPLICABLE_TOKEN",
+                "OMITTED_CELL"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Missing Kind"
+        },
+        "semantics_verified": {
+          "const": false,
+          "default": false,
+          "title": "Semantics Verified",
+          "type": "boolean"
+        },
+        "span": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SourceSpan"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "header_span": {
+          "$ref": "#/$defs/SourceSpan"
+        },
+        "duplicate_group": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Duplicate Group"
+        },
+        "clarification_fields": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Clarification Fields",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "tooth_ref",
+        "raw_label",
+        "raw_value",
+        "numeric_status",
+        "field_status",
+        "header_span"
+      ],
+      "title": "ParsedMeasurement",
+      "type": "object"
+    },
+    "RawCell": {
+      "additionalProperties": false,
+      "properties": {
+        "raw": {
+          "title": "Raw",
+          "type": "string"
+        },
+        "span": {
+          "$ref": "#/$defs/SourceSpan"
+        }
+      },
+      "required": [
+        "raw",
+        "span"
+      ],
+      "title": "RawCell",
+      "type": "object"
+    },
+    "SourceContext": {
+      "additionalProperties": false,
+      "description": "All supplied metadata are unverified claims, including notation.",
+      "properties": {
+        "source_version": {
+          "anyOf": [
+            {
+              "maxLength": 64,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Version"
+        },
+        "notation": {
+          "default": "UNKNOWN",
+          "enum": [
+            "UNKNOWN",
+            "FDI",
+            "UNIVERSAL",
+            "PALMER"
+          ],
+          "title": "Notation",
+          "type": "string"
+        },
+        "dentition": {
+          "default": "UNKNOWN",
+          "enum": [
+            "UNKNOWN",
+            "PERMANENT",
+            "PRIMARY",
+            "MIXED"
+          ],
+          "title": "Dentition",
+          "type": "string"
+        },
+        "arch": {
+          "default": "UNKNOWN",
+          "enum": [
+            "UNKNOWN",
+            "UPPER",
+            "LOWER",
+            "BOTH"
+          ],
+          "title": "Arch",
+          "type": "string"
+        },
+        "plan_mode": {
+          "default": "UNKNOWN",
+          "enum": [
+            "UNKNOWN",
+            "ALIGN_FINAL",
+            "DOCTOR_FINAL",
+            "COMPARISON"
+          ],
+          "title": "Plan Mode",
+          "type": "string"
+        },
+        "reference_basis": {
+          "default": "UNKNOWN",
+          "enum": [
+            "UNKNOWN",
+            "CROWN_CENTER",
+            "VIRTUAL_ROOT_APEX",
+            "CUSP_TIP"
+          ],
+          "title": "Reference Basis",
+          "type": "string"
+        },
+        "scope": {
+          "default": "UNKNOWN",
+          "enum": [
+            "UNKNOWN",
+            "TOTAL",
+            "CUMULATIVE",
+            "INCREMENTAL"
+          ],
+          "title": "Scope",
+          "type": "string"
+        },
+        "stage_index": {
+          "anyOf": [
+            {
+              "maximum": 2147483647,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Stage Index"
+        },
+        "coordinate_frame": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Coordinate Frame"
+        },
+        "case_id": {
+          "anyOf": [
+            {
+              "maxLength": 64,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Case Id"
+        },
+        "plan_id": {
+          "anyOf": [
+            {
+              "maxLength": 64,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Plan Id"
+        },
+        "decimal_separator": {
+          "default": "DOT",
+          "enum": [
+            "DOT",
+            "COMMA"
+          ],
+          "title": "Decimal Separator",
+          "type": "string"
+        }
+      },
+      "title": "SourceContext",
+      "type": "object"
+    },
+    "SourceInfo": {
+      "additionalProperties": false,
+      "properties": {
+        "source_claim": {
+          "enum": [
+            "Unknown",
+            "ClinCheck",
+            "SureSmile"
+          ],
+          "title": "Source Claim",
+          "type": "string"
+        },
+        "detected_claims": {
+          "items": {
+            "enum": [
+              "Unknown",
+              "ClinCheck",
+              "SureSmile"
+            ],
+            "type": "string"
+          },
+          "title": "Detected Claims",
+          "type": "array"
+        },
+        "claim_evidence": {
+          "items": {
+            "$ref": "#/$defs/RawCell"
+          },
+          "title": "Claim Evidence",
+          "type": "array"
+        },
+        "verification_status": {
+          "const": "UNVERIFIED",
+          "default": "UNVERIFIED",
+          "title": "Verification Status",
+          "type": "string"
+        },
+        "adapter": {
+          "$ref": "#/$defs/AdapterInfo"
+        },
+        "candidate_adapter": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/AdapterInfo"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "context": {
+          "$ref": "#/$defs/SourceContext"
+        },
+        "metadata_status": {
+          "const": "USER_CLAIMS_UNVERIFIED",
+          "default": "USER_CLAIMS_UNVERIFIED",
+          "title": "Metadata Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_claim",
+        "adapter",
+        "context"
+      ],
+      "title": "SourceInfo",
+      "type": "object"
+    },
+    "SourceSpan": {
+      "additionalProperties": false,
+      "description": "Offsets: zero-based Unicode code points, end exclusive. Line/columns: one-based.",
+      "properties": {
+        "line": {
+          "title": "Line",
+          "type": "integer"
+        },
+        "column_start": {
+          "title": "Column Start",
+          "type": "integer"
+        },
+        "column_end": {
+          "title": "Column End",
+          "type": "integer"
+        },
+        "start": {
+          "title": "Start",
+          "type": "integer"
+        },
+        "end": {
+          "title": "End",
+          "type": "integer"
+        },
+        "cell_index": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Cell Index"
+        }
+      },
+      "required": [
+        "line",
+        "column_start",
+        "column_end",
+        "start",
+        "end"
+      ],
+      "title": "SourceSpan",
+      "type": "object"
+    },
+    "ToothIdentifier": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "raw_identifier": {
+          "title": "Raw Identifier",
+          "type": "string"
+        },
+        "token": {
+          "title": "Token",
+          "type": "string"
+        },
+        "notation_claim": {
+          "title": "Notation Claim",
+          "type": "string"
+        },
+        "identifier_status": {
+          "enum": [
+            "AMBIGUOUS",
+            "UNVERIFIED",
+            "INVALID",
+            "UNSUPPORTED"
+          ],
+          "title": "Identifier Status",
+          "type": "string"
+        },
+        "normalized_identifier": {
+          "default": null,
+          "title": "Normalized Identifier",
+          "type": "null"
+        },
+        "span": {
+          "$ref": "#/$defs/SourceSpan"
+        },
+        "clarification_fields": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Clarification Fields",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "raw_identifier",
+        "token",
+        "notation_claim",
+        "identifier_status",
+        "span"
+      ],
+      "title": "ToothIdentifier",
+      "type": "object"
+    },
+    "UnparsedLine": {
+      "additionalProperties": false,
+      "properties": {
+        "raw": {
+          "title": "Raw",
+          "type": "string"
+        },
+        "span": {
+          "$ref": "#/$defs/SourceSpan"
+        },
+        "reason": {
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "raw",
+        "span",
+        "reason"
+      ],
+      "title": "UnparsedLine",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "kind": {
+      "enum": [
+        "AUTHENTIC",
+        "SYNTHETIC"
+      ],
+      "title": "Kind",
+      "type": "string"
+    },
+    "lexical": {
+      "$ref": "#/$defs/ParseResult"
+    },
+    "measurements": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/ExpectedMeasurement"
+      },
+      "title": "Measurements",
+      "type": "array"
+    }
+  },
+  "required": [
+    "kind",
+    "lexical"
+  ],
+  "title": "FixtureExpectedOutput",
+  "type": "object"
+}
