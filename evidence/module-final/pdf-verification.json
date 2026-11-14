@@ -1,0 +1,37 @@
+[
+  {
+    "file": "evidence/module-final/pdfs/macro-tmt-only.pdf",
+    "pages": 4,
+    "comments": 16,
+    "exact_attachments": true,
+    "source_positions": 112
+  },
+  {
+    "file": "evidence/module-final/pdfs/micro-supplied.pdf",
+    "pages": 2,
+    "comments": 4,
+    "exact_attachments": true,
+    "source_positions": 112
+  },
+  {
+    "file": "evidence/module-final/pdfs/micro-tmt-only.pdf",
+    "pages": 2,
+    "comments": 4,
+    "exact_attachments": true,
+    "source_positions": 112
+  },
+  {
+    "file": "evidence/module-final/pdfs/nano-supplied.pdf",
+    "pages": 2,
+    "comments": 4,
+    "exact_attachments": true,
+    "source_positions": 112
+  },
+  {
+    "file": "evidence/module-final/pdfs/nano-tmt-only.pdf",
+    "pages": 2,
+    "comments": 4,
+    "exact_attachments": true,
+    "source_positions": 112
+  }
+]

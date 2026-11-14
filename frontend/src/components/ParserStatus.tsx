@@ -36,7 +36,10 @@ export default function ParserStatus({ result, demonstration = false }: { result
   const errorCodes = new Set(errors.map(i => i.code))
   const visibleGroups = [...groups.filter(code => errorCodes.has(code)), ...groups.filter(code => !errorCodes.has(code)).slice(0, 2)]
   return <section aria-label="Automatic detection and clarification" className="panel motion-enter">
-    <div className="panel-heading"><h3 className="panel-title">{status}</h3><span className="report-badge report-badge-notice">{demonstration ? 'Verified synthetic demonstration only' : 'Unverified input'}</span></div>
+    <div className="panel-heading">
+      <h3 className="panel-title">{status}</h3>
+      <span className="report-badge report-badge-notice">{demonstration ? 'Verified synthetic demonstration only' : 'Unverified input'}</span>
+    </div>
     <div className="p-5 sm:p-6">
       <p className="text-sm leading-6 text-muted">{demonstration ? 'Only the fixed fictional example has checked demonstration evidence. This does not verify patient data or vendor compatibility.' : 'Reading the table does not verify tooth identity, source conventions or clinical eligibility.'}</p>
       <dl aria-label="Parse summary" className="summary-grid mt-4" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))' }}>

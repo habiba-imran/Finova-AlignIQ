@@ -1,0 +1,37 @@
+{
+  "module": "micro",
+  "supplied": false,
+  "generation": {
+    "requested_mode": "AUTO",
+    "used_mode": "STANDARD_TEMPLATES",
+    "reason": "GROQ_NOT_CONFIGURED",
+    "provider": null,
+    "model": null,
+    "attempts": 0,
+    "eligible_wording_findings": 4,
+    "accepted_comments": 0,
+    "real_patient_transmission_enabled": false,
+    "output_validation": "GROUNDED_MODULE_WORDING_V1"
+  },
+  "sections": [
+    {
+      "id": "ATTACHMENT_RECORDS",
+      "status": "UNAVAILABLE"
+    },
+    {
+      "id": "ATTACHMENT_DESIGN",
+      "status": "UNAVAILABLE"
+    },
+    {
+      "id": "ATTACHMENT_PLACEMENT",
+      "status": "UNAVAILABLE"
+    },
+    {
+      "id": "ATTACHMENT_LIMITS",
+      "status": "UNAVAILABLE"
+    }
+  ],
+  "source_positions": 12,
+  "rules": 96,
+  "source_sha256": "b4b31db4a49660376fad1d6442185bc982c0a4c027010b4e4949bc045f1aec04"
+}

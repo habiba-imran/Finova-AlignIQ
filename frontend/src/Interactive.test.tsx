@@ -26,9 +26,9 @@ it.each(['clinical', 'value', 'direction', 'missing', 'duplicate', 'illustration
   if (change === 'direction') value.observations[0].measurements[0].raw_direction = 'INVENTED'
   if (change === 'missing') value.observations[0].measurements.pop()
   if (change === 'duplicate') value.observations.push(value.observations[0])
-  if (change === 'illustration') Object.assign(value.illustrations[0], { clinical_status: 'APPROVED' })
+  if (change === 'illustration') value.illustrations.push({ tooth_ref: 'bad', original_tooth: 'bad', label: 'Illustrative attachment example', text: 'bad', origin: 'SIMULATED_DEMO', clinical_status: 'NOT_EVALUATED' })
   if (change === 'hash') value.parsed.raw_sha256 = '0'.repeat(64)
-  if (change === 'origin') Object.assign(value.illustrations[0], { origin: 'CLINICALLY_CALCULATED' })
+  if (change === 'origin') Object.assign(value.sections![0], { status: 'CLINICALLY_CALCULATED' })
   if (change === 'provider') Object.assign(value.generation, { used_mode: 'GROQ_AI', attempts: 0, accepted_comments: 4 })
   expect(isInteractiveReport(value)).toBe(false)
 })
@@ -45,6 +45,16 @@ async function start(module: DemoModule, report: unknown = fixtures[module]) {
   return { fetch, article: await screen.findByRole('article', { name: 'Generated synthetic report' }) }
 }
 
+it('does not describe a partial parse with blocking issues as successfully parsed', async () => {
+  const report = structuredClone(micro)
+  report.parsed.status = 'PARTIAL'
+  report.parsed.issues.push({ code: 'UNIT_CONFLICT', severity: 'ERROR', message: 'internal details', field: 'unit', span: null, measurement_ids: [] })
+  const { article } = await start('micro', report)
+  expect(article).toHaveTextContent('Some entries could not be interpreted reliably')
+  expect(article).not.toHaveTextContent('All available movement values were parsed successfully')
+  expect(article).not.toHaveTextContent('internal details')
+})
+
 it.each<DemoModule>(['macro', 'micro', 'nano'])('%s runs arbitrary input through the main UI without a fixed loader or AI selector', async module => {
   const { fetch, article } = await start(module)
   expect(fetch).toHaveBeenCalledTimes(2)
@@ -53,10 +63,10 @@ it.each<DemoModule>(['macro', 'micro', 'nano'])('%s runs arbitrary input through
   expect(body).toMatchObject({ module, raw_text: input.raw_text, raw_sha256: input.raw_sha256, synthetic_data_confirmed: true })
   expect(body.comment_mode).toBeUndefined()
   expect(screen.queryByLabelText('Wording preference')).not.toBeInTheDocument()
-  expect(within(article).getByLabelText('Factual tooth-wise observations')).toHaveTextContent('1.2300 D')
+  expect(article).toHaveTextContent('1.2300 D')
   expect(article).toHaveTextContent('Standard wording')
   expect(article).not.toHaveTextContent(/GROQ_|SEMANTICS_|R13|rule ledger|finding_id|raw_sha256/)
-  expect(within(article).queryByLabelText('Illustrative demo content') !== null).toBe(module !== 'macro')
+  expect(within(article).queryByLabelText('Illustrative demo content')).not.toBeInTheDocument()
   for (const name of ['Copy', 'Export TXT', 'Export PDF']) expect(within(article).getByRole('button', { name })).toBeEnabled()
 })
 
@@ -74,12 +84,13 @@ it.each<DemoModule>(['macro', 'micro', 'nano'])('%s shows approved automatic AI 
 it.each<DemoModule>(['macro', 'micro', 'nano'])('%s puts grounded paragraphs in the main report without provider or transmission details', async module => {
   const { article } = await start(module)
   expect(within(article).getByRole('heading', { name: module === 'macro' ? 'Planning comments' : module === 'micro' ? 'Attachment review comments' : 'Sequencing review comments' })).toBeVisible()
-  expect(article).toHaveTextContent('The programmed movement record lists')
+  if (module === 'macro') expect(article).toHaveTextContent('The programmed movement record lists')
+  else expect(within(article).getByLabelText('Module review comments')).toBeVisible()
   expect(article).not.toHaveTextContent(/Groq|provider|transmission|shared with/i)
-  const source = within(article).getAllByText('Source values')[0].closest('details')!
+  const source = within(article).getAllByText(module === 'macro' ? 'Source values' : 'Source movement values')[0].closest('details')!
   expect(source).not.toHaveAttribute('open')
-  fireEvent.click(within(source).getByText('Source values'))
-  expect(within(source).getByText(/Rotation \(deg\)/)).toBeVisible()
+  fireEvent.click(within(source).getByText(module === 'macro' ? 'Source values' : 'Source movement values'))
+  expect(within(source).getAllByText(/Rotation \(deg\)/)[0]).toBeVisible()
 })
 
 it('rejects a grounded report with mismatched comment counts or inconsistent provenance', () => {

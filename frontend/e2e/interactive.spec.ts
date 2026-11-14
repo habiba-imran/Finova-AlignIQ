@@ -49,11 +49,10 @@ for (const sample of samples) test(`${sample.id}: pasted synthetic input works i
       expect(report.observations[0].text).toContain('The programmed movement record lists')
     }
     expect(await article.innerText()).not.toMatch(/Groq|transmi|shared with|provider/i)
-    const facts = article.getByRole('region', { name: 'Factual tooth-wise observations' })
-    await expect(facts.getByRole('heading', { level: 6 })).toHaveCount(parsed.teeth.length)
+    const facts = article.getByRole('region', { name: module.id === 'macro' ? 'Factual tooth-wise observations' : 'Module review comments' })
+    await expect(facts.getByRole('heading', { level: 6 })).toHaveCount(module.id === 'macro' ? parsed.teeth.length : 4)
     expect(await article.innerText()).not.toMatch(/GROQ_|SEMANTICS_|\b(?:R13|T01|A05|H08)\b|finding_id|rule ledger/)
-    await expect(article.getByRole('region', { name: 'Illustrative demo content' })).toHaveCount(module.id === 'macro' ? 0 : 1)
-    if (module.id !== 'macro') await expect(article.getByText(/Simulated examples · not calculated findings/)).toBeVisible()
+    await expect(article.getByRole('region', { name: 'Illustrative demo content' })).toHaveCount(0)
     const requests: string[] = []; page.on('request', r => { if (r.url().includes('/api/')) requests.push(r.url()) })
     await article.getByRole('button', { name: 'Copy', exact: true }).click()
     expect((await page.evaluate(() => navigator.clipboard.readText())).replaceAll('\r\n', '\n')).toBe(report.export_text)
@@ -79,7 +78,8 @@ for (const sample of samples) test(`${sample.id}: pasted synthetic input works i
       }
       expect(files['report.txt']).toBe(report.export_text)
       expect(JSON.parse(files['validated-report.json'])).toEqual(report)
-      expect(pdf.getPageCount()).toBeGreaterThan(2)
+      expect(pdf.getPageCount()).toBeGreaterThan(module.id === 'macro' ? 2 : 0)
+      if (module.id !== 'macro') expect(pdf.getPageCount()).toBeLessThanOrEqual(3)
       await page.screenshot({ path: testInfo.outputPath(`${module.id}-112-results.png`), fullPage: true })
     }
     expect(requests).toEqual([])

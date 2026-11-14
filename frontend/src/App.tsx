@@ -19,6 +19,8 @@ import { requestAttachmentDemoInput } from './api/attachments'
 import type { AttachmentDemoInput } from './api/attachments'
 import SequencingWorkspace from './components/SequencingWorkspace'
 import InteractiveWorkspace from './components/InteractiveWorkspace'
+import { emptyReviewDetails } from './api/interactive'
+import type { InteractiveReport } from './api/interactive'
 import { requestSequencingDemoInput } from './api/sequencing'
 import type { SequencingDemoInput } from './api/sequencing'
 
@@ -82,6 +84,8 @@ export default function App({ diagnostics = new URLSearchParams(window.location.
   const [attachmentDemo, setAttachmentDemo] = useState<AttachmentDemoInput | null>(null)
   const [sequencingDemo, setSequencingDemo] = useState<SequencingDemoInput | null>(null)
   const [complete, setComplete] = useState(false)
+  const [reviewDetails, setReviewDetails] = useState(emptyReviewDetails)
+  const [reportCache, setReportCache] = useState<Partial<Record<Purpose, InteractiveReport>>>({})
   const [unavailableDemos, setUnavailableDemos] = useState<Partial<Record<Purpose, boolean>>>({})
   const requestRef = useRef<AbortController | null>(null)
   const revisionRef = useRef(0)
@@ -95,6 +99,8 @@ export default function App({ diagnostics = new URLSearchParams(window.location.
   useEffect(() => { document.title = `Finova AlignIQ · ${copy.heading}` }, [copy.heading])
 
   function invalidateParse() {
+    setReviewDetails(emptyReviewDetails())
+    setReportCache({})
     revisionRef.current += 1
     requestRef.current?.abort()
     requestRef.current = null
@@ -126,6 +132,7 @@ export default function App({ diagnostics = new URLSearchParams(window.location.
     setLoading(true)
     setError(null)
     setResult(null)
+    setReportCache({})
     setDemo(null)
     setAttachmentDemo(null)
     setSequencingDemo(null)
@@ -365,7 +372,7 @@ export default function App({ diagnostics = new URLSearchParams(window.location.
             </div>
             <div className="mt-4 flex flex-wrap items-center gap-3">
               {loading ? (
-                <button type="button" disabled aria-label="Parse Table" className="button button-primary px-5">
+                <button type="button" disabled aria-label="Parsing…" className="button button-primary px-5">
                   <span className="button-spinner" aria-hidden="true" />
                   Parsing…
                 </button>
@@ -447,7 +454,9 @@ export default function App({ diagnostics = new URLSearchParams(window.location.
             <h2 id="review-area-heading" className="section-title">Review results</h2>
             <p className="section-note">{complete ? 'Review the DRAFT below, then use the export area when ready.' : 'Run the review below to prepare a DRAFT.'}</p>
           </div>
-          {!diagnostics && <InteractiveWorkspace key={`interactive-${purpose}-${revisionRef.current}`} module={purpose} rawText={rawText} context={context} parsed={result} onComplete={setComplete} />}
+          {!diagnostics && <InteractiveWorkspace key={`interactive-${purpose}-${revisionRef.current}`} module={purpose} rawText={rawText} context={context} parsed={result} onComplete={setComplete} reviewDetails={reviewDetails}
+            savedReport={reportCache[purpose] ?? null} onReportChange={report => setReportCache(previous => ({ ...previous, [purpose]: report ?? undefined }))}
+            onDetailsChange={details => { setReviewDetails(details); setReportCache(previous => ({ ...previous, [purpose]: undefined })) }} />}
           {diagnostics && purpose === 'macro' && <PlanningWorkspace key={`planning-${revisionRef.current}`} rawText={rawText} context={context} parsed={result} demo={!!demo} onComplete={setComplete} />}
           {diagnostics && purpose === 'micro' && <AttachmentWorkspace key={`attachment-${revisionRef.current}`} rawText={rawText} context={context} parsed={result} demo={!!attachmentDemo} onComplete={setComplete} />}
           {diagnostics && purpose === 'nano' && <SequencingWorkspace key={`sequencing-${revisionRef.current}`} rawText={rawText} context={context} parsed={result} demo={!!sequencingDemo} onComplete={setComplete} />}

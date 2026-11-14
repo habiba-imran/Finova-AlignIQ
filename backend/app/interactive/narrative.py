@@ -179,11 +179,11 @@ def validate(content, substitutions, tooth_map):
         return None
 
 
-def planning_wording(parsed, *, module="macro", settings=None, client=None):
+def planning_wording(parsed, *, module="macro", settings=None, client=None, report_records=None):
     started = time.monotonic()
     contexts = {"macro": "planning review of the recorded movement profile", "micro": "attachment review of the recorded movement profile", "nano": "sequencing review of the recorded movement profile"}
     context = contexts[module]
-    groups, substitutions, tooth_map, fallback = records(parsed)
+    groups, substitutions, tooth_map, fallback = report_records if report_records is not None else records(parsed)
     reason, attempts, accepted = "GROQ_NOT_CONFIGURED", 0, 0
     chosen = fallback
     try:
@@ -212,7 +212,11 @@ def planning_wording(parsed, *, module="macro", settings=None, client=None):
             if len(json.dumps(messages).encode()) > MAX_PROMPT_BYTES:
                 reason = "GROQ_PROMPT_LIMIT"
             else:
-                result = (client or GroqClient(settings)).generate(messages, response_schema=response_schema())
+                # References make the completion substantially smaller than the
+                # rendered report. Avoid reserving a large unused token budget.
+                completion_budget = min(settings.max_completion_tokens, max(1024, sum(len(group["movements"]) for group in groups) * 12 + len(groups) * 32))
+                request_settings = settings.model_copy(update={"max_completion_tokens": completion_budget})
+                result = (client or GroqClient(request_settings)).generate(messages, response_schema=response_schema())
                 attempts, reason = result.attempts, result.code
                 if result.content is not None:
                     validated = validate(result.content, substitutions, tooth_map)
@@ -237,7 +241,7 @@ def planning_wording(parsed, *, module="macro", settings=None, client=None):
                                 )},
                                 {"role": "user", "content": json.dumps({"entries": repair_groups}, separators=(",", ":"))},
                             ]
-                            repair_settings = settings.model_copy(update={"timeout_seconds": remaining, "max_retries": 0, "max_completion_tokens": 2048})
+                            repair_settings = settings.model_copy(update={"timeout_seconds": remaining, "max_retries": 0, "max_completion_tokens": min(settings.max_completion_tokens, 2048)})
                             repaired = (client or GroqClient(repair_settings)).generate(repair_messages, response_schema=response_schema())
                             attempts += repaired.attempts
                             reason = repaired.code

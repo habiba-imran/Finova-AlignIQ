@@ -1,0 +1,47 @@
+{
+  "module": "micro",
+  "supplied": true,
+  "generation": {
+    "requested_mode": "AUTO",
+    "used_mode": "GROQ_AI",
+    "reason": "GROQ_VALIDATED",
+    "provider": "GROQ",
+    "model": "openai/gpt-oss-120b",
+    "attempts": 1,
+    "eligible_wording_findings": 4,
+    "accepted_comments": 4,
+    "real_patient_transmission_enabled": false,
+    "output_validation": "GROUNDED_MODULE_WORDING_V1"
+  },
+  "sections": [
+    {
+      "id": "ATTACHMENT_RECORDS",
+      "status": "SUPPLIED_UNVERIFIED"
+    },
+    {
+      "id": "ATTACHMENT_DESIGN",
+      "status": "SUPPLIED_UNVERIFIED"
+    },
+    {
+      "id": "ATTACHMENT_PLACEMENT",
+      "status": "SUPPLIED_UNVERIFIED"
+    },
+    {
+      "id": "ATTACHMENT_LIMITS",
+      "status": "UNAVAILABLE"
+    }
+  ],
+  "source_positions": 112,
+  "rules": 96,
+  "source_sha256": "19e474b71a51ebc6424469601d57ba3927af599b956697ad357db708d9ea0acd",
+  "provider_calls": [
+    {
+      "http_status": 200,
+      "code": "GROQ_RESPONSE_RECEIVED",
+      "seconds": 1.2157,
+      "prompt_tokens": 674,
+      "completion_tokens": 285,
+      "completion_budget": 1024
+    }
+  ]
+}

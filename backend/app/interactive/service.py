@@ -1,12 +1,13 @@
 """Descriptive review without promoting source claims to clinical authority.
 
-All modules use minimized parsed movement records for grounded narrative wording;
-complete facts are inserted locally after validation. Micro/Nano retain their
-table-order illustrations, never clinical attachment or sequencing choices.
+Macro uses minimized movement records; Micro/Nano use purpose-specific supplied
+records and explicit unavailable findings. Complete facts are inserted locally
+after validation, without promoting supplied details to clinical decisions.
 """
 import json
 
-from app.interactive.models import Illustration, InteractiveReport, ToothObservation
+from app.interactive.models import InteractiveReport, ToothObservation
+from app.interactive.module_reports import module_sections, validate_details
 from app.interactive.narrative import planning_wording
 from app.parser.receipts import resolve
 from app.reports.groq_client import GroqClient
@@ -25,7 +26,6 @@ WORDINGS = {
 LIMITATIONS = [
     "Values describe the parsed source only. Tooth tokens, axes, directions, units and source conventions are not independently clinically verified.",
     "Missing, omitted, invalid and ambiguous values remain unknown; explicit zero applies only to its recorded cell. No achieved movement, suitability or safety conclusion is inferred.",
-    "Attachment and sequencing examples are arbitrary simulations based on table order, independent of movement magnitude. They are not calculated treatment choices or prescriptions.",
     "Clinical attachment, staging, anchorage, force, timing, diagnosis and treatment predicates remain unevaluated. No clinical approval is recorded.",
 ]
 
@@ -87,7 +87,7 @@ def cell_text(m):
             text += "; explicitly recorded zero"
         return text + f". Original cell: {quoted(m.raw_value)}."
     status = {"MISSING": "missing", "NOT_PRESENT": "omitted", "INVALID": "invalid", "AMBIGUOUS": "ambiguous"}.get(m.numeric_status, "unrecognized")
-    return f"{label}: {status}; no numerical observation. Original cell: {quoted(m.raw_value)}."
+    return f"{label}: {status}; no numerical observation (unknown, not zero). Original cell: {quoted(m.raw_value)}."
 
 
 def generate_interactive(submission, *, settings=None, client=None):
@@ -97,7 +97,13 @@ def generate_interactive(submission, *, settings=None, client=None):
     if parsed.status in {"INVALID", "UNSUPPORTED"} or not parsed.measurements:
         raise ValueError("PARSE_REQUIRED")
     review = review_table(submission)
-    narratives, generation = planning_wording(parsed, module=submission.module, settings=settings, client=client)
+    validate_details(parsed, submission)
+    sections = []
+    if submission.module == "macro":
+        narratives, generation = planning_wording(parsed, module=submission.module, settings=settings, client=client)
+    else:
+        sections, generation = module_sections(parsed, submission, settings=settings, client=client)
+        narratives = None
     phrases = {ref: options[0] for ref, options in WORDINGS.items()}
     observations, illustrations = [], []
     by_tooth = {}
@@ -109,37 +115,33 @@ def generate_interactive(submission, *, settings=None, client=None):
             continue
         observations.append(ToothObservation(tooth_ref=tooth.id, original_tooth=tooth.raw_identifier,
             text=narratives[tooth.id] if narratives is not None else phrases["F0002"] + ":\n" + "\n".join(cell_text(m) for m in cells), measurements=cells))
-        index = len(observations) - 1
-        if submission.module == "micro":
-            shape = ("oval", "rectangular")[index % 2]
-            text = f"Illustration only: a simulated {shape} attachment concept is displayed for this source token. The shape alternates by table order, regardless of recorded movement. Dimensions, orientation, surface, position and clinical indication are unspecified. No attachment is recommended."
-            illustrations.append(Illustration(tooth_ref=tooth.id, original_tooth=tooth.raw_identifier,
-                label="Illustrative attachment example", text=text))
-        elif submission.module == "nano":
-            group = ("A", "B")[index % 2]
-            text = f"Illustration only: this source token is assigned to fictional demonstration group {group} by table order. A sample display places group A before group B, then reassessment. This is an arbitrary narrative, not a movement schedule; no stage allocation, duration or anchorage need is calculated."
-            illustrations.append(Illustration(tooth_ref=tooth.id, original_tooth=tooth.raw_identifier,
-                label="Illustrative sequencing example", text=text))
     numeric = sum(m.numeric_status in {"PARSED", "EXPLICIT_ZERO"} for m in parsed.measurements)
     missing = sum(m.numeric_status in {"MISSING", "NOT_PRESENT"} for m in parsed.measurements)
     other = len(parsed.measurements) - numeric - missing
-    summary = f"{phrases['F0001']} {len(observations)} tooth tokens; {len(parsed.measurements)} measurement positions; {numeric} recorded numerical values; {missing} missing or omitted; {other} invalid or ambiguous."
+    lead = {"macro": "Programmed movement profile.", "micro": "Attachment information review. Supplied choices, design and placement are reviewed separately from movement values.", "nano": "Sequencing information review. Supplied stages, allocations and anchorage notes are reviewed separately from pasted movement values."}[submission.module]
+    summary = f"{lead} {len(observations)} tooth tokens; {len(parsed.measurements)} measurement positions; {numeric} recorded numerical values; {missing} missing or omitted; {other} invalid or ambiguous."
     notice = "AI-assisted report wording." if generation.used_mode == "GROQ_AI" else "Standard report wording."
     limitations = list(LIMITATIONS)
     if parsed.status == "PARTIAL":
         limitations.insert(0, "This table was partially parsed. Unresolved content remains in the original input and is not interpreted; inspect the marked table before using these observations.")
     body = dict(module=submission.module, parsed=parsed, engine_review=review, generation=generation,
-        wording_notice=notice, summary=summary, observations=observations, illustrations=illustrations, limitations=limitations)
+        wording_notice=notice, summary=summary, observations=observations, illustrations=illustrations, limitations=limitations,
+        report_format="MODULE_SPECIFIC_V1", sections=sections, review_details=submission.review_details)
     report_id = digest_json({k: v.model_dump(mode="json") if hasattr(v, "model_dump") else
         [x.model_dump(mode="json") if hasattr(x, "model_dump") else x for x in v] if isinstance(v, list) else v for k, v in body.items()})
     lines = ["FINOVA ALIGNIQ", f"{submission.module.upper()} — Generated synthetic review", "Synthetic demonstration — not for clinical use", "", notice, summary,
-        "", "FACTUAL OBSERVATIONS — PARSED SOURCE VALUES"]
+        ""]
+    if sections:
+        lines += ["MODULE REVIEW COMMENTS"]
+        for section in sections:
+            lines += ["", section.title.upper(), f"Status: {section.status}", section.text]
+            if section.missing_fields:
+                lines += ["Information needed: " + "; ".join(section.missing_fields)]
+        lines += ["", "SOURCE MOVEMENT VALUES — NOT ATTACHMENT OR STAGE DECISIONS"]
+    else:
+        lines += ["TOOTH-WISE MOVEMENT COMMENTS"]
     for o in observations:
         lines += ["", f"Tooth token {quoted(o.original_tooth)}", o.text]
-    if illustrations:
-        lines += ["", phrases["F0003" if submission.module == "micro" else "F0004"].upper(), "SIMULATED DEMO — NOT CALCULATED TREATMENT DECISIONS"]
-        for item in illustrations:
-            lines += [f"Tooth token {quoted(item.original_tooth)}: {item.text}"]
     lines += ["", "LIMITATIONS", *limitations, "", "SOURCE AND PROVENANCE", f"Report ID: {report_id}", f"Input SHA-256: {parsed.raw_sha256}",
         f"Parser: {parsed.parser_version}; engine: {review.engine_version}; rules: {review.rule_set_version}",
         f"Wording: {generation.used_mode}; status: {generation.reason}; provider attempts: {generation.attempts}"]
@@ -149,5 +151,6 @@ def generate_interactive(submission, *, settings=None, client=None):
             lines += [f"{m.id}; tooth_ref {o.tooth_ref}; {location}; {m.numeric_status}; raw sign {quoted(m.raw_sign)}; raw direction {quoted(m.raw_direction)}; magnitude {m.magnitude_decimal}", cell_text(m)]
     lines += ["", "RULE EVALUATION LEDGER — CLINICAL AUTHORITY UNCHANGED"]
     lines += [f"{e.rule_id} v{e.version}: {e.status}; execution {e.execution}; approval {e.approval_status}" for e in review.evaluations]
-    lines += ["", "ORIGINAL INPUT — VERBATIM", parsed.raw_text, "", "Synthetic demonstration — not for clinical use"]
+    lines += ["", "SUPPLIED REVIEW DETAILS — UNVERIFIED", submission.review_details.model_dump_json(indent=2),
+        "", "ORIGINAL INPUT — VERBATIM", parsed.raw_text, "", "Synthetic demonstration — not for clinical use"]
     return InteractiveReport(report_id=report_id, export_text="\n".join(lines) + "\n", **body)

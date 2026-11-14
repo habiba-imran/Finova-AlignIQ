@@ -57,7 +57,7 @@ def test_arbitrary_source_cells_and_provenance_preserved(raw, count, module):
     assert report.generation.used_mode == "STANDARD_TEMPLATES"
     assert report.wording_notice == "Standard report wording."
     assert report.export_text.split("ORIGINAL INPUT — VERBATIM\n", 1)[1].startswith(raw)
-    assert len(report.illustrations) == (0 if module == "macro" else len(report.observations))
+    assert len(report.illustrations) == 0
     for item in report.illustrations:
         assert item.origin == "SIMULATED_DEMO" and item.clinical_status == "NOT_EVALUATED"
         assert "Illustration only" in item.text
@@ -68,7 +68,8 @@ def test_illustrative_choices_are_independent_of_movement_values():
     for module in ("micro", "nano"):
         a = generate_interactive(submission(module=module), settings=ReportSettings())
         b = generate_interactive(submission(ROWS.replace("-2.7500 M", "999.9500 D"), module), settings=ReportSettings())
-        assert a.illustrations == b.illustrations
+        assert a.illustrations == b.illustrations == []
+        assert a.sections == b.sections
         assert a.observations != b.observations
 
 
@@ -94,7 +95,7 @@ def test_groq_grounded_module_payload_and_local_facts(module):
     request = submission("Patient: PRIVATE_PATIENT_ABC\n" + LARGE, module)
     report = generate_interactive(request, settings=settings, client=client)
     assert report.generation.used_mode == "GROQ_AI"
-    assert report.generation.accepted_comments == 16 and report.generation.attempts == 1
+    assert report.generation.accepted_comments == (16 if module == "macro" else 4) and report.generation.attempts == 1
     assert report.wording_notice == "AI-assisted report wording."
     payload = json.dumps(captured)
     for value in ("PRIVATE_PATIENT_ABC", "PRIVATE_SERVER_KEY", request.raw_sha256, "Rotation", "Mesial", "Patient"):
@@ -102,8 +103,12 @@ def test_groq_grounded_module_payload_and_local_facts(module):
     assert "0.4500" in report.export_text and "1.2300" in report.export_text
     other_settings, other_client, other_captured = provider()
     generate_interactive(submission(ROWS, module), settings=other_settings, client=other_client)
-    assert captured != other_captured  # Parsed movement data drive tooth-wise wording.
-    assert "1.2300" in payload and "0.4500" in payload
+    if module == "macro":
+        assert captured != other_captured
+        assert "1.2300" in payload and "0.4500" in payload
+    else:
+        assert captured == other_captured  # No attachment/stage facts were supplied in either TMT.
+        assert "1.2300" not in payload and "0.4500" not in payload
     assert "raw_text" not in payload and "source_version" not in payload
 
 

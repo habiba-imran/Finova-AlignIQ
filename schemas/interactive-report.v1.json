@@ -32,6 +32,142 @@
       "title": "AdapterInfo",
       "type": "object"
     },
+    "AnchorageNote": {
+      "additionalProperties": false,
+      "properties": {
+        "tooth_ref": {
+          "anyOf": [
+            {
+              "maxLength": 80,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Tooth Ref"
+        },
+        "note": {
+          "maxLength": 240,
+          "minLength": 1,
+          "title": "Note",
+          "type": "string"
+        }
+      },
+      "required": [
+        "note"
+      ],
+      "title": "AnchorageNote",
+      "type": "object"
+    },
+    "AttachmentDetail": {
+      "additionalProperties": false,
+      "properties": {
+        "tooth_ref": {
+          "maxLength": 80,
+          "minLength": 1,
+          "title": "Tooth Ref",
+          "type": "string"
+        },
+        "choice": {
+          "default": "UNKNOWN",
+          "enum": [
+            "UNKNOWN",
+            "ATTACHMENT",
+            "NO_ATTACHMENT"
+          ],
+          "title": "Choice",
+          "type": "string"
+        },
+        "design": {
+          "anyOf": [
+            {
+              "maxLength": 80,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Design"
+        },
+        "width_mm": {
+          "anyOf": [
+            {
+              "maxLength": 24,
+              "pattern": "^\\+?(?:\\d+(?:\\.\\d*)?|\\.\\d+)$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Width Mm"
+        },
+        "height_mm": {
+          "anyOf": [
+            {
+              "maxLength": 24,
+              "pattern": "^\\+?(?:\\d+(?:\\.\\d*)?|\\.\\d+)$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Height Mm"
+        },
+        "depth_mm": {
+          "anyOf": [
+            {
+              "maxLength": 24,
+              "pattern": "^\\+?(?:\\d+(?:\\.\\d*)?|\\.\\d+)$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Depth Mm"
+        },
+        "surface": {
+          "anyOf": [
+            {
+              "maxLength": 80,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Surface"
+        },
+        "orientation": {
+          "anyOf": [
+            {
+              "maxLength": 80,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Orientation"
+        }
+      },
+      "required": [
+        "tooth_ref"
+      ],
+      "title": "AttachmentDetail",
+      "type": "object"
+    },
     "AxisCoverage": {
       "additionalProperties": false,
       "description": "Declared positions only; no expected clinical axes are invented.",
@@ -673,6 +809,145 @@
         }
       },
       "title": "LayoutInfo",
+      "type": "object"
+    },
+    "ModuleGenerationInfo": {
+      "additionalProperties": false,
+      "properties": {
+        "requested_mode": {
+          "enum": [
+            "AUTO",
+            "GROQ",
+            "TEMPLATES"
+          ],
+          "title": "Requested Mode",
+          "type": "string"
+        },
+        "used_mode": {
+          "enum": [
+            "STANDARD_TEMPLATES",
+            "GROQ_AI",
+            "MIXED"
+          ],
+          "title": "Used Mode",
+          "type": "string"
+        },
+        "reason": {
+          "title": "Reason",
+          "type": "string"
+        },
+        "provider": {
+          "anyOf": [
+            {
+              "const": "GROQ",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Provider"
+        },
+        "model": {
+          "anyOf": [
+            {
+              "const": "openai/gpt-oss-120b",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Model"
+        },
+        "attempts": {
+          "maximum": 2,
+          "minimum": 0,
+          "title": "Attempts",
+          "type": "integer"
+        },
+        "eligible_wording_findings": {
+          "minimum": 0,
+          "title": "Eligible Wording Findings",
+          "type": "integer"
+        },
+        "accepted_comments": {
+          "minimum": 0,
+          "title": "Accepted Comments",
+          "type": "integer"
+        },
+        "real_patient_transmission_enabled": {
+          "const": false,
+          "default": false,
+          "title": "Real Patient Transmission Enabled",
+          "type": "boolean"
+        },
+        "output_validation": {
+          "const": "GROUNDED_MODULE_WORDING_V1",
+          "default": "GROUNDED_MODULE_WORDING_V1",
+          "title": "Output Validation",
+          "type": "string"
+        }
+      },
+      "required": [
+        "requested_mode",
+        "used_mode",
+        "reason",
+        "attempts",
+        "eligible_wording_findings",
+        "accepted_comments"
+      ],
+      "title": "ModuleGenerationInfo",
+      "type": "object"
+    },
+    "ModuleSection": {
+      "additionalProperties": false,
+      "properties": {
+        "section_id": {
+          "title": "Section Id",
+          "type": "string"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "SOURCE_REPORTED",
+            "SUPPLIED_UNVERIFIED",
+            "UNAVAILABLE"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "source_refs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Source Refs",
+          "type": "array"
+        },
+        "missing_fields": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Missing Fields",
+          "type": "array"
+        }
+      },
+      "required": [
+        "section_id",
+        "title",
+        "status",
+        "text"
+      ],
+      "title": "ModuleSection",
       "type": "object"
     },
     "ObservedMeasurement": {
@@ -1411,6 +1686,45 @@
       "title": "ReviewCoverage",
       "type": "object"
     },
+    "ReviewDetails": {
+      "additionalProperties": false,
+      "properties": {
+        "attachments": {
+          "items": {
+            "$ref": "#/$defs/AttachmentDetail"
+          },
+          "maxItems": 32,
+          "title": "Attachments",
+          "type": "array"
+        },
+        "stages": {
+          "items": {
+            "$ref": "#/$defs/SuppliedStage"
+          },
+          "maxItems": 64,
+          "title": "Stages",
+          "type": "array"
+        },
+        "allocations": {
+          "items": {
+            "$ref": "#/$defs/SuppliedAllocation"
+          },
+          "maxItems": 128,
+          "title": "Allocations",
+          "type": "array"
+        },
+        "anchorage_notes": {
+          "items": {
+            "$ref": "#/$defs/AnchorageNote"
+          },
+          "maxItems": 32,
+          "title": "Anchorage Notes",
+          "type": "array"
+        }
+      },
+      "title": "ReviewDetails",
+      "type": "object"
+    },
     "RuleEvaluation": {
       "additionalProperties": false,
       "properties": {
@@ -1923,6 +2237,103 @@
       "title": "SourceSpan",
       "type": "object"
     },
+    "SuppliedAllocation": {
+      "additionalProperties": false,
+      "properties": {
+        "stage_id": {
+          "maxLength": 40,
+          "minLength": 1,
+          "title": "Stage Id",
+          "type": "string"
+        },
+        "tooth_ref": {
+          "maxLength": 80,
+          "minLength": 1,
+          "title": "Tooth Ref",
+          "type": "string"
+        },
+        "measurement_ref": {
+          "maxLength": 80,
+          "minLength": 1,
+          "title": "Measurement Ref",
+          "type": "string"
+        },
+        "amount": {
+          "anyOf": [
+            {
+              "maxLength": 24,
+              "pattern": "^[+-]?(?:\\d+(?:\\.\\d*)?|\\.\\d+)$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Amount"
+        },
+        "unit": {
+          "anyOf": [
+            {
+              "enum": [
+                "mm",
+                "deg"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Unit"
+        }
+      },
+      "required": [
+        "stage_id",
+        "tooth_ref",
+        "measurement_ref"
+      ],
+      "title": "SuppliedAllocation",
+      "type": "object"
+    },
+    "SuppliedStage": {
+      "additionalProperties": false,
+      "properties": {
+        "stage_id": {
+          "maxLength": 40,
+          "minLength": 1,
+          "title": "Stage Id",
+          "type": "string"
+        },
+        "order": {
+          "maximum": 2147483647,
+          "minimum": 1,
+          "title": "Order",
+          "type": "integer"
+        },
+        "duration_days": {
+          "anyOf": [
+            {
+              "maximum": 2147483647,
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Duration Days"
+        }
+      },
+      "required": [
+        "stage_id",
+        "order"
+      ],
+      "title": "SuppliedStage",
+      "type": "object"
+    },
     "ToothIdentifier": {
       "additionalProperties": false,
       "properties": {
@@ -2088,6 +2499,9 @@
         },
         {
           "$ref": "#/$defs/PlanningGenerationInfo"
+        },
+        {
+          "$ref": "#/$defs/ModuleGenerationInfo"
         }
       ],
       "title": "Generation"
@@ -2113,6 +2527,25 @@
       },
       "title": "Illustrations",
       "type": "array"
+    },
+    "report_format": {
+      "default": "MOVEMENT_PROFILE_V1",
+      "enum": [
+        "MOVEMENT_PROFILE_V1",
+        "MODULE_SPECIFIC_V1"
+      ],
+      "title": "Report Format",
+      "type": "string"
+    },
+    "sections": {
+      "items": {
+        "$ref": "#/$defs/ModuleSection"
+      },
+      "title": "Sections",
+      "type": "array"
+    },
+    "review_details": {
+      "$ref": "#/$defs/ReviewDetails"
     },
     "limitations": {
       "items": {

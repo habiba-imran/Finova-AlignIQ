@@ -13,7 +13,7 @@ def test_health():
 
 def test_only_authorized_routes_exist():
     paths = app.openapi()["paths"]
-    assert set(paths) == {"/api/health", "/api/parse", "/api/v1/tmt/observations", "/api/v1/reports/draft", "/api/v1/interactive/review",
+    assert set(paths) == {"/api/health", "/api/parse", "/api/v1/tmt/observations", "/api/v1/reports/draft", "/api/v1/interactive/review", "/api/v1/interactive/capabilities",
                           "/api/v1/tmt/parse", "/api/v1/tmt/parse/assisted", "/api/v1/development/synthetic",
                           "/api/v1/planning/draft", "/api/v1/development/planning-demo/input", "/api/v1/development/planning-demo/draft",
                           "/api/v1/attachments/draft", "/api/v1/development/attachment-demo/input", "/api/v1/development/attachment-demo/draft",
@@ -23,6 +23,7 @@ def test_only_authorized_routes_exist():
     assert set(paths["/api/v1/tmt/observations"]) == {"post"}
     assert set(paths["/api/v1/reports/draft"]) == {"post"}
     assert set(paths["/api/v1/interactive/review"]) == {"post"}
+    assert set(paths["/api/v1/interactive/capabilities"]) == {"get"}
     assert set(paths["/api/v1/tmt/parse"]) == {"post"}
     assert set(paths["/api/v1/tmt/parse/assisted"]) == {"post"}
     for path in ("/api/v1/planning/draft", "/api/v1/development/planning-demo/input", "/api/v1/development/planning-demo/draft"):
