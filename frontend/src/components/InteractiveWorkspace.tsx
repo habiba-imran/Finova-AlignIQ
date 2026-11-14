@@ -21,7 +21,7 @@ export default function InteractiveWorkspace({ module, rawText, context, parsed,
     if (pending.current || !supported) return
     const current = ++revision.current, controller = new AbortController()
     pending.current = controller; setLoading(true); setError(''); setNotice(''); setReport(null); onComplete(false)
-    const timer = window.setTimeout(() => controller.abort(), 30_000)
+    const timer = window.setTimeout(() => controller.abort(), 55_000)
     try {
       const result = await requestInteractiveReview(module, rawText, context, parsed.raw_sha256, parsed.pipeline.recovery_receipt, controller.signal)
       if (revision.current === current) { setReport(result); onComplete(true) }
@@ -53,7 +53,7 @@ export default function InteractiveWorkspace({ module, rawText, context, parsed,
   return <section className="panel" aria-label={`${TITLES[module]} synthetic review`}>
     <div className="panel-heading"><div className="flex items-center gap-2.5"><FileCheck2 size={17} className="text-brand" aria-hidden="true" /><h3 className="panel-title">{TITLES[module]} review</h3></div></div>
     <div className="p-5 sm:p-7">
-      <p className="text-sm leading-7 text-muted">Generate tooth-wise observations from your synthetic table.{module !== 'macro' && ' Examples are illustrative simulations; treatment decisions cannot be derived from these values.'} AI wording is used automatically when available.</p>
+      <p className="text-sm leading-7 text-muted">{module === 'macro' ? 'Prepare readable planning comments from the programmed movements in your table.' : 'Generate tooth-wise observations from your synthetic table. Examples are illustrative simulations; treatment decisions cannot be derived from these values.'}</p>
       <button type="button" className="button button-primary mt-4" disabled={loading || !supported} onClick={() => void run()}>{loading ? <><span className="button-spinner" aria-hidden="true" />Generating review…</> : <>{ACTIONS[module]}<ArrowRight size={16} aria-hidden="true" /></>}</button>
       {!supported && <p role="alert" className="mt-3 text-sm text-notice-ink">A supported table with parsed measurement positions is required. Check the input and parse again.</p>}
       {loading && <p role="status" className="mt-3 text-sm text-muted">Preparing factual observations and report wording…</p>}
@@ -68,14 +68,15 @@ export default function InteractiveWorkspace({ module, rawText, context, parsed,
             {notice && <p role="status" className="w-full text-xs text-muted">{notice}</p>}
           </div>
         </div>
-        <p role="status" className="mt-4 text-sm text-brand">{report.wording_notice}</p>
+        <p role="status" className="mt-4 text-sm text-brand">{report.generation.used_mode === 'GROQ_AI' ? 'AI-assisted wording' : 'Standard wording'}</p>
         <p className="mt-3 text-sm leading-7">{report.summary}</p>
         {report.parsed.status === 'PARTIAL' && <p className="mt-3 text-sm text-notice-ink">Partial parse: unresolved content has not been interpreted. Review the marked table.</p>}
         <section aria-label="Factual tooth-wise observations" className="mt-6">
-          <h5 className="text-base font-semibold">Factual observations</h5>
-          <p className="mt-1 text-xs leading-6 text-muted">Parsed source values only. Missing values remain unknown; direction labels are preserved as supplied.</p>
+          <h5 className="text-base font-semibold">{module === 'macro' ? 'Planning comments' : 'Factual observations'}</h5>
+          <p className="mt-1 text-xs leading-6 text-muted">Programmed movements only. Missing values remain unknown; direction labels are preserved as supplied.</p>
           <ul className="mt-4 space-y-3">{report.observations.map(o => <li key={o.tooth_ref} className="comment-card">
             <h6 className="font-semibold">Tooth token {o.original_tooth}</h6><p className="mt-2 whitespace-pre-wrap text-sm leading-7 [overflow-wrap:anywhere]">{o.text}</p>
+            {module === 'macro' && <details className="mt-3 text-xs leading-6 text-muted"><summary className="cursor-pointer font-medium">Source values</summary><ul className="mt-2 space-y-1">{o.measurements.map(m => <li key={m.id}>{m.raw_label.trim()}: {m.raw_value ?? 'Missing'}</li>)}</ul></details>}
           </li>)}</ul>
         </section>
         {!!report.illustrations.length && <section aria-label="Illustrative demo content" className="mt-6 rounded-xl border border-line bg-canvas p-4">

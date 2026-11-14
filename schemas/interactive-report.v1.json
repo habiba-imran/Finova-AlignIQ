@@ -1259,6 +1259,97 @@
       "title": "ParsedMeasurement",
       "type": "object"
     },
+    "PlanningGenerationInfo": {
+      "additionalProperties": false,
+      "properties": {
+        "requested_mode": {
+          "enum": [
+            "AUTO",
+            "GROQ",
+            "TEMPLATES"
+          ],
+          "title": "Requested Mode",
+          "type": "string"
+        },
+        "used_mode": {
+          "enum": [
+            "STANDARD_TEMPLATES",
+            "GROQ_AI",
+            "MIXED"
+          ],
+          "title": "Used Mode",
+          "type": "string"
+        },
+        "reason": {
+          "title": "Reason",
+          "type": "string"
+        },
+        "provider": {
+          "anyOf": [
+            {
+              "const": "GROQ",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Provider"
+        },
+        "model": {
+          "anyOf": [
+            {
+              "const": "openai/gpt-oss-120b",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Model"
+        },
+        "attempts": {
+          "maximum": 2,
+          "minimum": 0,
+          "title": "Attempts",
+          "type": "integer"
+        },
+        "eligible_wording_findings": {
+          "minimum": 0,
+          "title": "Eligible Wording Findings",
+          "type": "integer"
+        },
+        "accepted_comments": {
+          "minimum": 0,
+          "title": "Accepted Comments",
+          "type": "integer"
+        },
+        "real_patient_transmission_enabled": {
+          "const": false,
+          "default": false,
+          "title": "Real Patient Transmission Enabled",
+          "type": "boolean"
+        },
+        "output_validation": {
+          "const": "GROUNDED_PLANNING_WORDING_V1",
+          "default": "GROUNDED_PLANNING_WORDING_V1",
+          "title": "Output Validation",
+          "type": "string"
+        }
+      },
+      "required": [
+        "requested_mode",
+        "used_mode",
+        "reason",
+        "attempts",
+        "eligible_wording_findings",
+        "accepted_comments"
+      ],
+      "title": "PlanningGenerationInfo",
+      "type": "object"
+    },
     "RawCell": {
       "additionalProperties": false,
       "properties": {
@@ -1991,7 +2082,15 @@
       "$ref": "#/$defs/DraftReview"
     },
     "generation": {
-      "$ref": "#/$defs/GenerationInfo"
+      "anyOf": [
+        {
+          "$ref": "#/$defs/GenerationInfo"
+        },
+        {
+          "$ref": "#/$defs/PlanningGenerationInfo"
+        }
+      ],
+      "title": "Generation"
     },
     "wording_notice": {
       "title": "Wording Notice",

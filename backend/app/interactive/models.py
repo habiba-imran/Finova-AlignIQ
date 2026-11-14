@@ -28,6 +28,10 @@ class Illustration(Contract):
     clinical_status: Literal["NOT_EVALUATED"] = "NOT_EVALUATED"
 
 
+class PlanningGenerationInfo(GenerationInfo):
+    output_validation: Literal["GROUNDED_PLANNING_WORDING_V1"] = "GROUNDED_PLANNING_WORDING_V1"
+
+
 class InteractiveReport(Contract):
     schema_version: Literal["1.0.0"] = "1.0.0"
     module: Literal["macro", "micro", "nano"]
@@ -36,7 +40,7 @@ class InteractiveReport(Contract):
     clinical_analysis_enabled: Literal[False] = False
     parsed: ParseResult
     engine_review: DraftReview
-    generation: GenerationInfo
+    generation: GenerationInfo | PlanningGenerationInfo
     wording_notice: str
     summary: str
     observations: list[ToothObservation]

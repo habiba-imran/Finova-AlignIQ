@@ -9,7 +9,7 @@ export interface InteractiveReport {
   draft_status: 'Synthetic demonstration — not for clinical use'; clinical_analysis_enabled: false
   parsed: ParseResult; engine_review: DraftReview
   generation: { requested_mode: 'AUTO'; used_mode: 'GROQ_AI' | 'STANDARD_TEMPLATES'; reason: string; attempts: number; accepted_comments: number; real_patient_transmission_enabled: false
-    provider: 'GROQ' | null; model: 'openai/gpt-oss-120b' | null; eligible_wording_findings: 4; output_validation: 'CLOSED_WORDING_AND_LOCAL_FACTS_V1' }
+    provider: 'GROQ' | null; model: 'openai/gpt-oss-120b' | null; eligible_wording_findings: number; output_validation: 'CLOSED_WORDING_AND_LOCAL_FACTS_V1' | 'GROUNDED_PLANNING_WORDING_V1' }
   wording_notice: string; summary: string; export_text: string; limitations: string[]
   observations: { tooth_ref: string; original_tooth: string; text: string; evidence_status: 'PARSED_SOURCE_ONLY'; measurements: Measurement[] }[]
   illustrations: { tooth_ref: string; original_tooth: string; label: string; text: string; origin: 'SIMULATED_DEMO'; clinical_status: 'NOT_EVALUATED' }[]
@@ -23,10 +23,13 @@ export function isInteractiveReport(v: unknown): v is InteractiveReport {
     || v.parsed.raw_sha256 !== v.engine_review.raw_sha256 || !obj(v.generation) || v.generation.requested_mode !== 'AUTO'
     || !['GROQ_AI', 'STANDARD_TEMPLATES'].includes(String(v.generation.used_mode)) || v.generation.real_patient_transmission_enabled !== false
     || !str(v.generation.reason) || !Number.isInteger(v.generation.attempts) || Number(v.generation.attempts) < 0
-    || Number(v.generation.attempts) > 2 || !Number.isInteger(v.generation.accepted_comments) || v.generation.eligible_wording_findings !== 4
-    || v.generation.output_validation !== 'CLOSED_WORDING_AND_LOCAL_FACTS_V1'
+    || Number(v.generation.attempts) > 2 || !Number.isInteger(v.generation.accepted_comments)
+    || !Array.isArray(v.observations) || !v.observations.length
+    || (v.generation.output_validation === 'GROUNDED_PLANNING_WORDING_V1'
+      ? v.module !== 'macro' || v.generation.eligible_wording_findings !== v.observations.length
+      : v.generation.output_validation !== 'CLOSED_WORDING_AND_LOCAL_FACTS_V1' || v.generation.eligible_wording_findings !== 4)
     || (Number(v.generation.attempts) > 0 ? v.generation.provider !== 'GROQ' || v.generation.model !== 'openai/gpt-oss-120b' : v.generation.provider !== null || v.generation.model !== null)
-    || (v.generation.used_mode === 'GROQ_AI' ? v.generation.accepted_comments !== 4 || Number(v.generation.attempts) < 1 || v.generation.reason !== 'GROQ_VALIDATED' : v.generation.accepted_comments !== 0)
+    || (v.generation.used_mode === 'GROQ_AI' ? v.generation.accepted_comments !== v.generation.eligible_wording_findings || Number(v.generation.attempts) < 1 || v.generation.reason !== 'GROQ_VALIDATED' : v.generation.accepted_comments !== 0)
     || !['wording_notice', 'summary', 'export_text'].every(k => str(v[k])) || !Array.isArray(v.limitations) || !v.limitations.every(str)
     || !Array.isArray(v.observations) || !v.observations.length || !Array.isArray(v.illustrations)) return false
   const parsed = v.parsed, observed: string[] = [], toothRefs = new Set<string>()

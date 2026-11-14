@@ -1,0 +1,38 @@
+{
+  "backend": {
+    "passed": 1049
+  },
+  "frontend_full": {
+    "passed": 252
+  },
+  "frontend_final_focused": {
+    "passed": 33,
+    "additional_new_tests": 2
+  },
+  "browser_workflows": {
+    "passed": 10,
+    "widths": [
+      1440,
+      375
+    ]
+  },
+  "browser_approved_wording": {
+    "passed": 2,
+    "widths": [
+      1440,
+      375
+    ]
+  },
+  "production_build": "passed",
+  "live_synthetic": {
+    "teeth": 16,
+    "measurement_positions": 112,
+    "accepted_comments": 16,
+    "used_mode": "GROQ_AI",
+    "attempts_in_successful_review": 1,
+    "successful_provider_seconds": 3.8541,
+    "initial_separate_probe": "HTTP-error fallback",
+    "successful_explicit_retry": "HTTP 200; GROQ_VALIDATED"
+  },
+  "deployment_commit_push": false
+}

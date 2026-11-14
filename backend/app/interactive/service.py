@@ -1,12 +1,13 @@
-"""Report literal parsed cells without promoting source claims to clinical authority.
+"""Descriptive review without promoting source claims to clinical authority.
 
-The provider sees a constant vocabulary only: no input-derived values, identifiers,
-labels, counts, context, hashes or source text. Exact closed-language validation
-precedes local insertion of every fact. Illustration choices use input order only.
+Macro uses minimized parsed movement records for grounded narrative wording;
+complete facts are inserted locally after validation. Micro/Nano retain their
+constant phrase catalog and table-order illustrations, never clinical choices.
 """
 import json
 
 from app.interactive.models import Illustration, InteractiveReport, ToothObservation
+from app.interactive.narrative import planning_wording
 from app.parser.receipts import resolve
 from app.reports.groq_client import GroqClient
 from app.reports.models import GenerationInfo, WordingBatch
@@ -85,7 +86,7 @@ def cell_text(m):
         if m.numeric_status == "EXPLICIT_ZERO":
             text += "; explicitly recorded zero"
         return text + f". Original cell: {quoted(m.raw_value)}."
-    status = {"MISSING": "missing", "NOT_PRESENT": "omitted", "INVALID": "invalid", "AMBIGUOUS": "ambiguous"}[m.numeric_status]
+    status = {"MISSING": "missing", "NOT_PRESENT": "omitted", "INVALID": "invalid", "AMBIGUOUS": "ambiguous"}.get(m.numeric_status, "unrecognized")
     return f"{label}: {status}; no numerical observation. Original cell: {quoted(m.raw_value)}."
 
 
@@ -96,7 +97,12 @@ def generate_interactive(submission, *, settings=None, client=None):
     if parsed.status in {"INVALID", "UNSUPPORTED"} or not parsed.measurements:
         raise ValueError("PARSE_REQUIRED")
     review = review_table(submission)
-    phrases, generation = wording(settings, client)
+    if submission.module == "macro":
+        narratives, generation = planning_wording(parsed, settings=settings, client=client)
+        phrases = {ref: options[0] for ref, options in WORDINGS.items()}
+    else:
+        phrases, generation = wording(settings, client)
+        narratives = None
     observations, illustrations = [], []
     by_tooth = {}
     for m in parsed.measurements:
@@ -106,7 +112,7 @@ def generate_interactive(submission, *, settings=None, client=None):
         if not cells:
             continue
         observations.append(ToothObservation(tooth_ref=tooth.id, original_tooth=tooth.raw_identifier,
-            text=phrases["F0002"] + ":\n" + "\n".join(cell_text(m) for m in cells), measurements=cells))
+            text=narratives[tooth.id] if narratives is not None else phrases["F0002"] + ":\n" + "\n".join(cell_text(m) for m in cells), measurements=cells))
         index = len(observations) - 1
         if submission.module == "micro":
             shape = ("oval", "rectangular")[index % 2]
@@ -122,7 +128,7 @@ def generate_interactive(submission, *, settings=None, client=None):
     missing = sum(m.numeric_status in {"MISSING", "NOT_PRESENT"} for m in parsed.measurements)
     other = len(parsed.measurements) - numeric - missing
     summary = f"{phrases['F0001']} {len(observations)} tooth tokens; {len(parsed.measurements)} measurement positions; {numeric} recorded numerical values; {missing} missing or omitted; {other} invalid or ambiguous."
-    notice = "AI-assisted wording generated with Groq; all measurements and examples assembled locally." if generation.used_mode == "GROQ_AI" else "AI generation unavailable; deterministic wording used."
+    notice = "AI-assisted planning wording." if generation.used_mode == "GROQ_AI" else "Standard planning wording."
     limitations = list(LIMITATIONS)
     if parsed.status == "PARTIAL":
         limitations.insert(0, "This table was partially parsed. Unresolved content remains in the original input and is not interpreted; inspect the marked table before using these observations.")
@@ -144,7 +150,7 @@ def generate_interactive(submission, *, settings=None, client=None):
     for o in observations:
         for m in o.measurements:
             location = f"L{m.span.line}:C{m.span.column_start}-C{m.span.column_end}; offsets {m.span.start}:{m.span.end}" if m.span else "omitted cell; no source span"
-            lines += [f"{m.id}; tooth_ref {o.tooth_ref}; {location}; {m.numeric_status}; raw sign {quoted(m.raw_sign)}; raw direction {quoted(m.raw_direction)}; magnitude {m.magnitude_decimal}"]
+            lines += [f"{m.id}; tooth_ref {o.tooth_ref}; {location}; {m.numeric_status}; raw sign {quoted(m.raw_sign)}; raw direction {quoted(m.raw_direction)}; magnitude {m.magnitude_decimal}", cell_text(m)]
     lines += ["", "RULE EVALUATION LEDGER — CLINICAL AUTHORITY UNCHANGED"]
     lines += [f"{e.rule_id} v{e.version}: {e.status}; execution {e.execution}; approval {e.approval_status}" for e in review.evaluations]
     lines += ["", "ORIGINAL INPUT — VERBATIM", parsed.raw_text, "", "Synthetic demonstration — not for clinical use"]

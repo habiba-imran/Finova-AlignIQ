@@ -2,170 +2,58 @@ FINOVA ALIGNIQ
 MACRO — Generated synthetic review
 Synthetic demonstration — not for clinical use
 
-AI generation unavailable; deterministic wording used.
+Standard planning wording.
 The parsed source values are described below. 16 tooth tokens; 112 measurement positions; 96 recorded numerical values; 16 missing or omitted; 0 invalid or ambiguous.
 
 FACTUAL OBSERVATIONS — PARSED SOURCE VALUES
 
 Tooth token "18"
-Recorded values:
-"Rotation (deg)": 0.1250 deg; direction label "D". Original cell: "0.1250 D".
-"Inclination (deg)": -1.5000 deg. Original cell: "-1.5000".
-"Angulation (deg)": 0 deg; explicitly recorded zero. Original cell: "0".
-"Extrusion (mm)": 0.2000 mm. Original cell: "0.2000".
-"Intrusion (mm)": missing; no numerical observation. Original cell: "—".
-"Mesial/Distal (mm)": 1.2300 mm; direction label "D". Original cell: "1.2300 D".
-"Buccal/Lingual (mm)": 0.4500 mm; direction label "B". Original cell: "0.4500 B".
+The programmed movement record lists rotation of 0.1250 deg (supplied direction label "D"); inclination of -1.5000 deg; angulation of 0 deg (explicitly recorded zero); extrusion of 0.2000 mm; an unreported intrusion value (unknown, not zero); mesiodistal translation of 1.2300 mm (supplied direction label "D"); buccolingual translation of 0.4500 mm (supplied direction label "B").
 
 Tooth token "17"
-Recorded values:
-"Rotation (deg)": 1.1250 deg; direction label "D". Original cell: "1.1250 D".
-"Inclination (deg)": -1.5000 deg. Original cell: "-1.5000".
-"Angulation (deg)": 0 deg; explicitly recorded zero. Original cell: "0".
-"Extrusion (mm)": 0.2000 mm. Original cell: "0.2000".
-"Intrusion (mm)": missing; no numerical observation. Original cell: "—".
-"Mesial/Distal (mm)": 1.2300 mm; direction label "D". Original cell: "1.2300 D".
-"Buccal/Lingual (mm)": 0.4500 mm; direction label "B". Original cell: "0.4500 B".
+The programmed movement record lists rotation of 1.1250 deg (supplied direction label "D"); inclination of -1.5000 deg; angulation of 0 deg (explicitly recorded zero); extrusion of 0.2000 mm; an unreported intrusion value (unknown, not zero); mesiodistal translation of 1.2300 mm (supplied direction label "D"); buccolingual translation of 0.4500 mm (supplied direction label "B").
 
 Tooth token "16"
-Recorded values:
-"Rotation (deg)": 2.1250 deg; direction label "D". Original cell: "2.1250 D".
-"Inclination (deg)": -1.5000 deg. Original cell: "-1.5000".
-"Angulation (deg)": 0 deg; explicitly recorded zero. Original cell: "0".
-"Extrusion (mm)": 0.2000 mm. Original cell: "0.2000".
-"Intrusion (mm)": missing; no numerical observation. Original cell: "—".
-"Mesial/Distal (mm)": 1.2300 mm; direction label "D". Original cell: "1.2300 D".
-"Buccal/Lingual (mm)": 0.4500 mm; direction label "B". Original cell: "0.4500 B".
+The programmed movement record lists rotation of 2.1250 deg (supplied direction label "D"); inclination of -1.5000 deg; angulation of 0 deg (explicitly recorded zero); extrusion of 0.2000 mm; an unreported intrusion value (unknown, not zero); mesiodistal translation of 1.2300 mm (supplied direction label "D"); buccolingual translation of 0.4500 mm (supplied direction label "B").
 
 Tooth token "15"
-Recorded values:
-"Rotation (deg)": 3.1250 deg; direction label "D". Original cell: "3.1250 D".
-"Inclination (deg)": -1.5000 deg. Original cell: "-1.5000".
-"Angulation (deg)": 0 deg; explicitly recorded zero. Original cell: "0".
-"Extrusion (mm)": 0.2000 mm. Original cell: "0.2000".
-"Intrusion (mm)": missing; no numerical observation. Original cell: "—".
-"Mesial/Distal (mm)": 1.2300 mm; direction label "D". Original cell: "1.2300 D".
-"Buccal/Lingual (mm)": 0.4500 mm; direction label "B". Original cell: "0.4500 B".
+The programmed movement record lists rotation of 3.1250 deg (supplied direction label "D"); inclination of -1.5000 deg; angulation of 0 deg (explicitly recorded zero); extrusion of 0.2000 mm; an unreported intrusion value (unknown, not zero); mesiodistal translation of 1.2300 mm (supplied direction label "D"); buccolingual translation of 0.4500 mm (supplied direction label "B").
 
 Tooth token "14"
-Recorded values:
-"Rotation (deg)": 4.1250 deg; direction label "D". Original cell: "4.1250 D".
-"Inclination (deg)": -1.5000 deg. Original cell: "-1.5000".
-"Angulation (deg)": 0 deg; explicitly recorded zero. Original cell: "0".
-"Extrusion (mm)": 0.2000 mm. Original cell: "0.2000".
-"Intrusion (mm)": missing; no numerical observation. Original cell: "—".
-"Mesial/Distal (mm)": 1.2300 mm; direction label "D". Original cell: "1.2300 D".
-"Buccal/Lingual (mm)": 0.4500 mm; direction label "B". Original cell: "0.4500 B".
+The programmed movement record lists rotation of 4.1250 deg (supplied direction label "D"); inclination of -1.5000 deg; angulation of 0 deg (explicitly recorded zero); extrusion of 0.2000 mm; an unreported intrusion value (unknown, not zero); mesiodistal translation of 1.2300 mm (supplied direction label "D"); buccolingual translation of 0.4500 mm (supplied direction label "B").
 
 Tooth token "13"
-Recorded values:
-"Rotation (deg)": 5.1250 deg; direction label "D". Original cell: "5.1250 D".
-"Inclination (deg)": -1.5000 deg. Original cell: "-1.5000".
-"Angulation (deg)": 0 deg; explicitly recorded zero. Original cell: "0".
-"Extrusion (mm)": 0.2000 mm. Original cell: "0.2000".
-"Intrusion (mm)": missing; no numerical observation. Original cell: "—".
-"Mesial/Distal (mm)": 1.2300 mm; direction label "D". Original cell: "1.2300 D".
-"Buccal/Lingual (mm)": 0.4500 mm; direction label "B". Original cell: "0.4500 B".
+The programmed movement record lists rotation of 5.1250 deg (supplied direction label "D"); inclination of -1.5000 deg; angulation of 0 deg (explicitly recorded zero); extrusion of 0.2000 mm; an unreported intrusion value (unknown, not zero); mesiodistal translation of 1.2300 mm (supplied direction label "D"); buccolingual translation of 0.4500 mm (supplied direction label "B").
 
 Tooth token "12"
-Recorded values:
-"Rotation (deg)": 6.1250 deg; direction label "D". Original cell: "6.1250 D".
-"Inclination (deg)": -1.5000 deg. Original cell: "-1.5000".
-"Angulation (deg)": 0 deg; explicitly recorded zero. Original cell: "0".
-"Extrusion (mm)": 0.2000 mm. Original cell: "0.2000".
-"Intrusion (mm)": missing; no numerical observation. Original cell: "—".
-"Mesial/Distal (mm)": 1.2300 mm; direction label "D". Original cell: "1.2300 D".
-"Buccal/Lingual (mm)": 0.4500 mm; direction label "B". Original cell: "0.4500 B".
+The programmed movement record lists rotation of 6.1250 deg (supplied direction label "D"); inclination of -1.5000 deg; angulation of 0 deg (explicitly recorded zero); extrusion of 0.2000 mm; an unreported intrusion value (unknown, not zero); mesiodistal translation of 1.2300 mm (supplied direction label "D"); buccolingual translation of 0.4500 mm (supplied direction label "B").
 
 Tooth token "11"
-Recorded values:
-"Rotation (deg)": 7.1250 deg; direction label "D". Original cell: "7.1250 D".
-"Inclination (deg)": -1.5000 deg. Original cell: "-1.5000".
-"Angulation (deg)": 0 deg; explicitly recorded zero. Original cell: "0".
-"Extrusion (mm)": 0.2000 mm. Original cell: "0.2000".
-"Intrusion (mm)": missing; no numerical observation. Original cell: "—".
-"Mesial/Distal (mm)": 1.2300 mm; direction label "D". Original cell: "1.2300 D".
-"Buccal/Lingual (mm)": 0.4500 mm; direction label "B". Original cell: "0.4500 B".
+The programmed movement record lists rotation of 7.1250 deg (supplied direction label "D"); inclination of -1.5000 deg; angulation of 0 deg (explicitly recorded zero); extrusion of 0.2000 mm; an unreported intrusion value (unknown, not zero); mesiodistal translation of 1.2300 mm (supplied direction label "D"); buccolingual translation of 0.4500 mm (supplied direction label "B").
 
 Tooth token "21"
-Recorded values:
-"Rotation (deg)": 8.1250 deg; direction label "D". Original cell: "8.1250 D".
-"Inclination (deg)": -1.5000 deg. Original cell: "-1.5000".
-"Angulation (deg)": 0 deg; explicitly recorded zero. Original cell: "0".
-"Extrusion (mm)": 0.2000 mm. Original cell: "0.2000".
-"Intrusion (mm)": missing; no numerical observation. Original cell: "—".
-"Mesial/Distal (mm)": 1.2300 mm; direction label "D". Original cell: "1.2300 D".
-"Buccal/Lingual (mm)": 0.4500 mm; direction label "B". Original cell: "0.4500 B".
+The programmed movement record lists rotation of 8.1250 deg (supplied direction label "D"); inclination of -1.5000 deg; angulation of 0 deg (explicitly recorded zero); extrusion of 0.2000 mm; an unreported intrusion value (unknown, not zero); mesiodistal translation of 1.2300 mm (supplied direction label "D"); buccolingual translation of 0.4500 mm (supplied direction label "B").
 
 Tooth token "22"
-Recorded values:
-"Rotation (deg)": 9.1250 deg; direction label "D". Original cell: "9.1250 D".
-"Inclination (deg)": -1.5000 deg. Original cell: "-1.5000".
-"Angulation (deg)": 0 deg; explicitly recorded zero. Original cell: "0".
-"Extrusion (mm)": 0.2000 mm. Original cell: "0.2000".
-"Intrusion (mm)": missing; no numerical observation. Original cell: "—".
-"Mesial/Distal (mm)": 1.2300 mm; direction label "D". Original cell: "1.2300 D".
-"Buccal/Lingual (mm)": 0.4500 mm; direction label "B". Original cell: "0.4500 B".
+The programmed movement record lists rotation of 9.1250 deg (supplied direction label "D"); inclination of -1.5000 deg; angulation of 0 deg (explicitly recorded zero); extrusion of 0.2000 mm; an unreported intrusion value (unknown, not zero); mesiodistal translation of 1.2300 mm (supplied direction label "D"); buccolingual translation of 0.4500 mm (supplied direction label "B").
 
 Tooth token "23"
-Recorded values:
-"Rotation (deg)": 10.1250 deg; direction label "D". Original cell: "10.1250 D".
-"Inclination (deg)": -1.5000 deg. Original cell: "-1.5000".
-"Angulation (deg)": 0 deg; explicitly recorded zero. Original cell: "0".
-"Extrusion (mm)": 0.2000 mm. Original cell: "0.2000".
-"Intrusion (mm)": missing; no numerical observation. Original cell: "—".
-"Mesial/Distal (mm)": 1.2300 mm; direction label "D". Original cell: "1.2300 D".
-"Buccal/Lingual (mm)": 0.4500 mm; direction label "B". Original cell: "0.4500 B".
+The programmed movement record lists rotation of 10.1250 deg (supplied direction label "D"); inclination of -1.5000 deg; angulation of 0 deg (explicitly recorded zero); extrusion of 0.2000 mm; an unreported intrusion value (unknown, not zero); mesiodistal translation of 1.2300 mm (supplied direction label "D"); buccolingual translation of 0.4500 mm (supplied direction label "B").
 
 Tooth token "24"
-Recorded values:
-"Rotation (deg)": 11.1250 deg; direction label "D". Original cell: "11.1250 D".
-"Inclination (deg)": -1.5000 deg. Original cell: "-1.5000".
-"Angulation (deg)": 0 deg; explicitly recorded zero. Original cell: "0".
-"Extrusion (mm)": 0.2000 mm. Original cell: "0.2000".
-"Intrusion (mm)": missing; no numerical observation. Original cell: "—".
-"Mesial/Distal (mm)": 1.2300 mm; direction label "D". Original cell: "1.2300 D".
-"Buccal/Lingual (mm)": 0.4500 mm; direction label "B". Original cell: "0.4500 B".
+The programmed movement record lists rotation of 11.1250 deg (supplied direction label "D"); inclination of -1.5000 deg; angulation of 0 deg (explicitly recorded zero); extrusion of 0.2000 mm; an unreported intrusion value (unknown, not zero); mesiodistal translation of 1.2300 mm (supplied direction label "D"); buccolingual translation of 0.4500 mm (supplied direction label "B").
 
 Tooth token "25"
-Recorded values:
-"Rotation (deg)": 12.1250 deg; direction label "D". Original cell: "12.1250 D".
-"Inclination (deg)": -1.5000 deg. Original cell: "-1.5000".
-"Angulation (deg)": 0 deg; explicitly recorded zero. Original cell: "0".
-"Extrusion (mm)": 0.2000 mm. Original cell: "0.2000".
-"Intrusion (mm)": missing; no numerical observation. Original cell: "—".
-"Mesial/Distal (mm)": 1.2300 mm; direction label "D". Original cell: "1.2300 D".
-"Buccal/Lingual (mm)": 0.4500 mm; direction label "B". Original cell: "0.4500 B".
+The programmed movement record lists rotation of 12.1250 deg (supplied direction label "D"); inclination of -1.5000 deg; angulation of 0 deg (explicitly recorded zero); extrusion of 0.2000 mm; an unreported intrusion value (unknown, not zero); mesiodistal translation of 1.2300 mm (supplied direction label "D"); buccolingual translation of 0.4500 mm (supplied direction label "B").
 
 Tooth token "26"
-Recorded values:
-"Rotation (deg)": 13.1250 deg; direction label "D". Original cell: "13.1250 D".
-"Inclination (deg)": -1.5000 deg. Original cell: "-1.5000".
-"Angulation (deg)": 0 deg; explicitly recorded zero. Original cell: "0".
-"Extrusion (mm)": 0.2000 mm. Original cell: "0.2000".
-"Intrusion (mm)": missing; no numerical observation. Original cell: "—".
-"Mesial/Distal (mm)": 1.2300 mm; direction label "D". Original cell: "1.2300 D".
-"Buccal/Lingual (mm)": 0.4500 mm; direction label "B". Original cell: "0.4500 B".
+The programmed movement record lists rotation of 13.1250 deg (supplied direction label "D"); inclination of -1.5000 deg; angulation of 0 deg (explicitly recorded zero); extrusion of 0.2000 mm; an unreported intrusion value (unknown, not zero); mesiodistal translation of 1.2300 mm (supplied direction label "D"); buccolingual translation of 0.4500 mm (supplied direction label "B").
 
 Tooth token "27"
-Recorded values:
-"Rotation (deg)": 14.1250 deg; direction label "D". Original cell: "14.1250 D".
-"Inclination (deg)": -1.5000 deg. Original cell: "-1.5000".
-"Angulation (deg)": 0 deg; explicitly recorded zero. Original cell: "0".
-"Extrusion (mm)": 0.2000 mm. Original cell: "0.2000".
-"Intrusion (mm)": missing; no numerical observation. Original cell: "—".
-"Mesial/Distal (mm)": 1.2300 mm; direction label "D". Original cell: "1.2300 D".
-"Buccal/Lingual (mm)": 0.4500 mm; direction label "B". Original cell: "0.4500 B".
+The programmed movement record lists rotation of 14.1250 deg (supplied direction label "D"); inclination of -1.5000 deg; angulation of 0 deg (explicitly recorded zero); extrusion of 0.2000 mm; an unreported intrusion value (unknown, not zero); mesiodistal translation of 1.2300 mm (supplied direction label "D"); buccolingual translation of 0.4500 mm (supplied direction label "B").
 
 Tooth token "28"
-Recorded values:
-"Rotation (deg)": 15.1250 deg; direction label "D". Original cell: "15.1250 D".
-"Inclination (deg)": -1.5000 deg. Original cell: "-1.5000".
-"Angulation (deg)": 0 deg; explicitly recorded zero. Original cell: "0".
-"Extrusion (mm)": 0.2000 mm. Original cell: "0.2000".
-"Intrusion (mm)": missing; no numerical observation. Original cell: "—".
-"Mesial/Distal (mm)": 1.2300 mm; direction label "D". Original cell: "1.2300 D".
-"Buccal/Lingual (mm)": 0.4500 mm; direction label "B". Original cell: "0.4500 B".
+The programmed movement record lists rotation of 15.1250 deg (supplied direction label "D"); inclination of -1.5000 deg; angulation of 0 deg (explicitly recorded zero); extrusion of 0.2000 mm; an unreported intrusion value (unknown, not zero); mesiodistal translation of 1.2300 mm (supplied direction label "D"); buccolingual translation of 0.4500 mm (supplied direction label "B").
 
 LIMITATIONS
 This table was partially parsed. Unresolved content remains in the original input and is not interpreted; inspect the marked table before using these observations.
@@ -175,122 +63,234 @@ Attachment and sequencing examples are arbitrary simulations based on table orde
 Clinical attachment, staging, anchorage, force, timing, diagnosis and treatment predicates remain unevaluated. No clinical approval is recorded.
 
 SOURCE AND PROVENANCE
-Report ID: e8d54b455d1e3e1a711553611fc87f19bce8cb44fd4c834c1369ba20a2805eeb
+Report ID: 5d20d0f741f3c4fb86b8cd932fa23bc85aedc6a9c7ddb39af761fcf8f914f0cf
 Input SHA-256: a74de8eaed0af6215ad18891f8df9396fa23ba48569b2b46f19a71b9701094ca
 Parser: 0.1.0; engine: 0.5.0; rules: 2.0.0-phase5
 Wording: STANDARD_TEMPLATES; status: GROQ_NOT_CONFIGURED; provider attempts: 0
 measurement-1; tooth_ref tooth-1; L2:C4-C12; offsets 128:136; PARSED; raw sign null; raw direction "D"; magnitude 0.1250
+"Rotation (deg)": 0.1250 deg; direction label "D". Original cell: "0.1250 D".
 measurement-2; tooth_ref tooth-1; L2:C13-C20; offsets 137:144; PARSED; raw sign "-"; raw direction null; magnitude 1.5000
+"Inclination (deg)": -1.5000 deg. Original cell: "-1.5000".
 measurement-3; tooth_ref tooth-1; L2:C21-C22; offsets 145:146; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0
+"Angulation (deg)": 0 deg; explicitly recorded zero. Original cell: "0".
 measurement-4; tooth_ref tooth-1; L2:C23-C29; offsets 147:153; PARSED; raw sign null; raw direction null; magnitude 0.2000
+"Extrusion (mm)": 0.2000 mm. Original cell: "0.2000".
 measurement-5; tooth_ref tooth-1; L2:C30-C31; offsets 154:155; MISSING; raw sign null; raw direction null; magnitude None
+"Intrusion (mm)": missing; no numerical observation. Original cell: "—".
 measurement-6; tooth_ref tooth-1; L2:C32-C40; offsets 156:164; PARSED; raw sign null; raw direction "D"; magnitude 1.2300
+"Mesial/Distal (mm)": 1.2300 mm; direction label "D". Original cell: "1.2300 D".
 measurement-7; tooth_ref tooth-1; L2:C41-C49; offsets 165:173; PARSED; raw sign null; raw direction "B"; magnitude 0.4500
+"Buccal/Lingual (mm)": 0.4500 mm; direction label "B". Original cell: "0.4500 B".
 measurement-8; tooth_ref tooth-2; L3:C4-C12; offsets 177:185; PARSED; raw sign null; raw direction "D"; magnitude 1.1250
+"Rotation (deg)": 1.1250 deg; direction label "D". Original cell: "1.1250 D".
 measurement-9; tooth_ref tooth-2; L3:C13-C20; offsets 186:193; PARSED; raw sign "-"; raw direction null; magnitude 1.5000
+"Inclination (deg)": -1.5000 deg. Original cell: "-1.5000".
 measurement-10; tooth_ref tooth-2; L3:C21-C22; offsets 194:195; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0
+"Angulation (deg)": 0 deg; explicitly recorded zero. Original cell: "0".
 measurement-11; tooth_ref tooth-2; L3:C23-C29; offsets 196:202; PARSED; raw sign null; raw direction null; magnitude 0.2000
+"Extrusion (mm)": 0.2000 mm. Original cell: "0.2000".
 measurement-12; tooth_ref tooth-2; L3:C30-C31; offsets 203:204; MISSING; raw sign null; raw direction null; magnitude None
+"Intrusion (mm)": missing; no numerical observation. Original cell: "—".
 measurement-13; tooth_ref tooth-2; L3:C32-C40; offsets 205:213; PARSED; raw sign null; raw direction "D"; magnitude 1.2300
+"Mesial/Distal (mm)": 1.2300 mm; direction label "D". Original cell: "1.2300 D".
 measurement-14; tooth_ref tooth-2; L3:C41-C49; offsets 214:222; PARSED; raw sign null; raw direction "B"; magnitude 0.4500
+"Buccal/Lingual (mm)": 0.4500 mm; direction label "B". Original cell: "0.4500 B".
 measurement-15; tooth_ref tooth-3; L4:C4-C12; offsets 226:234; PARSED; raw sign null; raw direction "D"; magnitude 2.1250
+"Rotation (deg)": 2.1250 deg; direction label "D". Original cell: "2.1250 D".
 measurement-16; tooth_ref tooth-3; L4:C13-C20; offsets 235:242; PARSED; raw sign "-"; raw direction null; magnitude 1.5000
+"Inclination (deg)": -1.5000 deg. Original cell: "-1.5000".
 measurement-17; tooth_ref tooth-3; L4:C21-C22; offsets 243:244; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0
+"Angulation (deg)": 0 deg; explicitly recorded zero. Original cell: "0".
 measurement-18; tooth_ref tooth-3; L4:C23-C29; offsets 245:251; PARSED; raw sign null; raw direction null; magnitude 0.2000
+"Extrusion (mm)": 0.2000 mm. Original cell: "0.2000".
 measurement-19; tooth_ref tooth-3; L4:C30-C31; offsets 252:253; MISSING; raw sign null; raw direction null; magnitude None
+"Intrusion (mm)": missing; no numerical observation. Original cell: "—".
 measurement-20; tooth_ref tooth-3; L4:C32-C40; offsets 254:262; PARSED; raw sign null; raw direction "D"; magnitude 1.2300
+"Mesial/Distal (mm)": 1.2300 mm; direction label "D". Original cell: "1.2300 D".
 measurement-21; tooth_ref tooth-3; L4:C41-C49; offsets 263:271; PARSED; raw sign null; raw direction "B"; magnitude 0.4500
+"Buccal/Lingual (mm)": 0.4500 mm; direction label "B". Original cell: "0.4500 B".
 measurement-22; tooth_ref tooth-4; L5:C4-C12; offsets 275:283; PARSED; raw sign null; raw direction "D"; magnitude 3.1250
+"Rotation (deg)": 3.1250 deg; direction label "D". Original cell: "3.1250 D".
 measurement-23; tooth_ref tooth-4; L5:C13-C20; offsets 284:291; PARSED; raw sign "-"; raw direction null; magnitude 1.5000
+"Inclination (deg)": -1.5000 deg. Original cell: "-1.5000".
 measurement-24; tooth_ref tooth-4; L5:C21-C22; offsets 292:293; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0
+"Angulation (deg)": 0 deg; explicitly recorded zero. Original cell: "0".
 measurement-25; tooth_ref tooth-4; L5:C23-C29; offsets 294:300; PARSED; raw sign null; raw direction null; magnitude 0.2000
+"Extrusion (mm)": 0.2000 mm. Original cell: "0.2000".
 measurement-26; tooth_ref tooth-4; L5:C30-C31; offsets 301:302; MISSING; raw sign null; raw direction null; magnitude None
+"Intrusion (mm)": missing; no numerical observation. Original cell: "—".
 measurement-27; tooth_ref tooth-4; L5:C32-C40; offsets 303:311; PARSED; raw sign null; raw direction "D"; magnitude 1.2300
+"Mesial/Distal (mm)": 1.2300 mm; direction label "D". Original cell: "1.2300 D".
 measurement-28; tooth_ref tooth-4; L5:C41-C49; offsets 312:320; PARSED; raw sign null; raw direction "B"; magnitude 0.4500
+"Buccal/Lingual (mm)": 0.4500 mm; direction label "B". Original cell: "0.4500 B".
 measurement-29; tooth_ref tooth-5; L6:C4-C12; offsets 324:332; PARSED; raw sign null; raw direction "D"; magnitude 4.1250
+"Rotation (deg)": 4.1250 deg; direction label "D". Original cell: "4.1250 D".
 measurement-30; tooth_ref tooth-5; L6:C13-C20; offsets 333:340; PARSED; raw sign "-"; raw direction null; magnitude 1.5000
+"Inclination (deg)": -1.5000 deg. Original cell: "-1.5000".
 measurement-31; tooth_ref tooth-5; L6:C21-C22; offsets 341:342; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0
+"Angulation (deg)": 0 deg; explicitly recorded zero. Original cell: "0".
 measurement-32; tooth_ref tooth-5; L6:C23-C29; offsets 343:349; PARSED; raw sign null; raw direction null; magnitude 0.2000
+"Extrusion (mm)": 0.2000 mm. Original cell: "0.2000".
 measurement-33; tooth_ref tooth-5; L6:C30-C31; offsets 350:351; MISSING; raw sign null; raw direction null; magnitude None
+"Intrusion (mm)": missing; no numerical observation. Original cell: "—".
 measurement-34; tooth_ref tooth-5; L6:C32-C40; offsets 352:360; PARSED; raw sign null; raw direction "D"; magnitude 1.2300
+"Mesial/Distal (mm)": 1.2300 mm; direction label "D". Original cell: "1.2300 D".
 measurement-35; tooth_ref tooth-5; L6:C41-C49; offsets 361:369; PARSED; raw sign null; raw direction "B"; magnitude 0.4500
+"Buccal/Lingual (mm)": 0.4500 mm; direction label "B". Original cell: "0.4500 B".
 measurement-36; tooth_ref tooth-6; L7:C4-C12; offsets 373:381; PARSED; raw sign null; raw direction "D"; magnitude 5.1250
+"Rotation (deg)": 5.1250 deg; direction label "D". Original cell: "5.1250 D".
 measurement-37; tooth_ref tooth-6; L7:C13-C20; offsets 382:389; PARSED; raw sign "-"; raw direction null; magnitude 1.5000
+"Inclination (deg)": -1.5000 deg. Original cell: "-1.5000".
 measurement-38; tooth_ref tooth-6; L7:C21-C22; offsets 390:391; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0
+"Angulation (deg)": 0 deg; explicitly recorded zero. Original cell: "0".
 measurement-39; tooth_ref tooth-6; L7:C23-C29; offsets 392:398; PARSED; raw sign null; raw direction null; magnitude 0.2000
+"Extrusion (mm)": 0.2000 mm. Original cell: "0.2000".
 measurement-40; tooth_ref tooth-6; L7:C30-C31; offsets 399:400; MISSING; raw sign null; raw direction null; magnitude None
+"Intrusion (mm)": missing; no numerical observation. Original cell: "—".
 measurement-41; tooth_ref tooth-6; L7:C32-C40; offsets 401:409; PARSED; raw sign null; raw direction "D"; magnitude 1.2300
+"Mesial/Distal (mm)": 1.2300 mm; direction label "D". Original cell: "1.2300 D".
 measurement-42; tooth_ref tooth-6; L7:C41-C49; offsets 410:418; PARSED; raw sign null; raw direction "B"; magnitude 0.4500
+"Buccal/Lingual (mm)": 0.4500 mm; direction label "B". Original cell: "0.4500 B".
 measurement-43; tooth_ref tooth-7; L8:C4-C12; offsets 422:430; PARSED; raw sign null; raw direction "D"; magnitude 6.1250
+"Rotation (deg)": 6.1250 deg; direction label "D". Original cell: "6.1250 D".
 measurement-44; tooth_ref tooth-7; L8:C13-C20; offsets 431:438; PARSED; raw sign "-"; raw direction null; magnitude 1.5000
+"Inclination (deg)": -1.5000 deg. Original cell: "-1.5000".
 measurement-45; tooth_ref tooth-7; L8:C21-C22; offsets 439:440; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0
+"Angulation (deg)": 0 deg; explicitly recorded zero. Original cell: "0".
 measurement-46; tooth_ref tooth-7; L8:C23-C29; offsets 441:447; PARSED; raw sign null; raw direction null; magnitude 0.2000
+"Extrusion (mm)": 0.2000 mm. Original cell: "0.2000".
 measurement-47; tooth_ref tooth-7; L8:C30-C31; offsets 448:449; MISSING; raw sign null; raw direction null; magnitude None
+"Intrusion (mm)": missing; no numerical observation. Original cell: "—".
 measurement-48; tooth_ref tooth-7; L8:C32-C40; offsets 450:458; PARSED; raw sign null; raw direction "D"; magnitude 1.2300
+"Mesial/Distal (mm)": 1.2300 mm; direction label "D". Original cell: "1.2300 D".
 measurement-49; tooth_ref tooth-7; L8:C41-C49; offsets 459:467; PARSED; raw sign null; raw direction "B"; magnitude 0.4500
+"Buccal/Lingual (mm)": 0.4500 mm; direction label "B". Original cell: "0.4500 B".
 measurement-50; tooth_ref tooth-8; L9:C4-C12; offsets 471:479; PARSED; raw sign null; raw direction "D"; magnitude 7.1250
+"Rotation (deg)": 7.1250 deg; direction label "D". Original cell: "7.1250 D".
 measurement-51; tooth_ref tooth-8; L9:C13-C20; offsets 480:487; PARSED; raw sign "-"; raw direction null; magnitude 1.5000
+"Inclination (deg)": -1.5000 deg. Original cell: "-1.5000".
 measurement-52; tooth_ref tooth-8; L9:C21-C22; offsets 488:489; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0
+"Angulation (deg)": 0 deg; explicitly recorded zero. Original cell: "0".
 measurement-53; tooth_ref tooth-8; L9:C23-C29; offsets 490:496; PARSED; raw sign null; raw direction null; magnitude 0.2000
+"Extrusion (mm)": 0.2000 mm. Original cell: "0.2000".
 measurement-54; tooth_ref tooth-8; L9:C30-C31; offsets 497:498; MISSING; raw sign null; raw direction null; magnitude None
+"Intrusion (mm)": missing; no numerical observation. Original cell: "—".
 measurement-55; tooth_ref tooth-8; L9:C32-C40; offsets 499:507; PARSED; raw sign null; raw direction "D"; magnitude 1.2300
+"Mesial/Distal (mm)": 1.2300 mm; direction label "D". Original cell: "1.2300 D".
 measurement-56; tooth_ref tooth-8; L9:C41-C49; offsets 508:516; PARSED; raw sign null; raw direction "B"; magnitude 0.4500
+"Buccal/Lingual (mm)": 0.4500 mm; direction label "B". Original cell: "0.4500 B".
 measurement-57; tooth_ref tooth-9; L10:C4-C12; offsets 520:528; PARSED; raw sign null; raw direction "D"; magnitude 8.1250
+"Rotation (deg)": 8.1250 deg; direction label "D". Original cell: "8.1250 D".
 measurement-58; tooth_ref tooth-9; L10:C13-C20; offsets 529:536; PARSED; raw sign "-"; raw direction null; magnitude 1.5000
+"Inclination (deg)": -1.5000 deg. Original cell: "-1.5000".
 measurement-59; tooth_ref tooth-9; L10:C21-C22; offsets 537:538; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0
+"Angulation (deg)": 0 deg; explicitly recorded zero. Original cell: "0".
 measurement-60; tooth_ref tooth-9; L10:C23-C29; offsets 539:545; PARSED; raw sign null; raw direction null; magnitude 0.2000
+"Extrusion (mm)": 0.2000 mm. Original cell: "0.2000".
 measurement-61; tooth_ref tooth-9; L10:C30-C31; offsets 546:547; MISSING; raw sign null; raw direction null; magnitude None
+"Intrusion (mm)": missing; no numerical observation. Original cell: "—".
 measurement-62; tooth_ref tooth-9; L10:C32-C40; offsets 548:556; PARSED; raw sign null; raw direction "D"; magnitude 1.2300
+"Mesial/Distal (mm)": 1.2300 mm; direction label "D". Original cell: "1.2300 D".
 measurement-63; tooth_ref tooth-9; L10:C41-C49; offsets 557:565; PARSED; raw sign null; raw direction "B"; magnitude 0.4500
+"Buccal/Lingual (mm)": 0.4500 mm; direction label "B". Original cell: "0.4500 B".
 measurement-64; tooth_ref tooth-10; L11:C4-C12; offsets 569:577; PARSED; raw sign null; raw direction "D"; magnitude 9.1250
+"Rotation (deg)": 9.1250 deg; direction label "D". Original cell: "9.1250 D".
 measurement-65; tooth_ref tooth-10; L11:C13-C20; offsets 578:585; PARSED; raw sign "-"; raw direction null; magnitude 1.5000
+"Inclination (deg)": -1.5000 deg. Original cell: "-1.5000".
 measurement-66; tooth_ref tooth-10; L11:C21-C22; offsets 586:587; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0
+"Angulation (deg)": 0 deg; explicitly recorded zero. Original cell: "0".
 measurement-67; tooth_ref tooth-10; L11:C23-C29; offsets 588:594; PARSED; raw sign null; raw direction null; magnitude 0.2000
+"Extrusion (mm)": 0.2000 mm. Original cell: "0.2000".
 measurement-68; tooth_ref tooth-10; L11:C30-C31; offsets 595:596; MISSING; raw sign null; raw direction null; magnitude None
+"Intrusion (mm)": missing; no numerical observation. Original cell: "—".
 measurement-69; tooth_ref tooth-10; L11:C32-C40; offsets 597:605; PARSED; raw sign null; raw direction "D"; magnitude 1.2300
+"Mesial/Distal (mm)": 1.2300 mm; direction label "D". Original cell: "1.2300 D".
 measurement-70; tooth_ref tooth-10; L11:C41-C49; offsets 606:614; PARSED; raw sign null; raw direction "B"; magnitude 0.4500
+"Buccal/Lingual (mm)": 0.4500 mm; direction label "B". Original cell: "0.4500 B".
 measurement-71; tooth_ref tooth-11; L12:C4-C13; offsets 618:627; PARSED; raw sign null; raw direction "D"; magnitude 10.1250
+"Rotation (deg)": 10.1250 deg; direction label "D". Original cell: "10.1250 D".
 measurement-72; tooth_ref tooth-11; L12:C14-C21; offsets 628:635; PARSED; raw sign "-"; raw direction null; magnitude 1.5000
+"Inclination (deg)": -1.5000 deg. Original cell: "-1.5000".
 measurement-73; tooth_ref tooth-11; L12:C22-C23; offsets 636:637; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0
+"Angulation (deg)": 0 deg; explicitly recorded zero. Original cell: "0".
 measurement-74; tooth_ref tooth-11; L12:C24-C30; offsets 638:644; PARSED; raw sign null; raw direction null; magnitude 0.2000
+"Extrusion (mm)": 0.2000 mm. Original cell: "0.2000".
 measurement-75; tooth_ref tooth-11; L12:C31-C32; offsets 645:646; MISSING; raw sign null; raw direction null; magnitude None
+"Intrusion (mm)": missing; no numerical observation. Original cell: "—".
 measurement-76; tooth_ref tooth-11; L12:C33-C41; offsets 647:655; PARSED; raw sign null; raw direction "D"; magnitude 1.2300
+"Mesial/Distal (mm)": 1.2300 mm; direction label "D". Original cell: "1.2300 D".
 measurement-77; tooth_ref tooth-11; L12:C42-C50; offsets 656:664; PARSED; raw sign null; raw direction "B"; magnitude 0.4500
+"Buccal/Lingual (mm)": 0.4500 mm; direction label "B". Original cell: "0.4500 B".
 measurement-78; tooth_ref tooth-12; L13:C4-C13; offsets 668:677; PARSED; raw sign null; raw direction "D"; magnitude 11.1250
+"Rotation (deg)": 11.1250 deg; direction label "D". Original cell: "11.1250 D".
 measurement-79; tooth_ref tooth-12; L13:C14-C21; offsets 678:685; PARSED; raw sign "-"; raw direction null; magnitude 1.5000
+"Inclination (deg)": -1.5000 deg. Original cell: "-1.5000".
 measurement-80; tooth_ref tooth-12; L13:C22-C23; offsets 686:687; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0
+"Angulation (deg)": 0 deg; explicitly recorded zero. Original cell: "0".
 measurement-81; tooth_ref tooth-12; L13:C24-C30; offsets 688:694; PARSED; raw sign null; raw direction null; magnitude 0.2000
+"Extrusion (mm)": 0.2000 mm. Original cell: "0.2000".
 measurement-82; tooth_ref tooth-12; L13:C31-C32; offsets 695:696; MISSING; raw sign null; raw direction null; magnitude None
+"Intrusion (mm)": missing; no numerical observation. Original cell: "—".
 measurement-83; tooth_ref tooth-12; L13:C33-C41; offsets 697:705; PARSED; raw sign null; raw direction "D"; magnitude 1.2300
+"Mesial/Distal (mm)": 1.2300 mm; direction label "D". Original cell: "1.2300 D".
 measurement-84; tooth_ref tooth-12; L13:C42-C50; offsets 706:714; PARSED; raw sign null; raw direction "B"; magnitude 0.4500
+"Buccal/Lingual (mm)": 0.4500 mm; direction label "B". Original cell: "0.4500 B".
 measurement-85; tooth_ref tooth-13; L14:C4-C13; offsets 718:727; PARSED; raw sign null; raw direction "D"; magnitude 12.1250
+"Rotation (deg)": 12.1250 deg; direction label "D". Original cell: "12.1250 D".
 measurement-86; tooth_ref tooth-13; L14:C14-C21; offsets 728:735; PARSED; raw sign "-"; raw direction null; magnitude 1.5000
+"Inclination (deg)": -1.5000 deg. Original cell: "-1.5000".
 measurement-87; tooth_ref tooth-13; L14:C22-C23; offsets 736:737; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0
+"Angulation (deg)": 0 deg; explicitly recorded zero. Original cell: "0".
 measurement-88; tooth_ref tooth-13; L14:C24-C30; offsets 738:744; PARSED; raw sign null; raw direction null; magnitude 0.2000
+"Extrusion (mm)": 0.2000 mm. Original cell: "0.2000".
 measurement-89; tooth_ref tooth-13; L14:C31-C32; offsets 745:746; MISSING; raw sign null; raw direction null; magnitude None
+"Intrusion (mm)": missing; no numerical observation. Original cell: "—".
 measurement-90; tooth_ref tooth-13; L14:C33-C41; offsets 747:755; PARSED; raw sign null; raw direction "D"; magnitude 1.2300
+"Mesial/Distal (mm)": 1.2300 mm; direction label "D". Original cell: "1.2300 D".
 measurement-91; tooth_ref tooth-13; L14:C42-C50; offsets 756:764; PARSED; raw sign null; raw direction "B"; magnitude 0.4500
+"Buccal/Lingual (mm)": 0.4500 mm; direction label "B". Original cell: "0.4500 B".
 measurement-92; tooth_ref tooth-14; L15:C4-C13; offsets 768:777; PARSED; raw sign null; raw direction "D"; magnitude 13.1250
+"Rotation (deg)": 13.1250 deg; direction label "D". Original cell: "13.1250 D".
 measurement-93; tooth_ref tooth-14; L15:C14-C21; offsets 778:785; PARSED; raw sign "-"; raw direction null; magnitude 1.5000
+"Inclination (deg)": -1.5000 deg. Original cell: "-1.5000".
 measurement-94; tooth_ref tooth-14; L15:C22-C23; offsets 786:787; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0
+"Angulation (deg)": 0 deg; explicitly recorded zero. Original cell: "0".
 measurement-95; tooth_ref tooth-14; L15:C24-C30; offsets 788:794; PARSED; raw sign null; raw direction null; magnitude 0.2000
+"Extrusion (mm)": 0.2000 mm. Original cell: "0.2000".
 measurement-96; tooth_ref tooth-14; L15:C31-C32; offsets 795:796; MISSING; raw sign null; raw direction null; magnitude None
+"Intrusion (mm)": missing; no numerical observation. Original cell: "—".
 measurement-97; tooth_ref tooth-14; L15:C33-C41; offsets 797:805; PARSED; raw sign null; raw direction "D"; magnitude 1.2300
+"Mesial/Distal (mm)": 1.2300 mm; direction label "D". Original cell: "1.2300 D".
 measurement-98; tooth_ref tooth-14; L15:C42-C50; offsets 806:814; PARSED; raw sign null; raw direction "B"; magnitude 0.4500
+"Buccal/Lingual (mm)": 0.4500 mm; direction label "B". Original cell: "0.4500 B".
 measurement-99; tooth_ref tooth-15; L16:C4-C13; offsets 818:827; PARSED; raw sign null; raw direction "D"; magnitude 14.1250
+"Rotation (deg)": 14.1250 deg; direction label "D". Original cell: "14.1250 D".
 measurement-100; tooth_ref tooth-15; L16:C14-C21; offsets 828:835; PARSED; raw sign "-"; raw direction null; magnitude 1.5000
+"Inclination (deg)": -1.5000 deg. Original cell: "-1.5000".
 measurement-101; tooth_ref tooth-15; L16:C22-C23; offsets 836:837; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0
+"Angulation (deg)": 0 deg; explicitly recorded zero. Original cell: "0".
 measurement-102; tooth_ref tooth-15; L16:C24-C30; offsets 838:844; PARSED; raw sign null; raw direction null; magnitude 0.2000
+"Extrusion (mm)": 0.2000 mm. Original cell: "0.2000".
 measurement-103; tooth_ref tooth-15; L16:C31-C32; offsets 845:846; MISSING; raw sign null; raw direction null; magnitude None
+"Intrusion (mm)": missing; no numerical observation. Original cell: "—".
 measurement-104; tooth_ref tooth-15; L16:C33-C41; offsets 847:855; PARSED; raw sign null; raw direction "D"; magnitude 1.2300
+"Mesial/Distal (mm)": 1.2300 mm; direction label "D". Original cell: "1.2300 D".
 measurement-105; tooth_ref tooth-15; L16:C42-C50; offsets 856:864; PARSED; raw sign null; raw direction "B"; magnitude 0.4500
+"Buccal/Lingual (mm)": 0.4500 mm; direction label "B". Original cell: "0.4500 B".
 measurement-106; tooth_ref tooth-16; L17:C4-C13; offsets 868:877; PARSED; raw sign null; raw direction "D"; magnitude 15.1250
+"Rotation (deg)": 15.1250 deg; direction label "D". Original cell: "15.1250 D".
 measurement-107; tooth_ref tooth-16; L17:C14-C21; offsets 878:885; PARSED; raw sign "-"; raw direction null; magnitude 1.5000
+"Inclination (deg)": -1.5000 deg. Original cell: "-1.5000".
 measurement-108; tooth_ref tooth-16; L17:C22-C23; offsets 886:887; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0
+"Angulation (deg)": 0 deg; explicitly recorded zero. Original cell: "0".
 measurement-109; tooth_ref tooth-16; L17:C24-C30; offsets 888:894; PARSED; raw sign null; raw direction null; magnitude 0.2000
+"Extrusion (mm)": 0.2000 mm. Original cell: "0.2000".
 measurement-110; tooth_ref tooth-16; L17:C31-C32; offsets 895:896; MISSING; raw sign null; raw direction null; magnitude None
+"Intrusion (mm)": missing; no numerical observation. Original cell: "—".
 measurement-111; tooth_ref tooth-16; L17:C33-C41; offsets 897:905; PARSED; raw sign null; raw direction "D"; magnitude 1.2300
+"Mesial/Distal (mm)": 1.2300 mm; direction label "D". Original cell: "1.2300 D".
 measurement-112; tooth_ref tooth-16; L17:C42-C50; offsets 906:914; PARSED; raw sign null; raw direction "B"; magnitude 0.4500
+"Buccal/Lingual (mm)": 0.4500 mm; direction label "B". Original cell: "0.4500 B".
 
 RULE EVALUATION LEDGER — CLINICAL AUTHORITY UNCHANGED
 A01 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED

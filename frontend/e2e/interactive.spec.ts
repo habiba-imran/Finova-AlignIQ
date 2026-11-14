@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test'
 import { PDFArray, PDFDict, PDFDocument, PDFHexString, PDFName, PDFRawStream, decodePDFRawStream } from 'pdf-lib'
+import livePlanning from '../../evidence/planning-wording/user-synthetic-live-report.json' with { type: 'json' }
 import samples from '../../examples/interactive-synthetic-tmts.json' with { type: 'json' }
 
 const modules = [
@@ -38,7 +39,12 @@ for (const sample of samples) test(`${sample.id}: pasted synthetic input works i
     expect(report.generation.used_mode).toBe('STANDARD_TEMPLATES')
     const article = page.getByRole('article', { name: 'Generated synthetic report' })
     await expect(article).toBeVisible()
-    await expect(article.getByText('AI generation unavailable; deterministic wording used.')).toBeVisible()
+    await expect(article.getByText('Standard wording', { exact: true })).toBeVisible()
+    if (module.id === 'macro') {
+      await expect(article.getByRole('heading', { name: 'Planning comments', exact: true })).toBeVisible()
+      expect(report.observations[0].text).toContain('The programmed movement record lists')
+    }
+    expect(await article.innerText()).not.toMatch(/Groq|transmi|shared with|provider/i)
     const facts = article.getByRole('region', { name: 'Factual tooth-wise observations' })
     await expect(facts.getByRole('heading', { level: 6 })).toHaveCount(parsed.teeth.length)
     expect(await article.innerText()).not.toMatch(/GROQ_|SEMANTICS_|\b(?:R13|T01|A05|H08)\b|finding_id|rule ledger/)
@@ -90,4 +96,35 @@ test('unsupported input keeps a clear error and cannot generate a fabricated rep
   await expect(page.getByRole('button', { name: 'Run Planning Assistant' })).toBeDisabled()
   await expect(page.getByRole('alert')).toContainText('supported table')
   await expect(page.getByRole('article')).toHaveCount(0)
+})
+
+test('approved tooth-wise planning wording is prominent in the UI and the PDF evidence', async ({ page }, testInfo) => {
+  await page.route('**/api/v1/interactive/review', route => route.fulfill({ json: livePlanning }))
+  await page.goto('/')
+  await page.getByRole('textbox', { name: 'Raw TMT text' }).fill(livePlanning.parsed.raw_text)
+  await page.getByRole('button', { name: 'Parse Table', exact: true }).click()
+  await page.getByRole('button', { name: 'Run Planning Assistant', exact: true }).click()
+  const article = page.getByRole('article', { name: 'Generated synthetic report' })
+  await expect(article.getByRole('heading', { name: 'Planning comments', exact: true })).toBeVisible()
+  await expect(article.getByText('AI-assisted wording', { exact: true })).toBeVisible()
+  const comment = livePlanning.observations.find(o => o.original_tooth.trim() === '11')!
+  await expect(article.getByText(comment.text, { exact: true })).toBeVisible()
+  expect(await article.innerText()).not.toMatch(/Groq|provider|transmission|shared with/i)
+  const pending = page.waitForEvent('download')
+  await article.getByRole('button', { name: 'Export PDF', exact: true }).click()
+  const download = await pending
+  await download.saveAs(testInfo.outputPath('planning-comments-approved.pdf'))
+  const stream = await download.createReadStream(), chunks: Buffer[] = []
+  for await (const chunk of stream!) chunks.push(Buffer.from(chunk))
+  const pdf = await PDFDocument.load(Buffer.concat(chunks))
+  const names = pdf.catalog.lookup(PDFName.of('Names'), PDFDict).lookup(PDFName.of('EmbeddedFiles'), PDFDict).lookup(PDFName.of('Names'), PDFArray)
+  const files: Record<string, string> = {}
+  for (let i = 0; i < names.size(); i += 2) {
+    const name = names.lookup(i, PDFHexString).decodeText(), spec = names.lookup(i + 1, PDFDict)
+    files[name] = new TextDecoder().decode(decodePDFRawStream(pdf.context.lookup(spec.lookup(PDFName.of('EF'), PDFDict).get(PDFName.of('F'))) as PDFRawStream).decode())
+  }
+  expect(JSON.parse(files['validated-report.json'])).toEqual(livePlanning)
+  expect(files['report.txt']).toContain(comment.text)
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)
+  await page.screenshot({ path: testInfo.outputPath('planning-comments-approved.png'), fullPage: true })
 })

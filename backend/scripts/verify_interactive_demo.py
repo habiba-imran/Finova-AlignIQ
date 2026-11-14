@@ -14,6 +14,7 @@ sys.path.insert(0, str(ROOT / "backend"))
 from app.development_env import load_development_env
 from app.domain.models import RawTMTSubmission
 from app.interactive.service import generate_interactive, load_wording_settings
+from app.interactive.narrative import load_planning_settings
 from app.parser.cloud import ParserSettings
 from app.parser.pipeline import automatic_parse
 from app.reports.settings import ReportSettings, load_settings
@@ -35,7 +36,7 @@ def main():
         settings = load_wording_settings()
         results = []
         for module in ("macro", "micro", "nano"):
-            report = generate_interactive(samples["submission"](samples["LARGE"], module), settings=settings)
+            report = generate_interactive(samples["submission"](samples["LARGE"], module), settings=load_planning_settings() if module == "macro" else settings)
             results.append({"module": module, "generation": report.generation.model_dump(mode="json"),
                 "notice": report.wording_notice, "tooth_tokens": len(report.observations), "positions": len(report.parsed.measurements)})
         write(evidence / "live-groq.json", {"configured": settings.configured, "results": results})

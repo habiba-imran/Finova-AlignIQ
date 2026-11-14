@@ -69,13 +69,13 @@ function macroBlocks(report: FinalDraftReport, sections: { dimension: string; co
 
 export function buildPdfPresentation(kind: PdfKind, input: unknown): PdfPresentation {
   if (kind === 'interactive' && isInteractiveReport(input)) {
-    const blocks: PdfBlock[] = [heading('Factual tooth-wise observations')]
-    for (const o of input.observations) blocks.push(heading('Tooth observation'), text(`Tooth token ${o.original_tooth}\n${o.text}`))
+    const blocks: PdfBlock[] = [heading(input.module === 'macro' ? 'Planning comments' : 'Factual tooth-wise observations')]
+    for (const o of input.observations) blocks.push(heading(`Tooth token ${o.original_tooth}`), text(o.text))
     if (input.illustrations.length) {
       blocks.push(heading('Illustrative demo content'), text('SIMULATED DEMO - not calculated treatment findings or recommendations.'))
       for (const i of input.illustrations) blocks.push(text(`Tooth token ${i.original_tooth}\n${i.label}: ${i.text}`))
     }
-    return { summary: [input.module.toUpperCase(), input.summary, input.wording_notice], blocks,
+    return { summary: [input.module.toUpperCase(), input.summary, input.generation.used_mode === 'GROQ_AI' ? 'AI-assisted wording' : 'Standard wording'], blocks,
       limitations: input.limitations, missing: [], referenceGuide: ['Exact source cells, Decimal strings, direction labels and source spans: /parsed/measurements in validated-report.json. The original input and complete 96-rule ledger remain in the embedded TXT and JSON.'] }
   }
   if (kind === 'macro' && isPlanningDraft(input)) return macroBlocks(input.report, input.sections, '/report/')

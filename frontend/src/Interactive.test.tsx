@@ -54,7 +54,7 @@ it.each<DemoModule>(['macro', 'micro', 'nano'])('%s runs arbitrary input through
   expect(body.comment_mode).toBeUndefined()
   expect(screen.queryByLabelText('Wording preference')).not.toBeInTheDocument()
   expect(within(article).getByLabelText('Factual tooth-wise observations')).toHaveTextContent('1.2300 D')
-  expect(article).toHaveTextContent('AI generation unavailable; deterministic wording used.')
+  expect(article).toHaveTextContent('Standard wording')
   expect(article).not.toHaveTextContent(/GROQ_|SEMANTICS_|R13|rule ledger|finding_id|raw_sha256/)
   expect(within(article).queryByLabelText('Illustrative demo content') !== null).toBe(module !== 'macro')
   for (const name of ['Copy', 'Export TXT', 'Export PDF']) expect(within(article).getByRole('button', { name })).toBeEnabled()
@@ -65,9 +65,30 @@ it('shows approved automatic AI wording with one review request', async () => {
   Object.assign(ai.generation, { used_mode: 'GROQ_AI', provider: 'GROQ', model: 'openai/gpt-oss-120b', attempts: 1, accepted_comments: 4, reason: 'GROQ_VALIDATED' })
   ai.wording_notice = 'AI-assisted wording generated with Groq; all measurements and examples assembled locally.'
   const { fetch, article } = await start('macro', ai)
-  expect(article).toHaveTextContent('AI-assisted wording generated with Groq')
+  expect(article).toHaveTextContent('AI-assisted wording')
+  expect(article).not.toHaveTextContent('Groq')
   expect(fetch).toHaveBeenCalledTimes(2)
   expect(screen.queryByRole('group', { name: 'Report wording views' })).not.toBeInTheDocument()
+})
+
+it('puts grounded planning paragraphs in the main report without provider or transmission details', async () => {
+  const { article } = await start('macro')
+  expect(within(article).getByRole('heading', { name: 'Planning comments' })).toBeVisible()
+  expect(article).toHaveTextContent('The programmed movement record lists')
+  expect(article).not.toHaveTextContent(/Groq|provider|transmission|shared with/i)
+  const source = within(article).getAllByText('Source values')[0].closest('details')!
+  expect(source).not.toHaveAttribute('open')
+  fireEvent.click(within(source).getByText('Source values'))
+  expect(within(source).getByText(/Rotation \(deg\)/)).toBeVisible()
+})
+
+it('rejects a grounded report with a mismatched comment count or a promoted module', () => {
+  const bad = structuredClone(macro) as InteractiveReport
+  bad.generation.eligible_wording_findings++
+  expect(isInteractiveReport(bad)).toBe(false)
+  const promoted = structuredClone(micro) as InteractiveReport
+  promoted.generation.output_validation = 'GROUNDED_PLANNING_WORDING_V1'
+  expect(isInteractiveReport(promoted)).toBe(false)
 })
 
 it('copies the exact full report and invalidates exports after editing', async () => {

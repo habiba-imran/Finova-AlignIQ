@@ -15,7 +15,7 @@
       "eligible_wording_findings": 4,
       "accepted_comments": 0,
       "real_patient_transmission_enabled": false,
-      "output_validation": "CLOSED_WORDING_AND_LOCAL_FACTS_V1"
+      "output_validation": "GROUNDED_PLANNING_WORDING_V1"
     }
   },
   {
@@ -69,10 +69,10 @@
       "provider": null,
       "model": null,
       "attempts": 0,
-      "eligible_wording_findings": 4,
+      "eligible_wording_findings": 3,
       "accepted_comments": 0,
       "real_patient_transmission_enabled": false,
-      "output_validation": "CLOSED_WORDING_AND_LOCAL_FACTS_V1"
+      "output_validation": "GROUNDED_PLANNING_WORDING_V1"
     }
   },
   {
@@ -126,10 +126,10 @@
       "provider": null,
       "model": null,
       "attempts": 0,
-      "eligible_wording_findings": 4,
+      "eligible_wording_findings": 2,
       "accepted_comments": 0,
       "real_patient_transmission_enabled": false,
-      "output_validation": "CLOSED_WORDING_AND_LOCAL_FACTS_V1"
+      "output_validation": "GROUNDED_PLANNING_WORDING_V1"
     }
   },
   {
@@ -183,10 +183,10 @@
       "provider": null,
       "model": null,
       "attempts": 0,
-      "eligible_wording_findings": 4,
+      "eligible_wording_findings": 16,
       "accepted_comments": 0,
       "real_patient_transmission_enabled": false,
-      "output_validation": "CLOSED_WORDING_AND_LOCAL_FACTS_V1"
+      "output_validation": "GROUNDED_PLANNING_WORDING_V1"
     }
   },
   {
