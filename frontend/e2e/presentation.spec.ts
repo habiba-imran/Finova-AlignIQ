@@ -1,10 +1,9 @@
 import { expect, test } from '@playwright/test'
 
 test('parse presentation promotes movement inspection and keeps raw source and diagnostics available', async ({ page }, testInfo) => {
-  await page.goto('/', { waitUntil: 'networkidle' })
+  await page.goto('/?diagnostics=1', { waitUntil: 'networkidle' })
   await expect(page.getByText('Parse your TMT to see the structured table.')).toBeVisible()
   await page.getByRole('button', { name: 'Load synthetic example' }).click()
-  await page.getByRole('checkbox').check()
   await page.getByRole('button', { name: 'Parse Table', exact: true }).click()
 
   await expect(page.getByText('Parse your TMT to see the structured table.')).toHaveCount(0)
@@ -19,7 +18,7 @@ test('parse presentation promotes movement inspection and keeps raw source and d
   await expect(page.getByRole('heading', { name: 'Structured lexical preview' })).toBeVisible()
   const summary = page.getByLabel('Parse summary')
   await expect(summary).toBeVisible()
-  for (const metric of ['Tooth token positions', 'Movement positions', 'Missing values', 'Explicit zeros', 'Issues requiring attention']) await expect(summary).toContainText(metric)
+  for (const metric of ['Tooth rows', 'Movement positions', 'Missing values', 'Explicit zeros']) await expect(summary).toContainText(metric)
   await expect(page.getByText('Source verification: UNVERIFIED')).toBeVisible()
 
   const measurements = page.getByRole('region', { name: 'Parsed measurements' })
@@ -47,14 +46,14 @@ test('parse presentation promotes movement inspection and keeps raw source and d
 
 test('result reports remain the workflow destination and Micro stacks into readable cards at 375', async ({ page }, testInfo) => {
   await page.setViewportSize({ width: 375, height: 1000 })
-  await page.goto('/', { waitUntil: 'networkidle' })
+  await page.goto('/?diagnostics=1', { waitUntil: 'networkidle' })
   await page.getByRole('navigation', { name: 'Review purpose' }).getByRole('button', { name: /MICRO/ }).click()
   await page.getByRole('button', { name: 'Load Finova attachment demo' }).click()
   await page.getByRole('button', { name: 'Run Attachment Review' }).click()
 
   const article = page.getByRole('article', { name: 'Attachment review draft' })
   await expect(article).toBeVisible()
-  await expect(article.getByText('DRAFT · Prototype', { exact: true })).toBeVisible()
+  await expect(article.getByText('DRAFT', { exact: true })).toBeVisible()
   await expect(article.getByText('DRAFT — Requires Orthodontist Review', { exact: true })).toBeVisible()
   await expect(article.getByLabel('Attachment review summary')).toBeVisible()
   await expect(article.getByRole('table')).toContainText('Supplied candidate')

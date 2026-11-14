@@ -1,0 +1,230 @@
+[
+  {
+    "sample": "ROWS",
+    "module": "macro",
+    "positions": 12,
+    "teeth": 4,
+    "illustrations": 0,
+    "generation": {
+      "requested_mode": "AUTO",
+      "used_mode": "STANDARD_TEMPLATES",
+      "reason": "GROQ_NOT_CONFIGURED",
+      "provider": null,
+      "model": null,
+      "attempts": 0,
+      "eligible_wording_findings": 4,
+      "accepted_comments": 0,
+      "real_patient_transmission_enabled": false,
+      "output_validation": "CLOSED_WORDING_AND_LOCAL_FACTS_V1"
+    }
+  },
+  {
+    "sample": "ROWS",
+    "module": "micro",
+    "positions": 12,
+    "teeth": 4,
+    "illustrations": 4,
+    "generation": {
+      "requested_mode": "AUTO",
+      "used_mode": "STANDARD_TEMPLATES",
+      "reason": "GROQ_NOT_CONFIGURED",
+      "provider": null,
+      "model": null,
+      "attempts": 0,
+      "eligible_wording_findings": 4,
+      "accepted_comments": 0,
+      "real_patient_transmission_enabled": false,
+      "output_validation": "CLOSED_WORDING_AND_LOCAL_FACTS_V1"
+    }
+  },
+  {
+    "sample": "ROWS",
+    "module": "nano",
+    "positions": 12,
+    "teeth": 4,
+    "illustrations": 4,
+    "generation": {
+      "requested_mode": "AUTO",
+      "used_mode": "STANDARD_TEMPLATES",
+      "reason": "GROQ_NOT_CONFIGURED",
+      "provider": null,
+      "model": null,
+      "attempts": 0,
+      "eligible_wording_findings": 4,
+      "accepted_comments": 0,
+      "real_patient_transmission_enabled": false,
+      "output_validation": "CLOSED_WORDING_AND_LOCAL_FACTS_V1"
+    }
+  },
+  {
+    "sample": "COLUMNS",
+    "module": "macro",
+    "positions": 6,
+    "teeth": 3,
+    "illustrations": 0,
+    "generation": {
+      "requested_mode": "AUTO",
+      "used_mode": "STANDARD_TEMPLATES",
+      "reason": "GROQ_NOT_CONFIGURED",
+      "provider": null,
+      "model": null,
+      "attempts": 0,
+      "eligible_wording_findings": 4,
+      "accepted_comments": 0,
+      "real_patient_transmission_enabled": false,
+      "output_validation": "CLOSED_WORDING_AND_LOCAL_FACTS_V1"
+    }
+  },
+  {
+    "sample": "COLUMNS",
+    "module": "micro",
+    "positions": 6,
+    "teeth": 3,
+    "illustrations": 3,
+    "generation": {
+      "requested_mode": "AUTO",
+      "used_mode": "STANDARD_TEMPLATES",
+      "reason": "GROQ_NOT_CONFIGURED",
+      "provider": null,
+      "model": null,
+      "attempts": 0,
+      "eligible_wording_findings": 4,
+      "accepted_comments": 0,
+      "real_patient_transmission_enabled": false,
+      "output_validation": "CLOSED_WORDING_AND_LOCAL_FACTS_V1"
+    }
+  },
+  {
+    "sample": "COLUMNS",
+    "module": "nano",
+    "positions": 6,
+    "teeth": 3,
+    "illustrations": 3,
+    "generation": {
+      "requested_mode": "AUTO",
+      "used_mode": "STANDARD_TEMPLATES",
+      "reason": "GROQ_NOT_CONFIGURED",
+      "provider": null,
+      "model": null,
+      "attempts": 0,
+      "eligible_wording_findings": 4,
+      "accepted_comments": 0,
+      "real_patient_transmission_enabled": false,
+      "output_validation": "CLOSED_WORDING_AND_LOCAL_FACTS_V1"
+    }
+  },
+  {
+    "sample": "MARKDOWN",
+    "module": "macro",
+    "positions": 4,
+    "teeth": 2,
+    "illustrations": 0,
+    "generation": {
+      "requested_mode": "AUTO",
+      "used_mode": "STANDARD_TEMPLATES",
+      "reason": "GROQ_NOT_CONFIGURED",
+      "provider": null,
+      "model": null,
+      "attempts": 0,
+      "eligible_wording_findings": 4,
+      "accepted_comments": 0,
+      "real_patient_transmission_enabled": false,
+      "output_validation": "CLOSED_WORDING_AND_LOCAL_FACTS_V1"
+    }
+  },
+  {
+    "sample": "MARKDOWN",
+    "module": "micro",
+    "positions": 4,
+    "teeth": 2,
+    "illustrations": 2,
+    "generation": {
+      "requested_mode": "AUTO",
+      "used_mode": "STANDARD_TEMPLATES",
+      "reason": "GROQ_NOT_CONFIGURED",
+      "provider": null,
+      "model": null,
+      "attempts": 0,
+      "eligible_wording_findings": 4,
+      "accepted_comments": 0,
+      "real_patient_transmission_enabled": false,
+      "output_validation": "CLOSED_WORDING_AND_LOCAL_FACTS_V1"
+    }
+  },
+  {
+    "sample": "MARKDOWN",
+    "module": "nano",
+    "positions": 4,
+    "teeth": 2,
+    "illustrations": 2,
+    "generation": {
+      "requested_mode": "AUTO",
+      "used_mode": "STANDARD_TEMPLATES",
+      "reason": "GROQ_NOT_CONFIGURED",
+      "provider": null,
+      "model": null,
+      "attempts": 0,
+      "eligible_wording_findings": 4,
+      "accepted_comments": 0,
+      "real_patient_transmission_enabled": false,
+      "output_validation": "CLOSED_WORDING_AND_LOCAL_FACTS_V1"
+    }
+  },
+  {
+    "sample": "LARGE",
+    "module": "macro",
+    "positions": 112,
+    "teeth": 16,
+    "illustrations": 0,
+    "generation": {
+      "requested_mode": "AUTO",
+      "used_mode": "STANDARD_TEMPLATES",
+      "reason": "GROQ_NOT_CONFIGURED",
+      "provider": null,
+      "model": null,
+      "attempts": 0,
+      "eligible_wording_findings": 4,
+      "accepted_comments": 0,
+      "real_patient_transmission_enabled": false,
+      "output_validation": "CLOSED_WORDING_AND_LOCAL_FACTS_V1"
+    }
+  },
+  {
+    "sample": "LARGE",
+    "module": "micro",
+    "positions": 112,
+    "teeth": 16,
+    "illustrations": 16,
+    "generation": {
+      "requested_mode": "AUTO",
+      "used_mode": "STANDARD_TEMPLATES",
+      "reason": "GROQ_NOT_CONFIGURED",
+      "provider": null,
+      "model": null,
+      "attempts": 0,
+      "eligible_wording_findings": 4,
+      "accepted_comments": 0,
+      "real_patient_transmission_enabled": false,
+      "output_validation": "CLOSED_WORDING_AND_LOCAL_FACTS_V1"
+    }
+  },
+  {
+    "sample": "LARGE",
+    "module": "nano",
+    "positions": 112,
+    "teeth": 16,
+    "illustrations": 16,
+    "generation": {
+      "requested_mode": "AUTO",
+      "used_mode": "STANDARD_TEMPLATES",
+      "reason": "GROQ_NOT_CONFIGURED",
+      "provider": null,
+      "model": null,
+      "attempts": 0,
+      "eligible_wording_findings": 4,
+      "accepted_comments": 0,
+      "real_patient_transmission_enabled": false,
+      "output_validation": "CLOSED_WORDING_AND_LOCAL_FACTS_V1"
+    }
+  }
+]

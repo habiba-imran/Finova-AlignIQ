@@ -12,6 +12,13 @@ const LABELS: Record<AttachmentEntry['result_type'], string> = {
 const TONES: Record<AttachmentEntry['result_type'], string> = {
   CANDIDATE: 'report-badge-brand', ALTERNATIVE: 'report-badge-brand', NOT_INDICATED: 'report-badge-notice', UNKNOWN: 'report-badge-notice', WITHHELD: 'report-badge-notice',
 }
+const EXPLANATIONS: Record<AttachmentEntry['result_type'], string> = {
+  CANDIDATE: 'Supplied fictional candidate. Clinical suitability is unassessed.',
+  ALTERNATIVE: 'Supplied fictional alternative. No superiority or clinical suitability is asserted.',
+  NOT_INDICATED: 'Supplied fictional no-attachment decision. Missing or zero movements do not establish omission.',
+  UNKNOWN: 'Attachment need is unknown. Available movements do not establish indication or omission.',
+  WITHHELD: 'Attachment review is withheld because identity, supporting evidence or clinical context is incomplete.',
+}
 
 export default function AttachmentWorkspace({ rawText, context, parsed, demo, onComplete }: {
   rawText: string; context: ContextClaims; parsed: AutomaticParseResult; demo: boolean; onComplete: (value: boolean) => void
@@ -35,15 +42,15 @@ export default function AttachmentWorkspace({ rawText, context, parsed, demo, on
       if (current === revision.current) { setDraft(result); onComplete(true) }
     } catch (e) {
       if (current === revision.current) setError(controller.signal.aborted ? 'Attachment review timed out. Your original text and parsed values are preserved. Retry when ready.'
-        : e instanceof Error && e.message === 'REPARSE_REQUIRED' ? 'Recovery evidence expired or changed. Choose Parse Table again; your original text is preserved.'
-          : 'Attachment review could not return a valid draft. Your original text is preserved; check the backend and retry.')
+        : e instanceof Error && e.message === 'REPARSE_REQUIRED' ? 'Read the table again with Parse Table, then retry. Your original text is preserved.'
+          : 'Attachment review could not return a valid draft. Your original text is preserved; please retry.')
     } finally { window.clearTimeout(timer); if (current === revision.current) { pending.current = null; setLoading(false) } }
   }
   async function copy() {
     if (!draft) return
     const current = revision.current
     try { await navigator.clipboard.writeText(draft.export_text); if (current === revision.current) setStatus('Attachment DRAFT copied with supplied-decision labels, evidence and limitations.') }
-    catch { if (current === revision.current) setStatus('Clipboard access is unavailable. Download the TXT or copy the export preview.') }
+    catch { if (current === revision.current) setStatus('Clipboard access is unavailable. Use Export TXT.') }
   }
   function download() {
     if (!draft) return
@@ -52,7 +59,7 @@ export default function AttachmentWorkspace({ rawText, context, parsed, demo, on
       const a = document.createElement('a'); a.href = url; a.download = `finova-attachments-draft-${draft.report_id.slice(0, 12)}.txt`
       document.body.append(a); a.click(); a.remove(); window.setTimeout(() => URL.revokeObjectURL(url), 1000)
       setStatus('Attachment DRAFT TXT download requested.')
-    } catch { setStatus('Download is unavailable. Copy the DRAFT or use the export preview.') }
+    } catch { setStatus('Download is unavailable. Copy the DRAFT.') }
   }
   const counts = draft ? (['CANDIDATE', 'ALTERNATIVE', 'NOT_INDICATED', 'UNKNOWN', 'WITHHELD'] as const).map(type => ({ type, count: draft.entries.filter(e => e.result_type === type).length })) : []
   return <section className="panel" aria-labelledby="attachments-heading">
@@ -62,10 +69,9 @@ export default function AttachmentWorkspace({ rawText, context, parsed, demo, on
     </div>
     <div className="p-5 sm:p-7">
       <p className="max-w-3xl text-sm leading-7 text-muted">Inspect the original table above, then prepare a tooth-indexed attachment review. Movement amounts alone cannot establish attachment need, design, omission or placement.</p>
-      {demo ? <p className="mt-4 rounded-lg border border-brand/20 bg-brand-soft p-4 text-sm leading-7 text-brand">Synthetic demonstration — all candidate, alternative and no-attachment decisions are supplied fictional data. The engine and Groq do not select them.</p>
-        : <p className="mt-4 rounded-lg border border-notice-line bg-notice p-4 text-sm leading-7 text-notice-ink">Vendor semantics and attachment policies are unapproved. Ordinary input receives unknown or withheld rows, with no invented attachment choices.</p>}
+      {!demo && <p className="mt-3 text-sm leading-6 text-muted">Attachment choices are unavailable without verified supporting evidence.</p>}
       <button type="button" className="button button-primary mt-5" disabled={loading} onClick={() => void review()} aria-describedby="attachment-privacy">{loading ? <><span className="button-spinner" aria-hidden="true" />Preparing attachment review…</> : <>Run Attachment Review<ArrowRight size={16} aria-hidden="true" /></>}</button>
-      <p id="attachment-privacy" className="mt-3 text-xs leading-6 text-muted">Explicit run only. The backend rechecks source evidence and existing safeguards. This module uses deterministic wording and makes no LLM call.</p>
+      <p id="attachment-privacy" className="mt-3 text-xs leading-6 text-muted">Supplied example decisions are shown as provided. No attachment choice is generated from movement amounts.</p>
       {loading && <p role="status" className="motion-status mt-3 text-sm text-muted">Checking attachment evidence and preparing the DRAFT…</p>}
       {error && <p role="alert" className="motion-status mt-4 text-sm text-notice-ink">{error}</p>}
       {!draft && !loading && !error && <ReportEmpty>Your attachment review table will appear here after you run the review.</ReportEmpty>}
@@ -76,11 +82,11 @@ export default function AttachmentWorkspace({ rawText, context, parsed, demo, on
           headingRef={heading}
           draftStatus={draft.draft_status}
           badges={[
-            { label: draft.evidence_domain === 'TEST_ONLY' ? 'Synthetic · TEST_ONLY' : 'Unverified input', tone: 'brand' },
+            { label: draft.evidence_domain === 'TEST_ONLY' ? 'Verified synthetic demonstration only' : 'Unverified input', tone: 'brand' },
             { label: 'Not approved', tone: 'notice' },
           ]}
           summary={<>
-            <p className="text-sm leading-7 text-muted">{draft.evidence_domain === 'TEST_ONLY' ? 'Finova Synthetic Attachment Demonstration — TEST_ONLY. Supplied choices are illustrative, not approved treatment policies.' : 'Unverified input — attachment recommendations unavailable.'}</p>
+            <p className="text-sm leading-7 text-muted">{draft.evidence_domain === 'TEST_ONLY' ? 'Supplied fictional attachment choices only. Clinical suitability is unassessed.' : 'Unverified input — attachment recommendations unavailable.'}</p>
             <p className="mt-2 text-sm leading-7 text-muted">Unknown and withheld do not mean no attachment. A supplied no-attachment row is an explicit fictional decision, never an inference from missing or zero movement.</p>
             <SummaryGrid label="Attachment review summary">
               <SummaryMetric label="Supplied candidates" value={counts.find(c => c.type === 'CANDIDATE')?.count ?? 0} detail="Illustrative only" />
@@ -95,7 +101,7 @@ export default function AttachmentWorkspace({ rawText, context, parsed, demo, on
           <div className="mb-3 flex flex-wrap items-end justify-between gap-3">
             <div>
               <h4 className="text-[17px] font-semibold tracking-[-0.01em]">Tooth-wise attachment review</h4>
-              <p className="mt-1 text-xs leading-5 text-muted">Original tokens, supplied synthetic choices and explicit unavailable states remain separate. Every row is DRAFT and not clinically approved.</p>
+              <p className="mt-1 text-xs leading-5 text-muted">Supplied fictional choices and unavailable findings are shown separately.</p>
             </div>
             <span className="report-badge">{draft.entries.length} entries</span>
           </div>
@@ -105,33 +111,30 @@ export default function AttachmentWorkspace({ rawText, context, parsed, demo, on
               <thead className="sticky top-0 z-10 bg-canvas text-xs text-muted"><tr><th scope="col" className="w-[13%] p-4">Original tooth</th><th scope="col" className="w-[22%] p-4">Review result</th><th scope="col" className="w-[25%] p-4">Supplied option / decision</th><th scope="col" className="w-[40%] p-4">Explanation & evidence</th></tr></thead>
               <tbody>{draft.entries.map((e, i) => <tr key={e.entry_id} className="border-t border-line align-top">
                 <th scope="row" className="p-4 font-semibold"><span aria-hidden="true" className="mb-1 block text-xs font-semibold text-muted lg:hidden">Original tooth</span><span className="raw-text">{e.original_tooth ?? 'Unresolved'}</span><span className="mt-1 block text-xs font-normal text-muted">{e.evidence_status === 'TEST_ONLY' ? 'Opaque demo identity' : 'Unverified token'}</span></th>
-                <td className="p-4"><span aria-hidden="true" className="mb-2 block text-xs font-semibold text-muted lg:hidden">Review result</span><span className={`inline-block rounded-md border px-2 py-1 text-xs font-semibold ${TONES[e.result_type]}`}>{LABELS[e.result_type]}</span><p className="mt-2 text-xs text-muted">{e.decision_origin === 'SUPPLIED_SYNTHETIC' ? 'Supplied TEST_ONLY decision' : 'No attachment decision'}</p><p className="mt-1 text-xs text-muted">NOT APPROVED · DRAFT</p></td>
-                <td className="p-4"><span aria-hidden="true" className="mb-2 block text-xs font-semibold text-muted lg:hidden">Supplied option / decision</span><p className="font-medium">{e.design?.label ?? (e.result_type === 'NOT_INDICATED' ? 'No attachment — supplied demonstration decision' : 'No authorized option')}</p>{e.design && <p className="raw-text mt-2 text-xs text-muted">{e.design.design_id}</p>}{e.alternative_for && <p className="mt-2 text-xs text-muted">Alternative to {draft.entries.find(c => c.entry_id === e.alternative_for)?.design?.label ?? 'linked candidate'}; no superiority claim.</p>}</td>
-                <td className="p-4"><span aria-hidden="true" className="mb-2 block text-xs font-semibold text-muted lg:hidden">Explanation & evidence</span><p className="text-xs leading-6">{e.explanation}</p>
+                <td className="p-4"><span aria-hidden="true" className="mb-2 block text-xs font-semibold text-muted lg:hidden">Review result</span><span className={`inline-block rounded-md border px-2 py-1 text-xs font-semibold ${TONES[e.result_type]}`}>{LABELS[e.result_type]}</span><p className="mt-2 text-xs text-muted">{e.decision_origin === 'SUPPLIED_SYNTHETIC' ? 'Supplied fictional decision' : 'No attachment decision'}</p></td>
+                <td className="p-4"><span aria-hidden="true" className="mb-2 block text-xs font-semibold text-muted lg:hidden">Supplied option / decision</span><p className="font-medium">{e.design?.label ?? (e.result_type === 'NOT_INDICATED' ? 'No attachment — supplied demonstration decision' : 'No authorized option')}</p>{e.alternative_for && <p className="mt-2 text-xs text-muted">Alternative to {draft.entries.find(c => c.entry_id === e.alternative_for)?.design?.label ?? 'linked candidate'}; no superiority claim.</p>}</td>
+                <td className="p-4"><span aria-hidden="true" className="mb-2 block text-xs font-semibold text-muted lg:hidden">Explanation & evidence</span><p className="text-xs leading-6">{EXPLANATIONS[e.result_type]}</p>
                   <EvidenceDisclosure summary={`Details & provenance · row ${i + 1}`}>
-                    <p>Verified tooth: {e.verified_tooth ?? 'UNKNOWN'}. Synthetic identity: {e.synthetic_tooth ?? 'UNAVAILABLE'}.</p>
-                    {e.design ? <><p className="raw-text">Category: {e.design.category_id}</p><p>Supplied shape: {e.design.shape ?? 'UNKNOWN'}; orientation: {e.design.orientation ?? 'UNKNOWN'}</p><p>{e.design.dimensions ? `Supplied dimensions: ${e.design.dimensions.x} × ${e.design.dimensions.y} × ${e.design.dimensions.z} mm` : 'Dimensions: UNKNOWN — no values inferred.'}</p></> : <p>Design, shape, dimensions and orientation: UNKNOWN or not applicable to the supplied no-attachment decision. No geometry inferred.</p>}
-                    <p>{e.placement ? `Supplied surface: ${e.placement.surface_id}; frame: ${e.placement.frame_id}; stage reference: ${e.placement.stage_ref ?? 'UNKNOWN'}. Illustrative only; no stage schedule or placement validation.` : 'Placement, surface and stage: UNKNOWN; no placement validation.'}</p>
-                    <p className="raw-text mt-2">Lexical measurement refs: {e.measurement_refs.join(', ') || 'None'}</p><p className="raw-text">Authorized observation refs: {e.observation_refs.join(', ') || 'None'}</p>
-                    <p className="raw-text">Evidence: {e.evidence_refs.join('; ') || 'No accepted attachment evidence'}</p><p className="raw-text">Safeguard finding refs (not candidate triggers): {e.finding_refs.join(', ')}</p><p className="raw-text">Missing prerequisites: {e.missing_prerequisites.join(', ')}</p><p className="raw-text">Entry: {e.entry_id}</p>
+                    {e.design ? <><p>Supplied shape: {e.design.shape ?? 'Unknown'}; orientation: {e.design.orientation ?? 'Unknown'}</p><p>{e.design.dimensions ? `Supplied dimensions: ${e.design.dimensions.x} × ${e.design.dimensions.y} × ${e.design.dimensions.z} mm` : 'Dimensions unknown; no values inferred.'}</p></> : <p>Design and geometry unavailable.</p>}
+                    <p>Placement and stage references are illustrative only. Clinical placement is not verified.</p>
+                    {parsed.measurements.filter(m => e.measurement_refs.includes(m.id)).map(m => <p key={m.id}>{m.raw_label}: {m.raw_value ?? 'Missing'} — original source value</p>)}
+                    <p>Complete provenance is included in exports.</p>
                   </EvidenceDisclosure>
                 </td>
               </tr>)}</tbody>
             </table>
           </div>
-          <ReportSection title="Clinician review required" label="Clinician attachment review" tone="notice" className="my-5" description="Inspect identity, actual attachment plan, clinical indication and geometry independently. No sign-off is recorded here. A05/H08 still withhold clinical geometry and omission judgments; supplied toy dimensions do not override these safeguards.">
-            <p className="text-xs leading-6 text-notice-ink">All 96 engine rules remain accounted for. A01–A04 and R15 remain disabled; A06 does not select a superior option.</p>
+          <ReportSection title="Clinician review required" label="Clinician attachment review" tone="notice" className="my-5" description="Attachment indication, design, geometry and placement require independent clinical review. Supplied fictional dimensions do not verify clinical suitability.">
+            <p className="text-xs leading-6 text-notice-ink">Unknown and withheld results do not mean an attachment is unnecessary.</p>
           </ReportSection>
 
           <ExportBar label="Attachment export" title="Export" description="Copy or download the complete DRAFT with supplied-decision labels and limitations." notice={status || undefined}>
-            <button type="button" className="button button-example" onClick={() => void copy()}><Copy size={15} aria-hidden="true" />Copy attachment DRAFT</button>
-            <button type="button" className="button button-secondary" onClick={download}><Download size={15} aria-hidden="true" />Download attachment DRAFT (TXT)</button>
+            <button type="button" className="button button-example" onClick={() => void copy()}><Copy size={15} aria-hidden="true" />Copy</button>
+            <button type="button" className="button button-secondary" onClick={download}><Download size={15} aria-hidden="true" />Export TXT</button>
             <PdfExportButton kind="micro" data={draft} reportId={draft.report_id} />
           </ExportBar>
 
-          <details className="technical-details"><summary>Attachment scope & limitations</summary><ul className="mt-3 list-disc space-y-2 pl-5 text-xs leading-6 text-muted">{draft.limitations.map(l => <li key={l}>{l}</li>)}</ul></details>
-          <details className="technical-details"><summary>Engine findings & safeguard ledger ({draft.engine_review.evaluations.length} rules)</summary><ul className="mt-3 space-y-2 text-xs leading-6">{draft.engine_review.evaluations.map(e => <li key={e.rule_id}>{e.rule_id} · {e.status} · {e.execution ?? 'Legacy'} · {e.approval_status ?? 'UNKNOWN'}</li>)}</ul><pre tabIndex={0} aria-label="Attachment provenance JSON" className="raw-text mt-4 max-h-96 overflow-auto text-xs">{JSON.stringify(draft, null, 2)}</pre></details>
-          <details className="technical-details"><summary>Complete attachment DRAFT TXT preview</summary><pre tabIndex={0} aria-label="Attachment export preview" className="raw-text mt-3 max-h-96 overflow-auto text-xs leading-6">{draft.export_text}</pre></details>
+          <p className="mt-4 text-xs leading-6 text-muted">Complete exports retain supplied-decision labels, source evidence and clinical limitations.</p>
         </div>
       </article>}
     </div>

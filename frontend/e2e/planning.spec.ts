@@ -5,7 +5,7 @@ test('fixed synthetic Planning Assistant completes the real pipeline and exports
   await context.grantPermissions(['clipboard-read', 'clipboard-write'])
   const errors: string[] = []
   page.on('pageerror', e => errors.push(e.message))
-  await page.goto('/', { waitUntil: 'networkidle' })
+  await page.goto('/?diagnostics=1', { waitUntil: 'networkidle' })
   await page.screenshot({ path: testInfo.outputPath('planning-intake.png'), fullPage: true })
   const requests: string[] = []
   page.on('request', r => requests.push(r.url()))
@@ -16,7 +16,7 @@ test('fixed synthetic Planning Assistant completes the real pipeline and exports
   expect(inputResponse.headers()['cache-control']).toBe('no-store')
   const input = await inputResponse.json()
   await expect(page.getByRole('textbox', { name: 'Raw TMT text' })).toHaveValue(input.parsed.raw_text)
-  expect(await page.getByLabel('Raw text preview').textContent()).toBe(input.parsed.raw_text)
+  expect(await page.getByRole('textbox', { name: 'Raw TMT text' }).inputValue()).toBe(input.parsed.raw_text)
   await page.getByLabel('Wording preference').selectOption('TEMPLATES')
   const pending = page.waitForResponse(r => r.url().endsWith('/api/v1/development/planning-demo/draft'))
   await page.getByRole('button', { name: 'Run Planning Assistant' }).click()
@@ -38,10 +38,10 @@ test('fixed synthetic Planning Assistant completes the real pipeline and exports
   await article.getByRole('button', { name: 'Copy selected comments' }).click()
   const copied = await page.evaluate(() => navigator.clipboard.readText())
   expect(copied.replaceAll('\r\n', '\n')).toBe(selectedExport(report, new Set(draft.sections[0].comment_ids)))
-  await article.getByRole('button', { name: 'Copy complete DRAFT report' }).click()
+  await article.getByRole('button', { name: 'Copy', exact: true }).click()
   expect((await page.evaluate(() => navigator.clipboard.readText())).replaceAll('\r\n', '\n')).toBe(draft.export_text)
   const downloadPending = page.waitForEvent('download')
-  await article.getByRole('button', { name: 'Download DRAFT (TXT)' }).click()
+  await article.getByRole('button', { name: 'Export TXT' }).click()
   const download = await downloadPending
   expect(download.suggestedFilename()).toMatch(/^finova-planning-draft-[a-f0-9]{12}\.txt$/)
   const stream = await download.createReadStream(), chunks: Buffer[] = []
@@ -60,35 +60,33 @@ test('fixed synthetic Planning Assistant completes the real pipeline and exports
   await page.getByRole('textbox', { name: 'Raw TMT text' }).fill(input.parsed.raw_text + '\nChanged')
   await expect(article).toHaveCount(0)
   await expect(page.getByRole('button', { name: 'Copy selected comments' })).toHaveCount(0)
-  await expect(page.getByRole('checkbox', { name: /I confirm/ })).not.toBeChecked()
   expect(errors).toEqual([])
 })
 
 test('ordinary unknown vendor input abstains, cannot select comments and performs no external transmission', async ({ page }) => {
-  await page.goto('/', { waitUntil: 'networkidle' })
+  await page.goto('/?diagnostics=1', { waitUntil: 'networkidle' })
   const requests: string[] = []
   page.on('request', r => requests.push(r.url()))
   const raw = '# SYNTHETIC UnknownVendor\nTooth\tRotation (deg)\n13\t−1.2300 M\n'
   await page.getByRole('textbox', { name: 'Raw TMT text' }).fill(raw)
-  await page.getByRole('checkbox', { name: /I confirm/ }).check()
   await page.getByRole('button', { name: 'Parse Table', exact: true }).click()
-  await expect(page.getByRole('heading', { name: 'Structured lexical preview' })).toBeVisible()
+  await expect(page.getByLabel('Parse summary')).toBeVisible()
   const pending = page.waitForResponse(r => r.url().endsWith('/api/v1/planning/draft'))
   await page.getByRole('button', { name: 'Run Planning Assistant' }).click()
   const draft = await (await pending).json()
   expect(draft.report.engine_review.evidence_domain).toBe('UNVERIFIED')
   expect(draft.report.generation.attempts).toBe(0)
   const article = page.getByRole('article', { name: 'Planning Assistant draft' })
-  for (const dimension of ['Sagittal', 'Transverse', 'Vertical']) await expect(article.getByRole('region', { name: `${dimension} review` })).toContainText('No sufficiently authorized descriptions')
+  for (const dimension of ['Sagittal', 'Transverse', 'Vertical']) await expect(article.getByRole('region', { name: `${dimension} review` })).toContainText('No eligible findings')
   await expect(article.getByRole('button', { name: 'Copy selected comments' })).toBeDisabled()
   await expect(article.getByRole('checkbox')).toHaveCount(0)
   expect(requests).toEqual([new URL('/api/v1/tmt/parse', page.url()).href, new URL('/api/v1/planning/draft', page.url()).href])
-  expect(await page.getByLabel('Raw text preview').textContent()).toBe(raw)
+  expect(await page.getByRole('textbox', { name: 'Raw TMT text' }).inputValue()).toBe(raw)
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)
 })
 
 test('review-purpose navigation works by keyboard; all modules have distinct intake', async ({ page }) => {
-  await page.goto('/')
+  await page.goto('/?diagnostics=1')
   const nav = page.getByRole('navigation', { name: 'Review purpose' })
   const micro = nav.getByRole('button', { name: /MICRO/ })
   await micro.focus(); await page.keyboard.press('Enter')
@@ -105,7 +103,7 @@ test('review-purpose navigation works by keyboard; all modules have distinct int
 })
 
 test('planning errors keep input and allow explicit retry; changing wording removes the prior draft', async ({ page }) => {
-  await page.goto('/')
+  await page.goto('/?diagnostics=1')
   await page.getByRole('button', { name: 'Load Finova planning demo' }).click()
   const run = page.getByRole('button', { name: 'Run Planning Assistant' })
   await expect(run).toBeVisible()

@@ -1,0 +1,59 @@
+{
+  "configured": true,
+  "results": [
+    {
+      "module": "macro",
+      "generation": {
+        "requested_mode": "AUTO",
+        "used_mode": "GROQ_AI",
+        "reason": "GROQ_VALIDATED",
+        "provider": "GROQ",
+        "model": "openai/gpt-oss-120b",
+        "attempts": 1,
+        "eligible_wording_findings": 4,
+        "accepted_comments": 4,
+        "real_patient_transmission_enabled": false,
+        "output_validation": "CLOSED_WORDING_AND_LOCAL_FACTS_V1"
+      },
+      "notice": "AI-assisted wording generated with Groq; all measurements and examples assembled locally.",
+      "tooth_tokens": 16,
+      "positions": 112
+    },
+    {
+      "module": "micro",
+      "generation": {
+        "requested_mode": "AUTO",
+        "used_mode": "GROQ_AI",
+        "reason": "GROQ_VALIDATED",
+        "provider": "GROQ",
+        "model": "openai/gpt-oss-120b",
+        "attempts": 1,
+        "eligible_wording_findings": 4,
+        "accepted_comments": 4,
+        "real_patient_transmission_enabled": false,
+        "output_validation": "CLOSED_WORDING_AND_LOCAL_FACTS_V1"
+      },
+      "notice": "AI-assisted wording generated with Groq; all measurements and examples assembled locally.",
+      "tooth_tokens": 16,
+      "positions": 112
+    },
+    {
+      "module": "nano",
+      "generation": {
+        "requested_mode": "AUTO",
+        "used_mode": "GROQ_AI",
+        "reason": "GROQ_VALIDATED",
+        "provider": "GROQ",
+        "model": "openai/gpt-oss-120b",
+        "attempts": 1,
+        "eligible_wording_findings": 4,
+        "accepted_comments": 4,
+        "real_patient_transmission_enabled": false,
+        "output_validation": "CLOSED_WORDING_AND_LOCAL_FACTS_V1"
+      },
+      "notice": "AI-assisted wording generated with Groq; all measurements and examples assembled locally.",
+      "tooth_tokens": 16,
+      "positions": 112
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "module": "macro",
+    "pages": 2,
+    "checks": "exact decimals, zeros, missing states and simulation labels found in visible PDF text"
+  },
+  {
+    "module": "micro",
+    "pages": 3,
+    "checks": "exact decimals, zeros, missing states and simulation labels found in visible PDF text"
+  },
+  {
+    "module": "nano",
+    "pages": 3,
+    "checks": "exact decimals, zeros, missing states and simulation labels found in visible PDF text"
+  }
+]

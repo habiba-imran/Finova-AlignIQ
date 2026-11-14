@@ -9,7 +9,7 @@ import review from './test/fixtures/synthetic-draft-review.json'
 const ok = (data: unknown) => ({ ok: true, status: 200, json: async () => data })
 afterEach(() => { vi.unstubAllGlobals(); vi.useRealTimers() })
 function setup(fetch = vi.fn().mockResolvedValue(ok(fixture))) {
-  vi.stubGlobal('fetch', fetch); render(<App />)
+  vi.stubGlobal('fetch', fetch); render(<App diagnostics />)
   fireEvent.click(screen.getByRole('button', { name: 'Load generated recovery example' }))
   const input = screen.getByRole('textbox', { name: 'Raw TMT text' }) as HTMLTextAreaElement
   return { fetch, input, button: screen.getByRole('button', { name: 'Parse Table' }) }
@@ -24,12 +24,12 @@ describe('Phase 4 automatic structural recovery', () => {
   })
   it('uses one Parse Table request with generator identity and displays automatic recovery', async () => {
     const { fetch, input, button } = setup(); fireEvent.click(button)
-    await screen.findByText(/AI-assisted structure recovery/)
+    await screen.findByText(/Partially parsed/)
     expect(fetch).toHaveBeenCalledTimes(1)
     expect(fetch.mock.calls[0][0]).toBe('/api/v1/tmt/parse')
     expect(JSON.parse(fetch.mock.calls[0][1].body)).toMatchObject({ raw_text: example.raw_text, synthetic_fixture: example.identity })
     expect(JSON.parse(fetch.mock.calls[0][1].body)).not.toHaveProperty('cloud_synthetic_consent')
-    expect(screen.getByText(/Recovered original-text associations are rechecked/)).toBeVisible()
+    expect(screen.getByText(/Reading the table does not verify/)).toBeVisible()
     expect(input.value).toBe(example.raw_text)
     expect(screen.getByLabelText('Raw text preview').textContent).toBe(example.raw_text)
   })
@@ -40,7 +40,7 @@ describe('Phase 4 automatic structural recovery', () => {
     expect(fetch).toHaveBeenCalledTimes(1)
     expect(screen.getByRole('button', { name: 'Parsing…' })).toBeDisabled()
     await act(async () => finish(ok(fixture)))
-    expect(screen.getByText(/AI-assisted structure recovery/)).toBeVisible()
+    expect(screen.getByText(/Partially parsed/)).toBeVisible()
   })
   it.each(['BLOCKED', 'FAILED', 'REJECTED'])('shows safe %s outcome without a second cloud action', async status => {
     const returned = structuredClone(fixture)

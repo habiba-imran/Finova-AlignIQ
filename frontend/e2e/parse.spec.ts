@@ -3,13 +3,12 @@ import { expect, test } from '@playwright/test'
 test('explicit parse preserves raw text and returns exact lexical values through the real API', async ({ page }) => {
   const runtimeErrors: string[] = []
   page.on('pageerror', error => runtimeErrors.push(error.message))
-  await page.goto('/', { waitUntil: 'networkidle' })
+  await page.goto('/?diagnostics=1', { waitUntil: 'networkidle' })
   const requests: string[] = []
   page.on('request', request => requests.push(request.url()))
   const raw = '# SYNTHETIC\n\nTooth\tRotation (deg)\tExtrusion (mm)\n 13 \t−1.2300 M\t0.00  \n14\t\t—\n'
   const input = page.getByRole('textbox', { name: 'Raw TMT text' })
   await input.fill(raw)
-  await page.getByRole('checkbox', { name: /I confirm this text is synthetic/ }).check()
   expect(requests).toEqual([])
   const responsePromise = page.waitForResponse(response => response.url().endsWith('/api/v1/tmt/parse'))
   await page.getByRole('button', { name: 'Parse Table', exact: true }).click()
@@ -40,14 +39,12 @@ test('explicit parse preserves raw text and returns exact lexical values through
   expect(runtimeErrors).toEqual([])
   await input.fill(raw + '\n')
   await expect(page.getByRole('heading', { name: 'Structured lexical preview' })).toHaveCount(0)
-  await expect(page.getByRole('checkbox')).not.toBeChecked()
 })
 
 test('synthetic demo parses without claiming vendor verification and clears without persistence', async ({ page }, testInfo) => {
-  await page.goto('/')
+  await page.goto('/?diagnostics=1')
   await page.getByRole('button', { name: 'Load synthetic example' }).click()
-  await expect(page.getByRole('button', { name: 'Parse Table', exact: true })).toBeDisabled()
-  await page.getByRole('checkbox').check()
+  await expect(page.getByRole('button', { name: 'Parse Table', exact: true })).toBeEnabled()
   await page.getByRole('button', { name: 'Parse Table', exact: true }).click()
   await expect(page.getByText('Partial lexical parse')).toBeVisible()
   await expect(page.getByRole('button', { name: 'Analyze', exact: true })).toBeDisabled()
@@ -64,11 +61,10 @@ test('synthetic demo parses without claiming vendor verification and clears with
 })
 
 test('markup remains inert in both previews and unknown layout abstains', async ({ page }) => {
-  await page.goto('/')
+  await page.goto('/?diagnostics=1')
   const raw = 'Tooth\tRotation (deg)\n13\t<script>window.__syntheticExecuted=true</script>'
   const input = page.getByRole('textbox', { name: 'Raw TMT text' })
   await input.fill(raw)
-  await page.getByRole('checkbox').check()
   await page.getByRole('button', { name: 'Parse Table', exact: true }).click()
   const measurements = page.getByRole('region', { name: 'Parsed measurements' })
   await expect(measurements).toBeVisible()
@@ -76,7 +72,6 @@ test('markup remains inert in both previews and unknown layout abstains', async 
   await expect(measurements.locator('script')).toHaveCount(0)
   expect(await page.evaluate(() => (window as unknown as Record<string, unknown>).__syntheticExecuted)).toBeUndefined()
   await input.fill('SYNTHETIC unsupported format')
-  await page.getByRole('checkbox').check()
   await page.getByRole('button', { name: 'Parse Table', exact: true }).click()
   await expect(page.getByText('Unsupported layout', { exact: true })).toBeVisible()
   await expect(page.getByRole('region', { name: 'Parsed measurements' })).toHaveCount(0)

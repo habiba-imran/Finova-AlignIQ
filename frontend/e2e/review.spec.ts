@@ -3,12 +3,11 @@ import { expect, test } from '@playwright/test'
 test('explicit draft review uses the real API, abstains on vendor claims and preserves raw input', async ({ page }, testInfo) => {
   const errors: string[] = []
   page.on('pageerror', error => errors.push(error.message))
-  await page.goto('/')
+  await page.goto('/?diagnostics=1')
   const raw = '# SYNTHETIC\n\nTooth\tRotation (deg)\tExtrusion (mm)\n 13 \t−1.2300 M\t0.00 E  \n14\t\t—\n'
   const input = page.getByRole('textbox', { name: 'Raw TMT text' })
   await input.fill(raw)
   await expect(page.getByRole('combobox', { name: /Source/ })).toHaveCount(0)
-  await page.getByRole('checkbox').check()
   await page.getByRole('button', { name: 'Parse Table', exact: true }).click()
   await expect(page.getByRole('heading', { name: 'Structured lexical preview' })).toBeVisible()
   await page.getByText('Advanced: separate engineering review & legacy report actions').click()
@@ -42,6 +41,5 @@ test('explicit draft review uses the real API, abstains on vendor claims and pre
   await testInfo.attach('phase2a-draft-unverified', { body: await results.screenshot(), contentType: 'image/png' })
   await input.fill(raw + '\n')
   await expect(results).toHaveCount(0)
-  await expect(page.getByRole('checkbox')).not.toBeChecked()
   expect(errors).toEqual([])
 })

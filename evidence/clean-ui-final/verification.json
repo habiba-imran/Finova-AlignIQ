@@ -1,0 +1,32 @@
+{
+  "session_dates": "2026-11-14\u20132026-11-15 Asia/Karachi",
+  "backend_initial": {
+    "passed": 1006,
+    "failed": 0
+  },
+  "backend_current": {
+    "passed": 1005,
+    "failed": 1,
+    "failure": "tests/test_health.py::test_only_authorized_routes_exist",
+    "reason": "Concurrent addition of /api/v1/interactive/review"
+  },
+  "frontend_before_later_concurrent_changes": {
+    "passed": 230,
+    "files": 20
+  },
+  "build_before_later_concurrent_changes": "passed; large-chunk advisory",
+  "browser_full_clean_ui_bundle": {
+    "passed": 175,
+    "failed": 5,
+    "reason": "Outdated non-exact Copy selector across five widths"
+  },
+  "browser_corrected_rerun": {
+    "passed": 4,
+    "failed": 1,
+    "failed_viewport": 672,
+    "reason": "Concurrent App integration and dist rebuild replaced the main workspace; Wording preference was absent"
+  },
+  "final_acceptance": "Blocked pending choice of main workspace and stable source/bundle",
+  "live_groq_validation": false,
+  "commit_push_deployment_performed_by_this_task": false
+}

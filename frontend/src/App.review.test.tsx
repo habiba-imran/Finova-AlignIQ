@@ -11,7 +11,7 @@ const ok = (data: unknown) => ({ ok: true, status: 200, json: async () => data }
 
 async function parsed(fetch = vi.fn().mockResolvedValueOnce(ok(parseFixture))) {
   vi.stubGlobal('fetch', fetch)
-  render(<App />)
+  render(<App diagnostics />)
   const input = screen.getByRole('textbox', { name: 'Raw TMT text' }) as HTMLTextAreaElement
   fireEvent.change(input, { target: { value: parseFixture.raw_text } })
   fireEvent.click(screen.getByRole('button', { name: 'Parse Table' }))

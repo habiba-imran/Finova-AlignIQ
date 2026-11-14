@@ -110,7 +110,7 @@ export function isSequencingDraft(v: unknown): v is SequencingDraft {
 async function post(path: string, body: unknown, signal: AbortSignal): Promise<unknown> {
   const response = await fetch(path, { method: 'POST', body: JSON.stringify(body), headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
     signal, cache: 'no-store', credentials: 'omit', redirect: 'error', referrerPolicy: 'no-referrer' })
-  if (!response.ok) throw new Error(response.status === 404 ? 'DEMO_DISABLED' : response.status === 409 ? 'REPARSE_REQUIRED' : 'REQUEST_FAILED')
+  if (!response.ok) throw new Error(response.status === 404 ? 'DEMO_DISABLED' : response.status === 503 ? 'DEMO_UNAVAILABLE' : response.status === 409 ? 'REPARSE_REQUIRED' : 'REQUEST_FAILED')
   return response.json()
 }
 export async function requestSequencingDemoInput(signal: AbortSignal): Promise<SequencingDemoInput> {

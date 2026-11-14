@@ -63,7 +63,7 @@ test('workflow progress distinguishes input, completed inspection, active review
   await expect(progress.getByText('Available')).toHaveCount(0)
 
   await page.getByRole('button', { name: 'Run Planning Assistant' }).click()
-  await expect(page.getByRole('article', { name: 'Planning Assistant draft' })).toBeVisible()
+  await expect(page.getByRole('article', { name: 'Generated synthetic report' })).toBeVisible()
   await expect(progress.locator('li[data-state="complete"]')).toHaveCount(3)
   await expect(progress.locator('li[aria-current="step"]')).toContainText('Export')
   await expect(progress.locator('li[aria-current="step"]')).toContainText('Available')

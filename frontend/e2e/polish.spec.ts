@@ -1,11 +1,11 @@
 import { test, expect } from '@playwright/test'
 
 test('shared empty states, aligned summaries, evidence disclosure and export order remain cohesive', async ({ page }, testInfo) => {
-  await page.goto('/', { waitUntil: 'networkidle' })
+  await page.goto('/?diagnostics=1', { waitUntil: 'networkidle' })
   const modules = [
-    { code: 'macro', nav: /MACRO/, load: 'Load Finova planning demo', run: 'Run Planning Assistant', article: 'Planning Assistant draft', copy: 'Copy complete DRAFT report', txt: 'Download DRAFT (TXT)' },
-    { code: 'micro', nav: /MICRO/, load: 'Load Finova attachment demo', run: 'Run Attachment Review', article: 'Attachment review draft', copy: 'Copy attachment DRAFT', txt: 'Download attachment DRAFT (TXT)' },
-    { code: 'nano', nav: /NANO/, load: 'Load Finova sequencing demo', run: 'Run Sequencing Review', article: 'Sequencing review draft', copy: 'Copy sequencing DRAFT', txt: 'Download sequencing DRAFT (TXT)' },
+    { code: 'macro', nav: /MACRO/, load: 'Load Finova planning demo', run: 'Run Planning Assistant', article: 'Planning Assistant draft', copy: 'Copy', txt: 'Export TXT' },
+    { code: 'micro', nav: /MICRO/, load: 'Load Finova attachment demo', run: 'Run Attachment Review', article: 'Attachment review draft', copy: 'Copy', txt: 'Export TXT' },
+    { code: 'nano', nav: /NANO/, load: 'Load Finova sequencing demo', run: 'Run Sequencing Review', article: 'Sequencing review draft', copy: 'Copy', txt: 'Export TXT' },
   ]
   for (const module of modules) {
     await page.getByRole('navigation', { name: 'Review purpose' }).getByRole('button', { name: module.nav }).click()
@@ -23,7 +23,7 @@ test('shared empty states, aligned summaries, evidence disclosure and export ord
     }))
     const firstRow = positions.filter(p => Math.abs(p.top - positions[0].top) < 2)
     expect(Math.max(...firstRow.map(p => p.height)) - Math.min(...firstRow.map(p => p.height))).toBeLessThan(2)
-    const details = article.locator('.evidence-disclosure').first()
+    const details = article.locator('details').first()
     await details.locator('summary').focus(); await page.keyboard.press('Enter')
     await expect(details).toHaveAttribute('open', '')
     await details.locator('summary').press('Enter')

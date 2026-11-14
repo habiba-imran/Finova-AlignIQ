@@ -221,7 +221,7 @@ describe('Phase 3 final DRAFT report workflow', () => {
   it.each(['raw', 'version', 'context', 'clear', 'demo', 'question'])('preserves raw input and removes the final report when %s changes', async change => {
     const fetch = vi.fn().mockResolvedValueOnce(ok(parseFixture)).mockResolvedValueOnce(ok(reviewFixture)).mockResolvedValueOnce(ok(fixture))
     vi.stubGlobal('fetch', fetch)
-    render(<App />)
+    render(<App diagnostics />)
     const input = screen.getByRole('textbox', { name: 'Raw TMT text' }) as HTMLTextAreaElement
     fireEvent.change(input, { target: { value: parseFixture.raw_text } })
     fireEvent.click(screen.getByRole('button', { name: 'Parse Table' }))

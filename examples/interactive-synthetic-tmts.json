@@ -1,0 +1,18 @@
+[
+  {
+    "id": "rows",
+    "raw_text": "Tooth\tRotation (deg)\tExtrusion (mm)\tMesial/Distal (mm)\n11\t-2.7500 M\t0\t1.2300 D\n12\t0\t—\t0.450 L\n13\t3.25 D\t0.1250\t\n14\t-1.50\tN/A\t0"
+  },
+  {
+    "id": "columns",
+    "raw_text": "Movement\t21\t22\t23\nRotation (deg)\t4.500 D\t0\t-1.250 M\nExtrusion (mm)\t0.250\t—\t0.500"
+  },
+  {
+    "id": "markdown",
+    "raw_text": "| Tooth | Rotation (deg) | Extrusion (mm) |\n| --- | --- | --- |\n| 31 | -3.4500 M | 0.2200 |\n| 32 | 0 | N/A |"
+  },
+  {
+    "id": "large",
+    "raw_text": "Tooth\tRotation (deg)\tInclination (deg)\tAngulation (deg)\tExtrusion (mm)\tIntrusion (mm)\tMesial/Distal (mm)\tBuccal/Lingual (mm)\n18\t0.1250 D\t-1.5000\t0\t0.2000\t—\t1.2300 D\t0.4500 B\n17\t1.1250 D\t-1.5000\t0\t0.2000\t—\t1.2300 D\t0.4500 B\n16\t2.1250 D\t-1.5000\t0\t0.2000\t—\t1.2300 D\t0.4500 B\n15\t3.1250 D\t-1.5000\t0\t0.2000\t—\t1.2300 D\t0.4500 B\n14\t4.1250 D\t-1.5000\t0\t0.2000\t—\t1.2300 D\t0.4500 B\n13\t5.1250 D\t-1.5000\t0\t0.2000\t—\t1.2300 D\t0.4500 B\n12\t6.1250 D\t-1.5000\t0\t0.2000\t—\t1.2300 D\t0.4500 B\n11\t7.1250 D\t-1.5000\t0\t0.2000\t—\t1.2300 D\t0.4500 B\n21\t8.1250 D\t-1.5000\t0\t0.2000\t—\t1.2300 D\t0.4500 B\n22\t9.1250 D\t-1.5000\t0\t0.2000\t—\t1.2300 D\t0.4500 B\n23\t10.1250 D\t-1.5000\t0\t0.2000\t—\t1.2300 D\t0.4500 B\n24\t11.1250 D\t-1.5000\t0\t0.2000\t—\t1.2300 D\t0.4500 B\n25\t12.1250 D\t-1.5000\t0\t0.2000\t—\t1.2300 D\t0.4500 B\n26\t13.1250 D\t-1.5000\t0\t0.2000\t—\t1.2300 D\t0.4500 B\n27\t14.1250 D\t-1.5000\t0\t0.2000\t—\t1.2300 D\t0.4500 B\n28\t15.1250 D\t-1.5000\t0\t0.2000\t—\t1.2300 D\t0.4500 B"
+  }
+]

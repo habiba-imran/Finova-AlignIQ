@@ -14,12 +14,15 @@ from app.review.context import AdditionalInputRequirements, TestRuleContext  # n
 from app.reports.models import FinalDraftReport, ReportSubmission, WordingBatch  # noqa: E402
 from app.parser.contracts import AssistedSubmission, AutomaticParseResult, StructuralProposal, PipelineSubmission, RecoveryProposal, SyntheticFixture  # noqa: E402
 from app.planning.models import DemoInput, DemoRequest, PlanningDraft
+from app.interactive.models import InteractiveSubmission, InteractiveReport
 from app.attachments.models import AttachmentDraft, AttachmentSubmission, AttachmentDemoInput, EmptyDemoRequest
 from app.sequencing.models import SequencingDraft, SequencingSubmission, SequencingDemoInput, EmptyDemoRequest as EmptySequencingRequest
 
 output = Path(__file__).resolve().parents[2] / "schemas"
 output.mkdir(exist_ok=True)
 for name, model, mode in [
+    ("interactive-request.v1.json", InteractiveSubmission, "validation"),
+    ("interactive-report.v1.json", InteractiveReport, "serialization"),
     ("parse-request.v1.json", RawTMTSubmission, "validation"),
     ("parse-result.v1.json", ParseResult, "serialization"),
     ("vendor-fixture-manifest.v1.json", FixtureManifest, "validation"),

@@ -45,7 +45,7 @@ const parsed: ParseResult = result(
 
 describe('Structured TMT table', () => {
   it('shows the parse placeholder and keeps raw evidence closed before parsing', () => {
-    render(<StructuredPreview result={null} rawText={'  unparsed\ttext\n'} loading={false} />)
+    render(<StructuredPreview showRawEvidence result={null} rawText={'  unparsed\ttext\n'} loading={false} />)
 
     expect(screen.getByRole('heading', { name: 'Structured table' })).toBeVisible()
     expect(screen.getByText('Awaiting parse')).toBeVisible()
@@ -59,14 +59,14 @@ describe('Structured TMT table', () => {
   })
 
   it('marks a pending parse as busy without rendering a table', () => {
-    render(<StructuredPreview result={null} rawText="" loading />)
+    render(<StructuredPreview showRawEvidence result={null} rawText="" loading />)
     expect(screen.getByRole('region', { name: 'Structured table' })).toHaveAttribute('aria-busy', 'true')
     expect(screen.getByText('Parsing')).toBeVisible()
     expect(screen.getByText(/the table will appear after the response is validated/)).toBeVisible()
   })
 
   it('derives column headings, rows and values only from parser output', () => {
-    render(<StructuredPreview result={parsed} rawText={fixture.raw_text} loading={false} />)
+    render(<StructuredPreview showRawEvidence result={parsed} rawText={fixture.raw_text} loading={false} />)
     const table = screen.getByRole('table', { name: /Structured TMT table from parser output/ })
 
     expect(within(table).getByRole('columnheader', { name: 'Tooth' })).toBeVisible()
@@ -99,7 +99,7 @@ describe('Structured TMT table', () => {
         measurement({ id: 'invalid', tooth_ref: 'tooth-1', raw_label: 'Buccolingual (mm)', recognized_label: null, unit: null, raw_value: '1.2.3 B', signed_decimal: null, magnitude_decimal: null, raw_direction: null, numeric_status: 'INVALID', field_status: 'PARSE_INVALID' }),
       ],
     )
-    render(<StructuredPreview result={statuses} rawText={fixture.raw_text} loading={false} />)
+    render(<StructuredPreview showRawEvidence result={statuses} rawText={fixture.raw_text} loading={false} />)
     const table = screen.getByRole('table', { name: /Structured TMT table from parser output/ })
 
     expect(within(table).getByText('0.0000')).toBeVisible()
@@ -111,7 +111,7 @@ describe('Structured TMT table', () => {
 
   it('keeps the exact submitted characters in a closed evidence disclosure', () => {
     const raw = '# SYNTHETIC\n\nTooth\tRotation (deg)\n  13 \t−1.2300 M  \n'
-    render(<StructuredPreview result={parsed} rawText={raw} loading={false} />)
+    render(<StructuredPreview showRawEvidence result={parsed} rawText={raw} loading={false} />)
 
     const preview = screen.getByLabelText('Raw text preview')
     const disclosure = preview.closest('details')!
@@ -124,7 +124,7 @@ describe('Structured TMT table', () => {
   })
 
   it('reports when the parser returns no measurement positions', () => {
-    render(<StructuredPreview result={result([tooth('tooth-1', '13')], [])} rawText={fixture.raw_text} loading={false} />)
+    render(<StructuredPreview showRawEvidence result={result([tooth('tooth-1', '13')], [])} rawText={fixture.raw_text} loading={false} />)
     expect(screen.getByText('No measurement cells were returned.')).toBeVisible()
     expect(screen.queryByRole('table')).not.toBeInTheDocument()
     expect(screen.getByLabelText('Raw text preview').textContent).toBe(fixture.raw_text)

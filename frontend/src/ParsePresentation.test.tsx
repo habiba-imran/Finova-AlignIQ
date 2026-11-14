@@ -10,7 +10,7 @@ afterEach(() => { vi.unstubAllGlobals(); vi.restoreAllMocks() })
 
 function parse(response: unknown) {
   vi.stubGlobal('fetch', vi.fn().mockResolvedValue(ok(response)))
-  render(<App />)
+  render(<App diagnostics />)
   fireEvent.change(screen.getByRole('textbox', { name: 'Raw TMT text' }), { target: { value: fixture.raw_text } })
   fireEvent.click(screen.getByRole('button', { name: 'Parse Table' }))
 }
@@ -19,10 +19,10 @@ describe('Part 2 parser presentation', () => {
   it('promotes parsed movements, keeps the raw preview available, and summarizes actual parser counts', async () => {
     parse(fixture)
     const summary = await screen.findByLabelText('Parse summary')
-    expect(within(summary).getByText('Tooth token positions').parentElement).toHaveTextContent('Tooth token positions1')
+    expect(within(summary).getByText('Tooth rows').parentElement).toHaveTextContent('Tooth rows1')
     expect(within(summary).getByText('Movement positions').parentElement).toHaveTextContent('Movement positions1')
     expect(within(summary).getByText('Missing values').parentElement).toHaveTextContent('Missing values0')
-    expect(within(summary).getByText('Issues requiring attention').parentElement).toHaveTextContent('Issues requiring attention3')
+    expect(screen.getByText(/Reading the table does not verify/)).toBeVisible()
 
     const measurements = screen.getByRole('region', { name: 'Parsed measurements' })
     expect(measurements).toBeVisible()
@@ -49,7 +49,7 @@ describe('Part 2 parser presentation', () => {
     parse(returned)
     const blockers = await screen.findByRole('region', { name: 'Blocking parse issues' })
     expect(blockers).toBeVisible()
-    expect(blockers).toHaveTextContent('Synthetic blocking issue.')
+    expect(blockers).toHaveTextContent('Some table content needs clarification.')
 
     const measurements = screen.getByRole('region', { name: 'Parsed measurements' })
     fireEvent.click(within(measurements).getByText('Row details'))

@@ -1,0 +1,55 @@
+{
+  "verified_local_date": "2026-11-15",
+  "backend": {
+    "passed": 1035,
+    "failed": 0,
+    "focused_after_wording": 29
+  },
+  "frontend": {
+    "passed": 252,
+    "failed": 0,
+    "focused_after_wording": 31
+  },
+  "browser": {
+    "startTime": "2026-11-14T19:41:09.493Z",
+    "duration": 846448.3679999999,
+    "expected": 205,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "live_groq": [
+    {
+      "module": "macro",
+      "mode": "GROQ_AI",
+      "attempts": 1,
+      "accepted": 4
+    },
+    {
+      "module": "micro",
+      "mode": "GROQ_AI",
+      "attempts": 1,
+      "accepted": 4
+    },
+    {
+      "module": "nano",
+      "mode": "GROQ_AI",
+      "attempts": 1,
+      "accepted": 4
+    }
+  ],
+  "rules": 96,
+  "disabled_rules": 27,
+  "pdf": {
+    "small_report_pages": {
+      "macro": 2,
+      "micro": 3,
+      "nano": 3
+    },
+    "visible_pages_inspected": 8,
+    "embedded_txt_json_fidelity": true
+  },
+  "deployment": false,
+  "commit": false,
+  "push": false
+}

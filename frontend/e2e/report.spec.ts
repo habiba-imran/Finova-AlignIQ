@@ -4,13 +4,12 @@ test('final report uses templates for unverified data and copies/downloads a com
   await context.grantPermissions(['clipboard-read', 'clipboard-write'])
   const errors: string[] = []
   page.on('pageerror', error => errors.push(error.message))
-  await page.goto('/', { waitUntil: 'networkidle' })
+  await page.goto('/?diagnostics=1', { waitUntil: 'networkidle' })
   const requests: string[] = []
   page.on('request', request => requests.push(request.url()))
   const raw = '# SYNTHETIC\n\nTooth\tRotation (deg)\tExtrusion (mm)\n 13 \t−1.2300 M\t0.00 E  \n14\t\t—\n'
   const input = page.getByRole('textbox', { name: 'Raw TMT text' })
   await input.fill(raw)
-  await page.getByRole('checkbox').check()
   await page.getByRole('button', { name: 'Parse Table', exact: true }).click()
   await expect(page.getByRole('heading', { name: 'Structured lexical preview' })).toBeVisible()
   await page.getByText('Advanced: separate engineering review & legacy report actions').click()

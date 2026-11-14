@@ -1,0 +1,63 @@
+Finova AlignIQ
+Synthetic demonstration review / DRAFT
+ade8f363b832 | 2026-11-14 UTC
+Synthetic demonstration review
+Synthetic demonstration — not for clinical use
+UNVERIFIED INPUT - NOT CLINICAL ADVICE
+Report ID: ade8f363b8322d9430c3e5b906191b5ea11068e79a58d4837a18e77ed6a02ac4
+Exported: 2026-11-14 UTC | Clinical analysis enabled: false
+Input SHA-256: b4b31db4a49660376fad1d6442185bc982c0a4c027010b4e4949bc045f1aec04
+Executive summary
+MACRO
+The parsed source values are described below. 4 tooth tokens; 12 measurement positions; 9 recorded numerical 
+values; 3 missing or omitted; 0 invalid or ambiguous.
+AI generation unavailable; deterministic wording used.
+Concise review only. Full technical evidence and the complete original report are available in embedded report.txt / 
+validated-report.json and existing TXT export. Reference keys below locate the exact source records.
+Factual tooth-wise observations
+Tooth observation
+Tooth token 11
+Recorded values:
+"Rotation (deg)": -2.7500 deg; direction label "M". Original cell: "-2.7500 M".
+"Extrusion (mm)": 0 mm; explicitly recorded zero. Original cell: "0".
+"Mesial/Distal (mm)": 1.2300 mm; direction label "D". Original cell: "1.2300 D".
+Tooth observation
+Tooth token 12
+Recorded values:
+"Rotation (deg)": 0 deg; explicitly recorded zero. Original cell: "0".
+"Extrusion (mm)": missing; no numerical observation. Original cell: "—".
+"Mesial/Distal (mm)": 0.450 mm; direction label "L". Original cell: "0.450 L".
+Tooth observation
+Tooth token 13
+Recorded values:
+"Rotation (deg)": 3.25 deg; direction label "D". Original cell: "3.25 D".
+"Extrusion (mm)": 0.1250 mm. Original cell: "0.1250".
+"Mesial/Distal (mm)": missing; no numerical observation. Original cell: "".
+DRAFT / NOT CLINICAL ADVICE | ade8f363b832 Page 1 of 2
+Finova AlignIQ
+Synthetic demonstration review / DRAFT
+ade8f363b832 | 2026-11-14 UTC
+Tooth observation
+Tooth token 14
+Recorded values:
+"Rotation (deg)": -1.50 deg. Original cell: "-1.50".
+"Extrusion (mm)": missing; no numerical observation. Original cell: "N/A".
+"Mesial/Distal (mm)": 0 mm; explicitly recorded zero. Original cell: "0".
+Important warnings and clinical limitations
+Missing information is unknown, not normal or approved. No clinical sign-off is recorded.
+This table was partially parsed. Unresolved content remains in the original input and is not interpreted; inspect the
+ marked table before using these observations.
+Values describe the parsed source only. Tooth tokens, axes, directions, units and source conventions are not 
+independently clinically verified.
+Missing, omitted, invalid and ambiguous values remain unknown; explicit zero applies only to its recorded cell. No 
+achieved movement, suitability or safety conclusion is inferred.
+Attachment and sequencing examples are arbitrary simulations based on table order, independent of movement 
+magnitude. They are not calculated treatment choices or prescriptions.
+Clinical attachment, staging, anchorage, force, timing, diagnosis and treatment predicates remain unevaluated. 
+No clinical approval is recorded.
+Source and evidence references
+Exact source cells, Decimal strings, direction labels and source spans: /parsed/measurements in validated-report.json. 
+The original input and complete 96-rule ledger remain in the embedded TXT and JSON.
+Embedded attachments retain the exact full TXT, validated JSON, source spans, missing requirements and complete 
+96-rule audit ledger. No technical record is deleted or altered by this concise presentation.
+DRAFT / NOT CLINICAL ADVICE | ade8f363b832 Page 2 of 2

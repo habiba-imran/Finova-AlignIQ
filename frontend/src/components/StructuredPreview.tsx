@@ -11,8 +11,9 @@ type Column = {
   measurements: Measurement[]
 }
 
-// Preserve distinct source headings and units, including repeated-axis columns.
-const columnKey = (measurement: Measurement) => JSON.stringify([measurement.raw_label, measurement.recognized_label, measurement.unit])
+// Missing cells can have no unit even under a unit-bearing header. Keep them in
+// their source column; distinct raw headings must never collapse by axis alone.
+const columnKey = (measurement: Measurement) => JSON.stringify([measurement.raw_label, measurement.recognized_label])
 
 function buildColumns(measurements: Measurement[]): Column[] {
   const columns = new Map<string, Column>()
@@ -21,6 +22,7 @@ function buildColumns(measurements: Measurement[]): Column[] {
     const existing = columns.get(key)
     if (existing) {
       existing.measurements.push(measurement)
+      if (!existing.unit && measurement.unit) existing.unit = measurement.unit
       continue
     }
     columns.set(key, {

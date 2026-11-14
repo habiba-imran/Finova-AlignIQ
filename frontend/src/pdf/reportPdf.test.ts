@@ -11,6 +11,9 @@ import micro from '../test/fixtures/attachment-demo-draft.json'
 import nano from '../test/fixtures/sequencer-demo-draft.json'
 import ordinary from '../test/fixtures/attachment-unverified-draft.json'
 import descriptive from '../test/fixtures/synthetic-final-report.json'
+import interactiveMacro from '../test/fixtures/interactive-macro.json'
+import interactiveMicro from '../test/fixtures/interactive-micro.json'
+import interactiveNano from '../test/fixtures/interactive-nano.json'
 
 const output = resolve('../evidence/polish/qa')
 async function attachments(bytes: Uint8Array) {
@@ -26,6 +29,16 @@ async function attachments(bytes: Uint8Array) {
   return { pdf, files }
 }
 afterEach(() => vi.unstubAllGlobals())
+
+test.each([interactiveMacro, interactiveMicro, interactiveNano])('interactive $module PDF preserves source facts and simulated status', async data => {
+  const bytes = await createReportPdf('interactive', data)
+  const { pdf, files } = await attachments(bytes)
+  expect(files['report.txt']).toBe(data.export_text)
+  expect(JSON.parse(files['validated-report.json'])).toEqual(data)
+  expect(pdf.getPageCount()).toBeGreaterThan(1)
+  const directory = resolve('../evidence/interactive-demo'); mkdirSync(directory, { recursive: true })
+  writeFileSync(resolve(directory, `${data.module}.pdf`), bytes)
+}, 30_000)
 
 test.each<[PdfKind, unknown]>([['macro', macro], ['micro', micro], ['nano', nano], ['descriptive', descriptive]])(
   '%s creates a multipage PDF preserving exact TXT and all validated report data without network', async (kind, data) => {

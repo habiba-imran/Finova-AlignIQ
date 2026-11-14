@@ -8,7 +8,7 @@ const modules = [
 ]
 
 for (const module of modules) test(`${module.kind} PDF contains exact complete report and validated evidence, with no export requests`, async ({ page }, testInfo) => {
-  await page.goto('/', { waitUntil: 'networkidle' })
+  await page.goto('/?diagnostics=1', { waitUntil: 'networkidle' })
   const errors: string[] = []; page.on('pageerror', e => errors.push(e.message))
   await page.getByRole('navigation', { name: 'Review purpose' }).getByRole('button', { name: module.nav }).click()
   await page.getByRole('button', { name: module.load }).click()
@@ -53,10 +53,9 @@ for (const module of modules) test(`${module.kind} PDF contains exact complete r
 })
 
 test('generic labels parse with exact zero and missing values while normal review remains unauthorized', async ({ page }) => {
-  await page.goto('/', { waitUntil: 'networkidle' })
+  await page.goto('/?diagnostics=1', { waitUntil: 'networkidle' })
   const raw = '# SYNTHETIC lexical labels only\nTooth\tExtrusion / Intrusion (mm)\tRelative Ext / Int (mm)\tTranslation B / L (mm)\tTranslation M / D (mm)\nA\t1.2300E\t0.000\t-\t−2.00D\n'
   await page.getByRole('textbox', { name: 'Raw TMT text' }).fill(raw)
-  await page.getByRole('checkbox', { name: /I confirm/ }).check()
   const response = page.waitForResponse(r => r.url().endsWith('/api/v1/tmt/parse'))
   await page.getByRole('button', { name: 'Parse Table', exact: true }).click()
   const parsed = await (await response).json()
@@ -70,5 +69,5 @@ test('generic labels parse with exact zero and missing values while normal revie
   expect(draft.report.engine_review.evidence_domain).toBe('UNVERIFIED')
   expect(draft.report.engine_review.coverage.eligible_positions).toBe(0)
   expect(draft.report.generation.attempts).toBe(0)
-  expect(await page.getByLabel('Raw text preview').textContent()).toBe(raw)
+  expect(await page.getByRole('textbox', { name: 'Raw TMT text' }).inputValue()).toBe(raw)
 })

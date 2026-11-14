@@ -19,7 +19,7 @@ describe('Part 3 interaction presentation', () => {
     expect(nav.style.getPropertyValue('--module-index')).toBe('1')
     expect(within(nav).getByRole('button', { name: /MICRO/ })).toHaveAttribute('aria-pressed', 'true')
     expect(screen.getByRole('heading', { level: 1, name: 'Attachment Review' })).toBeVisible()
-    expect(screen.queryByRole('heading', { name: 'Structured lexical preview' })).not.toBeInTheDocument()
+    expect(screen.queryByLabelText('Parse summary')).not.toBeInTheDocument()
 
     fireEvent.click(within(nav).getByRole('button', { name: /NANO/ }))
     expect(nav.style.getPropertyValue('--module-index')).toBe('2')
@@ -47,7 +47,7 @@ describe('Part 3 interaction presentation', () => {
     expect(summary).toBeVisible()
     expect(screen.getByRole('region', { name: 'Parse controls' })).toHaveAttribute('aria-busy', 'false')
     expect(screen.getByRole('button', { name: 'Parse Table' })).toBeEnabled()
-    const preview = screen.getByRole('region', { name: 'Structured lexical preview' })
+    const preview = screen.getByRole('region', { name: 'Structured table' })
     expect(preview).toBeVisible()
   }, 15_000)
 })

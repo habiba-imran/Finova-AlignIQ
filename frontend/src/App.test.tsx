@@ -4,7 +4,7 @@ import App from './App'
 import { SYNTHETIC_EXAMPLE } from './syntheticExample'
 
 function setup() {
-  render(<App />)
+  render(<App diagnostics />)
   const input = screen.getByRole('textbox', { name: 'Raw TMT text' }) as HTMLTextAreaElement
   const preview = screen.getByLabelText('Raw text preview')
   return { input, preview }
@@ -74,7 +74,7 @@ describe('Raw intake fidelity', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Load synthetic example' }))
     expect(input.value).toBe(SYNTHETIC_EXAMPLE)
     expect(preview.textContent).toBe(SYNTHETIC_EXAMPLE)
-    expect(preview.textContent).toContain('SYNTHETIC EXAMPLE')
+    expect(preview.textContent).toContain('SYNTHETIC TEST 01')
     expect(screen.queryByRole('combobox', { name: /Source/ })).not.toBeInTheDocument()
     expect(screen.getByRole('button', { name: 'Analyze' })).toBeDisabled()
   })
@@ -90,7 +90,7 @@ describe('Raw intake fidelity', () => {
   it('provides accessible names, source disclosure, hints, and focusable preview', () => {
     const { input, preview } = setup()
     expect(input).toHaveAccessibleDescription(/No cleanup or column alignment is applied/)
-    expect(screen.getByRole('button', { name: 'Analyze' })).toHaveAccessibleDescription(/not implemented/)
+    expect(screen.getByRole('button', { name: 'Analyze' })).toBeDisabled()
     expect(preview).toHaveAttribute('tabindex', '0')
     expect(screen.getByRole('link', { name: 'Skip to raw text input' })).toHaveAttribute('href', '#intake')
   })

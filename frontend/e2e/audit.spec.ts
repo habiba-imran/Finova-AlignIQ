@@ -1,7 +1,7 @@
 import { expect, test } from '@playwright/test'
 
 test('switching between all three loaded demos preserves text but cannot carry demo authority', async ({ page }) => {
-  await page.goto('/', { waitUntil: 'networkidle' })
+  await page.goto('/?diagnostics=1', { waitUntil: 'networkidle' })
   const nav = page.getByRole('navigation', { name: 'Review purpose' })
   const raw = page.getByRole('textbox', { name: 'Raw TMT text' })
   const pairs = [

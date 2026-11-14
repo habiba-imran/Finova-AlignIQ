@@ -13,6 +13,7 @@ from app.api.automatic_parse import router as automatic_parse_router
 from app.api.planning import router as planning_router
 from app.api.attachments import router as attachments_router
 from app.api.sequencing import router as sequencing_router
+from app.api.interactive import router as interactive_router
 from app.api.privacy import PrivateIntakeMiddleware, private_validation_error
 
 app = FastAPI(
@@ -30,6 +31,7 @@ app.include_router(automatic_parse_router)
 app.include_router(planning_router)
 app.include_router(attachments_router)
 app.include_router(sequencing_router)
+app.include_router(interactive_router)
 
 
 class HealthResponse(BaseModel):

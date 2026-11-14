@@ -57,7 +57,8 @@ it('runs once on explicit initiation, groups dimensions and keeps original exact
   expect(within(article).getByText(/4 of 20 positions eligible; 16 unavailable/)).toBeVisible()
   expect(within(article).getByText('DRAFT — Requires Orthodontist Review')).toBeVisible()
   expect(within(article).getByText(/Clinical diagnosis, suitability/)).toBeVisible()
-  expect(within(article).getByText(/No provider call was made/)).toBeVisible()
+  expect(within(article).getByRole('heading', { name: 'Standard Report — Template-Based' })).toBeVisible()
+  expect(fixture.report.generation.attempts).toBe(0)
 })
 it('copies only selected eligible comments with complete withholding context and provenance', async () => {
   const writeText = vi.fn().mockResolvedValue(undefined)
@@ -95,14 +96,14 @@ it('whole report copying preserves the exact complete dimension index and engine
   const writeText = vi.fn().mockResolvedValue(undefined)
   vi.stubGlobal('navigator', { clipboard: { writeText } })
   const { article } = await generated()
-  fireEvent.click(within(article).getByRole('button', { name: 'Copy complete DRAFT report' }))
+  fireEvent.click(within(article).getByRole('button', { name: 'Copy' }))
   await screen.findByText(/Complete DRAFT report copied/)
   expect(writeText).toHaveBeenCalledWith(fixture.export_text)
 })
 it('reports clipboard failure without losing the usable draft', async () => {
   vi.stubGlobal('navigator', { clipboard: { writeText: vi.fn().mockRejectedValue(new Error()) } })
   const { article } = await generated()
-  fireEvent.click(within(article).getByRole('button', { name: 'Copy complete DRAFT report' }))
+  fireEvent.click(within(article).getByRole('button', { name: 'Copy' }))
   expect(await screen.findByText(/Clipboard access is unavailable/)).toBeVisible()
   expect(article).toBeVisible()
 })
@@ -112,7 +113,7 @@ it('downloads the complete DRAFT as a local TXT Blob and revokes its URL', async
   const click = vi.spyOn(HTMLAnchorElement.prototype, 'click').mockImplementation(() => {})
   const { article, fetch } = await generated()
   vi.useFakeTimers()
-  fireEvent.click(within(article).getByRole('button', { name: 'Download DRAFT (TXT)' }))
+  fireEvent.click(within(article).getByRole('button', { name: 'Export TXT' }))
   expect(create.mock.calls[0][0]).toBeInstanceOf(Blob)
   expect(click).toHaveBeenCalledOnce()
   expect(fetch).toHaveBeenCalledOnce()
@@ -146,13 +147,13 @@ it('shows errors, preserves a retry action and never retries automatically', asy
 it('loads a fixed demo only on explicit action; edits discard authority and stale output', async () => {
   const fetch = vi.fn().mockResolvedValueOnce(ok(input)).mockResolvedValueOnce(ok(fixture))
   vi.stubGlobal('fetch', fetch)
-  render(<App />)
+  render(<App diagnostics />)
   expect(fetch).not.toHaveBeenCalled()
   fireEvent.click(screen.getByRole('button', { name: 'Load Finova planning demo' }))
   await screen.findByRole('button', { name: 'Run Planning Assistant' })
   const raw = screen.getByRole('textbox', { name: 'Raw TMT text' })
   expect(raw).toHaveValue(input.parsed.raw_text)
-  expect(screen.getByLabelText('Raw text preview').textContent).toBe(input.parsed.raw_text)
+  expect(screen.getByRole('textbox', { name: 'Raw TMT text' }).textContent).toBe(input.parsed.raw_text)
   fireEvent.change(screen.getByLabelText('Wording preference'), { target: { value: 'TEMPLATES' } })
   fireEvent.click(screen.getByRole('button', { name: 'Run Planning Assistant' }))
   await screen.findByRole('article', { name: 'Planning Assistant draft' })
@@ -163,7 +164,7 @@ it('loads a fixed demo only on explicit action; edits discard authority and stal
 })
 it('Micro and Nano have distinct intake while original text is preserved', () => {
   const fetch = vi.fn(); vi.stubGlobal('fetch', fetch)
-  render(<App />)
+  render(<App diagnostics />)
   fireEvent.change(screen.getByRole('textbox', { name: 'Raw TMT text' }), { target: { value: 'original synthetic text' } })
   const nav = screen.getByRole('navigation', { name: 'Review purpose' })
   fireEvent.click(within(nav).getByRole('button', { name: /MICRO/ }))
@@ -177,24 +178,24 @@ it('Micro and Nano have distinct intake while original text is preserved', () =>
 })
 it('a disabled demonstration is explained without replacing the current raw text', async () => {
   vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: false, status: 404 }))
-  render(<App />)
+  render(<App diagnostics />)
   const raw = screen.getByRole('textbox', { name: 'Raw TMT text' })
   fireEvent.change(raw, { target: { value: 'retained synthetic input' } })
   fireEvent.click(screen.getByRole('button', { name: 'Load Finova planning demo' }))
-  expect(await screen.findByRole('alert')).toHaveTextContent('disabled on this backend')
+  expect(await screen.findByRole('alert')).toHaveTextContent('unavailable in this session')
   expect(raw).toHaveValue('retained synthetic input')
 })
 it('ordinary unknown vendor input produces dimension-specific unavailability without selectable observations', async () => {
   const report = unverifiedReport as unknown as PlanningDraft['report']
   const value: PlanningDraft = { version: '1.0.0', report, export_text: report.export_text, sections: [
-    ...(['SAGITTAL', 'TRANSVERSE', 'VERTICAL', 'OTHER'] as const).map(dimension => ({ dimension, comment_ids: [], explanation: 'No sufficiently authorized descriptions for this dimension.' })),
+    ...(['SAGITTAL', 'TRANSVERSE', 'VERTICAL', 'OTHER'] as const).map(dimension => ({ dimension, comment_ids: [], explanation: 'No eligible findings for this dimension.' })),
     { dimension: 'UNAVAILABLE', comment_ids: report.comments.map(c => c.comment_id), explanation: 'Withheld.' },
   ] }
   const fetch = vi.fn().mockResolvedValue(ok(value)); vi.stubGlobal('fetch', fetch)
   render(<PlanningWorkspace rawText={unverifiedParse.raw_text} context={{ ...input.context, source_version: null }} parsed={unverifiedParse as unknown as DemoInput['parsed']} demo={false} onComplete={() => {}} />)
   fireEvent.click(screen.getByRole('button', { name: 'Run Planning Assistant' }))
   const article = await screen.findByRole('article', { name: 'Planning Assistant draft' })
-  expect(within(article).getAllByText('No sufficiently authorized descriptions for this dimension.')).toHaveLength(4)
+  expect(within(article).getAllByText('No eligible findings for this dimension.')).toHaveLength(4)
   expect(within(article).getByRole('button', { name: 'Copy selected comments' })).toBeDisabled()
   expect(fetch.mock.calls[0][0]).toBe('/api/v1/planning/draft')
   expect(JSON.parse(fetch.mock.calls[0][1].body)).not.toHaveProperty('test_only')

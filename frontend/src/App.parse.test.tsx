@@ -7,7 +7,7 @@ import fixture from './test/fixtures/synthetic-parse-result.json'
 afterEach(() => { vi.unstubAllGlobals(); vi.useRealTimers() })
 
 function setup(raw = fixture.raw_text) {
-  render(<App />)
+  render(<App diagnostics />)
   const input = screen.getByRole('textbox', { name: 'Raw TMT text' }) as HTMLTextAreaElement
   const button = screen.getByRole('button', { name: 'Parse Table' })
   fireEvent.change(input, { target: { value: raw } })
@@ -78,7 +78,7 @@ describe('Explicit Phase 1 parsing', () => {
     vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: false, status, json: async () => ({ detail: '<script>unsafe server text</script>' }) }))
     const { input, button } = setup()
     fireEvent.click(button)
-    expect(await screen.findByRole('alert')).toHaveTextContent(/raw input is preserved/i)
+    expect(await screen.findByRole('alert')).toHaveTextContent(/original text is preserved/i)
     expect(input.value).toBe(fixture.raw_text)
     expect(screen.queryByText(/unsafe server text/)).not.toBeInTheDocument()
     expect(screen.queryByRole('heading', { name: 'Structured lexical preview' })).not.toBeInTheDocument()

@@ -5,6 +5,7 @@ import { isSequencingDraft, SEQUENCE_SECTIONS } from '../api/sequencing'
 import { isFinalDraftReport } from '../api/report'
 import type { FinalDraftReport, ReportComment } from '../api/report'
 import type { PdfKind } from './reportPdf'
+import { isInteractiveReport } from '../api/interactive'
 
 export type PdfBlock = { type: 'heading'; text: string } | { type: 'text'; text: string } | { type: 'table'; headers: string[]; widths: number[]; rows: string[][] }
 export interface PdfPresentation {
@@ -67,6 +68,16 @@ function macroBlocks(report: FinalDraftReport, sections: { dimension: string; co
 }
 
 export function buildPdfPresentation(kind: PdfKind, input: unknown): PdfPresentation {
+  if (kind === 'interactive' && isInteractiveReport(input)) {
+    const blocks: PdfBlock[] = [heading('Factual tooth-wise observations')]
+    for (const o of input.observations) blocks.push(heading('Tooth observation'), text(`Tooth token ${o.original_tooth}\n${o.text}`))
+    if (input.illustrations.length) {
+      blocks.push(heading('Illustrative demo content'), text('SIMULATED DEMO - not calculated treatment findings or recommendations.'))
+      for (const i of input.illustrations) blocks.push(text(`Tooth token ${i.original_tooth}\n${i.label}: ${i.text}`))
+    }
+    return { summary: [input.module.toUpperCase(), input.summary, input.wording_notice], blocks,
+      limitations: input.limitations, missing: [], referenceGuide: ['Exact source cells, Decimal strings, direction labels and source spans: /parsed/measurements in validated-report.json. The original input and complete 96-rule ledger remain in the embedded TXT and JSON.'] }
+  }
   if (kind === 'macro' && isPlanningDraft(input)) return macroBlocks(input.report, input.sections, '/report/')
   if (kind === 'descriptive' && isFinalDraftReport(input)) return macroBlocks(input,
     [{ dimension: 'Observations', comment_ids: input.comments.filter(c => c.section !== 'UNAVAILABLE').map(c => c.comment_id), explanation: 'Evidence-controlled descriptive observations only.' }], '/')

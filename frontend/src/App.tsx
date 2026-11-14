@@ -18,6 +18,7 @@ import AttachmentWorkspace from './components/AttachmentWorkspace'
 import { requestAttachmentDemoInput } from './api/attachments'
 import type { AttachmentDemoInput } from './api/attachments'
 import SequencingWorkspace from './components/SequencingWorkspace'
+import InteractiveWorkspace from './components/InteractiveWorkspace'
 import { requestSequencingDemoInput } from './api/sequencing'
 import type { SequencingDemoInput } from './api/sequencing'
 
@@ -172,7 +173,7 @@ export default function App({ diagnostics = new URLSearchParams(window.location.
       }
     } catch (e) {
       if (revision === revisionRef.current) {
-        if (e instanceof Error && e.message === 'DEMO_DISABLED') setUnavailableDemos(v => ({ ...v, macro: true }))
+        if (e instanceof Error && ['DEMO_DISABLED', 'DEMO_UNAVAILABLE'].includes(e.message)) setUnavailableDemos(v => ({ ...v, macro: true }))
         setError('The planning demo is unavailable in this session. Your existing text is preserved.')
       }
     } finally {
@@ -194,7 +195,7 @@ export default function App({ diagnostics = new URLSearchParams(window.location.
       }
     } catch (e) {
       if (revision === revisionRef.current) {
-        if (e instanceof Error && e.message === 'DEMO_DISABLED') setUnavailableDemos(v => ({ ...v, micro: true }))
+        if (e instanceof Error && ['DEMO_DISABLED', 'DEMO_UNAVAILABLE'].includes(e.message)) setUnavailableDemos(v => ({ ...v, micro: true }))
         setError('The attachment demo is unavailable in this session. Your existing text is preserved.')
       }
     } finally {
@@ -216,7 +217,7 @@ export default function App({ diagnostics = new URLSearchParams(window.location.
       }
     } catch (e) {
       if (revision === revisionRef.current) {
-        if (e instanceof Error && e.message === 'DEMO_DISABLED') setUnavailableDemos(v => ({ ...v, nano: true }))
+        if (e instanceof Error && ['DEMO_DISABLED', 'DEMO_UNAVAILABLE'].includes(e.message)) setUnavailableDemos(v => ({ ...v, nano: true }))
         setError('The sequencing demo is unavailable in this session. Your existing text is preserved.')
       }
     } finally {
@@ -269,7 +270,7 @@ export default function App({ diagnostics = new URLSearchParams(window.location.
                 type="button"
                 key={id}
                 aria-pressed={purpose === id}
-                onClick={() => { if (purpose !== id) { invalidateParse(); setPurpose(id) } }}
+                onClick={() => { if (purpose !== id) { if (diagnostics || loading) invalidateParse(); else setComplete(false); setPurpose(id) } }}
                 className={`module-tab ${purpose === id ? 'module-tab-active' : ''}`}
               >
                 <span className="module-tab-code">{module.code}</span>
@@ -278,7 +279,7 @@ export default function App({ diagnostics = new URLSearchParams(window.location.
               </button>
             })}
           </nav>
-          <p className="mt-2 text-xs leading-5 text-muted">Prototype — not for clinical use. All reports require independent orthodontist review.</p>
+          <p className="mt-2 text-xs leading-5 text-muted">{diagnostics ? 'Prototype — not for clinical use. All reports require independent orthodontist review.' : 'Synthetic demonstration — not for clinical use.'}</p>
         </div>
 
         <ol aria-label="Planning workflow" className="workflow-steps mt-4">
@@ -382,9 +383,10 @@ export default function App({ diagnostics = new URLSearchParams(window.location.
             <h2 id="review-area-heading" className="section-title">Review results</h2>
             <p className="section-note">{complete ? 'Review the DRAFT below, then use the export area when ready.' : 'Run the review below to prepare a DRAFT.'}</p>
           </div>
-          {purpose === 'macro' && <PlanningWorkspace key={`planning-${revisionRef.current}`} rawText={rawText} context={context} parsed={result} demo={!!demo} onComplete={setComplete} />}
-          {purpose === 'micro' && <AttachmentWorkspace key={`attachment-${revisionRef.current}`} rawText={rawText} context={context} parsed={result} demo={!!attachmentDemo} onComplete={setComplete} />}
-          {purpose === 'nano' && <SequencingWorkspace key={`sequencing-${revisionRef.current}`} rawText={rawText} context={context} parsed={result} demo={!!sequencingDemo} onComplete={setComplete} />}
+          {!diagnostics && <InteractiveWorkspace key={`interactive-${purpose}-${revisionRef.current}`} module={purpose} rawText={rawText} context={context} parsed={result} onComplete={setComplete} />}
+          {diagnostics && purpose === 'macro' && <PlanningWorkspace key={`planning-${revisionRef.current}`} rawText={rawText} context={context} parsed={result} demo={!!demo} onComplete={setComplete} />}
+          {diagnostics && purpose === 'micro' && <AttachmentWorkspace key={`attachment-${revisionRef.current}`} rawText={rawText} context={context} parsed={result} demo={!!attachmentDemo} onComplete={setComplete} />}
+          {diagnostics && purpose === 'nano' && <SequencingWorkspace key={`sequencing-${revisionRef.current}`} rawText={rawText} context={context} parsed={result} demo={!!sequencingDemo} onComplete={setComplete} />}
           {diagnostics && purpose === 'macro' && !demo && <details className="technical-details"><summary>Advanced: separate engineering review & legacy report actions</summary><DraftReviewPanel key={`review-${revisionRef.current}`} rawText={rawText} source={source} context={context} rawHash={result.raw_sha256} recoveryReceipt={result.pipeline.recovery_receipt ?? undefined} /></details>}
         </section>}
 

@@ -8,9 +8,10 @@ import { isAttachmentDraft } from '../api/attachments'
 import { isSequencingDraft } from '../api/sequencing'
 import { isFinalDraftReport } from '../api/report'
 import { buildPdfPresentation } from './presentation'
+import { isInteractiveReport } from '../api/interactive'
 
-export type PdfKind = 'macro' | 'micro' | 'nano' | 'descriptive'
-const TITLES: Record<PdfKind, string> = { macro: 'Planning review', micro: 'Attachment review', nano: 'Sequencing review', descriptive: 'Descriptive planning review' }
+export type PdfKind = 'macro' | 'micro' | 'nano' | 'descriptive' | 'interactive'
+const TITLES: Record<PdfKind, string> = { macro: 'Planning review', micro: 'Attachment review', nano: 'Sequencing review', descriptive: 'Descriptive planning review', interactive: 'Synthetic demonstration review' }
 const TEAL = rgb(8 / 255, 124 / 255, 114 / 255), INK = rgb(0.10, 0.19, 0.23), MUTED = rgb(0.32, 0.40, 0.44)
 const LINE = rgb(0.84, 0.89, 0.90), SOFT = rgb(0.94, 0.97, 0.97)
 const WIDTH = 595.28, HEIGHT = 841.89, MARGIN = 42, BODY_WIDTH = WIDTH - MARGIN * 2, BOTTOM = 54
@@ -18,6 +19,7 @@ type LayoutFont = Pick<PDFFont, 'widthOfTextAtSize'>
 const widthCaches = new WeakMap<LayoutFont, Map<string, number>>()
 
 function validated(kind: PdfKind, data: unknown) {
+  if (kind === 'interactive' && isInteractiveReport(data)) return { data, report: data, text: data.export_text }
   if (kind === 'macro' && isPlanningDraft(data)) return { data, report: data.report, text: data.export_text }
   if (kind === 'micro' && isAttachmentDraft(data)) return { data, report: data, text: data.export_text }
   if (kind === 'nano' && isSequencingDraft(data)) return { data, report: data, text: data.export_text }

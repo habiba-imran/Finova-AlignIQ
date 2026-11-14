@@ -26,7 +26,7 @@ export function ReportHeader({ eyebrow, title, headingRef, draftStatus, badges =
         <h3 ref={headingRef} tabIndex={-1} className="report-title">{title}</h3>
       </div>
       <div className="flex flex-wrap items-center gap-2 lg:justify-end">
-        <span className="report-badge report-badge-draft">DRAFT · Prototype</span>
+        <span className="report-badge report-badge-draft">DRAFT</span>
         {badges.map(badge => <span key={badge.label} className={`report-badge ${toneClasses[badge.tone ?? 'default']}`}>{badge.label}</span>)}
       </div>
     </div>
