@@ -12,11 +12,10 @@ function setup(fetch = vi.fn().mockResolvedValue(ok(fixture))) {
   vi.stubGlobal('fetch', fetch); render(<App />)
   fireEvent.click(screen.getByRole('button', { name: 'Load generated recovery example' }))
   const input = screen.getByRole('textbox', { name: 'Raw TMT text' }) as HTMLTextAreaElement
-  fireEvent.click(screen.getByRole('checkbox', { name: /I confirm/ }))
   return { fetch, input, button: screen.getByRole('button', { name: 'Parse Table' }) }
 }
 describe('Phase 4 automatic structural recovery', () => {
-  it('does not transmit on loading or confirming and has no second permission action', () => {
+  it('does not transmit on loading and has no second permission action', () => {
     const { fetch, input } = setup()
     expect(input.value).toBe(example.raw_text)
     expect(fetch).not.toHaveBeenCalled()
@@ -55,7 +54,7 @@ describe('Phase 4 automatic structural recovery', () => {
   it('clears generated authorization after any raw edit', async () => {
     const { fetch, input, button } = setup()
     fireEvent.change(input, { target: { value: example.raw_text + ' ' } })
-    fireEvent.click(screen.getByRole('checkbox', { name: /I confirm/ })); fireEvent.click(button)
+    fireEvent.click(button)
     await screen.findByRole('alert') // mocked response belongs to the earlier input and must reject.
     expect(JSON.parse(fetch.mock.calls[0][1].body)).not.toHaveProperty('synthetic_fixture')
   })

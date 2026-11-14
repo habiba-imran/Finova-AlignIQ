@@ -111,7 +111,7 @@ it('shows loading, prevents duplicate requests and permits explicit retry after 
   expect(await screen.findByRole('alert')).toHaveTextContent('original text is preserved')
   expect(run).toBeEnabled()
 })
-it.each(['input', 'context', 'consent', 'purpose'])('clears attachment output and demo authority after %s changes', async change => {
+it.each(['input', 'context', 'purpose'])('clears attachment output and demo authority after %s changes', async change => {
   const fetch = vi.fn().mockResolvedValueOnce(ok(input)).mockResolvedValueOnce(ok(fixture))
   vi.stubGlobal('fetch', fetch); render(<App />)
   fireEvent.click(within(screen.getByRole('navigation', { name: 'Review purpose' })).getByRole('button', { name: /MICRO/ }))
@@ -120,7 +120,6 @@ it.each(['input', 'context', 'consent', 'purpose'])('clears attachment output an
   await screen.findByRole('article', { name: 'Attachment review draft' })
   if (change === 'input') fireEvent.change(screen.getByRole('textbox', { name: 'Raw TMT text' }), { target: { value: 'changed synthetic' } })
   if (change === 'context') fireEvent.change(screen.getByLabelText('Source version claim'), { target: { value: 'other' } })
-  if (change === 'consent') fireEvent.click(screen.getByRole('checkbox', { name: /I confirm/ }))
   if (change === 'purpose') fireEvent.click(within(screen.getByRole('navigation', { name: 'Review purpose' })).getByRole('button', { name: /MACRO/ }))
   expect(screen.queryByRole('article', { name: 'Attachment review draft' })).not.toBeInTheDocument()
   expect(screen.queryByRole('button', { name: 'Copy attachment DRAFT' })).not.toBeInTheDocument()

@@ -11,14 +11,13 @@ function setup() {
 }
 
 describe('Raw intake fidelity', () => {
-  it('starts empty with zero counts, automatic source disclosure, safety notice, and disabled analysis', () => {
+  it('starts empty with zero counts, automatic source disclosure, and disabled analysis', () => {
     const { input, preview } = setup()
     expect(input).toHaveValue('')
     expect(preview.textContent).toBe('')
     expect(screen.getByRole('status')).toHaveTextContent('0 characters · 0 lines')
     expect(screen.queryByRole('combobox', { name: /Source/ })).not.toBeInTheDocument()
     expect(screen.getByText(/Source indicators and layout are detected when you parse/)).toBeVisible()
-    expect(screen.getByText('Prototype — not for clinical use')).toBeVisible()
     expect(screen.getByRole('button', { name: 'Analyze' })).toBeDisabled()
     expect(screen.getByRole('button', { name: 'Clear' })).toBeDisabled()
   })
@@ -91,7 +90,6 @@ describe('Raw intake fidelity', () => {
   it('provides accessible names, source disclosure, hints, and focusable preview', () => {
     const { input, preview } = setup()
     expect(input).toHaveAccessibleDescription(/No cleanup or column alignment is applied/)
-    expect(screen.getByText(/Vendor compatibility remains unverified/)).toBeVisible()
     expect(screen.getByRole('button', { name: 'Analyze' })).toHaveAccessibleDescription(/not implemented/)
     expect(preview).toHaveAttribute('tabindex', '0')
     expect(screen.getByRole('link', { name: 'Skip to raw text input' })).toHaveAttribute('href', '#intake')

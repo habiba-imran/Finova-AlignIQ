@@ -159,7 +159,6 @@ it('loads a fixed demo only on explicit action; edits discard authority and stal
   fireEvent.change(raw, { target: { value: input.parsed.raw_text + 'edited' } })
   expect(screen.queryByRole('article')).not.toBeInTheDocument()
   expect(screen.queryByRole('button', { name: 'Run Planning Assistant' })).not.toBeInTheDocument()
-  expect(screen.getByRole('checkbox')).not.toBeChecked()
   expect(fetch).toHaveBeenCalledTimes(2)
 })
 it('Micro and Nano have distinct intake while original text is preserved', () => {

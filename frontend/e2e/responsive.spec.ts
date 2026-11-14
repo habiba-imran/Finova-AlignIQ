@@ -27,6 +27,9 @@ test('context heading, compact module tabs and layout remain usable at every tar
     await page.setViewportSize({ width, height: 1000 })
     await expect(nav).toBeVisible()
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)
+    const navWidth = (await nav.boundingBox())!.width
+    const availableWidth = await nav.evaluate(element => element.parentElement!.getBoundingClientRect().width)
+    expect(Math.abs(navWidth - availableWidth)).toBeLessThanOrEqual(1)
     for (const code of ['MACRO', 'MICRO', 'NANO']) {
       const tab = nav.getByRole('button', { name: new RegExp(code) })
       const box = await tab.boundingBox()

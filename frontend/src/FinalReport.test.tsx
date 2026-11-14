@@ -218,13 +218,12 @@ describe('Phase 3 final DRAFT report workflow', () => {
     expect(screen.getByLabelText('Report export preview').textContent).toBe(fixture.export_text)
   })
 
-  it.each(['raw', 'version', 'context', 'clear', 'demo', 'consent', 'question'])('preserves raw input and removes the final report when %s changes', async change => {
+  it.each(['raw', 'version', 'context', 'clear', 'demo', 'question'])('preserves raw input and removes the final report when %s changes', async change => {
     const fetch = vi.fn().mockResolvedValueOnce(ok(parseFixture)).mockResolvedValueOnce(ok(reviewFixture)).mockResolvedValueOnce(ok(fixture))
     vi.stubGlobal('fetch', fetch)
     render(<App />)
     const input = screen.getByRole('textbox', { name: 'Raw TMT text' }) as HTMLTextAreaElement
     fireEvent.change(input, { target: { value: parseFixture.raw_text } })
-    fireEvent.click(screen.getByRole('checkbox'))
     fireEvent.click(screen.getByRole('button', { name: 'Parse Table' }))
     await screen.findByRole('heading', { name: 'Structured lexical preview' })
     fireEvent.click(screen.getByRole('button', { name: 'Create draft review' }))
@@ -235,10 +234,12 @@ describe('Phase 3 final DRAFT report workflow', () => {
     expect(input.value).toBe(parseFixture.raw_text)
     if (change === 'raw') fireEvent.change(input, { target: { value: '  replacement\ttext\n\n' } })
     if (change === 'version') fireEvent.change(screen.getByLabelText('Source version claim'), { target: { value: 'UNVERIFIED' } })
-    if (change === 'context') fireEvent.change(screen.getByLabelText('Tooth notation claim'), { target: { value: 'FDI' } })
+    if (change === 'context') {
+      fireEvent.click(screen.getByRole('combobox', { name: 'Tooth notation claim' }))
+      fireEvent.click(screen.getByRole('option', { name: 'FDI' }))
+    }
     if (change === 'clear') fireEvent.click(screen.getByRole('button', { name: 'Clear' }))
     if (change === 'demo') fireEvent.click(screen.getByRole('button', { name: 'Load synthetic example' }))
-    if (change === 'consent') fireEvent.click(screen.getByRole('checkbox'))
     if (change === 'question') fireEvent.change(screen.getByLabelText(/Requested assessment/), { target: { value: 'ATTACHMENTS' } })
     expect(screen.queryByRole('article')).not.toBeInTheDocument()
     expect(screen.queryByRole('button', { name: 'Copy Report' })).not.toBeInTheDocument()

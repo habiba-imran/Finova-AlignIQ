@@ -14,7 +14,6 @@ async function parsed(fetch = vi.fn().mockResolvedValueOnce(ok(parseFixture))) {
   render(<App />)
   const input = screen.getByRole('textbox', { name: 'Raw TMT text' }) as HTMLTextAreaElement
   fireEvent.change(input, { target: { value: parseFixture.raw_text } })
-  fireEvent.click(screen.getByRole('checkbox'))
   fireEvent.click(screen.getByRole('button', { name: 'Parse Table' }))
   await screen.findByRole('heading', { name: 'Structured lexical preview' })
   fireEvent.click(screen.getByText('Advanced: separate engineering review & legacy report actions'))
@@ -79,16 +78,18 @@ describe('Phase 2A explicit draft review', () => {
     expect(fetch).toHaveBeenCalledTimes(3)
   })
 
-  it.each(['raw', 'version', 'context', 'clear', 'demo', 'consent'])('invalidates the report when %s changes', async change => {
+  it.each(['raw', 'version', 'context', 'clear', 'demo'])('invalidates the report when %s changes', async change => {
     const { button, input } = await parsed(vi.fn().mockResolvedValueOnce(ok(parseFixture)).mockResolvedValueOnce(ok(draftFixture)))
     fireEvent.click(button)
     await screen.findByLabelText('Draft review results')
     if (change === 'raw') fireEvent.change(input, { target: { value: '  changed\ttext\n\n' } })
     if (change === 'version') fireEvent.change(screen.getByLabelText('Source version claim'), { target: { value: 'UNVERIFIED' } })
-    if (change === 'context') fireEvent.change(screen.getByLabelText('Tooth notation claim'), { target: { value: 'FDI' } })
+    if (change === 'context') {
+      fireEvent.click(screen.getByRole('combobox', { name: 'Tooth notation claim' }))
+      fireEvent.click(screen.getByRole('option', { name: 'FDI' }))
+    }
     if (change === 'clear') fireEvent.click(screen.getByRole('button', { name: 'Clear' }))
     if (change === 'demo') fireEvent.click(screen.getByRole('button', { name: 'Load synthetic example' }))
-    if (change === 'consent') fireEvent.click(screen.getByRole('checkbox'))
     expect(screen.queryByLabelText('Draft review results')).not.toBeInTheDocument()
   })
 

@@ -105,7 +105,7 @@ it('handles loading, duplicate clicks, errors and explicit retry without automat
   expect(await screen.findByRole('alert')).toHaveTextContent('original text is preserved')
   expect(run).toBeEnabled()
 })
-it.each(['input', 'context', 'consent', 'purpose'])('invalidates Nano output and exports after %s changes', async change => {
+it.each(['input', 'context', 'purpose'])('invalidates Nano output and exports after %s changes', async change => {
   const fetch = vi.fn().mockResolvedValueOnce(ok(input)).mockResolvedValueOnce(ok(fixture)); vi.stubGlobal('fetch', fetch)
   render(<App />)
   const nav = screen.getByRole('navigation', { name: 'Review purpose' })
@@ -115,7 +115,6 @@ it.each(['input', 'context', 'consent', 'purpose'])('invalidates Nano output and
   await screen.findByRole('article', { name: 'Sequencing review draft' })
   if (change === 'input') fireEvent.change(screen.getByRole('textbox', { name: 'Raw TMT text' }), { target: { value: 'changed synthetic' } })
   if (change === 'context') fireEvent.change(screen.getByLabelText('Source version claim'), { target: { value: 'other' } })
-  if (change === 'consent') fireEvent.click(screen.getByRole('checkbox', { name: /I confirm/ }))
   if (change === 'purpose') fireEvent.click(within(nav).getByRole('button', { name: /MICRO/ }))
   expect(screen.queryByRole('article', { name: 'Sequencing review draft' })).not.toBeInTheDocument()
   expect(screen.queryByRole('button', { name: 'Copy sequencing DRAFT' })).not.toBeInTheDocument()

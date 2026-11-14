@@ -24,6 +24,9 @@ test('explicit parse preserves raw text and returns exact lexical values through
   expect(data.measurements[2].signed_decimal).toBe(null)
   await expect(page.getByRole('heading', { name: 'Structured lexical preview' })).toBeVisible()
   await expect(page.getByText('Source verification: UNVERIFIED')).toBeVisible()
+  const structured = page.getByRole('region', { name: 'Structured TMT table' })
+  await expect(structured.getByRole('columnheader', { name: /Rotation/ })).toBeVisible()
+  await expect(structured.getByRole('rowheader', { name: /13/ })).toBeVisible()
   await expect(input).toHaveValue(raw)
   expect(await page.getByLabel('Raw text preview').textContent()).toBe(raw)
   const styles = await page.getByLabel('Raw text preview').evaluate(element => {

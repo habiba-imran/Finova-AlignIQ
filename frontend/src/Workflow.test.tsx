@@ -13,15 +13,10 @@ it('advances workflow progress only when input, parsing and review evidence exis
   const completed = () => progress.querySelectorAll('li[data-state="complete"]')
 
   expect(active()).toHaveTextContent('Input')
-  expect(active()).toHaveTextContent('Add synthetic text')
+  expect(active()).toHaveTextContent('Add text')
   expect(completed()).toHaveLength(0)
 
   fireEvent.change(screen.getByRole('textbox', { name: 'Raw TMT text' }), { target: { value: fixture.raw_text } })
-  expect(active()).toHaveTextContent('Input')
-  expect(active()).toHaveTextContent('Confirm synthetic data')
-  expect(completed()).toHaveLength(0)
-
-  fireEvent.click(screen.getByRole('checkbox', { name: /I confirm this text is synthetic/ }))
   expect(active()).toHaveTextContent('Inspection')
   expect(active()).toHaveTextContent('Parse text')
   expect(completed()).toHaveLength(1)

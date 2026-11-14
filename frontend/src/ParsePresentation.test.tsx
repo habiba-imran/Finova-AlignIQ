@@ -12,7 +12,6 @@ function parse(response: unknown) {
   vi.stubGlobal('fetch', vi.fn().mockResolvedValue(ok(response)))
   render(<App />)
   fireEvent.change(screen.getByRole('textbox', { name: 'Raw TMT text' }), { target: { value: fixture.raw_text } })
-  fireEvent.click(screen.getByRole('checkbox', { name: /I confirm/ }))
   fireEvent.click(screen.getByRole('button', { name: 'Parse Table' }))
 }
 

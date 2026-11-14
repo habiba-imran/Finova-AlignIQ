@@ -32,7 +32,6 @@ describe('Part 3 interaction presentation', () => {
     vi.stubGlobal('fetch', vi.fn().mockReturnValue(pending))
     render(<App />)
     fireEvent.change(screen.getByRole('textbox', { name: 'Raw TMT text' }), { target: { value: fixture.raw_text } })
-    fireEvent.click(screen.getByRole('checkbox', { name: /I confirm/ }))
     fireEvent.click(screen.getByRole('button', { name: 'Parse Table' }))
 
     const parsing = screen.getByRole('button', { name: 'Parsing…' })

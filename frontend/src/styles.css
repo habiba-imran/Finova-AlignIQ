@@ -33,7 +33,7 @@
   .section-note { @apply text-xs leading-5 text-muted; }
   .section-kicker { @apply text-[11px] font-semibold uppercase tracking-[0.14em] text-muted; }
 
-  .module-tabs { @apply relative grid w-full grid-cols-3 gap-1.5 rounded-xl border border-line bg-white p-1.5 shadow-panel sm:max-w-[640px]; }
+  .module-tabs { @apply relative grid w-full grid-cols-3 gap-1.5 rounded-xl border border-line bg-white p-1.5 shadow-panel; }
   .module-tab-indicator {
     position: absolute;
     top: 0.375rem;
@@ -67,8 +67,21 @@
   .button-clear { @apply border-line bg-white text-ink enabled:hover:border-field enabled:hover:bg-canvas; }
 
   .skip-link { @apply fixed top-3 left-3 z-50 -translate-y-24 rounded-lg bg-ink px-4 py-3 text-sm text-white focus:translate-y-0; }
-  .context-control { @apply min-h-11 w-full rounded-lg border border-field bg-white px-3 py-2 text-sm leading-5; transition: border-color var(--motion-hover) var(--ease-standard), background-color var(--motion-hover) var(--ease-standard); }
+  .context-control { @apply min-h-11 w-full rounded-xl border border-line bg-white px-3.5 py-2.5 text-sm leading-5 shadow-panel placeholder:text-placeholder; transition: border-color var(--motion-hover) var(--ease-standard), background-color var(--motion-hover) var(--ease-standard), box-shadow var(--motion-hover) var(--ease-standard); }
+  .context-control:hover { border-color: #b8c6cd; }
   .context-control:focus, #intake:focus, select:focus, textarea:focus { border-color: var(--color-brand); }
+  .context-control:focus-visible, #intake:focus-visible, textarea:focus-visible { outline: 2px solid var(--color-brand); outline-offset: 1px; }
+
+  .modern-select-trigger { @apply flex min-h-11 w-full min-w-0 items-center justify-between gap-2 rounded-xl border border-line bg-white px-3.5 py-2.5 text-left text-sm font-medium text-ink shadow-panel; transition: border-color var(--motion-hover) var(--ease-standard), background-color var(--motion-hover) var(--ease-standard), box-shadow var(--motion-hover) var(--ease-standard); }
+  .modern-select-trigger:hover { border-color: #b8c6cd; background-color: #f9fbfb; }
+  .modern-select-trigger[data-open="true"] { border-color: var(--color-brand); background-color: #fff; box-shadow: 0 0 0 3px rgb(8 124 114 / 0.12); }
+  .modern-select-trigger[data-open="true"] .modern-select-chevron { transform: rotate(180deg); }
+  .modern-select-chevron { transition: transform var(--motion-control) var(--ease-standard); }
+  .modern-select-menu { overflow: hidden; border: 1px solid #dee5e9; border-radius: 0.75rem; background: #fff; box-shadow: 0 18px 45px -18px rgb(27 48 59 / 0.45); animation: select-menu-in 150ms var(--ease-out-soft); transform-origin: top center; }
+  .modern-select-option { @apply flex w-full items-center justify-between gap-3 rounded-lg px-3 py-2.5 text-left text-sm text-ink; transition: background-color var(--motion-hover) var(--ease-standard), color var(--motion-hover) var(--ease-standard); }
+  .modern-select-option[data-active="true"] { background-color: #f5f7f7; }
+  .modern-select-option[data-selected="true"] { @apply bg-brand-soft font-semibold text-brand; }
+  .modern-select-option[data-selected="true"][data-active="true"] { background-color: #d8ece7; }
   .dimension-panel { @apply min-w-0 rounded-xl border border-line bg-canvas p-4; }
   .comment-card { @apply min-w-0 rounded-lg border border-line bg-white p-4; transition: border-color var(--motion-hover) var(--ease-standard), background-color var(--motion-hover) var(--ease-standard); }
   .comment-card:focus-within { border-color: #b9dcd5; background-color: #fbfdfc; }
@@ -137,6 +150,48 @@
   .movement-table tbody tr:hover, .movement-table tbody tr:focus-within { background-color: #f7faf9; }
   .movement-value { @apply text-sm font-semibold tabular-nums text-ink; }
   .movement-number { @apply tabular-nums; }
+  .structured-table-scroll { @apply max-h-[32rem] overflow-auto rounded-xl border border-line bg-white; scrollbar-gutter: stable; overscroll-behavior: contain; }
+  .structured-table { @apply w-full table-fixed border-collapse text-left text-xs leading-5; }
+  .structured-table-wide { @apply min-w-[44rem]; }
+  .structured-table thead { @apply sticky top-0 z-10 bg-canvas text-muted; }
+  .structured-table th { @apply whitespace-normal border-b border-line px-3 py-2.5 font-semibold; overflow-wrap: anywhere; }
+  .structured-table th:first-child { width: 5rem; }
+  .structured-table td { @apply border-b border-line px-3 py-2.5 align-top; overflow-wrap: anywhere; }
+  .structured-table tbody tr:last-child th, .structured-table tbody tr:last-child td { border-bottom: 0; }
+  .structured-table tbody tr { transition: background-color var(--motion-hover) var(--ease-standard); }
+  .structured-table tbody tr:hover, .structured-table tbody tr:focus-within { background-color: #f7faf9; }
+  .structured-value { @apply text-sm font-semibold tabular-nums text-ink; }
+  @media (max-width: 639px) {
+    .structured-table, .structured-table-wide { display: block; min-width: 0; }
+    .structured-table thead {
+      position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+      overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+    }
+    .structured-table tbody { display: block; }
+    .structured-table tbody tr {
+      display: block; margin-bottom: 0.5rem; overflow: hidden;
+      @apply border border-line; border-radius: 0.5rem;
+    }
+    .structured-table tbody tr:last-child { margin-bottom: 0; }
+    .structured-table th, .structured-table td { display: block; width: auto; @apply border-b border-line; }
+    .structured-table th:first-child { width: auto; }
+    .structured-table-scroll { max-height: none; }
+    .structured-table tbody tr:last-child th, .structured-table tbody tr:last-child td { @apply border-b border-line; }
+    .structured-table th[scope='row'] {
+      display: flex; align-items: baseline; justify-content: space-between; gap: 0.5rem;
+      background-color: #f7faf9;
+    }
+    .structured-table th[scope='row'] .tooth-status { margin-top: 0; }
+    .structured-table td {
+      display: grid; grid-template-columns: 6.5rem minmax(0, 1fr); gap: 0.75rem; align-items: start;
+    }
+    .structured-table td::before {
+      content: attr(data-label);
+      align-self: start; font-size: 0.625rem; font-weight: 600; line-height: 1.5;
+      @apply text-muted; overflow-wrap: anywhere;
+    }
+    .structured-table td:last-child { border-bottom: 0; }
+  }
   .attachment-scroll { scrollbar-gutter: stable; overscroll-behavior: contain; }
   .attachment-table tbody tr { transition: background-color var(--motion-hover) var(--ease-standard); }
   .attachment-table tbody tr:hover, .attachment-table tbody tr:focus-within { background-color: #f9fbfb; }
@@ -176,6 +231,7 @@ details[open] > summary ~ * { animation: disclosure-in var(--motion-enter) var(-
 @keyframes disclosure-in { from { opacity: 0; transform: translateY(-2px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes status-in { from { opacity: 0; transform: translateY(-2px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes swap-in { from { opacity: 0; transform: translateY(3px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes select-menu-in { from { opacity: 0; transform: translateY(-4px) scale(0.985); } to { opacity: 1; transform: translateY(0) scale(1); } }
 
 /* Decorative motion is optional. All state, content and focus remain immediately available. */
 @media (prefers-reduced-motion: reduce) {

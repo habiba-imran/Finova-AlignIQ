@@ -2,9 +2,19 @@ import { expect, test } from '@playwright/test'
 
 test('parse presentation promotes movement inspection and keeps raw source and diagnostics available', async ({ page }, testInfo) => {
   await page.goto('/', { waitUntil: 'networkidle' })
+  await expect(page.getByText('Parse your TMT to see the structured table.')).toBeVisible()
   await page.getByRole('button', { name: 'Load synthetic example' }).click()
   await page.getByRole('checkbox').check()
   await page.getByRole('button', { name: 'Parse Table', exact: true }).click()
+
+  await expect(page.getByText('Parse your TMT to see the structured table.')).toHaveCount(0)
+  const structured = page.getByRole('region', { name: 'Structured TMT table' })
+  await expect(structured).toBeVisible()
+  await expect(structured.getByRole('columnheader', { name: /Rotation/ })).toBeVisible()
+  await expect(structured.getByRole('columnheader', { name: /Extrusion/ })).toBeVisible()
+  await expect(structured.getByRole('columnheader', { name: /Unknown label/ })).toContainText('Unrecognized')
+  await expect(structured.getByRole('rowheader', { name: /13/ })).toBeVisible()
+  expect(await structured.evaluate(element => element.scrollWidth <= element.clientWidth)).toBe(true)
 
   await expect(page.getByRole('heading', { name: 'Structured lexical preview' })).toBeVisible()
   const summary = page.getByLabel('Parse summary')
@@ -26,6 +36,10 @@ test('parse presentation promotes movement inspection and keeps raw source and d
 
   await page.setViewportSize({ width: 375, height: 1000 })
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)
+  const firstStructuredCell = structured.locator('tbody td').first()
+  await expect(firstStructuredCell).toHaveCSS('display', 'grid')
+  expect(await firstStructuredCell.getAttribute('data-label')).toContain('Rotation')
+  expect(await structured.evaluate(element => element.scrollWidth <= element.clientWidth)).toBe(true)
   const overflow = await measurements.evaluate(element => ({ scroll: element.scrollWidth, client: element.clientWidth }))
   expect(overflow.scroll).toBeGreaterThan(overflow.client)
   await page.screenshot({ path: testInfo.outputPath('parser-presentation-375.png'), fullPage: true })
