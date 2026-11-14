@@ -6,6 +6,7 @@ import pytest
 from app.interactive.narrative import PlanningWordingSettings, planning_wording, records, validate
 from app.parser.receipts import resolve
 from app.reports.groq_client import GroqClient
+from app.reports.groq_client import GroqResult
 from test_interactive import LARGE, ROWS, submission
 
 
@@ -137,3 +138,76 @@ def test_unknown_unit_does_not_allow_claiming_the_numeric_value_is_unknown():
     refs = {"T001": {"M0001": "rotation of 2.0 (unit unknown)"}}
     value = {"comments": [{"tooth_ref": "T001", "text": "Across the unknown entries {M0001} is recorded."}]}
     assert validate(json.dumps(value), refs, {"T001": "local-tooth"}) is None
+
+
+def test_rejected_wording_gets_one_reference_only_correction_without_releasing_checks():
+    parsed = resolve(submission())
+    valid = response_for(parsed)
+    invalid = json.loads(json.dumps(valid))
+    invalid["comments"][0]["text"] += " Recommend extraction."
+    calls = []
+
+    class Client:
+        def generate(self, messages, *, response_schema):
+            calls.append(messages)
+            return GroqResult(json.dumps(invalid if len(calls) == 1 else valid), "GROQ_RESPONSE_RECEIVED", 1)
+
+    result, info = planning_wording(parsed, settings=PlanningWordingSettings(api_key="PRIVATE_KEY", synthetic_transmission_enabled=True), client=Client())
+    assert info.used_mode == "GROQ_AI" and info.attempts == 2 and info.accepted_comments == 4
+    assert len(calls) == 2
+    correction = json.dumps(calls[1])
+    assert "Recommend extraction" not in correction and "PRIVATE_KEY" not in correction and parsed.raw_text not in correction
+    assert "-2.7500" not in correction and "M0001" in correction
+    assert result == validate(json.dumps(valid), records(parsed)[1], records(parsed)[2])
+
+
+def test_second_rejection_remains_standard_and_never_loops():
+    parsed = resolve(submission())
+    calls = []
+
+    class Client:
+        def generate(self, messages, *, response_schema):
+            calls.append(messages)
+            return GroqResult('{"comments":[]}', "GROQ_RESPONSE_RECEIVED", 1)
+
+    _, info = planning_wording(parsed, settings=PlanningWordingSettings(api_key="PRIVATE_KEY", synthetic_transmission_enabled=True), client=Client())
+    assert len(calls) == info.attempts == 2
+    assert info.used_mode == "STANDARD_TEMPLATES" and info.accepted_comments == 0
+
+
+def test_correction_uses_remaining_original_deadline_and_smaller_output_budget(monkeypatch):
+    parsed = resolve(submission())
+    responses = ['{"comments":[]}', json.dumps(response_for(parsed))]
+    configurations = []
+    clock = iter([10.0, 14.0])
+    monkeypatch.setattr("app.interactive.narrative.time.monotonic", lambda: next(clock))
+
+    class Client:
+        def generate(self, messages, *, response_schema):
+            return GroqResult(responses.pop(0), "GROQ_RESPONSE_RECEIVED", 1)
+
+    def factory(config):
+        configurations.append(config)
+        return Client()
+
+    monkeypatch.setattr("app.interactive.narrative.GroqClient", factory)
+    _, info = planning_wording(parsed, settings=PlanningWordingSettings(api_key="PRIVATE_KEY", synthetic_transmission_enabled=True))
+    assert info.used_mode == "GROQ_AI"
+    assert [c.timeout_seconds for c in configurations] == [25, 21]
+    assert configurations[1].max_completion_tokens == 2048 and configurations[1].max_retries == 0
+
+
+def test_exhausted_request_budget_does_not_start_a_correction(monkeypatch):
+    parsed = resolve(submission())
+    clock = iter([10.0, 35.0])
+    monkeypatch.setattr("app.interactive.narrative.time.monotonic", lambda: next(clock))
+    calls = []
+
+    class Client:
+        def generate(self, messages, *, response_schema):
+            calls.append(messages)
+            return GroqResult('{"comments":[]}', "GROQ_RESPONSE_RECEIVED", 1)
+
+    _, info = planning_wording(parsed, settings=PlanningWordingSettings(api_key="PRIVATE_KEY", synthetic_transmission_enabled=True), client=Client())
+    assert len(calls) == info.attempts == 1
+    assert info.used_mode == "STANDARD_TEMPLATES"

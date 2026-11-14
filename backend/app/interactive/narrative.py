@@ -8,6 +8,7 @@ relabel a value, omit a cell, change a number or introduce clinical assertions.
 import json
 import os
 import re
+import time
 from collections import Counter
 from math import ceil
 
@@ -47,7 +48,7 @@ MAX_PROMPT_BYTES = 24_000
 class PlanningWordingSettings(ReportSettings):
     temperature: float = Field(default=0.2, ge=0, le=0.3)
     timeout_seconds: float = Field(default=25, ge=1, le=45)
-    max_completion_tokens: int = Field(default=4096, ge=256, le=4096)
+    max_completion_tokens: int = Field(default=3072, ge=256, le=4096)
 
 
 def load_planning_settings():
@@ -56,7 +57,7 @@ def load_planning_settings():
     values.update(api_key=original.api_key, synthetic_transmission_enabled=True,
                   temperature=0.2,
                   timeout_seconds=os.environ.get("FINOVA_PLANNING_TIMEOUT_SECONDS", "25"),
-                  max_completion_tokens=4096, max_retries=0)
+                  max_completion_tokens=3072, max_retries=0)
     return PlanningWordingSettings.model_validate(values)
 
 
@@ -71,7 +72,6 @@ class PlanningWordingBatch(Contract):
 
 def response_schema():
     schema = PlanningWordingBatch.model_json_schema()
-    schema["$defs"]["ToothWording"]["properties"]["text"]["pattern"] = r"^(The|This|For|Among|Recorded|Within|Here|In|Across) [\s\S]+$"
     return {"type": "json_schema", "json_schema": {"name": "finova_planning_wording_v1", "strict": True, "schema": schema}}
 
 
@@ -112,7 +112,12 @@ def records(parsed):
             facts[ref] = fact(m)
             # Never pass raw/free-text strings to the model as instructions/data.
             direction = m.raw_direction if m.raw_direction in {"D", "M", "B", "L", "E", "I"} else None
-            entries.append(dict(ref=ref, fact_phrase=fact(m.model_copy(update={"raw_direction": direction}))))
+            accepted = m.numeric_status in {"PARSED", "EXPLICIT_ZERO"} and m.field_status != "AMBIGUOUS"
+            # Shared array order avoids repeating complete English clauses and
+            # JSON field names for every cell. All displayed facts remain local.
+            entries.append(dict(ref=ref, facts=[LABELS.get(m.recognized_label, "unrecognized field"),
+                str(m.signed_decimal) if accepted else None, m.unit if m.unit in {"mm", "deg"} else None,
+                direction, m.numeric_status if m.field_status != "AMBIGUOUS" else "AMBIGUOUS"]))
         groups.append(dict(tooth_ref=alias, movements=entries))
         substitutions[alias], tooth_map[alias] = facts, tooth.id
         fallback[tooth.id] = "The programmed movement record lists " + "; ".join(facts.values()) + "."
@@ -175,6 +180,7 @@ def validate(content, substitutions, tooth_map):
 
 
 def planning_wording(parsed, *, module="macro", settings=None, client=None):
+    started = time.monotonic()
     contexts = {"macro": "planning review of the recorded movement profile", "micro": "attachment review of the recorded movement profile", "nano": "sequencing review of the recorded movement profile"}
     context = contexts[module]
     groups, substitutions, tooth_map, fallback = records(parsed)
@@ -190,23 +196,16 @@ def planning_wording(parsed, *, module="macro", settings=None, client=None):
         elif settings.configured:
             messages = [
                 {"role": "system", "content": (
-                    "Compose readable tooth-wise comments for " + context + ". "
-                    "Return one comments item per tooth_ref. This is editorial composition only, not analysis or interpretation. Scope limitations are already shown at report level: do not repeat attachment, placement, design, staging, order, timing or anchorage restrictions inside these paragraphs. "
-                    "Use different sentence openings across the report, not the same introductory formula for every tooth. "
-                    "For four or more differing entries, use at least three distinct openings (distinct first three words). "
-                    "Do not use one opening for more than half the entries. Begin with neutral introductory prose, never a movement fact. "
-                    "Use two or three connected sentences per paragraph, grouping several facts in each sentence. Avoid a repetitive one-fact-per-sentence checklist. "
-                    "Choose sentence groupings based on the source records, including the patterns of available and unknown entries. "
-                    "Copy every supplied fact_phrase for the respective tooth verbatim, exactly once, inside the paragraph. "
-                    "Every fact_phrase is a complete noun phrase containing a movement name, exact value and state. "
-                    "Do not use reference markers or paraphrase, capitalize, shorten or modify these immutable fact phrases. "
-                    "Write your own natural introductory, connective and transition language around those complete phrases. "
-                    "Do not add a separate summary sentence making a new assertion about the tooth. "
-                    "Do not characterize movements as small, modest, subtle, moderate, pronounced, large, balanced, active or clinically significant. "
-                    "Do not repeat facts or add values, units, movement/category names, missing/zero claims, tooth identifiers, comparisons, clinical interpretation, risk, advice or treatment choices outside the supplied phrases. "
-                    "Do not infer physical directions, tooth anatomy or simultaneous/staged movements. Never use follows, precedes, before, after or then: the order of facts is editorial only. The source is unverified. "
-                    "Apart from the immutable fact phrases, use only words from this neutral editorial vocabulary: " + " ".join(sorted(CONNECTIVES)) + ". "
-                    "Use only the facts supplied for the respective tooth, and return JSON only."
+                    "Compose readable tooth-wise comments for " + context + ". Return one comments item with tooth_ref and text for each supplied tooth. JSON only. "
+                    "Each movement has ref and facts in this exact array order: movement family, exact scalar, unit, supplied direction label, state. "
+                    "Use the facts only to choose sentence grouping. Use every own ref exactly once in braces, e.g. {M0001}. "
+                    "Each placeholder becomes a COMPLETE noun phrase locally, including movement name, exact value, unit, direction and unknown/zero state. "
+                    "Never type source facts or state claims yourself. Never add movement names, values, units, adjectives, comparisons, conclusions, advice or clinical decisions outside placeholders. "
+                    "Write two short sentences for three or more refs; one sentence is sufficient for fewer refs. Every sentence must contain refs. "
+                    "Vary the first three words and sentence grouping across teeth. Choose varied openings from: The record includes; This entry presents; Recorded components are; Within this profile; Here the record shows; Across the entry; Among the listed components; The supplied values include. "
+                    "Use only words in those openings and these neutral linking phrases: and; alongside; together with; also; the record includes; are listed; are recorded; are present. "
+                    "Do not use the same first three words for most entries. Use ordinary sentence case and punctuation. The source is unverified; no attachment or stage choices are inferred."
+
                 )},
                 {"role": "user", "content": json.dumps({"programmed_movements": groups}, separators=(",", ":"))},
             ]
@@ -221,6 +220,33 @@ def planning_wording(parsed, *, module="macro", settings=None, client=None):
                         chosen, accepted, reason = validated, len(groups), "GROQ_VALIDATED"
                     else:
                         reason = "GROQ_UNSUPPORTED_WORDING"
+                        # Correct only an actually rejected successful response,
+                        # once, within the same total timeout budget. Never retry a
+                        # missing key, provider error, timeout or rate limit.
+                        remaining = settings.timeout_seconds - (time.monotonic() - started)
+                        if attempts < 2 and remaining >= 1:
+                            repair_groups = [{"tooth_ref": group["tooth_ref"], "refs": [m["ref"] for m in group["movements"]]} for group in groups]
+                            repair_messages = [
+                                {"role": "system", "content": (
+                                    "Compose one readable paragraph for each supplied tooth_ref using every own ref exactly once as {M0001}. "
+                                    "The placeholders are complete noun phrases and will be replaced locally with immutable source facts. "
+                                    "Return comments containing tooth_ref and text, JSON only. No numbers, units, movement names, states or clinical assertions outside placeholders. "
+                                    "Use varied openings across entries. Choose from: The record includes; This entry presents; Recorded components are; Within this profile; Here the record shows; Across the entry; Among the listed components; The supplied values include. "
+                                    "Compose one or two sentences. Use only those opening words and these neutral connecting phrases: and; alongside; together with; also; the record includes; are listed; are recorded; are present. "
+                                    "Do not add adjectives, comparisons, recommendations, missing/zero claims, negation or facts. Do not use the same first three words for most entries."
+                                )},
+                                {"role": "user", "content": json.dumps({"entries": repair_groups}, separators=(",", ":"))},
+                            ]
+                            repair_settings = settings.model_copy(update={"timeout_seconds": remaining, "max_retries": 0, "max_completion_tokens": 2048})
+                            repaired = (client or GroqClient(repair_settings)).generate(repair_messages, response_schema=response_schema())
+                            attempts += repaired.attempts
+                            reason = repaired.code
+                            if repaired.content is not None:
+                                corrected = validate(repaired.content, substitutions, tooth_map)
+                                if corrected is not None:
+                                    chosen, accepted, reason = corrected, len(groups), "GROQ_VALIDATED"
+                                else:
+                                    reason = "GROQ_UNSUPPORTED_WORDING"
     info = PlanningGenerationInfo(requested_mode="AUTO", used_mode="GROQ_AI" if accepted else "STANDARD_TEMPLATES",
         reason=reason, attempts=attempts, provider="GROQ" if attempts else None,
         model="openai/gpt-oss-120b" if attempts else None, eligible_wording_findings=len(groups), accepted_comments=accepted)

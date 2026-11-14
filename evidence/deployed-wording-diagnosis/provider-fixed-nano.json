@@ -1,0 +1,68 @@
+{
+  "comments": [
+    {
+      "tooth_ref": "T001",
+      "text": "The record includes {M0001}, {M0002}, {M0003} and {M0006}. Also are recorded {M0007}, {M0004}, {M0005}."
+    },
+    {
+      "tooth_ref": "T002",
+      "text": "This entry presents {M0008}, {M0009}, {M0010} and {M0011}. Alongside are listed {M0012}, {M0013}, {M0014}."
+    },
+    {
+      "tooth_ref": "T003",
+      "text": "Recorded components are {M0015}, {M0016}, {M0017} and {M0018}. Together with {M0019}, {M0020}, {M0021} are present."
+    },
+    {
+      "tooth_ref": "T004",
+      "text": "Within this profile {M0022}, {M0023}, {M0024} and {M0025} are listed. Also are recorded {M0026}, {M0027}, {M0028}."
+    },
+    {
+      "tooth_ref": "T005",
+      "text": "Here the record shows {M0029}, {M0030}, {M0031} and {M0032}. Also are present {M0033}, {M0034}, {M0035}."
+    },
+    {
+      "tooth_ref": "T006",
+      "text": "Across the entry {M0036}, {M0037}, {M0038} and {M0039} are recorded. Also are listed {M0040}, {M0041}, {M0042}."
+    },
+    {
+      "tooth_ref": "T007",
+      "text": "Among the listed components {M0043}, {M0044}, {M0045} and {M0046} are present. Also are recorded {M0047}, {M0048}, {M0049}."
+    },
+    {
+      "tooth_ref": "T008",
+      "text": "The supplied values include {M0050}, {M0051}, {M0052} and {M0053}. Also are listed {M0054}, {M0055}, {M0056}."
+    },
+    {
+      "tooth_ref": "T009",
+      "text": "The record includes {M0057}, {M0058}, {M0059} and {M0060}. Also are recorded {M0061}, {M0062}, {M0063}."
+    },
+    {
+      "tooth_ref": "T010",
+      "text": "This entry presents {M0064}, {M0065}, {M0066} and {M0067}. Alongside are listed {M0068}, {M0069}, {M0070}."
+    },
+    {
+      "tooth_ref": "T011",
+      "text": "Recorded components are {M0071}, {M0072}, {M0073} and {M0074}. Together with {M0075}, {M0076}, {M0077} are present."
+    },
+    {
+      "tooth_ref": "T012",
+      "text": "Within this profile {M0078}, {M0079}, {M0080} and {M0081} are listed. Also are recorded {M0082}, {M0083}, {M0084}."
+    },
+    {
+      "tooth_ref": "T013",
+      "text": "Here the record shows {M0085}, {M0086}, {M0087} and {M0088}. Also are present {M0089}, {M0090}, {M0091}."
+    },
+    {
+      "tooth_ref": "T014",
+      "text": "Across the entry {M0092}, {M0093}, {M0094} and {M0095} are recorded. Also are listed {M0096}, {M0097}, {M0098}."
+    },
+    {
+      "tooth_ref": "T015",
+      "text": "Among the listed components {M0099}, {M0100}, {M0101} and {M0102} are present. Also are recorded {M0103}, {M0104}, {M0105}."
+    },
+    {
+      "tooth_ref": "T016",
+      "text": "The supplied values include {M0106}, {M0107}, {M0108} and {M0109}. Also are listed {M0110}, {M0111}, {M0112}."
+    }
+  ]
+}

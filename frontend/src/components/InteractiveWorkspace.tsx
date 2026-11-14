@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { ArrowRight, Copy, Download, FileCheck2 } from 'lucide-react'
+import { ArrowRight, Check, Copy, Download, FileCheck2, RotateCcw } from 'lucide-react'
 import { requestInteractiveReview } from '../api/interactive'
 import type { DemoModule, InteractiveReport } from '../api/interactive'
 import type { AutomaticParseResult, ContextClaims, ParseResult } from '../api/parse'
@@ -75,7 +75,43 @@ export default function InteractiveWorkspace({ module, rawText, context, parsed,
     <div className="panel-heading"><div className="flex items-center gap-2.5"><FileCheck2 size={17} className="text-brand" aria-hidden="true" /><h3 className="panel-title">{TITLES[module]} review</h3></div></div>
     <div className="p-5 sm:p-7">
       <p className="text-sm leading-7 text-muted">{module === 'macro' ? 'Prepare readable planning comments from the programmed movements in your table.' : module === 'micro' ? 'Prepare attachment-review comments from the recorded movements. Attachment choices and placement require separate supporting evidence.' : 'Prepare sequencing-review comments from the recorded movements. Stage order and anchorage require separate supporting evidence.'}</p>
-      <button type="button" className="button button-primary mt-4" disabled={loading || !supported || report !== null} onClick={() => void run()}>{loading ? <><span className="button-spinner" aria-hidden="true" />Generating review…</> : <>{ACTIONS[module]}<ArrowRight size={16} aria-hidden="true" /></>}</button>
+      {report ? (
+        <div className="mt-4 flex flex-wrap items-center gap-3">
+          <span className="inline-flex items-center gap-2 rounded-lg border border-brand/25 bg-brand-soft px-3.5 py-2.5 text-[13px] font-semibold text-brand">
+            <Check size={15} strokeWidth={2.5} aria-hidden="true" />
+            Review Generated
+          </span>
+          <button
+            type="button"
+            className="button button-secondary text-xs"
+            onClick={() => void run()}
+            disabled={loading}
+            title={`Re-run ${TITLES[module]} review with current parsed table`}
+          >
+            <RotateCcw size={14} aria-hidden="true" />
+            Re-run {TITLES[module]} Review
+          </button>
+        </div>
+      ) : (
+        <button
+          type="button"
+          className="button button-primary mt-4"
+          disabled={loading || !supported}
+          onClick={() => void run()}
+        >
+          {loading ? (
+            <>
+              <span className="button-spinner" aria-hidden="true" />
+              Generating review…
+            </>
+          ) : (
+            <>
+              {ACTIONS[module]}
+              <ArrowRight size={16} aria-hidden="true" />
+            </>
+          )}
+        </button>
+      )}
       {!supported && <p role="alert" className="mt-3 text-sm text-notice-ink">A supported table with parsed measurement positions is required. Check the input and parse again.</p>}
       {loading && <p role="status" className="mt-3 text-sm text-muted">Preparing factual observations and report wording…</p>}
       {error && <p role="alert" className="mt-3 text-sm text-notice-ink">{error}</p>}

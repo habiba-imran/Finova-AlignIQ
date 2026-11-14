@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { ArrowRight, Copy, Download, FileCheck2 } from 'lucide-react'
+import { ArrowRight, Check, Copy, Download, FileCheck2, RotateCcw } from 'lucide-react'
 import type { AutomaticParseResult, ContextClaims } from '../api/parse'
 import type { CommentMode, ReportComment } from '../api/report'
 import { ASSESSMENT_OPTIONS } from '../api/review'
@@ -119,7 +119,43 @@ export default function PlanningWorkspace({ rawText, context, parsed, demo, onCo
         {!demo && <div><label htmlFor="planning-question" className="mb-2 block text-xs font-medium">Clinical context to inspect (optional)</label><select id="planning-question" className="context-control" value={question} onChange={e => { invalidate(); setQuestion(e.target.value as AssessmentQuestion | '') }}><option value="">Descriptive observations only</option>{ASSESSMENT_OPTIONS.map(([id, label]) => <option key={id} value={id}>{label} · unavailable</option>)}</select></div>}
       </div>
       <p id="planning-privacy" className="mt-4 max-w-3xl text-xs leading-6 text-muted">AI assistance can select approved wording only when authorized. Original tables, tooth identifiers and measurements are not shared for wording. Review runs only when you choose below.</p>
-      <button type="button" className="button button-primary mt-4" onClick={() => void run()} disabled={loading || hasResults} aria-describedby="planning-privacy">{loading ? <><span className="button-spinner" aria-hidden="true" />Preparing planning draft…</> : <>Run Planning Assistant<ArrowRight size={16} aria-hidden="true" /></>}</button>
+      {hasResults ? (
+        <div className="mt-4 flex flex-wrap items-center gap-3">
+          <span className="inline-flex items-center gap-2 rounded-lg border border-brand/25 bg-brand-soft px-3.5 py-2.5 text-[13px] font-semibold text-brand">
+            <Check size={15} strokeWidth={2.5} aria-hidden="true" />
+            Planning Review Generated
+          </span>
+          <button
+            type="button"
+            className="button button-secondary text-xs"
+            onClick={() => void run()}
+            disabled={loading}
+          >
+            <RotateCcw size={14} aria-hidden="true" />
+            Re-run Planning Review
+          </button>
+        </div>
+      ) : (
+        <button
+          type="button"
+          className="button button-primary mt-4"
+          onClick={() => void run()}
+          disabled={loading}
+          aria-describedby="planning-privacy"
+        >
+          {loading ? (
+            <>
+              <span className="button-spinner" aria-hidden="true" />
+              Preparing planning draft…
+            </>
+          ) : (
+            <>
+              Run Planning Assistant
+              <ArrowRight size={16} aria-hidden="true" />
+            </>
+          )}
+        </button>
+      )}
       {loading && <p role="status" className="motion-status mt-3 text-sm text-muted">Preparing your review…</p>}
       {error && <p role="alert" className="motion-status mt-4 text-sm text-notice-ink">{error}</p>}
       {!hasResults && !loading && !error && <ReportEmpty>Your planning review will appear here after you run the assistant.</ReportEmpty>}

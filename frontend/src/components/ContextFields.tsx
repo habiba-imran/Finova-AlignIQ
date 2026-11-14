@@ -266,7 +266,7 @@ export default function ContextFields({
         onClick={() => setIsOpen(true)}
         aria-haspopup="dialog"
         aria-expanded={isOpen}
-        aria-label="Open Advanced Table Settings"
+        aria-label={customCount > 0 ? `Open Advanced Table Settings (${customCount} set)` : 'Open Advanced Table Settings'}
         className="flex w-full items-center justify-between rounded-xl border border-line bg-white p-3.5 shadow-panel transition-all hover:border-brand/40 hover:bg-canvas/40 sm:p-4 text-left"
       >
         <span className="flex min-w-0 items-center gap-3">
@@ -284,16 +284,11 @@ export default function ContextFields({
             </span>
           </span>
         </span>
-        <span className="flex items-center gap-2">
-          {customCount > 0 && (
-            <span className="rounded-md border border-brand/25 bg-brand-soft px-2 py-0.5 text-[11px] font-semibold text-brand">
-              {customCount} set
-            </span>
-          )}
-          <span className="rounded-lg border border-line bg-canvas px-2.5 py-1 text-xs font-semibold text-ink transition-colors group-hover:bg-line/40">
-            Configure
+        {customCount > 0 && (
+          <span className="shrink-0 rounded-md border border-brand/25 bg-brand-soft px-2.5 py-1 text-xs font-semibold text-brand">
+            {customCount} set
           </span>
-        </span>
+        )}
       </button>
 
       {/* Render the modal window in document.body via Portal */}

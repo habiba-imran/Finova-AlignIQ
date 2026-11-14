@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import type { CSSProperties } from 'react'
-import { ArrowRight, Check, FileText, FlaskConical, Info, LockKeyhole, Trash2 } from 'lucide-react'
+import { AlertCircle, ArrowRight, Check, FileText, FlaskConical, Info, LockKeyhole, RotateCcw, Trash2 } from 'lucide-react'
 import { SYNTHETIC_EXAMPLE } from './syntheticExample'
 import { EMPTY_CONTEXT, MAX_TEXT_CHARACTERS, requestParse } from './api/parse'
 import type { AutomaticParseResult, ContextClaims, SourceClaim, SyntheticFixture } from './api/parse'
@@ -73,6 +73,7 @@ export default function App({ diagnostics = new URLSearchParams(window.location.
   const source: SourceClaim = 'Unknown'
   const [context, setContext] = useState<ContextClaims>({ ...EMPTY_CONTEXT })
   const [result, setResult] = useState<AutomaticParseResult | null>(null)
+  const [hasParsedOnce, setHasParsedOnce] = useState(false)
   const [syntheticFixture, setSyntheticFixture] = useState<SyntheticFixture | undefined>()
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -132,7 +133,10 @@ export default function App({ diagnostics = new URLSearchParams(window.location.
     const timeout = window.setTimeout(() => controller.abort(), syntheticFixture ? 35_000 : 20_000)
     try {
       const parsed = await requestParse(rawText, source, context, controller.signal, syntheticFixture)
-      if (revision === revisionRef.current) setResult(parsed)
+      if (revision === revisionRef.current) {
+        setResult(parsed)
+        setHasParsedOnce(true)
+      }
     } catch (failure) {
       if (revision !== revisionRef.current) return
       const code = failure instanceof Error ? failure.message : ''
@@ -150,11 +154,13 @@ export default function App({ diagnostics = new URLSearchParams(window.location.
   }
 
   function clearText() {
+    setHasParsedOnce(false)
     editRawText('')
     inputRef.current?.focus()
   }
 
   function loadExample() {
+    setHasParsedOnce(false)
     editRawText(SYNTHETIC_EXAMPLE)
     setContext({ ...EMPTY_CONTEXT })
     inputRef.current?.focus()
@@ -169,7 +175,7 @@ export default function App({ diagnostics = new URLSearchParams(window.location.
       const value = await requestDemoInput(controller.signal)
       if (revision === revisionRef.current) {
         setRawText(value.parsed.raw_text); setContext(value.context)
-        setSyntheticFixture(undefined); setDemo(value); setResult(value.parsed)
+        setSyntheticFixture(undefined); setDemo(value); setResult(value.parsed); setHasParsedOnce(true)
       }
     } catch (e) {
       if (revision === revisionRef.current) {
@@ -191,7 +197,7 @@ export default function App({ diagnostics = new URLSearchParams(window.location.
       const value = await requestAttachmentDemoInput(controller.signal)
       if (revision === revisionRef.current) {
         setRawText(value.parsed.raw_text); setContext(value.context)
-        setSyntheticFixture(undefined); setAttachmentDemo(value); setResult(value.parsed)
+        setSyntheticFixture(undefined); setAttachmentDemo(value); setResult(value.parsed); setHasParsedOnce(true)
       }
     } catch (e) {
       if (revision === revisionRef.current) {
@@ -213,7 +219,7 @@ export default function App({ diagnostics = new URLSearchParams(window.location.
       const value = await requestSequencingDemoInput(controller.signal)
       if (revision === revisionRef.current) {
         setRawText(value.parsed.raw_text); setContext(value.context)
-        setSyntheticFixture(undefined); setSequencingDemo(value); setResult(value.parsed)
+        setSyntheticFixture(undefined); setSequencingDemo(value); setResult(value.parsed); setHasParsedOnce(true)
       }
     } catch (e) {
       if (revision === revisionRef.current) {
@@ -232,7 +238,7 @@ export default function App({ diagnostics = new URLSearchParams(window.location.
     if (index < currentStep) return index === 0 ? 'Ready' : 'Complete'
     if (index > currentStep) return index === 3 ? 'After review' : 'Waiting'
     if (index === 0) return 'Add text'
-    if (index === 1) return error ? 'Retry parse' : loading ? 'Parsing…' : 'Parse text'
+    if (index === 1) return error ? 'Retry parse' : loading ? 'Parsing…' : hasParsedOnce && !result ? 'Re-parse text' : 'Parse text'
     if (index === 2) return 'Run review'
     return 'Available'
   }
@@ -346,7 +352,7 @@ export default function App({ diagnostics = new URLSearchParams(window.location.
               </div>
             </section>
 
-            <StructuredPreview result={result} rawText={rawText} loading={loading} showRawEvidence={diagnostics} />
+            <StructuredPreview result={result} rawText={rawText} loading={loading} showRawEvidence={diagnostics} hasParsedOnce={hasParsedOnce} />
           </div>
 
           <section aria-label="Parse controls" aria-busy={loading} className="mt-4 rounded-xl border border-line bg-white p-5 shadow-panel sm:p-6">
@@ -358,9 +364,65 @@ export default function App({ diagnostics = new URLSearchParams(window.location.
               </div>
             </div>
             <div className="mt-4 flex flex-wrap items-center gap-3">
-              <button type="button" onClick={() => void parseInput()} disabled={loading || rawText.length === 0 || characterCount > MAX_TEXT_CHARACTERS || result !== null} aria-describedby="parse-hint" className="button button-primary px-5">{loading ? <><span className="button-spinner" aria-hidden="true" />Parsing…</> : <>Parse Table<ArrowRight size={16} aria-hidden="true" /></>}</button>
+              {loading ? (
+                <button type="button" disabled aria-label="Parse Table" className="button button-primary px-5">
+                  <span className="button-spinner" aria-hidden="true" />
+                  Parsing…
+                </button>
+              ) : result ? (
+                <div className="flex flex-wrap items-center gap-2.5">
+                  <button
+                    type="button"
+                    disabled
+                    aria-label="Parse Table"
+                    className="button button-accent cursor-default px-5 opacity-90"
+                  >
+                    <Check size={16} aria-hidden="true" />
+                    Table Parsed
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => void parseInput()}
+                    className="button button-secondary text-xs"
+                    title="Re-run parse on current input"
+                  >
+                    <RotateCcw size={14} aria-hidden="true" />
+                    Re-parse
+                  </button>
+                </div>
+              ) : hasParsedOnce && rawText.length > 0 ? (
+                <button
+                  type="button"
+                  onClick={() => void parseInput()}
+                  disabled={characterCount > MAX_TEXT_CHARACTERS}
+                  aria-label="Parse Table"
+                  aria-describedby="parse-hint"
+                  className="button button-primary px-5"
+                >
+                  <RotateCcw size={16} aria-hidden="true" />
+                  Re-parse Table
+                </button>
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => void parseInput()}
+                  disabled={rawText.length === 0 || characterCount > MAX_TEXT_CHARACTERS}
+                  aria-label="Parse Table"
+                  aria-describedby="parse-hint"
+                  className="button button-primary px-5"
+                >
+                  Parse Table
+                  <ArrowRight size={16} aria-hidden="true" />
+                </button>
+              )}
               {diagnostics && <button type="button" disabled className="button button-secondary">Analyze</button>}
             </div>
+            {hasParsedOnce && !result && !loading && rawText.length > 0 && (
+              <div className="mt-3 flex items-center gap-2 rounded-lg border border-amber-200 bg-amber-50/70 p-3 text-xs leading-5 text-amber-800">
+                <AlertCircle size={15} className="shrink-0 text-amber-600" aria-hidden="true" />
+                <span>Input text or settings were modified. Click <strong>Re-parse Table</strong> to inspect your updated table and movements.</span>
+              </div>
+            )}
             {characterCount > MAX_TEXT_CHARACTERS && <p role="alert" className="mt-3 text-sm text-notice-ink">Parsing is limited to 100,000 characters. Your full raw input is still retained.</p>}
             {loading && <p role="status" className="motion-status mt-3 text-sm text-muted">Parsing the submitted text structure…</p>}
             {error && <p role="alert" className="motion-status mt-3 text-sm text-notice-ink">{error}</p>}

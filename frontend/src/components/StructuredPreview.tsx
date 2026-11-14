@@ -66,11 +66,12 @@ function CellValue({ measurements }: { measurements: Measurement[] }) {
   })}</div>
 }
 
-export default function StructuredPreview({ result, rawText, loading, showRawEvidence = false }: {
+export default function StructuredPreview({ result, rawText, loading, showRawEvidence = false, hasParsedOnce = false }: {
   result: ParseResult | null
   rawText: string
   loading: boolean
   showRawEvidence?: boolean
+  hasParsedOnce?: boolean
 }) {
   const columns = result ? buildColumns(result.measurements) : []
   const toothIds = result ? [...new Set([...result.teeth.map(tooth => tooth.id), ...result.measurements.map(measurement => measurement.tooth_ref)])] : []
@@ -85,13 +86,13 @@ export default function StructuredPreview({ result, rawText, loading, showRawEvi
   return <section aria-labelledby="structured-preview-heading" aria-busy={loading} className="panel flex min-w-0 flex-col">
     <div className="panel-heading">
       <div className="flex min-w-0 items-center gap-2.5"><Table2 size={17} className="shrink-0 text-brand" aria-hidden="true" /><h3 id="structured-preview-heading" className="panel-title">Structured table</h3></div>
-      <span className="rounded-md border border-line bg-canvas px-2 py-1 text-[11px] font-medium text-muted">{result ? statusLabel(result.status) : loading ? 'Parsing' : 'Awaiting parse'}</span>
+      <span className="rounded-md border border-line bg-canvas px-2 py-1 text-[11px] font-medium text-muted">{result ? statusLabel(result.status) : loading ? 'Parsing' : hasParsedOnce ? 'Awaiting re-parse' : 'Awaiting parse'}</span>
     </div>
     <div className="flex flex-1 flex-col p-5 sm:p-6">
       {!result ? <div className="flex min-h-[240px] flex-1 flex-col items-center justify-center rounded-lg border border-dashed border-line bg-canvas px-6 py-10 text-center">
         <span className="mb-3 rounded-xl border border-line bg-white p-3 text-brand"><Table2 size={22} strokeWidth={1.5} aria-hidden="true" /></span>
-        <p className="text-sm font-medium">Parse your TMT to see the structured table.</p>
-        <p className="mt-2 max-w-64 text-xs leading-5 text-muted">{loading ? 'Parsing… the table will appear after the response is validated.' : 'The table will use only the parser’s returned structural fields. Nothing is inferred or corrected.'}</p>
+        <p className="text-sm font-medium">{hasParsedOnce ? 'Input modified — click Re-parse Table.' : 'Parse your TMT to see the structured table.'}</p>
+        <p className="mt-2 max-w-64 text-xs leading-5 text-muted">{loading ? 'Parsing… the table will appear after the response is validated.' : hasParsedOnce ? 'The structured preview will update once you re-parse the modified text.' : 'The table will use only the parser’s returned structural fields. Nothing is inferred or corrected.'}</p>
       </div> : result.measurements.length === 0 ? <div className="rounded-lg border border-line bg-canvas p-4 text-sm leading-6">
         <p className="font-medium">No measurement cells were returned.</p>
         <p className="mt-1 text-xs leading-5 text-muted">Check the headings and row alignment in your original text, which remains editable.</p>
