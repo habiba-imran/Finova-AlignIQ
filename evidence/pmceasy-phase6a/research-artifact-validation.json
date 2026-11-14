@@ -1,0 +1,107 @@
+{
+  "date": "2026-11-14 Asia/Karachi",
+  "reports": 3,
+  "gap_cards": 23,
+  "required_fields_per_gap": 8,
+  "retained_verified_video_frames": 15,
+  "unavailable_original_screenshots": 8,
+  "broken_local_report_links": [],
+  "application_source_snapshot_checks": [
+    {
+      "path": "frontend/src/App.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/components/DraftReviewPanel.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/components/FinalReportPanel.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/components/ContextFields.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/main.py",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/domain/models.py",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/api/automatic_parse.py",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/api/reports.py",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/api/review.py",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/parser/service.py",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/parser/phase4.py",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/parser/contracts.py",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/review/models.py",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/review/registry.py",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/review/service.py",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/review/context.py",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/review/clinical.py",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/review/templates.py",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/review/safeguards.py",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/reports/models.py",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/reports/service.py",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/reports/prompt.py",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/semantics/registry.py",
+      "unchanged": true
+    }
+  ],
+  "new_full_test_suite_run": false,
+  "new_http_browser_test_success_claim": false,
+  "provider_calls_from_local_probes": 0,
+  "note": "Artifact/identity/link/completeness checks and source snapshot comparison, not clinical validation or a full application test suite."
+}

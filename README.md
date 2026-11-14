@@ -1,10 +1,14 @@
 # Finova AlignIQ
 
-Phase 5: audited 96-rule inventory, deterministic engineering/descriptive checks, explicit required-data guards and clinical-policy preparation, integrated with the Phase 4 parser and Phase 3 DRAFT reports. **Prototype — not for clinical use. Do not paste real patient data.**
+Phase 8 adds **Sequencer / Nano Review**: separate upper/lower arch, segment and right/left anchorage sections, missing-stage explanations, a fixed fictional demonstration and exact DRAFT copy/TXT export. Macro Planning Assistant and Micro Attachment Interface remain available. **Prototype — not for clinical use. Do not paste real patient data.** See [the Phase 8 report](SEQUENCER_PHASE8_REPORT.md), [the Phase 7 report](ATTACHMENT_INTERFACE_PHASE7_REPORT.md) and [the Phase 6B report](docs/PLANNING_ASSISTANT_PHASE6B_REPORT.md).
+
+Choose **Macro** → paste synthetic TMT → confirm synthetic input → **Parse Table** → inspect exact values → **Run Planning Assistant** → review Sagittal / Transverse / Vertical / Other / Unavailable → select and copy eligible comments or copy/download the complete DRAFT. Choose **Micro** for Attachment Interface or **Nano** for Sequencer, described below. Review passes are not aligner stages and do not determine what a patient needs. Earlier separate Macro review/report controls remain under **Advanced** after parsing.
+
+Ordinary vendor input remains **UNVERIFIED**, with zero authorized observations and no Groq transmission. Use the separately enabled **Finova Synthetic Demonstration** below to exercise positive descriptive results. The fixed demo has invented opaque tooth identities, explicitly defined units/directions/basis/mode/scope, and partial abstention; it is not a vendor adapter or a clinical policy. Full/selected exports retain DRAFT status, uncertainty and provenance. No clinician editing, sign-off or automatic CAD integration is implemented.
 
 The React/TypeScript/Vite/Tailwind frontend preserves raw input and submits it only through explicit actions after synthetic-data confirmation. Python/FastAPI/Pydantic returns exact Decimal evidence, traceable findings and draft reports. **Arbitrary pasted input never goes to Groq.** Parse Table may automatically recover a server-reproduced generated synthetic fixture only when development cloud testing is explicitly enabled. There is no second AI action or cloud checkbox. Accepted source associations are independently checked and can reach reviews/reports through a short-lived receipt, followed by the unchanged semantic gates. Comment generation retains its separate key and approved-wording validation. Clinical predicates remain disabled; no clinical recommendations, ML, authentication, database, patient-data persistence or Chrome extension is implemented.
 
-See [the Phase 5 implementation report](RULE_ENGINE_PHASE5_REPORT.md), [the complete 96-rule inventory](docs/RULE_ENGINE_PHASE5_INVENTORY.md), [the clinical approval register](docs/CLINICAL_RULE_APPROVAL_REGISTER.md) and [the feasibility matrix](docs/RULE_FEASIBILITY_MATRIX.md). There are **66 active engineering handlers/guards, 27 disabled clinical predicates and 3 deferred controls**. Active does not mean clinically approved. Extra tooth-group/status, pair, coverage and stage evidence currently has only a private, exact-input-bound TEST_ONLY library path. Public HTTP requests cannot authorize it or activate policies.
+See [the Phase 5 implementation report](docs/RULE_ENGINE_PHASE5_REPORT.md), [the complete 96-rule inventory](docs/RULE_ENGINE_PHASE5_INVENTORY.md), [the clinical approval register](docs/CLINICAL_RULE_APPROVAL_REGISTER.md) and [the feasibility matrix](docs/RULE_FEASIBILITY_MATRIX.md). There are **66 active engineering handlers/guards, 27 disabled clinical predicates and 3 deferred controls**. Active does not mean clinically approved. Extra tooth-group/status, pair, coverage and stage evidence currently has only a private, exact-input-bound TEST_ONLY library path. User-submitted HTTP input cannot authorize it or activate policies. The separate development demonstrations accept no uploaded text or semantic claims and use only fixed, server-owned TEST_ONLY artifacts.
 
 The standalone original 82-rule research document is unavailable in this checkout. The corrected v2 retains original-proposal trace paragraphs; those are historical context only. The independent audit and corrected v2 govern the inventory and behavior.
 
@@ -69,7 +73,86 @@ npm run dev
 
 Open [the local workspace](http://127.0.0.1:5173). Both servers bind to loopback. The raw input UI works without the backend; parsing/review need it running. Vite proxies `/api` to `http://127.0.0.1:8000`, so no cross-origin endpoint is needed. Restart older backend processes before testing new routes. Stop servers with Ctrl+C.
 
-Try **Load synthetic example**, inspect the untouched raw preview, optionally supply context claims, confirm synthetic data, then choose **Parse Table**. Source indicators are detected automatically; there is no platform selector. Next choose **Create draft review**, optionally requesting an unavailable assessment. In that result, select Groq AI with automatic template fallback or Standard Templates and choose **Create final report**. Current pasted inputs remain semantically unverified, so reports use abstention templates without calling Groq. Copy/download retains DRAFT status, limitations and source references. Editing input/context, Clear/demo or revoking confirmation invalidates results; changing the requested assessment or generation mode invalidates the affected report. The frontend makes no automatic uploads or retries. Analyze remains disabled.
+Try **Load synthetic example**, inspect the untouched raw preview, optionally supply context claims, confirm synthetic data, then choose **Parse Table**. Source indicators are automatic; there is no vendor selector. Choose **Run Planning Assistant** to recompute review and wording in one request. Current ordinary pasted inputs remain semantically unverified, so the report explains unavailable assessments without calling Groq. Selectable observations are available only when their evidence is authorized. Editing input/context, Clear/demo, switching purpose or revoking confirmation invalidates results; changing assessment or wording invalidates the draft and selections. No automatic uploads or retries occur. Legacy separate actions remain in the expandable Advanced section.
+
+## Fixed Finova Synthetic Demonstration
+
+Start the local backend with both development controls explicitly set (keep these disabled in production):
+
+```powershell
+Set-Location 'C:\Finova AlignIQ\backend'
+$env:FINOVA_ENVIRONMENT = 'development'
+$env:FINOVA_PLANNING_DEMO_ENABLED = 'true'
+.\.venv\Scripts\python.exe -m uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload --no-access-log
+```
+
+Use the frontend startup above. Click **Load Finova planning demo**, inspect its conventions and movement table, choose **Deterministic templates** for an entirely offline pipeline, then **Run Planning Assistant**. Four positions become TEST_ONLY descriptive observations; a fifth numeric value deliberately lacks semantic evidence, and missing cells remain missing. The three dimensions each contain one comment; rotation and the mixed distribution summary remain Other. No group/anatomical identity is inferred from opaque tokens 11–15.
+
+The input and draft development routes accept only a wording mode, never raw text, fixture paths, flags or semantic evidence. The server verifies the shipped raw/expected hashes and exact parser oracle with the existing read-only fixture verifier. Copying the identical demo text into normal intake still yields UNVERIFIED abstention. Editing text/context, clearing, changing purpose or revoking consent removes demo authority and prior results in the browser. The demo flag never permits patient data or activates clinical rules. Optional Groq wording still separately requires `GROQ_API_KEY` and `FINOVA_GROQ_SYNTHETIC_ENABLED=true`; deterministic mode makes no provider call. No key is needed for the demonstration.
+
+Reproduce the invented assets, frontend response fixtures and schemas:
+
+```powershell
+Set-Location 'C:\Finova AlignIQ\backend'
+.\.venv\Scripts\python.exe scripts/build_planning_demo.py --frontend-fixtures
+.\.venv\Scripts\python.exe scripts/export_schemas.py
+```
+
+These commands write only fixed synthetic repository assets. HTTP processing remains in memory and read-only. The semantic assertions are independently specified in the generator; the parser snapshot is a structural regression artifact, not an independent vendor oracle or a human clinical review.
+
+## Attachment Interface / Micro Review
+
+Choose **Micro**, paste synthetic TMT, confirm synthetic input and **Parse Table**. After inspecting the original and parsed values, choose **Run Attachment Review**. Normal pasted input produces only unknown/withheld rows because vendor mapping, actual attachment plans and clinical policies are absent. Large or zero movement values do not create attachment decisions. Expand a row to inspect its evidence, missing prerequisites and original references. Use **Copy attachment DRAFT** or **Download attachment DRAFT (TXT)** for an explicit local export. No approval or clinical sign-off is recorded.
+
+For the positive illustrative workflow, start the local backend with separate server-owned development permission:
+
+```powershell
+Set-Location 'C:\Finova AlignIQ\backend'
+$env:FINOVA_ENVIRONMENT = 'development'
+$env:FINOVA_ATTACHMENT_DEMO_ENABLED = 'true'
+.\.venv\Scripts\python.exe -m uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload --no-access-log
+```
+
+In Micro, click **Load Finova attachment demo**, inspect the conventions/table, then **Run Attachment Review**. The fixed scenario has two supplied candidates, one linked alternative, one explicit supplied no-attachment decision, one unknown and one withheld row. Invented DEMO_TILE design IDs, toy dimensions/orientation/surface/window references are authored demonstration data, never inferred from TMT values or selected by an LLM. Opaque tooth tokens 11–15 have no anatomical/vendor numbering claim. Supplied no attachment is distinct from unknown or withheld. The existing semantic fixture and raw/expected hashes are rechecked; the separately hashed attachment scenario must bind to the same exact input. No arbitrary text or request flag can enroll new TEST_ONLY evidence. Even the identical demo table pasted through the normal route stays unverified.
+
+The Micro module uses deterministic templates with **zero LLM calls**, including in the demo. All 96 rule IDs remain accounted for; A01–A04/R15 remain disabled, and A05/A06/H08/N safeguards continue to withhold clinical attachment decisions. No production vendor path, validated geometry, 3D editor, attachment prescription, CAD write-back or clinical staging engine is added. Keep demo flags false in production; each requires the development environment and its own server availability flag.
+
+Rebuild the independently authored synthetic scenario, response fixtures and schemas:
+
+```powershell
+Set-Location 'C:\Finova AlignIQ\backend'
+.\.venv\Scripts\python.exe scripts/build_attachment_demo.py --frontend-fixtures
+.\.venv\Scripts\python.exe scripts/export_schemas.py
+```
+
+Additive routes: `POST /api/v1/attachments/draft` accepts raw synthetic input/context and an optional recovery receipt; `POST /api/v1/development/attachment-demo/input` and `/draft` accept **only an empty JSON object**. They never accept uploaded decisions, geometry, fixture paths or semantic authority. New schema files are `attachment-{request,draft,demo-input,demo-request}.v1.json`. Runtime input/output stays in memory; fixed repository demonstration files are read-only during requests.
+
+## Sequencer / Nano Review
+
+Choose **Nano**, paste synthetic TMT, confirm synthetic input and **Parse Table**, then **Run Sequencing Review**. Ordinary input produces an unavailable DRAFT with separate upper/lower, segment and right/left anchorage sections. Original values, explicit zero and missing cells remain distinct. No anatomical arch is inferred from a token, no stage record is reconstructed from totals or a claimed index, and unknown anchorage never means anchorage is unnecessary.
+
+For the executable fictional demonstration, start the local backend with:
+
+```powershell
+Set-Location 'C:\Finova AlignIQ\backend'
+$env:FINOVA_ENVIRONMENT = 'development'
+$env:FINOVA_SEQUENCER_DEMO_ENABLED = 'true'
+.\.venv\Scripts\python.exe -m uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload --no-access-log
+```
+
+In Nano, select **Load Finova sequencing demo**, inspect the conventions/source values, then **Run Sequencing Review**. Six fictional statements describe supplied upper/lower arch, segment and side-specific contexts. A separate fixed five-record dataset illustrates stage-ID/order/kind checks. Its records carry no per-stage movements: **NO_STAGE_MOVEMENT_BINDING**. Supplied window IDs are metadata references, not generated stage allocations or a clinical timetable. An unresolved source token and disabled assessments remain explicitly withheld. The output visibly states **SYNTHETIC DEMONSTRATION — NOT CLINICAL ADVICE**.
+
+The server verifies the bundled semantic fixture and separately hashed scenario against the same exact input. Only this fixed scenario can be read through the demo routes; the environment flag controls route availability and never grants authority to uploaded text or strategies. Even an identical table through normal intake stays UNVERIFIED. Source/context/consent/purpose changes cancel pending requests and invalidate results/exports. No sign-off, force calculation, clinical schedule, stage ceiling, duration, auxiliary, geometry optimization or collision conclusion is provided. R13/T01–T08 remain disabled. Nano uses deterministic wording and makes **zero LLM calls**.
+
+Reproduce the fixed data, actual service response fixtures and schemas:
+
+```powershell
+Set-Location 'C:\Finova AlignIQ\backend'
+.\.venv\Scripts\python.exe scripts/build_sequencer_demo.py --frontend-fixtures
+.\.venv\Scripts\python.exe scripts/export_schemas.py
+```
+
+New routes: `POST /api/v1/sequencing/draft` accepts only original synthetic input/context and an optional recovery receipt; `POST /api/v1/development/sequencer-demo/input` and `/draft` accept **an empty JSON object only**. No stage dataset, strategy, path, clinical permission or provider override is accepted from a browser. New contracts are `schemas/sequencing-{request,draft,demo-input,demo-request}.v1.json`. Copy/TXT retains every statement's origin, exact source values, stage references/kinds, missing prerequisites, limitations and the complete 96-rule ledger. No external software is contacted by export.
 
 Health check:
 

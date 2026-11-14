@@ -9,6 +9,15 @@ import DraftReviewPanel from './components/DraftReviewPanel'
 import ParserStatus from './components/ParserStatus'
 import syntheticCatalog from '../../examples/parser-finalization-synthetic.json'
 import generatedExample from './phase4Example.json'
+import PlanningWorkspace from './components/PlanningWorkspace'
+import { requestDemoInput } from './api/planning'
+import type { DemoInput } from './api/planning'
+import AttachmentWorkspace from './components/AttachmentWorkspace'
+import { requestAttachmentDemoInput } from './api/attachments'
+import type { AttachmentDemoInput } from './api/attachments'
+import SequencingWorkspace from './components/SequencingWorkspace'
+import { requestSequencingDemoInput } from './api/sequencing'
+import type { SequencingDemoInput } from './api/sequencing'
 
 export default function App() {
   const [rawText, setRawText] = useState('')
@@ -19,6 +28,11 @@ export default function App() {
   const [syntheticFixture, setSyntheticFixture] = useState<SyntheticFixture | undefined>()
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [purpose, setPurpose] = useState<'macro' | 'micro' | 'nano'>('macro')
+  const [demo, setDemo] = useState<DemoInput | null>(null)
+  const [attachmentDemo, setAttachmentDemo] = useState<AttachmentDemoInput | null>(null)
+  const [sequencingDemo, setSequencingDemo] = useState<SequencingDemoInput | null>(null)
+  const [complete, setComplete] = useState(false)
   const requestRef = useRef<AbortController | null>(null)
   const revisionRef = useRef(0)
   const inputRef = useRef<HTMLTextAreaElement>(null)
@@ -35,6 +49,10 @@ export default function App() {
     setResult(null)
     setError(null)
     setLoading(false)
+    setDemo(null)
+    setAttachmentDemo(null)
+    setSequencingDemo(null)
+    setComplete(false)
   }
 
   function editRawText(value: string) {
@@ -57,6 +75,10 @@ export default function App() {
     setLoading(true)
     setError(null)
     setResult(null)
+    setDemo(null)
+    setAttachmentDemo(null)
+    setSequencingDemo(null)
+    setComplete(false)
     const timeout = window.setTimeout(() => controller.abort(), syntheticFixture ? 35_000 : 20_000)
     try {
       const parsed = await requestParse(rawText, source, context, controller.signal, syntheticFixture)
@@ -88,6 +110,69 @@ export default function App() {
     inputRef.current?.focus()
   }
 
+  async function loadPlanningDemo() {
+    invalidateParse()
+    const controller = new AbortController(), revision = ++revisionRef.current
+    requestRef.current = controller; setLoading(true)
+    const timeout = window.setTimeout(() => controller.abort(), 20_000)
+    try {
+      const value = await requestDemoInput(controller.signal)
+      if (revision === revisionRef.current) {
+        setRawText(value.parsed.raw_text); setContext(value.context); setConfirmedSynthetic(true)
+        setSyntheticFixture(undefined); setDemo(value); setResult(value.parsed)
+      }
+    } catch (e) {
+      if (revision === revisionRef.current) setError(e instanceof Error && e.message === 'DEMO_DISABLED'
+        ? 'The synthetic planning demonstration is disabled on this backend. Use a development server configured for the fixed demonstration. Your existing text is preserved; ordinary pasted text cannot gain demonstration authority.'
+        : 'The fixed demonstration could not be loaded. Your existing text is preserved. Check the backend and retry.')
+    } finally {
+      window.clearTimeout(timeout)
+      if (revision === revisionRef.current) { requestRef.current = null; setLoading(false) }
+    }
+  }
+
+  async function loadAttachmentDemo() {
+    invalidateParse()
+    const controller = new AbortController(), revision = ++revisionRef.current
+    requestRef.current = controller; setLoading(true)
+    const timeout = window.setTimeout(() => controller.abort(), 20_000)
+    try {
+      const value = await requestAttachmentDemoInput(controller.signal)
+      if (revision === revisionRef.current) {
+        setRawText(value.parsed.raw_text); setContext(value.context); setConfirmedSynthetic(true)
+        setSyntheticFixture(undefined); setAttachmentDemo(value); setResult(value.parsed)
+      }
+    } catch (e) {
+      if (revision === revisionRef.current) setError(e instanceof Error && e.message === 'DEMO_DISABLED'
+        ? 'The synthetic attachment demonstration is disabled on this backend. Use a development server configured for the fixed demonstration. Your existing text is preserved.'
+        : 'The fixed attachment demonstration could not be loaded. Your existing text is preserved. Check the backend and retry.')
+    } finally {
+      window.clearTimeout(timeout)
+      if (revision === revisionRef.current) { requestRef.current = null; setLoading(false) }
+    }
+  }
+
+  async function loadSequencingDemo() {
+    invalidateParse()
+    const controller = new AbortController(), revision = ++revisionRef.current
+    requestRef.current = controller; setLoading(true)
+    const timeout = window.setTimeout(() => controller.abort(), 20_000)
+    try {
+      const value = await requestSequencingDemoInput(controller.signal)
+      if (revision === revisionRef.current) {
+        setRawText(value.parsed.raw_text); setContext(value.context); setConfirmedSynthetic(true)
+        setSyntheticFixture(undefined); setSequencingDemo(value); setResult(value.parsed)
+      }
+    } catch (e) {
+      if (revision === revisionRef.current) setError(e instanceof Error && e.message === 'DEMO_DISABLED'
+        ? 'The synthetic sequencing demonstration is disabled on this backend. Use a development server configured for the fixed demonstration. Your existing text is preserved.'
+        : 'The fixed sequencing demonstration could not be loaded. Your existing text is preserved. Check the backend and retry.')
+    } finally {
+      window.clearTimeout(timeout)
+      if (revision === revisionRef.current) { requestRef.current = null; setLoading(false) }
+    }
+  }
+
   return (
     <div className="min-h-screen">
       <a href="#intake" className="skip-link">Skip to raw text input</a>
@@ -98,21 +183,18 @@ export default function App() {
             <div className="text-[21px] tracking-tight"><span className="font-bold">Finova</span> <span className="font-medium text-brand">AlignIQ</span></div>
           </div>
           <div className="flex items-center gap-3 text-xs font-medium text-muted">
-            <span className="hidden sm:inline">TMT review workspace</span>
-            <span className="rounded-md border border-line bg-canvas px-2.5 py-1.5 tracking-wide">PHASE 5</span>
+            <span className="hidden sm:inline">Planning workspace</span>
+            <span className="rounded-md border border-line bg-canvas px-2.5 py-1.5 tracking-wide">SYNTHETIC PROTOTYPE</span>
           </div>
         </div>
       </header>
 
       <main className="mx-auto max-w-[1320px] px-5 pb-10 pt-8 sm:px-9 sm:pt-11">
-        <div className="mb-5 flex items-center gap-2 text-xs font-semibold tracking-[0.13em] text-brand">
-          <span className="flex h-6 w-6 items-center justify-center rounded-full bg-brand-soft text-[11px] tracking-normal">01</span>
-          RAW TEXT INTAKE
-        </div>
+        <p className="mb-3 text-xs font-semibold tracking-[0.16em] text-brand">{purpose === 'nano' ? 'SEQUENCER' : purpose === 'micro' ? 'ATTACHMENT INTERFACE' : 'PLANNING ASSISTANT'}</p>
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
-            <h1 className="text-3xl font-semibold tracking-[-0.035em] sm:text-[40px] sm:leading-tight">Start with the source.</h1>
-            <p className="mt-3 max-w-2xl text-[15px] leading-7 text-muted">A workspace for pasted Tooth Movement Table (TMT) text.<br className="hidden sm:block" /> Parse recognizable structure while keeping source semantics explicitly unverified.</p>
+            <h1 className="text-3xl font-semibold tracking-[-0.035em] sm:text-[40px] sm:leading-tight">A clearer view of the plan.</h1>
+            <p className="mt-3 max-w-2xl text-[15px] leading-7 text-muted">Inspect tooth movements, review traceable observations and prepare descriptive DRAFT comments for communication.</p>
           </div>
           <span className="mb-1 flex items-center gap-2 text-xs font-medium text-muted"><LockKeyhole size={14} aria-hidden="true" /> No input persistence</span>
         </div>
@@ -124,6 +206,21 @@ export default function App() {
             <p>Use synthetic text only. Do not paste real patient data. Parsing recognizes text structure; it does not verify vendor semantics or clinically assess your input.</p>
           </div>
         </aside>
+
+        <section aria-labelledby="purpose-heading" className="mb-6">
+          <h2 id="purpose-heading" className="mb-2 text-sm font-semibold">Choose a review purpose</h2>
+          <p className="mb-4 text-xs leading-6 text-muted">Review passes are flexible planning purposes, not aligner stages or a prescribed number of modifications. Your choice does not authorize clinical assessments.</p>
+          <nav aria-label="Review purpose" className="grid gap-3 md:grid-cols-3">{([
+            ['macro', 'Macro', 'Planning Assistant', 'Major sagittal, transverse & vertical review'],
+            ['micro', 'Micro', 'Attachment Interface', 'Tooth-indexed attachment evidence & review'],
+            ['nano', 'Nano', 'Sequencer', 'Sequencing, segments & anchorage context'],
+          ] as const).map(([id, title, subtitle, description]) => <button type="button" key={id} aria-pressed={purpose === id} onClick={() => { if (purpose !== id) { invalidateParse(); setPurpose(id) } }} className={`purpose-card ${purpose === id ? 'purpose-active' : ''}`}><span className="text-xs font-semibold tracking-widest text-brand">{title.toUpperCase()}</span><span className="mt-2 block text-sm font-semibold">{subtitle}</span><span className="mt-1 block text-xs leading-6 text-muted">{description}</span></button>)}</nav>
+        </section>
+        <ol aria-label="Planning workflow" className="workflow-steps mb-6">{['Paste TMT', 'Inspect movements', purpose === 'nano' ? 'Run sequencing review' : purpose === 'micro' ? 'Run attachment review' : 'Run assistant', 'Review & export'].map((label, i) => <li key={label} aria-current={(complete ? i === 3 : result ? i === 2 : i === 0) ? 'step' : undefined}><span aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>{label}</li>)}</ol>
+        <aside className="mb-5 flex flex-wrap items-center justify-between gap-4 rounded-xl border border-brand/20 bg-brand-soft p-5"><div><h2 className="text-sm font-semibold text-brand">Try the complete synthetic workflow</h2><p className="mt-1 max-w-2xl text-xs leading-6 text-muted">{purpose === 'nano' ? 'The fixed Nano demo contains supplied fictional arch, segment and anchorage notes, checked stage metadata and explicit withholding. No clinical strategy is calculated.' : purpose === 'micro' ? 'The fixed attachment demo contains supplied candidates, an alternative, a supplied no-attachment decision, unknown and withheld rows. No clinical policy is implied.' : 'The fixed Finova demo includes authorized TEST_ONLY descriptions and a deliberately withheld value. No vendor or clinical validation is implied.'}</p></div><button type="button" className="button border border-brand/30 bg-white text-brand disabled:opacity-50" onClick={() => void (purpose === 'nano' ? loadSequencingDemo() : purpose === 'micro' ? loadAttachmentDemo() : loadPlanningDemo())} disabled={loading}><FlaskConical size={16} aria-hidden="true" />{purpose === 'nano' ? 'Load Finova sequencing demo' : purpose === 'micro' ? 'Load Finova attachment demo' : 'Load Finova planning demo'}</button></aside>
+        {demo && <details className="technical-details mb-5"><summary>Finova Synthetic Demonstration · conventions & scope</summary><ul className="mt-3 list-disc space-y-2 pl-5 text-xs leading-6 text-muted">{demo.convention.map(c => <li key={c}>{c}</li>)}</ul></details>}
+        {attachmentDemo && <details className="technical-details mb-5"><summary>Finova Synthetic Attachment Demonstration · conventions & scope</summary><ul className="mt-3 list-disc space-y-2 pl-5 text-xs leading-6 text-muted">{attachmentDemo.convention.map(c => <li key={c}>{c}</li>)}</ul></details>}
+        {sequencingDemo && <details className="technical-details mb-5"><summary>Finova Synthetic Sequencer Demonstration · conventions & scope</summary><ul className="mt-3 list-disc space-y-2 pl-5 text-xs leading-6 text-muted">{sequencingDemo.convention.map(c => <li key={c}>{c}</li>)}</ul></details>}
 
         <div className="workspace-grid grid min-w-0 gap-5 lg:grid-cols-2">
           <section aria-labelledby="input-heading" className="panel min-w-0">
@@ -198,7 +295,10 @@ export default function App() {
 
         {result && <ParserStatus result={result} />}
         {result && <ParseResults key={revisionRef.current} result={result} />}
-        {result && <DraftReviewPanel key={`review-${revisionRef.current}`} rawText={rawText} source={source} context={context} rawHash={result.raw_sha256} recoveryReceipt={result.pipeline.recovery_receipt ?? undefined} />}
+        {result && purpose === 'macro' && <PlanningWorkspace key={`planning-${revisionRef.current}`} rawText={rawText} context={context} parsed={result} demo={!!demo} onComplete={setComplete} />}
+        {result && purpose === 'micro' && <AttachmentWorkspace key={`attachment-${revisionRef.current}`} rawText={rawText} context={context} parsed={result} demo={!!attachmentDemo} onComplete={setComplete} />}
+        {result && purpose === 'nano' && <SequencingWorkspace key={`sequencing-${revisionRef.current}`} rawText={rawText} context={context} parsed={result} demo={!!sequencingDemo} onComplete={setComplete} />}
+        {result && purpose === 'macro' && !demo && <details className="technical-details"><summary>Advanced: separate engineering review & legacy report actions</summary><DraftReviewPanel key={`review-${revisionRef.current}`} rawText={rawText} source={source} context={context} rawHash={result.raw_sha256} recoveryReceipt={result.pipeline.recovery_receipt ?? undefined} /></details>}
 
         <footer className="mt-7 flex flex-wrap justify-between gap-3 border-t border-line pt-5 text-xs leading-5 text-muted">
           <p className="flex items-center gap-2"><LockKeyhole size={14} aria-hidden="true" />Input stays in memory. Only server-authorized generated fixtures can use automatic development cloud recovery. Copy/download creates a local export.</p>

@@ -1,0 +1,30 @@
+{
+  "deterministic_comparison": {
+    "mode": "INDEPENDENT_GOLD_ORACLE_MOCK_NOT_MODEL_ACCURACY",
+    "fixtures": 78,
+    "supported_fixtures": 60,
+    "gold_positions": 240,
+    "deterministic_correct_positions": 96,
+    "hybrid_correct_positions": 240,
+    "deterministic_complete_fixtures": 24,
+    "hybrid_complete_fixtures": 60,
+    "mocked_provider_calls": 36,
+    "forbidden_input_calls": 0
+  },
+  "optional_live_results": [
+    {
+      "recipe": "wrapped",
+      "status": "ACCEPTED",
+      "reason": "ALL_CELL_ASSOCIATIONS_CERTIFIED",
+      "gold_positions": 4,
+      "correct_positions": 4,
+      "attempts": 1,
+      "elapsed_seconds": 4.8054,
+      "http_status": 200,
+      "model_matches": true,
+      "prompt_tokens": 725,
+      "completion_tokens": 271,
+      "total_tokens": 996
+    }
+  ]
+}

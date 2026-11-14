@@ -1,0 +1,91 @@
+{
+  "scenario_id": "FINOVA-ATTACHMENTS-1",
+  "kind": "TEST_ONLY",
+  "input_sha256": "ea15151391ed4ccf9ae618c54190722d8825fb6215c1255e084ee21f5352dd84",
+  "rows": [
+    {
+      "key": "candidate-a",
+      "tooth_ref": "tooth-1",
+      "synthetic_tooth": "DEMO_11",
+      "result_type": "CANDIDATE",
+      "design": {
+        "design_id": "DEMO_TILE_A",
+        "category_id": "FINOVA_ILLUSTRATIVE_TILE",
+        "label": "Illustrative tile A",
+        "shape": "DEMO_PRISM",
+        "dimensions": {
+          "x": "2.000",
+          "y": "1.250",
+          "z": "0.500",
+          "unit": "mm"
+        },
+        "orientation": "DEMO_LONG_AXIS"
+      },
+      "placement": {
+        "surface_id": "DEMO_SURFACE_A",
+        "frame_id": "DEMO_SCHEMATIC_V1",
+        "stage_ref": "DEMO_WINDOW_A"
+      },
+      "alternative_key": null
+    },
+    {
+      "key": "alternative-b",
+      "tooth_ref": "tooth-1",
+      "synthetic_tooth": "DEMO_11",
+      "result_type": "ALTERNATIVE",
+      "design": {
+        "design_id": "DEMO_TILE_B",
+        "category_id": "FINOVA_ILLUSTRATIVE_TILE",
+        "label": "Illustrative tile B",
+        "shape": "DEMO_OVAL",
+        "dimensions": null,
+        "orientation": null
+      },
+      "placement": null,
+      "alternative_key": "candidate-a"
+    },
+    {
+      "key": "candidate-c",
+      "tooth_ref": "tooth-2",
+      "synthetic_tooth": "DEMO_12",
+      "result_type": "CANDIDATE",
+      "design": {
+        "design_id": "DEMO_TILE_C",
+        "category_id": "FINOVA_ILLUSTRATIVE_TILE",
+        "label": "Illustrative tile C",
+        "shape": null,
+        "dimensions": null,
+        "orientation": null
+      },
+      "placement": null,
+      "alternative_key": null
+    },
+    {
+      "key": "supplied-none",
+      "tooth_ref": "tooth-3",
+      "synthetic_tooth": "DEMO_13",
+      "result_type": "NOT_INDICATED",
+      "design": null,
+      "placement": null,
+      "alternative_key": null
+    },
+    {
+      "key": "unknown",
+      "tooth_ref": "tooth-4",
+      "synthetic_tooth": "DEMO_14",
+      "result_type": "UNKNOWN",
+      "design": null,
+      "placement": null,
+      "alternative_key": null
+    },
+    {
+      "key": "withheld",
+      "tooth_ref": "tooth-5",
+      "synthetic_tooth": null,
+      "result_type": "WITHHELD",
+      "design": null,
+      "placement": null,
+      "alternative_key": null
+    }
+  ]
+}

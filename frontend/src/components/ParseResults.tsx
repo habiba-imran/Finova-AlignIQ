@@ -15,18 +15,18 @@ export default function ParseResults({ result }: { result: ParseResult }) {
     <div className="p-5 sm:p-6">
       <div className="rounded-lg border border-notice-line bg-notice p-4 text-sm leading-6 text-notice-ink">
         <p className="font-semibold">Source verification: UNVERIFIED</p>
-        <p>Source claim: {result.source.source_claim}. Parser: {result.source.adapter.id} v{result.source.adapter.version}.</p>
-        {result.source.candidate_adapter && <p>Candidate: {result.source.candidate_adapter.id} v{result.source.candidate_adapter.version}. No vendor versions are verified.</p>}
+        <p>Source claim: {result.source.source_claim}. No vendor versions are verified.</p>
+        <details className="mt-2 text-xs"><summary className="cursor-pointer">Parser & adapter details</summary><p>Parser: {result.source.adapter.id} v{result.source.adapter.version}.</p>{result.source.candidate_adapter && <p>Candidate: {result.source.candidate_adapter.id} v{result.source.candidate_adapter.version}.</p>}</details>
         {result.source.detected_claims.length > 0 && <p>Explicit source text claims: {result.source.detected_claims.join(', ')}.</p>}
         <p>Canonical tooth IDs, axes, and physical directions are withheld. These are text parsing results, not clinical checks.</p>
       </div>
       <p className="my-4 text-sm leading-6 text-muted">{result.teeth.length} tooth token positions · {result.measurements.length} measurement positions · {result.coverage.explicit_zero} explicit zeros · {result.coverage.missing} missing positions</p>
       <p className="mb-4 text-xs text-muted">Layout: {humanize(result.layout.orientation)} · Delimiter: {result.layout.delimiter ? humanize(result.layout.delimiter) : 'unresolved'}</p>
       {result.measurements.length > 0 ? <>
-        <div role="region" aria-label="Parsed measurements" tabIndex={0} className="overflow-x-auto rounded-lg border border-line">
+        <div role="region" aria-label="Parsed measurements" tabIndex={0} className="max-h-[28rem] overflow-auto rounded-lg border border-line">
           <table className="w-full min-w-[850px] text-left text-xs leading-5">
             <caption className="sr-only">Original tokens alongside lexical values. All source semantics remain unverified.</caption>
-            <thead className="bg-canvas text-muted"><tr>{['Tooth token', 'Label / lexical alias', 'Raw cell', 'Lexical value / unit', 'Status / clarification'].map(title => <th key={title} scope="col" className="p-3 font-semibold">{title}</th>)}</tr></thead>
+            <thead className="sticky top-0 bg-canvas text-muted"><tr>{['Tooth token', 'Label / lexical alias', 'Raw cell', 'Lexical value / unit', 'Status / clarification'].map(title => <th key={title} scope="col" className="p-3 font-semibold">{title}</th>)}</tr></thead>
             <tbody>{visible.map(measurement => <tr key={measurement.id} className="border-t border-line align-top">
               <td className="p-3"><code className="raw-text">{teeth.get(measurement.tooth_ref)?.raw_identifier}</code><p className="mt-1 text-muted">{humanize(teeth.get(measurement.tooth_ref)?.identifier_status ?? 'UNKNOWN')}</p></td>
               <td className="max-w-52 p-3"><span className="raw-text">{measurement.raw_label}</span><p className="mt-1 text-muted">{measurement.recognized_label ? humanize(measurement.recognized_label) : 'Unsupported label'}</p></td>

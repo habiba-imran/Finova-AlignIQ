@@ -18,6 +18,7 @@ export default defineConfig({
   ],
   webServer: [
     { command: `"${python}" -m uvicorn app.main:app --host 127.0.0.1 --port 8000 --no-access-log`, cwd: backend,
+      env: { FINOVA_ENVIRONMENT: 'development', FINOVA_PLANNING_DEMO_ENABLED: 'true', FINOVA_ATTACHMENT_DEMO_ENABLED: 'true', FINOVA_SEQUENCER_DEMO_ENABLED: 'true', FINOVA_GROQ_SYNTHETIC_ENABLED: 'false', FINOVA_PARSER_GROQ_ENABLED: 'false' },
       url: 'http://127.0.0.1:8000/api/health', reuseExistingServer: !process.env.CI },
     { command: 'npm run dev', url: 'http://127.0.0.1:5173', reuseExistingServer: !process.env.CI },
   ],

@@ -17,6 +17,7 @@ async function parsed(fetch = vi.fn().mockResolvedValueOnce(ok(parseFixture))) {
   fireEvent.click(screen.getByRole('checkbox'))
   fireEvent.click(screen.getByRole('button', { name: 'Parse Table' }))
   await screen.findByRole('heading', { name: 'Structured lexical preview' })
+  fireEvent.click(screen.getByText('Advanced: separate engineering review & legacy report actions'))
   return { fetch, input, button: screen.getByRole('button', { name: 'Create draft review' }) }
 }
 

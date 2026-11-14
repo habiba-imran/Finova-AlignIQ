@@ -1,0 +1,192 @@
+{
+  "kind": "PUBLIC_OFFICIAL_DEMONSTRATION_NOT_LIVE_PRODUCT",
+  "date": "2026-11-14",
+  "records": [
+    {
+      "id": "iEMJeuOXkq4",
+      "url": "https://www.youtube.com/watch?v=iEMJeuOXkq4&t=180s",
+      "frames": [
+        {
+          "requested_seconds": 180,
+          "actual_seconds": 180.008618,
+          "decoded_media_seconds": 180.017,
+          "path": "videos/iEMJeuOXkq4-180s-cropped.png",
+          "crop_fraction": {
+            "left": 0.02,
+            "top": 0.18,
+            "width": 0.96,
+            "height": 0.72
+          },
+          "privacy_note": "Browser URL/profile/account header and bottom strip excluded. Manual content review still required."
+        }
+      ],
+      "http_status": 200,
+      "title": "PMCEASY - How does it work? - YouTube",
+      "playback": {
+        "duration": 399.581,
+        "ready_state": 4,
+        "video_width": 1262,
+        "video_height": 720,
+        "error_code": null
+      }
+    },
+    {
+      "id": "iEMJeuOXkq4",
+      "url": "https://www.youtube.com/watch?v=iEMJeuOXkq4&t=200s",
+      "frames": [
+        {
+          "requested_seconds": 200,
+          "actual_seconds": 200.008937,
+          "decoded_media_seconds": 200.017,
+          "path": "videos/iEMJeuOXkq4-200s-cropped.png",
+          "crop_fraction": {
+            "left": 0.02,
+            "top": 0.18,
+            "width": 0.96,
+            "height": 0.72
+          },
+          "privacy_note": "Browser URL/profile/account header and bottom strip excluded. Manual content review still required."
+        }
+      ],
+      "http_status": 200,
+      "title": "PMCEASY - How does it work? - YouTube",
+      "playback": {
+        "duration": 399.581,
+        "ready_state": 4,
+        "video_width": 1262,
+        "video_height": 720,
+        "error_code": null
+      }
+    },
+    {
+      "id": "iEMJeuOXkq4",
+      "url": "https://www.youtube.com/watch?v=iEMJeuOXkq4&t=220s",
+      "frames": [
+        {
+          "requested_seconds": 220,
+          "actual_seconds": 220.005792,
+          "decoded_media_seconds": 220.017,
+          "path": "videos/iEMJeuOXkq4-220s-cropped.png",
+          "crop_fraction": {
+            "left": 0.02,
+            "top": 0.18,
+            "width": 0.96,
+            "height": 0.72
+          },
+          "privacy_note": "Browser URL/profile/account header and bottom strip excluded. Manual content review still required."
+        }
+      ],
+      "http_status": 200,
+      "title": "PMCEASY - How does it work? - YouTube",
+      "playback": {
+        "duration": 399.581,
+        "ready_state": 4,
+        "video_width": 1262,
+        "video_height": 720,
+        "error_code": null
+      }
+    },
+    {
+      "id": "iEMJeuOXkq4",
+      "url": "https://www.youtube.com/watch?v=iEMJeuOXkq4&t=280s",
+      "frames": [
+        {
+          "requested_seconds": 280,
+          "actual_seconds": 280.020458,
+          "decoded_media_seconds": 280.033,
+          "path": "videos/iEMJeuOXkq4-280s-cropped.png",
+          "crop_fraction": {
+            "left": 0.02,
+            "top": 0.18,
+            "width": 0.96,
+            "height": 0.72
+          },
+          "privacy_note": "Browser URL/profile/account header and bottom strip excluded. Manual content review still required."
+        }
+      ],
+      "http_status": 200,
+      "title": "PMCEASY - How does it work? - YouTube",
+      "playback": {
+        "duration": 399.581,
+        "ready_state": 4,
+        "video_width": 1262,
+        "video_height": 720,
+        "error_code": null
+      }
+    },
+    {
+      "id": "1GHKNwNkL6Q",
+      "url": "https://www.youtube.com/watch?v=1GHKNwNkL6Q&t=60s",
+      "frames": [],
+      "http_status": 200,
+      "title": "PLANNING WITH PMCEASY AI - YouTube",
+      "playback": {
+        "duration": 65.641,
+        "ready_state": 4,
+        "video_width": 1280,
+        "video_height": 720,
+        "error_code": null
+      },
+      "limitation": "EXCLUDED_UNRELATED_MEDIA_DURATION_MISMATCH; frame removed; no PMCEASY behavior attributed"
+    },
+    {
+      "id": "1GHKNwNkL6Q",
+      "url": "https://www.youtube.com/watch?v=1GHKNwNkL6Q&t=90s",
+      "frames": [
+        {
+          "requested_seconds": 90,
+          "actual_seconds": 90.018772,
+          "decoded_media_seconds": 89.964875,
+          "path": "videos/1GHKNwNkL6Q-90s-cropped.png",
+          "crop_fraction": {
+            "left": 0.02,
+            "top": 0.18,
+            "width": 0.96,
+            "height": 0.72
+          },
+          "privacy_note": "Browser URL/profile/account header and bottom strip excluded. Manual content review still required."
+        }
+      ],
+      "http_status": 200,
+      "title": "PLANNING WITH PMCEASY AI - YouTube",
+      "playback": {
+        "duration": 371.601,
+        "ready_state": 4,
+        "video_width": 1280,
+        "video_height": 720,
+        "error_code": null
+      }
+    },
+    {
+      "id": "1GHKNwNkL6Q",
+      "url": "https://www.youtube.com/watch?v=1GHKNwNkL6Q&t=120s",
+      "frames": [
+        {
+          "requested_seconds": 120,
+          "actual_seconds": 120.021001,
+          "decoded_media_seconds": 120.036583,
+          "path": "videos/1GHKNwNkL6Q-120s-cropped.png",
+          "crop_fraction": {
+            "left": 0.02,
+            "top": 0.18,
+            "width": 0.96,
+            "height": 0.72
+          },
+          "privacy_note": "Browser URL/profile/account header and bottom strip excluded. Manual content review still required."
+        }
+      ],
+      "http_status": 200,
+      "title": "PLANNING WITH PMCEASY AI - YouTube",
+      "playback": {
+        "duration": 371.601,
+        "ready_state": 4,
+        "video_width": 1280,
+        "video_height": 720,
+        "error_code": null
+      }
+    }
+  ],
+  "limitations": [
+    "Fresh owned temporary browser profile. Only the two selected official video pages and required media/assets allowed. No login, payment, saved cookies, headers, caption URLs, signed media URLs, request bodies, unrelated browsing or video-file download. Seeking a published demo does not execute the demonstrated PMCEASY product."
+  ]
+}

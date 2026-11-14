@@ -13,6 +13,9 @@ from app.review.clinical import ClinicalPreparation, CandidateInputReadiness  # 
 from app.review.context import AdditionalInputRequirements, TestRuleContext  # noqa: E402
 from app.reports.models import FinalDraftReport, ReportSubmission, WordingBatch  # noqa: E402
 from app.parser.contracts import AssistedSubmission, AutomaticParseResult, StructuralProposal, PipelineSubmission, RecoveryProposal, SyntheticFixture  # noqa: E402
+from app.planning.models import DemoInput, DemoRequest, PlanningDraft
+from app.attachments.models import AttachmentDraft, AttachmentSubmission, AttachmentDemoInput, EmptyDemoRequest
+from app.sequencing.models import SequencingDraft, SequencingSubmission, SequencingDemoInput, EmptyDemoRequest as EmptySequencingRequest
 
 output = Path(__file__).resolve().parents[2] / "schemas"
 output.mkdir(exist_ok=True)
@@ -38,5 +41,16 @@ for name, model, mode in [
     ("pipeline-parse-request.v1.json", PipelineSubmission, "validation"),
     ("groq-recovery.v1.json", RecoveryProposal, "validation"),
     ("synthetic-generator-request.v1.json", SyntheticFixture, "validation"),
+    ("planning-draft.v1.json", PlanningDraft, "serialization"),
+    ("planning-demo-input.v1.json", DemoInput, "serialization"),
+    ("planning-demo-request.v1.json", DemoRequest, "validation"),
+    ("attachment-draft.v1.json", AttachmentDraft, "serialization"),
+    ("attachment-request.v1.json", AttachmentSubmission, "validation"),
+    ("attachment-demo-input.v1.json", AttachmentDemoInput, "serialization"),
+    ("attachment-demo-request.v1.json", EmptyDemoRequest, "validation"),
+    ("sequencing-draft.v1.json", SequencingDraft, "serialization"),
+    ("sequencing-request.v1.json", SequencingSubmission, "validation"),
+    ("sequencing-demo-input.v1.json", SequencingDemoInput, "serialization"),
+    ("sequencing-demo-request.v1.json", EmptySequencingRequest, "validation"),
 ]:
     (output / name).write_text(json.dumps(model.model_json_schema(mode=mode), indent=2, ensure_ascii=False) + "\n", encoding="utf-8")

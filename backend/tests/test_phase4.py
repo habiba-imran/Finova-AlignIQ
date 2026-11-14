@@ -290,6 +290,7 @@ def test_recovery_engineering_bounds_abstain_without_prefix_truncation():
 
 
 def test_generator_endpoint_has_no_arbitrary_text_enrollment_and_api_replays_receipt(monkeypatch):
+    monkeypatch.setenv('FINOVA_ENVIRONMENT', 'development')
     client=TestClient(app)
     assert client.post('/api/v1/development/synthetic',json={'recipe':'wrapped','seed':77,'raw_text':'PATIENT'}).status_code==422
     sample=client.post('/api/v1/development/synthetic',json={'recipe':'wrapped','seed':77}).json()

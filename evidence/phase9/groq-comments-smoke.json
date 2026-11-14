@@ -1,0 +1,22 @@
+{
+  "checked_at_utc": "2026-11-14T10:57:27.077139+00:00",
+  "results": [
+    {
+      "service": "comments",
+      "status": "PASSED",
+      "validation": "GROQ_VALIDATED",
+      "requested_model": "openai/gpt-oss-120b",
+      "synthetic_only": true,
+      "authentication": "ACCEPTED",
+      "strict_structured_output_validated": true,
+      "code": "GROQ_RESPONSE_RECEIVED",
+      "attempts": 1,
+      "elapsed_seconds": 1.7697,
+      "http_status": 200,
+      "model_matches": true,
+      "prompt_tokens": 430,
+      "completion_tokens": 101,
+      "total_tokens": 531
+    }
+  ]
+}

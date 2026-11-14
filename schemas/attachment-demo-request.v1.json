@@ -1,0 +1,7 @@
+{
+  "additionalProperties": false,
+  "description": "No uploaded text, decisions, geometry, paths, provider or authority switches.",
+  "properties": {},
+  "title": "EmptyDemoRequest",
+  "type": "object"
+}

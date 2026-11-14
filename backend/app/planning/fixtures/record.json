@@ -1,0 +1,39 @@
+{
+  "fixture_id": "FINOVA-SYNTHETIC-1",
+  "kind": "SYNTHETIC",
+  "application": "TEST_ONLY",
+  "source_version": "FINOVA-DEMO-1",
+  "status": "TEST_ONLY",
+  "captured_by": null,
+  "captured_at": null,
+  "consent_ref": null,
+  "deidentification_ref": null,
+  "raw": {
+    "path": "table.txt",
+    "sha256": "ea15151391ed4ccf9ae618c54190722d8825fb6215c1255e084ee21f5352dd84"
+  },
+  "expected": {
+    "path": "expected.json",
+    "sha256": "a08f33db52040a0fbe6f1d108df99dfcae2ad83d9dbd3565cc6b5f3e2cca650c"
+  },
+  "source_evidence": null,
+  "submission_context": {
+    "raw_text": "",
+    "source_claim": "Unknown",
+    "context": {
+      "source_version": "FINOVA-DEMO-1",
+      "notation": "UNKNOWN",
+      "dentition": "UNKNOWN",
+      "arch": "UNKNOWN",
+      "plan_mode": "UNKNOWN",
+      "reference_basis": "UNKNOWN",
+      "scope": "UNKNOWN",
+      "stage_index": null,
+      "coordinate_frame": null,
+      "case_id": null,
+      "plan_id": null,
+      "decimal_separator": "DOT"
+    }
+  },
+  "reviews": []
+}

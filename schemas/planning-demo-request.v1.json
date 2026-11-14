@@ -1,0 +1,17 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "comment_mode": {
+      "default": "AUTO",
+      "enum": [
+        "AUTO",
+        "GROQ",
+        "TEMPLATES"
+      ],
+      "title": "Comment Mode",
+      "type": "string"
+    }
+  },
+  "title": "DemoRequest",
+  "type": "object"
+}

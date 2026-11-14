@@ -1,6 +1,8 @@
 """Versioned automatic/assisted routes; legacy lexical and report contracts are intact."""
 
-from fastapi import APIRouter
+import os
+
+from fastapi import APIRouter, HTTPException
 
 from app.domain.models import RawTMTSubmission
 from app.parser.contracts import AssistedSubmission, AutomaticParseResult, PipelineSubmission, SyntheticFixture
@@ -19,6 +21,8 @@ def parse_automatic(submission: PipelineSubmission) -> AutomaticParseResult:
 @router.post("/api/v1/development/synthetic")
 def development_synthetic(identity: SyntheticFixture):
     """No free-text enrollment; returns original generated synthetic content only."""
+    if os.environ.get("FINOVA_ENVIRONMENT") != "development":
+        raise HTTPException(status_code=404, detail="Development demonstration is disabled.")
     sample=generate(identity)
     return {"raw_text":sample.raw_text,"synthetic_fixture":identity.model_dump(),"category":sample.category,
             "notice":"Original synthetic test content; not authentic vendor evidence."}

@@ -1,0 +1,1863 @@
+{
+  "schema_version": "1.0.0",
+  "kind": "SYNTHETIC",
+  "lexical": {
+    "schema_version": "1.0.0",
+    "parser_version": "0.1.0",
+    "status": "PARTIAL",
+    "notice": "Prototype — not for clinical use. Lexical parsing only; source semantics are unverified.",
+    "raw_text": "# Finova Synthetic Demonstration — TEST_ONLY, no patient or vendor\nTooth\tRotation (deg)\tExtrusion (mm)\tMesiodistal (mm)\tBuccolingual (mm)\n11\t-\t-\t1.2300 D\t-\n12\t-\t-\t-\t0.4500 B\n13\t-\t0.200 E\t-\t-\n14\t2.500 M\t-\t-\t-\n15\t3.000 M\t-\t-\t-\n",
+    "raw_sha256": "ea15151391ed4ccf9ae618c54190722d8825fb6215c1255e084ee21f5352dd84",
+    "source": {
+      "source_claim": "Unknown",
+      "detected_claims": [],
+      "claim_evidence": [],
+      "verification_status": "UNVERIFIED",
+      "adapter": {
+        "id": "generic-lexical-grid",
+        "version": "0.1.0",
+        "verified": false,
+        "verified_source_versions": []
+      },
+      "candidate_adapter": null,
+      "context": {
+        "source_version": "FINOVA-DEMO-1",
+        "notation": "UNKNOWN",
+        "dentition": "UNKNOWN",
+        "arch": "UNKNOWN",
+        "plan_mode": "UNKNOWN",
+        "reference_basis": "UNKNOWN",
+        "scope": "UNKNOWN",
+        "stage_index": null,
+        "coordinate_frame": null,
+        "case_id": null,
+        "plan_id": null,
+        "decimal_separator": "DOT"
+      },
+      "metadata_status": "USER_CLAIMS_UNVERIFIED"
+    },
+    "layout": {
+      "orientation": "TEETH_IN_ROWS",
+      "delimiter": "TAB",
+      "header_line": 2,
+      "header_cells": [
+        {
+          "raw": "Tooth",
+          "span": {
+            "line": 2,
+            "column_start": 1,
+            "column_end": 6,
+            "start": 67,
+            "end": 72,
+            "cell_index": 1
+          }
+        },
+        {
+          "raw": "Rotation (deg)",
+          "span": {
+            "line": 2,
+            "column_start": 7,
+            "column_end": 21,
+            "start": 73,
+            "end": 87,
+            "cell_index": 2
+          }
+        },
+        {
+          "raw": "Extrusion (mm)",
+          "span": {
+            "line": 2,
+            "column_start": 22,
+            "column_end": 36,
+            "start": 88,
+            "end": 102,
+            "cell_index": 3
+          }
+        },
+        {
+          "raw": "Mesiodistal (mm)",
+          "span": {
+            "line": 2,
+            "column_start": 37,
+            "column_end": 53,
+            "start": 103,
+            "end": 119,
+            "cell_index": 4
+          }
+        },
+        {
+          "raw": "Buccolingual (mm)",
+          "span": {
+            "line": 2,
+            "column_start": 54,
+            "column_end": 71,
+            "start": 120,
+            "end": 137,
+            "cell_index": 5
+          }
+        }
+      ],
+      "declared_column_count": 5
+    },
+    "teeth": [
+      {
+        "id": "tooth-1",
+        "raw_identifier": "11",
+        "token": "11",
+        "notation_claim": "UNKNOWN",
+        "identifier_status": "AMBIGUOUS",
+        "normalized_identifier": null,
+        "span": {
+          "line": 3,
+          "column_start": 1,
+          "column_end": 3,
+          "start": 138,
+          "end": 140,
+          "cell_index": 1
+        },
+        "clarification_fields": [
+          "notation"
+        ]
+      },
+      {
+        "id": "tooth-2",
+        "raw_identifier": "12",
+        "token": "12",
+        "notation_claim": "UNKNOWN",
+        "identifier_status": "AMBIGUOUS",
+        "normalized_identifier": null,
+        "span": {
+          "line": 4,
+          "column_start": 1,
+          "column_end": 3,
+          "start": 156,
+          "end": 158,
+          "cell_index": 1
+        },
+        "clarification_fields": [
+          "notation"
+        ]
+      },
+      {
+        "id": "tooth-3",
+        "raw_identifier": "13",
+        "token": "13",
+        "notation_claim": "UNKNOWN",
+        "identifier_status": "AMBIGUOUS",
+        "normalized_identifier": null,
+        "span": {
+          "line": 5,
+          "column_start": 1,
+          "column_end": 3,
+          "start": 174,
+          "end": 176,
+          "cell_index": 1
+        },
+        "clarification_fields": [
+          "notation"
+        ]
+      },
+      {
+        "id": "tooth-4",
+        "raw_identifier": "14",
+        "token": "14",
+        "notation_claim": "UNKNOWN",
+        "identifier_status": "AMBIGUOUS",
+        "normalized_identifier": null,
+        "span": {
+          "line": 6,
+          "column_start": 1,
+          "column_end": 3,
+          "start": 191,
+          "end": 193,
+          "cell_index": 1
+        },
+        "clarification_fields": [
+          "notation"
+        ]
+      },
+      {
+        "id": "tooth-5",
+        "raw_identifier": "15",
+        "token": "15",
+        "notation_claim": "UNKNOWN",
+        "identifier_status": "AMBIGUOUS",
+        "normalized_identifier": null,
+        "span": {
+          "line": 7,
+          "column_start": 1,
+          "column_end": 3,
+          "start": 208,
+          "end": 210,
+          "cell_index": 1
+        },
+        "clarification_fields": [
+          "notation"
+        ]
+      }
+    ],
+    "measurements": [
+      {
+        "id": "measurement-1",
+        "tooth_ref": "tooth-1",
+        "raw_label": "Rotation (deg)",
+        "recognized_label": "rotation",
+        "raw_value": "-",
+        "raw_number": null,
+        "signed_decimal": null,
+        "magnitude_decimal": null,
+        "raw_sign": null,
+        "raw_unit": null,
+        "header_unit": "deg",
+        "cell_unit": null,
+        "unit": null,
+        "raw_direction": null,
+        "raw_suffix": null,
+        "canonical_axis": null,
+        "canonical_direction": null,
+        "mapping_id": null,
+        "numeric_status": "MISSING",
+        "field_status": "NOT_PRESENT",
+        "missing_kind": "DASH",
+        "semantics_verified": false,
+        "span": {
+          "line": 3,
+          "column_start": 4,
+          "column_end": 5,
+          "start": 141,
+          "end": 142,
+          "cell_index": 2
+        },
+        "header_span": {
+          "line": 2,
+          "column_start": 7,
+          "column_end": 21,
+          "start": 73,
+          "end": 87,
+          "cell_index": 2
+        },
+        "duplicate_group": null,
+        "clarification_fields": [
+          "value"
+        ]
+      },
+      {
+        "id": "measurement-2",
+        "tooth_ref": "tooth-1",
+        "raw_label": "Extrusion (mm)",
+        "recognized_label": "extrusion",
+        "raw_value": "-",
+        "raw_number": null,
+        "signed_decimal": null,
+        "magnitude_decimal": null,
+        "raw_sign": null,
+        "raw_unit": null,
+        "header_unit": "mm",
+        "cell_unit": null,
+        "unit": null,
+        "raw_direction": null,
+        "raw_suffix": null,
+        "canonical_axis": null,
+        "canonical_direction": null,
+        "mapping_id": null,
+        "numeric_status": "MISSING",
+        "field_status": "NOT_PRESENT",
+        "missing_kind": "DASH",
+        "semantics_verified": false,
+        "span": {
+          "line": 3,
+          "column_start": 6,
+          "column_end": 7,
+          "start": 143,
+          "end": 144,
+          "cell_index": 3
+        },
+        "header_span": {
+          "line": 2,
+          "column_start": 22,
+          "column_end": 36,
+          "start": 88,
+          "end": 102,
+          "cell_index": 3
+        },
+        "duplicate_group": null,
+        "clarification_fields": [
+          "value"
+        ]
+      },
+      {
+        "id": "measurement-3",
+        "tooth_ref": "tooth-1",
+        "raw_label": "Mesiodistal (mm)",
+        "recognized_label": "mesiodistal",
+        "raw_value": "1.2300 D",
+        "raw_number": "1.2300",
+        "signed_decimal": "1.2300",
+        "magnitude_decimal": "1.2300",
+        "raw_sign": null,
+        "raw_unit": null,
+        "header_unit": "mm",
+        "cell_unit": null,
+        "unit": "mm",
+        "raw_direction": "D",
+        "raw_suffix": "D",
+        "canonical_axis": null,
+        "canonical_direction": null,
+        "mapping_id": null,
+        "numeric_status": "PARSED",
+        "field_status": "SEMANTICS_UNKNOWN",
+        "missing_kind": null,
+        "semantics_verified": false,
+        "span": {
+          "line": 3,
+          "column_start": 8,
+          "column_end": 16,
+          "start": 145,
+          "end": 153,
+          "cell_index": 4
+        },
+        "header_span": {
+          "line": 2,
+          "column_start": 37,
+          "column_end": 53,
+          "start": 103,
+          "end": 119,
+          "cell_index": 4
+        },
+        "duplicate_group": null,
+        "clarification_fields": [
+          "direction_mapping"
+        ]
+      },
+      {
+        "id": "measurement-4",
+        "tooth_ref": "tooth-1",
+        "raw_label": "Buccolingual (mm)",
+        "recognized_label": "buccolingual",
+        "raw_value": "-",
+        "raw_number": null,
+        "signed_decimal": null,
+        "magnitude_decimal": null,
+        "raw_sign": null,
+        "raw_unit": null,
+        "header_unit": "mm",
+        "cell_unit": null,
+        "unit": null,
+        "raw_direction": null,
+        "raw_suffix": null,
+        "canonical_axis": null,
+        "canonical_direction": null,
+        "mapping_id": null,
+        "numeric_status": "MISSING",
+        "field_status": "NOT_PRESENT",
+        "missing_kind": "DASH",
+        "semantics_verified": false,
+        "span": {
+          "line": 3,
+          "column_start": 17,
+          "column_end": 18,
+          "start": 154,
+          "end": 155,
+          "cell_index": 5
+        },
+        "header_span": {
+          "line": 2,
+          "column_start": 54,
+          "column_end": 71,
+          "start": 120,
+          "end": 137,
+          "cell_index": 5
+        },
+        "duplicate_group": null,
+        "clarification_fields": [
+          "value"
+        ]
+      },
+      {
+        "id": "measurement-5",
+        "tooth_ref": "tooth-2",
+        "raw_label": "Rotation (deg)",
+        "recognized_label": "rotation",
+        "raw_value": "-",
+        "raw_number": null,
+        "signed_decimal": null,
+        "magnitude_decimal": null,
+        "raw_sign": null,
+        "raw_unit": null,
+        "header_unit": "deg",
+        "cell_unit": null,
+        "unit": null,
+        "raw_direction": null,
+        "raw_suffix": null,
+        "canonical_axis": null,
+        "canonical_direction": null,
+        "mapping_id": null,
+        "numeric_status": "MISSING",
+        "field_status": "NOT_PRESENT",
+        "missing_kind": "DASH",
+        "semantics_verified": false,
+        "span": {
+          "line": 4,
+          "column_start": 4,
+          "column_end": 5,
+          "start": 159,
+          "end": 160,
+          "cell_index": 2
+        },
+        "header_span": {
+          "line": 2,
+          "column_start": 7,
+          "column_end": 21,
+          "start": 73,
+          "end": 87,
+          "cell_index": 2
+        },
+        "duplicate_group": null,
+        "clarification_fields": [
+          "value"
+        ]
+      },
+      {
+        "id": "measurement-6",
+        "tooth_ref": "tooth-2",
+        "raw_label": "Extrusion (mm)",
+        "recognized_label": "extrusion",
+        "raw_value": "-",
+        "raw_number": null,
+        "signed_decimal": null,
+        "magnitude_decimal": null,
+        "raw_sign": null,
+        "raw_unit": null,
+        "header_unit": "mm",
+        "cell_unit": null,
+        "unit": null,
+        "raw_direction": null,
+        "raw_suffix": null,
+        "canonical_axis": null,
+        "canonical_direction": null,
+        "mapping_id": null,
+        "numeric_status": "MISSING",
+        "field_status": "NOT_PRESENT",
+        "missing_kind": "DASH",
+        "semantics_verified": false,
+        "span": {
+          "line": 4,
+          "column_start": 6,
+          "column_end": 7,
+          "start": 161,
+          "end": 162,
+          "cell_index": 3
+        },
+        "header_span": {
+          "line": 2,
+          "column_start": 22,
+          "column_end": 36,
+          "start": 88,
+          "end": 102,
+          "cell_index": 3
+        },
+        "duplicate_group": null,
+        "clarification_fields": [
+          "value"
+        ]
+      },
+      {
+        "id": "measurement-7",
+        "tooth_ref": "tooth-2",
+        "raw_label": "Mesiodistal (mm)",
+        "recognized_label": "mesiodistal",
+        "raw_value": "-",
+        "raw_number": null,
+        "signed_decimal": null,
+        "magnitude_decimal": null,
+        "raw_sign": null,
+        "raw_unit": null,
+        "header_unit": "mm",
+        "cell_unit": null,
+        "unit": null,
+        "raw_direction": null,
+        "raw_suffix": null,
+        "canonical_axis": null,
+        "canonical_direction": null,
+        "mapping_id": null,
+        "numeric_status": "MISSING",
+        "field_status": "NOT_PRESENT",
+        "missing_kind": "DASH",
+        "semantics_verified": false,
+        "span": {
+          "line": 4,
+          "column_start": 8,
+          "column_end": 9,
+          "start": 163,
+          "end": 164,
+          "cell_index": 4
+        },
+        "header_span": {
+          "line": 2,
+          "column_start": 37,
+          "column_end": 53,
+          "start": 103,
+          "end": 119,
+          "cell_index": 4
+        },
+        "duplicate_group": null,
+        "clarification_fields": [
+          "value"
+        ]
+      },
+      {
+        "id": "measurement-8",
+        "tooth_ref": "tooth-2",
+        "raw_label": "Buccolingual (mm)",
+        "recognized_label": "buccolingual",
+        "raw_value": "0.4500 B",
+        "raw_number": "0.4500",
+        "signed_decimal": "0.4500",
+        "magnitude_decimal": "0.4500",
+        "raw_sign": null,
+        "raw_unit": null,
+        "header_unit": "mm",
+        "cell_unit": null,
+        "unit": "mm",
+        "raw_direction": "B",
+        "raw_suffix": "B",
+        "canonical_axis": null,
+        "canonical_direction": null,
+        "mapping_id": null,
+        "numeric_status": "PARSED",
+        "field_status": "SEMANTICS_UNKNOWN",
+        "missing_kind": null,
+        "semantics_verified": false,
+        "span": {
+          "line": 4,
+          "column_start": 10,
+          "column_end": 18,
+          "start": 165,
+          "end": 173,
+          "cell_index": 5
+        },
+        "header_span": {
+          "line": 2,
+          "column_start": 54,
+          "column_end": 71,
+          "start": 120,
+          "end": 137,
+          "cell_index": 5
+        },
+        "duplicate_group": null,
+        "clarification_fields": [
+          "direction_mapping"
+        ]
+      },
+      {
+        "id": "measurement-9",
+        "tooth_ref": "tooth-3",
+        "raw_label": "Rotation (deg)",
+        "recognized_label": "rotation",
+        "raw_value": "-",
+        "raw_number": null,
+        "signed_decimal": null,
+        "magnitude_decimal": null,
+        "raw_sign": null,
+        "raw_unit": null,
+        "header_unit": "deg",
+        "cell_unit": null,
+        "unit": null,
+        "raw_direction": null,
+        "raw_suffix": null,
+        "canonical_axis": null,
+        "canonical_direction": null,
+        "mapping_id": null,
+        "numeric_status": "MISSING",
+        "field_status": "NOT_PRESENT",
+        "missing_kind": "DASH",
+        "semantics_verified": false,
+        "span": {
+          "line": 5,
+          "column_start": 4,
+          "column_end": 5,
+          "start": 177,
+          "end": 178,
+          "cell_index": 2
+        },
+        "header_span": {
+          "line": 2,
+          "column_start": 7,
+          "column_end": 21,
+          "start": 73,
+          "end": 87,
+          "cell_index": 2
+        },
+        "duplicate_group": null,
+        "clarification_fields": [
+          "value"
+        ]
+      },
+      {
+        "id": "measurement-10",
+        "tooth_ref": "tooth-3",
+        "raw_label": "Extrusion (mm)",
+        "recognized_label": "extrusion",
+        "raw_value": "0.200 E",
+        "raw_number": "0.200",
+        "signed_decimal": "0.200",
+        "magnitude_decimal": "0.200",
+        "raw_sign": null,
+        "raw_unit": null,
+        "header_unit": "mm",
+        "cell_unit": null,
+        "unit": "mm",
+        "raw_direction": "E",
+        "raw_suffix": "E",
+        "canonical_axis": null,
+        "canonical_direction": null,
+        "mapping_id": null,
+        "numeric_status": "PARSED",
+        "field_status": "SEMANTICS_UNKNOWN",
+        "missing_kind": null,
+        "semantics_verified": false,
+        "span": {
+          "line": 5,
+          "column_start": 6,
+          "column_end": 13,
+          "start": 179,
+          "end": 186,
+          "cell_index": 3
+        },
+        "header_span": {
+          "line": 2,
+          "column_start": 22,
+          "column_end": 36,
+          "start": 88,
+          "end": 102,
+          "cell_index": 3
+        },
+        "duplicate_group": null,
+        "clarification_fields": [
+          "direction_mapping"
+        ]
+      },
+      {
+        "id": "measurement-11",
+        "tooth_ref": "tooth-3",
+        "raw_label": "Mesiodistal (mm)",
+        "recognized_label": "mesiodistal",
+        "raw_value": "-",
+        "raw_number": null,
+        "signed_decimal": null,
+        "magnitude_decimal": null,
+        "raw_sign": null,
+        "raw_unit": null,
+        "header_unit": "mm",
+        "cell_unit": null,
+        "unit": null,
+        "raw_direction": null,
+        "raw_suffix": null,
+        "canonical_axis": null,
+        "canonical_direction": null,
+        "mapping_id": null,
+        "numeric_status": "MISSING",
+        "field_status": "NOT_PRESENT",
+        "missing_kind": "DASH",
+        "semantics_verified": false,
+        "span": {
+          "line": 5,
+          "column_start": 14,
+          "column_end": 15,
+          "start": 187,
+          "end": 188,
+          "cell_index": 4
+        },
+        "header_span": {
+          "line": 2,
+          "column_start": 37,
+          "column_end": 53,
+          "start": 103,
+          "end": 119,
+          "cell_index": 4
+        },
+        "duplicate_group": null,
+        "clarification_fields": [
+          "value"
+        ]
+      },
+      {
+        "id": "measurement-12",
+        "tooth_ref": "tooth-3",
+        "raw_label": "Buccolingual (mm)",
+        "recognized_label": "buccolingual",
+        "raw_value": "-",
+        "raw_number": null,
+        "signed_decimal": null,
+        "magnitude_decimal": null,
+        "raw_sign": null,
+        "raw_unit": null,
+        "header_unit": "mm",
+        "cell_unit": null,
+        "unit": null,
+        "raw_direction": null,
+        "raw_suffix": null,
+        "canonical_axis": null,
+        "canonical_direction": null,
+        "mapping_id": null,
+        "numeric_status": "MISSING",
+        "field_status": "NOT_PRESENT",
+        "missing_kind": "DASH",
+        "semantics_verified": false,
+        "span": {
+          "line": 5,
+          "column_start": 16,
+          "column_end": 17,
+          "start": 189,
+          "end": 190,
+          "cell_index": 5
+        },
+        "header_span": {
+          "line": 2,
+          "column_start": 54,
+          "column_end": 71,
+          "start": 120,
+          "end": 137,
+          "cell_index": 5
+        },
+        "duplicate_group": null,
+        "clarification_fields": [
+          "value"
+        ]
+      },
+      {
+        "id": "measurement-13",
+        "tooth_ref": "tooth-4",
+        "raw_label": "Rotation (deg)",
+        "recognized_label": "rotation",
+        "raw_value": "2.500 M",
+        "raw_number": "2.500",
+        "signed_decimal": "2.500",
+        "magnitude_decimal": "2.500",
+        "raw_sign": null,
+        "raw_unit": null,
+        "header_unit": "deg",
+        "cell_unit": null,
+        "unit": "deg",
+        "raw_direction": "M",
+        "raw_suffix": "M",
+        "canonical_axis": null,
+        "canonical_direction": null,
+        "mapping_id": null,
+        "numeric_status": "PARSED",
+        "field_status": "SEMANTICS_UNKNOWN",
+        "missing_kind": null,
+        "semantics_verified": false,
+        "span": {
+          "line": 6,
+          "column_start": 4,
+          "column_end": 11,
+          "start": 194,
+          "end": 201,
+          "cell_index": 2
+        },
+        "header_span": {
+          "line": 2,
+          "column_start": 7,
+          "column_end": 21,
+          "start": 73,
+          "end": 87,
+          "cell_index": 2
+        },
+        "duplicate_group": null,
+        "clarification_fields": [
+          "direction_mapping"
+        ]
+      },
+      {
+        "id": "measurement-14",
+        "tooth_ref": "tooth-4",
+        "raw_label": "Extrusion (mm)",
+        "recognized_label": "extrusion",
+        "raw_value": "-",
+        "raw_number": null,
+        "signed_decimal": null,
+        "magnitude_decimal": null,
+        "raw_sign": null,
+        "raw_unit": null,
+        "header_unit": "mm",
+        "cell_unit": null,
+        "unit": null,
+        "raw_direction": null,
+        "raw_suffix": null,
+        "canonical_axis": null,
+        "canonical_direction": null,
+        "mapping_id": null,
+        "numeric_status": "MISSING",
+        "field_status": "NOT_PRESENT",
+        "missing_kind": "DASH",
+        "semantics_verified": false,
+        "span": {
+          "line": 6,
+          "column_start": 12,
+          "column_end": 13,
+          "start": 202,
+          "end": 203,
+          "cell_index": 3
+        },
+        "header_span": {
+          "line": 2,
+          "column_start": 22,
+          "column_end": 36,
+          "start": 88,
+          "end": 102,
+          "cell_index": 3
+        },
+        "duplicate_group": null,
+        "clarification_fields": [
+          "value"
+        ]
+      },
+      {
+        "id": "measurement-15",
+        "tooth_ref": "tooth-4",
+        "raw_label": "Mesiodistal (mm)",
+        "recognized_label": "mesiodistal",
+        "raw_value": "-",
+        "raw_number": null,
+        "signed_decimal": null,
+        "magnitude_decimal": null,
+        "raw_sign": null,
+        "raw_unit": null,
+        "header_unit": "mm",
+        "cell_unit": null,
+        "unit": null,
+        "raw_direction": null,
+        "raw_suffix": null,
+        "canonical_axis": null,
+        "canonical_direction": null,
+        "mapping_id": null,
+        "numeric_status": "MISSING",
+        "field_status": "NOT_PRESENT",
+        "missing_kind": "DASH",
+        "semantics_verified": false,
+        "span": {
+          "line": 6,
+          "column_start": 14,
+          "column_end": 15,
+          "start": 204,
+          "end": 205,
+          "cell_index": 4
+        },
+        "header_span": {
+          "line": 2,
+          "column_start": 37,
+          "column_end": 53,
+          "start": 103,
+          "end": 119,
+          "cell_index": 4
+        },
+        "duplicate_group": null,
+        "clarification_fields": [
+          "value"
+        ]
+      },
+      {
+        "id": "measurement-16",
+        "tooth_ref": "tooth-4",
+        "raw_label": "Buccolingual (mm)",
+        "recognized_label": "buccolingual",
+        "raw_value": "-",
+        "raw_number": null,
+        "signed_decimal": null,
+        "magnitude_decimal": null,
+        "raw_sign": null,
+        "raw_unit": null,
+        "header_unit": "mm",
+        "cell_unit": null,
+        "unit": null,
+        "raw_direction": null,
+        "raw_suffix": null,
+        "canonical_axis": null,
+        "canonical_direction": null,
+        "mapping_id": null,
+        "numeric_status": "MISSING",
+        "field_status": "NOT_PRESENT",
+        "missing_kind": "DASH",
+        "semantics_verified": false,
+        "span": {
+          "line": 6,
+          "column_start": 16,
+          "column_end": 17,
+          "start": 206,
+          "end": 207,
+          "cell_index": 5
+        },
+        "header_span": {
+          "line": 2,
+          "column_start": 54,
+          "column_end": 71,
+          "start": 120,
+          "end": 137,
+          "cell_index": 5
+        },
+        "duplicate_group": null,
+        "clarification_fields": [
+          "value"
+        ]
+      },
+      {
+        "id": "measurement-17",
+        "tooth_ref": "tooth-5",
+        "raw_label": "Rotation (deg)",
+        "recognized_label": "rotation",
+        "raw_value": "3.000 M",
+        "raw_number": "3.000",
+        "signed_decimal": "3.000",
+        "magnitude_decimal": "3.000",
+        "raw_sign": null,
+        "raw_unit": null,
+        "header_unit": "deg",
+        "cell_unit": null,
+        "unit": "deg",
+        "raw_direction": "M",
+        "raw_suffix": "M",
+        "canonical_axis": null,
+        "canonical_direction": null,
+        "mapping_id": null,
+        "numeric_status": "PARSED",
+        "field_status": "SEMANTICS_UNKNOWN",
+        "missing_kind": null,
+        "semantics_verified": false,
+        "span": {
+          "line": 7,
+          "column_start": 4,
+          "column_end": 11,
+          "start": 211,
+          "end": 218,
+          "cell_index": 2
+        },
+        "header_span": {
+          "line": 2,
+          "column_start": 7,
+          "column_end": 21,
+          "start": 73,
+          "end": 87,
+          "cell_index": 2
+        },
+        "duplicate_group": null,
+        "clarification_fields": [
+          "direction_mapping"
+        ]
+      },
+      {
+        "id": "measurement-18",
+        "tooth_ref": "tooth-5",
+        "raw_label": "Extrusion (mm)",
+        "recognized_label": "extrusion",
+        "raw_value": "-",
+        "raw_number": null,
+        "signed_decimal": null,
+        "magnitude_decimal": null,
+        "raw_sign": null,
+        "raw_unit": null,
+        "header_unit": "mm",
+        "cell_unit": null,
+        "unit": null,
+        "raw_direction": null,
+        "raw_suffix": null,
+        "canonical_axis": null,
+        "canonical_direction": null,
+        "mapping_id": null,
+        "numeric_status": "MISSING",
+        "field_status": "NOT_PRESENT",
+        "missing_kind": "DASH",
+        "semantics_verified": false,
+        "span": {
+          "line": 7,
+          "column_start": 12,
+          "column_end": 13,
+          "start": 219,
+          "end": 220,
+          "cell_index": 3
+        },
+        "header_span": {
+          "line": 2,
+          "column_start": 22,
+          "column_end": 36,
+          "start": 88,
+          "end": 102,
+          "cell_index": 3
+        },
+        "duplicate_group": null,
+        "clarification_fields": [
+          "value"
+        ]
+      },
+      {
+        "id": "measurement-19",
+        "tooth_ref": "tooth-5",
+        "raw_label": "Mesiodistal (mm)",
+        "recognized_label": "mesiodistal",
+        "raw_value": "-",
+        "raw_number": null,
+        "signed_decimal": null,
+        "magnitude_decimal": null,
+        "raw_sign": null,
+        "raw_unit": null,
+        "header_unit": "mm",
+        "cell_unit": null,
+        "unit": null,
+        "raw_direction": null,
+        "raw_suffix": null,
+        "canonical_axis": null,
+        "canonical_direction": null,
+        "mapping_id": null,
+        "numeric_status": "MISSING",
+        "field_status": "NOT_PRESENT",
+        "missing_kind": "DASH",
+        "semantics_verified": false,
+        "span": {
+          "line": 7,
+          "column_start": 14,
+          "column_end": 15,
+          "start": 221,
+          "end": 222,
+          "cell_index": 4
+        },
+        "header_span": {
+          "line": 2,
+          "column_start": 37,
+          "column_end": 53,
+          "start": 103,
+          "end": 119,
+          "cell_index": 4
+        },
+        "duplicate_group": null,
+        "clarification_fields": [
+          "value"
+        ]
+      },
+      {
+        "id": "measurement-20",
+        "tooth_ref": "tooth-5",
+        "raw_label": "Buccolingual (mm)",
+        "recognized_label": "buccolingual",
+        "raw_value": "-",
+        "raw_number": null,
+        "signed_decimal": null,
+        "magnitude_decimal": null,
+        "raw_sign": null,
+        "raw_unit": null,
+        "header_unit": "mm",
+        "cell_unit": null,
+        "unit": null,
+        "raw_direction": null,
+        "raw_suffix": null,
+        "canonical_axis": null,
+        "canonical_direction": null,
+        "mapping_id": null,
+        "numeric_status": "MISSING",
+        "field_status": "NOT_PRESENT",
+        "missing_kind": "DASH",
+        "semantics_verified": false,
+        "span": {
+          "line": 7,
+          "column_start": 16,
+          "column_end": 17,
+          "start": 223,
+          "end": 224,
+          "cell_index": 5
+        },
+        "header_span": {
+          "line": 2,
+          "column_start": 54,
+          "column_end": 71,
+          "start": 120,
+          "end": 137,
+          "cell_index": 5
+        },
+        "duplicate_group": null,
+        "clarification_fields": [
+          "value"
+        ]
+      }
+    ],
+    "coverage": {
+      "expected_axes": null,
+      "declared_measurements": 20,
+      "numeric_present": 5,
+      "explicit_zero": 0,
+      "missing": 15,
+      "invalid": 0,
+      "ambiguous": 0,
+      "unsupported": 0,
+      "unverified": 20
+    },
+    "issues": [
+      {
+        "code": "SOURCE_UNVERIFIED",
+        "severity": "WARNING",
+        "message": "No authentic clipboard fixtures have verified any vendor adapter. Results are lexical only.",
+        "span": null,
+        "measurement_ids": [],
+        "field": "source"
+      },
+      {
+        "code": "UNRECOGNIZED_PREAMBLE",
+        "severity": "WARNING",
+        "message": "This line was retained but not assigned to tooth/movement cells.",
+        "span": {
+          "line": 1,
+          "column_start": 1,
+          "column_end": 67,
+          "start": 0,
+          "end": 66,
+          "cell_index": null
+        },
+        "measurement_ids": [],
+        "field": null
+      },
+      {
+        "code": "TOOTH_NOTATION_AMBIGUOUS",
+        "severity": "WARNING",
+        "message": "A tooth token cannot establish its numbering system; no anatomical identity is assigned.",
+        "span": {
+          "line": 3,
+          "column_start": 1,
+          "column_end": 3,
+          "start": 138,
+          "end": 140,
+          "cell_index": 1
+        },
+        "measurement_ids": [],
+        "field": "notation"
+      },
+      {
+        "code": "MISSING_VALUE",
+        "severity": "WARNING",
+        "message": "A blank or missing marker is retained without assigning zero or tooth status.",
+        "span": {
+          "line": 3,
+          "column_start": 4,
+          "column_end": 5,
+          "start": 141,
+          "end": 142,
+          "cell_index": 2
+        },
+        "measurement_ids": [
+          "measurement-1"
+        ],
+        "field": "value"
+      },
+      {
+        "code": "MISSING_VALUE",
+        "severity": "WARNING",
+        "message": "A blank or missing marker is retained without assigning zero or tooth status.",
+        "span": {
+          "line": 3,
+          "column_start": 6,
+          "column_end": 7,
+          "start": 143,
+          "end": 144,
+          "cell_index": 3
+        },
+        "measurement_ids": [
+          "measurement-2"
+        ],
+        "field": "value"
+      },
+      {
+        "code": "DIRECTION_UNVERIFIED",
+        "severity": "WARNING",
+        "message": "The literal sign/direction is preserved; physical direction and axis mappings are not verified.",
+        "span": {
+          "line": 3,
+          "column_start": 8,
+          "column_end": 16,
+          "start": 145,
+          "end": 153,
+          "cell_index": 4
+        },
+        "measurement_ids": [
+          "measurement-3"
+        ],
+        "field": "direction_mapping"
+      },
+      {
+        "code": "MISSING_VALUE",
+        "severity": "WARNING",
+        "message": "A blank or missing marker is retained without assigning zero or tooth status.",
+        "span": {
+          "line": 3,
+          "column_start": 17,
+          "column_end": 18,
+          "start": 154,
+          "end": 155,
+          "cell_index": 5
+        },
+        "measurement_ids": [
+          "measurement-4"
+        ],
+        "field": "value"
+      },
+      {
+        "code": "TOOTH_NOTATION_AMBIGUOUS",
+        "severity": "WARNING",
+        "message": "A tooth token cannot establish its numbering system; no anatomical identity is assigned.",
+        "span": {
+          "line": 4,
+          "column_start": 1,
+          "column_end": 3,
+          "start": 156,
+          "end": 158,
+          "cell_index": 1
+        },
+        "measurement_ids": [],
+        "field": "notation"
+      },
+      {
+        "code": "MISSING_VALUE",
+        "severity": "WARNING",
+        "message": "A blank or missing marker is retained without assigning zero or tooth status.",
+        "span": {
+          "line": 4,
+          "column_start": 4,
+          "column_end": 5,
+          "start": 159,
+          "end": 160,
+          "cell_index": 2
+        },
+        "measurement_ids": [
+          "measurement-5"
+        ],
+        "field": "value"
+      },
+      {
+        "code": "MISSING_VALUE",
+        "severity": "WARNING",
+        "message": "A blank or missing marker is retained without assigning zero or tooth status.",
+        "span": {
+          "line": 4,
+          "column_start": 6,
+          "column_end": 7,
+          "start": 161,
+          "end": 162,
+          "cell_index": 3
+        },
+        "measurement_ids": [
+          "measurement-6"
+        ],
+        "field": "value"
+      },
+      {
+        "code": "MISSING_VALUE",
+        "severity": "WARNING",
+        "message": "A blank or missing marker is retained without assigning zero or tooth status.",
+        "span": {
+          "line": 4,
+          "column_start": 8,
+          "column_end": 9,
+          "start": 163,
+          "end": 164,
+          "cell_index": 4
+        },
+        "measurement_ids": [
+          "measurement-7"
+        ],
+        "field": "value"
+      },
+      {
+        "code": "DIRECTION_UNVERIFIED",
+        "severity": "WARNING",
+        "message": "The literal sign/direction is preserved; physical direction and axis mappings are not verified.",
+        "span": {
+          "line": 4,
+          "column_start": 10,
+          "column_end": 18,
+          "start": 165,
+          "end": 173,
+          "cell_index": 5
+        },
+        "measurement_ids": [
+          "measurement-8"
+        ],
+        "field": "direction_mapping"
+      },
+      {
+        "code": "TOOTH_NOTATION_AMBIGUOUS",
+        "severity": "WARNING",
+        "message": "A tooth token cannot establish its numbering system; no anatomical identity is assigned.",
+        "span": {
+          "line": 5,
+          "column_start": 1,
+          "column_end": 3,
+          "start": 174,
+          "end": 176,
+          "cell_index": 1
+        },
+        "measurement_ids": [],
+        "field": "notation"
+      },
+      {
+        "code": "MISSING_VALUE",
+        "severity": "WARNING",
+        "message": "A blank or missing marker is retained without assigning zero or tooth status.",
+        "span": {
+          "line": 5,
+          "column_start": 4,
+          "column_end": 5,
+          "start": 177,
+          "end": 178,
+          "cell_index": 2
+        },
+        "measurement_ids": [
+          "measurement-9"
+        ],
+        "field": "value"
+      },
+      {
+        "code": "DIRECTION_UNVERIFIED",
+        "severity": "WARNING",
+        "message": "The literal sign/direction is preserved; physical direction and axis mappings are not verified.",
+        "span": {
+          "line": 5,
+          "column_start": 6,
+          "column_end": 13,
+          "start": 179,
+          "end": 186,
+          "cell_index": 3
+        },
+        "measurement_ids": [
+          "measurement-10"
+        ],
+        "field": "direction_mapping"
+      },
+      {
+        "code": "MISSING_VALUE",
+        "severity": "WARNING",
+        "message": "A blank or missing marker is retained without assigning zero or tooth status.",
+        "span": {
+          "line": 5,
+          "column_start": 14,
+          "column_end": 15,
+          "start": 187,
+          "end": 188,
+          "cell_index": 4
+        },
+        "measurement_ids": [
+          "measurement-11"
+        ],
+        "field": "value"
+      },
+      {
+        "code": "MISSING_VALUE",
+        "severity": "WARNING",
+        "message": "A blank or missing marker is retained without assigning zero or tooth status.",
+        "span": {
+          "line": 5,
+          "column_start": 16,
+          "column_end": 17,
+          "start": 189,
+          "end": 190,
+          "cell_index": 5
+        },
+        "measurement_ids": [
+          "measurement-12"
+        ],
+        "field": "value"
+      },
+      {
+        "code": "TOOTH_NOTATION_AMBIGUOUS",
+        "severity": "WARNING",
+        "message": "A tooth token cannot establish its numbering system; no anatomical identity is assigned.",
+        "span": {
+          "line": 6,
+          "column_start": 1,
+          "column_end": 3,
+          "start": 191,
+          "end": 193,
+          "cell_index": 1
+        },
+        "measurement_ids": [],
+        "field": "notation"
+      },
+      {
+        "code": "DIRECTION_UNVERIFIED",
+        "severity": "WARNING",
+        "message": "The literal sign/direction is preserved; physical direction and axis mappings are not verified.",
+        "span": {
+          "line": 6,
+          "column_start": 4,
+          "column_end": 11,
+          "start": 194,
+          "end": 201,
+          "cell_index": 2
+        },
+        "measurement_ids": [
+          "measurement-13"
+        ],
+        "field": "direction_mapping"
+      },
+      {
+        "code": "MISSING_VALUE",
+        "severity": "WARNING",
+        "message": "A blank or missing marker is retained without assigning zero or tooth status.",
+        "span": {
+          "line": 6,
+          "column_start": 12,
+          "column_end": 13,
+          "start": 202,
+          "end": 203,
+          "cell_index": 3
+        },
+        "measurement_ids": [
+          "measurement-14"
+        ],
+        "field": "value"
+      },
+      {
+        "code": "MISSING_VALUE",
+        "severity": "WARNING",
+        "message": "A blank or missing marker is retained without assigning zero or tooth status.",
+        "span": {
+          "line": 6,
+          "column_start": 14,
+          "column_end": 15,
+          "start": 204,
+          "end": 205,
+          "cell_index": 4
+        },
+        "measurement_ids": [
+          "measurement-15"
+        ],
+        "field": "value"
+      },
+      {
+        "code": "MISSING_VALUE",
+        "severity": "WARNING",
+        "message": "A blank or missing marker is retained without assigning zero or tooth status.",
+        "span": {
+          "line": 6,
+          "column_start": 16,
+          "column_end": 17,
+          "start": 206,
+          "end": 207,
+          "cell_index": 5
+        },
+        "measurement_ids": [
+          "measurement-16"
+        ],
+        "field": "value"
+      },
+      {
+        "code": "TOOTH_NOTATION_AMBIGUOUS",
+        "severity": "WARNING",
+        "message": "A tooth token cannot establish its numbering system; no anatomical identity is assigned.",
+        "span": {
+          "line": 7,
+          "column_start": 1,
+          "column_end": 3,
+          "start": 208,
+          "end": 210,
+          "cell_index": 1
+        },
+        "measurement_ids": [],
+        "field": "notation"
+      },
+      {
+        "code": "DIRECTION_UNVERIFIED",
+        "severity": "WARNING",
+        "message": "The literal sign/direction is preserved; physical direction and axis mappings are not verified.",
+        "span": {
+          "line": 7,
+          "column_start": 4,
+          "column_end": 11,
+          "start": 211,
+          "end": 218,
+          "cell_index": 2
+        },
+        "measurement_ids": [
+          "measurement-17"
+        ],
+        "field": "direction_mapping"
+      },
+      {
+        "code": "MISSING_VALUE",
+        "severity": "WARNING",
+        "message": "A blank or missing marker is retained without assigning zero or tooth status.",
+        "span": {
+          "line": 7,
+          "column_start": 12,
+          "column_end": 13,
+          "start": 219,
+          "end": 220,
+          "cell_index": 3
+        },
+        "measurement_ids": [
+          "measurement-18"
+        ],
+        "field": "value"
+      },
+      {
+        "code": "MISSING_VALUE",
+        "severity": "WARNING",
+        "message": "A blank or missing marker is retained without assigning zero or tooth status.",
+        "span": {
+          "line": 7,
+          "column_start": 14,
+          "column_end": 15,
+          "start": 221,
+          "end": 222,
+          "cell_index": 4
+        },
+        "measurement_ids": [
+          "measurement-19"
+        ],
+        "field": "value"
+      },
+      {
+        "code": "MISSING_VALUE",
+        "severity": "WARNING",
+        "message": "A blank or missing marker is retained without assigning zero or tooth status.",
+        "span": {
+          "line": 7,
+          "column_start": 16,
+          "column_end": 17,
+          "start": 223,
+          "end": 224,
+          "cell_index": 5
+        },
+        "measurement_ids": [
+          "measurement-20"
+        ],
+        "field": "value"
+      }
+    ],
+    "clarification_fields": [
+      "arch",
+      "coordinate_frame",
+      "dentition",
+      "direction_mapping",
+      "notation",
+      "plan_mode",
+      "reference_basis",
+      "scope",
+      "source",
+      "source_verification",
+      "source_version",
+      "value"
+    ],
+    "unparsed_lines": [
+      {
+        "raw": "# Finova Synthetic Demonstration — TEST_ONLY, no patient or vendor",
+        "span": {
+          "line": 1,
+          "column_start": 1,
+          "column_end": 67,
+          "start": 0,
+          "end": 66,
+          "cell_index": null
+        },
+        "reason": "UNRECOGNIZED_PREAMBLE"
+      }
+    ]
+  },
+  "measurements": [
+    {
+      "measurement_id": "measurement-3",
+      "components": [
+        {
+          "name": "source_application",
+          "value": "TEST_ONLY",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-3:source_application"
+        },
+        {
+          "name": "source_version",
+          "value": "FINOVA-DEMO-1",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-3:source_version"
+        },
+        {
+          "name": "tooth_identifier",
+          "value": "DEMO_11",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-3:tooth_identifier"
+        },
+        {
+          "name": "notation",
+          "value": "FINOVA_OPAQUE",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-3:notation"
+        },
+        {
+          "name": "dentition",
+          "value": "SYNTHETIC",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-3:dentition"
+        },
+        {
+          "name": "arch",
+          "value": "DEMO_ARCH",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-3:arch"
+        },
+        {
+          "name": "axis",
+          "value": "MESIODISTAL",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-3:axis"
+        },
+        {
+          "name": "unit",
+          "value": "mm",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-3:unit"
+        },
+        {
+          "name": "sign",
+          "value": "UNSIGNED_EXPLICIT_DIRECTION",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-3:sign"
+        },
+        {
+          "name": "direction",
+          "value": "DISTAL",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-3:direction"
+        },
+        {
+          "name": "plan_mode",
+          "value": "TEST_PLAN_MODE",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-3:plan_mode"
+        },
+        {
+          "name": "reference_basis",
+          "value": "DEMO_CROWN_POINT",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-3:reference_basis"
+        },
+        {
+          "name": "scope",
+          "value": "TOTAL",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-3:scope"
+        },
+        {
+          "name": "coordinate_frame",
+          "value": "FINOVA_LOCAL_AXES_V1",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-3:coordinate_frame"
+        }
+      ]
+    },
+    {
+      "measurement_id": "measurement-8",
+      "components": [
+        {
+          "name": "source_application",
+          "value": "TEST_ONLY",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-8:source_application"
+        },
+        {
+          "name": "source_version",
+          "value": "FINOVA-DEMO-1",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-8:source_version"
+        },
+        {
+          "name": "tooth_identifier",
+          "value": "DEMO_12",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-8:tooth_identifier"
+        },
+        {
+          "name": "notation",
+          "value": "FINOVA_OPAQUE",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-8:notation"
+        },
+        {
+          "name": "dentition",
+          "value": "SYNTHETIC",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-8:dentition"
+        },
+        {
+          "name": "arch",
+          "value": "DEMO_ARCH",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-8:arch"
+        },
+        {
+          "name": "axis",
+          "value": "BUCCOLINGUAL",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-8:axis"
+        },
+        {
+          "name": "unit",
+          "value": "mm",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-8:unit"
+        },
+        {
+          "name": "sign",
+          "value": "UNSIGNED_EXPLICIT_DIRECTION",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-8:sign"
+        },
+        {
+          "name": "direction",
+          "value": "BUCCAL",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-8:direction"
+        },
+        {
+          "name": "plan_mode",
+          "value": "TEST_PLAN_MODE",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-8:plan_mode"
+        },
+        {
+          "name": "reference_basis",
+          "value": "DEMO_CROWN_POINT",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-8:reference_basis"
+        },
+        {
+          "name": "scope",
+          "value": "TOTAL",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-8:scope"
+        },
+        {
+          "name": "coordinate_frame",
+          "value": "FINOVA_LOCAL_AXES_V1",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-8:coordinate_frame"
+        }
+      ]
+    },
+    {
+      "measurement_id": "measurement-10",
+      "components": [
+        {
+          "name": "source_application",
+          "value": "TEST_ONLY",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-10:source_application"
+        },
+        {
+          "name": "source_version",
+          "value": "FINOVA-DEMO-1",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-10:source_version"
+        },
+        {
+          "name": "tooth_identifier",
+          "value": "DEMO_13",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-10:tooth_identifier"
+        },
+        {
+          "name": "notation",
+          "value": "FINOVA_OPAQUE",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-10:notation"
+        },
+        {
+          "name": "dentition",
+          "value": "SYNTHETIC",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-10:dentition"
+        },
+        {
+          "name": "arch",
+          "value": "DEMO_ARCH",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-10:arch"
+        },
+        {
+          "name": "axis",
+          "value": "EXTRUSION",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-10:axis"
+        },
+        {
+          "name": "unit",
+          "value": "mm",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-10:unit"
+        },
+        {
+          "name": "sign",
+          "value": "UNSIGNED_EXPLICIT_DIRECTION",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-10:sign"
+        },
+        {
+          "name": "direction",
+          "value": "EXTRUSION",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-10:direction"
+        },
+        {
+          "name": "plan_mode",
+          "value": "TEST_PLAN_MODE",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-10:plan_mode"
+        },
+        {
+          "name": "reference_basis",
+          "value": "DEMO_CROWN_POINT",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-10:reference_basis"
+        },
+        {
+          "name": "scope",
+          "value": "TOTAL",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-10:scope"
+        },
+        {
+          "name": "coordinate_frame",
+          "value": "FINOVA_LOCAL_AXES_V1",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-10:coordinate_frame"
+        }
+      ]
+    },
+    {
+      "measurement_id": "measurement-13",
+      "components": [
+        {
+          "name": "source_application",
+          "value": "TEST_ONLY",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-13:source_application"
+        },
+        {
+          "name": "source_version",
+          "value": "FINOVA-DEMO-1",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-13:source_version"
+        },
+        {
+          "name": "tooth_identifier",
+          "value": "DEMO_14",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-13:tooth_identifier"
+        },
+        {
+          "name": "notation",
+          "value": "FINOVA_OPAQUE",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-13:notation"
+        },
+        {
+          "name": "dentition",
+          "value": "SYNTHETIC",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-13:dentition"
+        },
+        {
+          "name": "arch",
+          "value": "DEMO_ARCH",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-13:arch"
+        },
+        {
+          "name": "axis",
+          "value": "ROTATION",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-13:axis"
+        },
+        {
+          "name": "unit",
+          "value": "deg",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-13:unit"
+        },
+        {
+          "name": "sign",
+          "value": "UNSIGNED_EXPLICIT_DIRECTION",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-13:sign"
+        },
+        {
+          "name": "direction",
+          "value": "DEMO_ROTATION_M",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-13:direction"
+        },
+        {
+          "name": "plan_mode",
+          "value": "TEST_PLAN_MODE",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-13:plan_mode"
+        },
+        {
+          "name": "reference_basis",
+          "value": "DEMO_CROWN_POINT",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-13:reference_basis"
+        },
+        {
+          "name": "scope",
+          "value": "TOTAL",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-13:scope"
+        },
+        {
+          "name": "coordinate_frame",
+          "value": "FINOVA_LOCAL_AXES_V1",
+          "evidence_locator": "FINOVA-SYNTHETIC-1:measurement-13:coordinate_frame"
+        }
+      ]
+    }
+  ]
+}

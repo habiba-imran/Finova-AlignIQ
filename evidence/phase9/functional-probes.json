@@ -1,0 +1,2579 @@
+{
+  "synthetic_only": true,
+  "live_provider_calls": 0,
+  "registry": {
+    "total": 96,
+    "execution": {
+      "DISABLED": 27,
+      "ACTIVE": 66,
+      "DEFERRED": 3
+    },
+    "implementation_kind": {
+      "REQUIRED_DATA_GUARD": 36,
+      "OUTPUT_GUARD": 8,
+      "EXECUTABLE": 44,
+      "DEFERRED": 3,
+      "PARTIAL_SYSTEM_CONTROL": 5
+    },
+    "disposition": {
+      "MORE DATA": 15,
+      "READY": 49,
+      "REVISE": 5,
+      "ADDITIONAL": 14,
+      "VALIDATE": 13
+    },
+    "approved_vendor_releases": 0
+  },
+  "normal_cases": [
+    {
+      "case": "clean",
+      "raw_sha256": "c7340eb3e51092d948f970e1bc73b2dac236c0bfb8f612b0591e558dde4781c4",
+      "raw_preserved": true,
+      "classification": "STRUCTURALLY_RECOGNIZED",
+      "positions": 4,
+      "numeric_statuses": {
+        "PARSED": 2,
+        "EXPLICIT_ZERO": 1,
+        "MISSING": 1
+      },
+      "parser_provider_attempts": 0,
+      "modules": {
+        "planning": {
+          "http_status": 200,
+          "evidence_domain": "UNVERIFIED",
+          "coverage": {
+            "declared_positions": 4,
+            "eligible_positions": 0,
+            "unavailable_positions": 4,
+            "eligible_explicit_zero": 0,
+            "eligible_nonzero": 0,
+            "expected_axes": null,
+            "lexical": {
+              "expected_axes": null,
+              "declared_measurements": 4,
+              "numeric_present": 3,
+              "explicit_zero": 1,
+              "missing": 1,
+              "invalid": 0,
+              "ambiguous": 0,
+              "unsupported": 0,
+              "unverified": 4
+            }
+          },
+          "evaluation_states": {
+            "DISABLED": 27,
+            "OBSERVED": 17,
+            "SEMANTICS_UNKNOWN": 30,
+            "CONTEXT_REQUIRED": 7,
+            "NOT_APPLICABLE": 15
+          },
+          "entry_states": {},
+          "provider_attempts": 0,
+          "export_contains_draft": true
+        },
+        "attachments": {
+          "http_status": 200,
+          "evidence_domain": "UNVERIFIED",
+          "coverage": {
+            "declared_positions": 4,
+            "eligible_positions": 0,
+            "unavailable_positions": 4,
+            "eligible_explicit_zero": 0,
+            "eligible_nonzero": 0,
+            "expected_axes": null,
+            "lexical": {
+              "expected_axes": null,
+              "declared_measurements": 4,
+              "numeric_present": 3,
+              "explicit_zero": 1,
+              "missing": 1,
+              "invalid": 0,
+              "ambiguous": 0,
+              "unsupported": 0,
+              "unverified": 4
+            }
+          },
+          "evaluation_states": {
+            "DISABLED": 27,
+            "OBSERVED": 17,
+            "SEMANTICS_UNKNOWN": 30,
+            "CONTEXT_REQUIRED": 11,
+            "NOT_APPLICABLE": 11
+          },
+          "entry_states": {
+            "UNKNOWN": 2
+          },
+          "provider_attempts": 0,
+          "export_contains_draft": true
+        },
+        "sequencing": {
+          "http_status": 200,
+          "evidence_domain": "UNVERIFIED",
+          "coverage": {
+            "declared_positions": 4,
+            "eligible_positions": 0,
+            "unavailable_positions": 4,
+            "eligible_explicit_zero": 0,
+            "eligible_nonzero": 0,
+            "expected_axes": null,
+            "lexical": {
+              "expected_axes": null,
+              "declared_measurements": 4,
+              "numeric_present": 3,
+              "explicit_zero": 1,
+              "missing": 1,
+              "invalid": 0,
+              "ambiguous": 0,
+              "unsupported": 0,
+              "unverified": 4
+            }
+          },
+          "evaluation_states": {
+            "DISABLED": 27,
+            "OBSERVED": 17,
+            "SEMANTICS_UNKNOWN": 30,
+            "CONTEXT_REQUIRED": 12,
+            "NOT_APPLICABLE": 10
+          },
+          "entry_states": {
+            "WITHHELD": 2,
+            "UNKNOWN": 3,
+            "DISABLED": 1
+          },
+          "provider_attempts": 0,
+          "export_contains_draft": true
+        }
+      }
+    },
+    {
+      "case": "markdown",
+      "raw_sha256": "2a50f3998d14660e07394538312ab7ebe2a803e186c87a952de6355db28cab9e",
+      "raw_preserved": true,
+      "classification": "STRUCTURALLY_RECOGNIZED",
+      "positions": 1,
+      "numeric_statuses": {
+        "EXPLICIT_ZERO": 1
+      },
+      "parser_provider_attempts": 0,
+      "modules": {
+        "planning": {
+          "http_status": 200,
+          "evidence_domain": "UNVERIFIED",
+          "coverage": {
+            "declared_positions": 1,
+            "eligible_positions": 0,
+            "unavailable_positions": 1,
+            "eligible_explicit_zero": 0,
+            "eligible_nonzero": 0,
+            "expected_axes": null,
+            "lexical": {
+              "expected_axes": null,
+              "declared_measurements": 1,
+              "numeric_present": 1,
+              "explicit_zero": 1,
+              "missing": 0,
+              "invalid": 0,
+              "ambiguous": 0,
+              "unsupported": 0,
+              "unverified": 1
+            }
+          },
+          "evaluation_states": {
+            "DISABLED": 27,
+            "OBSERVED": 19,
+            "SEMANTICS_UNKNOWN": 28,
+            "CONTEXT_REQUIRED": 7,
+            "NOT_APPLICABLE": 15
+          },
+          "entry_states": {},
+          "provider_attempts": 0,
+          "export_contains_draft": true
+        },
+        "attachments": {
+          "http_status": 200,
+          "evidence_domain": "UNVERIFIED",
+          "coverage": {
+            "declared_positions": 1,
+            "eligible_positions": 0,
+            "unavailable_positions": 1,
+            "eligible_explicit_zero": 0,
+            "eligible_nonzero": 0,
+            "expected_axes": null,
+            "lexical": {
+              "expected_axes": null,
+              "declared_measurements": 1,
+              "numeric_present": 1,
+              "explicit_zero": 1,
+              "missing": 0,
+              "invalid": 0,
+              "ambiguous": 0,
+              "unsupported": 0,
+              "unverified": 1
+            }
+          },
+          "evaluation_states": {
+            "DISABLED": 27,
+            "OBSERVED": 19,
+            "SEMANTICS_UNKNOWN": 28,
+            "CONTEXT_REQUIRED": 11,
+            "NOT_APPLICABLE": 11
+          },
+          "entry_states": {
+            "UNKNOWN": 1
+          },
+          "provider_attempts": 0,
+          "export_contains_draft": true
+        },
+        "sequencing": {
+          "http_status": 200,
+          "evidence_domain": "UNVERIFIED",
+          "coverage": {
+            "declared_positions": 1,
+            "eligible_positions": 0,
+            "unavailable_positions": 1,
+            "eligible_explicit_zero": 0,
+            "eligible_nonzero": 0,
+            "expected_axes": null,
+            "lexical": {
+              "expected_axes": null,
+              "declared_measurements": 1,
+              "numeric_present": 1,
+              "explicit_zero": 1,
+              "missing": 0,
+              "invalid": 0,
+              "ambiguous": 0,
+              "unsupported": 0,
+              "unverified": 1
+            }
+          },
+          "evaluation_states": {
+            "DISABLED": 27,
+            "OBSERVED": 19,
+            "SEMANTICS_UNKNOWN": 28,
+            "CONTEXT_REQUIRED": 12,
+            "NOT_APPLICABLE": 10
+          },
+          "entry_states": {
+            "WITHHELD": 2,
+            "UNKNOWN": 3,
+            "DISABLED": 1
+          },
+          "provider_attempts": 0,
+          "export_contains_draft": true
+        }
+      }
+    },
+    {
+      "case": "ambiguous",
+      "raw_sha256": "ad030e0060877098816d523a1559fcb5189d35c98aac6b995ce12c39711f2d7f",
+      "raw_preserved": true,
+      "classification": "AMBIGUOUS_STRUCTURE",
+      "positions": 0,
+      "numeric_statuses": {},
+      "parser_provider_attempts": 0,
+      "modules": {
+        "planning": {
+          "http_status": 200,
+          "evidence_domain": "UNVERIFIED",
+          "coverage": {
+            "declared_positions": 0,
+            "eligible_positions": 0,
+            "unavailable_positions": 0,
+            "eligible_explicit_zero": 0,
+            "eligible_nonzero": 0,
+            "expected_axes": null,
+            "lexical": {
+              "expected_axes": null,
+              "declared_measurements": 0,
+              "numeric_present": 0,
+              "explicit_zero": 0,
+              "missing": 0,
+              "invalid": 0,
+              "ambiguous": 0,
+              "unsupported": 0,
+              "unverified": 0
+            }
+          },
+          "evaluation_states": {
+            "DISABLED": 27,
+            "OBSERVED": 16,
+            "CONTEXT_REQUIRED": 28,
+            "NOT_APPLICABLE": 23,
+            "PARSE_INVALID": 1,
+            "SEMANTICS_UNKNOWN": 1
+          },
+          "entry_states": {},
+          "provider_attempts": 0,
+          "export_contains_draft": true
+        },
+        "attachments": {
+          "http_status": 200,
+          "evidence_domain": "UNVERIFIED",
+          "coverage": {
+            "declared_positions": 0,
+            "eligible_positions": 0,
+            "unavailable_positions": 0,
+            "eligible_explicit_zero": 0,
+            "eligible_nonzero": 0,
+            "expected_axes": null,
+            "lexical": {
+              "expected_axes": null,
+              "declared_measurements": 0,
+              "numeric_present": 0,
+              "explicit_zero": 0,
+              "missing": 0,
+              "invalid": 0,
+              "ambiguous": 0,
+              "unsupported": 0,
+              "unverified": 0
+            }
+          },
+          "evaluation_states": {
+            "DISABLED": 27,
+            "OBSERVED": 16,
+            "CONTEXT_REQUIRED": 32,
+            "NOT_APPLICABLE": 19,
+            "PARSE_INVALID": 1,
+            "SEMANTICS_UNKNOWN": 1
+          },
+          "entry_states": {
+            "WITHHELD": 1
+          },
+          "provider_attempts": 0,
+          "export_contains_draft": true
+        },
+        "sequencing": {
+          "http_status": 200,
+          "evidence_domain": "UNVERIFIED",
+          "coverage": {
+            "declared_positions": 0,
+            "eligible_positions": 0,
+            "unavailable_positions": 0,
+            "eligible_explicit_zero": 0,
+            "eligible_nonzero": 0,
+            "expected_axes": null,
+            "lexical": {
+              "expected_axes": null,
+              "declared_measurements": 0,
+              "numeric_present": 0,
+              "explicit_zero": 0,
+              "missing": 0,
+              "invalid": 0,
+              "ambiguous": 0,
+              "unsupported": 0,
+              "unverified": 0
+            }
+          },
+          "evaluation_states": {
+            "DISABLED": 27,
+            "OBSERVED": 16,
+            "CONTEXT_REQUIRED": 33,
+            "NOT_APPLICABLE": 18,
+            "PARSE_INVALID": 1,
+            "SEMANTICS_UNKNOWN": 1
+          },
+          "entry_states": {
+            "WITHHELD": 2,
+            "UNKNOWN": 3,
+            "DISABLED": 1
+          },
+          "provider_attempts": 0,
+          "export_contains_draft": true
+        }
+      }
+    },
+    {
+      "case": "irrelevant",
+      "raw_sha256": "4205c24a3c51d4fd57dc3cb4381317c5059e4af487445337c4b97893c5fe18ed",
+      "raw_preserved": true,
+      "classification": "NOT_TMT",
+      "positions": 0,
+      "numeric_statuses": {},
+      "parser_provider_attempts": 0,
+      "modules": {
+        "planning": {
+          "http_status": 200,
+          "evidence_domain": "UNVERIFIED",
+          "coverage": {
+            "declared_positions": 0,
+            "eligible_positions": 0,
+            "unavailable_positions": 0,
+            "eligible_explicit_zero": 0,
+            "eligible_nonzero": 0,
+            "expected_axes": null,
+            "lexical": {
+              "expected_axes": null,
+              "declared_measurements": 0,
+              "numeric_present": 0,
+              "explicit_zero": 0,
+              "missing": 0,
+              "invalid": 0,
+              "ambiguous": 0,
+              "unsupported": 0,
+              "unverified": 0
+            }
+          },
+          "evaluation_states": {
+            "DISABLED": 27,
+            "OBSERVED": 16,
+            "CONTEXT_REQUIRED": 28,
+            "NOT_APPLICABLE": 23,
+            "PARSE_INVALID": 1,
+            "SEMANTICS_UNKNOWN": 1
+          },
+          "entry_states": {},
+          "provider_attempts": 0,
+          "export_contains_draft": true
+        },
+        "attachments": {
+          "http_status": 200,
+          "evidence_domain": "UNVERIFIED",
+          "coverage": {
+            "declared_positions": 0,
+            "eligible_positions": 0,
+            "unavailable_positions": 0,
+            "eligible_explicit_zero": 0,
+            "eligible_nonzero": 0,
+            "expected_axes": null,
+            "lexical": {
+              "expected_axes": null,
+              "declared_measurements": 0,
+              "numeric_present": 0,
+              "explicit_zero": 0,
+              "missing": 0,
+              "invalid": 0,
+              "ambiguous": 0,
+              "unsupported": 0,
+              "unverified": 0
+            }
+          },
+          "evaluation_states": {
+            "DISABLED": 27,
+            "OBSERVED": 16,
+            "CONTEXT_REQUIRED": 32,
+            "NOT_APPLICABLE": 19,
+            "PARSE_INVALID": 1,
+            "SEMANTICS_UNKNOWN": 1
+          },
+          "entry_states": {
+            "WITHHELD": 1
+          },
+          "provider_attempts": 0,
+          "export_contains_draft": true
+        },
+        "sequencing": {
+          "http_status": 200,
+          "evidence_domain": "UNVERIFIED",
+          "coverage": {
+            "declared_positions": 0,
+            "eligible_positions": 0,
+            "unavailable_positions": 0,
+            "eligible_explicit_zero": 0,
+            "eligible_nonzero": 0,
+            "expected_axes": null,
+            "lexical": {
+              "expected_axes": null,
+              "declared_measurements": 0,
+              "numeric_present": 0,
+              "explicit_zero": 0,
+              "missing": 0,
+              "invalid": 0,
+              "ambiguous": 0,
+              "unsupported": 0,
+              "unverified": 0
+            }
+          },
+          "evaluation_states": {
+            "DISABLED": 27,
+            "OBSERVED": 16,
+            "CONTEXT_REQUIRED": 33,
+            "NOT_APPLICABLE": 18,
+            "PARSE_INVALID": 1,
+            "SEMANTICS_UNKNOWN": 1
+          },
+          "entry_states": {
+            "WITHHELD": 2,
+            "UNKNOWN": 3,
+            "DISABLED": 1
+          },
+          "provider_attempts": 0,
+          "export_contains_draft": true
+        }
+      }
+    },
+    {
+      "case": "unknown_vendor",
+      "raw_sha256": "bf6aa61c35a0d0a093eb4a4b90d3403197344b4cf14b602f8171daa35b380e09",
+      "raw_preserved": true,
+      "classification": "STRUCTURALLY_RECOGNIZED",
+      "positions": 1,
+      "numeric_statuses": {
+        "PARSED": 1
+      },
+      "parser_provider_attempts": 0,
+      "modules": {
+        "planning": {
+          "http_status": 200,
+          "evidence_domain": "UNVERIFIED",
+          "coverage": {
+            "declared_positions": 1,
+            "eligible_positions": 0,
+            "unavailable_positions": 1,
+            "eligible_explicit_zero": 0,
+            "eligible_nonzero": 0,
+            "expected_axes": null,
+            "lexical": {
+              "expected_axes": null,
+              "declared_measurements": 1,
+              "numeric_present": 1,
+              "explicit_zero": 0,
+              "missing": 0,
+              "invalid": 0,
+              "ambiguous": 0,
+              "unsupported": 0,
+              "unverified": 1
+            }
+          },
+          "evaluation_states": {
+            "DISABLED": 27,
+            "OBSERVED": 19,
+            "SEMANTICS_UNKNOWN": 28,
+            "CONTEXT_REQUIRED": 7,
+            "NOT_APPLICABLE": 15
+          },
+          "entry_states": {},
+          "provider_attempts": 0,
+          "export_contains_draft": true
+        },
+        "attachments": {
+          "http_status": 200,
+          "evidence_domain": "UNVERIFIED",
+          "coverage": {
+            "declared_positions": 1,
+            "eligible_positions": 0,
+            "unavailable_positions": 1,
+            "eligible_explicit_zero": 0,
+            "eligible_nonzero": 0,
+            "expected_axes": null,
+            "lexical": {
+              "expected_axes": null,
+              "declared_measurements": 1,
+              "numeric_present": 1,
+              "explicit_zero": 0,
+              "missing": 0,
+              "invalid": 0,
+              "ambiguous": 0,
+              "unsupported": 0,
+              "unverified": 1
+            }
+          },
+          "evaluation_states": {
+            "DISABLED": 27,
+            "OBSERVED": 19,
+            "SEMANTICS_UNKNOWN": 28,
+            "CONTEXT_REQUIRED": 11,
+            "NOT_APPLICABLE": 11
+          },
+          "entry_states": {
+            "UNKNOWN": 1
+          },
+          "provider_attempts": 0,
+          "export_contains_draft": true
+        },
+        "sequencing": {
+          "http_status": 200,
+          "evidence_domain": "UNVERIFIED",
+          "coverage": {
+            "declared_positions": 1,
+            "eligible_positions": 0,
+            "unavailable_positions": 1,
+            "eligible_explicit_zero": 0,
+            "eligible_nonzero": 0,
+            "expected_axes": null,
+            "lexical": {
+              "expected_axes": null,
+              "declared_measurements": 1,
+              "numeric_present": 1,
+              "explicit_zero": 0,
+              "missing": 0,
+              "invalid": 0,
+              "ambiguous": 0,
+              "unsupported": 0,
+              "unverified": 1
+            }
+          },
+          "evaluation_states": {
+            "DISABLED": 27,
+            "OBSERVED": 19,
+            "SEMANTICS_UNKNOWN": 28,
+            "CONTEXT_REQUIRED": 12,
+            "NOT_APPLICABLE": 10
+          },
+          "entry_states": {
+            "WITHHELD": 2,
+            "UNKNOWN": 3,
+            "DISABLED": 1
+          },
+          "provider_attempts": 0,
+          "export_contains_draft": true
+        }
+      }
+    },
+    {
+      "case": "unverified_recoverable",
+      "raw_sha256": "cb33627fef9285a9c6c2700a6a3d2ee40c875055e9fd1201a91faf51f0ad87a2",
+      "raw_preserved": true,
+      "classification": "RECOVERABLE_STRUCTURE",
+      "positions": 0,
+      "numeric_statuses": {},
+      "parser_provider_attempts": 0,
+      "modules": {
+        "planning": {
+          "http_status": 200,
+          "evidence_domain": "UNVERIFIED",
+          "coverage": {
+            "declared_positions": 0,
+            "eligible_positions": 0,
+            "unavailable_positions": 0,
+            "eligible_explicit_zero": 0,
+            "eligible_nonzero": 0,
+            "expected_axes": null,
+            "lexical": {
+              "expected_axes": null,
+              "declared_measurements": 0,
+              "numeric_present": 0,
+              "explicit_zero": 0,
+              "missing": 0,
+              "invalid": 0,
+              "ambiguous": 0,
+              "unsupported": 0,
+              "unverified": 0
+            }
+          },
+          "evaluation_states": {
+            "DISABLED": 27,
+            "OBSERVED": 16,
+            "CONTEXT_REQUIRED": 28,
+            "NOT_APPLICABLE": 23,
+            "PARSE_INVALID": 1,
+            "SEMANTICS_UNKNOWN": 1
+          },
+          "entry_states": {},
+          "provider_attempts": 0,
+          "export_contains_draft": true
+        },
+        "attachments": {
+          "http_status": 200,
+          "evidence_domain": "UNVERIFIED",
+          "coverage": {
+            "declared_positions": 0,
+            "eligible_positions": 0,
+            "unavailable_positions": 0,
+            "eligible_explicit_zero": 0,
+            "eligible_nonzero": 0,
+            "expected_axes": null,
+            "lexical": {
+              "expected_axes": null,
+              "declared_measurements": 0,
+              "numeric_present": 0,
+              "explicit_zero": 0,
+              "missing": 0,
+              "invalid": 0,
+              "ambiguous": 0,
+              "unsupported": 0,
+              "unverified": 0
+            }
+          },
+          "evaluation_states": {
+            "DISABLED": 27,
+            "OBSERVED": 16,
+            "CONTEXT_REQUIRED": 32,
+            "NOT_APPLICABLE": 19,
+            "PARSE_INVALID": 1,
+            "SEMANTICS_UNKNOWN": 1
+          },
+          "entry_states": {
+            "WITHHELD": 1
+          },
+          "provider_attempts": 0,
+          "export_contains_draft": true
+        },
+        "sequencing": {
+          "http_status": 200,
+          "evidence_domain": "UNVERIFIED",
+          "coverage": {
+            "declared_positions": 0,
+            "eligible_positions": 0,
+            "unavailable_positions": 0,
+            "eligible_explicit_zero": 0,
+            "eligible_nonzero": 0,
+            "expected_axes": null,
+            "lexical": {
+              "expected_axes": null,
+              "declared_measurements": 0,
+              "numeric_present": 0,
+              "explicit_zero": 0,
+              "missing": 0,
+              "invalid": 0,
+              "ambiguous": 0,
+              "unsupported": 0,
+              "unverified": 0
+            }
+          },
+          "evaluation_states": {
+            "DISABLED": 27,
+            "OBSERVED": 16,
+            "CONTEXT_REQUIRED": 33,
+            "NOT_APPLICABLE": 18,
+            "PARSE_INVALID": 1,
+            "SEMANTICS_UNKNOWN": 1
+          },
+          "entry_states": {
+            "WITHHELD": 2,
+            "UNKNOWN": 3,
+            "DISABLED": 1
+          },
+          "provider_attempts": 0,
+          "export_contains_draft": true
+        }
+      }
+    }
+  ],
+  "fixed_demos": {
+    "planning": {
+      "evidence_domain": "TEST_ONLY",
+      "coverage": {
+        "declared_positions": 20,
+        "eligible_positions": 4,
+        "unavailable_positions": 16,
+        "eligible_explicit_zero": 0,
+        "eligible_nonzero": 4,
+        "expected_axes": null,
+        "lexical": {
+          "expected_axes": null,
+          "declared_measurements": 20,
+          "numeric_present": 5,
+          "explicit_zero": 0,
+          "missing": 15,
+          "invalid": 0,
+          "ambiguous": 0,
+          "unsupported": 0,
+          "unverified": 20
+        }
+      },
+      "rule_states": {
+        "A01": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "A02": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "A03": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "A04": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "A05": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "OUTPUT_GUARD"
+        },
+        "A06": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "OUTPUT_GUARD"
+        },
+        "D01": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "D02": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "D03": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "D04": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "D05": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "D06": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "D07": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "D08": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "D09": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "D10": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "D11": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "D12": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "D13": {
+          "status": "CONTEXT_REQUIRED",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "D14": {
+          "status": "NOT_APPLICABLE",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "D15": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "D16": {
+          "status": "CONTEXT_REQUIRED",
+          "execution": "DEFERRED",
+          "evaluated": false,
+          "implementation_kind": "DEFERRED"
+        },
+        "G01": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "G02": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "G03": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "G04": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "G05": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "G06": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "G07": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "G08": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "G09": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "G10": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "G11": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "G12": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "G13": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "G14": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "G15": {
+          "status": "NOT_APPLICABLE",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "G16": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "G17": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "G18": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "H01": {
+          "status": "NOT_APPLICABLE",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "H02": {
+          "status": "NOT_APPLICABLE",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "H03": {
+          "status": "NOT_APPLICABLE",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "H04": {
+          "status": "NOT_APPLICABLE",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "H05": {
+          "status": "NOT_APPLICABLE",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "H06": {
+          "status": "NOT_APPLICABLE",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "H07": {
+          "status": "NOT_APPLICABLE",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "H08": {
+          "status": "NOT_APPLICABLE",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "H09": {
+          "status": "NOT_APPLICABLE",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "H10": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "PARTIAL_SYSTEM_CONTROL"
+        },
+        "H11": {
+          "status": "NOT_APPLICABLE",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "H12": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "PARTIAL_SYSTEM_CONTROL"
+        },
+        "L01": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "OUTPUT_GUARD"
+        },
+        "L02": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "OUTPUT_GUARD"
+        },
+        "L03": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "OUTPUT_GUARD"
+        },
+        "L04": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "OUTPUT_GUARD"
+        },
+        "L05": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "OUTPUT_GUARD"
+        },
+        "L06": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "PARTIAL_SYSTEM_CONTROL"
+        },
+        "N01": {
+          "status": "CONTEXT_REQUIRED",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "N02": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "N03": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "PARTIAL_SYSTEM_CONTROL"
+        },
+        "N04": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "PARTIAL_SYSTEM_CONTROL"
+        },
+        "N05": {
+          "status": "CONTEXT_REQUIRED",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "N06": {
+          "status": "CONTEXT_REQUIRED",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "N07": {
+          "status": "NOT_APPLICABLE",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "N08": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "N09": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "N10": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "OUTPUT_GUARD"
+        },
+        "N11": {
+          "status": "CONTEXT_REQUIRED",
+          "execution": "DEFERRED",
+          "evaluated": false,
+          "implementation_kind": "DEFERRED"
+        },
+        "N12": {
+          "status": "NOT_APPLICABLE",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "N13": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "N14": {
+          "status": "CONTEXT_REQUIRED",
+          "execution": "DEFERRED",
+          "evaluated": false,
+          "implementation_kind": "DEFERRED"
+        },
+        "R01": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "R02": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "R03": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "R04": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "R05": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "R06": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "R07": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "R08": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "R09": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "R10": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "R11": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "R12": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "R13": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "R14": {
+          "status": "NOT_APPLICABLE",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "R15": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "R16": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "T01": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "T02": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "T03": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "T04": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "T05": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "T06": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "T07": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "T08": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        }
+      },
+      "entry_states": {},
+      "origins": {}
+    },
+    "attachments": {
+      "evidence_domain": "TEST_ONLY",
+      "coverage": {
+        "declared_positions": 20,
+        "eligible_positions": 4,
+        "unavailable_positions": 16,
+        "eligible_explicit_zero": 0,
+        "eligible_nonzero": 4,
+        "expected_axes": null,
+        "lexical": {
+          "expected_axes": null,
+          "declared_measurements": 20,
+          "numeric_present": 5,
+          "explicit_zero": 0,
+          "missing": 15,
+          "invalid": 0,
+          "ambiguous": 0,
+          "unsupported": 0,
+          "unverified": 20
+        }
+      },
+      "rule_states": {
+        "A01": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "A02": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "A03": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "A04": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "A05": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "OUTPUT_GUARD"
+        },
+        "A06": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "OUTPUT_GUARD"
+        },
+        "D01": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "D02": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "D03": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "D04": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "D05": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "D06": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "D07": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "D08": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "D09": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "D10": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "D11": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "D12": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "D13": {
+          "status": "CONTEXT_REQUIRED",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "D14": {
+          "status": "CONTEXT_REQUIRED",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "D15": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "D16": {
+          "status": "CONTEXT_REQUIRED",
+          "execution": "DEFERRED",
+          "evaluated": false,
+          "implementation_kind": "DEFERRED"
+        },
+        "G01": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "G02": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "G03": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "G04": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "G05": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "G06": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "G07": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "G08": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "G09": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "G10": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "G11": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "G12": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "G13": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "G14": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "G15": {
+          "status": "NOT_APPLICABLE",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "G16": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "G17": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "G18": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "H01": {
+          "status": "NOT_APPLICABLE",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "H02": {
+          "status": "NOT_APPLICABLE",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "H03": {
+          "status": "NOT_APPLICABLE",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "H04": {
+          "status": "NOT_APPLICABLE",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "H05": {
+          "status": "NOT_APPLICABLE",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "H06": {
+          "status": "NOT_APPLICABLE",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "H07": {
+          "status": "NOT_APPLICABLE",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "H08": {
+          "status": "CONTEXT_REQUIRED",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "H09": {
+          "status": "NOT_APPLICABLE",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "H10": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "PARTIAL_SYSTEM_CONTROL"
+        },
+        "H11": {
+          "status": "NOT_APPLICABLE",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "H12": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "PARTIAL_SYSTEM_CONTROL"
+        },
+        "L01": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "OUTPUT_GUARD"
+        },
+        "L02": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "OUTPUT_GUARD"
+        },
+        "L03": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "OUTPUT_GUARD"
+        },
+        "L04": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "OUTPUT_GUARD"
+        },
+        "L05": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "OUTPUT_GUARD"
+        },
+        "L06": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "PARTIAL_SYSTEM_CONTROL"
+        },
+        "N01": {
+          "status": "CONTEXT_REQUIRED",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "N02": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "N03": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "PARTIAL_SYSTEM_CONTROL"
+        },
+        "N04": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "PARTIAL_SYSTEM_CONTROL"
+        },
+        "N05": {
+          "status": "CONTEXT_REQUIRED",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "N06": {
+          "status": "CONTEXT_REQUIRED",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "N07": {
+          "status": "NOT_APPLICABLE",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "N08": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "N09": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "N10": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "OUTPUT_GUARD"
+        },
+        "N11": {
+          "status": "CONTEXT_REQUIRED",
+          "execution": "DEFERRED",
+          "evaluated": false,
+          "implementation_kind": "DEFERRED"
+        },
+        "N12": {
+          "status": "CONTEXT_REQUIRED",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "N13": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "N14": {
+          "status": "CONTEXT_REQUIRED",
+          "execution": "DEFERRED",
+          "evaluated": false,
+          "implementation_kind": "DEFERRED"
+        },
+        "R01": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "R02": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "R03": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "R04": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "R05": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "R06": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "R07": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "R08": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "R09": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "R10": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "R11": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "R12": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "R13": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "R14": {
+          "status": "CONTEXT_REQUIRED",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "R15": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "R16": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "T01": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "T02": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "T03": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "T04": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "T05": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "T06": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "T07": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "T08": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        }
+      },
+      "entry_states": {
+        "CANDIDATE": 2,
+        "ALTERNATIVE": 1,
+        "NOT_INDICATED": 1,
+        "UNKNOWN": 1,
+        "WITHHELD": 1
+      },
+      "origins": {
+        "SUPPLIED_SYNTHETIC": 4,
+        "WITHHOLDING_GUARD": 2
+      }
+    },
+    "sequencing": {
+      "evidence_domain": "TEST_ONLY",
+      "coverage": {
+        "declared_positions": 20,
+        "eligible_positions": 4,
+        "unavailable_positions": 16,
+        "eligible_explicit_zero": 0,
+        "eligible_nonzero": 4,
+        "expected_axes": null,
+        "lexical": {
+          "expected_axes": null,
+          "declared_measurements": 20,
+          "numeric_present": 5,
+          "explicit_zero": 0,
+          "missing": 15,
+          "invalid": 0,
+          "ambiguous": 0,
+          "unsupported": 0,
+          "unverified": 20
+        }
+      },
+      "rule_states": {
+        "A01": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "A02": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "A03": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "A04": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "A05": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "OUTPUT_GUARD"
+        },
+        "A06": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "OUTPUT_GUARD"
+        },
+        "D01": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "D02": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "D03": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "D04": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "D05": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "D06": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "D07": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "D08": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "D09": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "D10": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "D11": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "D12": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "D13": {
+          "status": "CONTEXT_REQUIRED",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "D14": {
+          "status": "CONTEXT_REQUIRED",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "D15": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "D16": {
+          "status": "CONTEXT_REQUIRED",
+          "execution": "DEFERRED",
+          "evaluated": false,
+          "implementation_kind": "DEFERRED"
+        },
+        "G01": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "G02": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "G03": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "G04": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "G05": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "G06": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "G07": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "G08": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "G09": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "G10": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "G11": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "G12": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "G13": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "G14": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "G15": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "G16": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "G17": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "G18": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "H01": {
+          "status": "NOT_APPLICABLE",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "H02": {
+          "status": "NOT_APPLICABLE",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "H03": {
+          "status": "NOT_APPLICABLE",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "H04": {
+          "status": "NOT_APPLICABLE",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "H05": {
+          "status": "NOT_APPLICABLE",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "H06": {
+          "status": "NOT_APPLICABLE",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "H07": {
+          "status": "NOT_APPLICABLE",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "H08": {
+          "status": "NOT_APPLICABLE",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "H09": {
+          "status": "CONTEXT_REQUIRED",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "H10": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "PARTIAL_SYSTEM_CONTROL"
+        },
+        "H11": {
+          "status": "CONTEXT_REQUIRED",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "H12": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "PARTIAL_SYSTEM_CONTROL"
+        },
+        "L01": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "OUTPUT_GUARD"
+        },
+        "L02": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "OUTPUT_GUARD"
+        },
+        "L03": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "OUTPUT_GUARD"
+        },
+        "L04": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "OUTPUT_GUARD"
+        },
+        "L05": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "OUTPUT_GUARD"
+        },
+        "L06": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "PARTIAL_SYSTEM_CONTROL"
+        },
+        "N01": {
+          "status": "CONTEXT_REQUIRED",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "N02": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "N03": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "PARTIAL_SYSTEM_CONTROL"
+        },
+        "N04": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "PARTIAL_SYSTEM_CONTROL"
+        },
+        "N05": {
+          "status": "CONTEXT_REQUIRED",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "N06": {
+          "status": "CONTEXT_REQUIRED",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "N07": {
+          "status": "NOT_APPLICABLE",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "N08": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "N09": {
+          "status": "SEMANTICS_UNKNOWN",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "N10": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "OUTPUT_GUARD"
+        },
+        "N11": {
+          "status": "CONTEXT_REQUIRED",
+          "execution": "DEFERRED",
+          "evaluated": false,
+          "implementation_kind": "DEFERRED"
+        },
+        "N12": {
+          "status": "CONTEXT_REQUIRED",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "N13": {
+          "status": "OBSERVED",
+          "execution": "ACTIVE",
+          "evaluated": true,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "N14": {
+          "status": "CONTEXT_REQUIRED",
+          "execution": "DEFERRED",
+          "evaluated": false,
+          "implementation_kind": "DEFERRED"
+        },
+        "R01": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "R02": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "R03": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "R04": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "R05": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "R06": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "R07": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "R08": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "R09": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "R10": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "R11": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "R12": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "R13": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "R14": {
+          "status": "CONTEXT_REQUIRED",
+          "execution": "ACTIVE",
+          "evaluated": false,
+          "implementation_kind": "EXECUTABLE"
+        },
+        "R15": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "R16": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "T01": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "T02": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "T03": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "T04": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "T05": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "T06": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "T07": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        },
+        "T08": {
+          "status": "DISABLED",
+          "execution": "DISABLED",
+          "evaluated": false,
+          "implementation_kind": "REQUIRED_DATA_GUARD"
+        }
+      },
+      "entry_states": {
+        "SUPPLIED_SYNTHETIC": 6,
+        "STRUCTURAL_OBSERVATION": 1,
+        "WITHHELD": 1,
+        "DISABLED": 1
+      },
+      "origins": {
+        "SUPPLIED_SCENARIO": 6,
+        "ENGINE_GUARD": 3
+      }
+    }
+  },
+  "mocked_wording_failure": {
+    "requested_mode": "AUTO",
+    "used_mode": "STANDARD_TEMPLATES",
+    "reason": "GROQ_RATE_LIMIT",
+    "provider": "GROQ",
+    "model": "openai/gpt-oss-120b",
+    "attempts": 1,
+    "eligible_wording_findings": 5,
+    "accepted_comments": 0,
+    "real_patient_transmission_enabled": false,
+    "output_validation": "CLOSED_WORDING_AND_LOCAL_FACTS_V1"
+  }
+}

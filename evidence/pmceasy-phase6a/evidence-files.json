@@ -1,0 +1,190 @@
+{
+  "date": "2026-11-14",
+  "files": [
+    {
+      "path": "build-evidence-index.py",
+      "bytes": 10057,
+      "sha256": "790a4d0129de9558a39844261cf9cb4500e14f6ceb43881a4c9dfbeb45835e63"
+    },
+    {
+      "path": "capture-public.mjs",
+      "bytes": 5722,
+      "sha256": "e6db5b8af1f6de03c0f0ac927170a018734eb585c61866e111be261509712afa"
+    },
+    {
+      "path": "finova-audit.md",
+      "bytes": 16631,
+      "sha256": "6c3251ad555392dadfff54f0e902d1197e01c231f95b2643a77da5fe90e62bc0"
+    },
+    {
+      "path": "finova-document-source-inventory.json",
+      "bytes": 37318,
+      "sha256": "6e4394d99a2e4d4dd795bf78ac10ee18602ff2b0adc98f8a674f2ac2a7573721"
+    },
+    {
+      "path": "finova-local-probes.json",
+      "bytes": 3943,
+      "sha256": "b6134af1057e5f9b9a74add3e79c1a95f61814bd1e7fe3860c734008e17e542c"
+    },
+    {
+      "path": "observe-official-videos.mjs",
+      "bytes": 4862,
+      "sha256": "1631cb19f01c4631f324812f8fd5c9e77168c6d34ac0330a5279a4e165fdb4b8"
+    },
+    {
+      "path": "official-demos.md",
+      "bytes": 15731,
+      "sha256": "ff87df5a61a74facc5bf6522425d50aa7f8b39a1ebbe92d92b93d0d41ab2b854"
+    },
+    {
+      "path": "pages/P01-home.json",
+      "bytes": 15843,
+      "sha256": "f9e556d3e6079dace520db88d99c2db71976a327030024665bb8599a42a90126"
+    },
+    {
+      "path": "pages/P01-home.png",
+      "bytes": 312094,
+      "sha256": "27abf92de2169fd4c1d49b6371763d05fd17ebf4e86d4b6f830f486e24f0bca8"
+    },
+    {
+      "path": "pages/P02-how-to.json",
+      "bytes": 5136,
+      "sha256": "45fd2841be0810dcc856a2c257b2e71b6fe6335cb95c56c24b6963d6fce64722"
+    },
+    {
+      "path": "pages/P02-how-to.png",
+      "bytes": 178830,
+      "sha256": "652e6b12b93e6a6d76f64b412ebfe109cc4bc41be6ad3f00e4bda9a367616b6b"
+    },
+    {
+      "path": "pages/P03-start-planning.json",
+      "bytes": 2410,
+      "sha256": "56ec7b2e19638bc82333830bdfd86adb2a04011f513effddb50633410e2fa728"
+    },
+    {
+      "path": "pages/P03-start-planning.png",
+      "bytes": 6489,
+      "sha256": "cb9c3b8047859412e8abcaed51ad9ecefb4bd820c8849af4992e593d500d1836"
+    },
+    {
+      "path": "public-capture-manifest.json",
+      "bytes": 3466,
+      "sha256": "43c423e1f9b01fa64c555518eb9b3a9b84836a11d07282b740b1eaa09d550fa8"
+    },
+    {
+      "path": "rea-readiness.json",
+      "bytes": 1791,
+      "sha256": "b7b3792557e1c1d7d03632cbe19fc730399a98c210e8b3a5a9640c1e1e2f2832"
+    },
+    {
+      "path": "rea-readiness.md",
+      "bytes": 7575,
+      "sha256": "9bec5f63aeef7dc38ff4aff051d86c39b473ad8f8be71cd59738172b9d551cbf"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5852,
+      "sha256": "584fc246905d3ee820871e912b48301198bfdb7bc124d4882ad58f550f5c2d60"
+    },
+    {
+      "path": "research-artifact-validation.json",
+      "bytes": 2611,
+      "sha256": "4db9d29a37f940e5b8b5d8eac53a6f3b78921af709304f4259afe491803a1d98"
+    },
+    {
+      "path": "screenshot-observation-register.json",
+      "bytes": 24518,
+      "sha256": "835cf2591a73e5e3d42cff4562968944ee340fff6afca2ae44aece4831c2a0ae"
+    },
+    {
+      "path": "videos/1GHKNwNkL6Q-100s-cropped.png",
+      "bytes": 114082,
+      "sha256": "f728bc72750b5840d9e4156b74aebb36ff9e2e31498257884d7802df2fcd4757"
+    },
+    {
+      "path": "videos/1GHKNwNkL6Q-120s-cropped.png",
+      "bytes": 97498,
+      "sha256": "46158fa2259bcadb5f6a2c1f10f6922e46924c68df449156db608ff4d3bf48d2"
+    },
+    {
+      "path": "videos/1GHKNwNkL6Q-150s-cropped.png",
+      "bytes": 166165,
+      "sha256": "6e2512c6bc9411b6bc29e483111b6e56686fe8b6289b032e005c87fb435c64ee"
+    },
+    {
+      "path": "videos/1GHKNwNkL6Q-240s-cropped.png",
+      "bytes": 157694,
+      "sha256": "12cd11f7a1aca91ca6894a151e4caa1c8bbd2aa424c520180968023d016c9d8d"
+    },
+    {
+      "path": "videos/1GHKNwNkL6Q-330s-cropped.png",
+      "bytes": 190939,
+      "sha256": "18e89c1696aa14cd1c2016ecd24a19d3930a44e238dbcbac92e7bd034f779403"
+    },
+    {
+      "path": "videos/1GHKNwNkL6Q-90s-cropped.png",
+      "bytes": 41781,
+      "sha256": "05c5aadac45bca19fc2a76f8cc1eb74d21cf1ea80e56f15999fdd053ae7805aa"
+    },
+    {
+      "path": "videos/iEMJeuOXkq4-150s-cropped.png",
+      "bytes": 181336,
+      "sha256": "98cb752d519768ca6be22d5118e190d6c5c81e267f3dfd7a14d36a116929ea04"
+    },
+    {
+      "path": "videos/iEMJeuOXkq4-180s-cropped.png",
+      "bytes": 178195,
+      "sha256": "daa2f5f6622a4833870b705e1ce6ce0bff97179292384d36ee358394a02de5ef"
+    },
+    {
+      "path": "videos/iEMJeuOXkq4-200s-cropped.png",
+      "bytes": 73782,
+      "sha256": "3be6d9f749d80e83fd0174131a1b8004888e5e00edf92843fcc11357cf2edbf9"
+    },
+    {
+      "path": "videos/iEMJeuOXkq4-210s-cropped.png",
+      "bytes": 125325,
+      "sha256": "9c0d109283b970a63560370572ec61fc3d218e849520ecb341a2918f7f8ea94d"
+    },
+    {
+      "path": "videos/iEMJeuOXkq4-220s-cropped.png",
+      "bytes": 89400,
+      "sha256": "97fa648307588ca63a2154811fed617857337795e678e52828c73948bf52d858"
+    },
+    {
+      "path": "videos/iEMJeuOXkq4-240s-cropped.png",
+      "bytes": 94134,
+      "sha256": "85ea869a128d8bc030db6888772faf8da4d9514b4cd71463ffdb1897d9da89d5"
+    },
+    {
+      "path": "videos/iEMJeuOXkq4-280s-cropped.png",
+      "bytes": 51767,
+      "sha256": "0ba3986ea502f8ba506e532fd47053b9e3ee798bbe78c84dd85f24101895bbd6"
+    },
+    {
+      "path": "videos/iEMJeuOXkq4-300s-cropped.png",
+      "bytes": 135526,
+      "sha256": "aab47232e3052d98776f0d7a182acd5cacb36ec241c08adc32405382bb64a3a0"
+    },
+    {
+      "path": "videos/iEMJeuOXkq4-330s-cropped.png",
+      "bytes": 143803,
+      "sha256": "318831725bd95da2b107c3b9735abe78fb149329be9b4b09e6d80c4ce19c486c"
+    },
+    {
+      "path": "videos/observation-manifest-followup.json",
+      "bytes": 6272,
+      "sha256": "8f19c6f99ff1d7b970fd6822c1df6254c88a5160434e6ce3fc55e882602b6f18"
+    },
+    {
+      "path": "videos/observation-manifest-intake.json",
+      "bytes": 3910,
+      "sha256": "b7e1756905d168c35acdb73e82466beb94d0f612c721d6aa310e0602d51df524"
+    },
+    {
+      "path": "videos/observation-manifest.json",
+      "bytes": 5595,
+      "sha256": "d8b2196c05b7b7583c9e5f17e205bcc5d95f80a2401a1c818f2641ee86ff7719"
+    }
+  ]
+}

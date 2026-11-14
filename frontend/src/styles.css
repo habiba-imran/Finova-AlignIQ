@@ -23,6 +23,17 @@
   .button-clear { @apply border border-line bg-white text-muted enabled:hover:bg-canvas disabled:opacity-50; }
   .skip-link { @apply fixed top-3 left-3 z-50 -translate-y-24 rounded-lg bg-ink px-4 py-3 text-sm text-white focus:translate-y-0; }
   .context-control { @apply min-h-11 w-full rounded-lg border border-field bg-white px-3 py-2 text-xs; }
+  .purpose-card { @apply min-w-0 rounded-xl border border-line bg-white p-5 text-left transition-colors hover:border-brand; }
+  .purpose-active { @apply border-brand bg-brand-soft shadow-[inset_0_3px_0_#087c72]; }
+  .dimension-panel { @apply min-w-0 rounded-xl border border-line bg-canvas p-4; }
+  .comment-card { @apply min-w-0 rounded-lg border border-line bg-white p-4; }
+  .technical-details { @apply mt-4 min-w-0 rounded-xl border border-line bg-white p-5; }
+  .technical-details > summary { @apply cursor-pointer text-sm font-medium; }
+  .workflow-steps { @apply grid grid-cols-2 gap-3 rounded-xl border border-line bg-white p-4 lg:grid-cols-4; }
+  .workflow-steps li { @apply flex items-center gap-3 text-xs text-muted; }
+  .workflow-steps li > span { @apply flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-line font-semibold; }
+  .workflow-steps li[aria-current] { @apply font-semibold text-brand; }
+  .workflow-steps li[aria-current] > span { @apply border-brand bg-brand text-white; }
 }
 
 /* Rendering only: never transform raw text to simulate a table. */
@@ -32,4 +43,16 @@
   overflow-wrap: anywhere;
   tab-size: 4;
   min-width: 0;
+}
+
+/* Keep the off-screen skip link clipped during scrolled/element captures too. */
+.skip-link:not(:focus) { clip-path: inset(50%); }
+
+/* Preserve the semantic table while stacking each tooth's cells on narrow screens. */
+@media (max-width: 639px) {
+  .attachment-table, .attachment-table tbody, .attachment-table tr,
+  .attachment-table th, .attachment-table td { display: block; width: 100%; }
+  .attachment-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+  .attachment-table tbody tr { padding: 12px 0; }
+  .attachment-table th, .attachment-table td { padding: 8px 16px; overflow-wrap: anywhere; }
 }

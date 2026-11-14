@@ -1,0 +1,7 @@
+# Finova Synthetic Demonstration — TEST_ONLY, no patient or vendor
+Tooth	Rotation (deg)	Extrusion (mm)	Mesiodistal (mm)	Buccolingual (mm)
+11	-	-	1.2300 D	-
+12	-	-	-	0.4500 B
+13	-	0.200 E	-	-
+14	2.500 M	-	-	-
+15	3.000 M	-	-	-

@@ -11,6 +11,7 @@ test('explicit draft review uses the real API, abstains on vendor claims and pre
   await page.getByRole('checkbox').check()
   await page.getByRole('button', { name: 'Parse Table', exact: true }).click()
   await expect(page.getByRole('heading', { name: 'Structured lexical preview' })).toBeVisible()
+  await page.getByText('Advanced: separate engineering review & legacy report actions').click()
   await page.getByLabel('Requested assessment', { exact: false }).selectOption('ATTACHMENTS')
   const pending = page.waitForResponse(r => r.url().endsWith('/api/v1/tmt/observations'))
   await page.getByRole('button', { name: 'Create draft review', exact: true }).click()

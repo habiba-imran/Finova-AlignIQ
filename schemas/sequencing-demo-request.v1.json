@@ -1,0 +1,7 @@
+{
+  "additionalProperties": false,
+  "description": "No input, stage records, decisions, fixture paths or authority switches.",
+  "properties": {},
+  "title": "EmptyDemoRequest",
+  "type": "object"
+}

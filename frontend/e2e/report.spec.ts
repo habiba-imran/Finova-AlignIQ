@@ -13,6 +13,7 @@ test('final report uses templates for unverified data and copies/downloads a com
   await page.getByRole('checkbox').check()
   await page.getByRole('button', { name: 'Parse Table', exact: true }).click()
   await expect(page.getByRole('heading', { name: 'Structured lexical preview' })).toBeVisible()
+  await page.getByText('Advanced: separate engineering review & legacy report actions').click()
   await page.getByRole('button', { name: 'Create draft review', exact: true }).click()
   await expect(page.getByLabel('Draft review results')).toBeVisible()
   await expect(page.getByLabel('Comment generation mode')).toHaveValue('AUTO')
