@@ -1,0 +1,32 @@
+{
+  "scope": "Stable backend/governing source inspected in Phase 9; frontend final snapshot pending user UI completion.",
+  "files": {
+    "backend/app/api/automatic_parse.py": "c416d3fd5e0a56e83288deffff6909afe824f6d45990a9b0665afa5a65a86a82",
+    "backend/tests/test_phase9_audit.py": "07f21fd9dac02f6338f24787c179320db7dd3aa0524e3d0e444961934bb0b486",
+    "backend/scripts/audit_phase9.py": "a09c836c8642cd58cd8ac25b0ad3b39871c01a52dc1187312eb938fead1214f7",
+    "frontend/e2e/audit.spec.ts": "c1bdb1da6582a61f7165a84a8b63eb768410964a768b064df24e5702ffd58d63",
+    "backend/app/review/checks.py": "5a4304fca8d5bf535e440e840cd7dbda34e311d592377488892cade8ffc95135",
+    "backend/app/review/clinical.py": "9ace0b9a325dccc1b2bc77303cf0b71c1cdfcd2d8c07ebb3e3f1768f62b44e2f",
+    "backend/app/review/context.py": "f7dbda87ab270af6c548290b84e3d01a936fb96aa6dffb07fc54ba5629cd8bfc",
+    "backend/app/review/models.py": "73b4a96b08c3022f8d81db4e83e98a276e844a592cf141fb864e79139dc82b40",
+    "backend/app/review/registry.py": "00fc31033b189325b75dc4bb862eb978bde53cacccdc39288655cfe13c16d249",
+    "backend/app/review/safeguards.py": "ad5f1578cc3564bb5314fea9ed9c83e1946c3e360c131758ecd3737fe9bd58c3",
+    "backend/app/review/service.py": "c35fb98d9222fc7a93d5a77450135466d6fb415c40ee6e615c2b19c8325457d1",
+    "backend/app/review/templates.py": "98a0ee80ebef857f96c7bb8e7a30f746569fad6374eb285547b4d4e1ca54514f",
+    "backend/app/review/__init__.py": "7b356512151bdfe73b3f0917902dfa917822b9c8f6d90087152e8fa75747bf15",
+    "backend/app/semantics/fixtures.py": "97960735bb7e58fd6bf12f2aad4e652d35c6c5ec9dc34444d7d633f7e30fd143",
+    "backend/app/semantics/models.py": "4bf0210e2afc54aaa9a5e52e58243c61e2542ef90e1696b77ecf67c9b31b7605",
+    "backend/app/semantics/normalization.py": "712bd902738150293b95cbb8967ecfba82c64808fb36e9be80c983cc7155ab62",
+    "backend/app/semantics/registry.py": "ae3335fd86bd677ba3d2f009f4582370558beea5b5b174ea95a06fe7bcd3d418",
+    "backend/app/semantics/__init__.py": "bdcd3ce085fffb912edbfc5af617a361e1d9fd4290e9d8812d56b974032a7391",
+    "docs/Orthodontic_TMT_Independent_Critical_Audit(2).md": "56f46c37f1c200dc20ff69f2518efb1241eb424baea6437d14a59a2afb86db9d",
+    "docs/FINOVA_RULE_ENGINE_V2_AUDIT_CORRECTED.md": "2b220bd601456fd58762e3d5da624698823b4a098b9513e26fedfa8939267ce4",
+    "docs/FINOVA_ARCHITECTURE_BLUEPRINT.md": "7f6d483864dc7516702bb4a8498acb483cf5bcc826a5553daf7202750be8ee17",
+    "docs/REPORT_PHASE3.md": "dde92773a5eb8ecf55c802b607a1db0edf1dd77355fc516d972ef01b3f445bb2",
+    "docs/PARSER_PHASE4_REPORT.md": "48548fe7f5bf44f0969196e4f155db3596e518a3b2ab81d932f2baaf651759a5",
+    "docs/RULE_ENGINE_PHASE5_REPORT.md": "06e2cc7ce1a205a123d725b979d74647a93dd811af5f43fe3ef1e82870083e21",
+    "docs/PLANNING_ASSISTANT_PHASE6B_REPORT.md": "8c917fecc9966121b5bac27c5bd63a8e02aac169d61c7c1f30996c5a58398931",
+    "docs/ATTACHMENT_INTERFACE_PHASE7_REPORT.md": "7da67d85714753c27ddb1f03d09bd005d74883891d6d90f1eee9497de18f9343",
+    "docs/SEQUENCER_PHASE8_REPORT.md": "c0bfae4171cfe15ae778ef739eaff9dc580a4b09e147f7a006c9b49e16757c9d"
+  }
+}

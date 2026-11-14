@@ -1,0 +1,47 @@
+[
+  {
+    "name": "mamani-figure2.png",
+    "url": "https://mdpi-res.com/jcm/jcm-13-04216/article_deploy/html/images/jcm-13-04216-g002.png",
+    "resolved_url": "https://mdpi-res.com/jcm/jcm-13-04216/article_deploy/html/images/jcm-13-04216-g002.png",
+    "bytes": 1297061,
+    "sha256": "3ad8420b834b6ea4c3f27030a48c086bf5eb9180f9b1d096e05d4266a27cb8c7",
+    "content_type": "image/png",
+    "status": "RETRIEVED"
+  },
+  {
+    "name": "mamani-figure2.jpg",
+    "url": "https://mdpi-res.com/jcm/jcm-13-04216/article_deploy/html/images/jcm-13-04216-g002-550.jpg",
+    "resolved_url": "https://mdpi-res.com/jcm/jcm-13-04216/article_deploy/html/images/jcm-13-04216-g002-550.jpg",
+    "bytes": 96751,
+    "sha256": "132a40a289b9bbca6365e16f36fbe19a46d07889cdb0b7db3f14a23f74a4ced5",
+    "content_type": "image/jpeg",
+    "status": "RETRIEVED"
+  },
+  {
+    "name": "sabouni-figure4.png",
+    "url": "https://apospublications.com/content/9/2026/16/3/img/APOS-16-236-g004.png",
+    "resolved_url": "https://apospublications.com/content/9/2026/16/3/img/APOS-16-236-g004.png",
+    "bytes": 1289956,
+    "sha256": "6c0e6d4e48cc925b5f7ce2f6e69114bfae728b67af49085173b571c9bafb67fc",
+    "content_type": "image/png",
+    "status": "RETRIEVED"
+  },
+  {
+    "name": "sabouni-figure4-earlier.png",
+    "url": "https://apospublications.com/content/9/2024/0/1/img/APOS-256-2024-g004.png",
+    "resolved_url": "https://apospublications.com/content/9/2024/0/1/img/APOS-256-2024-g004.png",
+    "bytes": 1295935,
+    "sha256": "47247b28ac210fcc7cf6ddd77b87ffe3c3dda137822fb10608ac4123e1f1881b",
+    "content_type": "image/png",
+    "status": "RETRIEVED"
+  },
+  {
+    "name": "mamani-original.pdf",
+    "url": "https://pdfs.semanticscholar.org/5bc5/3e7a2e358a61c1930a44b3ea3cbc25fa805f.pdf",
+    "resolved_url": "https://pdfs.semanticscholar.org/5bc5/3e7a2e358a61c1930a44b3ea3cbc25fa805f.pdf",
+    "bytes": 5511975,
+    "sha256": "d3d05586da37f0f1ad2033a81be5e6320c5f4f5f9a9dcc993cfdb7d9351b2c55",
+    "content_type": "application/pdf",
+    "status": "RETRIEVED"
+  }
+]

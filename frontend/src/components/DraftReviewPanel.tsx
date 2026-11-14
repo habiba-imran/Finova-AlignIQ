@@ -79,10 +79,10 @@ export default function DraftReviewPanel({ rawText, source, context, rawHash, re
         <option value="">Descriptive observations only</option>
         {ASSESSMENT_OPTIONS.map(([id, label]) => <option key={id} value={id}>{label}</option>)}
       </select>
-      <div className="mt-4"><button type="button" onClick={review} disabled={loading} aria-describedby="review-hint" className="button border border-brand bg-brand text-white disabled:bg-canvas disabled:text-muted">{loading ? 'Creating draft…' : 'Create draft review'}</button></div>
-      {loading && <p role="status" className="mt-3 text-sm text-muted">Checking review eligibility and preparing a draft…</p>}
-      {error && <p role="alert" className="mt-3 text-sm text-notice-ink">{error}</p>}
-      {report && <div className="mt-6" aria-label="Draft review results">
+      <div className="mt-4"><button type="button" onClick={review} disabled={loading} aria-describedby="review-hint" className="button border border-brand bg-brand text-white disabled:bg-canvas disabled:text-muted">{loading ? <><span className="button-spinner" aria-hidden="true" />Creating draft…</> : 'Create draft review'}</button></div>
+      {loading && <p role="status" className="motion-status mt-3 text-sm text-muted">Checking review eligibility and preparing a draft…</p>}
+      {error && <p role="alert" className="motion-status mt-3 text-sm text-notice-ink">{error}</p>}
+      {report && <div className="motion-enter mt-6" aria-label="Draft review results">
         <p role="status" className="rounded-lg border border-notice-line bg-notice p-4 text-sm leading-6 text-notice-ink">{report.notice}</p>
         <p className="mt-3 text-sm font-semibold">DRAFT — Requires Orthodontist Review</p>
         <p className="mt-1 text-xs leading-6 text-muted">Unavailable or disabled rules do not indicate a normal result. No clinical recommendation has been generated.</p>

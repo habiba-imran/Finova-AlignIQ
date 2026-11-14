@@ -44,7 +44,7 @@ test('Micro demo runs real validation, displays supplied choices and exports the
   expect(draft.export_text).toContain('RULE EVALUATION LEDGER')
   expect(draft.export_text).toContain('DRAFT — Requires Orthodontist Review')
   expect(requests.filter(url => !url.startsWith('blob:'))).toEqual([
-    'http://127.0.0.1:5173/api/v1/development/attachment-demo/input', 'http://127.0.0.1:5173/api/v1/development/attachment-demo/draft',
+    new URL('/api/v1/development/attachment-demo/input', page.url()).href, new URL('/api/v1/development/attachment-demo/draft', page.url()).href,
   ])
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)
   expect(await page.evaluate(() => [localStorage.length, sessionStorage.length])).toEqual([0, 0])
@@ -73,7 +73,7 @@ test('ordinary Micro input never derives an attachment or geometry from movement
   const article = page.getByRole('article', { name: 'Attachment review draft' })
   await expect(article.getByText('Unverified input — attachment recommendations unavailable.', { exact: true })).toBeVisible()
   await expect(article.getByRole('table').getByText('Supplied no attachment', { exact: true })).toHaveCount(0)
-  expect(requests).toEqual(['http://127.0.0.1:5173/api/v1/tmt/parse', 'http://127.0.0.1:5173/api/v1/attachments/draft'])
+  expect(requests).toEqual([new URL('/api/v1/tmt/parse', page.url()).href, new URL('/api/v1/attachments/draft', page.url()).href])
   expect(await page.getByLabel('Raw text preview').textContent()).toBe(raw)
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)
 })

@@ -1,5 +1,7 @@
 # Deployment guide — Vercel (frontend) + Render (backend)
 
+**Phase 9 clarification:** this is a configuration guide, not hosted-health or release-readiness evidence. See the [completion checklist](../FINOVA_PROJECT_COMPLETION_CHECKLIST.md). Production intentionally refuses fixed Macro/Micro/Nano demos and the synthetic generator. Use [local demonstration instructions](../README.md#demonstrate-all-three-modules-locally) for positive synthetic workflows. Receipt signing keys are process-local: use one backend process for recovery demonstrations, and reparse after restart or expiry. No clinical/patient deployment is authorized by this guide.
+
 This project deploys as two independent services:
 
 | Part | Stack | Host | Artifact |

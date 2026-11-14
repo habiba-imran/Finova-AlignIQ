@@ -52,7 +52,7 @@ test('final report uses templates for unverified data and copies/downloads a com
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)
   expect(await page.evaluate(() => [localStorage.length, sessionStorage.length])).toEqual([0, 0])
   expect(requests.filter(url => !url.startsWith('blob:'))).toEqual([
-    'http://127.0.0.1:5173/api/v1/tmt/parse', 'http://127.0.0.1:5173/api/v1/tmt/observations', 'http://127.0.0.1:5173/api/v1/reports/draft',
+    new URL('/api/v1/tmt/parse', page.url()).href, new URL('/api/v1/tmt/observations', page.url()).href, new URL('/api/v1/reports/draft', page.url()).href,
   ])
   await article.screenshot({ path: testInfo.outputPath('phase3-report.png') })
   await input.fill(raw + '\n')

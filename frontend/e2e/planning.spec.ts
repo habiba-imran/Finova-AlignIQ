@@ -53,8 +53,8 @@ test('fixed synthetic Planning Assistant completes the real pipeline and exports
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)
   expect(await page.evaluate(() => [localStorage.length, sessionStorage.length])).toEqual([0, 0])
   expect(requests.filter(url => !url.startsWith('blob:'))).toEqual([
-    'http://127.0.0.1:5173/api/v1/development/planning-demo/input',
-    'http://127.0.0.1:5173/api/v1/development/planning-demo/draft',
+    new URL('/api/v1/development/planning-demo/input', page.url()).href,
+    new URL('/api/v1/development/planning-demo/draft', page.url()).href,
   ])
   await article.screenshot({ path: testInfo.outputPath('planning-draft.png') })
   await page.getByRole('textbox', { name: 'Raw TMT text' }).fill(input.parsed.raw_text + '\nChanged')
@@ -82,7 +82,7 @@ test('ordinary unknown vendor input abstains, cannot select comments and perform
   for (const dimension of ['Sagittal', 'Transverse', 'Vertical']) await expect(article.getByRole('region', { name: `${dimension} review` })).toContainText('No sufficiently authorized descriptions')
   await expect(article.getByRole('button', { name: 'Copy selected comments' })).toBeDisabled()
   await expect(article.getByRole('checkbox')).toHaveCount(0)
-  expect(requests).toEqual(['http://127.0.0.1:5173/api/v1/tmt/parse', 'http://127.0.0.1:5173/api/v1/planning/draft'])
+  expect(requests).toEqual([new URL('/api/v1/tmt/parse', page.url()).href, new URL('/api/v1/planning/draft', page.url()).href])
   expect(await page.getByLabel('Raw text preview').textContent()).toBe(raw)
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)
 })

@@ -32,7 +32,7 @@ test('explicit parse preserves raw text and returns exact lexical values through
   })
   expect(styles).toEqual({ whiteSpace: 'pre-wrap', overflowWrap: 'anywhere', tabSize: '4' })
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)
-  expect(requests).toEqual(['http://127.0.0.1:5173/api/v1/tmt/parse'])
+  expect(requests).toEqual([new URL('/api/v1/tmt/parse', page.url()).href])
   expect(await page.evaluate(() => [localStorage.length, sessionStorage.length])).toEqual([0, 0])
   expect(runtimeErrors).toEqual([])
   await input.fill(raw + '\n')

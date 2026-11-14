@@ -1,6 +1,95 @@
 # Finova AlignIQ
 
-Phase 8 adds **Sequencer / Nano Review**: separate upper/lower arch, segment and right/left anchorage sections, missing-stage explanations, a fixed fictional demonstration and exact DRAFT copy/TXT export. Macro Planning Assistant and Micro Attachment Interface remain available. **Prototype — not for clinical use. Do not paste real patient data.** See [the Phase 8 report](SEQUENCER_PHASE8_REPORT.md), [the Phase 7 report](ATTACHMENT_INTERFACE_PHASE7_REPORT.md) and [the Phase 6B report](docs/PLANNING_ASSISTANT_PHASE6B_REPORT.md).
+All three module workflows are available as **synthetic engineering prototypes**, with the finished OpenCode UI preserved. **Prototype — not for clinical use. Do not paste real patient data.** Start with the [final demo guide](FINOVA_FINAL_DEMO_GUIDE.md), [final integration report](FINOVA_FINAL_INTEGRATION_REPORT.md), [public-reference evaluation](FINOVA_PUBLIC_TMT_REFERENCE_EVALUATION.md) and [completion checklist](FINOVA_PROJECT_COMPLETION_CHECKLIST.md). The [Phase 9 audit](FINOVA_PHASE9_FUNCTIONAL_AUDIT.md) and [23-gap matrix](FINOVA_PMCEASY_FINAL_GAP_MATRIX.md) remain historical evaluation snapshots; current counts are in the final integration report. Historical implementation details are in [Phase 8](docs/SEQUENCER_PHASE8_REPORT.md), [Phase 7](docs/ATTACHMENT_INTERFACE_PHASE7_REPORT.md) and [Phase 6B](docs/PLANNING_ASSISTANT_PHASE6B_REPORT.md).
+
+Final acceptance: **970 backend tests, 190 frontend tests and 140 Chromium tests across five widths passed**; TypeScript/build, 32 unchanged schemas and dependency checks passed. The local academic prototype is finalized. Clinical/vendor release and public deployment remain unapproved.
+
+## Current architecture and capability
+
+| Component | Real engineering functionality | Boundary |
+| --- | --- | --- |
+| Input/parser | Generic deterministic rows/columns/Markdown, exact Decimal/raw spans, classification and bounded generated-synthetic recovery | Native vendor clipboard compatibility and canonical source semantics remain unverified. |
+| Evidence/rules | Field-scoped admission/refusal; 96-rule ledger and deterministic descriptive/engineering guards | 27 clinical predicates stay disabled; no unapproved policies or vendor releases. |
+| Macro | Rule-derived descriptive comments, conservative dimensions, selection/copy/full TXT | No clinical CAD-change prescriptions. |
+| Micro | Source-bound attachment table, scenario validation, alternatives/unknown/withheld and export | Displayed positive choices/geometry are supplied fictional data. |
+| Nano | Arch/segment/side sections, supplied stage metadata integrity checks and export | Strategy notes are supplied; no movement binding, force, optimized order or clinical sequence. |
+| Groq | Separate backend-only keys for certified structural proposals and approved phrase selection; deterministic fallback | No unrestricted clinical reasoning or patient-data permission. No live call needed for demonstration. |
+| Public references | Reproducible offline lexical check of re-typeset published cells, independently reviewed figure provenance | No website upload, synthetic declaration, semantic release or clinical authority. |
+
+Application flow: **explicit parse → optional authorized structural recovery → evidence/semantic gates → engineering rules → templates/closed wording → DRAFT export**. The public-reference evaluator is a separate developer CLI using existing lexical-library input only. See the preserved UI reports: [Part 1](docs/UI_REFINEMENT_PART1_REPORT.md), [Part 2](docs/UI_REFINEMENT_PART2_REPORT.md), [Part 3](docs/UI_REFINEMENT_PART3_REPORT.md).
+
+## Published-reference test
+
+The supplied PDF and 196-cell CSV are in [references/public_tmt](references/public_tmt/README.md). They are published screenshot-derived references, **not original clipboard data or synthetic patient cases**. Do not paste them into the synthetic-only website. Run the offline check instead:
+
+```powershell
+Set-Location 'C:\Finova AlignIQ'
+.\backend\.venv\Scripts\python.exe backend/scripts/evaluate_public_tmt.py --write-fixtures --output evidence/final/public-reference-evaluation.json
+```
+
+The parser preserves **196/196** supplied positions; **195/196** supplied values agree with the original figures. Mamani tooth 25 angulation is `24D` in the supplied files versus `2.4 D` in the original. Originals stay unchanged; a separately labeled correction overlay records the difference. Four label families remain unsupported and all semantic eligibility stays disabled. See the [evaluation report](FINOVA_PUBLIC_TMT_REFERENCE_EVALUATION.md) for exact denominators, source/licenses and limits. No dependency, provider call or clinical rule activation is needed for this command.
+
+## Final acceptance commands
+
+```powershell
+Set-Location 'C:\Finova AlignIQ\backend'
+.\.venv\Scripts\python.exe -m pytest -q
+.\.venv\Scripts\python.exe -m pip check
+
+Set-Location 'C:\Finova AlignIQ\frontend'
+npm test
+npm run build
+npm run test:e2e -- --config=playwright.final.config.ts --output=../evidence/final/browser-results
+npm audit --audit-level=high
+```
+
+The final browser configuration runs the complete production-bundle suite at **1440/1024/768/672/375 px**, using fresh owned loopback ports 8019/5179 and no Groq calls. Existing ordinary dev servers are left alone; leave the audit ports free. Current results, dependency/security checks and remaining defects/limits are in the [final integration report](FINOVA_FINAL_INTEGRATION_REPORT.md). The earlier four-width Phase 9 command below remains available. No deployment, commit or push is part of finalization.
+
+## Demonstrate all three modules locally
+
+After installing the dependencies below, start one backend in terminal 1. These flags expose only bundled fictional examples; keep them disabled in production. No credentials or provider calls are needed:
+
+```powershell
+Set-Location 'C:\Finova AlignIQ\backend'
+$env:FINOVA_ENVIRONMENT = 'development'
+$env:FINOVA_PLANNING_DEMO_ENABLED = 'true'
+$env:FINOVA_ATTACHMENT_DEMO_ENABLED = 'true'
+$env:FINOVA_SEQUENCER_DEMO_ENABLED = 'true'
+$env:FINOVA_GROQ_SYNTHETIC_ENABLED = 'false'
+$env:FINOVA_PARSER_GROQ_ENABLED = 'false'
+.\.venv\Scripts\python.exe -m uvicorn app.main:app --host 127.0.0.1 --port 8000 --no-access-log
+```
+
+Start terminal 2:
+
+```powershell
+Set-Location 'C:\Finova AlignIQ\frontend'
+npm run dev
+```
+
+Open [the local workspace](http://127.0.0.1:5173). Stop an older server before starting another on the same port.
+
+| Purpose | Load | Next action and demonstration |
+| --- | --- | --- |
+| Macro / Planning | Load Finova planning demo | Choose Deterministic templates, then Run Planning Assistant. Inspect rule-derived descriptions, select eligible comments, copy selected/full DRAFT or download TXT. |
+| Micro / Attachments | Load Finova attachment demo | Run Attachment Review. Inspect supplied fictional candidates/alternative/no-attachment, distinct unknown/withheld rows, evidence and DRAFT export. |
+| Nano / Sequencing | Load Finova sequencing demo | Run Sequencing Review. Inspect fictional arch/segment/right-left notes, structural stage checks, missing movement binding and DRAFT export. |
+
+**Fixed demos arrive parsed. Run the module action next.** Editing, changing purpose or choosing Parse Table clears the loaded demo path. Loading the selected module's demo again restores its fixed example. Pasting the same text through normal intake intentionally remains UNVERIFIED.
+
+For an independent-input demonstration, load the ordinary synthetic example or paste your own synthetic table, confirm it and choose Parse Table. Exact lexical values are processed independently, but unreleased vendor semantics cause clinical output to be withheld. Macro descriptions are derived from eligible engine findings; Micro choices and Nano strategies are authored examples, not calculated clinical recommendations. None of the three implements clinical treatment planning or verified vendor compatibility.
+
+Phase 9 reproduction: run `backend/.venv/Scripts/python.exe backend/scripts/audit_phase9.py` from the repository root for provider-free probes. Full test commands remain below; the [audit](FINOVA_PHASE9_FUNCTIONAL_AUDIT.md#verification) records the final counts, live synthetic smoke limits and environmental caveats.
+
+For browser acceptance against the built bundle and fresh isolated servers (without stopping an existing development session):
+
+```powershell
+Set-Location 'C:\Finova AlignIQ\frontend'
+npm run build
+npm run test:e2e -- --config=playwright.audit.config.ts --output=../evidence/phase9/production-browser-results
+```
+
+This runs the complete existing suite at 1440/1024/768/375 px, with additional responsive checks at 672 px. It starts/stops its own loopback backend on 8019 and preview on 5179, enables only the fixed synthetic demos and disables both Groq services. Leave those two ports free. The ordinary development test command remains available below. Neither harness increases test timeouts or enables retries.
 
 Choose **Macro** → paste synthetic TMT → confirm synthetic input → **Parse Table** → inspect exact values → **Run Planning Assistant** → review Sagittal / Transverse / Vertical / Other / Unavailable → select and copy eligible comments or copy/download the complete DRAFT. Choose **Micro** for Attachment Interface or **Nano** for Sequencer, described below. Review passes are not aligner stages and do not determine what a patient needs. Earlier separate Macro review/report controls remain under **Advanced** after parsing.
 
@@ -26,9 +115,9 @@ See [the Phase 1 architecture and contract](docs/PARSER_PHASE1.md) for the schem
 
 Phase 1.5 added a separate offline/library semantic assessment, strict fixture/review contracts, read-only oracle verification and an **empty** code-controlled release registry. These remain unchanged, as do all existing schemas. See [the Phase 1.5 architecture and compatibility review](docs/PARSER_PHASE1_5.md) and [the precise authentic-capture workflow/matrix](backend/vendor_verification/README.md). Authentic captures, independently reviewed vendor expected outputs and approved releases are all **zero**.
 
-## Deployment
+## Deployment configuration
 
-Production hosting is split: the Vite frontend on Vercel and the FastAPI backend on Render, connected by a Vercel `/api` rewrite. See [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) for the step-by-step guide, required environment variables, verification commands and free-tier caveats. The checked-in `render.yaml` and `frontend/vercel.json` contain the defaults (replace the placeholder Render URL before deploying the frontend).
+The repository includes configuration for a Vercel frontend and Render backend connected by an `/api` rewrite. This is configuration, not evidence of a healthy deployed application. Verify the configured destination before any separately authorized deployment. See the [deployment guide](docs/DEPLOYMENT.md) and [release-readiness checklist](FINOVA_PROJECT_COMPLETION_CHECKLIST.md). Production disables the positive fixed demos; use the local development procedure above for the final demonstration. No deployment was performed by Phase 9.
 
 ## Prerequisites
 
@@ -231,7 +320,7 @@ All three documents now supplied in `docs/` were read completely before Phase 1 
 
 The audit/corrected v2 override older ideas. READY does not mean clinically validated. Manufacturer configurations never become biological thresholds. Planned movement does not prove achieved movement, safety, anatomy, sequence, attachments, IPR, occlusion, collisions, prognosis or treatment outcomes. Phase 1 still returns lexical evidence only. Phase 2A separates descriptive rule evaluation and draft safeguards; clinical predicates stay disabled and vendor observations stay unavailable.
 
-## Current project tree
+## Historical early-phase project tree
 
 ```text
 Finova AlignIQ/
@@ -461,7 +550,7 @@ Phase 4 validation: **584 backend tests, 104 frontend tests, 40 browser tests, T
 
 The UI now includes a collapsible 96-rule evaluation ledger, missing prerequisites, execution/implementation kind, approval status, literature IDs and field provenance. Descriptive programmed movements remain separate from unavailable clinical assessments. **DRAFT — Requires Orthodontist Review** and the absence of clinical approval remain visible. Copy Report and Download Report (TXT) are preserved.
 
-The [Phase 5 report](RULE_ENGINE_PHASE5_REPORT.md) includes the complete implementation matrix, dependencies/priorities, schema changes, additional-input designs, changed files and precise remaining blockers. All 27 clinical predicates remain disabled. D16, N11 and N14 remain deferred. Tooth-group/status, pairing, expected-coverage and stage positive examples use private, exact-input-bound TEST_ONLY evidence; no public request, environment setting or Groq output can grant clinical or semantic authorization. A READY audit disposition or an ACTIVE engineering guard is not clinical approval. No thresholds were populated.
+The [Phase 5 report](docs/RULE_ENGINE_PHASE5_REPORT.md) includes the complete implementation matrix, dependencies/priorities, schema changes, additional-input designs, changed files and precise remaining blockers. All 27 clinical predicates remain disabled. D16, N11 and N14 remain deferred. Tooth-group/status, pairing, expected-coverage and stage positive examples use private, exact-input-bound TEST_ONLY evidence; no public request, environment setting or Groq output can grant clinical or semantic authorization. A READY audit disposition or an ACTIVE engineering guard is not clinical approval. No thresholds were populated.
 
 Rebuild documentation/schemas and run the complete checks in PowerShell:
 
@@ -485,6 +574,6 @@ Set-Location 'C:\Finova AlignIQ'
 graphify update .
 ```
 
-Current validation: **781 backend tests, 112 frontend tests, 40 browser tests, TypeScript and production build passed**. `pip check` passed; npm audit reports **0 vulnerabilities** after patching Vite to 7.3.8 and Vitest to 4.1.12. The AST-only graph update performs no LLM extraction. Existing upstream Starlette/httpx and test color-environment warnings remain non-failing. No live Groq call was needed for Phase 5.
+Historical Phase 5 validation: **781 backend tests, 112 frontend tests, 40 browser tests, TypeScript and production build passed**. `pip check` passed; npm audit reports **0 vulnerabilities** after patching Vite to 7.3.8 and Vitest to 4.1.12. The AST-only graph update performs no LLM extraction. Existing upstream Starlette/httpx and test color-environment warnings remain non-failing. No live Groq call was needed for Phase 5.
 
 Inspect [the complete synthetic draft report](examples/phase5-synthetic-draft-report.txt) and [its finding JSON](examples/phase5-synthetic-finding.json). These are explicitly synthetic TEST_ONLY illustrations; they provide no vendor or clinical validation. Authentic captures/independent expected outputs, versioned vendor semantic releases, approved clinical policies and additional verified examination/geometry data remain required. Phase 5 stops here.

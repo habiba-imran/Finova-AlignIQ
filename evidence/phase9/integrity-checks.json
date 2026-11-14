@@ -1,0 +1,21 @@
+{
+  "schema_count": 32,
+  "schema_regeneration_identical": true,
+  "changed_schemas": [],
+  "current_document_broken_file_links": [],
+  "frontend_source_and_bundle_secret_pattern_matches": [],
+  "ignored_secret_file": true,
+  "limits": "Pattern scan is not exhaustive secret detection; local log links refer to ignored QA artifacts. Historical relocated documents are interpreted by the Phase 9 reconciliation.",
+  "final_frontend_source_unchanged": true,
+  "changed_frontend_files": [],
+  "production_assets": {
+    "frontend/dist/favicon.svg": "babebe639d813c4596b7ade228569665bc8bc262b9a2c22cd597da1b17db723e",
+    "frontend/dist/index.html": "b4ee72fdbafcfcabe3adab120266628c4b76cfbd49460402417339f2d96cdacb",
+    "frontend/dist/assets/index-BFarzIif.css": "f739e747db5a91c058d36af0673f904a49930ec0aa16fd721605cbf0c5d2a480",
+    "frontend/dist/assets/index-Cc_dyIp6.js": "b035a6bf9642a7d2c87d0feb41bf3adfc35411f178997a32ec14a8d60c465c00"
+  },
+  "post_browser_snapshot_drift": {
+    "evidence/phase9/backend-source-snapshot.json": [],
+    "evidence/phase9/frontend-source-snapshot.json": []
+  }
+}

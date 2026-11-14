@@ -1,0 +1,15 @@
+{
+  "snapshot_file_count": 148,
+  "changed_since_snapshot": [],
+  "reference_hashes": {
+    "references/public_tmt/FINOVA_Public_TMT_Verification_Pack.pdf": "8260592a37477351af30f1fd1e98e78dc03847968f2a32870a08bbff9c5a3bca",
+    "references/public_tmt/FINOVA_Published_TMT_Values_Reference.csv": "4747683f3ee07fdf8c5bf0994269b378e4a8542c8323c96837ade9625789e980"
+  },
+  "references_unchanged": true,
+  "source_bundle_scanned_files": 54,
+  "groq_key_pattern_matching_files": [],
+  "backend_env_local_ignored": true,
+  "git_diff_check_exit_code": 0,
+  "git_diff_check_stdout": "",
+  "limits": "Key-pattern scan is not exhaustive secret detection; only named files/source scope checked."
+}

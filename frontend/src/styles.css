@@ -5,6 +5,11 @@
 :root {
   --font-mono: "Cascadia Code", Consolas, "Liberation Mono", monospace;
   --color-brand: #087c72;
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ease-out-soft: cubic-bezier(0.16, 1, 0.3, 1);
+  --motion-hover: 140ms;
+  --motion-control: 180ms;
+  --motion-enter: 220ms;
 }
 
 @layer base {
@@ -16,24 +21,155 @@
 }
 
 @layer components {
-  .panel { @apply overflow-hidden rounded-xl border border-line bg-white shadow-[0_2px_6px_#1b303b03]; }
-  .panel-heading { @apply flex min-h-16 items-center justify-between gap-3 border-b border-line px-5 text-sm sm:px-6; }
-  .button { @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-lg px-3.5 py-2.5 text-xs font-semibold transition-colors motion-reduce:transition-none; }
-  .button-example { @apply border border-brand/20 bg-brand-soft text-brand hover:bg-[#d5ebe5]; }
-  .button-clear { @apply border border-line bg-white text-muted enabled:hover:bg-canvas disabled:opacity-50; }
+  .app-shell { @apply mx-auto w-full max-w-[1200px] px-5 sm:px-8; }
+
+  .panel { @apply overflow-hidden rounded-xl border border-line bg-white shadow-panel; }
+  .panel-heading { @apply flex min-h-14 flex-wrap items-center justify-between gap-3 border-b border-line px-5 py-3 sm:px-6; }
+  .panel-title { @apply flex min-w-0 items-center gap-2.5 text-[17px] font-semibold tracking-[-0.01em]; }
+
+  .section-heading { @apply mb-3 flex flex-wrap items-baseline gap-x-3 gap-y-1; }
+  .section-number { @apply text-[11px] font-semibold tracking-[0.16em] text-brand; }
+  .section-title { @apply text-[17px] font-semibold tracking-[-0.015em] sm:text-lg; }
+  .section-note { @apply text-xs leading-5 text-muted; }
+  .section-kicker { @apply text-[11px] font-semibold uppercase tracking-[0.14em] text-muted; }
+
+  .module-tabs { @apply relative grid w-full grid-cols-3 gap-1.5 rounded-xl border border-line bg-white p-1.5 shadow-panel sm:max-w-[640px]; }
+  .module-tab-indicator {
+    position: absolute;
+    top: 0.375rem;
+    bottom: 0.375rem;
+    left: 0.375rem;
+    width: calc((100% - 1.5rem) / 3);
+    border: 1px solid rgb(8 124 114 / 0.28);
+    border-radius: 0.5rem;
+    background: #e6f3f0;
+    transform: translateX(calc(var(--module-index, 0) * (100% + 0.375rem)));
+    transition: transform var(--motion-control) var(--ease-standard);
+    pointer-events: none;
+  }
+  .module-tab { @apply relative z-[1] flex min-h-12 min-w-0 flex-col items-center justify-center rounded-lg border border-transparent px-2 py-2 text-center; transition: color var(--motion-control) var(--ease-standard), background-color var(--motion-control) var(--ease-standard), transform var(--motion-hover) var(--ease-standard); }
+  .module-tab:not(.module-tab-active):hover { background-color: rgb(245 247 247 / 0.8); }
+  .module-tab:active { transform: translateY(1px); }
+  .module-tab-active { @apply text-brand; }
+  .module-tab-code { @apply text-[11px] font-semibold uppercase leading-4 tracking-[0.12em]; }
+  .module-tab-label { @apply mt-0.5 text-[13px] font-semibold leading-5; }
+
+  .button { @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-transparent px-3.5 py-2.5 text-[13px] font-semibold leading-5 disabled:cursor-not-allowed disabled:opacity-50; transition: background-color var(--motion-hover) var(--ease-standard), border-color var(--motion-hover) var(--ease-standard), color var(--motion-hover) var(--ease-standard), box-shadow var(--motion-hover) var(--ease-standard), transform 120ms var(--ease-standard); }
+  .button:enabled:active { transform: translateY(1px); }
+  .button-spinner { width: 0.875rem; height: 0.875rem; flex: none; border-radius: 9999px; border: 2px solid currentColor; border-top-color: transparent; animation: control-spin 700ms linear infinite; }
+  .button-primary { @apply border-brand bg-brand text-white shadow-panel enabled:hover:bg-brand-deep; }
+  .button-primary:disabled { @apply border-line bg-canvas text-muted shadow-none; }
+  .button-secondary { @apply border-line bg-white text-ink enabled:hover:border-field enabled:hover:bg-canvas; }
+  .button-accent { @apply border-brand/25 bg-brand-soft text-brand enabled:hover:bg-[#d8ece7]; }
+  .button-danger { @apply border-line bg-white text-danger enabled:hover:border-danger-line enabled:hover:bg-danger-soft; }
+  .button-example { @apply border-brand/25 bg-brand-soft text-brand enabled:hover:bg-[#d8ece7]; }
+  .button-clear { @apply border-line bg-white text-ink enabled:hover:border-field enabled:hover:bg-canvas; }
+
   .skip-link { @apply fixed top-3 left-3 z-50 -translate-y-24 rounded-lg bg-ink px-4 py-3 text-sm text-white focus:translate-y-0; }
-  .context-control { @apply min-h-11 w-full rounded-lg border border-field bg-white px-3 py-2 text-xs; }
-  .purpose-card { @apply min-w-0 rounded-xl border border-line bg-white p-5 text-left transition-colors hover:border-brand; }
-  .purpose-active { @apply border-brand bg-brand-soft shadow-[inset_0_3px_0_#087c72]; }
+  .context-control { @apply min-h-11 w-full rounded-lg border border-field bg-white px-3 py-2 text-sm leading-5; transition: border-color var(--motion-hover) var(--ease-standard), background-color var(--motion-hover) var(--ease-standard); }
+  .context-control:focus, #intake:focus, select:focus, textarea:focus { border-color: var(--color-brand); }
   .dimension-panel { @apply min-w-0 rounded-xl border border-line bg-canvas p-4; }
-  .comment-card { @apply min-w-0 rounded-lg border border-line bg-white p-4; }
-  .technical-details { @apply mt-4 min-w-0 rounded-xl border border-line bg-white p-5; }
+  .comment-card { @apply min-w-0 rounded-lg border border-line bg-white p-4; transition: border-color var(--motion-hover) var(--ease-standard), background-color var(--motion-hover) var(--ease-standard); }
+  .comment-card:focus-within { border-color: #b9dcd5; background-color: #fbfdfc; }
+  .technical-details { @apply mt-4 min-w-0 rounded-xl border border-line bg-white p-4 sm:p-5; }
   .technical-details > summary { @apply cursor-pointer text-sm font-medium; }
-  .workflow-steps { @apply grid grid-cols-2 gap-3 rounded-xl border border-line bg-white p-4 lg:grid-cols-4; }
-  .workflow-steps li { @apply flex items-center gap-3 text-xs text-muted; }
-  .workflow-steps li > span { @apply flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-line font-semibold; }
-  .workflow-steps li[aria-current] { @apply font-semibold text-brand; }
-  .workflow-steps li[aria-current] > span { @apply border-brand bg-brand text-white; }
+
+  .workflow-steps { @apply grid grid-cols-2 gap-2 rounded-xl border border-line bg-white p-2 lg:grid-cols-4; }
+  .workflow-step { @apply flex min-w-0 items-center gap-2.5 rounded-lg px-2.5 py-2.5 sm:gap-3 sm:px-3; transition: background-color var(--motion-control) var(--ease-standard); }
+  .workflow-step[data-state="active"] { @apply bg-brand-soft; }
+  .workflow-index { @apply flex h-7 w-7 shrink-0 items-center justify-center rounded-full border text-[11px] font-semibold tabular-nums; transition: background-color var(--motion-control) var(--ease-standard), border-color var(--motion-control) var(--ease-standard), color var(--motion-control) var(--ease-standard), transform var(--motion-control) var(--ease-standard); }
+  .workflow-step[data-state="complete"] .workflow-index { @apply border-brand bg-brand text-white; animation: step-settle var(--motion-enter) var(--ease-out-soft); }
+  .workflow-step[data-state="active"] .workflow-index { @apply border-brand bg-white text-brand; }
+  .workflow-step[data-state="pending"] .workflow-index { @apply border-line bg-white text-placeholder; }
+  .workflow-title { @apply block text-[13px] font-semibold leading-5; transition: color var(--motion-control) var(--ease-standard); }
+  .workflow-step[data-state="active"] .workflow-title { @apply text-brand; }
+  .workflow-state { @apply block text-xs leading-4 text-muted; }
+  .workflow-step[data-state="active"] .workflow-state { @apply text-brand/80; }
+
+  /* Shared report presentation. These classes are visual only and never change result data. */
+  .report-header { @apply border-b border-line bg-white px-5 py-5 sm:px-7 sm:py-6; }
+  .report-eyebrow { @apply text-[11px] font-semibold uppercase tracking-[0.16em] text-brand; }
+  .report-title { @apply mt-1 text-2xl font-semibold leading-tight tracking-[-0.025em] sm:text-[28px]; }
+  .report-status-line { @apply mt-2 text-sm font-semibold text-notice-ink; }
+  .report-badge { @apply inline-flex items-center rounded-md border border-line bg-canvas px-2 py-1 text-[11px] font-semibold leading-4 text-muted; }
+  .report-badge-draft { @apply border-notice-line bg-notice text-notice-ink; }
+  .report-badge-notice { @apply border-notice-line bg-notice text-notice-ink; }
+  .report-badge-danger { @apply border-danger-line bg-danger-soft text-danger; }
+  .report-badge-brand { @apply border-brand/25 bg-brand-soft text-brand; }
+
+  .summary-grid { @apply grid grid-cols-2 gap-2 sm:grid-cols-3 xl:grid-cols-4; }
+  .summary-metric { @apply min-w-0 rounded-lg border border-line bg-canvas px-3 py-2.5; }
+  .summary-metric-notice { @apply border-notice-line bg-notice; }
+  .summary-metric-danger { @apply border-danger-line bg-danger-soft; }
+  .summary-label { @apply text-[11px] font-semibold leading-4 text-muted; }
+  .summary-value { @apply mt-1 text-xl font-semibold tabular-nums tracking-[-0.02em]; }
+  .summary-detail { @apply mt-0.5 text-[11px] leading-4 text-muted; }
+
+  .report-section { @apply min-w-0 rounded-xl border border-line bg-white p-4 sm:p-5; }
+  .report-section-notice { @apply border-notice-line bg-notice; }
+  .report-section-danger { @apply border-danger-line bg-danger-soft; }
+  .report-section-heading { @apply flex flex-wrap items-start justify-between gap-2; }
+  .report-section-title { @apply text-lg font-semibold leading-6 tracking-[-0.01em]; }
+  .report-section-note { @apply mt-1 text-xs leading-5 text-muted; }
+
+  .evidence-disclosure { @apply mt-3 min-w-0 rounded-lg border border-line bg-canvas px-3 py-2.5 text-xs leading-6 text-muted; }
+  .evidence-disclosure > summary { @apply cursor-pointer font-medium text-ink; }
+  .evidence-content { @apply mt-2 min-w-0; }
+
+  .export-bar { @apply mt-5 rounded-xl border border-line bg-white p-4 sm:p-5; }
+  .export-bar-heading { @apply mb-3 flex flex-wrap items-baseline gap-x-3 gap-y-1; }
+  .export-bar-title { @apply text-[17px] font-semibold tracking-[-0.01em]; }
+  .export-bar-note { @apply text-xs leading-5 text-muted; }
+  .export-bar-actions { @apply flex flex-wrap items-center gap-2; }
+
+  .movement-scroll { @apply max-h-[32rem] overflow-auto rounded-xl border border-line bg-white; scrollbar-gutter: stable; overscroll-behavior: contain; }
+  .movement-table { @apply w-full min-w-[980px] border-collapse text-left text-xs leading-5; }
+  .movement-table thead { @apply sticky top-0 z-10 bg-canvas text-muted; }
+  .movement-table th { @apply whitespace-nowrap p-3 font-semibold; }
+  .movement-table td { @apply p-3 align-top; }
+  .movement-table tbody tr { @apply border-t border-line; transition: background-color var(--motion-hover) var(--ease-standard); }
+  .movement-table tbody tr:hover, .movement-table tbody tr:focus-within { background-color: #f7faf9; }
+  .movement-value { @apply text-sm font-semibold tabular-nums text-ink; }
+  .movement-number { @apply tabular-nums; }
+  .attachment-scroll { scrollbar-gutter: stable; overscroll-behavior: contain; }
+  .attachment-table tbody tr { transition: background-color var(--motion-hover) var(--ease-standard); }
+  .attachment-table tbody tr:hover, .attachment-table tbody tr:focus-within { background-color: #f9fbfb; }
+
+  .diagnostic-panel { @apply min-w-0 rounded-xl border border-line bg-canvas p-4 sm:p-5; }
+  .diagnostic-disclosure { @apply mt-3 rounded-lg border border-line bg-white p-3; }
+  .diagnostic-disclosure > summary { @apply cursor-pointer text-xs font-medium text-ink; }
+  .diagnostic-list { @apply mt-3 max-h-72 space-y-2 overflow-auto text-xs leading-5; }
+  .preview-disclosure { @apply mt-0; }
+  .preview-frame { @apply mt-3 rounded-lg border border-line bg-canvas; }
+
+  .motion-enter { animation: result-enter var(--motion-enter) var(--ease-out-soft) both; }
+  .motion-delay-1 { animation-delay: 40ms; }
+  .motion-status { animation: status-in var(--motion-control) var(--ease-out-soft) both; }
+  .motion-swap { animation: swap-in var(--motion-control) var(--ease-out-soft) both; }
+}
+
+/* Disclosures keep native HTML behaviour; only opened content receives a brief fade. */
+details > summary { transition: color var(--motion-hover) var(--ease-standard); }
+details > summary:hover { color: var(--color-brand); }
+details[open] > summary ~ * { animation: disclosure-in var(--motion-enter) var(--ease-out-soft); }
+
+@keyframes control-spin { to { transform: rotate(360deg); } }
+@keyframes step-settle { from { transform: scale(0.9); } to { transform: scale(1); } }
+@keyframes result-enter { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes disclosure-in { from { opacity: 0; transform: translateY(-2px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes status-in { from { opacity: 0; transform: translateY(-2px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes swap-in { from { opacity: 0; transform: translateY(3px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Decorative motion is optional. All state, content and focus remain immediately available. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .module-tab-indicator { transition: none !important; }
 }
 
 /* Rendering only: never transform raw text to simulate a table. */
@@ -48,11 +184,13 @@
 /* Keep the off-screen skip link clipped during scrolled/element captures too. */
 .skip-link:not(:focus) { clip-path: inset(50%); }
 
-/* Preserve the semantic table while stacking each tooth's cells on narrow screens. */
-@media (max-width: 639px) {
+/* Preserve the semantic table while stacking each tooth into a readable card through tablet widths. */
+@media (max-width: 1023px) {
   .attachment-table, .attachment-table tbody, .attachment-table tr,
   .attachment-table th, .attachment-table td { display: block; width: 100%; }
   .attachment-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
-  .attachment-table tbody tr { padding: 12px 0; }
+  .attachment-table tbody { padding: 12px; }
+  .attachment-table tbody tr { margin-bottom: 12px; padding: 6px 0; border: 1px solid #dee5e9; border-radius: 12px; background: #fff; }
+  .attachment-table tbody tr:last-child { margin-bottom: 0; }
   .attachment-table th, .attachment-table td { padding: 8px 16px; overflow-wrap: anywhere; }
 }

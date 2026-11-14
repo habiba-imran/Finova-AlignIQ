@@ -1,0 +1,100 @@
+{
+  "date": "2026-11-14",
+  "timezone": "Asia/Karachi",
+  "verdict": "FINALIZED_BOUNDED_LOCAL_ACADEMIC_PROTOTYPE",
+  "backend": {
+    "passed": 970,
+    "warning": "one upstream Starlette/httpx deprecation warning",
+    "log": "backend-tests.log"
+  },
+  "frontend": {
+    "passed": 190,
+    "test_files": 13,
+    "log": "frontend-tests.log"
+  },
+  "typescript_and_production_build": {
+    "passed": true,
+    "modules": 1915,
+    "log": "build.log"
+  },
+  "browser": {
+    "passed": 140,
+    "failed": 0,
+    "skipped": 0,
+    "retries": 0,
+    "scenarios_per_width": 28,
+    "widths": [
+      1440,
+      1024,
+      768,
+      672,
+      375
+    ],
+    "elapsed": "6.4m",
+    "harness": "isolated production preview plus fresh real backend; Groq disabled",
+    "visual_review": "all three module intake and result/export captures reviewed at each width",
+    "log": "browser-tests.log"
+  },
+  "schemas": {
+    "count": 32,
+    "identical": true,
+    "record": "schema-check.json"
+  },
+  "dependencies": {
+    "pip_check": "passed",
+    "npm_resolution": "passed",
+    "npm_known_vulnerabilities": 0,
+    "python_pinned_requirements": "no known vulnerabilities",
+    "changed": false,
+    "limitation": "Audit-time knowledge only; Python requirements not fully hashed."
+  },
+  "public_references": {
+    "reviewed_cells": 196,
+    "csv_agrees_with_original": 195,
+    "transcription_conflicts": 1,
+    "primary_exact_lexical_positions": 196,
+    "numeric_positions": 182,
+    "explicit_zeroes": 8,
+    "dashes": 14,
+    "label_supported_positions": 84,
+    "label_unsupported_positions": 112,
+    "semantic_eligible_positions": 0,
+    "provider_calls": 0,
+    "vendor_releases": 0,
+    "record": "public-reference-evaluation.json",
+    "source_files_preserved": true,
+    "limitations": "Re-typeset supported TSV, not vendor clipboard; one-agent visual review, not clinical adjudication."
+  },
+  "vendor_gate": {
+    "exit_code": 2,
+    "status": "NO_AUTHENTIC_ORACLES",
+    "reviewed_captures": 0,
+    "compatibility_verified": false,
+    "log": "vendor-gate.log"
+  },
+  "graphify": {
+    "update_exit_code": 0,
+    "nodes": 1252,
+    "edges": 4428,
+    "scope": "AST code update; not complete semantic document/PDF indexing",
+    "log": "graphify-update.log"
+  },
+  "integrity": "integrity-checks.json",
+  "documentation_links": "documentation-links.json",
+  "no_live_provider_call_this_phase": true,
+  "no_commit_push_or_deployment": true,
+  "unchanged_application_and_ui_snapshot": true,
+  "release_boundaries": [
+    "No clinical approval",
+    "No authentic vendor compatibility",
+    "No patient-data authorization",
+    "No public production release"
+  ],
+  "remaining_limitations": [
+    "Preserved reference transcription conflict with explicit derived correction",
+    "Unsupported labels and bounded grammar",
+    "Historical shared-development startup flakiness, cause unproven",
+    "Process-local 15-minute recovery receipts",
+    "No independent clinical/usability/privacy/security certification"
+  ]
+}

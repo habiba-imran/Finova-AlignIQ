@@ -1,0 +1,61 @@
+{
+  "checked_at_utc": "2026-11-14T14:06:22.350068+00:00",
+  "scope": "Synthetic engineering audit; not clinical/vendor approval",
+  "backend": {
+    "passed": 960,
+    "source_unchanged": true
+  },
+  "frontend": {
+    "passed": 190,
+    "files": 13
+  },
+  "browser": {
+    "passed": 112,
+    "files": 11,
+    "failed": 0,
+    "skipped": 0,
+    "retries": 0,
+    "configuration": "frontend/playwright.audit.config.ts",
+    "artifact_status": {
+      "status": "passed",
+      "failedTests": []
+    }
+  },
+  "development_browser_runs": [
+    {
+      "passed": 99,
+      "failed": 1,
+      "scope": "UI work in progress"
+    },
+    {
+      "passed": 111,
+      "failed": 1,
+      "scope": "shared development server; startup failure"
+    }
+  ],
+  "focused_startup_repetitions": {
+    "passed": 10,
+    "failed": 0
+  },
+  "typescript_build": "PASSED",
+  "schemas_identical": 32,
+  "npm_vulnerabilities": 0,
+  "python_advisory_result": "No known vulnerabilities found",
+  "vendor_gate": "NO_AUTHENTIC_ORACLES; expected exit 2",
+  "source_drift": {
+    "evidence/phase9/backend-source-snapshot.json": [],
+    "evidence/phase9/frontend-source-snapshot.json": []
+  },
+  "graph": {
+    "nodes": 1230,
+    "edges": 4351,
+    "communities": 57,
+    "extraction": "AST_ONLY_NO_LLM"
+  },
+  "visual_review": "Desktop and 375 px intake and Macro/Micro/Nano drafts inspected",
+  "live_smokes_this_phase": {
+    "comments": 1,
+    "parser": 1
+  },
+  "deployment_performed": false
+}

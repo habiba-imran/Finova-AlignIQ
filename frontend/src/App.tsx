@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
-import { ArrowRight, Braces, FileText, FlaskConical, Info, LockKeyhole, ShieldAlert, Trash2 } from 'lucide-react'
+import type { CSSProperties } from 'react'
+import { ArrowRight, Braces, Check, FileText, FlaskConical, Info, LockKeyhole, ShieldAlert, Trash2 } from 'lucide-react'
 import { SYNTHETIC_EXAMPLE } from './syntheticExample'
 import { EMPTY_CONTEXT, MAX_TEXT_CHARACTERS, requestParse } from './api/parse'
 import type { AutomaticParseResult, ContextClaims, SourceClaim, SyntheticFixture } from './api/parse'
@@ -19,6 +20,52 @@ import SequencingWorkspace from './components/SequencingWorkspace'
 import { requestSequencingDemoInput } from './api/sequencing'
 import type { SequencingDemoInput } from './api/sequencing'
 
+type Purpose = 'macro' | 'micro' | 'nano'
+
+const MODULES: Record<Purpose, {
+  code: string
+  name: string
+  kicker: string
+  heading: string
+  support: string
+  reviewTitle: string
+  demoLabel: string
+  demoNote: string
+}> = {
+  macro: {
+    code: 'MACRO',
+    name: 'Planning',
+    kicker: 'Macro · Planning',
+    heading: 'Planning Assistant',
+    support: 'Review programmed movements and prepare structured draft comments.',
+    reviewTitle: 'Planning review',
+    demoLabel: 'Load Finova planning demo',
+    demoNote: 'Fixed TEST_ONLY data · no vendor or clinical validation implied.',
+  },
+  micro: {
+    code: 'MICRO',
+    name: 'Attachments',
+    kicker: 'Micro · Attachments',
+    heading: 'Attachment Review',
+    support: 'Inspect tooth-wise attachment information and supporting evidence.',
+    reviewTitle: 'Attachment review',
+    demoLabel: 'Load Finova attachment demo',
+    demoNote: 'Supplied fictional decisions · no clinical policy implied.',
+  },
+  nano: {
+    code: 'NANO',
+    name: 'Sequencing',
+    kicker: 'Nano · Sequencing',
+    heading: 'Sequencing Review',
+    support: 'Review sequencing information, segment notes and anchorage context.',
+    reviewTitle: 'Sequencing review',
+    demoLabel: 'Load Finova sequencing demo',
+    demoNote: 'Fictional sequencing and anchorage notes · no clinical strategy calculated.',
+  },
+}
+
+const MODULE_ORDER: Purpose[] = ['macro', 'micro', 'nano']
+
 export default function App() {
   const [rawText, setRawText] = useState('')
   const source: SourceClaim = 'Unknown'
@@ -28,7 +75,7 @@ export default function App() {
   const [syntheticFixture, setSyntheticFixture] = useState<SyntheticFixture | undefined>()
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
-  const [purpose, setPurpose] = useState<'macro' | 'micro' | 'nano'>('macro')
+  const [purpose, setPurpose] = useState<Purpose>('macro')
   const [demo, setDemo] = useState<DemoInput | null>(null)
   const [attachmentDemo, setAttachmentDemo] = useState<AttachmentDemoInput | null>(null)
   const [sequencingDemo, setSequencingDemo] = useState<SequencingDemoInput | null>(null)
@@ -39,8 +86,10 @@ export default function App() {
   // Display counts only. Neither calculation changes the input or extracts TMT fields.
   const characterCount = Array.from(rawText).length
   const lineCount = rawText.length === 0 ? 0 : 1 + (rawText.match(/\r\n|\r|\n/g)?.length ?? 0)
+  const copy = MODULES[purpose]
 
   useEffect(() => () => { revisionRef.current += 1; requestRef.current?.abort() }, [])
+  useEffect(() => { document.title = `Finova AlignIQ · ${copy.heading}` }, [copy.heading])
 
   function invalidateParse() {
     revisionRef.current += 1
@@ -173,134 +222,216 @@ export default function App() {
     }
   }
 
+  const inputReady = rawText.length > 0 && confirmedSynthetic
+  const currentStep = !inputReady ? 0 : !result ? 1 : !complete ? 2 : 3
+  const stepStatus = (index: number) => {
+    if (index < currentStep) return index === 0 ? 'Ready' : 'Complete'
+    if (index > currentStep) return index === 3 ? 'After review' : 'Waiting'
+    if (index === 0) return rawText.length === 0 ? 'Add synthetic text' : 'Confirm synthetic data'
+    if (index === 1) return error ? 'Retry parse' : loading ? 'Parsing…' : 'Parse text'
+    if (index === 2) return 'Run review'
+    return 'Available'
+  }
+  const steps = ['Input', 'Inspection', copy.reviewTitle, 'Export'].map((title, index) => ({
+    title,
+    status: stepStatus(index),
+    state: index < currentStep ? 'complete' : index === currentStep ? 'active' : 'pending',
+  }))
+
   return (
     <div className="min-h-screen">
       <a href="#intake" className="skip-link">Skip to raw text input</a>
       <header className="border-b border-line bg-white">
-        <div className="mx-auto flex max-w-[1320px] flex-wrap items-center justify-between gap-4 px-5 py-5 sm:px-9">
-          <div className="flex items-center gap-3">
-            <img src="/favicon.svg" alt="" width="40" height="40" />
-            <div className="text-[21px] tracking-tight"><span className="font-bold">Finova</span> <span className="font-medium text-brand">AlignIQ</span></div>
+        <div className="app-shell flex h-16 items-center justify-between gap-4">
+          <div className="flex min-w-0 items-center gap-2.5">
+            <img src="/favicon.svg" alt="" width="34" height="34" />
+            <div className="whitespace-nowrap text-[19px] tracking-tight"><span className="font-bold">Finova</span> <span className="font-medium text-brand">AlignIQ</span></div>
           </div>
-          <div className="flex items-center gap-3 text-xs font-medium text-muted">
-            <span className="hidden sm:inline">Planning workspace</span>
-            <span className="rounded-md border border-line bg-canvas px-2.5 py-1.5 tracking-wide">SYNTHETIC PROTOTYPE</span>
+          <div className="flex shrink-0 items-center gap-3">
+            <span className="hidden items-center gap-1.5 text-xs font-medium text-muted md:flex"><LockKeyhole size={13} aria-hidden="true" /> No input persistence</span>
+            <span className="rounded-md border border-line bg-canvas px-2.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-muted"><span className="sm:hidden">Prototype</span><span className="hidden sm:inline">Synthetic prototype</span></span>
           </div>
         </div>
       </header>
 
-      <main className="mx-auto max-w-[1320px] px-5 pb-10 pt-8 sm:px-9 sm:pt-11">
-        <p className="mb-3 text-xs font-semibold tracking-[0.16em] text-brand">{purpose === 'nano' ? 'SEQUENCER' : purpose === 'micro' ? 'ATTACHMENT INTERFACE' : 'PLANNING ASSISTANT'}</p>
-        <div className="flex flex-wrap items-end justify-between gap-4">
-          <div>
-            <h1 className="text-3xl font-semibold tracking-[-0.035em] sm:text-[40px] sm:leading-tight">A clearer view of the plan.</h1>
-            <p className="mt-3 max-w-2xl text-[15px] leading-7 text-muted">Inspect tooth movements, review traceable observations and prepare descriptive DRAFT comments for communication.</p>
-          </div>
-          <span className="mb-1 flex items-center gap-2 text-xs font-medium text-muted"><LockKeyhole size={14} aria-hidden="true" /> No input persistence</span>
+      <main className="app-shell pb-10 pt-7 sm:pt-9">
+        <div className="max-w-3xl" key={purpose}>
+          <p className="motion-swap text-[11px] font-semibold uppercase tracking-[0.16em] text-brand">{copy.kicker}</p>
+          <h1 className="motion-swap mt-1.5 text-[28px] font-semibold leading-tight tracking-[-0.03em] sm:text-[32px]">{copy.heading}</h1>
+          <p className="motion-swap mt-2 max-w-2xl text-[15px] leading-6 text-muted">{copy.support}</p>
         </div>
 
-        <aside aria-label="Prototype safety notice" className="my-7 flex items-start gap-3 rounded-xl border border-notice-line bg-notice px-5 py-4">
-          <ShieldAlert className="mt-0.5 shrink-0 text-notice-ink" size={19} aria-hidden="true" />
-          <div className="text-sm leading-6 text-notice-ink">
+        <div className="mt-5">
+          <nav aria-label="Review purpose" className="module-tabs" style={{ '--module-index': MODULE_ORDER.indexOf(purpose) } as CSSProperties}>
+            <span aria-hidden="true" className="module-tab-indicator" />
+            {MODULE_ORDER.map(id => {
+              const module = MODULES[id]
+              return <button
+                type="button"
+                key={id}
+                aria-pressed={purpose === id}
+                onClick={() => { if (purpose !== id) { invalidateParse(); setPurpose(id) } }}
+                className={`module-tab ${purpose === id ? 'module-tab-active' : ''}`}
+              >
+                <span className="module-tab-code">{module.code}</span>
+                <span className="module-tab-label">{module.name}</span>
+                <span className="sr-only">. {module.heading}</span>
+              </button>
+            })}
+          </nav>
+          <p className="mt-2 text-xs leading-5 text-muted">Review modules are planning contexts, not aligner stages.</p>
+        </div>
+
+        <aside aria-label="Prototype safety notice" className="mt-5 flex items-start gap-3 rounded-lg border border-notice-line bg-notice px-4 py-3 text-notice-ink">
+          <ShieldAlert className="mt-0.5 shrink-0" size={18} aria-hidden="true" />
+          <div className="min-w-0 text-[13px] leading-5">
             <p className="font-semibold">Prototype — not for clinical use</p>
-            <p>Use synthetic text only. Do not paste real patient data. Parsing recognizes text structure; it does not verify vendor semantics or clinically assess your input.</p>
+            <p>Use synthetic text only; do not paste real patient data. Structure is parsed, but vendor semantics and clinical suitability remain unverified.</p>
           </div>
         </aside>
 
-        <section aria-labelledby="purpose-heading" className="mb-6">
-          <h2 id="purpose-heading" className="mb-2 text-sm font-semibold">Choose a review purpose</h2>
-          <p className="mb-4 text-xs leading-6 text-muted">Review passes are flexible planning purposes, not aligner stages or a prescribed number of modifications. Your choice does not authorize clinical assessments.</p>
-          <nav aria-label="Review purpose" className="grid gap-3 md:grid-cols-3">{([
-            ['macro', 'Macro', 'Planning Assistant', 'Major sagittal, transverse & vertical review'],
-            ['micro', 'Micro', 'Attachment Interface', 'Tooth-indexed attachment evidence & review'],
-            ['nano', 'Nano', 'Sequencer', 'Sequencing, segments & anchorage context'],
-          ] as const).map(([id, title, subtitle, description]) => <button type="button" key={id} aria-pressed={purpose === id} onClick={() => { if (purpose !== id) { invalidateParse(); setPurpose(id) } }} className={`purpose-card ${purpose === id ? 'purpose-active' : ''}`}><span className="text-xs font-semibold tracking-widest text-brand">{title.toUpperCase()}</span><span className="mt-2 block text-sm font-semibold">{subtitle}</span><span className="mt-1 block text-xs leading-6 text-muted">{description}</span></button>)}</nav>
-        </section>
-        <ol aria-label="Planning workflow" className="workflow-steps mb-6">{['Paste TMT', 'Inspect movements', purpose === 'nano' ? 'Run sequencing review' : purpose === 'micro' ? 'Run attachment review' : 'Run assistant', 'Review & export'].map((label, i) => <li key={label} aria-current={(complete ? i === 3 : result ? i === 2 : i === 0) ? 'step' : undefined}><span aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>{label}</li>)}</ol>
-        <aside className="mb-5 flex flex-wrap items-center justify-between gap-4 rounded-xl border border-brand/20 bg-brand-soft p-5"><div><h2 className="text-sm font-semibold text-brand">Try the complete synthetic workflow</h2><p className="mt-1 max-w-2xl text-xs leading-6 text-muted">{purpose === 'nano' ? 'The fixed Nano demo contains supplied fictional arch, segment and anchorage notes, checked stage metadata and explicit withholding. No clinical strategy is calculated.' : purpose === 'micro' ? 'The fixed attachment demo contains supplied candidates, an alternative, a supplied no-attachment decision, unknown and withheld rows. No clinical policy is implied.' : 'The fixed Finova demo includes authorized TEST_ONLY descriptions and a deliberately withheld value. No vendor or clinical validation is implied.'}</p></div><button type="button" className="button border border-brand/30 bg-white text-brand disabled:opacity-50" onClick={() => void (purpose === 'nano' ? loadSequencingDemo() : purpose === 'micro' ? loadAttachmentDemo() : loadPlanningDemo())} disabled={loading}><FlaskConical size={16} aria-hidden="true" />{purpose === 'nano' ? 'Load Finova sequencing demo' : purpose === 'micro' ? 'Load Finova attachment demo' : 'Load Finova planning demo'}</button></aside>
-        {demo && <details className="technical-details mb-5"><summary>Finova Synthetic Demonstration · conventions & scope</summary><ul className="mt-3 list-disc space-y-2 pl-5 text-xs leading-6 text-muted">{demo.convention.map(c => <li key={c}>{c}</li>)}</ul></details>}
-        {attachmentDemo && <details className="technical-details mb-5"><summary>Finova Synthetic Attachment Demonstration · conventions & scope</summary><ul className="mt-3 list-disc space-y-2 pl-5 text-xs leading-6 text-muted">{attachmentDemo.convention.map(c => <li key={c}>{c}</li>)}</ul></details>}
-        {sequencingDemo && <details className="technical-details mb-5"><summary>Finova Synthetic Sequencer Demonstration · conventions & scope</summary><ul className="mt-3 list-disc space-y-2 pl-5 text-xs leading-6 text-muted">{sequencingDemo.convention.map(c => <li key={c}>{c}</li>)}</ul></details>}
+        <ol aria-label="Planning workflow" className="workflow-steps mt-4">
+          {steps.map((step, index) => <li key={step.title} data-state={step.state} aria-current={index === currentStep ? 'step' : undefined} className="workflow-step">
+            <span className="workflow-index" aria-hidden="true">{step.state === 'complete' ? <Check size={14} /> : String(index + 1).padStart(2, '0')}</span>
+            <span className="min-w-0">
+              <span className="workflow-title">{step.title}</span>
+              <span className="workflow-state">{step.status}{step.state === 'complete' && <span className="sr-only"> — completed</span>}</span>
+            </span>
+          </li>)}
+        </ol>
 
-        <div className="workspace-grid grid min-w-0 gap-5 lg:grid-cols-2">
-          <section aria-labelledby="input-heading" className="panel min-w-0">
-            <div className="panel-heading">
-              <div className="flex items-center gap-2.5"><FileText size={18} className="text-brand" aria-hidden="true" /><h2 id="input-heading" className="font-semibold">Paste TMT text</h2></div>
-              <span className="text-xs text-muted">Input</span>
+        <section aria-labelledby="input-area-heading" className="mt-6">
+          <div className="section-heading flex-col items-start justify-between gap-3 lg:flex-row lg:items-start">
+            <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+              <span className="section-number">01</span>
+              <h2 id="input-area-heading" className="section-title">Input</h2>
+              <p className="section-note">Paste synthetic TMT text, inspect the faithful preview and parse its structure.</p>
             </div>
-            <div className="p-5 sm:p-6">
-              <p className="mb-5 text-xs leading-5 text-muted">Source indicators and layout are detected when you parse. Vendor compatibility remains unverified.</p>
-              <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
-                <label htmlFor="intake" className="text-sm font-medium">Raw TMT text</label>
-                <span className="text-xs text-muted">Plain text only</span>
-              </div>
-              <textarea
-                ref={inputRef}
-                id="intake"
-                value={rawText}
-                onChange={(event) => editRawText(event.target.value)}
-                aria-describedby="input-hint input-counts"
-                placeholder={'Paste synthetic TMT text here…\n\nTabs, uneven spacing, and blank lines are welcome.'}
-                spellCheck={false}
-                autoComplete="off"
-                autoCorrect="off"
-                autoCapitalize="off"
-                className="raw-text block min-h-72 w-full resize-y rounded-lg border border-field bg-canvas p-4 text-[13px] leading-6 placeholder:text-placeholder"
-              />
-              <div className="mt-3 flex flex-wrap justify-between gap-2 text-xs leading-5 text-muted">
-                <p id="input-hint">No cleanup or column alignment is applied.</p>
-                <p id="input-counts" role="status" aria-live="polite" aria-atomic="true" className="tabular-nums">{characterCount.toLocaleString()} {characterCount === 1 ? 'character' : 'characters'} <span aria-hidden="true">·</span> {lineCount.toLocaleString()} {lineCount === 1 ? 'line' : 'lines'}</p>
-              </div>
-              <div className="mt-5 flex flex-wrap items-center gap-2.5">
-                <button type="button" onClick={loadExample} className="button button-example"><FlaskConical size={16} aria-hidden="true" />Load synthetic example</button>
-                <button type="button" onClick={() => { editRawText(syntheticCatalog.fixtures.find(f => f.id === 'synthetic-markdown-rows')!.raw_text); setContext({ ...EMPTY_CONTEXT }); inputRef.current?.focus() }} className="button button-example">Load synthetic Markdown example</button>
-                <button type="button" onClick={() => { editRawText(generatedExample.raw_text); setSyntheticFixture(generatedExample.identity); setContext({ ...EMPTY_CONTEXT }); inputRef.current?.focus() }} className="button button-example">Load generated recovery example</button>
-                <button type="button" onClick={clearText} disabled={rawText.length === 0} className="button button-clear"><Trash2 size={15} aria-hidden="true" />Clear</button>
-              </div>
-              <ContextFields value={context} onChange={editContext} />
+            <div className="flex w-full flex-col items-start gap-1 lg:w-auto lg:items-end">
+              <button type="button" className="button button-accent" onClick={() => void (purpose === 'nano' ? loadSequencingDemo() : purpose === 'micro' ? loadAttachmentDemo() : loadPlanningDemo())} disabled={loading}><FlaskConical size={15} aria-hidden="true" />{copy.demoLabel}</button>
+              <p className="text-xs leading-5 text-muted">{copy.demoNote}</p>
             </div>
-          </section>
-
-          <section aria-labelledby="preview-heading" className="panel flex min-w-0 flex-col">
-            <div className="panel-heading">
-              <div className="flex items-center gap-2.5"><Braces size={18} className="text-brand" aria-hidden="true" /><h2 id="preview-heading" className="font-semibold">Raw preview</h2></div>
-              <span className="rounded-md bg-canvas px-2 py-1 text-[11px] font-medium text-muted">TEXT ONLY</span>
-            </div>
-            <div className="relative m-5 flex min-h-80 flex-1 flex-col rounded-lg border border-line bg-canvas sm:m-6">
-              <pre aria-label="Raw text preview" tabIndex={0} className="raw-text min-h-80 flex-1 p-4 text-[13px] leading-6">{rawText}</pre>
-              {rawText.length === 0 && <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center px-7 text-center">
-                <span className="mb-4 rounded-xl border border-line bg-white p-3 text-brand"><FileText size={24} strokeWidth={1.5} aria-hidden="true" /></span>
-                <p className="text-sm font-medium">Your raw text will appear here</p>
-                <p className="mt-2 max-w-64 text-xs leading-6 text-muted">Paste text or load the synthetic example to see a faithful, unparsed preview.</p>
-              </div>}
-            </div>
-            <p className="px-5 pb-5 text-xs leading-5 text-muted sm:px-6 sm:pb-6">Spacing and line breaks are retained. Long rows wrap to fit.</p>
-          </section>
-        </div>
-
-        <section aria-label="Parse controls" className="mt-5 rounded-xl border border-line bg-white px-5 py-5 sm:px-6">
-          <div className="flex items-start gap-3"><Info size={17} className="mt-0.5 shrink-0 text-muted" aria-hidden="true" /><div><p className="text-sm font-medium">Parse structure, with evidence intact.</p><p id="parse-hint" className="mt-1 text-xs leading-5 text-muted">Parse Table sends unchanged text to this app’s backend. Arbitrary pasted input is processed by this app’s backend only. Server-authorized generated examples may use automatic Groq recovery when development testing is enabled. No input is saved.</p></div></div>
-          <label className="my-4 flex cursor-pointer items-start gap-3 text-sm leading-6"><input type="checkbox" checked={confirmedSynthetic} onChange={event => { if (!event.target.checked) invalidateParse(); setConfirmedSynthetic(event.target.checked) }} className="mt-1 h-4 w-4 shrink-0 accent-brand" />I confirm this text is synthetic and contains no patient data.</label>
-          <div className="flex flex-wrap items-center gap-3">
-            <button type="button" onClick={() => void parseInput()} disabled={loading || !confirmedSynthetic || rawText.length === 0 || characterCount > MAX_TEXT_CHARACTERS} aria-describedby="parse-hint" className="button border border-brand bg-brand px-5 text-white enabled:hover:bg-[#06675f] disabled:border-line disabled:bg-canvas disabled:text-muted">{loading ? 'Parsing…' : 'Parse Table'}<ArrowRight size={16} aria-hidden="true" /></button>
-            <button type="button" disabled aria-describedby="analysis-hint" className="button border border-line bg-canvas text-muted">Analyze</button>
-            <p id="analysis-hint" className="text-xs text-muted">Clinical analysis is not implemented.</p>
           </div>
-          {characterCount > MAX_TEXT_CHARACTERS && <p role="alert" className="mt-3 text-sm text-notice-ink">Parsing is limited to 100,000 characters. Your full raw input is still retained.</p>}
-          {loading && <p role="status" className="mt-3 text-sm text-muted">Parsing the submitted text structure…</p>}
-          {error && <p role="alert" className="mt-3 text-sm text-notice-ink">{error}</p>}
-          {result && <p role="status" className="mt-3 text-sm text-muted">Parse response received. Source semantics remain unverified.</p>}
-          {syntheticFixture && <p className="mt-3 text-xs leading-5 text-muted">Generated synthetic test input selected. The server must reproduce it exactly before any automatic external recovery.</p>}
+
+          <div className={`workspace-grid grid min-w-0 gap-4 ${result ? '' : 'lg:grid-cols-2'}`}>
+            <section aria-labelledby="input-heading" className="panel min-w-0">
+              <div className="panel-heading">
+                <div className="flex items-center gap-2.5"><FileText size={17} className="text-brand" aria-hidden="true" /><h3 id="input-heading" className="panel-title">Paste TMT text</h3></div>
+                <span className="section-kicker">Raw input</span>
+              </div>
+              <div className="p-5 sm:p-6">
+                <p className="mb-4 text-xs leading-5 text-muted">Source indicators and layout are detected when you parse. Vendor compatibility remains unverified.</p>
+                <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
+                  <label htmlFor="intake" className="text-sm font-medium">Raw TMT text</label>
+                  <span className="text-xs text-muted">Plain text only</span>
+                </div>
+                <textarea
+                  ref={inputRef}
+                  id="intake"
+                  value={rawText}
+                  onChange={(event) => editRawText(event.target.value)}
+                  aria-describedby="input-hint input-counts"
+                  placeholder={'Paste synthetic TMT text here…\n\nTabs, uneven spacing, and blank lines are welcome.'}
+                  spellCheck={false}
+                  autoComplete="off"
+                  autoCorrect="off"
+                  autoCapitalize="off"
+                  className="raw-text block min-h-60 w-full resize-y rounded-lg border border-field bg-canvas p-4 text-[13px] leading-6 placeholder:text-placeholder"
+                />
+                <div className="mt-3 flex flex-wrap justify-between gap-2 text-xs leading-5 text-muted">
+                  <p id="input-hint">No cleanup or column alignment is applied.</p>
+                  <p id="input-counts" role="status" aria-live="polite" aria-atomic="true" className="tabular-nums">{characterCount.toLocaleString()} {characterCount === 1 ? 'character' : 'characters'} <span aria-hidden="true">·</span> {lineCount.toLocaleString()} {lineCount === 1 ? 'line' : 'lines'}</p>
+                </div>
+                <div className="mt-4 flex flex-wrap items-center gap-2">
+                  <button type="button" onClick={loadExample} className="button button-secondary"><FlaskConical size={15} aria-hidden="true" />Load synthetic example</button>
+                  <button type="button" onClick={() => { editRawText(syntheticCatalog.fixtures.find(f => f.id === 'synthetic-markdown-rows')!.raw_text); setContext({ ...EMPTY_CONTEXT }); inputRef.current?.focus() }} className="button button-secondary">Load synthetic Markdown example</button>
+                  <button type="button" onClick={() => { editRawText(generatedExample.raw_text); setSyntheticFixture(generatedExample.identity); setContext({ ...EMPTY_CONTEXT }); inputRef.current?.focus() }} className="button button-secondary">Load generated recovery example</button>
+                  <button type="button" onClick={clearText} disabled={rawText.length === 0} className="button button-danger"><Trash2 size={14} aria-hidden="true" />Clear</button>
+                </div>
+                <ContextFields value={context} onChange={editContext} />
+              </div>
+            </section>
+
+            {result ? <details className="technical-details preview-disclosure">
+              <summary className="flex flex-wrap items-center justify-between gap-2">
+                <span>Raw preview · original TMT text</span>
+                <span className="text-xs font-normal text-muted">Unchanged source · expand when needed</span>
+              </summary>
+              <p className="mt-3 text-xs leading-5 text-muted">The parsed movement table is the primary inspection view. This faithful preview retains every original character, including whitespace.</p>
+              <div className="preview-frame">
+                <pre aria-label="Raw text preview" tabIndex={0} className="raw-text max-h-96 min-h-40 overflow-auto p-4 text-[13px] leading-6">{rawText}</pre>
+              </div>
+              <p className="mt-2 text-xs leading-5 text-muted">Spacing and line breaks are retained. Long rows wrap to fit.</p>
+            </details> : <section aria-labelledby="preview-heading" className="panel flex min-w-0 flex-col">
+              <div className="panel-heading">
+                <div className="flex items-center gap-2.5"><Braces size={17} className="text-brand" aria-hidden="true" /><h3 id="preview-heading" className="panel-title">Raw preview</h3></div>
+                <span className="rounded-md border border-line bg-canvas px-2 py-1 text-[11px] font-medium text-muted">TEXT ONLY</span>
+              </div>
+              <div className="relative m-5 flex min-h-[240px] flex-1 flex-col rounded-lg border border-line bg-canvas sm:m-6">
+                <pre aria-label="Raw text preview" tabIndex={0} className="raw-text min-h-[240px] flex-1 p-4 text-[13px] leading-6">{rawText}</pre>
+                {rawText.length === 0 && <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center px-7 text-center">
+                  <span className="mb-3 rounded-xl border border-line bg-white p-3 text-brand"><FileText size={22} strokeWidth={1.5} aria-hidden="true" /></span>
+                  <p className="text-sm font-medium">Your raw text will appear here</p>
+                  <p className="mt-2 max-w-64 text-xs leading-5 text-muted">Paste text or load the synthetic example to see a faithful, unparsed preview.</p>
+                </div>}
+              </div>
+              <p className="px-5 pb-5 text-xs leading-5 text-muted sm:px-6 sm:pb-6">Spacing and line breaks are retained. Long rows wrap to fit.</p>
+            </section>}
+          </div>
+
+          <section aria-label="Parse controls" aria-busy={loading} className="mt-4 rounded-xl border border-line bg-white p-5 shadow-panel sm:p-6">
+            <div className="flex items-start gap-3">
+              <Info size={17} className="mt-0.5 shrink-0 text-muted" aria-hidden="true" />
+              <div>
+                <h3 className="text-[15px] font-semibold">Parse structure</h3>
+                <p id="parse-hint" className="mt-1 text-xs leading-5 text-muted">Unchanged text is sent to this app’s backend for structural parsing. No input is saved.</p>
+              </div>
+            </div>
+            <label className="my-4 flex cursor-pointer items-start gap-3 text-sm leading-6"><input type="checkbox" checked={confirmedSynthetic} onChange={event => { if (!event.target.checked) invalidateParse(); setConfirmedSynthetic(event.target.checked) }} className="mt-1 h-4 w-4 shrink-0 accent-brand" />I confirm this text is synthetic and contains no patient data.</label>
+            <div className="flex flex-wrap items-center gap-3">
+              <button type="button" onClick={() => void parseInput()} disabled={loading || !confirmedSynthetic || rawText.length === 0 || characterCount > MAX_TEXT_CHARACTERS} aria-describedby="parse-hint" className="button button-primary px-5">{loading ? <><span className="button-spinner" aria-hidden="true" />Parsing…</> : <>Parse Table<ArrowRight size={16} aria-hidden="true" /></>}</button>
+              <button type="button" disabled aria-describedby="analysis-hint" className="button button-secondary">Analyze</button>
+              <p id="analysis-hint" className="text-xs text-muted">Clinical analysis is not implemented.</p>
+            </div>
+            {characterCount > MAX_TEXT_CHARACTERS && <p role="alert" className="mt-3 text-sm text-notice-ink">Parsing is limited to 100,000 characters. Your full raw input is still retained.</p>}
+            {loading && <p role="status" className="motion-status mt-3 text-sm text-muted">Parsing the submitted text structure…</p>}
+            {error && <p role="alert" className="motion-status mt-3 text-sm text-notice-ink">{error}</p>}
+            {result && <p role="status" className="motion-status mt-3 text-sm text-muted">Parse response received. Source semantics remain unverified.</p>}
+            {syntheticFixture && <p className="mt-3 text-xs leading-5 text-muted">Generated synthetic test input selected. The server must reproduce it exactly before any automatic external recovery.</p>}
+            <details className="mt-3 text-xs leading-5 text-muted">
+              <summary className="cursor-pointer font-medium">Processing, recovery and privacy</summary>
+              <p className="mt-2">Arbitrary pasted input is processed by this app’s backend only. Server-authorized generated examples may use automatic Groq recovery when development testing is enabled. No input is saved.</p>
+            </details>
+          </section>
+
+          {demo && <details className="technical-details"><summary>Finova Synthetic Demonstration · conventions & scope</summary><ul className="mt-3 list-disc space-y-2 pl-5 text-xs leading-6 text-muted">{demo.convention.map(c => <li key={c}>{c}</li>)}</ul></details>}
+          {attachmentDemo && <details className="technical-details"><summary>Finova Synthetic Attachment Demonstration · conventions & scope</summary><ul className="mt-3 list-disc space-y-2 pl-5 text-xs leading-6 text-muted">{attachmentDemo.convention.map(c => <li key={c}>{c}</li>)}</ul></details>}
+          {sequencingDemo && <details className="technical-details"><summary>Finova Synthetic Sequencer Demonstration · conventions & scope</summary><ul className="mt-3 list-disc space-y-2 pl-5 text-xs leading-6 text-muted">{sequencingDemo.convention.map(c => <li key={c}>{c}</li>)}</ul></details>}
         </section>
 
-        {result && <ParserStatus result={result} />}
-        {result && <ParseResults key={revisionRef.current} result={result} />}
-        {result && purpose === 'macro' && <PlanningWorkspace key={`planning-${revisionRef.current}`} rawText={rawText} context={context} parsed={result} demo={!!demo} onComplete={setComplete} />}
-        {result && purpose === 'micro' && <AttachmentWorkspace key={`attachment-${revisionRef.current}`} rawText={rawText} context={context} parsed={result} demo={!!attachmentDemo} onComplete={setComplete} />}
-        {result && purpose === 'nano' && <SequencingWorkspace key={`sequencing-${revisionRef.current}`} rawText={rawText} context={context} parsed={result} demo={!!sequencingDemo} onComplete={setComplete} />}
-        {result && purpose === 'macro' && !demo && <details className="technical-details"><summary>Advanced: separate engineering review & legacy report actions</summary><DraftReviewPanel key={`review-${revisionRef.current}`} rawText={rawText} source={source} context={context} rawHash={result.raw_sha256} recoveryReceipt={result.pipeline.recovery_receipt ?? undefined} /></details>}
+        {result && <section aria-labelledby="inspection-heading" className="mt-6">
+          <div className="section-heading">
+            <span className="section-number">02</span>
+            <h2 id="inspection-heading" className="section-title">Movement inspection</h2>
+            <p className="section-note">Parsed movement positions first; diagnostics and exact source evidence remain available on demand.</p>
+          </div>
+          <ParserStatus result={result} />
+          <ParseResults key={revisionRef.current} result={result} />
+        </section>}
 
-        <footer className="mt-7 flex flex-wrap justify-between gap-3 border-t border-line pt-5 text-xs leading-5 text-muted">
+        {result && <section aria-labelledby="review-area-heading" className="mt-6">
+          <div className="section-heading">
+            <span className="section-number">03</span>
+            <h2 id="review-area-heading" className="section-title">Review results</h2>
+            <p className="section-note">{complete ? 'Review the DRAFT below, then use the export area when ready.' : 'Run the review below to prepare a DRAFT.'}</p>
+          </div>
+          {purpose === 'macro' && <PlanningWorkspace key={`planning-${revisionRef.current}`} rawText={rawText} context={context} parsed={result} demo={!!demo} onComplete={setComplete} />}
+          {purpose === 'micro' && <AttachmentWorkspace key={`attachment-${revisionRef.current}`} rawText={rawText} context={context} parsed={result} demo={!!attachmentDemo} onComplete={setComplete} />}
+          {purpose === 'nano' && <SequencingWorkspace key={`sequencing-${revisionRef.current}`} rawText={rawText} context={context} parsed={result} demo={!!sequencingDemo} onComplete={setComplete} />}
+          {purpose === 'macro' && !demo && <details className="technical-details"><summary>Advanced: separate engineering review & legacy report actions</summary><DraftReviewPanel key={`review-${revisionRef.current}`} rawText={rawText} source={source} context={context} rawHash={result.raw_sha256} recoveryReceipt={result.pipeline.recovery_receipt ?? undefined} /></details>}
+        </section>}
+
+        <footer className="mt-8 flex flex-wrap justify-between gap-3 border-t border-line pt-5 text-xs leading-5 text-muted">
           <p className="flex items-center gap-2"><LockKeyhole size={14} aria-hidden="true" />Input stays in memory. Only server-authorized generated fixtures can use automatic development cloud recovery. Copy/download creates a local export.</p>
           <p>Finova AlignIQ <span aria-hidden="true">/</span> Internal prototype</p>
         </footer>

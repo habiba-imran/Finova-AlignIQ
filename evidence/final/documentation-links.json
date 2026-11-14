@@ -1,0 +1,13 @@
+{
+  "checked_files": [
+    "README.md",
+    "FINOVA_FINAL_INTEGRATION_REPORT.md",
+    "FINOVA_FINAL_DEMO_GUIDE.md",
+    "FINOVA_PUBLIC_TMT_REFERENCE_EVALUATION.md",
+    "FINOVA_PROJECT_COMPLETION_CHECKLIST.md",
+    "references/public_tmt/README.md"
+  ],
+  "local_links": 60,
+  "broken": [],
+  "scope": "Markdown file/directory targets, not remote-link uptime or anchors"
+}
