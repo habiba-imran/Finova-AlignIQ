@@ -1,0 +1,15 @@
+{
+  "fonts": [
+    {
+      "asset": "NotoSans-Regular.base64",
+      "decoded_sha256": "b85c38ecea8a7cfb39c24e395a4007474fa5a4fc864f6ee33309eb4948d232d5"
+    },
+    {
+      "asset": "NotoSansSymbols-Arrows.base64",
+      "decoded_sha256": "34589ed0259c1cf1fb82a4ba9f303d44a58131fc8e13f268203f318cf85cc4e7"
+    }
+  ],
+  "license": "OFL.txt",
+  "sources_and_subset_method": "README.md",
+  "symbol_subset": "U+2190-22FF; only upstream available glyphs included"
+}

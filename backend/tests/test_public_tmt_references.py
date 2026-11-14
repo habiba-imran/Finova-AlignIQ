@@ -31,7 +31,8 @@ def test_original_csv_cells_exact_with_independent_spans_and_no_semantic_promoti
     assert result["orientation"] == ("TEETH_IN_ROWS" if transpose else "TEETH_IN_COLUMNS")
     assert result["missing_or_unrecognized_positions"] == result["incorrect_associations_or_values"] == result["extra_positions"] == 0
     assert result["semantic_status"] == "DISABLED" and result["semantically_ready"] == 0
-    assert result["label_unsupported_positions"] == (64 if index == 0 else 24)
+    assert result["label_supported_positions"] == count
+    assert result["label_unsupported_positions"] == 0
     assert not APPROVED_RELEASE_DIGESTS
 
 

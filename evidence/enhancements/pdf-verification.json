@@ -1,0 +1,52 @@
+[
+  {
+    "module": "macro",
+    "pages": 43,
+    "exact_embedded_txt": true,
+    "exact_embedded_json": true,
+    "visible_complete_report_nonwhitespace_match": true,
+    "headers_footers_all_pages": true,
+    "body_baselines_within_margins": true,
+    "visible_check_scope": "Original TXT including all findings/ledger; only whitespace and Unicode compatibility ligatures normalized."
+  },
+  {
+    "module": "micro",
+    "pages": 28,
+    "exact_embedded_txt": true,
+    "exact_embedded_json": true,
+    "visible_complete_report_nonwhitespace_match": true,
+    "headers_footers_all_pages": true,
+    "body_baselines_within_margins": true,
+    "visible_check_scope": "Original TXT including all findings/ledger; only whitespace and Unicode compatibility ligatures normalized."
+  },
+  {
+    "module": "nano",
+    "pages": 26,
+    "exact_embedded_txt": true,
+    "exact_embedded_json": true,
+    "visible_complete_report_nonwhitespace_match": true,
+    "headers_footers_all_pages": true,
+    "body_baselines_within_margins": true,
+    "visible_check_scope": "Original TXT including all findings/ledger; only whitespace and Unicode compatibility ligatures normalized."
+  },
+  {
+    "module": "ordinary",
+    "pages": 23,
+    "exact_embedded_txt": true,
+    "exact_embedded_json": true,
+    "visible_complete_report_nonwhitespace_match": true,
+    "headers_footers_all_pages": true,
+    "body_baselines_within_margins": true,
+    "visible_check_scope": "Original TXT including all findings/ledger; only whitespace and Unicode compatibility ligatures normalized."
+  },
+  {
+    "module": "long",
+    "pages": 45,
+    "exact_embedded_txt": true,
+    "exact_embedded_json": true,
+    "visible_complete_report_nonwhitespace_match": true,
+    "headers_footers_all_pages": true,
+    "body_baselines_within_margins": true,
+    "visible_check_scope": "Original TXT including all findings/ledger; only whitespace and Unicode compatibility ligatures normalized."
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "protected_file_count": 99,
+  "changed_protected_files": [],
+  "schemas": {
+    "count": 32,
+    "identical": true
+  },
+  "vendor_gate": {
+    "exit_code": 2,
+    "message": "NO_AUTHENTIC_ORACLES: 0 reviewed captures; vendor normalization disabled."
+  },
+  "scope": "Snapshot covers backend application/parser/rules/Groq/authorization source, vendor registry files, frontend API validators and original public TMT references."
+}

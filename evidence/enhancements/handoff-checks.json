@@ -1,0 +1,10 @@
+{
+  "git_diff_check_exit": 0,
+  "git_diff_check_stdout": "",
+  "scanned_frontend_files": 66,
+  "groq_key_pattern_matching_files": [],
+  "backend_env_local_ignored": true,
+  "local_markdown_links_checked": 53,
+  "broken_links": [],
+  "scope": "Current README/new report/font README file/directory links, not remote uptime/anchors. Key-pattern scan is not exhaustive secret detection."
+}

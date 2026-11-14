@@ -1,0 +1,9 @@
+{
+  "local_links_checked": 59,
+  "broken": [],
+  "whitespace_exit": 0,
+  "scanned_frontend_files": 68,
+  "groq_key_pattern_matching_files": [],
+  "backend_env_local_ignored": true,
+  "limits": "Pattern scan is not exhaustive secret detection. Local file/directory links checked, not remote uptime or anchors."
+}

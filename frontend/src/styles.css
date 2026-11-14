@@ -56,6 +56,7 @@
 
   .button { @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-transparent px-3.5 py-2.5 text-[13px] font-semibold leading-5 disabled:cursor-not-allowed disabled:opacity-50; transition: background-color var(--motion-hover) var(--ease-standard), border-color var(--motion-hover) var(--ease-standard), color var(--motion-hover) var(--ease-standard), box-shadow var(--motion-hover) var(--ease-standard), transform 120ms var(--ease-standard); }
   .button:enabled:active { transform: translateY(1px); }
+  .button > svg { flex-shrink: 0; }
   .button-spinner { width: 0.875rem; height: 0.875rem; flex: none; border-radius: 9999px; border: 2px solid currentColor; border-top-color: transparent; animation: control-spin 700ms linear infinite; }
   .button-primary { @apply border-brand bg-brand text-white shadow-panel enabled:hover:bg-brand-deep; }
   .button-primary:disabled { @apply border-line bg-canvas text-muted shadow-none; }
@@ -97,29 +98,33 @@
   .report-badge-danger { @apply border-danger-line bg-danger-soft text-danger; }
   .report-badge-brand { @apply border-brand/25 bg-brand-soft text-brand; }
 
-  .summary-grid { @apply grid grid-cols-2 gap-2 sm:grid-cols-3 xl:grid-cols-4; }
-  .summary-metric { @apply min-w-0 rounded-lg border border-line bg-canvas px-3 py-2.5; }
+  .summary-grid { @apply grid grid-cols-2 items-stretch gap-2.5; }
+  .summary-metric { @apply flex min-w-0 flex-col rounded-lg border border-line bg-canvas px-3 py-3; }
   .summary-metric-notice { @apply border-notice-line bg-notice; }
   .summary-metric-danger { @apply border-danger-line bg-danger-soft; }
   .summary-label { @apply text-[11px] font-semibold leading-4 text-muted; }
   .summary-value { @apply mt-1 text-xl font-semibold tabular-nums tracking-[-0.02em]; }
-  .summary-detail { @apply mt-0.5 text-[11px] leading-4 text-muted; }
+  .summary-detail { @apply mt-auto pt-1 text-[11px] leading-4 text-muted; }
 
   .report-section { @apply min-w-0 rounded-xl border border-line bg-white p-4 sm:p-5; }
   .report-section-notice { @apply border-notice-line bg-notice; }
   .report-section-danger { @apply border-danger-line bg-danger-soft; }
   .report-section-heading { @apply flex flex-wrap items-start justify-between gap-2; }
-  .report-section-title { @apply text-lg font-semibold leading-6 tracking-[-0.01em]; }
+  .report-section-title { @apply text-base font-semibold leading-6 tracking-[-0.01em]; text-wrap: balance; }
   .report-section-note { @apply mt-1 text-xs leading-5 text-muted; }
 
   .evidence-disclosure { @apply mt-3 min-w-0 rounded-lg border border-line bg-canvas px-3 py-2.5 text-xs leading-6 text-muted; }
   .evidence-disclosure > summary { @apply cursor-pointer font-medium text-ink; }
   .evidence-content { @apply mt-2 min-w-0; }
+  .evidence-disclosure { transition: border-color var(--motion-control) var(--ease-standard); }
+  .evidence-disclosure[open] { border-color: #b8d8d1; }
+  .evidence-disclosure > summary::marker { color: var(--color-brand); }
+  .report-empty { @apply mt-6 rounded-lg border border-dashed border-line bg-canvas p-4 text-sm leading-6 text-muted; }
 
   .export-bar { @apply mt-5 rounded-xl border border-line bg-white p-4 sm:p-5; }
   .export-bar-heading { @apply mb-3 flex flex-wrap items-baseline gap-x-3 gap-y-1; }
   .export-bar-title { @apply text-[17px] font-semibold tracking-[-0.01em]; }
-  .export-bar-note { @apply text-xs leading-5 text-muted; }
+  .export-bar-note { @apply w-full text-xs leading-5 text-muted; }
   .export-bar-actions { @apply flex flex-wrap items-center gap-2; }
 
   .movement-scroll { @apply max-h-[32rem] overflow-auto rounded-xl border border-line bg-white; scrollbar-gutter: stable; overscroll-behavior: contain; }
@@ -127,6 +132,7 @@
   .movement-table thead { @apply sticky top-0 z-10 bg-canvas text-muted; }
   .movement-table th { @apply whitespace-nowrap p-3 font-semibold; }
   .movement-table td { @apply p-3 align-top; }
+  .movement-table td { padding-block: 0.875rem; }
   .movement-table tbody tr { @apply border-t border-line; transition: background-color var(--motion-hover) var(--ease-standard); }
   .movement-table tbody tr:hover, .movement-table tbody tr:focus-within { background-color: #f7faf9; }
   .movement-value { @apply text-sm font-semibold tabular-nums text-ink; }
@@ -146,6 +152,17 @@
   .motion-delay-1 { animation-delay: 40ms; }
   .motion-status { animation: status-in var(--motion-control) var(--ease-out-soft) both; }
   .motion-swap { animation: swap-in var(--motion-control) var(--ease-out-soft) both; }
+}
+
+/* Small presentation refinements; values, parsing and report state are unchanged. */
+#intake { tab-size: 4; font-size: 14px; line-height: 1.7; background-color: #fbfcfc; }
+.preview-frame .raw-text, [aria-label="Raw text preview"] { tab-size: 4; line-height: 1.7; }
+.attachment-table td { line-height: 1.6; }
+@media (min-width: 1024px) {
+  .summary-grid { grid-template-columns: repeat(var(--metric-count, 4), minmax(0, 1fr)); }
+}
+@media (max-width: 639px) {
+  .export-bar-actions > .button, .export-bar-actions > div > .button { width: 100%; }
 }
 
 /* Disclosures keep native HTML behaviour; only opened content receives a brief fade. */

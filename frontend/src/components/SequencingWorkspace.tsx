@@ -3,7 +3,8 @@ import { ArrowRight, Copy, Download, ListOrdered } from 'lucide-react'
 import type { AutomaticParseResult, ContextClaims } from '../api/parse'
 import { requestSequencingDraft, SEQUENCE_SECTIONS } from '../api/sequencing'
 import type { SequenceEntry, SequenceSection, SequencingDraft } from '../api/sequencing'
-import { EvidenceDisclosure, ExportBar, ReportHeader, ReportSection, SummaryGrid, SummaryMetric } from './ReportPrimitives'
+import { EvidenceDisclosure, ExportBar, ReportEmpty, ReportHeader, ReportSection, SummaryGrid, SummaryMetric } from './ReportPrimitives'
+import PdfExportButton from './PdfExportButton'
 
 const TITLES: Record<SequenceSection, string> = { UPPER_ARCH: 'Upper-arch sequencing', LOWER_ARCH: 'Lower-arch sequencing', SEGMENTS: 'Segments & tooth groups', RIGHT_ANCHORAGE: 'Right-side anchorage', LEFT_ANCHORAGE: 'Left-side anchorage', UNAVAILABLE: 'Unavailable assessments' }
 const LABELS: Record<SequenceEntry['result_type'], string> = { SUPPLIED_SYNTHETIC: 'Supplied fictional statement', STRUCTURAL_OBSERVATION: 'Structural metadata check · TEST_ONLY', UNKNOWN: 'Unknown', WITHHELD: 'Withheld', DISABLED: 'Disabled clinical decision' }
@@ -84,7 +85,7 @@ export default function SequencingWorkspace({ rawText, context, parsed, demo, on
       <p id="sequencing-privacy" className="mt-3 text-xs leading-6 text-muted">Explicit run only. Existing source and clinical gates are rechecked. This module uses deterministic wording and makes no LLM call.</p>
       {loading && <p role="status" className="motion-status mt-3 text-sm text-muted">Checking source and stage evidence and preparing the DRAFT…</p>}
       {error && <p role="alert" className="motion-status mt-4 text-sm text-notice-ink">{error}</p>}
-      {!report && !loading && !error && <p className="mt-6 rounded-lg bg-canvas p-5 text-sm text-muted">Your sequencing review will appear here after you run the review.</p>}
+      {!report && !loading && !error && <ReportEmpty>Your sequencing review will appear here after you run the review.</ReportEmpty>}
       {report && <article aria-label="Sequencing review draft" className="motion-enter mt-8 overflow-hidden rounded-2xl border border-line bg-white shadow-panel">
         <ReportHeader
           eyebrow="Nano · Sequencing review"
@@ -136,6 +137,7 @@ export default function SequencingWorkspace({ rawText, context, parsed, demo, on
           <ExportBar label="Sequencing export" title="Export" description="Copy or download the complete DRAFT with statement origins and limitations." notice={status || undefined}>
             <button type="button" className="button button-example" onClick={() => void copy()}><Copy size={15} aria-hidden="true" />Copy sequencing DRAFT</button>
             <button type="button" className="button button-secondary" onClick={download}><Download size={15} aria-hidden="true" />Download sequencing DRAFT (TXT)</button>
+            <PdfExportButton kind="nano" data={report} reportId={report.report_id} />
           </ExportBar>
 
           <details className="technical-details"><summary>Sequencing scope & limitations</summary><ul className="mt-3 list-disc space-y-2 pl-5 text-xs leading-6 text-muted">{report.limitations.map(l => <li key={l}>{l}</li>)}</ul></details>

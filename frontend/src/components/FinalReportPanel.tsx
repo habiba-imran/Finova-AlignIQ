@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import PdfExportButton from './PdfExportButton'
 import { Copy, Download, FileCheck2 } from 'lucide-react'
 import { requestReport } from '../api/report'
 import type { CommentMode, FinalDraftReport, ReportComment } from '../api/report'
@@ -130,6 +131,7 @@ export default function FinalReportPanel({ rawText, source, context, rawHash, qu
         <h5 className="mb-3 mt-6 font-semibold">Clinical limitations and scope</h5><ul className="list-disc space-y-2 pl-5 text-xs leading-6 text-muted">{report.limitations.map(item => <li key={item}>{item}</li>)}</ul>
         <p className="raw-text mt-5 text-[11px] leading-6 text-muted">Report: {report.report_id}<br />Input SHA-256: {report.engine_review.raw_sha256}<br />Rules: {report.engine_review.rule_set_version}</p>
         <div className="mt-5 flex flex-wrap gap-3"><button type="button" className="button button-example" onClick={copy}><Copy size={15} aria-hidden="true" />Copy Report</button><button type="button" className="button button-clear" onClick={download}><Download size={15} aria-hidden="true" />Download Report (TXT)</button></div>
+        <div className="mt-3 flex flex-wrap gap-3"><PdfExportButton kind="descriptive" data={report} reportId={report.report_id} /></div>
         {exportStatus && <p role="status" className="motion-status mt-3 text-xs leading-6 text-muted">{exportStatus}</p>}
         <details className="mt-5 rounded-lg border border-line p-4"><summary className="cursor-pointer text-sm font-medium">Complete TXT export preview</summary><pre aria-label="Report export preview" tabIndex={0} className="raw-text mt-4 max-h-96 overflow-auto text-xs leading-6">{report.export_text}</pre></details>
         <details className="mt-3 rounded-lg border border-line p-4"><summary className="cursor-pointer text-sm font-medium">Full report contract (JSON, in memory)</summary><pre aria-label="Final report JSON" tabIndex={0} className="raw-text mt-4 max-h-96 overflow-auto text-xs leading-6">{JSON.stringify(report, null, 2)}</pre></details>

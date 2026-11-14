@@ -1,8 +1,26 @@
 # Finova AlignIQ
 
-All three module workflows are available as **synthetic engineering prototypes**, with the finished OpenCode UI preserved. **Prototype — not for clinical use. Do not paste real patient data.** Start with the [final demo guide](FINOVA_FINAL_DEMO_GUIDE.md), [final integration report](FINOVA_FINAL_INTEGRATION_REPORT.md), [public-reference evaluation](FINOVA_PUBLIC_TMT_REFERENCE_EVALUATION.md) and [completion checklist](FINOVA_PROJECT_COMPLETION_CHECKLIST.md). The [Phase 9 audit](FINOVA_PHASE9_FUNCTIONAL_AUDIT.md) and [23-gap matrix](FINOVA_PMCEASY_FINAL_GAP_MATRIX.md) remain historical evaluation snapshots; current counts are in the final integration report. Historical implementation details are in [Phase 8](docs/SEQUENCER_PHASE8_REPORT.md), [Phase 7](docs/ATTACHMENT_INTERFACE_PHASE7_REPORT.md) and [Phase 6B](docs/PLANNING_ASSISTANT_PHASE6B_REPORT.md).
+All three module workflows are available as **synthetic engineering prototypes**, with the finished OpenCode UI preserved. **Prototype — not for clinical use. Do not paste real patient data.** Start with the [final polish report](FINOVA_FINAL_POLISH_REPORT.md), [enhancements report](FINOVA_FINAL_ENHANCEMENTS_REPORT.md), [demo guide](backend/FINOVA_FINAL_DEMO_GUIDE.md), [integration report](docs/FINOVA_FINAL_INTEGRATION_REPORT.md), [public-reference evaluation](docs/FINOVA_PUBLIC_TMT_REFERENCE_EVALUATION.md) and [completion checklist](docs/FINOVA_PROJECT_COMPLETION_CHECKLIST.md). The [Phase 9 audit](docs/FINOVA_PHASE9_FUNCTIONAL_AUDIT.md) and [23-gap matrix](docs/FINOVA_PMCEASY_FINAL_GAP_MATRIX.md) remain historical evaluation snapshots. Historical implementation details are in [Phase 8](docs/SEQUENCER_PHASE8_REPORT.md), [Phase 7](docs/ATTACHMENT_INTERFACE_PHASE7_REPORT.md) and [Phase 6B](docs/PLANNING_ASSISTANT_PHASE6B_REPORT.md).
 
-Final acceptance: **970 backend tests, 190 frontend tests and 140 Chromium tests across five widths passed**; TypeScript/build, 32 unchanged schemas and dependency checks passed. The local academic prototype is finalized. Clinical/vendor release and public deployment remain unapproved.
+Current presentation-polish acceptance: **1,006 backend tests, 214 frontend tests and 165 Chromium tests across five widths passed**, plus TypeScript/build, 32 unchanged schemas and dependency audits. See the [polish report](FINOVA_FINAL_POLISH_REPORT.md). The enhancements report's 1,006/208/160 and earlier 970/190/140 totals remain historical. Clinical/vendor release and public deployment remain unapproved.
+
+## PDF export
+
+After generating a validated Macro, Micro or Nano draft, choose **Export PDF** in its export controls. Existing copy, selected-comment copy and TXT downloads are unchanged. The PDF presents a concise review, independently of selections or collapsed/paginated UI details, with the complete original technical report embedded.
+
+The A4 report uses Finova teal, report ID/date/DRAFT headers, page numbers, executive summary and module-specific results. Exact measurements, concise source/evidence references, all relevant unknown/withheld results, distinct missing requirements and original clinical limitations remain visible. Identical Macro unavailable outcomes are grouped with references to every original comment. The 96-rule ledger, repeated metadata and raw JSON stay in the full attachments. Synthetic examples are labeled **NOT CLINICAL ADVICE**. Nothing is rounded or newly interpreted.
+
+The exact UTF-8 TXT and complete validated JSON snapshot are also embedded as `report.txt` and `validated-report.json`; use a PDF reader that exposes file attachments to extract them. Visible wrapping changes layout whitespace, while the embedded TXT remains byte-exact. All content remains inert text.
+
+PDF creation runs in a bundled inline worker with embedded fonts: **no export-time font/CDN/API requests, provider call or browser storage**. Changing the input, purpose or draft cancels pending work and prevents stale downloads. Current demonstration PDFs are **Macro 4, Micro 3 and Nano 5 pages**. There is no page cap: genuinely long visible results continue with repeated table headers and context. Unsupported glyphs in visible content cause an explicit failure with TXT/copy fallback; technical attachments preserve UTF-8 even when it is not displayed. Browsers must permit local Blob workers/downloads. These PDFs are not certified PDF/A, tagged accessible PDFs or clinical sign-offs. Bundling the renderer/fonts increases the initial JavaScript download; see the final polish report.
+
+The small UI polish retains the same layout, teal identity and motion: aligned summary metrics, consistent empty states and full-report copy → TXT → PDF order, more readable input/table spacing, and expandable wording/evidence diagnostics. Reduced-motion and keyboard access remain supported.
+
+## Generic movement-label recognition
+
+Exact lexical aliases now include `Extrusion / Intrusion` → `vertical`, `Relative Ext / Int` (also `Relative Extrusion / Intrusion`) → distinct `relative_vertical`, `Translation B / L` → `buccolingual`, and `Translation M / D` → `mesiodistal`. These are lexical family names, **not verified vendor/anatomical axes or directions**. Relative wording does not establish a reference basis.
+
+Matching allows case differences, whitespace/NBSP normalization and optional spaces around the ASCII `/`, with the existing explicit suffix-unit grammar (`(mm)`, `[mm]`, `mm`, `(deg)`, `°`, etc.). There is no fuzzy/substring matching, inferred unit, swapped-letter recovery or compound-axis merge. Unknown/composite labels remain unsupported; normalized aliases that conflict between families are withheld. Original labels, values, signs, suffixes, Decimal strings and spans remain unchanged. Repeated synonymous columns remain distinct ambiguous duplicates.
 
 ## Current architecture and capability
 
@@ -27,7 +45,7 @@ Set-Location 'C:\Finova AlignIQ'
 .\backend\.venv\Scripts\python.exe backend/scripts/evaluate_public_tmt.py --write-fixtures --output evidence/final/public-reference-evaluation.json
 ```
 
-The parser preserves **196/196** supplied positions; **195/196** supplied values agree with the original figures. Mamani tooth 25 angulation is `24D` in the supplied files versus `2.4 D` in the original. Originals stay unchanged; a separately labeled correction overlay records the difference. Four label families remain unsupported and all semantic eligibility stays disabled. See the [evaluation report](FINOVA_PUBLIC_TMT_REFERENCE_EVALUATION.md) for exact denominators, source/licenses and limits. No dependency, provider call or clinical rule activation is needed for this command.
+The parser preserves **196/196** supplied positions and now recognizes **196/196 movement labels**, up from 84/196 in the historical evaluation. **195/196** supplied values agree with the original figures. Mamani tooth 25 angulation is `24D` in the supplied files versus `2.4 D` in the original. Originals stay unchanged; a separately labeled correction overlay records the difference. **Semantic eligibility remains 0/196**, with no approved vendor releases. See the [historical evaluation](docs/FINOVA_PUBLIC_TMT_REFERENCE_EVALUATION.md) for source/licenses and the [enhancements report](FINOVA_FINAL_ENHANCEMENTS_REPORT.md) for current results. No provider call or clinical rule activation is needed for this command.
 
 ## Final acceptance commands
 
@@ -37,13 +55,13 @@ Set-Location 'C:\Finova AlignIQ\backend'
 .\.venv\Scripts\python.exe -m pip check
 
 Set-Location 'C:\Finova AlignIQ\frontend'
-npm test
+npm test -- --maxWorkers=2
 npm run build
 npm run test:e2e -- --config=playwright.final.config.ts --output=../evidence/final/browser-results
 npm audit --audit-level=high
 ```
 
-The final browser configuration runs the complete production-bundle suite at **1440/1024/768/672/375 px**, using fresh owned loopback ports 8019/5179 and no Groq calls. Existing ordinary dev servers are left alone; leave the audit ports free. Current results, dependency/security checks and remaining defects/limits are in the [final integration report](FINOVA_FINAL_INTEGRATION_REPORT.md). The earlier four-width Phase 9 command below remains available. No deployment, commit or push is part of finalization.
+The final browser configuration runs the complete production-bundle suite at **1440/1024/768/672/375 px**, using fresh owned loopback ports 8019/5179 and no Groq calls. Existing ordinary dev servers are left alone; leave the audit ports free. Current results, dependency/security checks and remaining defects/limits are in the [final integration report](docs/FINOVA_FINAL_INTEGRATION_REPORT.md). The earlier four-width Phase 9 command below remains available. No deployment, commit or push is part of finalization.
 
 ## Demonstrate all three modules locally
 
@@ -79,7 +97,7 @@ Open [the local workspace](http://127.0.0.1:5173). Stop an older server before s
 
 For an independent-input demonstration, load the ordinary synthetic example or paste your own synthetic table, confirm it and choose Parse Table. Exact lexical values are processed independently, but unreleased vendor semantics cause clinical output to be withheld. Macro descriptions are derived from eligible engine findings; Micro choices and Nano strategies are authored examples, not calculated clinical recommendations. None of the three implements clinical treatment planning or verified vendor compatibility.
 
-Phase 9 reproduction: run `backend/.venv/Scripts/python.exe backend/scripts/audit_phase9.py` from the repository root for provider-free probes. Full test commands remain below; the [audit](FINOVA_PHASE9_FUNCTIONAL_AUDIT.md#verification) records the final counts, live synthetic smoke limits and environmental caveats.
+Phase 9 reproduction: run `backend/.venv/Scripts/python.exe backend/scripts/audit_phase9.py` from the repository root for provider-free probes. Full test commands remain below; the [audit](docs/FINOVA_PHASE9_FUNCTIONAL_AUDIT.md#verification) records the final counts, live synthetic smoke limits and environmental caveats.
 
 For browser acceptance against the built bundle and fresh isolated servers (without stopping an existing development session):
 
@@ -117,7 +135,7 @@ Phase 1.5 added a separate offline/library semantic assessment, strict fixture/r
 
 ## Deployment configuration
 
-The repository includes configuration for a Vercel frontend and Render backend connected by an `/api` rewrite. This is configuration, not evidence of a healthy deployed application. Verify the configured destination before any separately authorized deployment. See the [deployment guide](docs/DEPLOYMENT.md) and [release-readiness checklist](FINOVA_PROJECT_COMPLETION_CHECKLIST.md). Production disables the positive fixed demos; use the local development procedure above for the final demonstration. No deployment was performed by Phase 9.
+The repository includes configuration for a Vercel frontend and Render backend connected by an `/api` rewrite. This is configuration, not evidence of a healthy deployed application. Verify the configured destination before any separately authorized deployment. See the [deployment guide](docs/DEPLOYMENT.md) and [release-readiness checklist](docs/FINOVA_PROJECT_COMPLETION_CHECKLIST.md). Production disables the positive fixed demos; use the local development procedure above for the final demonstration. No deployment was performed by Phase 9.
 
 ## Prerequisites
 

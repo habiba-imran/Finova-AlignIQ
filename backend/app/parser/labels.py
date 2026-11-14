@@ -16,13 +16,34 @@ LABEL_ALIASES = {
     "buccolingual": ("buccolingual", "buccal/lingual", "buccal lingual", "b/l", "bucco-lingual"),
     "mesiodistal": ("mesiodistal", "mesial/distal", "mesial distal", "m/d", "mesio-distal"),
     "vertical": ("vertical", "intrusion/extrusion", "extrusion/intrusion", "i/e"),
+    # Lexical labels only: "relative" deliberately remains a distinct family.
+    # None of these spellings establishes an axis, direction or reference basis.
+    "relative_vertical": ("relative ext/int", "relative extrusion/intrusion"),
     "translation": ("translation", "displacement"),
 }
-ALIASES = {alias: family for family, aliases in LABEL_ALIASES.items() for alias in aliases}
+LABEL_ALIASES["buccolingual"] += ("translation b/l",)
+LABEL_ALIASES["mesiodistal"] += ("translation m/d",)
 
 
 def token(text: str) -> str:
     return " ".join(text.replace("\u00a0", " ").strip().lower().split())
+
+
+def alias_key(text: str) -> str:
+    """Case/whitespace and ASCII-slash spacing only; never fuzzy/substring matching."""
+    return re.sub(r"\s*/\s*", "/", token(text))
+
+
+def alias_map(families: dict[str, tuple[str, ...]]) -> dict[str, str | None]:
+    """A conflicting normalized alias is withheld rather than last-writer-wins."""
+    candidates: dict[str, set[str]] = {}
+    for family, aliases in families.items():
+        for alias in aliases:
+            candidates.setdefault(alias_key(alias), set()).add(family)
+    return {key: next(iter(values)) if len(values) == 1 else None for key, values in candidates.items()}
+
+
+ALIASES = alias_map(LABEL_ALIASES)
 
 
 @dataclass(frozen=True)
@@ -43,4 +64,4 @@ def recognize_label(raw: str) -> Label:
     elif match:
         raw_unit = next(v for v in match.groups() if v is not None).strip()
         label = label[:match.start()].strip()
-    return Label(ALIASES.get(label), UNIT_ALIASES.get(raw_unit), raw_unit)
+    return Label(ALIASES.get(alias_key(label)), UNIT_ALIASES.get(raw_unit), raw_unit)

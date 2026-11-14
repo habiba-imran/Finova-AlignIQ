@@ -1,0 +1,136 @@
+{
+  "date": "2026-11-14",
+  "timezone": "Asia/Karachi",
+  "scope": "Only PDF export and generic lexical label recognition",
+  "status": "IMPLEMENTED_AND_VERIFIED_LOCAL_ACADEMIC_PROTOTYPE",
+  "backend": {
+    "passed": 1006,
+    "elapsed_seconds": 43.11,
+    "new_cases": 36,
+    "existing_upstream_warnings": 1,
+    "log": "backend-tests.log"
+  },
+  "frontend": {
+    "passed": 208,
+    "test_files": 16,
+    "new_cases": 18,
+    "max_workers": 2,
+    "elapsed_seconds": 77.81,
+    "log": "frontend-tests.log"
+  },
+  "browser": {
+    "passed": 160,
+    "failed": 0,
+    "retries": 0,
+    "skipped": 0,
+    "widths": [
+      1440,
+      1024,
+      768,
+      672,
+      375
+    ],
+    "scenarios_per_width": 32,
+    "real_pdf_downloads": 15,
+    "elapsed": "9.8m",
+    "production_bundle_real_api": true,
+    "log": "browser-tests.log"
+  },
+  "typescript_and_build": {
+    "passed": true,
+    "modules": 2100,
+    "elapsed_seconds": 15.24,
+    "javascript_kb": 2312.02,
+    "javascript_gzip_kb": 986.56,
+    "css_kb": 37.34,
+    "chunk_size_warning": true,
+    "log": "build.log"
+  },
+  "pdf": {
+    "modules": [
+      "Macro",
+      "Micro",
+      "Nano",
+      "existing standalone descriptive report"
+    ],
+    "validated_input_only": true,
+    "exact_embedded_txt_and_json": true,
+    "complete_visible_original_txt_checked": true,
+    "page_counts": {
+      "macro": 43,
+      "micro": 28,
+      "nano": 26,
+      "ordinary": 23,
+      "long": 45
+    },
+    "worker": "inline bundled, no runtime fetch, terminates on completion/cancellation",
+    "visual_review": "opening/table/body/end pages and mobile/desktop export controls",
+    "record": "pdf-verification.json"
+  },
+  "references": {
+    "source_cells": 196,
+    "exact_lexical_positions": 196,
+    "recognized_labels_before": 84,
+    "recognized_labels_after": 196,
+    "unsupported_labels_after": 0,
+    "numeric_cells": 182,
+    "explicit_zeros": 8,
+    "missing_dashes": 14,
+    "source_agrees": 195,
+    "transcription_conflicts": 1,
+    "corrected_overlay_exact": 196,
+    "transpose_same_cells_exact": 196,
+    "semantic_authorized": 0,
+    "semantic_status": "DISABLED",
+    "approved_vendor_releases": 0,
+    "provider_calls": 0,
+    "original_hashes": {
+      "FINOVA_Published_TMT_Values_Reference.csv": "4747683f3ee07fdf8c5bf0994269b378e4a8542c8323c96837ade9625789e980",
+      "transcription_review.json": "66dfae40583d1277dbabb2fc7b433ed98ab91026d7c1ae555a675aac9bc982f2",
+      "FINOVA_Public_TMT_Verification_Pack.pdf": "8260592a37477351af30f1fd1e98e78dc03847968f2a32870a08bbff9c5a3bca"
+    },
+    "record": "public-reference-evaluation.json"
+  },
+  "schemas": {
+    "count": 32,
+    "identical": true
+  },
+  "rules": {
+    "total": 96,
+    "active_engineering": 66,
+    "disabled_clinical": 27,
+    "deferred": 3
+  },
+  "vendor_gate": {
+    "exit_code": 2,
+    "status": "NO_AUTHENTIC_ORACLES"
+  },
+  "dependencies": {
+    "npm_known_vulnerabilities": 0,
+    "python_pinned_requirements": "no known vulnerabilities",
+    "pip_check": "passed",
+    "npm_resolution": "passed"
+  },
+  "graphify": {
+    "update_exit": 0,
+    "nodes": 1391,
+    "edges": 4699,
+    "scope": "AST code update"
+  },
+  "integrity_records": [
+    "integrity-checks.json",
+    "handoff-checks.json"
+  ],
+  "earlier_checks": [
+    "unconstrained frontend: 202 passed / 1 PDF timeout; final unchanged-timeout suite passes with two workers",
+    "preliminary browser stopped for embedded font/worker update; final full suite passes"
+  ],
+  "limits": [
+    "bounded Unicode coverage; explicit glyph refusal with TXT fallback",
+    "large initial static bundle",
+    "not PDF/A or certified tagged-accessible PDF",
+    "Blob workers/downloads required",
+    "vendor and clinical authority still absent"
+  ],
+  "no_commit_push_deploy_or_live_groq_call": true
+}

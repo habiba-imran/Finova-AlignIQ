@@ -3,7 +3,8 @@ import { ArrowRight, Copy, Download, Layers } from 'lucide-react'
 import type { AutomaticParseResult, ContextClaims } from '../api/parse'
 import { requestAttachmentDraft } from '../api/attachments'
 import type { AttachmentDraft, AttachmentEntry } from '../api/attachments'
-import { EvidenceDisclosure, ExportBar, ReportHeader, ReportSection, SummaryGrid, SummaryMetric } from './ReportPrimitives'
+import { EvidenceDisclosure, ExportBar, ReportEmpty, ReportHeader, ReportSection, SummaryGrid, SummaryMetric } from './ReportPrimitives'
+import PdfExportButton from './PdfExportButton'
 
 const LABELS: Record<AttachmentEntry['result_type'], string> = {
   CANDIDATE: 'Supplied candidate', ALTERNATIVE: 'Supplied alternative', NOT_INDICATED: 'Supplied no attachment', UNKNOWN: 'Unknown', WITHHELD: 'Withheld',
@@ -67,7 +68,7 @@ export default function AttachmentWorkspace({ rawText, context, parsed, demo, on
       <p id="attachment-privacy" className="mt-3 text-xs leading-6 text-muted">Explicit run only. The backend rechecks source evidence and existing safeguards. This module uses deterministic wording and makes no LLM call.</p>
       {loading && <p role="status" className="motion-status mt-3 text-sm text-muted">Checking attachment evidence and preparing the DRAFT…</p>}
       {error && <p role="alert" className="motion-status mt-4 text-sm text-notice-ink">{error}</p>}
-      {!draft && !loading && !error && <p className="mt-6 rounded-lg bg-canvas p-5 text-sm text-muted">Your attachment review table will appear here after you run the review.</p>}
+      {!draft && !loading && !error && <ReportEmpty>Your attachment review table will appear here after you run the review.</ReportEmpty>}
       {draft && <article aria-label="Attachment review draft" className="motion-enter mt-8 overflow-hidden rounded-2xl border border-line bg-white shadow-panel">
         <ReportHeader
           eyebrow="Micro · Attachment review"
@@ -125,6 +126,7 @@ export default function AttachmentWorkspace({ rawText, context, parsed, demo, on
           <ExportBar label="Attachment export" title="Export" description="Copy or download the complete DRAFT with supplied-decision labels and limitations." notice={status || undefined}>
             <button type="button" className="button button-example" onClick={() => void copy()}><Copy size={15} aria-hidden="true" />Copy attachment DRAFT</button>
             <button type="button" className="button button-secondary" onClick={download}><Download size={15} aria-hidden="true" />Download attachment DRAFT (TXT)</button>
+            <PdfExportButton kind="micro" data={draft} reportId={draft.report_id} />
           </ExportBar>
 
           <details className="technical-details"><summary>Attachment scope & limitations</summary><ul className="mt-3 list-disc space-y-2 pl-5 text-xs leading-6 text-muted">{draft.limitations.map(l => <li key={l}>{l}</li>)}</ul></details>

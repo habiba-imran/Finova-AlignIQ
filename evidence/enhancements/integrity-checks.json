@@ -1,0 +1,24 @@
+{
+  "schemas": {
+    "count": 32,
+    "identical": true
+  },
+  "backend_application_changes": [
+    "backend/app/parser/labels.py"
+  ],
+  "vendor_gate": {
+    "exit_code": 2,
+    "message": "NO_AUTHENTIC_ORACLES: 0 reviewed captures; vendor normalization disabled."
+  },
+  "reference_original_hashes": {
+    "FINOVA_Published_TMT_Values_Reference.csv": "4747683f3ee07fdf8c5bf0994269b378e4a8542c8323c96837ade9625789e980",
+    "transcription_review.json": "66dfae40583d1277dbabb2fc7b433ed98ab91026d7c1ae555a675aac9bc982f2",
+    "FINOVA_Public_TMT_Verification_Pack.pdf": "8260592a37477351af30f1fd1e98e78dc03847968f2a32870a08bbff9c5a3bca"
+  },
+  "label_supported": 196,
+  "label_unsupported": 0,
+  "semantically_ready": 0,
+  "corrected_overlay_exact": 196,
+  "transpose_exact": 196,
+  "protected_boundary": "All backend application changes restricted to parser/labels.py; clinical/semantic/provider/report logic and rules untouched."
+}

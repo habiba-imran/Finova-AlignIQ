@@ -1,0 +1,120 @@
+{
+  "date": "2026-11-14",
+  "timezone": "Asia/Karachi",
+  "status": "FINAL_PRESENTATION_POLISH_COMPLETE",
+  "scope": "Concise PDF presentation and minor UI refinements only; previous uncommitted work preserved",
+  "backend": {
+    "passed": 1006,
+    "elapsed_seconds": 45.4,
+    "existing_upstream_warnings": 1
+  },
+  "frontend": {
+    "passed": 214,
+    "test_files": 17,
+    "new_cases": 6,
+    "max_workers": 2,
+    "elapsed_seconds": 70.08
+  },
+  "browser": {
+    "passed": 165,
+    "failed": 0,
+    "skipped": 0,
+    "retries": 0,
+    "new_cases": 5,
+    "widths": [
+      1440,
+      1024,
+      768,
+      672,
+      375
+    ],
+    "elapsed": "12.1m",
+    "real_api_production_bundle": true
+  },
+  "typescript_build": {
+    "passed": true,
+    "modules": 1918,
+    "seconds": 14.87,
+    "javascript_kb": 2321.31,
+    "javascript_gzip_kb": 989.31,
+    "css_kb": 38.33,
+    "existing_chunk_size_warning": true
+  },
+  "pdf_page_counts": {
+    "macro": 4,
+    "micro": 3,
+    "nano": 5,
+    "ordinary": 3,
+    "long": 18
+  },
+  "pdf_full_attachments_exact": true,
+  "pdf_warnings_missing_requirements_and_source_refs_verified": true,
+  "pdf_main_ledger_removed": true,
+  "no_artificial_page_cap": true,
+  "visual_review": {
+    "normal_pdf_pages": "all 4 Macro / 3 Micro / 5 Nano pages rendered and inspected",
+    "stress_pdf": "continuation context, repeated headers, explanation column and ending checked",
+    "ui": "all three module headers, export controls, tablet/mobile layouts and disclosures",
+    "retained_samples": "screenshots/"
+  },
+  "protected_files": {
+    "protected_file_count": 99,
+    "changed_protected_files": [],
+    "schemas": {
+      "count": 32,
+      "identical": true
+    },
+    "vendor_gate": {
+      "exit_code": 2,
+      "message": "NO_AUTHENTIC_ORACLES: 0 reviewed captures; vendor normalization disabled."
+    },
+    "scope": "Snapshot covers backend application/parser/rules/Groq/authorization source, vendor registry files, frontend API validators and original public TMT references."
+  },
+  "schema_count": 32,
+  "schemas_identical": true,
+  "clinical_rules": {
+    "total": 96,
+    "active_engineering": 66,
+    "disabled_clinical": 27,
+    "deferred": 3
+  },
+  "reference_regression": {
+    "exact_cells": 196,
+    "recognized_labels": 196,
+    "semantic_authorized": 0,
+    "source_agrees": 195,
+    "known_source_conflicts": 1,
+    "providers_or_releases_added": 0
+  },
+  "dependencies": {
+    "new_dependencies": 0,
+    "npm_known_vulnerabilities": 0,
+    "python_requirements": "no known vulnerabilities",
+    "pip_check": "passed",
+    "npm_resolution": "passed"
+  },
+  "graphify": {
+    "exit_code": 0,
+    "nodes": 1504,
+    "edges": 4851,
+    "scope": "AST code update"
+  },
+  "handoff": {
+    "local_links_checked": 59,
+    "broken": [],
+    "whitespace_exit": 0,
+    "scanned_frontend_files": 68,
+    "groq_key_pattern_matching_files": [],
+    "backend_env_local_ignored": true,
+    "limits": "Pattern scan is not exhaustive secret detection. Local file/directory links checked, not remote uptime or anchors."
+  },
+  "preliminary_browser": "Stopped for an orphaned PDF result label; pagination fixed and complete final suite rerun without assertion/timeout/retry weakening.",
+  "no_clinical_parser_provider_authorization_change": true,
+  "no_live_groq_patient_processing_commit_push_or_deployment": true,
+  "limits": [
+    "bounded visible font coverage",
+    "not certified PDF/A or tagged-accessible",
+    "initial bundle remains large",
+    "no clinical/vendor/production approval"
+  ]
+}

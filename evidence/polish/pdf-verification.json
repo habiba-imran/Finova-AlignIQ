@@ -1,0 +1,52 @@
+[
+  {
+    "report": "macro",
+    "pages": 4,
+    "exact_complete_txt_attachment": true,
+    "exact_complete_json_attachment": true,
+    "all_critical_statements_limits_missing_and_refs_verified": true,
+    "headers_footers_all_pages": true,
+    "full_ledger_not_printed": true,
+    "scope": "Visible content checked after whitespace/Unicode compatibility normalization; embedded content exact."
+  },
+  {
+    "report": "micro",
+    "pages": 3,
+    "exact_complete_txt_attachment": true,
+    "exact_complete_json_attachment": true,
+    "all_critical_statements_limits_missing_and_refs_verified": true,
+    "headers_footers_all_pages": true,
+    "full_ledger_not_printed": true,
+    "scope": "Visible content checked after whitespace/Unicode compatibility normalization; embedded content exact."
+  },
+  {
+    "report": "nano",
+    "pages": 5,
+    "exact_complete_txt_attachment": true,
+    "exact_complete_json_attachment": true,
+    "all_critical_statements_limits_missing_and_refs_verified": true,
+    "headers_footers_all_pages": true,
+    "full_ledger_not_printed": true,
+    "scope": "Visible content checked after whitespace/Unicode compatibility normalization; embedded content exact."
+  },
+  {
+    "report": "ordinary",
+    "pages": 3,
+    "exact_complete_txt_attachment": true,
+    "exact_complete_json_attachment": true,
+    "all_critical_statements_limits_missing_and_refs_verified": true,
+    "headers_footers_all_pages": true,
+    "full_ledger_not_printed": true,
+    "scope": "Visible content checked after whitespace/Unicode compatibility normalization; embedded content exact."
+  },
+  {
+    "report": "long",
+    "pages": 18,
+    "exact_complete_txt_attachment": true,
+    "exact_complete_json_attachment": true,
+    "all_critical_statements_limits_missing_and_refs_verified": true,
+    "headers_footers_all_pages": true,
+    "full_ledger_not_printed": true,
+    "scope": "Visible content checked after whitespace/Unicode compatibility normalization; embedded content exact."
+  }
+]

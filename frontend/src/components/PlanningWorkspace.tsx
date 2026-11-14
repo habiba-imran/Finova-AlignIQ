@@ -6,7 +6,8 @@ import { ASSESSMENT_OPTIONS } from '../api/review'
 import type { AssessmentQuestion } from '../api/review'
 import { eligibleComment, requestPlanning, selectedExport } from '../api/planning'
 import type { Dimension, PlanningDraft } from '../api/planning'
-import { EvidenceDisclosure, ExportBar, ReportHeader, ReportSection, SummaryGrid, SummaryMetric } from './ReportPrimitives'
+import { EvidenceDisclosure, ExportBar, ReportEmpty, ReportHeader, ReportSection, SummaryGrid, SummaryMetric } from './ReportPrimitives'
+import PdfExportButton from './PdfExportButton'
 
 const TITLES: Record<Dimension, string> = { SAGITTAL: 'Sagittal', TRANSVERSE: 'Transverse', VERTICAL: 'Vertical', OTHER: 'Other observations', UNAVAILABLE: 'Unavailable assessments' }
 
@@ -113,6 +114,7 @@ export default function PlanningWorkspace({ rawText, context, parsed, demo, onCo
       <button type="button" className="button button-primary mt-4" onClick={() => void run()} disabled={loading} aria-describedby="planning-privacy">{loading ? <><span className="button-spinner" aria-hidden="true" />Preparing planning draft…</> : <>Run Planning Assistant<ArrowRight size={16} aria-hidden="true" /></>}</button>
       {loading && <p role="status" className="motion-status mt-3 text-sm text-muted">Rechecking evidence and preparing the descriptive DRAFT…</p>}
       {error && <p role="alert" className="motion-status mt-4 text-sm text-notice-ink">{error}</p>}
+      {!draft && !loading && !error && <ReportEmpty>Your planning review will appear here after you run the assistant.</ReportEmpty>}
       {draft && report && <article aria-label="Planning Assistant draft" className="motion-enter mt-8 overflow-hidden rounded-2xl border border-line bg-white shadow-panel">
         <ReportHeader
           eyebrow="Macro · Planning review"
@@ -135,8 +137,10 @@ export default function PlanningWorkspace({ rawText, context, parsed, demo, onCo
         >
           <div className="mt-4 rounded-lg border border-line bg-canvas p-3 text-xs leading-6 text-muted">
             <p>Wording: {report.generation.used_mode.replaceAll('_', ' ')}. {report.generation.attempts === 0 ? 'No provider call was made.' : 'Groq received approved wording choices only.'}</p>
-            <p>{report.generation.reason === 'NO_ELIGIBLE_FINDINGS' ? 'No authorized descriptive findings; abstention templates were used.' : report.generation.reason === 'GROQ_VALIDATED' ? 'Wording passed strict validation; exact facts remain locally assembled.' : report.generation.reason === 'STANDARD_TEMPLATES_SELECTED' ? 'Deterministic templates selected.' : 'Template fallback is available when Groq is disabled, unavailable or fails validation.'}</p>
-            <details><summary className="cursor-pointer">Wording details</summary>{report.generation.reason}</details>
+            <details><summary className="cursor-pointer">Wording details</summary>
+              <p>{report.generation.reason === 'NO_ELIGIBLE_FINDINGS' ? 'No authorized descriptive findings; abstention templates were used.' : report.generation.reason === 'GROQ_VALIDATED' ? 'Wording passed strict validation; exact facts remain locally assembled.' : report.generation.reason === 'STANDARD_TEMPLATES_SELECTED' ? 'Deterministic templates selected.' : 'Template fallback is available when Groq is disabled, unavailable or fails validation.'}</p>
+              {report.generation.reason}
+            </details>
           </div>
         </ReportHeader>
 
@@ -166,11 +170,12 @@ export default function PlanningWorkspace({ rawText, context, parsed, demo, onCo
               <button className="button button-clear" disabled={!eligible.length} onClick={() => { setNotice(''); setSelected(new Set(eligible.map(c => c.comment_id))) }}>Select all eligible comments</button>
               <button className="button button-clear" disabled={!selected.size} onClick={() => { setNotice(''); setSelected(new Set()) }}>Clear selection</button>
               <p className="text-sm">{selected.size} selected of {eligible.length} eligible comments</p>
+              <button className="button button-example disabled:opacity-50" disabled={!selected.size} onClick={() => void copy(true)}><Copy size={15} aria-hidden="true" />Copy selected comments</button>
             </div>
             <div className="flex w-full flex-wrap gap-2">
-              <button className="button button-example disabled:opacity-50" disabled={!selected.size} onClick={() => void copy(true)}><Copy size={15} aria-hidden="true" />Copy selected comments</button>
               <button className="button button-clear" onClick={() => void copy(false)}>Copy complete DRAFT report</button>
               <button className="button button-clear" onClick={download}><Download size={15} aria-hidden="true" />Download DRAFT (TXT)</button>
+              <PdfExportButton kind="macro" data={draft} reportId={report.report_id} />
             </div>
           </ExportBar>
 

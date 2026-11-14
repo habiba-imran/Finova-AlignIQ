@@ -1,4 +1,5 @@
-import type { ReactNode, Ref } from 'react'
+import { Children } from 'react'
+import type { CSSProperties, ReactNode, Ref } from 'react'
 
 type Tone = 'default' | 'notice' | 'danger' | 'brand'
 
@@ -36,7 +37,11 @@ export function ReportHeader({ eyebrow, title, headingRef, draftStatus, badges =
 }
 
 export function SummaryGrid({ label, children }: { label: string; children: ReactNode }) {
-  return <dl aria-label={label} className="summary-grid">{children}</dl>
+  return <dl aria-label={label} className="summary-grid" style={{ '--metric-count': Children.count(children) } as CSSProperties}>{children}</dl>
+}
+
+export function ReportEmpty({ children }: { children: ReactNode }) {
+  return <div role="note" className="report-empty"><p className="font-medium text-ink">Review not started</p><p className="mt-1">{children}</p></div>
 }
 
 export function SummaryMetric({ label, value, detail, tone = 'default' }: {
