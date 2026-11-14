@@ -64,13 +64,15 @@ describe('Explicit Phase 1 parsing', () => {
     let finish!: (value: unknown) => void
     const fetch = vi.fn().mockImplementation(() => new Promise(resolve => { finish = resolve }))
     vi.stubGlobal('fetch', fetch)
-    const { button } = setup()
+    const { button, input } = setup()
     fireEvent.click(button)
     expect(screen.getByRole('button', { name: 'Parsing…' })).toBeDisabled()
     expect(screen.getByText('Parsing the submitted text structure…')).toBeVisible()
     fireEvent.click(button)
     expect(fetch).toHaveBeenCalledTimes(1)
     await act(async () => finish(response()))
+    expect(screen.getByRole('button', { name: 'Parse Table' })).toBeDisabled()
+    fireEvent.change(input, { target: { value: 'Tooth\tRotation (deg)\n13\t0.5\n' } })
     expect(screen.getByRole('button', { name: 'Parse Table' })).toBeEnabled()
   })
 

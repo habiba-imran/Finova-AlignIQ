@@ -34,11 +34,13 @@ function workspace(fetch: ReturnType<typeof vi.fn>) {
 }
 
 it('keeps the normal workspace free of duplicate raw text, JSON and engineering actions', async () => {
-  const fetch = vi.fn().mockResolvedValue(ok(input)); vi.stubGlobal('fetch', fetch)
+  const fetch = vi.fn().mockResolvedValue(ok(input.parsed)); vi.stubGlobal('fetch', fetch)
   render(<App />)
   expect(fetch).not.toHaveBeenCalled()
   expect(screen.getByText(/Synthetic demonstration — not for clinical use/)).toBeVisible()
-  fireEvent.click(screen.getByRole('button', { name: 'Load Finova planning demo' }))
+  expect(screen.queryByRole('button', { name: 'Load Finova planning demo' })).not.toBeInTheDocument()
+  fireEvent.change(screen.getByRole('textbox', { name: 'Raw TMT text' }), { target: { value: input.parsed.raw_text } })
+  fireEvent.click(screen.getByRole('button', { name: 'Parse Table' }))
   await screen.findByRole('button', { name: 'Run Planning Assistant' })
   expect(screen.getByRole('textbox', { name: 'Raw TMT text' })).toHaveValue(input.parsed.raw_text)
   expect(screen.getByRole('region', { name: 'Structured TMT table' })).toBeVisible()
@@ -46,12 +48,12 @@ it('keeps the normal workspace free of duplicate raw text, JSON and engineering 
   expect(screen.queryByLabelText('Full parsing JSON')).not.toBeInTheDocument()
   expect(screen.queryByRole('button', { name: 'Create draft review' })).not.toBeInTheDocument()
   expect(screen.queryByText(/Groq|rule ledger|Provider attempts/i)).not.toBeInTheDocument()
-  expect(screen.getByText('Verified synthetic demonstration only')).toBeVisible()
+  expect(screen.queryByText('Verified synthetic demonstration only')).not.toBeInTheDocument()
 })
 
 it.each([404, 503])('disables unavailable demo after HTTP %s without exposing server details', async status => {
   vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: false, status, json: async () => ({ detail: 'PRIVATE_CONFIG' }) }))
-  render(<App />)
+  render(<App diagnostics />)
   fireEvent.change(screen.getByRole('textbox', { name: 'Raw TMT text' }), { target: { value: 'retained original' } })
   const button = screen.getByRole('button', { name: 'Load Finova planning demo' })
   fireEvent.click(button)

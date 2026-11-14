@@ -75,7 +75,7 @@ export default function SequencingWorkspace({ rawText, context, parsed, demo, on
     </div>
     <div className="p-5 sm:p-7">
       <p className="max-w-3xl text-sm leading-7 text-muted">Inspect the original values above, then review available sequencing and anchorage context. Total movements do not establish a movement order, stage schedule, simultaneous movement or force plan.</p>
-      <button type="button" className="button button-primary mt-5" disabled={loading} onClick={() => void run()} aria-describedby="sequencing-privacy">{loading ? <><span className="button-spinner" aria-hidden="true" />Preparing sequencing review…</> : <>Run Sequencing Review<ArrowRight size={16} aria-hidden="true" /></>}</button>
+      <button type="button" className="button button-primary mt-5" disabled={loading || report !== null} onClick={() => void run()} aria-describedby="sequencing-privacy">{loading ? <><span className="button-spinner" aria-hidden="true" />Preparing sequencing review…</> : <>Run Sequencing Review<ArrowRight size={16} aria-hidden="true" /></>}</button>
       <p id="sequencing-privacy" className="mt-3 text-xs leading-6 text-muted">Supplied example notes are shown as provided. No sequence or anchorage strategy is generated.</p>
       {loading && <p role="status" className="motion-status mt-3 text-sm text-muted">Checking source and stage evidence and preparing the DRAFT…</p>}
       {error && <p role="alert" className="motion-status mt-4 text-sm text-notice-ink">{error}</p>}

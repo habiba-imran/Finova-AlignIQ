@@ -1,0 +1,228 @@
+Finova AlignIQ
+Synthetic demonstration review / DRAFT
+cc26278556a4 | 2026-11-14 UTC
+Synthetic demonstration review
+Synthetic demonstration — not for clinical use
+UNVERIFIED INPUT - NOT CLINICAL ADVICE
+Report ID: cc26278556a4396db3c13d0ddcf65176b414d2404741452c89ef7fd2203cfdb0
+Exported: 2026-11-14 UTC | Clinical analysis enabled: false
+Input SHA-256: 19e474b71a51ebc6424469601d57ba3927af599b956697ad357db708d9ea0acd
+ Executive summary
+MICRO
+The parsed source values are described below. 16 tooth tokens; 112 measurement positions; 103 recorded 
+numerical values; 9 missing or omitted; 0 invalid or ambiguous.
+AI-assisted wording
+Concise review only. Full technical evidence and the complete original report are available in embedded report.txt / 
+validated-report.json and existing TXT export. Reference keys below locate the exact source records.
+ Attachment review comments
+Tooth token  18 
+The record presents rotation of 0.0 deg (explicitly recorded zero) and angulation of 0.0 deg (explicitly recorded 
+zero) alongside inclination of 0.0 deg (explicitly recorded zero). Additionally an unreported vertical movement 
+value (unknown, not zero) and an unreported relative vertical movement value (unknown, not zero) are noted, 
+accompanied by buccolingual translation of 0.0 mm (explicitly recorded zero) and mesiodistal translation of 0.0 
+mm (explicitly recorded zero).
+ Tooth token  17 
+Within the profile rotation of 2.30 deg (supplied direction label "D") appears together with angulation of 0.60 deg 
+(supplied direction label "D") and inclination of 5.10 deg (supplied direction label "L"). The vertical movement of 
+1.30 mm (supplied direction label "E") and relative vertical movement of 0.90 mm (supplied direction label "E") are 
+recorded, accompanied by buccolingual translation of 0.30 mm (supplied direction label "B") and mesiodistal 
+translation of 3.10 mm (supplied direction label "D").
+ Tooth token  16 
+Across the data rotation of 2.60 deg (supplied direction label "D") is listed with angulation of 2.90 deg (supplied 
+direction label "D") and inclination of 0.60 deg (supplied direction label "B"). Vertical movement of 0.60 mm 
+(supplied direction label "E") and relative vertical movement of 0.10 mm (supplied direction label "E") are included, 
+alongside buccolingual translation of 0.30 mm (supplied direction label "B") and mesiodistal translation of 3.10 
+mm (supplied direction label "D").
+DRAFT / NOT CLINICAL ADVICE | cc26278556a4
+Page 1 of 6
+
+Finova AlignIQ
+Synthetic demonstration review / DRAFT
+cc26278556a4 | 2026-11-14 UTC
+Tooth token  15 
+Here rotation of 2.20 deg (supplied direction label "D") accompanies angulation of 0.60 deg (supplied direction 
+label "D") and inclination of 6.00 deg (supplied direction label "L"). Vertical movement of 0.30 mm (supplied 
+direction label "I") and relative vertical movement of 0.40 mm (supplied direction label "E") are noted, together 
+with buccolingual translation of 0.20 mm (supplied direction label "B") and mesiodistal translation of 3.20 mm 
+(supplied direction label "D").
+ Tooth token  14 
+The entry includes rotation of 3.70 deg (supplied direction label "D") and angulation of 3.50 deg (supplied direction
+ label "M") together with inclination of 4.50 deg (supplied direction label "B"). Vertical movement of 0.10 mm 
+(supplied direction label "I") and relative vertical movement of 0.30 mm (supplied direction label "I") are recorded, 
+accompanied by buccolingual translation of 0.20 mm (supplied direction label "B") and mesiodistal translation of 
+3.20 mm (supplied direction label "D").
+ Tooth token  13 
+Within the summary rotation of 0.10 deg (supplied direction label "D") appears alongside angulation of 1.80 deg 
+(supplied direction label "M") and inclination of 5.80 deg (supplied direction label "B"). Vertical movement of 0.50 
+mm (supplied direction label "I") and relative vertical movement of 0.70 mm (supplied direction label "I") are 
+noted, together with buccolingual translation of 0.50 mm (supplied direction label "B") and mesiodistal translation 
+of 3.30 mm (supplied direction label "D").
+ Tooth token  12 
+Across the record rotation of 2.50 deg (supplied direction label "M") is paired with angulation of 3.90 deg (supplied
+ direction label "D") and inclination of 7.20 deg (supplied direction label "B"). Vertical movement of 1.70 mm 
+(supplied direction label "I") and relative vertical movement of 1.50 mm (supplied direction label "I") are included, 
+accompanied by buccolingual translation of 0.40 mm (supplied direction label "B") and mesiodistal translation of 
+3.20 mm (supplied direction label "D").
+ Tooth token  11 
+The profile lists rotation of 18.90 deg (supplied direction label "D") together with angulation of 28.80 deg (supplied 
+direction label "D") and inclination of 0.70 deg (supplied direction label "L"). Vertical movement of 2.20 mm 
+(supplied direction label "I") and relative vertical movement of 0.70 mm (supplied direction label "I") are recorded, 
+alongside buccolingual translation of 2.50 mm (supplied direction label "L") and mesiodistal translation of 2.10 mm
+ (supplied direction label "D").
+ Tooth token  21 
+Within the data rotation of 11.90 deg (supplied direction label "D") appears with angulation of 1.20 deg (supplied 
+direction label "D") and inclination of 0.00 deg (explicitly recorded zero). Vertical movement of 2.20 mm (supplied 
+direction label "I") and relative vertical movement of 0.80 mm (supplied direction label "I") are noted, accompanied
+ by buccolingual translation of 2.50 mm (supplied direction label "L") and mesiodistal translation of 0.40 mm 
+(supplied direction label "M").
+DRAFT / NOT CLINICAL ADVICE | cc26278556a4
+Page 2 of 6
+
+Finova AlignIQ
+Synthetic demonstration review / DRAFT
+cc26278556a4 | 2026-11-14 UTC
+Tooth token  22 
+Here rotation of 3.30 deg (supplied direction label "M") is listed alongside angulation of 3.40 deg (supplied 
+direction label "D") and inclination of 3.20 deg (supplied direction label "B"). Vertical movement of 2.20 mm 
+(supplied direction label "I") and relative vertical movement of 1.50 mm (supplied direction label "I") are included, 
+together with buccolingual translation of 1.20 mm (supplied direction label "L") and mesiodistal translation of 1.50 
+mm (supplied direction label "D").
+ Tooth token  23 
+Across the record rotation of 4.80 deg (supplied direction label "D") accompanies angulation of 6.70 deg (supplied 
+direction label "M") and inclination of 3.70 deg (supplied direction label "B"). Vertical movement of 0.90 mm 
+(supplied direction label "I") and relative vertical movement of 0.90 mm (supplied direction label "I") are noted, 
+alongside buccolingual translation of 0.10 mm (supplied direction label "B") and mesiodistal translation of 2.00 
+mm (supplied direction label "D").
+ Tooth token  24 
+The entry includes rotation of 6.90 deg (supplied direction label "M") together with angulation of 3.80 deg 
+(supplied direction label "M") and inclination of 1.50 deg (supplied direction label "B"). Vertical movement of 0.30 
+mm (supplied direction label "I") and relative vertical movement of 0.40 mm (supplied direction label "I") are 
+recorded, accompanied by buccolingual translation of 0.40 mm (supplied direction label "L") and mesiodistal 
+translation of 2.30 mm (supplied direction label "D").
+ Tooth token  25 
+Within the summary rotation of 3.40 deg (supplied direction label "D") appears with angulation of 2.40 deg 
+(supplied direction label "D") and inclination of 1.80 deg (supplied direction label "L"). Vertical movement of 0.50 
+mm (supplied direction label "I") and relative vertical movement of 0.10 mm (supplied direction label "I") are 
+noted, alongside buccolingual translation of 0.10 mm (supplied direction label "B") and mesiodistal translation of 
+2.10 mm (supplied direction label "D").
+ Tooth token  26 
+Across the data rotation of 1.80 deg (supplied direction label "D") is paired with angulation of 0.10 deg (supplied 
+direction label "D") and inclination of 0.90 deg (supplied direction label "B"). Vertical movement of 0.50 mm 
+(supplied direction label "E") and relative vertical movement of 0.30 mm (supplied direction label "E") are recorded,
+ accompanied by buccolingual translation of 0.40 mm (supplied direction label "B") and mesiodistal translation of 
+2.10 mm (supplied direction label "D").
+ Tooth token  27 
+The profile lists rotation of 3.00 deg (supplied direction label "D") together with angulation of 0.20 deg (supplied 
+direction label "D") and inclination of 2.30 deg (supplied direction label "L"). Vertical movement of 0.90 mm 
+(supplied direction label "E") and relative vertical movement of 0.70 mm (supplied direction label "E") are noted, 
+alongside buccolingual translation of 0.10 mm (supplied direction label "L") and mesiodistal translation of 2.20 mm
+ (supplied direction label "D").
+DRAFT / NOT CLINICAL ADVICE | cc26278556a4
+Page 3 of 6
+
+Finova AlignIQ
+Synthetic demonstration review / DRAFT
+cc26278556a4 | 2026-11-14 UTC
+Tooth token  28 
+Here an unreported rotation value (unknown, not zero) appears alongside an unreported angulation value 
+(unknown, not zero) and an unreported inclination value (unknown, not zero). Additionally an unreported vertical 
+movement value (unknown, not zero) and an unreported relative vertical movement value (unknown, not zero) are
+ noted, accompanied by an unreported buccolingual translation value (unknown, not zero) and an unreported 
+mesiodistal translation value (unknown, not zero).
+ Illustrative demo content
+SIMULATED DEMO - not calculated treatment findings or recommendations.
+Tooth token  18 
+Illustrative attachment example: Illustration only: a simulated oval attachment concept is displayed for this source 
+token. The shape alternates by table order, regardless of recorded movement. Dimensions, orientation, surface, 
+position and clinical indication are unspecified. No attachment is recommended.
+Tooth token  17 
+Illustrative attachment example: Illustration only: a simulated rectangular attachment concept is displayed for this
+ source token. The shape alternates by table order, regardless of recorded movement. Dimensions, orientation, 
+surface, position and clinical indication are unspecified. No attachment is recommended.
+Tooth token  16 
+Illustrative attachment example: Illustration only: a simulated oval attachment concept is displayed for this source 
+token. The shape alternates by table order, regardless of recorded movement. Dimensions, orientation, surface, 
+position and clinical indication are unspecified. No attachment is recommended.
+Tooth token  15 
+Illustrative attachment example: Illustration only: a simulated rectangular attachment concept is displayed for this
+ source token. The shape alternates by table order, regardless of recorded movement. Dimensions, orientation, 
+surface, position and clinical indication are unspecified. No attachment is recommended.
+Tooth token  14 
+Illustrative attachment example: Illustration only: a simulated oval attachment concept is displayed for this source 
+token. The shape alternates by table order, regardless of recorded movement. Dimensions, orientation, surface, 
+position and clinical indication are unspecified. No attachment is recommended.
+Tooth token  13 
+Illustrative attachment example: Illustration only: a simulated rectangular attachment concept is displayed for this
+ source token. The shape alternates by table order, regardless of recorded movement. Dimensions, orientation, 
+surface, position and clinical indication are unspecified. No attachment is recommended.
+Tooth token  12 
+Illustrative attachment example: Illustration only: a simulated oval attachment concept is displayed for this source 
+token. The shape alternates by table order, regardless of recorded movement. Dimensions, orientation, surface, 
+position and clinical indication are unspecified. No attachment is recommended.
+Tooth token  11 
+Illustrative attachment example: Illustration only: a simulated rectangular attachment concept is displayed for this
+ source token. The shape alternates by table order, regardless of recorded movement. Dimensions, orientation, 
+surface, position and clinical indication are unspecified. No attachment is recommended.
+DRAFT / NOT CLINICAL ADVICE | cc26278556a4
+Page 4 of 6
+
+Finova AlignIQ
+Synthetic demonstration review / DRAFT
+cc26278556a4 | 2026-11-14 UTC
+Tooth token  21 
+Illustrative attachment example: Illustration only: a simulated oval attachment concept is displayed for this source 
+token. The shape alternates by table order, regardless of recorded movement. Dimensions, orientation, surface, 
+position and clinical indication are unspecified. No attachment is recommended.
+Tooth token  22 
+Illustrative attachment example: Illustration only: a simulated rectangular attachment concept is displayed for this
+ source token. The shape alternates by table order, regardless of recorded movement. Dimensions, orientation, 
+surface, position and clinical indication are unspecified. No attachment is recommended.
+Tooth token  23 
+Illustrative attachment example: Illustration only: a simulated oval attachment concept is displayed for this source 
+token. The shape alternates by table order, regardless of recorded movement. Dimensions, orientation, surface, 
+position and clinical indication are unspecified. No attachment is recommended.
+Tooth token  24 
+Illustrative attachment example: Illustration only: a simulated rectangular attachment concept is displayed for this
+ source token. The shape alternates by table order, regardless of recorded movement. Dimensions, orientation, 
+surface, position and clinical indication are unspecified. No attachment is recommended.
+Tooth token  25 
+Illustrative attachment example: Illustration only: a simulated oval attachment concept is displayed for this source 
+token. The shape alternates by table order, regardless of recorded movement. Dimensions, orientation, surface, 
+position and clinical indication are unspecified. No attachment is recommended.
+Tooth token  26 
+Illustrative attachment example: Illustration only: a simulated rectangular attachment concept is displayed for this
+ source token. The shape alternates by table order, regardless of recorded movement. Dimensions, orientation, 
+surface, position and clinical indication are unspecified. No attachment is recommended.
+Tooth token  27 
+Illustrative attachment example: Illustration only: a simulated oval attachment concept is displayed for this source 
+token. The shape alternates by table order, regardless of recorded movement. Dimensions, orientation, surface, 
+position and clinical indication are unspecified. No attachment is recommended.
+Tooth token  28 
+Illustrative attachment example: Illustration only: a simulated rectangular attachment concept is displayed for this
+ source token. The shape alternates by table order, regardless of recorded movement. Dimensions, orientation, 
+surface, position and clinical indication are unspecified. No attachment is recommended.
+ Important warnings and clinical limitations
+Missing information is unknown, not normal or approved. No clinical sign-off is recorded.
+This table was partially parsed. Unresolved content remains in the original input and is not interpreted; inspect the
+ marked table before using these observations.
+Values describe the parsed source only. Tooth tokens, axes, directions, units and source conventions are not 
+independently clinically verified.
+Missing, omitted, invalid and ambiguous values remain unknown; explicit zero applies only to its recorded cell. No 
+achieved movement, suitability or safety conclusion is inferred.
+Attachment and sequencing examples are arbitrary simulations based on table order, independent of movement 
+magnitude. They are not calculated treatment choices or prescriptions.
+DRAFT / NOT CLINICAL ADVICE | cc26278556a4
+Page 5 of 6
+
+Finova AlignIQ
+Synthetic demonstration review / DRAFT
+cc26278556a4 | 2026-11-14 UTC
+Clinical attachment, staging, anchorage, force, timing, diagnosis and treatment predicates remain unevaluated. 
+No clinical approval is recorded.
+ Source and evidence references
+Exact source cells, Decimal strings, direction labels and source spans: /parsed/measurements in validated-report.json. 
+The original input and complete 96-rule ledger remain in the embedded TXT and JSON.
+Embedded attachments retain the exact full TXT, validated JSON, source spans, missing requirements and complete 
+96-rule audit ledger. No technical record is deleted or altered by this concise presentation.
+DRAFT / NOT CLINICAL ADVICE | cc26278556a4
+Page 6 of 6

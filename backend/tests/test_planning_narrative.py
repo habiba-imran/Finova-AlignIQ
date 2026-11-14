@@ -11,7 +11,8 @@ from test_interactive import LARGE, ROWS, submission
 
 def response_for(parsed):
     groups, _, _, _ = records(parsed)
-    return {"comments": [{"tooth_ref": t["tooth_ref"], "text": "The programmed profile combines " + " alongside ".join("{" + m["ref"] + "}" for m in t["movements"]) + "."} for t in groups]}
+    openings = ["The programmed profile combines ", "This entry records ", "Recorded movement components are "]
+    return {"comments": [{"tooth_ref": t["tooth_ref"], "text": openings[i % len(openings)] + " alongside ".join("{" + m["ref"] + "}" for m in t["movements"]) + "."} for i, t in enumerate(groups)]}
 
 
 def test_grounded_paragraphs_use_values_and_cover_all_112_cells_without_promoting_rules():
@@ -38,7 +39,7 @@ def test_grounded_paragraphs_use_values_and_cover_all_112_cells_without_promotin
     assert "{M" not in " ".join(comments.values())
 
 
-@pytest.mark.parametrize("mutation", ["number", "recommendation", "severity", "achieved", "injection", "omission", "duplicate", "cross_tooth", "negation", "unknown_tooth"])
+@pytest.mark.parametrize("mutation", ["number", "recommendation", "planned_attachment", "planned_sequence", "severity", "achieved", "injection", "omission", "duplicate", "cross_tooth", "negation", "unknown_tooth"])
 def test_generated_words_cannot_add_claims_or_change_fact_associations(mutation):
     parsed = resolve(submission())
     _, refs, teeth, _ = records(parsed)
@@ -46,6 +47,8 @@ def test_generated_words_cannot_add_claims_or_change_fact_associations(mutation)
     first = value["comments"][0]
     if mutation == "number": first["text"] += " 2 mm."
     if mutation == "recommendation": first["text"] += " Recommend extraction."
+    if mutation == "planned_attachment": first["text"] += " The attachment is planned."
+    if mutation == "planned_sequence": first["text"] += " The sequencing is planned."
     if mutation == "severity": first["text"] += " High risk."
     if mutation == "achieved": first["text"] += " Achieved movement."
     if mutation == "injection": first["text"] += " <script>"
@@ -86,3 +89,51 @@ def test_planning_timeout_is_separate_from_legacy_settings(monkeypatch):
     assert load_settings().timeout_seconds == 6
     monkeypatch.setenv("FINOVA_PLANNING_TIMEOUT_SECONDS", "999")
     with pytest.raises(ValueError): load_planning_settings()
+
+
+def test_repeated_boilerplate_is_not_accepted_as_distinct_planning_wording():
+    parsed = resolve(submission(LARGE))
+    groups, refs, teeth, _ = records(parsed)
+    repeated = {"comments": [{"tooth_ref": t["tooth_ref"], "text": "The recorded profile combines " + " and ".join("{" + m["ref"] + "}" for m in t["movements"]) + "."} for t in groups]}
+    assert validate(json.dumps(repeated), refs, teeth) is None
+    assert validate(json.dumps(response_for(parsed)), refs, teeth) is not None
+
+
+def test_planning_sampling_does_not_change_legacy_wording_settings(monkeypatch):
+    from app.interactive.narrative import load_planning_settings
+    from app.reports.settings import load_settings
+    monkeypatch.delenv("GROQ_TEMPERATURE", raising=False)
+    assert load_planning_settings().temperature == 0.2
+    assert load_settings().temperature == 0
+
+
+def test_natural_paragraphs_must_preserve_every_complete_fact_verbatim():
+    parsed = resolve(submission())
+    _, refs, teeth, _ = records(parsed)
+    value = response_for(parsed)
+    for comment in value["comments"]:
+        for ref, phrase in refs[comment["tooth_ref"]].items():
+            comment["text"] = comment["text"].replace("{" + ref + "}", phrase)
+    result = validate(json.dumps(value), refs, teeth)
+    assert result is not None
+    assert result[parsed.teeth[0].id] == value["comments"][0]["text"]
+    changed = json.loads(json.dumps(value))
+    changed["comments"][0]["text"] = changed["comments"][0]["text"].replace("-2.7500", "99.0000")
+    assert validate(json.dumps(changed), refs, teeth) is None
+    changed = json.loads(json.dumps(value))
+    changed["comments"][0]["text"] = changed["comments"][0]["text"].replace("rotation", "angulation")
+    assert validate(json.dumps(changed), refs, teeth) is None
+
+
+def test_unknown_summary_cannot_be_added_to_a_recorded_numeric_profile():
+    parsed = resolve(submission())
+    _, refs, teeth, _ = records(parsed)
+    value = response_for(parsed)
+    value["comments"][0]["text"] = "Across the unknown entries " + value["comments"][0]["text"]
+    assert validate(json.dumps(value), refs, teeth) is None
+
+
+def test_unknown_unit_does_not_allow_claiming_the_numeric_value_is_unknown():
+    refs = {"T001": {"M0001": "rotation of 2.0 (unit unknown)"}}
+    value = {"comments": [{"tooth_ref": "T001", "text": "Across the unknown entries {M0001} is recorded."}]}
+    assert validate(json.dumps(value), refs, {"T001": "local-tooth"}) is None

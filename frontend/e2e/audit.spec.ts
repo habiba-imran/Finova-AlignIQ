@@ -12,7 +12,7 @@ test('switching between all three loaded demos preserves text but cannot carry d
   for (const [from, demo, to, module, action] of pairs) {
     await nav.getByRole('button', { name: new RegExp(from) }).click()
     await page.getByRole('button', { name: `Load Finova ${demo} demo` }).click()
-    await expect(page.getByRole('button', { name: 'Parse Table', exact: true })).toBeEnabled()
+    await expect(page.getByRole('button', { name: 'Parse Table', exact: true })).toBeDisabled()
     const original = await raw.inputValue()
     expect(original).toContain('1.2300 D')
     await nav.getByRole('button', { name: new RegExp(to) }).click()

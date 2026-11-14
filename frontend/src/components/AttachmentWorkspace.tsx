@@ -70,7 +70,7 @@ export default function AttachmentWorkspace({ rawText, context, parsed, demo, on
     <div className="p-5 sm:p-7">
       <p className="max-w-3xl text-sm leading-7 text-muted">Inspect the original table above, then prepare a tooth-indexed attachment review. Movement amounts alone cannot establish attachment need, design, omission or placement.</p>
       {!demo && <p className="mt-3 text-sm leading-6 text-muted">Attachment choices are unavailable without verified supporting evidence.</p>}
-      <button type="button" className="button button-primary mt-5" disabled={loading} onClick={() => void review()} aria-describedby="attachment-privacy">{loading ? <><span className="button-spinner" aria-hidden="true" />Preparing attachment review…</> : <>Run Attachment Review<ArrowRight size={16} aria-hidden="true" /></>}</button>
+      <button type="button" className="button button-primary mt-5" disabled={loading || draft !== null} onClick={() => void review()} aria-describedby="attachment-privacy">{loading ? <><span className="button-spinner" aria-hidden="true" />Preparing attachment review…</> : <>Run Attachment Review<ArrowRight size={16} aria-hidden="true" /></>}</button>
       <p id="attachment-privacy" className="mt-3 text-xs leading-6 text-muted">Supplied example decisions are shown as provided. No attachment choice is generated from movement amounts.</p>
       {loading && <p role="status" className="motion-status mt-3 text-sm text-muted">Checking attachment evidence and preparing the DRAFT…</p>}
       {error && <p role="alert" className="motion-status mt-4 text-sm text-notice-ink">{error}</p>}

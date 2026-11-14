@@ -1,8 +1,8 @@
 """Descriptive review without promoting source claims to clinical authority.
 
-Macro uses minimized parsed movement records for grounded narrative wording;
+All modules use minimized parsed movement records for grounded narrative wording;
 complete facts are inserted locally after validation. Micro/Nano retain their
-constant phrase catalog and table-order illustrations, never clinical choices.
+table-order illustrations, never clinical attachment or sequencing choices.
 """
 import json
 
@@ -97,12 +97,8 @@ def generate_interactive(submission, *, settings=None, client=None):
     if parsed.status in {"INVALID", "UNSUPPORTED"} or not parsed.measurements:
         raise ValueError("PARSE_REQUIRED")
     review = review_table(submission)
-    if submission.module == "macro":
-        narratives, generation = planning_wording(parsed, settings=settings, client=client)
-        phrases = {ref: options[0] for ref, options in WORDINGS.items()}
-    else:
-        phrases, generation = wording(settings, client)
-        narratives = None
+    narratives, generation = planning_wording(parsed, module=submission.module, settings=settings, client=client)
+    phrases = {ref: options[0] for ref, options in WORDINGS.items()}
     observations, illustrations = [], []
     by_tooth = {}
     for m in parsed.measurements:
@@ -128,7 +124,7 @@ def generate_interactive(submission, *, settings=None, client=None):
     missing = sum(m.numeric_status in {"MISSING", "NOT_PRESENT"} for m in parsed.measurements)
     other = len(parsed.measurements) - numeric - missing
     summary = f"{phrases['F0001']} {len(observations)} tooth tokens; {len(parsed.measurements)} measurement positions; {numeric} recorded numerical values; {missing} missing or omitted; {other} invalid or ambiguous."
-    notice = "AI-assisted planning wording." if generation.used_mode == "GROQ_AI" else "Standard planning wording."
+    notice = "AI-assisted report wording." if generation.used_mode == "GROQ_AI" else "Standard report wording."
     limitations = list(LIMITATIONS)
     if parsed.status == "PARTIAL":
         limitations.insert(0, "This table was partially parsed. Unresolved content remains in the original input and is not interpreted; inspect the marked table before using these observations.")

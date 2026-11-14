@@ -299,10 +299,12 @@ export default function App({ diagnostics = new URLSearchParams(window.location.
               <h2 id="input-area-heading" className="section-title">Input</h2>
               <p className="section-note">Paste TMT text, then parse to populate the structured table.</p>
             </div>
-            <div className="flex w-full flex-col items-start gap-1 lg:w-auto lg:items-end">
-              <button type="button" className="button button-accent" aria-describedby="demo-availability" onClick={() => void (purpose === 'nano' ? loadSequencingDemo() : purpose === 'micro' ? loadAttachmentDemo() : loadPlanningDemo())} disabled={loading || unavailableDemos[purpose]}><FlaskConical size={15} aria-hidden="true" />{copy.demoLabel}</button>
-              <p id="demo-availability" className="text-xs leading-5 text-muted">{unavailableDemos[purpose] ? 'Demo unavailable in this session.' : 'Fixed fictional example'}</p>
-            </div>
+            {diagnostics && (
+              <div className="flex w-full flex-col items-start gap-1 lg:w-auto lg:items-end">
+                <button type="button" className="button button-accent" aria-describedby="demo-availability" onClick={() => void (purpose === 'nano' ? loadSequencingDemo() : purpose === 'micro' ? loadAttachmentDemo() : loadPlanningDemo())} disabled={loading || unavailableDemos[purpose]}><FlaskConical size={15} aria-hidden="true" />{copy.demoLabel}</button>
+                <p id="demo-availability" className="text-xs leading-5 text-muted">{unavailableDemos[purpose] ? 'Demo unavailable in this session.' : 'Fixed fictional example'}</p>
+              </div>
+            )}
           </div>
 
           <div className="workspace-grid grid min-w-0 gap-4 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
@@ -356,7 +358,7 @@ export default function App({ diagnostics = new URLSearchParams(window.location.
               </div>
             </div>
             <div className="mt-4 flex flex-wrap items-center gap-3">
-              <button type="button" onClick={() => void parseInput()} disabled={loading || rawText.length === 0 || characterCount > MAX_TEXT_CHARACTERS} aria-describedby="parse-hint" className="button button-primary px-5">{loading ? <><span className="button-spinner" aria-hidden="true" />Parsing…</> : <>Parse Table<ArrowRight size={16} aria-hidden="true" /></>}</button>
+              <button type="button" onClick={() => void parseInput()} disabled={loading || rawText.length === 0 || characterCount > MAX_TEXT_CHARACTERS || result !== null} aria-describedby="parse-hint" className="button button-primary px-5">{loading ? <><span className="button-spinner" aria-hidden="true" />Parsing…</> : <>Parse Table<ArrowRight size={16} aria-hidden="true" /></>}</button>
               {diagnostics && <button type="button" disabled className="button button-secondary">Analyze</button>}
             </div>
             {characterCount > MAX_TEXT_CHARACTERS && <p role="alert" className="mt-3 text-sm text-notice-ink">Parsing is limited to 100,000 characters. Your full raw input is still retained.</p>}

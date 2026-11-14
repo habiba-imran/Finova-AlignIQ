@@ -3,13 +3,16 @@ import interactiveJSON from '../src/test/fixtures/interactive-macro.json' with {
 
 test('normal workspace has one source, concise results and visible exports in all three modules', async ({ page }, testInfo) => {
   await page.goto('/')
+  await page.getByRole('textbox', { name: 'Raw TMT text' }).fill(interactiveJSON.parsed.raw_text)
+  await page.getByRole('button', { name: 'Parse Table', exact: true }).click()
+  await expect(page.getByRole('region', { name: 'Structured TMT table' })).toBeVisible()
   for (const module of [
     { code: 'MACRO', demo: 'planning', run: 'Run Planning Assistant' },
     { code: 'MICRO', demo: 'attachment', run: 'Run Attachment Review' },
     { code: 'NANO', demo: 'sequencing', run: 'Run Sequencing Review' },
   ]) {
     await page.getByRole('navigation', { name: 'Review purpose' }).getByRole('button', { name: new RegExp(module.code) }).click()
-    await page.getByRole('button', { name: `Load Finova ${module.demo} demo` }).click()
+    await expect(page.getByRole('button', { name: `Load Finova ${module.demo} demo` })).toHaveCount(0)
     const table = page.getByRole('region', { name: 'Structured TMT table' })
     await expect(table.getByRole('columnheader', { name: /Rotation/ })).toBeVisible()
     await expect(page.getByLabel('Raw text preview')).toHaveCount(0)
@@ -27,7 +30,7 @@ test('normal workspace has one source, concise results and visible exports in al
 
 test('unavailable demo is disabled with a short message and retains original input', async ({ page }) => {
   await page.route('**/api/v1/development/planning-demo/input', route => route.fulfill({ status: 404, json: { detail: 'PRIVATE_BACKEND_CONFIG' } }))
-  await page.goto('/')
+  await page.goto('/?diagnostics=1')
   const raw = page.getByRole('textbox', { name: 'Raw TMT text' })
   await raw.fill('original table retained')
   const demo = page.getByRole('button', { name: 'Load Finova planning demo' })
@@ -50,7 +53,8 @@ test('automatic AI wording uses one review action and no main UI selection', asy
   await page.getByRole('button', { name: 'Run Planning Assistant' }).click()
   const article = page.getByRole('article', { name: 'Generated synthetic report' })
   await expect(article).toBeVisible()
-  await expect(article.getByText(/AI-assisted wording generated with Groq/)).toBeVisible()
+  await expect(article.getByText('AI-assisted wording', { exact: true })).toBeVisible()
+  expect(await article.innerText()).not.toMatch(/Groq|provider|transmission/i)
   await expect(page.getByLabel('Wording preference')).toHaveCount(0)
   await expect(page.getByRole('group', { name: 'Report wording views' })).toHaveCount(0)
   expect(requests).toBe(1)

@@ -54,6 +54,9 @@ test('loading controls expose a spinner and busy state while the explicit reques
 
   await expect(page.getByLabel('Parse summary')).toBeVisible()
   await expect(page.getByRole('region', { name: 'Parse controls' })).toHaveAttribute('aria-busy', 'false')
+  await expect(page.getByRole('button', { name: 'Parse Table', exact: true })).toBeDisabled()
+  const raw = page.getByRole('textbox', { name: 'Raw TMT text' })
+  await raw.fill((await raw.inputValue()) + '\n')
   await expect(page.getByRole('button', { name: 'Parse Table', exact: true })).toBeEnabled()
   expect(parseRequests).toBe(1)
 })

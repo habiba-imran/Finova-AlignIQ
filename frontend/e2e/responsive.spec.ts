@@ -55,7 +55,9 @@ test('workflow progress distinguishes input, completed inspection, active review
   await expect(progress.locator('li[aria-current="step"]')).toContainText('Input')
   await expect(progress.locator('li[data-state="complete"]')).toHaveCount(0)
 
-  await page.getByRole('button', { name: 'Load Finova planning demo' }).click()
+  await expect(page.getByRole('button', { name: 'Load Finova planning demo' })).toHaveCount(0)
+  await page.getByRole('button', { name: 'Load synthetic example' }).click()
+  await page.getByRole('button', { name: 'Parse Table', exact: true }).click()
   await expect(page.getByRole('button', { name: 'Run Planning Assistant' })).toBeVisible()
   await expect(progress.locator('li[data-state="complete"]')).toHaveCount(2)
   await expect(progress.locator('li[aria-current="step"]')).toContainText('Planning review')

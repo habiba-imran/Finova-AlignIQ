@@ -1,0 +1,32 @@
+[
+  {
+    "module": "macro",
+    "verification": "OFFLINE_REVALIDATION_OF_CAPTURED_REAL_PROVIDER_RESPONSE",
+    "new_provider_calls": 0,
+    "capture_sha256": "46771f6c4c1fec1c720ab6cfcdf90a712c8435d9c4f2988945da14a68226c23b",
+    "accepted_comments": 16,
+    "distinct_first_three_words": 14,
+    "positions": 112,
+    "rules": 96
+  },
+  {
+    "module": "micro",
+    "verification": "OFFLINE_REVALIDATION_OF_CAPTURED_REAL_PROVIDER_RESPONSE",
+    "new_provider_calls": 0,
+    "capture_sha256": "92b30e55d16e0ef6c0e7ca9049c16e9fa42f3738cfe015456c7d158e366c02e3",
+    "accepted_comments": 16,
+    "distinct_first_three_words": 10,
+    "positions": 112,
+    "rules": 96
+  },
+  {
+    "module": "nano",
+    "verification": "OFFLINE_REVALIDATION_OF_CAPTURED_REAL_PROVIDER_RESPONSE",
+    "new_provider_calls": 0,
+    "capture_sha256": "0074226eda8349ecff2b574ccc7baac64db9f433a583146d9ba3cd89f0ec6407",
+    "accepted_comments": 16,
+    "distinct_first_three_words": 13,
+    "positions": 112,
+    "rules": 96
+  }
+]

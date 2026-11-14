@@ -2,11 +2,32 @@ import { useEffect, useRef, useState } from 'react'
 import { ArrowRight, Copy, Download, FileCheck2 } from 'lucide-react'
 import { requestInteractiveReview } from '../api/interactive'
 import type { DemoModule, InteractiveReport } from '../api/interactive'
-import type { AutomaticParseResult, ContextClaims } from '../api/parse'
+import type { AutomaticParseResult, ContextClaims, ParseResult } from '../api/parse'
 import PdfExportButton from './PdfExportButton'
 
 const TITLES = { macro: 'Planning', micro: 'Attachment', nano: 'Sequencing' }
 const ACTIONS = { macro: 'Run Planning Assistant', micro: 'Run Attachment Review', nano: 'Run Sequencing Review' }
+
+function partialParseExplanation(parsed: ParseResult): string {
+  const missingCount = parsed.coverage.missing
+  const missingLabels = [...new Set(parsed.measurements.filter(m => m.numeric_status === 'MISSING' || m.numeric_status === 'NOT_PRESENT').map(m => m.raw_label.trim()))]
+  const unrecognizedLabels = [...new Set(parsed.measurements.filter(m => !m.recognized_label).map(m => m.raw_label.trim()))]
+
+  if (missingCount > 0 && unrecognizedLabels.length === 0) {
+    const cols = missingLabels.length > 0 ? ` in ${missingLabels.slice(0, 3).join(', ')}${missingLabels.length > 3 ? '…' : ''}` : ''
+    return `All available movement values were parsed successfully. Marked as partial because ${missingCount} cell${missingCount === 1 ? ' contains an' : 's contain'} omitted or missing value (e.g. "—")${cols}. Rather than guessing or assuming missing values are zero, Finova retains them as unknown.`
+  }
+
+  if (unrecognizedLabels.length > 0 && missingCount === 0) {
+    return `All recognized movement values were parsed successfully. Marked as partial because ${unrecognizedLabels.length === 1 ? 'a column heading was' : 'some column headings were'} unrecognized (${unrecognizedLabels.join(', ')}).`
+  }
+
+  if (missingCount > 0 && unrecognizedLabels.length > 0) {
+    return `All available movement values were parsed successfully. Marked as partial because ${missingCount} cell${missingCount === 1 ? ' has a' : 's have'} missing value and some headings were unrecognized (${unrecognizedLabels.join(', ')}). Missing values are retained as unknown.`
+  }
+
+  return 'All available movement values were parsed successfully. Omitted or unassigned cells are preserved as unknown rather than assumed to be zero.'
+}
 
 export default function InteractiveWorkspace({ module, rawText, context, parsed, onComplete }: {
   module: DemoModule; rawText: string; context: ContextClaims; parsed: AutomaticParseResult; onComplete: (complete: boolean) => void
@@ -53,8 +74,8 @@ export default function InteractiveWorkspace({ module, rawText, context, parsed,
   return <section className="panel" aria-label={`${TITLES[module]} synthetic review`}>
     <div className="panel-heading"><div className="flex items-center gap-2.5"><FileCheck2 size={17} className="text-brand" aria-hidden="true" /><h3 className="panel-title">{TITLES[module]} review</h3></div></div>
     <div className="p-5 sm:p-7">
-      <p className="text-sm leading-7 text-muted">{module === 'macro' ? 'Prepare readable planning comments from the programmed movements in your table.' : 'Generate tooth-wise observations from your synthetic table. Examples are illustrative simulations; treatment decisions cannot be derived from these values.'}</p>
-      <button type="button" className="button button-primary mt-4" disabled={loading || !supported} onClick={() => void run()}>{loading ? <><span className="button-spinner" aria-hidden="true" />Generating review…</> : <>{ACTIONS[module]}<ArrowRight size={16} aria-hidden="true" /></>}</button>
+      <p className="text-sm leading-7 text-muted">{module === 'macro' ? 'Prepare readable planning comments from the programmed movements in your table.' : module === 'micro' ? 'Prepare attachment-review comments from the recorded movements. Attachment choices and placement require separate supporting evidence.' : 'Prepare sequencing-review comments from the recorded movements. Stage order and anchorage require separate supporting evidence.'}</p>
+      <button type="button" className="button button-primary mt-4" disabled={loading || !supported || report !== null} onClick={() => void run()}>{loading ? <><span className="button-spinner" aria-hidden="true" />Generating review…</> : <>{ACTIONS[module]}<ArrowRight size={16} aria-hidden="true" /></>}</button>
       {!supported && <p role="alert" className="mt-3 text-sm text-notice-ink">A supported table with parsed measurement positions is required. Check the input and parse again.</p>}
       {loading && <p role="status" className="mt-3 text-sm text-muted">Preparing factual observations and report wording…</p>}
       {error && <p role="alert" className="mt-3 text-sm text-notice-ink">{error}</p>}
@@ -68,15 +89,20 @@ export default function InteractiveWorkspace({ module, rawText, context, parsed,
             {notice && <p role="status" className="w-full text-xs text-muted">{notice}</p>}
           </div>
         </div>
-        <p role="status" className="mt-4 text-sm text-brand">{report.generation.used_mode === 'GROQ_AI' ? 'AI-assisted wording' : 'Standard wording'}</p>
+        <p role="status" className="mt-4 text-sm text-brand"><span>{report.generation.used_mode === 'GROQ_AI' ? 'AI-assisted wording' : 'Standard wording'}</span>{report.generation.used_mode !== 'GROQ_AI' && <span className="text-muted"> · AI-assisted wording unavailable.</span>}</p>
         <p className="mt-3 text-sm leading-7">{report.summary}</p>
-        {report.parsed.status === 'PARTIAL' && <p className="mt-3 text-sm text-notice-ink">Partial parse: unresolved content has not been interpreted. Review the marked table.</p>}
+        {report.parsed.status === 'PARTIAL' && (
+          <div className="mt-3 rounded-lg border border-notice-line bg-notice/40 p-3.5 text-xs leading-6 text-notice-ink">
+            <span className="font-semibold text-ink">Parse status note: </span>
+            {partialParseExplanation(report.parsed)}
+          </div>
+        )}
         <section aria-label="Factual tooth-wise observations" className="mt-6">
-          <h5 className="text-base font-semibold">{module === 'macro' ? 'Planning comments' : 'Factual observations'}</h5>
+          <h5 className="text-base font-semibold">{module === 'macro' ? 'Planning comments' : module === 'micro' ? 'Attachment review comments' : 'Sequencing review comments'}</h5>
           <p className="mt-1 text-xs leading-6 text-muted">Programmed movements only. Missing values remain unknown; direction labels are preserved as supplied.</p>
           <ul className="mt-4 space-y-3">{report.observations.map(o => <li key={o.tooth_ref} className="comment-card">
             <h6 className="font-semibold">Tooth token {o.original_tooth}</h6><p className="mt-2 whitespace-pre-wrap text-sm leading-7 [overflow-wrap:anywhere]">{o.text}</p>
-            {module === 'macro' && <details className="mt-3 text-xs leading-6 text-muted"><summary className="cursor-pointer font-medium">Source values</summary><ul className="mt-2 space-y-1">{o.measurements.map(m => <li key={m.id}>{m.raw_label.trim()}: {m.raw_value ?? 'Missing'}</li>)}</ul></details>}
+            <details className="mt-3 text-xs leading-6 text-muted"><summary className="cursor-pointer font-medium">Source values</summary><ul className="mt-2 space-y-1">{o.measurements.map(m => <li key={m.id}>{m.raw_label.trim()}: {m.raw_value ?? 'Missing'}</li>)}</ul></details>
           </li>)}</ul>
         </section>
         {!!report.illustrations.length && <section aria-label="Illustrative demo content" className="mt-6 rounded-xl border border-line bg-canvas p-4">

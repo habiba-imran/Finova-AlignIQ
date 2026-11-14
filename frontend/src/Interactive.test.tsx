@@ -60,20 +60,20 @@ it.each<DemoModule>(['macro', 'micro', 'nano'])('%s runs arbitrary input through
   for (const name of ['Copy', 'Export TXT', 'Export PDF']) expect(within(article).getByRole('button', { name })).toBeEnabled()
 })
 
-it('shows approved automatic AI wording with one review request', async () => {
-  const ai = structuredClone(macro)
+it.each<DemoModule>(['macro', 'micro', 'nano'])('%s shows approved automatic AI wording with one review request', async module => {
+  const ai = structuredClone(fixtures[module])
   Object.assign(ai.generation, { used_mode: 'GROQ_AI', provider: 'GROQ', model: 'openai/gpt-oss-120b', attempts: 1, accepted_comments: 4, reason: 'GROQ_VALIDATED' })
   ai.wording_notice = 'AI-assisted wording generated with Groq; all measurements and examples assembled locally.'
-  const { fetch, article } = await start('macro', ai)
+  const { fetch, article } = await start(module, ai)
   expect(article).toHaveTextContent('AI-assisted wording')
   expect(article).not.toHaveTextContent('Groq')
   expect(fetch).toHaveBeenCalledTimes(2)
   expect(screen.queryByRole('group', { name: 'Report wording views' })).not.toBeInTheDocument()
 })
 
-it('puts grounded planning paragraphs in the main report without provider or transmission details', async () => {
-  const { article } = await start('macro')
-  expect(within(article).getByRole('heading', { name: 'Planning comments' })).toBeVisible()
+it.each<DemoModule>(['macro', 'micro', 'nano'])('%s puts grounded paragraphs in the main report without provider or transmission details', async module => {
+  const { article } = await start(module)
+  expect(within(article).getByRole('heading', { name: module === 'macro' ? 'Planning comments' : module === 'micro' ? 'Attachment review comments' : 'Sequencing review comments' })).toBeVisible()
   expect(article).toHaveTextContent('The programmed movement record lists')
   expect(article).not.toHaveTextContent(/Groq|provider|transmission|shared with/i)
   const source = within(article).getAllByText('Source values')[0].closest('details')!
@@ -82,12 +82,12 @@ it('puts grounded planning paragraphs in the main report without provider or tra
   expect(within(source).getByText(/Rotation \(deg\)/)).toBeVisible()
 })
 
-it('rejects a grounded report with a mismatched comment count or a promoted module', () => {
+it('rejects a grounded report with mismatched comment counts or inconsistent provenance', () => {
   const bad = structuredClone(macro) as InteractiveReport
   bad.generation.eligible_wording_findings++
   expect(isInteractiveReport(bad)).toBe(false)
   const promoted = structuredClone(micro) as InteractiveReport
-  promoted.generation.output_validation = 'GROUNDED_PLANNING_WORDING_V1'
+  promoted.generation.accepted_comments = 1
   expect(isInteractiveReport(promoted)).toBe(false)
 })
 

@@ -1,9 +1,11 @@
 import { expect, test } from '@playwright/test'
 
+const presentationTable = '# SYNTHETIC\nTooth\tRotation (deg)\tExtrusion (mm)\tUnknown label\n11\t-1.2300 M\t0.50 E\t3\n12\t0\t—\t4\n13\t2.3 D\t0\t5\n'
+
 test('parse presentation promotes movement inspection and keeps raw source and diagnostics available', async ({ page }, testInfo) => {
   await page.goto('/?diagnostics=1', { waitUntil: 'networkidle' })
   await expect(page.getByText('Parse your TMT to see the structured table.')).toBeVisible()
-  await page.getByRole('button', { name: 'Load synthetic example' }).click()
+  await page.getByRole('textbox', { name: 'Raw TMT text' }).fill(presentationTable)
   await page.getByRole('button', { name: 'Parse Table', exact: true }).click()
 
   await expect(page.getByText('Parse your TMT to see the structured table.')).toHaveCount(0)

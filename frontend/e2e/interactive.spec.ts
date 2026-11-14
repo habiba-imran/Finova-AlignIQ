@@ -1,6 +1,10 @@
 import { test, expect } from '@playwright/test'
 import { PDFArray, PDFDict, PDFDocument, PDFHexString, PDFName, PDFRawStream, decodePDFRawStream } from 'pdf-lib'
-import livePlanning from '../../evidence/planning-wording/user-synthetic-live-report.json' with { type: 'json' }
+import { resolve } from 'node:path'
+import liveMacro from '../../evidence/unified-wording/approved-macro.json' with { type: 'json' }
+import liveMicro from '../../evidence/unified-wording/approved-micro.json' with { type: 'json' }
+import liveNano from '../../evidence/unified-wording/approved-nano.json' with { type: 'json' }
+const liveReports = { macro: liveMacro, micro: liveMicro, nano: liveNano }
 import samples from '../../examples/interactive-synthetic-tmts.json' with { type: 'json' }
 
 const modules = [
@@ -98,14 +102,20 @@ test('unsupported input keeps a clear error and cannot generate a fabricated rep
   await expect(page.getByRole('article')).toHaveCount(0)
 })
 
-test('approved tooth-wise planning wording is prominent in the UI and the PDF evidence', async ({ page }, testInfo) => {
+for (const module of modules) test(`${module.id}: approved AI comments are prominent in the UI and PDF`, async ({ page }, testInfo) => {
+  const livePlanning = liveReports[module.id]
+  expect(livePlanning.generation.used_mode).toBe('GROQ_AI')
+  expect(livePlanning.generation.accepted_comments).toBe(16)
+  expect(new Set(livePlanning.observations.map(o => o.text.split(' ').slice(0, 3).join(' '))).size).toBeGreaterThanOrEqual(3)
   await page.route('**/api/v1/interactive/review', route => route.fulfill({ json: livePlanning }))
   await page.goto('/')
   await page.getByRole('textbox', { name: 'Raw TMT text' }).fill(livePlanning.parsed.raw_text)
   await page.getByRole('button', { name: 'Parse Table', exact: true }).click()
-  await page.getByRole('button', { name: 'Run Planning Assistant', exact: true }).click()
+  await expect(page.getByRole('region', { name: 'Structured TMT table' })).toBeVisible()
+  await page.getByRole('navigation', { name: 'Review purpose' }).getByRole('button', { name: new RegExp(module.id.toUpperCase()) }).click()
+  await page.getByRole('button', { name: module.action, exact: true }).click()
   const article = page.getByRole('article', { name: 'Generated synthetic report' })
-  await expect(article.getByRole('heading', { name: 'Planning comments', exact: true })).toBeVisible()
+  await expect(article.getByRole('heading', { name: module.id === 'macro' ? 'Planning comments' : module.id === 'micro' ? 'Attachment review comments' : 'Sequencing review comments', exact: true })).toBeVisible()
   await expect(article.getByText('AI-assisted wording', { exact: true })).toBeVisible()
   const comment = livePlanning.observations.find(o => o.original_tooth.trim() === '11')!
   await expect(article.getByText(comment.text, { exact: true })).toBeVisible()
@@ -113,7 +123,8 @@ test('approved tooth-wise planning wording is prominent in the UI and the PDF ev
   const pending = page.waitForEvent('download')
   await article.getByRole('button', { name: 'Export PDF', exact: true }).click()
   const download = await pending
-  await download.saveAs(testInfo.outputPath('planning-comments-approved.pdf'))
+  await download.saveAs(testInfo.outputPath(`${module.id}-comments-approved.pdf`))
+  if (testInfo.project.name === 'desktop') await download.saveAs(resolve(process.cwd(), `../evidence/unified-wording/finova-${module.id}-ai-comments.pdf`))
   const stream = await download.createReadStream(), chunks: Buffer[] = []
   for await (const chunk of stream!) chunks.push(Buffer.from(chunk))
   const pdf = await PDFDocument.load(Buffer.concat(chunks))
@@ -126,5 +137,5 @@ test('approved tooth-wise planning wording is prominent in the UI and the PDF ev
   expect(JSON.parse(files['validated-report.json'])).toEqual(livePlanning)
   expect(files['report.txt']).toContain(comment.text)
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)
-  await page.screenshot({ path: testInfo.outputPath('planning-comments-approved.png'), fullPage: true })
+  await page.screenshot({ path: testInfo.outputPath(`${module.id}-comments-approved.png`), fullPage: true })
 })

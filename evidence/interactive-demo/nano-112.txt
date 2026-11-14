@@ -2,170 +2,58 @@ FINOVA ALIGNIQ
 NANO — Generated synthetic review
 Synthetic demonstration — not for clinical use
 
-Standard planning wording.
+Standard report wording.
 The parsed source values are described below. 16 tooth tokens; 112 measurement positions; 96 recorded numerical values; 16 missing or omitted; 0 invalid or ambiguous.
 
 FACTUAL OBSERVATIONS — PARSED SOURCE VALUES
 
 Tooth token "18"
-Recorded values:
-"Rotation (deg)": 0.1250 deg; direction label "D". Original cell: "0.1250 D".
-"Inclination (deg)": -1.5000 deg. Original cell: "-1.5000".
-"Angulation (deg)": 0 deg; explicitly recorded zero. Original cell: "0".
-"Extrusion (mm)": 0.2000 mm. Original cell: "0.2000".
-"Intrusion (mm)": missing; no numerical observation. Original cell: "—".
-"Mesial/Distal (mm)": 1.2300 mm; direction label "D". Original cell: "1.2300 D".
-"Buccal/Lingual (mm)": 0.4500 mm; direction label "B". Original cell: "0.4500 B".
+The programmed movement record lists rotation of 0.1250 deg (supplied direction label "D"); inclination of -1.5000 deg; angulation of 0 deg (explicitly recorded zero); extrusion of 0.2000 mm; an unreported intrusion value (unknown, not zero); mesiodistal translation of 1.2300 mm (supplied direction label "D"); buccolingual translation of 0.4500 mm (supplied direction label "B").
 
 Tooth token "17"
-Recorded values:
-"Rotation (deg)": 1.1250 deg; direction label "D". Original cell: "1.1250 D".
-"Inclination (deg)": -1.5000 deg. Original cell: "-1.5000".
-"Angulation (deg)": 0 deg; explicitly recorded zero. Original cell: "0".
-"Extrusion (mm)": 0.2000 mm. Original cell: "0.2000".
-"Intrusion (mm)": missing; no numerical observation. Original cell: "—".
-"Mesial/Distal (mm)": 1.2300 mm; direction label "D". Original cell: "1.2300 D".
-"Buccal/Lingual (mm)": 0.4500 mm; direction label "B". Original cell: "0.4500 B".
+The programmed movement record lists rotation of 1.1250 deg (supplied direction label "D"); inclination of -1.5000 deg; angulation of 0 deg (explicitly recorded zero); extrusion of 0.2000 mm; an unreported intrusion value (unknown, not zero); mesiodistal translation of 1.2300 mm (supplied direction label "D"); buccolingual translation of 0.4500 mm (supplied direction label "B").
 
 Tooth token "16"
-Recorded values:
-"Rotation (deg)": 2.1250 deg; direction label "D". Original cell: "2.1250 D".
-"Inclination (deg)": -1.5000 deg. Original cell: "-1.5000".
-"Angulation (deg)": 0 deg; explicitly recorded zero. Original cell: "0".
-"Extrusion (mm)": 0.2000 mm. Original cell: "0.2000".
-"Intrusion (mm)": missing; no numerical observation. Original cell: "—".
-"Mesial/Distal (mm)": 1.2300 mm; direction label "D". Original cell: "1.2300 D".
-"Buccal/Lingual (mm)": 0.4500 mm; direction label "B". Original cell: "0.4500 B".
+The programmed movement record lists rotation of 2.1250 deg (supplied direction label "D"); inclination of -1.5000 deg; angulation of 0 deg (explicitly recorded zero); extrusion of 0.2000 mm; an unreported intrusion value (unknown, not zero); mesiodistal translation of 1.2300 mm (supplied direction label "D"); buccolingual translation of 0.4500 mm (supplied direction label "B").
 
 Tooth token "15"
-Recorded values:
-"Rotation (deg)": 3.1250 deg; direction label "D". Original cell: "3.1250 D".
-"Inclination (deg)": -1.5000 deg. Original cell: "-1.5000".
-"Angulation (deg)": 0 deg; explicitly recorded zero. Original cell: "0".
-"Extrusion (mm)": 0.2000 mm. Original cell: "0.2000".
-"Intrusion (mm)": missing; no numerical observation. Original cell: "—".
-"Mesial/Distal (mm)": 1.2300 mm; direction label "D". Original cell: "1.2300 D".
-"Buccal/Lingual (mm)": 0.4500 mm; direction label "B". Original cell: "0.4500 B".
+The programmed movement record lists rotation of 3.1250 deg (supplied direction label "D"); inclination of -1.5000 deg; angulation of 0 deg (explicitly recorded zero); extrusion of 0.2000 mm; an unreported intrusion value (unknown, not zero); mesiodistal translation of 1.2300 mm (supplied direction label "D"); buccolingual translation of 0.4500 mm (supplied direction label "B").
 
 Tooth token "14"
-Recorded values:
-"Rotation (deg)": 4.1250 deg; direction label "D". Original cell: "4.1250 D".
-"Inclination (deg)": -1.5000 deg. Original cell: "-1.5000".
-"Angulation (deg)": 0 deg; explicitly recorded zero. Original cell: "0".
-"Extrusion (mm)": 0.2000 mm. Original cell: "0.2000".
-"Intrusion (mm)": missing; no numerical observation. Original cell: "—".
-"Mesial/Distal (mm)": 1.2300 mm; direction label "D". Original cell: "1.2300 D".
-"Buccal/Lingual (mm)": 0.4500 mm; direction label "B". Original cell: "0.4500 B".
+The programmed movement record lists rotation of 4.1250 deg (supplied direction label "D"); inclination of -1.5000 deg; angulation of 0 deg (explicitly recorded zero); extrusion of 0.2000 mm; an unreported intrusion value (unknown, not zero); mesiodistal translation of 1.2300 mm (supplied direction label "D"); buccolingual translation of 0.4500 mm (supplied direction label "B").
 
 Tooth token "13"
-Recorded values:
-"Rotation (deg)": 5.1250 deg; direction label "D". Original cell: "5.1250 D".
-"Inclination (deg)": -1.5000 deg. Original cell: "-1.5000".
-"Angulation (deg)": 0 deg; explicitly recorded zero. Original cell: "0".
-"Extrusion (mm)": 0.2000 mm. Original cell: "0.2000".
-"Intrusion (mm)": missing; no numerical observation. Original cell: "—".
-"Mesial/Distal (mm)": 1.2300 mm; direction label "D". Original cell: "1.2300 D".
-"Buccal/Lingual (mm)": 0.4500 mm; direction label "B". Original cell: "0.4500 B".
+The programmed movement record lists rotation of 5.1250 deg (supplied direction label "D"); inclination of -1.5000 deg; angulation of 0 deg (explicitly recorded zero); extrusion of 0.2000 mm; an unreported intrusion value (unknown, not zero); mesiodistal translation of 1.2300 mm (supplied direction label "D"); buccolingual translation of 0.4500 mm (supplied direction label "B").
 
 Tooth token "12"
-Recorded values:
-"Rotation (deg)": 6.1250 deg; direction label "D". Original cell: "6.1250 D".
-"Inclination (deg)": -1.5000 deg. Original cell: "-1.5000".
-"Angulation (deg)": 0 deg; explicitly recorded zero. Original cell: "0".
-"Extrusion (mm)": 0.2000 mm. Original cell: "0.2000".
-"Intrusion (mm)": missing; no numerical observation. Original cell: "—".
-"Mesial/Distal (mm)": 1.2300 mm; direction label "D". Original cell: "1.2300 D".
-"Buccal/Lingual (mm)": 0.4500 mm; direction label "B". Original cell: "0.4500 B".
+The programmed movement record lists rotation of 6.1250 deg (supplied direction label "D"); inclination of -1.5000 deg; angulation of 0 deg (explicitly recorded zero); extrusion of 0.2000 mm; an unreported intrusion value (unknown, not zero); mesiodistal translation of 1.2300 mm (supplied direction label "D"); buccolingual translation of 0.4500 mm (supplied direction label "B").
 
 Tooth token "11"
-Recorded values:
-"Rotation (deg)": 7.1250 deg; direction label "D". Original cell: "7.1250 D".
-"Inclination (deg)": -1.5000 deg. Original cell: "-1.5000".
-"Angulation (deg)": 0 deg; explicitly recorded zero. Original cell: "0".
-"Extrusion (mm)": 0.2000 mm. Original cell: "0.2000".
-"Intrusion (mm)": missing; no numerical observation. Original cell: "—".
-"Mesial/Distal (mm)": 1.2300 mm; direction label "D". Original cell: "1.2300 D".
-"Buccal/Lingual (mm)": 0.4500 mm; direction label "B". Original cell: "0.4500 B".
+The programmed movement record lists rotation of 7.1250 deg (supplied direction label "D"); inclination of -1.5000 deg; angulation of 0 deg (explicitly recorded zero); extrusion of 0.2000 mm; an unreported intrusion value (unknown, not zero); mesiodistal translation of 1.2300 mm (supplied direction label "D"); buccolingual translation of 0.4500 mm (supplied direction label "B").
 
 Tooth token "21"
-Recorded values:
-"Rotation (deg)": 8.1250 deg; direction label "D". Original cell: "8.1250 D".
-"Inclination (deg)": -1.5000 deg. Original cell: "-1.5000".
-"Angulation (deg)": 0 deg; explicitly recorded zero. Original cell: "0".
-"Extrusion (mm)": 0.2000 mm. Original cell: "0.2000".
-"Intrusion (mm)": missing; no numerical observation. Original cell: "—".
-"Mesial/Distal (mm)": 1.2300 mm; direction label "D". Original cell: "1.2300 D".
-"Buccal/Lingual (mm)": 0.4500 mm; direction label "B". Original cell: "0.4500 B".
+The programmed movement record lists rotation of 8.1250 deg (supplied direction label "D"); inclination of -1.5000 deg; angulation of 0 deg (explicitly recorded zero); extrusion of 0.2000 mm; an unreported intrusion value (unknown, not zero); mesiodistal translation of 1.2300 mm (supplied direction label "D"); buccolingual translation of 0.4500 mm (supplied direction label "B").
 
 Tooth token "22"
-Recorded values:
-"Rotation (deg)": 9.1250 deg; direction label "D". Original cell: "9.1250 D".
-"Inclination (deg)": -1.5000 deg. Original cell: "-1.5000".
-"Angulation (deg)": 0 deg; explicitly recorded zero. Original cell: "0".
-"Extrusion (mm)": 0.2000 mm. Original cell: "0.2000".
-"Intrusion (mm)": missing; no numerical observation. Original cell: "—".
-"Mesial/Distal (mm)": 1.2300 mm; direction label "D". Original cell: "1.2300 D".
-"Buccal/Lingual (mm)": 0.4500 mm; direction label "B". Original cell: "0.4500 B".
+The programmed movement record lists rotation of 9.1250 deg (supplied direction label "D"); inclination of -1.5000 deg; angulation of 0 deg (explicitly recorded zero); extrusion of 0.2000 mm; an unreported intrusion value (unknown, not zero); mesiodistal translation of 1.2300 mm (supplied direction label "D"); buccolingual translation of 0.4500 mm (supplied direction label "B").
 
 Tooth token "23"
-Recorded values:
-"Rotation (deg)": 10.1250 deg; direction label "D". Original cell: "10.1250 D".
-"Inclination (deg)": -1.5000 deg. Original cell: "-1.5000".
-"Angulation (deg)": 0 deg; explicitly recorded zero. Original cell: "0".
-"Extrusion (mm)": 0.2000 mm. Original cell: "0.2000".
-"Intrusion (mm)": missing; no numerical observation. Original cell: "—".
-"Mesial/Distal (mm)": 1.2300 mm; direction label "D". Original cell: "1.2300 D".
-"Buccal/Lingual (mm)": 0.4500 mm; direction label "B". Original cell: "0.4500 B".
+The programmed movement record lists rotation of 10.1250 deg (supplied direction label "D"); inclination of -1.5000 deg; angulation of 0 deg (explicitly recorded zero); extrusion of 0.2000 mm; an unreported intrusion value (unknown, not zero); mesiodistal translation of 1.2300 mm (supplied direction label "D"); buccolingual translation of 0.4500 mm (supplied direction label "B").
 
 Tooth token "24"
-Recorded values:
-"Rotation (deg)": 11.1250 deg; direction label "D". Original cell: "11.1250 D".
-"Inclination (deg)": -1.5000 deg. Original cell: "-1.5000".
-"Angulation (deg)": 0 deg; explicitly recorded zero. Original cell: "0".
-"Extrusion (mm)": 0.2000 mm. Original cell: "0.2000".
-"Intrusion (mm)": missing; no numerical observation. Original cell: "—".
-"Mesial/Distal (mm)": 1.2300 mm; direction label "D". Original cell: "1.2300 D".
-"Buccal/Lingual (mm)": 0.4500 mm; direction label "B". Original cell: "0.4500 B".
+The programmed movement record lists rotation of 11.1250 deg (supplied direction label "D"); inclination of -1.5000 deg; angulation of 0 deg (explicitly recorded zero); extrusion of 0.2000 mm; an unreported intrusion value (unknown, not zero); mesiodistal translation of 1.2300 mm (supplied direction label "D"); buccolingual translation of 0.4500 mm (supplied direction label "B").
 
 Tooth token "25"
-Recorded values:
-"Rotation (deg)": 12.1250 deg; direction label "D". Original cell: "12.1250 D".
-"Inclination (deg)": -1.5000 deg. Original cell: "-1.5000".
-"Angulation (deg)": 0 deg; explicitly recorded zero. Original cell: "0".
-"Extrusion (mm)": 0.2000 mm. Original cell: "0.2000".
-"Intrusion (mm)": missing; no numerical observation. Original cell: "—".
-"Mesial/Distal (mm)": 1.2300 mm; direction label "D". Original cell: "1.2300 D".
-"Buccal/Lingual (mm)": 0.4500 mm; direction label "B". Original cell: "0.4500 B".
+The programmed movement record lists rotation of 12.1250 deg (supplied direction label "D"); inclination of -1.5000 deg; angulation of 0 deg (explicitly recorded zero); extrusion of 0.2000 mm; an unreported intrusion value (unknown, not zero); mesiodistal translation of 1.2300 mm (supplied direction label "D"); buccolingual translation of 0.4500 mm (supplied direction label "B").
 
 Tooth token "26"
-Recorded values:
-"Rotation (deg)": 13.1250 deg; direction label "D". Original cell: "13.1250 D".
-"Inclination (deg)": -1.5000 deg. Original cell: "-1.5000".
-"Angulation (deg)": 0 deg; explicitly recorded zero. Original cell: "0".
-"Extrusion (mm)": 0.2000 mm. Original cell: "0.2000".
-"Intrusion (mm)": missing; no numerical observation. Original cell: "—".
-"Mesial/Distal (mm)": 1.2300 mm; direction label "D". Original cell: "1.2300 D".
-"Buccal/Lingual (mm)": 0.4500 mm; direction label "B". Original cell: "0.4500 B".
+The programmed movement record lists rotation of 13.1250 deg (supplied direction label "D"); inclination of -1.5000 deg; angulation of 0 deg (explicitly recorded zero); extrusion of 0.2000 mm; an unreported intrusion value (unknown, not zero); mesiodistal translation of 1.2300 mm (supplied direction label "D"); buccolingual translation of 0.4500 mm (supplied direction label "B").
 
 Tooth token "27"
-Recorded values:
-"Rotation (deg)": 14.1250 deg; direction label "D". Original cell: "14.1250 D".
-"Inclination (deg)": -1.5000 deg. Original cell: "-1.5000".
-"Angulation (deg)": 0 deg; explicitly recorded zero. Original cell: "0".
-"Extrusion (mm)": 0.2000 mm. Original cell: "0.2000".
-"Intrusion (mm)": missing; no numerical observation. Original cell: "—".
-"Mesial/Distal (mm)": 1.2300 mm; direction label "D". Original cell: "1.2300 D".
-"Buccal/Lingual (mm)": 0.4500 mm; direction label "B". Original cell: "0.4500 B".
+The programmed movement record lists rotation of 14.1250 deg (supplied direction label "D"); inclination of -1.5000 deg; angulation of 0 deg (explicitly recorded zero); extrusion of 0.2000 mm; an unreported intrusion value (unknown, not zero); mesiodistal translation of 1.2300 mm (supplied direction label "D"); buccolingual translation of 0.4500 mm (supplied direction label "B").
 
 Tooth token "28"
-Recorded values:
-"Rotation (deg)": 15.1250 deg; direction label "D". Original cell: "15.1250 D".
-"Inclination (deg)": -1.5000 deg. Original cell: "-1.5000".
-"Angulation (deg)": 0 deg; explicitly recorded zero. Original cell: "0".
-"Extrusion (mm)": 0.2000 mm. Original cell: "0.2000".
-"Intrusion (mm)": missing; no numerical observation. Original cell: "—".
-"Mesial/Distal (mm)": 1.2300 mm; direction label "D". Original cell: "1.2300 D".
-"Buccal/Lingual (mm)": 0.4500 mm; direction label "B". Original cell: "0.4500 B".
+The programmed movement record lists rotation of 15.1250 deg (supplied direction label "D"); inclination of -1.5000 deg; angulation of 0 deg (explicitly recorded zero); extrusion of 0.2000 mm; an unreported intrusion value (unknown, not zero); mesiodistal translation of 1.2300 mm (supplied direction label "D"); buccolingual translation of 0.4500 mm (supplied direction label "B").
 
 ILLUSTRATIVE SEQUENCING EXAMPLES
 SIMULATED DEMO — NOT CALCULATED TREATMENT DECISIONS
@@ -194,7 +82,7 @@ Attachment and sequencing examples are arbitrary simulations based on table orde
 Clinical attachment, staging, anchorage, force, timing, diagnosis and treatment predicates remain unevaluated. No clinical approval is recorded.
 
 SOURCE AND PROVENANCE
-Report ID: 90002498f8844a0d4f72993e9604fb91affa1a72152a390ce5b4a1a5e07c605d
+Report ID: 419a0cfb25463957ae78acf6571a171c14a4b0a0aeff33e97a6a399220a06884
 Input SHA-256: a74de8eaed0af6215ad18891f8df9396fa23ba48569b2b46f19a71b9701094ca
 Parser: 0.1.0; engine: 0.5.0; rules: 2.0.0-phase5
 Wording: STANDARD_TEMPLATES; status: GROQ_NOT_CONFIGURED; provider attempts: 0

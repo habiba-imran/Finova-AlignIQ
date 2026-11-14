@@ -26,7 +26,7 @@ export function isInteractiveReport(v: unknown): v is InteractiveReport {
     || Number(v.generation.attempts) > 2 || !Number.isInteger(v.generation.accepted_comments)
     || !Array.isArray(v.observations) || !v.observations.length
     || (v.generation.output_validation === 'GROUNDED_PLANNING_WORDING_V1'
-      ? v.module !== 'macro' || v.generation.eligible_wording_findings !== v.observations.length
+      ? v.generation.eligible_wording_findings !== v.observations.length
       : v.generation.output_validation !== 'CLOSED_WORDING_AND_LOCAL_FACTS_V1' || v.generation.eligible_wording_findings !== 4)
     || (Number(v.generation.attempts) > 0 ? v.generation.provider !== 'GROQ' || v.generation.model !== 'openai/gpt-oss-120b' : v.generation.provider !== null || v.generation.model !== null)
     || (v.generation.used_mode === 'GROQ_AI' ? v.generation.accepted_comments !== v.generation.eligible_wording_findings || Number(v.generation.attempts) < 1 || v.generation.reason !== 'GROQ_VALIDATED' : v.generation.accepted_comments !== 0)

@@ -46,7 +46,7 @@ def test_arbitrary_source_cells_and_provenance_preserved(raw, count, module):
                 assert str(m.signed_decimal) in o.text
                 if m.raw_direction: assert json.dumps(m.raw_direction) in o.text
             else:
-                assert "unknown" in o.text if module == "macro" else "no numerical observation" in o.text
+                assert "unknown" in o.text
             if m.span:
                 assert raw[m.span.start:m.span.end] == m.raw_value
     assert report.clinical_analysis_enabled is False
@@ -55,7 +55,7 @@ def test_arbitrary_source_cells_and_provenance_preserved(raw, count, module):
     assert all(not f.observed_measurements for f in report.engine_review.findings)
     assert all(not e.evaluated for e in report.engine_review.evaluations if e.execution == "DISABLED")
     assert report.generation.used_mode == "STANDARD_TEMPLATES"
-    assert report.wording_notice == "Standard planning wording."
+    assert report.wording_notice == "Standard report wording."
     assert report.export_text.split("ORIGINAL INPUT — VERBATIM\n", 1)[1].startswith(raw)
     assert len(report.illustrations) == (0 if module == "macro" else len(report.observations))
     for item in report.illustrations:
@@ -79,7 +79,8 @@ def provider(status=200, mutate=None):
         captured.append(json.loads(request.content))
         data = json.loads(captured[-1]["messages"][1]["content"])
         if "programmed_movements" in data:
-            output = {"comments": [{"tooth_ref": t["tooth_ref"], "text": "The recorded profile includes " + " and ".join("{" + m["ref"] + "}" for m in t["movements"]) + "."} for t in data["programmed_movements"]]}
+            openings = ["The recorded profile includes ", "This entry records ", "Programmed movement components are "]
+            output = {"comments": [{"tooth_ref": t["tooth_ref"], "text": openings[i % len(openings)] + " and ".join("{" + m["ref"] + "}" for m in t["movements"]) + "."} for i, t in enumerate(data["programmed_movements"])]}
         else:
             output = {"comments": [{"finding_ids": [ref], "text": options[1]} for ref, options in WORDINGS.items()]}
         if mutate: mutate(output)
@@ -88,25 +89,22 @@ def provider(status=200, mutate=None):
 
 
 @pytest.mark.parametrize("module", ["macro", "micro", "nano"])
-def test_groq_automatic_constant_payload_and_local_facts(module):
+def test_groq_grounded_module_payload_and_local_facts(module):
     settings, client, captured = provider()
     request = submission("Patient: PRIVATE_PATIENT_ABC\n" + LARGE, module)
     report = generate_interactive(request, settings=settings, client=client)
     assert report.generation.used_mode == "GROQ_AI"
-    assert report.generation.accepted_comments == (16 if module == "macro" else 4) and report.generation.attempts == 1
-    assert report.wording_notice == "AI-assisted planning wording."
+    assert report.generation.accepted_comments == 16 and report.generation.attempts == 1
+    assert report.wording_notice == "AI-assisted report wording."
     payload = json.dumps(captured)
     for value in ("PRIVATE_PATIENT_ABC", "PRIVATE_SERVER_KEY", request.raw_sha256, "Rotation", "Mesial", "Patient"):
         assert value not in payload
     assert "0.4500" in report.export_text and "1.2300" in report.export_text
     other_settings, other_client, other_captured = provider()
     generate_interactive(submission(ROWS, module), settings=other_settings, client=other_client)
-    if module == "macro":
-        assert captured != other_captured  # Parsed movement data now drive tooth-wise wording.
-        assert "1.2300" in payload and "0.4500" in payload
-        assert "raw_text" not in payload and "source_version" not in payload
-    else:
-        assert captured == other_captured
+    assert captured != other_captured  # Parsed movement data drive tooth-wise wording.
+    assert "1.2300" in payload and "0.4500" in payload
+    assert "raw_text" not in payload and "source_version" not in payload
 
 
 @pytest.mark.parametrize("status", [401, 429, 500, 503])
@@ -116,7 +114,7 @@ def test_provider_failure_honest_fallback(status):
     assert report.generation.used_mode == "STANDARD_TEMPLATES"
     assert report.generation.accepted_comments == 0
     assert report.generation.attempts == 1
-    assert report.wording_notice == "Standard planning wording."
+    assert report.wording_notice == "Standard report wording."
     assert "PRIVATE_SERVER_KEY" not in report.model_dump_json()
 
 
@@ -136,7 +134,7 @@ def test_duplicate_or_incomplete_wording_is_rejected():
         assert report.generation.used_mode == "STANDARD_TEMPLATES"
 
 
-def test_backend_key_automatically_enables_constant_phrase_wording(monkeypatch):
+def test_backend_key_automatically_enables_grounded_wording(monkeypatch):
     settings, client, captured = provider()
     monkeypatch.setenv("GROQ_API_KEY", "PRIVATE_SERVER_KEY")
     monkeypatch.setenv("FINOVA_GROQ_SYNTHETIC_ENABLED", "false")

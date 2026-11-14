@@ -36,7 +36,7 @@ def main():
         settings = load_wording_settings()
         results = []
         for module in ("macro", "micro", "nano"):
-            report = generate_interactive(samples["submission"](samples["LARGE"], module), settings=load_planning_settings() if module == "macro" else settings)
+            report = generate_interactive(samples["submission"](samples["LARGE"], module), settings=load_planning_settings())
             results.append({"module": module, "generation": report.generation.model_dump(mode="json"),
                 "notice": report.wording_notice, "tooth_tokens": len(report.observations), "positions": len(report.parsed.measurements)})
         write(evidence / "live-groq.json", {"configured": settings.configured, "results": results})

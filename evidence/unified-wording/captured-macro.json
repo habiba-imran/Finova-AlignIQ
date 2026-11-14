@@ -1,0 +1,68 @@
+{
+  "comments": [
+    {
+      "tooth_ref": "T001",
+      "text": "The profile includes rotation of 0.0 deg (explicitly recorded zero), angulation of 0.0 deg (explicitly recorded zero) and inclination of 0.0 deg (explicitly recorded zero). Additionally an unreported vertical movement value (unknown, not zero) and an unreported relative vertical movement value (unknown, not zero) are present along with buccolingual translation of 0.0 mm (explicitly recorded zero) and mesiodistal translation of 0.0 mm (explicitly recorded zero)."
+    },
+    {
+      "tooth_ref": "T002",
+      "text": "Within the record rotation of 2.30 deg (supplied direction label \"D\") and angulation of 0.60 deg (supplied direction label \"D\") appear together with inclination of 5.10 deg (supplied direction label \"L\"). The entry also notes vertical movement of 1.30 mm (supplied direction label \"E\"), relative vertical movement of 0.90 mm (supplied direction label \"E\"), buccolingual translation of 0.30 mm (supplied direction label \"B\") and mesiodistal translation of 3.10 mm (supplied direction label \"D\")."
+    },
+    {
+      "tooth_ref": "T003",
+      "text": "Here rotation of 2.60 deg (supplied direction label \"D\") and angulation of 2.90 deg (supplied direction label \"D\") are listed alongside inclination of 0.60 deg (supplied direction label \"B\"). Also vertical movement of 0.60 mm (supplied direction label \"E\"), relative vertical movement of 0.10 mm (supplied direction label \"E\"), buccolingual translation of 0.30 mm (supplied direction label \"B\") and mesiodistal translation of 3.10 mm (supplied direction label \"D\") are included."
+    },
+    {
+      "tooth_ref": "T004",
+      "text": "Across the data rotation of 2.20 deg (supplied direction label \"D\") and angulation of 0.60 deg (supplied direction label \"D\") accompany inclination of 6.00 deg (supplied direction label \"L\"). Further vertical movement of 0.30 mm (supplied direction label \"I\"), relative vertical movement of 0.40 mm (supplied direction label \"E\"), buccolingual translation of 0.20 mm (supplied direction label \"B\") and mesiodistal translation of 3.20 mm (supplied direction label \"D\") are recorded."
+    },
+    {
+      "tooth_ref": "T005",
+      "text": "In the summary rotation of 3.70 deg (supplied direction label \"D\") and angulation of 3.50 deg (supplied direction label \"M\") are presented together with inclination of 4.50 deg (supplied direction label \"B\"). Additionally vertical movement of 0.10 mm (supplied direction label \"I\"), relative vertical movement of 0.30 mm (supplied direction label \"I\"), buccolingual translation of 0.20 mm (supplied direction label \"B\") and mesiodistal translation of 3.20 mm (supplied direction label \"D\") appear."
+    },
+    {
+      "tooth_ref": "T006",
+      "text": "For this tooth rotation of 0.10 deg (supplied direction label \"D\") and angulation of 1.80 deg (supplied direction label \"M\") are noted alongside inclination of 5.80 deg (supplied direction label \"B\"). The record also includes vertical movement of 0.50 mm (supplied direction label \"I\"), relative vertical movement of 0.70 mm (supplied direction label \"I\"), buccolingual translation of 0.50 mm (supplied direction label \"B\") and mesiodistal translation of 3.30 mm (supplied direction label \"D\")."
+    },
+    {
+      "tooth_ref": "T007",
+      "text": "Recorded rotation of 2.50 deg (supplied direction label \"M\") and angulation of 3.90 deg (supplied direction label \"D\") are accompanied by inclination of 7.20 deg (supplied direction label \"B\"). Also vertical movement of 1.70 mm (supplied direction label \"I\"), relative vertical movement of 1.50 mm (supplied direction label \"I\"), buccolingual translation of 0.40 mm (supplied direction label \"B\") and mesiodistal translation of 3.20 mm (supplied direction label \"D\") are present."
+    },
+    {
+      "tooth_ref": "T008",
+      "text": "Among the entries rotation of 18.90 deg (supplied direction label \"D\") and angulation of 28.80 deg (supplied direction label \"D\") are listed together with inclination of 0.70 deg (supplied direction label \"L\"). Further vertical movement of 2.20 mm (supplied direction label \"I\"), relative vertical movement of 0.70 mm (supplied direction label \"I\"), buccolingual translation of 2.50 mm (supplied direction label \"L\") and mesiodistal translation of 2.10 mm (supplied direction label \"D\") are included."
+    },
+    {
+      "tooth_ref": "T009",
+      "text": "The data shows rotation of 11.90 deg (supplied direction label \"D\") and angulation of 1.20 deg (supplied direction label \"D\") alongside inclination of 0.00 deg (explicitly recorded zero). Additionally vertical movement of 2.20 mm (supplied direction label \"I\"), relative vertical movement of 0.80 mm (supplied direction label \"I\"), buccolingual translation of 2.50 mm (supplied direction label \"L\") and mesiodistal translation of 0.40 mm (supplied direction label \"M\") are recorded."
+    },
+    {
+      "tooth_ref": "T010",
+      "text": "Within this profile rotation of 3.30 deg (supplied direction label \"M\") and angulation of 3.40 deg (supplied direction label \"D\") appear together with inclination of 3.20 deg (supplied direction label \"B\"). The entry also contains vertical movement of 2.20 mm (supplied direction label \"I\"), relative vertical movement of 1.50 mm (supplied direction label \"I\"), buccolingual translation of 1.20 mm (supplied direction label \"L\") and mesiodistal translation of 1.50 mm (supplied direction label \"D\")."
+    },
+    {
+      "tooth_ref": "T011",
+      "text": "Here rotation of 4.80 deg (supplied direction label \"D\") and angulation of 6.70 deg (supplied direction label \"M\") are accompanied by inclination of 3.70 deg (supplied direction label \"B\"). Also vertical movement of 0.90 mm (supplied direction label \"I\"), relative vertical movement of 0.90 mm (supplied direction label \"I\"), buccolingual translation of 0.10 mm (supplied direction label \"B\") and mesiodistal translation of 2.00 mm (supplied direction label \"D\") are noted."
+    },
+    {
+      "tooth_ref": "T012",
+      "text": "Across the record rotation of 6.90 deg (supplied direction label \"M\") and angulation of 3.80 deg (supplied direction label \"M\") are listed with inclination of 1.50 deg (supplied direction label \"B\"). Further vertical movement of 0.30 mm (supplied direction label \"I\"), relative vertical movement of 0.40 mm (supplied direction label \"I\"), buccolingual translation of 0.40 mm (supplied direction label \"L\") and mesiodistal translation of 2.30 mm (supplied direction label \"D\") are included."
+    },
+    {
+      "tooth_ref": "T013",
+      "text": "In this case rotation of 3.40 deg (supplied direction label \"D\") and angulation of 2.40 deg (supplied direction label \"D\") appear together with inclination of 1.80 deg (supplied direction label \"L\"). Additionally vertical movement of 0.50 mm (supplied direction label \"I\"), relative vertical movement of 0.10 mm (supplied direction label \"I\"), buccolingual translation of 0.10 mm (supplied direction label \"B\") and mesiodistal translation of 2.10 mm (supplied direction label \"D\") are recorded."
+    },
+    {
+      "tooth_ref": "T014",
+      "text": "Recorded rotation of 1.80 deg (supplied direction label \"D\") and angulation of 0.10 deg (supplied direction label \"D\") accompany inclination of 0.90 deg (supplied direction label \"B\"). The entry also includes vertical movement of 0.50 mm (supplied direction label \"E\"), relative vertical movement of 0.30 mm (supplied direction label \"E\"), buccolingual translation of 0.40 mm (supplied direction label \"B\") and mesiodistal translation of 2.10 mm (supplied direction label \"D\")."
+    },
+    {
+      "tooth_ref": "T015",
+      "text": "Among the data rotation of 3.00 deg (supplied direction label \"D\") and angulation of 0.20 deg (supplied direction label \"D\") are listed with inclination of 2.30 deg (supplied direction label \"L\"). Also vertical movement of 0.90 mm (supplied direction label \"E\"), relative vertical movement of 0.70 mm (supplied direction label \"E\"), buccolingual translation of 0.10 mm (supplied direction label \"L\") and mesiodistal translation of 2.20 mm (supplied direction label \"D\") are present."
+    },
+    {
+      "tooth_ref": "T016",
+      "text": "The profile contains an unreported rotation value (unknown, not zero) and an unreported angulation value (unknown, not zero) together with an unreported inclination value (unknown, not zero). Additionally an unreported vertical movement value (unknown, not zero), an unreported relative vertical movement value (unknown, not zero), an unreported buccolingual translation value (unknown, not zero) and an unreported mesiodistal translation value (unknown, not zero) are noted."
+    }
+  ]
+}

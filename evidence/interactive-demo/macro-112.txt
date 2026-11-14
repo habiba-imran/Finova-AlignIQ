@@ -2,7 +2,7 @@ FINOVA ALIGNIQ
 MACRO — Generated synthetic review
 Synthetic demonstration — not for clinical use
 
-Standard planning wording.
+Standard report wording.
 The parsed source values are described below. 16 tooth tokens; 112 measurement positions; 96 recorded numerical values; 16 missing or omitted; 0 invalid or ambiguous.
 
 FACTUAL OBSERVATIONS — PARSED SOURCE VALUES
@@ -63,7 +63,7 @@ Attachment and sequencing examples are arbitrary simulations based on table orde
 Clinical attachment, staging, anchorage, force, timing, diagnosis and treatment predicates remain unevaluated. No clinical approval is recorded.
 
 SOURCE AND PROVENANCE
-Report ID: 5d20d0f741f3c4fb86b8cd932fa23bc85aedc6a9c7ddb39af761fcf8f914f0cf
+Report ID: cf1cc310afc988abd2921c034acac15da824fbee571871da4fce28dc2aefad49
 Input SHA-256: a74de8eaed0af6215ad18891f8df9396fa23ba48569b2b46f19a71b9701094ca
 Parser: 0.1.0; engine: 0.5.0; rules: 2.0.0-phase5
 Wording: STANDARD_TEMPLATES; status: GROQ_NOT_CONFIGURED; provider attempts: 0

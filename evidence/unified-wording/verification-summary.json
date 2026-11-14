@@ -1,0 +1,42 @@
+{
+  "backend": {
+    "passed": 1056
+  },
+  "frontend": {
+    "passed": 258
+  },
+  "browser": {
+    "cases": 88,
+    "initial_passed": 82,
+    "corrected_test_rerun_passed": 6,
+    "projects": [
+      "desktop",
+      "mobile"
+    ]
+  },
+  "production_build": "passed",
+  "pdf": [
+    {
+      "module": "macro",
+      "pages": 4,
+      "visible_comments": 16,
+      "exact_attachments": true
+    },
+    {
+      "module": "micro",
+      "pages": 6,
+      "visible_comments": 16,
+      "exact_attachments": true
+    },
+    {
+      "module": "nano",
+      "pages": 6,
+      "visible_comments": 16,
+      "exact_attachments": true
+    }
+  ],
+  "clinical_rules": 96,
+  "disabled_clinical_predicates": 27,
+  "deployed": false,
+  "commit_or_push": false
+}

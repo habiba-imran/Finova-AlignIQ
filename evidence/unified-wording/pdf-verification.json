@@ -1,0 +1,20 @@
+[
+  {
+    "module": "macro",
+    "pages": 4,
+    "visible_comments": 16,
+    "exact_attachments": true
+  },
+  {
+    "module": "micro",
+    "pages": 6,
+    "visible_comments": 16,
+    "exact_attachments": true
+  },
+  {
+    "module": "nano",
+    "pages": 6,
+    "visible_comments": 16,
+    "exact_attachments": true
+  }
+]
