@@ -1,0 +1,278 @@
+analysis_ai_requested module=macro requested=True
+analysis_groq_attempt module=macro requested=True attempted=True
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+analysis_groq_result module=macro contacted=True provider_responded=True http_status=200 response_received=True code=GROQ_RESPONSE_RECEIVED attempts=1
+analysis_wording_complete module=macro requested=True attempted=True contacted=True succeeded=True validated=True fallback=False code=GROQ_VALIDATED attempts=1
+analysis_ai_requested module=micro requested=True
+analysis_groq_attempt module=micro requested=True attempted=True
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+analysis_groq_result module=micro contacted=True provider_responded=True http_status=200 response_received=True code=GROQ_RESPONSE_RECEIVED attempts=1
+analysis_wording_complete module=micro requested=True attempted=True contacted=True succeeded=True validated=True fallback=False code=GROQ_VALIDATED attempts=1
+analysis_ai_requested module=nano requested=True
+analysis_groq_attempt module=nano requested=True attempted=True
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+analysis_groq_result module=nano contacted=True provider_responded=True http_status=200 response_received=True code=GROQ_RESPONSE_RECEIVED attempts=1
+analysis_wording_complete module=nano requested=True attempted=True contacted=True succeeded=True validated=True fallback=False code=GROQ_VALIDATED attempts=1
+analysis_ai_requested module=macro requested=True
+analysis_groq_attempt module=macro requested=True attempted=True
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+analysis_groq_result module=macro contacted=True provider_responded=True http_status=200 response_received=True code=GROQ_RESPONSE_RECEIVED attempts=1
+analysis_wording_complete module=macro requested=True attempted=True contacted=True succeeded=True validated=True fallback=False code=GROQ_VALIDATED attempts=1
+analysis_ai_requested module=micro requested=True
+analysis_groq_attempt module=micro requested=True attempted=True
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+analysis_groq_result module=micro contacted=True provider_responded=True http_status=200 response_received=True code=GROQ_RESPONSE_RECEIVED attempts=1
+analysis_wording_complete module=micro requested=True attempted=True contacted=True succeeded=True validated=True fallback=False code=GROQ_VALIDATED attempts=1
+analysis_ai_requested module=nano requested=True
+analysis_groq_attempt module=nano requested=True attempted=True
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+analysis_groq_result module=nano contacted=True provider_responded=True http_status=200 response_received=True code=GROQ_RESPONSE_RECEIVED attempts=1
+analysis_wording_complete module=nano requested=True attempted=True contacted=True succeeded=True validated=True fallback=False code=GROQ_VALIDATED attempts=1
+analysis_ai_requested module=macro requested=True
+analysis_groq_attempt module=macro requested=True attempted=True
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+analysis_groq_result module=macro contacted=True provider_responded=True http_status=200 response_received=True code=GROQ_RESPONSE_RECEIVED attempts=1
+analysis_wording_complete module=macro requested=True attempted=True contacted=True succeeded=True validated=True fallback=False code=GROQ_VALIDATED attempts=1
+analysis_ai_requested module=micro requested=True
+analysis_groq_attempt module=micro requested=True attempted=True
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+analysis_groq_result module=micro contacted=True provider_responded=True http_status=200 response_received=True code=GROQ_RESPONSE_RECEIVED attempts=1
+analysis_wording_complete module=micro requested=True attempted=True contacted=True succeeded=True validated=True fallback=False code=GROQ_VALIDATED attempts=1
+analysis_ai_requested module=nano requested=True
+analysis_groq_attempt module=nano requested=True attempted=True
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+analysis_groq_result module=nano contacted=True provider_responded=True http_status=200 response_received=True code=GROQ_RESPONSE_RECEIVED attempts=1
+analysis_wording_complete module=nano requested=True attempted=True contacted=True succeeded=True validated=True fallback=False code=GROQ_VALIDATED attempts=1
+analysis_ai_requested module=macro requested=True
+analysis_groq_attempt module=macro requested=True attempted=True
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+analysis_groq_result module=macro contacted=True provider_responded=True http_status=200 response_received=True code=GROQ_RESPONSE_RECEIVED attempts=1
+analysis_wording_complete module=macro requested=True attempted=True contacted=True succeeded=True validated=True fallback=False code=GROQ_VALIDATED attempts=1
+analysis_ai_requested module=micro requested=True
+analysis_groq_attempt module=micro requested=True attempted=True
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+analysis_groq_result module=micro contacted=True provider_responded=True http_status=200 response_received=True code=GROQ_RESPONSE_RECEIVED attempts=1
+analysis_wording_complete module=micro requested=True attempted=True contacted=True succeeded=True validated=True fallback=False code=GROQ_VALIDATED attempts=1
+analysis_ai_requested module=nano requested=True
+analysis_groq_attempt module=nano requested=True attempted=True
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+analysis_groq_result module=nano contacted=True provider_responded=True http_status=200 response_received=True code=GROQ_RESPONSE_RECEIVED attempts=1
+analysis_wording_complete module=nano requested=True attempted=True contacted=True succeeded=True validated=True fallback=False code=GROQ_VALIDATED attempts=1
+[
+  {
+    "case": "A",
+    "module": "macro",
+    "requested_mode": "AUTO",
+    "used_mode": "GROQ_AI",
+    "reason": "GROQ_VALIDATED",
+    "provider": "GROQ",
+    "model": "openai/gpt-oss-120b",
+    "attempts": 1,
+    "eligible_wording_findings": 4,
+    "accepted_comments": 4,
+    "real_patient_transmission_enabled": false,
+    "output_validation": "GROUNDED_ANALYTICAL_WORDING_V1",
+    "decisions": 8,
+    "review_topics": 0,
+    "stages": 0,
+    "prompt_bytes": 13557
+  },
+  {
+    "case": "A",
+    "module": "micro",
+    "requested_mode": "AUTO",
+    "used_mode": "GROQ_AI",
+    "reason": "GROQ_VALIDATED",
+    "provider": "GROQ",
+    "model": "openai/gpt-oss-120b",
+    "attempts": 1,
+    "eligible_wording_findings": 2,
+    "accepted_comments": 2,
+    "real_patient_transmission_enabled": false,
+    "output_validation": "GROUNDED_ANALYTICAL_WORDING_V1",
+    "decisions": 16,
+    "review_topics": 0,
+    "stages": 0,
+    "prompt_bytes": 15094
+  },
+  {
+    "case": "A",
+    "module": "nano",
+    "requested_mode": "AUTO",
+    "used_mode": "GROQ_AI",
+    "reason": "GROQ_VALIDATED",
+    "provider": "GROQ",
+    "model": "openai/gpt-oss-120b",
+    "attempts": 1,
+    "eligible_wording_findings": 4,
+    "accepted_comments": 4,
+    "real_patient_transmission_enabled": false,
+    "output_validation": "GROUNDED_ANALYTICAL_WORDING_V1",
+    "decisions": 11,
+    "review_topics": 3,
+    "stages": 0,
+    "prompt_bytes": 14772
+  },
+  {
+    "case": "B",
+    "module": "macro",
+    "requested_mode": "AUTO",
+    "used_mode": "GROQ_AI",
+    "reason": "GROQ_VALIDATED",
+    "provider": "GROQ",
+    "model": "openai/gpt-oss-120b",
+    "attempts": 1,
+    "eligible_wording_findings": 4,
+    "accepted_comments": 4,
+    "real_patient_transmission_enabled": false,
+    "output_validation": "GROUNDED_ANALYTICAL_WORDING_V1",
+    "decisions": 8,
+    "review_topics": 0,
+    "stages": 0,
+    "prompt_bytes": 13040
+  },
+  {
+    "case": "B",
+    "module": "micro",
+    "requested_mode": "AUTO",
+    "used_mode": "GROQ_AI",
+    "reason": "GROQ_VALIDATED",
+    "provider": "GROQ",
+    "model": "openai/gpt-oss-120b",
+    "attempts": 1,
+    "eligible_wording_findings": 2,
+    "accepted_comments": 2,
+    "real_patient_transmission_enabled": false,
+    "output_validation": "GROUNDED_ANALYTICAL_WORDING_V1",
+    "decisions": 17,
+    "review_topics": 0,
+    "stages": 0,
+    "prompt_bytes": 16099
+  },
+  {
+    "case": "B",
+    "module": "nano",
+    "requested_mode": "AUTO",
+    "used_mode": "GROQ_AI",
+    "reason": "GROQ_VALIDATED",
+    "provider": "GROQ",
+    "model": "openai/gpt-oss-120b",
+    "attempts": 1,
+    "eligible_wording_findings": 4,
+    "accepted_comments": 4,
+    "real_patient_transmission_enabled": false,
+    "output_validation": "GROUNDED_ANALYTICAL_WORDING_V1",
+    "decisions": 16,
+    "review_topics": 3,
+    "stages": 0,
+    "prompt_bytes": 15275
+  },
+  {
+    "case": "C",
+    "module": "macro",
+    "requested_mode": "AUTO",
+    "used_mode": "GROQ_AI",
+    "reason": "GROQ_VALIDATED",
+    "provider": "GROQ",
+    "model": "openai/gpt-oss-120b",
+    "attempts": 1,
+    "eligible_wording_findings": 4,
+    "accepted_comments": 4,
+    "real_patient_transmission_enabled": false,
+    "output_validation": "GROUNDED_ANALYTICAL_WORDING_V1",
+    "decisions": 8,
+    "review_topics": 0,
+    "stages": 0,
+    "prompt_bytes": 8244
+  },
+  {
+    "case": "C",
+    "module": "micro",
+    "requested_mode": "AUTO",
+    "used_mode": "GROQ_AI",
+    "reason": "GROQ_VALIDATED",
+    "provider": "GROQ",
+    "model": "openai/gpt-oss-120b",
+    "attempts": 1,
+    "eligible_wording_findings": 2,
+    "accepted_comments": 2,
+    "real_patient_transmission_enabled": false,
+    "output_validation": "GROUNDED_ANALYTICAL_WORDING_V1",
+    "decisions": 9,
+    "review_topics": 0,
+    "stages": 0,
+    "prompt_bytes": 9535
+  },
+  {
+    "case": "C",
+    "module": "nano",
+    "requested_mode": "AUTO",
+    "used_mode": "GROQ_AI",
+    "reason": "GROQ_VALIDATED",
+    "provider": "GROQ",
+    "model": "openai/gpt-oss-120b",
+    "attempts": 1,
+    "eligible_wording_findings": 4,
+    "accepted_comments": 4,
+    "real_patient_transmission_enabled": false,
+    "output_validation": "GROUNDED_ANALYTICAL_WORDING_V1",
+    "decisions": 16,
+    "review_topics": 3,
+    "stages": 0,
+    "prompt_bytes": 10175
+  },
+  {
+    "case": "D",
+    "module": "macro",
+    "requested_mode": "AUTO",
+    "used_mode": "GROQ_AI",
+    "reason": "GROQ_VALIDATED",
+    "provider": "GROQ",
+    "model": "openai/gpt-oss-120b",
+    "attempts": 1,
+    "eligible_wording_findings": 4,
+    "accepted_comments": 4,
+    "real_patient_transmission_enabled": false,
+    "output_validation": "GROUNDED_ANALYTICAL_WORDING_V1",
+    "decisions": 5,
+    "review_topics": 0,
+    "stages": 0,
+    "prompt_bytes": 3150
+  },
+  {
+    "case": "D",
+    "module": "micro",
+    "requested_mode": "AUTO",
+    "used_mode": "GROQ_AI",
+    "reason": "GROQ_VALIDATED",
+    "provider": "GROQ",
+    "model": "openai/gpt-oss-120b",
+    "attempts": 1,
+    "eligible_wording_findings": 2,
+    "accepted_comments": 2,
+    "real_patient_transmission_enabled": false,
+    "output_validation": "GROUNDED_ANALYTICAL_WORDING_V1",
+    "decisions": 4,
+    "review_topics": 0,
+    "stages": 0,
+    "prompt_bytes": 3572
+  },
+  {
+    "case": "D",
+    "module": "nano",
+    "requested_mode": "AUTO",
+    "used_mode": "GROQ_AI",
+    "reason": "GROQ_VALIDATED",
+    "provider": "GROQ",
+    "model": "openai/gpt-oss-120b",
+    "attempts": 1,
+    "eligible_wording_findings": 4,
+    "accepted_comments": 4,
+    "real_patient_transmission_enabled": false,
+    "output_validation": "GROUNDED_ANALYTICAL_WORDING_V1",
+    "decisions": 6,
+    "review_topics": 1,
+    "stages": 0,
+    "prompt_bytes": 3418
+  }
+]

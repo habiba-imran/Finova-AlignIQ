@@ -1,0 +1,230 @@
+analysis_ai_requested module=macro requested=True
+analysis_wording_complete module=macro requested=True attempted=False contacted=False succeeded=False validated=False fallback=True code=GROQ_NOT_CONFIGURED attempts=0
+analysis_ai_requested module=micro requested=True
+analysis_wording_complete module=micro requested=True attempted=False contacted=False succeeded=False validated=False fallback=True code=GROQ_NOT_CONFIGURED attempts=0
+analysis_ai_requested module=nano requested=True
+analysis_wording_complete module=nano requested=True attempted=False contacted=False succeeded=False validated=False fallback=True code=GROQ_NOT_CONFIGURED attempts=0
+analysis_ai_requested module=macro requested=True
+analysis_wording_complete module=macro requested=True attempted=False contacted=False succeeded=False validated=False fallback=True code=GROQ_NOT_CONFIGURED attempts=0
+analysis_ai_requested module=micro requested=True
+analysis_wording_complete module=micro requested=True attempted=False contacted=False succeeded=False validated=False fallback=True code=GROQ_NOT_CONFIGURED attempts=0
+analysis_ai_requested module=nano requested=True
+analysis_wording_complete module=nano requested=True attempted=False contacted=False succeeded=False validated=False fallback=True code=GROQ_NOT_CONFIGURED attempts=0
+analysis_ai_requested module=macro requested=True
+analysis_wording_complete module=macro requested=True attempted=False contacted=False succeeded=False validated=False fallback=True code=GROQ_NOT_CONFIGURED attempts=0
+analysis_ai_requested module=micro requested=True
+analysis_wording_complete module=micro requested=True attempted=False contacted=False succeeded=False validated=False fallback=True code=GROQ_NOT_CONFIGURED attempts=0
+analysis_ai_requested module=nano requested=True
+analysis_wording_complete module=nano requested=True attempted=False contacted=False succeeded=False validated=False fallback=True code=GROQ_NOT_CONFIGURED attempts=0
+analysis_ai_requested module=macro requested=True
+analysis_wording_complete module=macro requested=True attempted=False contacted=False succeeded=False validated=False fallback=True code=GROQ_NOT_CONFIGURED attempts=0
+analysis_ai_requested module=micro requested=True
+analysis_wording_complete module=micro requested=True attempted=False contacted=False succeeded=False validated=False fallback=True code=GROQ_NOT_CONFIGURED attempts=0
+analysis_ai_requested module=nano requested=True
+analysis_wording_complete module=nano requested=True attempted=False contacted=False succeeded=False validated=False fallback=True code=GROQ_NOT_CONFIGURED attempts=0
+[
+  {
+    "case": "A",
+    "module": "macro",
+    "requested_mode": "AUTO",
+    "used_mode": "STANDARD_TEMPLATES",
+    "reason": "GROQ_NOT_CONFIGURED",
+    "provider": null,
+    "model": null,
+    "attempts": 0,
+    "eligible_wording_findings": 4,
+    "accepted_comments": 0,
+    "real_patient_transmission_enabled": false,
+    "output_validation": "GROUNDED_ANALYTICAL_WORDING_V1",
+    "decisions": 8,
+    "review_topics": 0,
+    "stages": 0
+  },
+  {
+    "case": "A",
+    "module": "micro",
+    "requested_mode": "AUTO",
+    "used_mode": "STANDARD_TEMPLATES",
+    "reason": "GROQ_NOT_CONFIGURED",
+    "provider": null,
+    "model": null,
+    "attempts": 0,
+    "eligible_wording_findings": 2,
+    "accepted_comments": 0,
+    "real_patient_transmission_enabled": false,
+    "output_validation": "GROUNDED_ANALYTICAL_WORDING_V1",
+    "decisions": 16,
+    "review_topics": 0,
+    "stages": 0
+  },
+  {
+    "case": "A",
+    "module": "nano",
+    "requested_mode": "AUTO",
+    "used_mode": "STANDARD_TEMPLATES",
+    "reason": "GROQ_NOT_CONFIGURED",
+    "provider": null,
+    "model": null,
+    "attempts": 0,
+    "eligible_wording_findings": 4,
+    "accepted_comments": 0,
+    "real_patient_transmission_enabled": false,
+    "output_validation": "GROUNDED_ANALYTICAL_WORDING_V1",
+    "decisions": 11,
+    "review_topics": 3,
+    "stages": 0
+  },
+  {
+    "case": "B",
+    "module": "macro",
+    "requested_mode": "AUTO",
+    "used_mode": "STANDARD_TEMPLATES",
+    "reason": "GROQ_NOT_CONFIGURED",
+    "provider": null,
+    "model": null,
+    "attempts": 0,
+    "eligible_wording_findings": 4,
+    "accepted_comments": 0,
+    "real_patient_transmission_enabled": false,
+    "output_validation": "GROUNDED_ANALYTICAL_WORDING_V1",
+    "decisions": 8,
+    "review_topics": 0,
+    "stages": 0
+  },
+  {
+    "case": "B",
+    "module": "micro",
+    "requested_mode": "AUTO",
+    "used_mode": "STANDARD_TEMPLATES",
+    "reason": "GROQ_NOT_CONFIGURED",
+    "provider": null,
+    "model": null,
+    "attempts": 0,
+    "eligible_wording_findings": 2,
+    "accepted_comments": 0,
+    "real_patient_transmission_enabled": false,
+    "output_validation": "GROUNDED_ANALYTICAL_WORDING_V1",
+    "decisions": 17,
+    "review_topics": 0,
+    "stages": 0
+  },
+  {
+    "case": "B",
+    "module": "nano",
+    "requested_mode": "AUTO",
+    "used_mode": "STANDARD_TEMPLATES",
+    "reason": "GROQ_NOT_CONFIGURED",
+    "provider": null,
+    "model": null,
+    "attempts": 0,
+    "eligible_wording_findings": 4,
+    "accepted_comments": 0,
+    "real_patient_transmission_enabled": false,
+    "output_validation": "GROUNDED_ANALYTICAL_WORDING_V1",
+    "decisions": 16,
+    "review_topics": 3,
+    "stages": 0
+  },
+  {
+    "case": "C",
+    "module": "macro",
+    "requested_mode": "AUTO",
+    "used_mode": "STANDARD_TEMPLATES",
+    "reason": "GROQ_NOT_CONFIGURED",
+    "provider": null,
+    "model": null,
+    "attempts": 0,
+    "eligible_wording_findings": 4,
+    "accepted_comments": 0,
+    "real_patient_transmission_enabled": false,
+    "output_validation": "GROUNDED_ANALYTICAL_WORDING_V1",
+    "decisions": 8,
+    "review_topics": 0,
+    "stages": 0
+  },
+  {
+    "case": "C",
+    "module": "micro",
+    "requested_mode": "AUTO",
+    "used_mode": "STANDARD_TEMPLATES",
+    "reason": "GROQ_NOT_CONFIGURED",
+    "provider": null,
+    "model": null,
+    "attempts": 0,
+    "eligible_wording_findings": 2,
+    "accepted_comments": 0,
+    "real_patient_transmission_enabled": false,
+    "output_validation": "GROUNDED_ANALYTICAL_WORDING_V1",
+    "decisions": 9,
+    "review_topics": 0,
+    "stages": 0
+  },
+  {
+    "case": "C",
+    "module": "nano",
+    "requested_mode": "AUTO",
+    "used_mode": "STANDARD_TEMPLATES",
+    "reason": "GROQ_NOT_CONFIGURED",
+    "provider": null,
+    "model": null,
+    "attempts": 0,
+    "eligible_wording_findings": 4,
+    "accepted_comments": 0,
+    "real_patient_transmission_enabled": false,
+    "output_validation": "GROUNDED_ANALYTICAL_WORDING_V1",
+    "decisions": 16,
+    "review_topics": 3,
+    "stages": 0
+  },
+  {
+    "case": "D",
+    "module": "macro",
+    "requested_mode": "AUTO",
+    "used_mode": "STANDARD_TEMPLATES",
+    "reason": "GROQ_NOT_CONFIGURED",
+    "provider": null,
+    "model": null,
+    "attempts": 0,
+    "eligible_wording_findings": 4,
+    "accepted_comments": 0,
+    "real_patient_transmission_enabled": false,
+    "output_validation": "GROUNDED_ANALYTICAL_WORDING_V1",
+    "decisions": 5,
+    "review_topics": 0,
+    "stages": 0
+  },
+  {
+    "case": "D",
+    "module": "micro",
+    "requested_mode": "AUTO",
+    "used_mode": "STANDARD_TEMPLATES",
+    "reason": "GROQ_NOT_CONFIGURED",
+    "provider": null,
+    "model": null,
+    "attempts": 0,
+    "eligible_wording_findings": 2,
+    "accepted_comments": 0,
+    "real_patient_transmission_enabled": false,
+    "output_validation": "GROUNDED_ANALYTICAL_WORDING_V1",
+    "decisions": 4,
+    "review_topics": 0,
+    "stages": 0
+  },
+  {
+    "case": "D",
+    "module": "nano",
+    "requested_mode": "AUTO",
+    "used_mode": "STANDARD_TEMPLATES",
+    "reason": "GROQ_NOT_CONFIGURED",
+    "provider": null,
+    "model": null,
+    "attempts": 0,
+    "eligible_wording_findings": 4,
+    "accepted_comments": 0,
+    "real_patient_transmission_enabled": false,
+    "output_validation": "GROUNDED_ANALYTICAL_WORDING_V1",
+    "decisions": 6,
+    "review_topics": 1,
+    "stages": 0
+  }
+]

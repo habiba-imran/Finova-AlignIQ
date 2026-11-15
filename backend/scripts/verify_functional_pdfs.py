@@ -18,7 +18,10 @@ def normalize(value):
 def main():
     args=argparse.ArgumentParser()
     args.add_argument('--evidence-dir',default='evidence/functional-planning')
-    output=(ROOT/args.parse_args().evidence_dir).resolve()
+    args.add_argument('--expected-count',type=int,default=6)
+    args.add_argument('--render-project',choices=['desktop','mobile'])
+    options=args.parse_args()
+    output=(ROOT/options.evidence_dir).resolve()
     if not output.is_relative_to(ROOT/'evidence'):
         raise ValueError('Evidence output must remain inside the repository evidence directory')
     results=[]
@@ -42,6 +45,9 @@ def main():
         for section in report['sections']:
             assert normalize(section['title']) in text
         assert '{F0' not in text
+        if options.render_project and not path.stem.endswith('-'+options.render_project):
+            results.append(dict(file=path.name,pages=len(reader.pages),findings=len(report['analytical_findings']),exact_attachments=True,all_visible_facts=True,rendered=False))
+            continue
         folder=output/'renders'/path.stem
         folder.mkdir(parents=True,exist_ok=True)
         for old in folder.glob('page-*.png'): old.unlink()
@@ -55,7 +61,7 @@ def main():
             draw.text((x+10,y+4),f'{path.name} page {i+1}',fill='black');sheet.paste(page,(x,y+24))
         sheet.save(folder/'contact.png')
         results.append(dict(file=path.name,pages=len(reader.pages),findings=len(report['analytical_findings']),exact_attachments=True,all_visible_facts=True))
-    assert len(results)==6,'Expected three modules at desktop and mobile widths'
+    assert len(results)==options.expected_count,f'Expected {options.expected_count} module/viewport PDFs'
     (output/'pdf-verification.json').write_text(json.dumps(results,indent=2)+'\n',encoding='utf-8')
     print(json.dumps(results,indent=2))
 

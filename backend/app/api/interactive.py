@@ -21,6 +21,7 @@ def interactive_capabilities():
     # development-route switches or clinical authority are exposed.
     return {"report_format": "MODULE_SPECIFIC_V1", "analytical_report_format": "ANALYTICAL_V1", "revision": "analytical-reviews-2026-11-15-v1",
         "functional_report_format": "FUNCTIONAL_DEMO_V1", "functional_scenarios": ['macro-distribution','micro-catalog','nano-phases'],
+        "generalized_review_supported": True, "planning_options_version": "1.0.0",
         "modules": ["macro", "micro", "nano"], "supplied_review_details": True, "clinical_analysis_enabled": False}
 
 

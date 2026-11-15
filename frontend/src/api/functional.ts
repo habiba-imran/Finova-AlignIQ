@@ -4,16 +4,25 @@ import type { AnalyticalFinding, DemoModule, ReviewDetails } from './interactive
 export type Concept = 'RECTANGULAR' | 'VERTICAL_RECTANGULAR' | 'HORIZONTAL_RECTANGULAR' | 'OVAL' | 'OPTIMIZED_STYLE' | 'NO_ATTACHMENT'
 export interface AttachmentOption { concept: Concept; geometry: { width_mm: string; height_mm: string; depth_mm: string } | null; orientation: 'VERTICAL' | 'HORIZONTAL' | 'UNSPECIFIED' | null; surface: 'BUCCAL' | 'LINGUAL' | null; placement: { frame: 'FICTIONAL_TOOTH_LOCAL_MM'; x_mm: string; y_mm: string; z_mm: string } | null }
 export interface MovementTarget { measurement_ref: string; amount: string; unit: 'mm' | 'deg'; source_direction: string | null }
-export interface FunctionalContext { scenario_id: string; policy_version: '1.0.0'; source_sha256: string; module: DemoModule; origin: 'EXPLICIT_SYNTHETIC_SCENARIO'; notation: 'FDI' | 'UNVERIFIED'; objectives: string[]; targets: MovementTarget[]; attachment_options: AttachmentOption[]; phases: { phase_id: string; label: string; stage_ids: string[] }[]; stage_value_basis: 'UNSPECIFIED' | 'INCREMENTS_MATCH_SOURCE_LABELS'; support_constraints: { phase_id: string; support_tooth_refs: string[]; active_tooth_refs: string[]; assumption: 'STATIONARY_IN_FICTIONAL_SCENARIO' }[] }
-export interface Decision { decision_id: string; finding_id: string; policy_id: string; policy_version: '1.0.0'; dimension: string; status: 'ILLUSTRATIVE_PROPOSAL' | 'INSUFFICIENT_INFORMATION' | 'NOT_APPLICABLE' | 'CONFLICT'; tooth_refs: string[]; measurement_refs: string[]; context_refs: string[]; rationale: string; proposal: string; alternative: string | null; missing_fields: string[]; proposed_changes: MovementTarget[]; attachment_primary: Concept | null; attachment_alternative: Concept | null }
-export interface Candidate { tooth_ref: string; decision_id: string; movement_refs: string[]; primary: Concept | null; alternative: Concept | null; outcome: 'CANDIDATE' | 'NO_ATTACHMENT' | 'INSUFFICIENT_INFORMATION'; missing_fields: string[] }
+export interface FunctionalContext { scenario_id: string | null; policy_version: '1.0.0'; source_sha256: string; module: DemoModule; origin: 'EXPLICIT_SYNTHETIC_SCENARIO' | 'INPUT_DRIVEN_POLICY_REVIEW'; notation: 'FDI' | 'UNVERIFIED'; objectives: string[]; targets: MovementTarget[]; attachment_options: AttachmentOption[]; phases: { phase_id: string; label: string; stage_ids: string[] }[]; stage_value_basis: 'UNSPECIFIED' | 'INCREMENTS_MATCH_SOURCE_LABELS'; support_constraints: { phase_id: string; support_tooth_refs: string[]; active_tooth_refs: string[]; assumption: 'STATIONARY_IN_FICTIONAL_SCENARIO' }[] }
+export interface Decision { decision_id: string; finding_id: string; policy_id: string; policy_version: '1.0.0'; dimension: string; status: 'ILLUSTRATIVE_PROPOSAL' | 'REVIEW_REQUEST' | 'INSUFFICIENT_INFORMATION' | 'NOT_APPLICABLE' | 'CONFLICT'; tooth_refs: string[]; measurement_refs: string[]; context_refs: string[]; rationale: string; proposal: string; alternative: string | null; missing_fields: string[]; proposed_changes: MovementTarget[]; attachment_primary: Concept | null; attachment_alternative: Concept | null }
+export interface Candidate { tooth_ref: string; decision_id: string; movement_refs: string[]; primary: Concept | null; alternative: Concept | null; outcome: 'CANDIDATE' | 'NO_ATTACHMENT' | 'NO_CANDIDATE' | 'INSUFFICIENT_INFORMATION'; missing_fields: string[] }
 export interface StageMovement { tooth_ref: string; measurement_ref: string; amount: string | null; unit: 'mm' | 'deg' | null; source_direction: string | null }
 export interface FunctionalPlan { policy_set_version: '1.0.0'; origin: 'INDEPENDENT_SYNTHETIC_POLICIES'; clinical_authorized: false; source_sha256: string; decisions: Decision[]; attachment_rows: Candidate[]; stages: { stage_id: string; order: number; phase_id: string | null; duration_days: number | null; movements: StageMovement[]; decision_ids: string[] }[]; allocation_checks: { measurement_ref: string; source_total: string | null; allocated_total: string | null; unit: 'mm' | 'deg' | null; status: 'MATCH' | 'MISMATCH' | 'UNAVAILABLE' | 'NOT_COMPARABLE' }[]; checks: { code: string; status: 'PASS' | 'CONFLICT' | 'UNAVAILABLE'; message: string; source_refs: string[] }[] }
 export interface FunctionalScenario { label: string; module: DemoModule; raw_text: string; planning_context: FunctionalContext; review_details: ReviewDetails }
+export interface ReviewOutline { outline_id: string; title: string; purpose: string; tooth_refs: string[]; measurement_refs: string[]; decision_id: string; origin: 'ILLUSTRATIVE_REVIEW_OUTLINE'; stage_allocations_generated: false }
+export interface FunctionalPlan { review_outline?: ReviewOutline[] }
 export const FUNCTIONAL_SECTIONS = {
   macro: { SAGITTAL: 'Sagittal proposals', TRANSVERSE: 'Transverse proposals', VERTICAL: 'Vertical proposals', ADDITIONAL: 'Additional considerations' },
   micro: { ATTACHMENT_OPTIONS: 'Tooth-wise attachment options', ATTACHMENT_SCOPE: 'Attachment assumptions and limits' },
   nano: { PHASES: 'Ordered phases and movements', STAGE_CHECKS: 'Stage consistency checks', ANCHORAGE: 'Illustrative anchorage review', SEQUENCE_SCOPE: 'Sequencing assumptions and limits' },
+}
+export function functionalSectionTitles(module: DemoModule, context: FunctionalContext, details: ReviewDetails, plan: FunctionalPlan): Record<string, string> {
+  const titles = { ...FUNCTIONAL_SECTIONS[module] }
+  if (context.origin !== 'INPUT_DRIVEN_POLICY_REVIEW') return titles
+  if (module === 'macro') return { ...titles, SAGITTAL: 'Sagittal review', TRANSVERSE: 'Transverse review', VERTICAL: 'Vertical review' }
+  if (module === 'nano') return { ...titles, PHASES: plan.stages.length ? 'Ordered phases and movements' : details.stages.length || details.allocations.length ? 'Supplied stage review' : 'Movement patterns and review outline' }
+  return titles
 }
 export const CONCEPT_LABELS: Record<Concept, string> = { RECTANGULAR: 'Rectangular', VERTICAL_RECTANGULAR: 'Vertical rectangular', HORIZONTAL_RECTANGULAR: 'Horizontal rectangular', OVAL: 'Ellipsoid / oval', OPTIMIZED_STYLE: 'Optimized-style category (geometry unspecified)', NO_ATTACHMENT: 'No attachment in this fictional scenario' }
 const obj = (v: unknown): v is Record<string, unknown> => !!v && typeof v === 'object' && !Array.isArray(v)
@@ -26,7 +35,8 @@ const canonical = (v: unknown): string => JSON.stringify(v, (_key, item: unknown
 export const decisionText = (d: Decision) => [d.rationale, d.proposal, d.alternative ? 'Alternative: ' + d.alternative : '', d.missing_fields.length ? 'Information needed: ' + d.missing_fields.join('; ') + '.' : ''].filter(Boolean).map(s => s.trim()).join(' ')
 
 export function isFunctionalContext(v: unknown): v is FunctionalContext {
-  if (!obj(v) || v.policy_version !== '1.0.0' || v.origin !== 'EXPLICIT_SYNTHETIC_SCENARIO' || !str(v.scenario_id) || !/^[a-zA-Z0-9_-]{1,60}$/.test(v.scenario_id)
+  if (!obj(v) || v.policy_version !== '1.0.0'
+    || (v.origin === 'EXPLICIT_SYNTHETIC_SCENARIO' ? !str(v.scenario_id) || !/^[a-zA-Z0-9_-]{1,60}$/.test(v.scenario_id) : v.origin !== 'INPUT_DRIVEN_POLICY_REVIEW' || v.scenario_id !== null)
     || !str(v.source_sha256) || !/^[a-f0-9]{64}$/.test(v.source_sha256) || !['macro', 'micro', 'nano'].includes(String(v.module)) || !['FDI', 'UNVERIFIED'].includes(String(v.notation))
     || !strings(v.objectives) || !v.objectives.every(x => ['REDISTRIBUTE_TRANSLATIONS', 'ANGULAR_CONTROL', 'VERTICAL_REVIEW', 'STAGE_REVIEW'].includes(x))
     || new Set(v.objectives).size !== v.objectives.length || !['UNSPECIFIED', 'INCREMENTS_MATCH_SOURCE_LABELS'].includes(String(v.stage_value_basis))
@@ -49,9 +59,9 @@ export function isFunctionalPlan(v: unknown, c: FunctionalContext, parsed: Parse
   if (!(v.decisions as unknown[]).every(d => {
     if (!obj(d) || !str(d.decision_id) || ids.has(d.decision_id) || !str(d.finding_id) || !factMap.has(d.finding_id) || !str(d.policy_id)
       || !/^DEMO-(PLAN|ATT|STAGE)-[A-Z-]+-v1$/.test(d.policy_id) || d.policy_version !== '1.0.0'
-      || !['ILLUSTRATIVE_PROPOSAL', 'INSUFFICIENT_INFORMATION', 'NOT_APPLICABLE', 'CONFLICT'].includes(String(d.status)) || !str(d.dimension)
+      || !['ILLUSTRATIVE_PROPOSAL', 'REVIEW_REQUEST', 'INSUFFICIENT_INFORMATION', 'NOT_APPLICABLE', 'CONFLICT'].includes(String(d.status)) || !str(d.dimension)
       || !strings(d.tooth_refs) || !d.tooth_refs.every(t => teeth.has(t)) || !strings(d.measurement_refs) || !d.measurement_refs.every(r => measurements.has(r))
-      || !strings(d.context_refs) || !d.context_refs.every(r => /^(planning_context|review_details)(\/|$)/.test(r))
+      || !strings(d.context_refs) || !d.context_refs.every(r => /^(planning_context|planning_options|review_details)(\/|$)/.test(r))
       || !str(d.rationale) || !str(d.proposal) || !(d.alternative === null || str(d.alternative)) || !strings(d.missing_fields)
       || !(d.attachment_primary === null || concept(d.attachment_primary)) || !(d.attachment_alternative === null || concept(d.attachment_alternative))
       || !Array.isArray(d.proposed_changes) || !d.proposed_changes.every(t => c.targets.some(target => canonical(target) === canonical(t)))) return false
@@ -65,9 +75,9 @@ export function isFunctionalPlan(v: unknown, c: FunctionalContext, parsed: Parse
     if (!obj(row) || !str(row.tooth_ref) || seen.has(row.tooth_ref) || !teeth.has(row.tooth_ref) || !str(row.decision_id) || !ids.has(row.decision_id)
       || !strings(row.movement_refs) || !row.movement_refs.every(ref => measurements.get(ref)?.tooth_ref === row.tooth_ref) || !strings(row.missing_fields)
       || !(row.primary === null || concept(row.primary) && catalog.has(row.primary)) || !(row.alternative === null || concept(row.alternative) && catalog.has(row.alternative))
-      || (row.outcome === 'CANDIDATE' ? row.primary === null || row.primary === 'NO_ATTACHMENT' : row.outcome === 'NO_ATTACHMENT' ? row.primary !== 'NO_ATTACHMENT' : row.outcome !== 'INSUFFICIENT_INFORMATION' || row.primary !== null)) return false
+      || (row.outcome === 'CANDIDATE' ? row.primary === null || row.primary === 'NO_ATTACHMENT' : row.outcome === 'NO_ATTACHMENT' ? row.primary !== 'NO_ATTACHMENT' : !['INSUFFICIENT_INFORMATION', 'NO_CANDIDATE'].includes(String(row.outcome)) || row.primary !== null)) return false
     const decision = (v.decisions as unknown as Decision[]).find(d => d.decision_id === row.decision_id)!
-    if (row.primary !== decision.attachment_primary || row.alternative !== decision.attachment_alternative) return false
+    if (row.primary !== decision.attachment_primary || row.alternative !== decision.attachment_alternative || canonical(row.missing_fields) !== canonical(decision.missing_fields)) return false
     seen.add(row.tooth_ref); return true
   }) || (c.module === 'micro' ? seen.size !== parsed.teeth.length : seen.size !== 0)) return false
   const stageIds = new Set<string>()
@@ -82,6 +92,12 @@ export function isFunctionalPlan(v: unknown, c: FunctionalContext, parsed: Parse
       && details.allocations.some(a => a.stage_id === s.stage_id && a.tooth_ref === m.tooth_ref && a.measurement_ref === m.measurement_ref && a.amount === m.amount && a.unit === m.unit))) return false
     stageIds.add(s.stage_id); return true
   })) return false
+  const outline = v.review_outline ?? []
+  if (!Array.isArray(outline) || outline.length && (c.module !== 'nano' || stageIds.size > 0) || !outline.every(o => obj(o)
+    && str(o.outline_id) && str(o.title) && str(o.purpose) && str(o.decision_id) && ids.has(o.decision_id)
+    && o.origin === 'ILLUSTRATIVE_REVIEW_OUTLINE' && o.stage_allocations_generated === false
+    && strings(o.tooth_refs) && o.tooth_refs.every(t => teeth.has(t)) && strings(o.measurement_refs) && o.measurement_refs.every(r => measurements.has(r))
+    && o.measurement_refs.every(r => (v.decisions as unknown as Decision[]).find(d => d.decision_id === o.decision_id)!.measurement_refs.includes(r)))) return false
   return (v.allocation_checks as unknown[]).every(a => obj(a) && str(a.measurement_ref) && measurements.has(a.measurement_ref)
     && nullable(a.source_total) && nullable(a.allocated_total) && (a.source_total === null || a.source_total === measurements.get(a.measurement_ref)?.signed_decimal)
     && a.unit === measurements.get(a.measurement_ref)?.unit && ['MATCH', 'MISMATCH', 'UNAVAILABLE', 'NOT_COMPARABLE'].includes(String(a.status)))

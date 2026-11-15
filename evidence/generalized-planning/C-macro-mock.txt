@@ -1,0 +1,787 @@
+FINOVA ALIGNIQ
+MACRO — Generated synthetic review
+Synthetic demonstration — not for clinical use
+
+AI-assisted report wording.
+Input-driven planning review. Successfully parsed with 0 missing values. 8 teeth; 56 measurement positions; 56 recorded numerical values; 0 missing or omitted; 0 invalid or ambiguous.
+
+MODULE REVIEW COMMENTS
+
+SAGITTAL REVIEW
+Status: SIMULATED_DEMO
+Teeth 33, 46 are in the upper half of nonzero mesiodistal magnitudes (boundary 0.625 mm; ties retained). Largest recorded: Tooth 33: 0.875 mm (D-labelled) mesiodistal. Selected source labels: D: 2. Coupled nonzero components occur at tooth 33. Technician review: confirm the intended mesiodistal distribution for these teeth alongside the coupled components before changing programmed values. Alternative: Retain the recorded values, or review the coupled components separately against an explicit planning objective.
+
+TRANSVERSE REVIEW
+Status: SIMULATED_DEMO
+Teeth 14, 35, 46 are in the upper half of nonzero buccolingual magnitudes (boundary 0.375 mm; ties retained). Largest recorded: Tooth 14: 0.375 mm (B-labelled) buccolingual; Tooth 35: 0.375 mm (L-labelled) buccolingual; Tooth 46: 0.375 mm (L-labelled) buccolingual. Selected source labels: B: 1, L: 2. Coupled nonzero components occur at teeth 14, 35. Technician review: confirm the intended buccolingual distribution for these teeth alongside the coupled components before changing programmed values. Alternative: Retain the recorded values, or review the coupled components separately against an explicit planning objective.
+
+VERTICAL REVIEW
+Status: SIMULATED_DEMO
+Tooth 27 are in the upper half of nonzero vertical magnitudes (boundary 0.625 mm; ties retained). Largest recorded: Tooth 27: 0.625 mm (E-labelled) vertical. Selected source labels: E: 1. Coupled nonzero components occur at tooth 27. Technician review: confirm the intended vertical distribution for these teeth alongside the coupled components before changing programmed values. Alternative: Retain the recorded values, or review the coupled components separately against an explicit planning objective.
+
+Tooth 27 are in the upper half of nonzero relative vertical magnitudes (boundary 0.125 mm; ties retained). Largest recorded: Tooth 27: 0.125 mm (E-labelled) relative vertical. Selected source labels: E: 1. Coupled nonzero components occur at tooth 27. Technician review: confirm the intended relative vertical distribution for these teeth alongside the coupled components before changing programmed values. Alternative: Retain the recorded values, or review the coupled components separately against an explicit planning objective.
+
+ADDITIONAL CONSIDERATIONS
+Status: SIMULATED_DEMO
+Teeth 14, 33 are in the upper half of nonzero rotation magnitudes (boundary 4.125 deg; ties retained). Largest recorded: Tooth 14: 7.250° (D-labelled) rotation. Selected source labels: D: 1, M: 1. Coupled nonzero components occur at teeth 14, 33. Technician review: confirm the intended rotation distribution for these teeth alongside the coupled components before changing programmed values. Alternative: Retain the recorded values, or review the coupled components separately against an explicit planning objective.
+
+Teeth 14, 35 are in the upper half of nonzero angulation magnitudes (boundary 7.250 deg; ties retained). Largest recorded: Tooth 35: 9.875° (D-labelled) angulation. Selected source labels: D: 1, M: 1. Coupled nonzero components occur at teeth 14, 35. Technician review: confirm the intended angulation distribution for these teeth alongside the coupled components before changing programmed values. Alternative: Retain the recorded values, or review the coupled components separately against an explicit planning objective.
+
+Teeth 22, 42 are in the upper half of nonzero inclination magnitudes (boundary 6.875 deg; ties retained). Largest recorded: Tooth 22: 12.345° (L-labelled) inclination. Selected source labels: B: 1, L: 1. Coupled nonzero components occur at tooth 42. Technician review: confirm the intended inclination distribution for these teeth alongside the coupled components before changing programmed values. Alternative: Retain the recorded values, or review the coupled components separately against an explicit planning objective.
+
+Relative ranks identify review topics, not clinical severity or safe movement limits. Numerical replacements require explicit objectives and source conventions. Clinical IPR, extraction, surgery, auxiliaries and anchorage prescriptions remain unevaluated.
+
+LIMITATIONS
+Source values, units, direction labels and FDI-style token grouping remain unverified. Missing values remain unknown, not zero.
+Independent illustration policies do not establish clinical suitability, safe movement limits, forces or a treatment prescription.
+
+SOURCE AND PROVENANCE
+Report ID: 35bed79830e4dae06969486f5948d27aeff015bed8e1adb748813922309dd622
+Input SHA-256: 4149cf338ebfff7f7b20a0e195ac317d107383b346018a9f76e7bf25d996c8f6
+Parser: 0.1.0; engine: 0.5.0; rules: 2.0.0-phase5
+Wording: GROQ_AI; status: GROQ_VALIDATED; provider attempts: 1
+measurement-1; tooth_ref tooth-1; L3:C4-C11; offsets 207:214; PARSED; raw sign null; raw direction "D"; magnitude 7.250
+"Rotation (deg)": 7.250 deg; direction label "D". Original cell: "7.250 D".
+measurement-2; tooth_ref tooth-1; L3:C12-C19; offsets 215:222; PARSED; raw sign null; raw direction "M"; magnitude 7.250
+"Angulation (deg)": 7.250 deg; direction label "M". Original cell: "7.250 M".
+measurement-3; tooth_ref tooth-1; L3:C20-C25; offsets 223:228; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.000
+"Inclination (deg)": 0.000 deg; explicitly recorded zero. Original cell: "0.000".
+measurement-4; tooth_ref tooth-1; L3:C26-C31; offsets 229:234; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.000
+"Vertical (mm)": 0.000 mm; explicitly recorded zero. Original cell: "0.000".
+measurement-5; tooth_ref tooth-1; L3:C32-C37; offsets 235:240; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.000
+"Relative Ext / Int (mm)": 0.000 mm; explicitly recorded zero. Original cell: "0.000".
+measurement-6; tooth_ref tooth-1; L3:C38-C45; offsets 241:248; PARSED; raw sign null; raw direction "B"; magnitude 0.375
+"Translation B / L (mm)": 0.375 mm; direction label "B". Original cell: "0.375 B".
+measurement-7; tooth_ref tooth-1; L3:C46-C51; offsets 249:254; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.000
+"Translation M / D (mm)": 0.000 mm; explicitly recorded zero. Original cell: "0.000".
+measurement-8; tooth_ref tooth-2; L4:C4-C9; offsets 258:263; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.000
+"Rotation (deg)": 0.000 deg; explicitly recorded zero. Original cell: "0.000".
+measurement-9; tooth_ref tooth-2; L4:C10-C15; offsets 264:269; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.000
+"Angulation (deg)": 0.000 deg; explicitly recorded zero. Original cell: "0.000".
+measurement-10; tooth_ref tooth-2; L4:C16-C24; offsets 270:278; PARSED; raw sign null; raw direction "L"; magnitude 12.345
+"Inclination (deg)": 12.345 deg; direction label "L". Original cell: "12.345 L".
+measurement-11; tooth_ref tooth-2; L4:C25-C30; offsets 279:284; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.000
+"Vertical (mm)": 0.000 mm; explicitly recorded zero. Original cell: "0.000".
+measurement-12; tooth_ref tooth-2; L4:C31-C36; offsets 285:290; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.000
+"Relative Ext / Int (mm)": 0.000 mm; explicitly recorded zero. Original cell: "0.000".
+measurement-13; tooth_ref tooth-2; L4:C37-C42; offsets 291:296; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.000
+"Translation B / L (mm)": 0.000 mm; explicitly recorded zero. Original cell: "0.000".
+measurement-14; tooth_ref tooth-2; L4:C43-C48; offsets 297:302; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.000
+"Translation M / D (mm)": 0.000 mm; explicitly recorded zero. Original cell: "0.000".
+measurement-15; tooth_ref tooth-3; L5:C4-C9; offsets 306:311; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.000
+"Rotation (deg)": 0.000 deg; explicitly recorded zero. Original cell: "0.000".
+measurement-16; tooth_ref tooth-3; L5:C10-C15; offsets 312:317; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.000
+"Angulation (deg)": 0.000 deg; explicitly recorded zero. Original cell: "0.000".
+measurement-17; tooth_ref tooth-3; L5:C16-C21; offsets 318:323; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.000
+"Inclination (deg)": 0.000 deg; explicitly recorded zero. Original cell: "0.000".
+measurement-18; tooth_ref tooth-3; L5:C22-C29; offsets 324:331; PARSED; raw sign null; raw direction "E"; magnitude 0.625
+"Vertical (mm)": 0.625 mm; direction label "E". Original cell: "0.625 E".
+measurement-19; tooth_ref tooth-3; L5:C30-C37; offsets 332:339; PARSED; raw sign null; raw direction "E"; magnitude 0.125
+"Relative Ext / Int (mm)": 0.125 mm; direction label "E". Original cell: "0.125 E".
+measurement-20; tooth_ref tooth-3; L5:C38-C43; offsets 340:345; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.000
+"Translation B / L (mm)": 0.000 mm; explicitly recorded zero. Original cell: "0.000".
+measurement-21; tooth_ref tooth-3; L5:C44-C49; offsets 346:351; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.000
+"Translation M / D (mm)": 0.000 mm; explicitly recorded zero. Original cell: "0.000".
+measurement-22; tooth_ref tooth-4; L6:C4-C12; offsets 355:363; PARSED; raw sign "-"; raw direction "M"; magnitude 4.125
+"Rotation (deg)": -4.125 deg; direction label "M". Original cell: "-4.125 M".
+measurement-23; tooth_ref tooth-4; L6:C13-C18; offsets 364:369; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.000
+"Angulation (deg)": 0.000 deg; explicitly recorded zero. Original cell: "0.000".
+measurement-24; tooth_ref tooth-4; L6:C19-C24; offsets 370:375; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.000
+"Inclination (deg)": 0.000 deg; explicitly recorded zero. Original cell: "0.000".
+measurement-25; tooth_ref tooth-4; L6:C25-C30; offsets 376:381; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.000
+"Vertical (mm)": 0.000 mm; explicitly recorded zero. Original cell: "0.000".
+measurement-26; tooth_ref tooth-4; L6:C31-C36; offsets 382:387; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.000
+"Relative Ext / Int (mm)": 0.000 mm; explicitly recorded zero. Original cell: "0.000".
+measurement-27; tooth_ref tooth-4; L6:C37-C42; offsets 388:393; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.000
+"Translation B / L (mm)": 0.000 mm; explicitly recorded zero. Original cell: "0.000".
+measurement-28; tooth_ref tooth-4; L6:C43-C50; offsets 394:401; PARSED; raw sign null; raw direction "D"; magnitude 0.875
+"Translation M / D (mm)": 0.875 mm; direction label "D". Original cell: "0.875 D".
+measurement-29; tooth_ref tooth-5; L7:C4-C9; offsets 405:410; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.000
+"Rotation (deg)": 0.000 deg; explicitly recorded zero. Original cell: "0.000".
+measurement-30; tooth_ref tooth-5; L7:C10-C17; offsets 411:418; PARSED; raw sign null; raw direction "D"; magnitude 9.875
+"Angulation (deg)": 9.875 deg; direction label "D". Original cell: "9.875 D".
+measurement-31; tooth_ref tooth-5; L7:C18-C25; offsets 419:426; PARSED; raw sign null; raw direction "B"; magnitude 0.500
+"Inclination (deg)": 0.500 deg; direction label "B". Original cell: "0.500 B".
+measurement-32; tooth_ref tooth-5; L7:C26-C33; offsets 427:434; PARSED; raw sign null; raw direction "I"; magnitude 0.250
+"Vertical (mm)": 0.250 mm; direction label "I". Original cell: "0.250 I".
+measurement-33; tooth_ref tooth-5; L7:C34-C39; offsets 435:440; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.000
+"Relative Ext / Int (mm)": 0.000 mm; explicitly recorded zero. Original cell: "0.000".
+measurement-34; tooth_ref tooth-5; L7:C40-C47; offsets 441:448; PARSED; raw sign null; raw direction "L"; magnitude 0.375
+"Translation B / L (mm)": 0.375 mm; direction label "L". Original cell: "0.375 L".
+measurement-35; tooth_ref tooth-5; L7:C48-C53; offsets 449:454; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.000
+"Translation M / D (mm)": 0.000 mm; explicitly recorded zero. Original cell: "0.000".
+measurement-36; tooth_ref tooth-6; L8:C4-C9; offsets 458:463; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.000
+"Rotation (deg)": 0.000 deg; explicitly recorded zero. Original cell: "0.000".
+measurement-37; tooth_ref tooth-6; L8:C10-C15; offsets 464:469; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.000
+"Angulation (deg)": 0.000 deg; explicitly recorded zero. Original cell: "0.000".
+measurement-38; tooth_ref tooth-6; L8:C16-C21; offsets 470:475; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.000
+"Inclination (deg)": 0.000 deg; explicitly recorded zero. Original cell: "0.000".
+measurement-39; tooth_ref tooth-6; L8:C22-C27; offsets 476:481; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.000
+"Vertical (mm)": 0.000 mm; explicitly recorded zero. Original cell: "0.000".
+measurement-40; tooth_ref tooth-6; L8:C28-C33; offsets 482:487; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.000
+"Relative Ext / Int (mm)": 0.000 mm; explicitly recorded zero. Original cell: "0.000".
+measurement-41; tooth_ref tooth-6; L8:C34-C39; offsets 488:493; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.000
+"Translation B / L (mm)": 0.000 mm; explicitly recorded zero. Original cell: "0.000".
+measurement-42; tooth_ref tooth-6; L8:C40-C45; offsets 494:499; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.000
+"Translation M / D (mm)": 0.000 mm; explicitly recorded zero. Original cell: "0.000".
+measurement-43; tooth_ref tooth-7; L9:C4-C11; offsets 503:510; PARSED; raw sign null; raw direction "D"; magnitude 1.375
+"Rotation (deg)": 1.375 deg; direction label "D". Original cell: "1.375 D".
+measurement-44; tooth_ref tooth-7; L9:C12-C19; offsets 511:518; PARSED; raw sign null; raw direction "M"; magnitude 0.250
+"Angulation (deg)": 0.250 deg; direction label "M". Original cell: "0.250 M".
+measurement-45; tooth_ref tooth-7; L9:C20-C27; offsets 519:526; PARSED; raw sign null; raw direction "B"; magnitude 6.875
+"Inclination (deg)": 6.875 deg; direction label "B". Original cell: "6.875 B".
+measurement-46; tooth_ref tooth-7; L9:C28-C33; offsets 527:532; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.000
+"Vertical (mm)": 0.000 mm; explicitly recorded zero. Original cell: "0.000".
+measurement-47; tooth_ref tooth-7; L9:C34-C39; offsets 533:538; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.000
+"Relative Ext / Int (mm)": 0.000 mm; explicitly recorded zero. Original cell: "0.000".
+measurement-48; tooth_ref tooth-7; L9:C40-C47; offsets 539:546; PARSED; raw sign null; raw direction "B"; magnitude 0.125
+"Translation B / L (mm)": 0.125 mm; direction label "B". Original cell: "0.125 B".
+measurement-49; tooth_ref tooth-7; L9:C48-C55; offsets 547:554; PARSED; raw sign null; raw direction "M"; magnitude 0.500
+"Translation M / D (mm)": 0.500 mm; direction label "M". Original cell: "0.500 M".
+measurement-50; tooth_ref tooth-8; L10:C4-C9; offsets 558:563; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.000
+"Rotation (deg)": 0.000 deg; explicitly recorded zero. Original cell: "0.000".
+measurement-51; tooth_ref tooth-8; L10:C10-C15; offsets 564:569; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.000
+"Angulation (deg)": 0.000 deg; explicitly recorded zero. Original cell: "0.000".
+measurement-52; tooth_ref tooth-8; L10:C16-C21; offsets 570:575; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.000
+"Inclination (deg)": 0.000 deg; explicitly recorded zero. Original cell: "0.000".
+measurement-53; tooth_ref tooth-8; L10:C22-C27; offsets 576:581; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.000
+"Vertical (mm)": 0.000 mm; explicitly recorded zero. Original cell: "0.000".
+measurement-54; tooth_ref tooth-8; L10:C28-C33; offsets 582:587; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.000
+"Relative Ext / Int (mm)": 0.000 mm; explicitly recorded zero. Original cell: "0.000".
+measurement-55; tooth_ref tooth-8; L10:C34-C41; offsets 588:595; PARSED; raw sign null; raw direction "L"; magnitude 0.375
+"Translation B / L (mm)": 0.375 mm; direction label "L". Original cell: "0.375 L".
+measurement-56; tooth_ref tooth-8; L10:C42-C49; offsets 596:603; PARSED; raw sign null; raw direction "D"; magnitude 0.625
+"Translation M / D (mm)": 0.625 mm; direction label "D". Original cell: "0.625 D".
+
+RULE EVALUATION LEDGER — CLINICAL AUTHORITY UNCHANGED
+A01 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+A02 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+A03 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+A04 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+A05 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+A06 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+D01 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D02 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D03 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D04 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D05 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D06 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D07 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D08 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D09 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D10 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D11 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D12 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D13 v2.0.0: CONTEXT_REQUIRED; execution ACTIVE; approval NOT APPLICABLE
+D14 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+D15 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D16 v2.0.0: CONTEXT_REQUIRED; execution DEFERRED; approval NOT APPLICABLE
+G01 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+G02 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G03 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G04 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G05 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G06 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+G07 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G08 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+G09 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G10 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+G11 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G12 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G13 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G14 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G15 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+G16 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+G17 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G18 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+H01 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H02 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H03 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H04 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H05 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H06 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H07 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H08 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H09 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H10 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+H11 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H12 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+L01 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+L02 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+L03 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+L04 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+L05 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+L06 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+N01 v2.0.0: CONTEXT_REQUIRED; execution ACTIVE; approval NOT APPLICABLE
+N02 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+N03 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+N04 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+N05 v2.0.0: CONTEXT_REQUIRED; execution ACTIVE; approval NOT APPLICABLE
+N06 v2.0.0: CONTEXT_REQUIRED; execution ACTIVE; approval NOT APPLICABLE
+N07 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+N08 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+N09 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+N10 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+N11 v2.0.0: CONTEXT_REQUIRED; execution DEFERRED; approval NOT APPLICABLE
+N12 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+N13 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+N14 v2.0.0: CONTEXT_REQUIRED; execution DEFERRED; approval NOT APPLICABLE
+R01 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R02 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R03 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R04 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R05 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R06 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R07 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R08 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R09 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R10 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R11 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R12 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R13 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R14 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+R15 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R16 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T01 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T02 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T03 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T04 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T05 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T06 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T07 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T08 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+
+ANALYTICAL FINDING PROVENANCE
+[
+  {
+    "finding_id": "F0001",
+    "section_id": "SAGITTAL",
+    "kind": "REVIEW_REQUEST",
+    "text": "Teeth 33, 46 are in the upper half of nonzero mesiodistal magnitudes (boundary 0.625 mm; ties retained). Largest recorded: Tooth 33: 0.875 mm (D-labelled) mesiodistal. Selected source labels: D: 2. Coupled nonzero components occur at tooth 33. Technician review: confirm the intended mesiodistal distribution for these teeth alongside the coupled components before changing programmed values. Alternative: Retain the recorded values, or review the coupled components separately against an explicit planning objective.",
+    "source_refs": [
+      "measurement-7",
+      "measurement-14",
+      "measurement-21",
+      "measurement-28",
+      "measurement-35",
+      "measurement-42",
+      "measurement-49",
+      "measurement-56",
+      "measurement-22"
+    ],
+    "selected_refs": [
+      "measurement-28",
+      "measurement-56"
+    ],
+    "demo_rule": "DEMO-PLAN-INPUT-SAGITTAL-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0002",
+    "section_id": "TRANSVERSE",
+    "kind": "REVIEW_REQUEST",
+    "text": "Teeth 14, 35, 46 are in the upper half of nonzero buccolingual magnitudes (boundary 0.375 mm; ties retained). Largest recorded: Tooth 14: 0.375 mm (B-labelled) buccolingual; Tooth 35: 0.375 mm (L-labelled) buccolingual; Tooth 46: 0.375 mm (L-labelled) buccolingual. Selected source labels: B: 1, L: 2. Coupled nonzero components occur at teeth 14, 35. Technician review: confirm the intended buccolingual distribution for these teeth alongside the coupled components before changing programmed values. Alternative: Retain the recorded values, or review the coupled components separately against an explicit planning objective.",
+    "source_refs": [
+      "measurement-6",
+      "measurement-13",
+      "measurement-20",
+      "measurement-27",
+      "measurement-34",
+      "measurement-41",
+      "measurement-48",
+      "measurement-55",
+      "measurement-1",
+      "measurement-2",
+      "measurement-30",
+      "measurement-31"
+    ],
+    "selected_refs": [
+      "measurement-6",
+      "measurement-34",
+      "measurement-55"
+    ],
+    "demo_rule": "DEMO-PLAN-INPUT-TRANSVERSE-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0003",
+    "section_id": "VERTICAL",
+    "kind": "REVIEW_REQUEST",
+    "text": "Tooth 27 are in the upper half of nonzero vertical magnitudes (boundary 0.625 mm; ties retained). Largest recorded: Tooth 27: 0.625 mm (E-labelled) vertical. Selected source labels: E: 1. Coupled nonzero components occur at tooth 27. Technician review: confirm the intended vertical distribution for these teeth alongside the coupled components before changing programmed values. Alternative: Retain the recorded values, or review the coupled components separately against an explicit planning objective.",
+    "source_refs": [
+      "measurement-4",
+      "measurement-11",
+      "measurement-18",
+      "measurement-25",
+      "measurement-32",
+      "measurement-39",
+      "measurement-46",
+      "measurement-53",
+      "measurement-19"
+    ],
+    "selected_refs": [
+      "measurement-18"
+    ],
+    "demo_rule": "DEMO-PLAN-INPUT-VERTICAL-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0004",
+    "section_id": "VERTICAL",
+    "kind": "REVIEW_REQUEST",
+    "text": "Tooth 27 are in the upper half of nonzero relative vertical magnitudes (boundary 0.125 mm; ties retained). Largest recorded: Tooth 27: 0.125 mm (E-labelled) relative vertical. Selected source labels: E: 1. Coupled nonzero components occur at tooth 27. Technician review: confirm the intended relative vertical distribution for these teeth alongside the coupled components before changing programmed values. Alternative: Retain the recorded values, or review the coupled components separately against an explicit planning objective.",
+    "source_refs": [
+      "measurement-5",
+      "measurement-12",
+      "measurement-19",
+      "measurement-26",
+      "measurement-33",
+      "measurement-40",
+      "measurement-47",
+      "measurement-54",
+      "measurement-18"
+    ],
+    "selected_refs": [
+      "measurement-19"
+    ],
+    "demo_rule": "DEMO-PLAN-INPUT-VERTICAL-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0005",
+    "section_id": "ADDITIONAL",
+    "kind": "REVIEW_REQUEST",
+    "text": "Teeth 14, 33 are in the upper half of nonzero rotation magnitudes (boundary 4.125 deg; ties retained). Largest recorded: Tooth 14: 7.250° (D-labelled) rotation. Selected source labels: D: 1, M: 1. Coupled nonzero components occur at teeth 14, 33. Technician review: confirm the intended rotation distribution for these teeth alongside the coupled components before changing programmed values. Alternative: Retain the recorded values, or review the coupled components separately against an explicit planning objective.",
+    "source_refs": [
+      "measurement-1",
+      "measurement-8",
+      "measurement-15",
+      "measurement-22",
+      "measurement-29",
+      "measurement-36",
+      "measurement-43",
+      "measurement-50",
+      "measurement-6",
+      "measurement-28"
+    ],
+    "selected_refs": [
+      "measurement-1",
+      "measurement-22"
+    ],
+    "demo_rule": "DEMO-PLAN-INPUT-ADDITIONAL-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0006",
+    "section_id": "ADDITIONAL",
+    "kind": "REVIEW_REQUEST",
+    "text": "Teeth 14, 35 are in the upper half of nonzero angulation magnitudes (boundary 7.250 deg; ties retained). Largest recorded: Tooth 35: 9.875° (D-labelled) angulation. Selected source labels: D: 1, M: 1. Coupled nonzero components occur at teeth 14, 35. Technician review: confirm the intended angulation distribution for these teeth alongside the coupled components before changing programmed values. Alternative: Retain the recorded values, or review the coupled components separately against an explicit planning objective.",
+    "source_refs": [
+      "measurement-2",
+      "measurement-9",
+      "measurement-16",
+      "measurement-23",
+      "measurement-30",
+      "measurement-37",
+      "measurement-44",
+      "measurement-51",
+      "measurement-6",
+      "measurement-32",
+      "measurement-34"
+    ],
+    "selected_refs": [
+      "measurement-2",
+      "measurement-30"
+    ],
+    "demo_rule": "DEMO-PLAN-INPUT-ADDITIONAL-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0007",
+    "section_id": "ADDITIONAL",
+    "kind": "REVIEW_REQUEST",
+    "text": "Teeth 22, 42 are in the upper half of nonzero inclination magnitudes (boundary 6.875 deg; ties retained). Largest recorded: Tooth 22: 12.345° (L-labelled) inclination. Selected source labels: B: 1, L: 1. Coupled nonzero components occur at tooth 42. Technician review: confirm the intended inclination distribution for these teeth alongside the coupled components before changing programmed values. Alternative: Retain the recorded values, or review the coupled components separately against an explicit planning objective.",
+    "source_refs": [
+      "measurement-3",
+      "measurement-10",
+      "measurement-17",
+      "measurement-24",
+      "measurement-31",
+      "measurement-38",
+      "measurement-45",
+      "measurement-52",
+      "measurement-48",
+      "measurement-49"
+    ],
+    "selected_refs": [
+      "measurement-10",
+      "measurement-45"
+    ],
+    "demo_rule": "DEMO-PLAN-INPUT-ADDITIONAL-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0008",
+    "section_id": "ADDITIONAL",
+    "kind": "INSUFFICIENT_INFORMATION",
+    "text": "Relative ranks identify review topics, not clinical severity or safe movement limits. Numerical replacements require explicit objectives and source conventions. Clinical IPR, extraction, surgery, auxiliaries and anchorage prescriptions remain unevaluated.",
+    "source_refs": [],
+    "selected_refs": [],
+    "demo_rule": "DEMO-PLAN-INPUT-SCOPE-v1",
+    "origin": "SIMULATED_DEMO"
+  }
+]
+
+INPUT-DRIVEN POLICY CONTEXT — NOT TMT FACTS
+{
+  "scenario_id": null,
+  "policy_version": "1.0.0",
+  "source_sha256": "4149cf338ebfff7f7b20a0e195ac317d107383b346018a9f76e7bf25d996c8f6",
+  "module": "macro",
+  "origin": "INPUT_DRIVEN_POLICY_REVIEW",
+  "notation": "FDI",
+  "objectives": [],
+  "targets": [],
+  "attachment_options": [],
+  "phases": [],
+  "stage_value_basis": "UNSPECIFIED",
+  "support_constraints": []
+}
+
+SYNTHETIC POLICY DECISIONS — NO CLINICAL AUTHORIZATION
+{
+  "policy_set_version": "1.0.0",
+  "origin": "INDEPENDENT_SYNTHETIC_POLICIES",
+  "clinical_authorized": false,
+  "source_sha256": "4149cf338ebfff7f7b20a0e195ac317d107383b346018a9f76e7bf25d996c8f6",
+  "decisions": [
+    {
+      "decision_id": "D0001",
+      "finding_id": "F0001",
+      "policy_id": "DEMO-PLAN-INPUT-SAGITTAL-v1",
+      "policy_version": "1.0.0",
+      "dimension": "SAGITTAL",
+      "status": "REVIEW_REQUEST",
+      "tooth_refs": [
+        "tooth-1",
+        "tooth-2",
+        "tooth-3",
+        "tooth-4",
+        "tooth-5",
+        "tooth-6",
+        "tooth-7",
+        "tooth-8"
+      ],
+      "measurement_refs": [
+        "measurement-7",
+        "measurement-14",
+        "measurement-21",
+        "measurement-28",
+        "measurement-35",
+        "measurement-42",
+        "measurement-49",
+        "measurement-56",
+        "measurement-22"
+      ],
+      "context_refs": [],
+      "rationale": "Teeth 33, 46 are in the upper half of nonzero mesiodistal magnitudes (boundary 0.625 mm; ties retained). Largest recorded: Tooth 33: 0.875 mm (D-labelled) mesiodistal. Selected source labels: D: 2. Coupled nonzero components occur at tooth 33.",
+      "proposal": "Technician review: confirm the intended mesiodistal distribution for these teeth alongside the coupled components before changing programmed values.",
+      "alternative": "Retain the recorded values, or review the coupled components separately against an explicit planning objective.",
+      "missing_fields": [],
+      "proposed_changes": [],
+      "attachment_primary": null,
+      "attachment_alternative": null
+    },
+    {
+      "decision_id": "D0002",
+      "finding_id": "F0002",
+      "policy_id": "DEMO-PLAN-INPUT-TRANSVERSE-v1",
+      "policy_version": "1.0.0",
+      "dimension": "TRANSVERSE",
+      "status": "REVIEW_REQUEST",
+      "tooth_refs": [
+        "tooth-1",
+        "tooth-2",
+        "tooth-3",
+        "tooth-4",
+        "tooth-5",
+        "tooth-6",
+        "tooth-7",
+        "tooth-8"
+      ],
+      "measurement_refs": [
+        "measurement-6",
+        "measurement-13",
+        "measurement-20",
+        "measurement-27",
+        "measurement-34",
+        "measurement-41",
+        "measurement-48",
+        "measurement-55",
+        "measurement-1",
+        "measurement-2",
+        "measurement-30",
+        "measurement-31"
+      ],
+      "context_refs": [],
+      "rationale": "Teeth 14, 35, 46 are in the upper half of nonzero buccolingual magnitudes (boundary 0.375 mm; ties retained). Largest recorded: Tooth 14: 0.375 mm (B-labelled) buccolingual; Tooth 35: 0.375 mm (L-labelled) buccolingual; Tooth 46: 0.375 mm (L-labelled) buccolingual. Selected source labels: B: 1, L: 2. Coupled nonzero components occur at teeth 14, 35.",
+      "proposal": "Technician review: confirm the intended buccolingual distribution for these teeth alongside the coupled components before changing programmed values.",
+      "alternative": "Retain the recorded values, or review the coupled components separately against an explicit planning objective.",
+      "missing_fields": [],
+      "proposed_changes": [],
+      "attachment_primary": null,
+      "attachment_alternative": null
+    },
+    {
+      "decision_id": "D0003",
+      "finding_id": "F0003",
+      "policy_id": "DEMO-PLAN-INPUT-VERTICAL-v1",
+      "policy_version": "1.0.0",
+      "dimension": "VERTICAL",
+      "status": "REVIEW_REQUEST",
+      "tooth_refs": [
+        "tooth-1",
+        "tooth-2",
+        "tooth-3",
+        "tooth-4",
+        "tooth-5",
+        "tooth-6",
+        "tooth-7",
+        "tooth-8"
+      ],
+      "measurement_refs": [
+        "measurement-4",
+        "measurement-11",
+        "measurement-18",
+        "measurement-25",
+        "measurement-32",
+        "measurement-39",
+        "measurement-46",
+        "measurement-53",
+        "measurement-19"
+      ],
+      "context_refs": [],
+      "rationale": "Tooth 27 are in the upper half of nonzero vertical magnitudes (boundary 0.625 mm; ties retained). Largest recorded: Tooth 27: 0.625 mm (E-labelled) vertical. Selected source labels: E: 1. Coupled nonzero components occur at tooth 27.",
+      "proposal": "Technician review: confirm the intended vertical distribution for these teeth alongside the coupled components before changing programmed values.",
+      "alternative": "Retain the recorded values, or review the coupled components separately against an explicit planning objective.",
+      "missing_fields": [],
+      "proposed_changes": [],
+      "attachment_primary": null,
+      "attachment_alternative": null
+    },
+    {
+      "decision_id": "D0004",
+      "finding_id": "F0004",
+      "policy_id": "DEMO-PLAN-INPUT-VERTICAL-v1",
+      "policy_version": "1.0.0",
+      "dimension": "VERTICAL",
+      "status": "REVIEW_REQUEST",
+      "tooth_refs": [
+        "tooth-1",
+        "tooth-2",
+        "tooth-3",
+        "tooth-4",
+        "tooth-5",
+        "tooth-6",
+        "tooth-7",
+        "tooth-8"
+      ],
+      "measurement_refs": [
+        "measurement-5",
+        "measurement-12",
+        "measurement-19",
+        "measurement-26",
+        "measurement-33",
+        "measurement-40",
+        "measurement-47",
+        "measurement-54",
+        "measurement-18"
+      ],
+      "context_refs": [],
+      "rationale": "Tooth 27 are in the upper half of nonzero relative vertical magnitudes (boundary 0.125 mm; ties retained). Largest recorded: Tooth 27: 0.125 mm (E-labelled) relative vertical. Selected source labels: E: 1. Coupled nonzero components occur at tooth 27.",
+      "proposal": "Technician review: confirm the intended relative vertical distribution for these teeth alongside the coupled components before changing programmed values.",
+      "alternative": "Retain the recorded values, or review the coupled components separately against an explicit planning objective.",
+      "missing_fields": [],
+      "proposed_changes": [],
+      "attachment_primary": null,
+      "attachment_alternative": null
+    },
+    {
+      "decision_id": "D0005",
+      "finding_id": "F0005",
+      "policy_id": "DEMO-PLAN-INPUT-ADDITIONAL-v1",
+      "policy_version": "1.0.0",
+      "dimension": "ADDITIONAL",
+      "status": "REVIEW_REQUEST",
+      "tooth_refs": [
+        "tooth-1",
+        "tooth-2",
+        "tooth-3",
+        "tooth-4",
+        "tooth-5",
+        "tooth-6",
+        "tooth-7",
+        "tooth-8"
+      ],
+      "measurement_refs": [
+        "measurement-1",
+        "measurement-8",
+        "measurement-15",
+        "measurement-22",
+        "measurement-29",
+        "measurement-36",
+        "measurement-43",
+        "measurement-50",
+        "measurement-6",
+        "measurement-28"
+      ],
+      "context_refs": [],
+      "rationale": "Teeth 14, 33 are in the upper half of nonzero rotation magnitudes (boundary 4.125 deg; ties retained). Largest recorded: Tooth 14: 7.250° (D-labelled) rotation. Selected source labels: D: 1, M: 1. Coupled nonzero components occur at teeth 14, 33.",
+      "proposal": "Technician review: confirm the intended rotation distribution for these teeth alongside the coupled components before changing programmed values.",
+      "alternative": "Retain the recorded values, or review the coupled components separately against an explicit planning objective.",
+      "missing_fields": [],
+      "proposed_changes": [],
+      "attachment_primary": null,
+      "attachment_alternative": null
+    },
+    {
+      "decision_id": "D0006",
+      "finding_id": "F0006",
+      "policy_id": "DEMO-PLAN-INPUT-ADDITIONAL-v1",
+      "policy_version": "1.0.0",
+      "dimension": "ADDITIONAL",
+      "status": "REVIEW_REQUEST",
+      "tooth_refs": [
+        "tooth-1",
+        "tooth-2",
+        "tooth-3",
+        "tooth-4",
+        "tooth-5",
+        "tooth-6",
+        "tooth-7",
+        "tooth-8"
+      ],
+      "measurement_refs": [
+        "measurement-2",
+        "measurement-9",
+        "measurement-16",
+        "measurement-23",
+        "measurement-30",
+        "measurement-37",
+        "measurement-44",
+        "measurement-51",
+        "measurement-6",
+        "measurement-32",
+        "measurement-34"
+      ],
+      "context_refs": [],
+      "rationale": "Teeth 14, 35 are in the upper half of nonzero angulation magnitudes (boundary 7.250 deg; ties retained). Largest recorded: Tooth 35: 9.875° (D-labelled) angulation. Selected source labels: D: 1, M: 1. Coupled nonzero components occur at teeth 14, 35.",
+      "proposal": "Technician review: confirm the intended angulation distribution for these teeth alongside the coupled components before changing programmed values.",
+      "alternative": "Retain the recorded values, or review the coupled components separately against an explicit planning objective.",
+      "missing_fields": [],
+      "proposed_changes": [],
+      "attachment_primary": null,
+      "attachment_alternative": null
+    },
+    {
+      "decision_id": "D0007",
+      "finding_id": "F0007",
+      "policy_id": "DEMO-PLAN-INPUT-ADDITIONAL-v1",
+      "policy_version": "1.0.0",
+      "dimension": "ADDITIONAL",
+      "status": "REVIEW_REQUEST",
+      "tooth_refs": [
+        "tooth-1",
+        "tooth-2",
+        "tooth-3",
+        "tooth-4",
+        "tooth-5",
+        "tooth-6",
+        "tooth-7",
+        "tooth-8"
+      ],
+      "measurement_refs": [
+        "measurement-3",
+        "measurement-10",
+        "measurement-17",
+        "measurement-24",
+        "measurement-31",
+        "measurement-38",
+        "measurement-45",
+        "measurement-52",
+        "measurement-48",
+        "measurement-49"
+      ],
+      "context_refs": [],
+      "rationale": "Teeth 22, 42 are in the upper half of nonzero inclination magnitudes (boundary 6.875 deg; ties retained). Largest recorded: Tooth 22: 12.345° (L-labelled) inclination. Selected source labels: B: 1, L: 1. Coupled nonzero components occur at tooth 42.",
+      "proposal": "Technician review: confirm the intended inclination distribution for these teeth alongside the coupled components before changing programmed values.",
+      "alternative": "Retain the recorded values, or review the coupled components separately against an explicit planning objective.",
+      "missing_fields": [],
+      "proposed_changes": [],
+      "attachment_primary": null,
+      "attachment_alternative": null
+    },
+    {
+      "decision_id": "D0008",
+      "finding_id": "F0008",
+      "policy_id": "DEMO-PLAN-INPUT-SCOPE-v1",
+      "policy_version": "1.0.0",
+      "dimension": "ADDITIONAL",
+      "status": "INSUFFICIENT_INFORMATION",
+      "tooth_refs": [],
+      "measurement_refs": [],
+      "context_refs": [],
+      "rationale": "Relative ranks identify review topics, not clinical severity or safe movement limits.",
+      "proposal": "Numerical replacements require explicit objectives and source conventions. Clinical IPR, extraction, surgery, auxiliaries and anchorage prescriptions remain unevaluated.",
+      "alternative": null,
+      "missing_fields": [],
+      "proposed_changes": [],
+      "attachment_primary": null,
+      "attachment_alternative": null
+    }
+  ],
+  "attachment_rows": [],
+  "stages": [],
+  "allocation_checks": [],
+  "checks": [],
+  "review_outline": []
+}
+
+USER REVIEW OPTIONS — SOURCE-BOUND, NO CLINICAL AUTHORITY
+{
+  "policy_mode": "SYNTHETIC_REVIEW",
+  "source_sha256": null,
+  "objectives": [],
+  "source_convention": "UNSPECIFIED",
+  "illustration": "NONE",
+  "illustration_measurement_ref": null,
+  "targets": [],
+  "attachment_options": [],
+  "catalog_policy": "CONCEPTS_WITH_SUPPLIED_SPECS",
+  "phases": [],
+  "stage_value_basis": "UNSPECIFIED",
+  "support_constraints": []
+}
+
+SUPPLIED REVIEW DETAILS — UNVERIFIED
+{
+  "attachments": [],
+  "stages": [],
+  "allocations": [],
+  "anchorage_notes": []
+}
+
+ORIGINAL INPUT — VERBATIM
+# SYNTHETIC CLIENT C — novel cross-arch values and combinations
+Tooth	Rotation (deg)	Angulation (deg)	Inclination (deg)	Vertical (mm)	Relative Ext / Int (mm)	Translation B / L (mm)	Translation M / D (mm)
+14	7.250 D	7.250 M	0.000	0.000	0.000	0.375 B	0.000
+22	0.000	0.000	12.345 L	0.000	0.000	0.000	0.000
+27	0.000	0.000	0.000	0.625 E	0.125 E	0.000	0.000
+33	-4.125 M	0.000	0.000	0.000	0.000	0.000	0.875 D
+35	0.000	9.875 D	0.500 B	0.250 I	0.000	0.375 L	0.000
+38	0.000	0.000	0.000	0.000	0.000	0.000	0.000
+42	1.375 D	0.250 M	6.875 B	0.000	0.000	0.125 B	0.500 M
+46	0.000	0.000	0.000	0.000	0.000	0.375 L	0.625 D
+
+
+Synthetic demonstration — not for clinical use

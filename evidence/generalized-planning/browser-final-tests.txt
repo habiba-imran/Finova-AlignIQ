@@ -1,0 +1,91 @@
+
+> finova-aligniq-frontend@0.0.0 test:e2e
+> playwright test --config=playwright.audit.config.ts --project=desktop --project=mobile --workers=2 generalized-planning.spec.ts analysis-pipeline.spec.ts functional-planning.spec.ts module-final.spec.ts interactive.spec.ts
+
+[WebServer] INFO:     Started server process [29380]
+[WebServer] INFO:     Waiting for application startup.
+[WebServer] INFO:     Application startup complete.
+[WebServer] INFO:     Uvicorn running on http://127.0.0.1:8019 (Press CTRL+C to quit)
+[WebServer] (node:15660) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:12996) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 66 tests using 2 workers
+
+(node:32132) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:28000) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  2 [desktop] › e2e\functional-planning.spec.ts:13:29 › macro: functional policy scenario, exact exports and context invalidation (14.9s)
+  ok  1 [desktop] › e2e\analysis-pipeline.spec.ts:13:29 › macro: 15-tooth input-driven UI, Copy, TXT, PDF and cache agree (15.2s)
+  ok  3 [desktop] › e2e\functional-planning.spec.ts:13:29 › micro: functional policy scenario, exact exports and context invalidation (10.9s)
+  ok  4 [desktop] › e2e\analysis-pipeline.spec.ts:13:29 › micro: 15-tooth input-driven UI, Copy, TXT, PDF and cache agree (11.3s)
+  ok  6 [desktop] › e2e\analysis-pipeline.spec.ts:13:29 › nano: 15-tooth input-driven UI, Copy, TXT, PDF and cache agree (10.7s)
+  ok  5 [desktop] › e2e\functional-planning.spec.ts:13:29 › nano: functional policy scenario, exact exports and context invalidation (13.4s)
+  ok  7 [desktop] › e2e\generalized-planning.spec.ts:46:3 › A/macro: ordinary pasted input, source-specific review and exact exports (10.4s)
+  ok  8 [desktop] › e2e\functional-planning.spec.ts:89:1 › one load and one parse serve all three modules; source edits remove the extra context (10.7s)
+  ok 10 [desktop] › e2e\interactive.spec.ts:16:31 › rows: pasted synthetic input works in all three modules (5.7s)
+  ok  9 [desktop] › e2e\generalized-planning.spec.ts:46:3 › A/micro: ordinary pasted input, source-specific review and exact exports (10.9s)
+  ok 11 [desktop] › e2e\interactive.spec.ts:16:31 › columns: pasted synthetic input works in all three modules (5.8s)
+  ok 13 [desktop] › e2e\interactive.spec.ts:16:31 › markdown: pasted synthetic input works in all three modules (5.6s)
+  ok 12 [desktop] › e2e\generalized-planning.spec.ts:46:3 › A/nano: ordinary pasted input, source-specific review and exact exports (12.0s)
+  ok 15 [desktop] › e2e\generalized-planning.spec.ts:46:3 › B/macro: ordinary pasted input, source-specific review and exact exports (12.5s)
+  ok 16 [desktop] › e2e\generalized-planning.spec.ts:46:3 › B/micro: ordinary pasted input, source-specific review and exact exports (12.6s)
+  ok 14 [desktop] › e2e\interactive.spec.ts:16:31 › large: pasted synthetic input works in all three modules (30.9s)
+  ok 18 [desktop] › e2e\interactive.spec.ts:100:1 › unsupported input keeps a clear error and cannot generate a fabricated report (1.9s)
+  ok 17 [desktop] › e2e\generalized-planning.spec.ts:46:3 › B/nano: ordinary pasted input, source-specific review and exact exports (16.6s)
+  ok 19 [desktop] › e2e\interactive.spec.ts:109:31 › macro: approved AI comments are prominent in the UI and PDF (18.1s)
+  ok 20 [desktop] › e2e\generalized-planning.spec.ts:46:3 › C/macro: ordinary pasted input, source-specific review and exact exports (12.1s)
+  ok 21 [desktop] › e2e\interactive.spec.ts:109:31 › micro: approved AI comments are prominent in the UI and PDF (12.7s)
+  ok 22 [desktop] › e2e\generalized-planning.spec.ts:46:3 › C/micro: ordinary pasted input, source-specific review and exact exports (9.8s)
+  ok 23 [desktop] › e2e\interactive.spec.ts:109:31 › nano: approved AI comments are prominent in the UI and PDF (13.1s)
+  ok 24 [desktop] › e2e\generalized-planning.spec.ts:46:3 › C/nano: ordinary pasted input, source-specific review and exact exports (10.0s)
+  ok 26 [desktop] › e2e\generalized-planning.spec.ts:46:3 › D/macro: ordinary pasted input, source-specific review and exact exports (7.2s)
+  ok 25 [desktop] › e2e\module-final.spec.ts:15:27 › macro TMT only: distinct comments and exact PDF (14.2s)
+  ok 27 [desktop] › e2e\generalized-planning.spec.ts:46:3 › D/micro: ordinary pasted input, source-specific review and exact exports (7.2s)
+  ok 29 [desktop] › e2e\generalized-planning.spec.ts:46:3 › D/nano: ordinary pasted input, source-specific review and exact exports (6.8s)
+  ok 28 [desktop] › e2e\module-final.spec.ts:15:27 › micro TMT only: distinct comments and exact PDF (12.2s)
+  ok 30 [desktop] › e2e\generalized-planning.spec.ts:126:1 › Macro context creates an explicit arithmetic example and removing context suppresses it (11.4s)
+  ok 31 [desktop] › e2e\module-final.spec.ts:15:27 › nano TMT only: distinct comments and exact PDF (13.8s)
+  ok 32 [desktop] › e2e\generalized-planning.spec.ts:160:1 › Micro uses supplied geometry and removes it when its specification is removed (14.5s)
+(node:30960) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 33 [desktop] › e2e\generalized-planning.spec.ts:187:1 › Nano accepts supplied stages and support roles; removing a stage withholds dependent strategies (11.5s)
+(node:26344) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 34 [mobile] › e2e\analysis-pipeline.spec.ts:13:29 › macro: 15-tooth input-driven UI, Copy, TXT, PDF and cache agree (12.8s)
+  ok 35 [mobile] › e2e\functional-planning.spec.ts:13:29 › macro: functional policy scenario, exact exports and context invalidation (11.6s)
+  ok 36 [mobile] › e2e\analysis-pipeline.spec.ts:13:29 › micro: 15-tooth input-driven UI, Copy, TXT, PDF and cache agree (13.5s)
+  ok 37 [mobile] › e2e\functional-planning.spec.ts:13:29 › micro: functional policy scenario, exact exports and context invalidation (10.6s)
+  ok 38 [mobile] › e2e\analysis-pipeline.spec.ts:13:29 › nano: 15-tooth input-driven UI, Copy, TXT, PDF and cache agree (10.5s)
+  ok 39 [mobile] › e2e\functional-planning.spec.ts:13:29 › nano: functional policy scenario, exact exports and context invalidation (11.5s)
+  ok 40 [mobile] › e2e\generalized-planning.spec.ts:46:3 › A/macro: ordinary pasted input, source-specific review and exact exports (10.4s)
+  ok 41 [mobile] › e2e\functional-planning.spec.ts:89:1 › one load and one parse serve all three modules; source edits remove the extra context (10.6s)
+  ok 43 [mobile] › e2e\interactive.spec.ts:16:31 › rows: pasted synthetic input works in all three modules (5.5s)
+  ok 42 [mobile] › e2e\generalized-planning.spec.ts:46:3 › A/micro: ordinary pasted input, source-specific review and exact exports (10.3s)
+  ok 44 [mobile] › e2e\interactive.spec.ts:16:31 › columns: pasted synthetic input works in all three modules (5.0s)
+  ok 46 [mobile] › e2e\interactive.spec.ts:16:31 › markdown: pasted synthetic input works in all three modules (4.2s)
+  ok 45 [mobile] › e2e\generalized-planning.spec.ts:46:3 › A/nano: ordinary pasted input, source-specific review and exact exports (9.3s)
+  ok 48 [mobile] › e2e\generalized-planning.spec.ts:46:3 › B/macro: ordinary pasted input, source-specific review and exact exports (9.1s)
+  ok 49 [mobile] › e2e\generalized-planning.spec.ts:46:3 › B/micro: ordinary pasted input, source-specific review and exact exports (9.2s)
+  ok 47 [mobile] › e2e\interactive.spec.ts:16:31 › large: pasted synthetic input works in all three modules (23.9s)
+  ok 51 [mobile] › e2e\interactive.spec.ts:100:1 › unsupported input keeps a clear error and cannot generate a fabricated report (1.4s)
+  ok 50 [mobile] › e2e\generalized-planning.spec.ts:46:3 › B/nano: ordinary pasted input, source-specific review and exact exports (8.6s)
+  ok 52 [mobile] › e2e\interactive.spec.ts:109:31 › macro: approved AI comments are prominent in the UI and PDF (8.0s)
+  ok 53 [mobile] › e2e\generalized-planning.spec.ts:46:3 › C/macro: ordinary pasted input, source-specific review and exact exports (5.5s)
+  ok 55 [mobile] › e2e\generalized-planning.spec.ts:46:3 › C/micro: ordinary pasted input, source-specific review and exact exports (5.2s)
+  ok 54 [mobile] › e2e\interactive.spec.ts:109:31 › micro: approved AI comments are prominent in the UI and PDF (7.2s)
+  ok 56 [mobile] › e2e\generalized-planning.spec.ts:46:3 › C/nano: ordinary pasted input, source-specific review and exact exports (6.7s)
+  ok 57 [mobile] › e2e\interactive.spec.ts:109:31 › nano: approved AI comments are prominent in the UI and PDF (7.7s)
+  ok 58 [mobile] › e2e\generalized-planning.spec.ts:46:3 › D/macro: ordinary pasted input, source-specific review and exact exports (3.9s)
+  ok 60 [mobile] › e2e\generalized-planning.spec.ts:46:3 › D/micro: ordinary pasted input, source-specific review and exact exports (4.1s)
+  ok 59 [mobile] › e2e\module-final.spec.ts:15:27 › macro TMT only: distinct comments and exact PDF (8.1s)
+  ok 61 [mobile] › e2e\generalized-planning.spec.ts:46:3 › D/nano: ordinary pasted input, source-specific review and exact exports (4.4s)
+  ok 62 [mobile] › e2e\module-final.spec.ts:15:27 › micro TMT only: distinct comments and exact PDF (6.6s)
+  ok 63 [mobile] › e2e\generalized-planning.spec.ts:126:1 › Macro context creates an explicit arithmetic example and removing context suppresses it (6.4s)
+  ok 64 [mobile] › e2e\module-final.spec.ts:15:27 › nano TMT only: distinct comments and exact PDF (6.8s)
+  ok 65 [mobile] › e2e\generalized-planning.spec.ts:160:1 › Micro uses supplied geometry and removes it when its specification is removed (7.2s)
+  ok 66 [mobile] › e2e\generalized-planning.spec.ts:187:1 › Nano accepts supplied stages and support roles; removing a stage withholds dependent strategies (5.4s)
+
+  66 passed (6.2m)

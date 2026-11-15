@@ -1,0 +1,1389 @@
+FINOVA ALIGNIQ
+MICRO — Generated synthetic review
+Synthetic demonstration — not for clinical use
+
+AI-assisted report wording.
+Tooth-wise movement-profile attachment review. Successfully parsed with 2 missing values. 15 teeth; 105 measurement positions; 103 recorded numerical values; 2 missing or omitted; 0 invalid or ambiguous.
+
+MODULE REVIEW COMMENTS
+
+TOOTH-WISE ATTACHMENT OPTIONS
+Status: SIMULATED_DEMO
+Tooth 18: Explicit-zero angular profile; other required movement fields are incomplete. No supported category is selected. Information needed: Unavailable fields: relative_vertical, vertical.
+
+Tooth 17: Combined angular profile; inclination has the largest absolute angular magnitude within this tooth. Tooth 17: 2.30° (D-labelled) rotation; Tooth 17: 0.60° (D-labelled) angulation; Tooth 17: 5.10° (L-labelled) inclination. Illustrative catalog category: Optimized-style category (geometry unspecified). Alternative: Rectangular
+
+Tooth 16: Combined angular profile; angulation has the largest absolute angular magnitude within this tooth. Tooth 16: 2.60° (D-labelled) rotation; Tooth 16: 2.90° (D-labelled) angulation; Tooth 16: 0.60° (B-labelled) inclination. Illustrative catalog category: Horizontal rectangular. Alternative: Vertical rectangular
+
+Tooth 15: Combined angular profile; inclination has the largest absolute angular magnitude within this tooth. Tooth 15: 2.20° (D-labelled) rotation; Tooth 15: 0.60° (D-labelled) angulation; Tooth 15: 6.00° (L-labelled) inclination. Illustrative catalog category: Optimized-style category (geometry unspecified). Alternative: Rectangular
+
+Tooth 14: Combined angular profile; inclination has the largest absolute angular magnitude within this tooth. Tooth 14: 3.70° (D-labelled) rotation; Tooth 14: 3.50° (M-labelled) angulation; Tooth 14: 4.50° (B-labelled) inclination. Illustrative catalog category: Optimized-style category (geometry unspecified). Alternative: Rectangular
+
+Tooth 13: Combined angular profile; inclination has the largest absolute angular magnitude within this tooth. Tooth 13: 0.10° (D-labelled) rotation; Tooth 13: 1.80° (M-labelled) angulation; Tooth 13: 5.80° (B-labelled) inclination. Illustrative catalog category: Optimized-style category (geometry unspecified). Alternative: Rectangular
+
+Tooth 12: Combined angular profile; inclination has the largest absolute angular magnitude within this tooth. Tooth 12: 2.50° (M-labelled) rotation; Tooth 12: 3.90° (D-labelled) angulation; Tooth 12: 7.20° (B-labelled) inclination. Illustrative catalog category: Optimized-style category (geometry unspecified). Alternative: Rectangular
+
+Tooth 11: Combined angular profile; angulation has the largest absolute angular magnitude within this tooth. Tooth 11: 18.90° (D-labelled) rotation; Tooth 11: 28.80° (D-labelled) angulation; Tooth 11: 0.70° (L-labelled) inclination. Illustrative catalog category: Horizontal rectangular. Alternative: Vertical rectangular
+
+Tooth 21: Combined angular profile; rotation has the largest absolute angular magnitude within this tooth. Tooth 21: 11.90° (D-labelled) rotation; Tooth 21: 1.20° (D-labelled) angulation. Illustrative catalog category: Ellipsoid / oval. Alternative: Vertical rectangular
+
+Tooth 22: Combined angular profile; angulation has the largest absolute angular magnitude within this tooth. Tooth 22: 3.30° (M-labelled) rotation; Tooth 22: 3.40° (D-labelled) angulation; Tooth 22: 3.20° (B-labelled) inclination. Illustrative catalog category: Horizontal rectangular. Alternative: Vertical rectangular
+
+Tooth 23: Combined angular profile; angulation has the largest absolute angular magnitude within this tooth. Tooth 23: 4.80° (D-labelled) rotation; Tooth 23: 6.70° (M-labelled) angulation; Tooth 23: 3.70° (B-labelled) inclination. Illustrative catalog category: Horizontal rectangular. Alternative: Vertical rectangular
+
+Tooth 24: Combined angular profile; rotation has the largest absolute angular magnitude within this tooth. Tooth 24: 6.90° (M-labelled) rotation; Tooth 24: 3.80° (M-labelled) angulation; Tooth 24: 1.50° (B-labelled) inclination. Illustrative catalog category: Ellipsoid / oval. Alternative: Vertical rectangular
+
+Tooth 25: Combined angular profile; rotation has the largest absolute angular magnitude within this tooth. Tooth 25: 3.40° (D-labelled) rotation; Tooth 25: 2.40° (D-labelled) angulation; Tooth 25: 1.80° (L-labelled) inclination. Illustrative catalog category: Ellipsoid / oval. Alternative: Vertical rectangular
+
+Tooth 26: Combined angular profile; rotation has the largest absolute angular magnitude within this tooth. Tooth 26: 1.80° (D-labelled) rotation; Tooth 26: 0.10° (D-labelled) angulation; Tooth 26: 0.90° (B-labelled) inclination. Illustrative catalog category: Ellipsoid / oval. Alternative: Vertical rectangular
+
+Tooth 27: Combined angular profile; rotation has the largest absolute angular magnitude within this tooth. Tooth 27: 3.00° (D-labelled) rotation; Tooth 27: 0.20° (D-labelled) angulation; Tooth 27: 2.30° (L-labelled) inclination. Illustrative catalog category: Ellipsoid / oval. Alternative: Vertical rectangular
+
+ATTACHMENT ASSUMPTIONS AND LIMITS
+Status: SIMULATED_DEMO
+Catalog categories follow documented component-presence and within-tooth angular-dominance toy policies, independent of dataset rank. Dimensions and placement remain unspecified unless supplied. Optimized-style is a category only; clinical suitability and actual attachment need are not established.
+
+LIMITATIONS
+Source values, units, direction labels and FDI-style token grouping remain unverified. Missing values remain unknown, not zero.
+Independent illustration policies do not establish clinical suitability, safe movement limits, forces or a treatment prescription.
+
+SOURCE AND PROVENANCE
+Report ID: d0ad06972b551f62ba6760ba9851957feccbe1786abcafcf581bc23b90e550e8
+Input SHA-256: 6c80673bafaaf9ce2ee93a98c3fab98025032c872469c61c87148ffb51c9c664
+Parser: 0.1.0; engine: 0.5.0; rules: 2.0.0-phase5
+Wording: GROQ_AI; status: GROQ_VALIDATED; provider attempts: 1
+measurement-1; tooth_ref tooth-1; L5:C7-C12; offsets 256:261; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.0
+" Rotation (deg) ": 0.0 deg; explicitly recorded zero. Original cell: " 0.0 ".
+measurement-2; tooth_ref tooth-1; L5:C13-C18; offsets 262:267; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.0
+" Angulation (deg) ": 0.0 deg; explicitly recorded zero. Original cell: " 0.0 ".
+measurement-3; tooth_ref tooth-1; L5:C19-C24; offsets 268:273; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.0
+" Inclination (deg) ": 0.0 deg; explicitly recorded zero. Original cell: " 0.0 ".
+measurement-4; tooth_ref tooth-1; L5:C25-C28; offsets 274:277; MISSING; raw sign null; raw direction null; magnitude None
+" Extrusion / Intrusion (mm) ": missing; no numerical observation (unknown, not zero). Original cell: " — ".
+measurement-5; tooth_ref tooth-1; L5:C29-C32; offsets 278:281; MISSING; raw sign null; raw direction null; magnitude None
+" Relative Ext / Int (mm) ": missing; no numerical observation (unknown, not zero). Original cell: " — ".
+measurement-6; tooth_ref tooth-1; L5:C33-C38; offsets 282:287; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.0
+" Translation B / L (mm) ": 0.0 mm; explicitly recorded zero. Original cell: " 0.0 ".
+measurement-7; tooth_ref tooth-1; L5:C39-C44; offsets 288:293; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.0
+" Translation M / D (mm) ": 0.0 mm; explicitly recorded zero. Original cell: " 0.0 ".
+measurement-8; tooth_ref tooth-2; L6:C7-C15; offsets 301:309; PARSED; raw sign null; raw direction "D"; magnitude 2.30
+" Rotation (deg) ": 2.30 deg; direction label "D". Original cell: " 2.30 D ".
+measurement-9; tooth_ref tooth-2; L6:C16-C24; offsets 310:318; PARSED; raw sign null; raw direction "D"; magnitude 0.60
+" Angulation (deg) ": 0.60 deg; direction label "D". Original cell: " 0.60 D ".
+measurement-10; tooth_ref tooth-2; L6:C25-C33; offsets 319:327; PARSED; raw sign null; raw direction "L"; magnitude 5.10
+" Inclination (deg) ": 5.10 deg; direction label "L". Original cell: " 5.10 L ".
+measurement-11; tooth_ref tooth-2; L6:C34-C42; offsets 328:336; PARSED; raw sign null; raw direction "E"; magnitude 1.30
+" Extrusion / Intrusion (mm) ": 1.30 mm; direction label "E". Original cell: " 1.30 E ".
+measurement-12; tooth_ref tooth-2; L6:C43-C51; offsets 337:345; PARSED; raw sign null; raw direction "E"; magnitude 0.90
+" Relative Ext / Int (mm) ": 0.90 mm; direction label "E". Original cell: " 0.90 E ".
+measurement-13; tooth_ref tooth-2; L6:C52-C60; offsets 346:354; PARSED; raw sign null; raw direction "B"; magnitude 0.30
+" Translation B / L (mm) ": 0.30 mm; direction label "B". Original cell: " 0.30 B ".
+measurement-14; tooth_ref tooth-2; L6:C61-C69; offsets 355:363; PARSED; raw sign null; raw direction "D"; magnitude 3.10
+" Translation M / D (mm) ": 3.10 mm; direction label "D". Original cell: " 3.10 D ".
+measurement-15; tooth_ref tooth-3; L7:C7-C15; offsets 371:379; PARSED; raw sign null; raw direction "D"; magnitude 2.60
+" Rotation (deg) ": 2.60 deg; direction label "D". Original cell: " 2.60 D ".
+measurement-16; tooth_ref tooth-3; L7:C16-C24; offsets 380:388; PARSED; raw sign null; raw direction "D"; magnitude 2.90
+" Angulation (deg) ": 2.90 deg; direction label "D". Original cell: " 2.90 D ".
+measurement-17; tooth_ref tooth-3; L7:C25-C33; offsets 389:397; PARSED; raw sign null; raw direction "B"; magnitude 0.60
+" Inclination (deg) ": 0.60 deg; direction label "B". Original cell: " 0.60 B ".
+measurement-18; tooth_ref tooth-3; L7:C34-C42; offsets 398:406; PARSED; raw sign null; raw direction "E"; magnitude 0.60
+" Extrusion / Intrusion (mm) ": 0.60 mm; direction label "E". Original cell: " 0.60 E ".
+measurement-19; tooth_ref tooth-3; L7:C43-C51; offsets 407:415; PARSED; raw sign null; raw direction "E"; magnitude 0.10
+" Relative Ext / Int (mm) ": 0.10 mm; direction label "E". Original cell: " 0.10 E ".
+measurement-20; tooth_ref tooth-3; L7:C52-C60; offsets 416:424; PARSED; raw sign null; raw direction "B"; magnitude 0.30
+" Translation B / L (mm) ": 0.30 mm; direction label "B". Original cell: " 0.30 B ".
+measurement-21; tooth_ref tooth-3; L7:C61-C69; offsets 425:433; PARSED; raw sign null; raw direction "D"; magnitude 3.10
+" Translation M / D (mm) ": 3.10 mm; direction label "D". Original cell: " 3.10 D ".
+measurement-22; tooth_ref tooth-4; L8:C7-C15; offsets 441:449; PARSED; raw sign null; raw direction "D"; magnitude 2.20
+" Rotation (deg) ": 2.20 deg; direction label "D". Original cell: " 2.20 D ".
+measurement-23; tooth_ref tooth-4; L8:C16-C24; offsets 450:458; PARSED; raw sign null; raw direction "D"; magnitude 0.60
+" Angulation (deg) ": 0.60 deg; direction label "D". Original cell: " 0.60 D ".
+measurement-24; tooth_ref tooth-4; L8:C25-C33; offsets 459:467; PARSED; raw sign null; raw direction "L"; magnitude 6.00
+" Inclination (deg) ": 6.00 deg; direction label "L". Original cell: " 6.00 L ".
+measurement-25; tooth_ref tooth-4; L8:C34-C42; offsets 468:476; PARSED; raw sign null; raw direction "I"; magnitude 0.30
+" Extrusion / Intrusion (mm) ": 0.30 mm; direction label "I". Original cell: " 0.30 I ".
+measurement-26; tooth_ref tooth-4; L8:C43-C51; offsets 477:485; PARSED; raw sign null; raw direction "E"; magnitude 0.40
+" Relative Ext / Int (mm) ": 0.40 mm; direction label "E". Original cell: " 0.40 E ".
+measurement-27; tooth_ref tooth-4; L8:C52-C60; offsets 486:494; PARSED; raw sign null; raw direction "B"; magnitude 0.20
+" Translation B / L (mm) ": 0.20 mm; direction label "B". Original cell: " 0.20 B ".
+measurement-28; tooth_ref tooth-4; L8:C61-C69; offsets 495:503; PARSED; raw sign null; raw direction "D"; magnitude 3.20
+" Translation M / D (mm) ": 3.20 mm; direction label "D". Original cell: " 3.20 D ".
+measurement-29; tooth_ref tooth-5; L9:C7-C15; offsets 511:519; PARSED; raw sign null; raw direction "D"; magnitude 3.70
+" Rotation (deg) ": 3.70 deg; direction label "D". Original cell: " 3.70 D ".
+measurement-30; tooth_ref tooth-5; L9:C16-C24; offsets 520:528; PARSED; raw sign null; raw direction "M"; magnitude 3.50
+" Angulation (deg) ": 3.50 deg; direction label "M". Original cell: " 3.50 M ".
+measurement-31; tooth_ref tooth-5; L9:C25-C33; offsets 529:537; PARSED; raw sign null; raw direction "B"; magnitude 4.50
+" Inclination (deg) ": 4.50 deg; direction label "B". Original cell: " 4.50 B ".
+measurement-32; tooth_ref tooth-5; L9:C34-C42; offsets 538:546; PARSED; raw sign null; raw direction "I"; magnitude 0.10
+" Extrusion / Intrusion (mm) ": 0.10 mm; direction label "I". Original cell: " 0.10 I ".
+measurement-33; tooth_ref tooth-5; L9:C43-C51; offsets 547:555; PARSED; raw sign null; raw direction "I"; magnitude 0.30
+" Relative Ext / Int (mm) ": 0.30 mm; direction label "I". Original cell: " 0.30 I ".
+measurement-34; tooth_ref tooth-5; L9:C52-C60; offsets 556:564; PARSED; raw sign null; raw direction "B"; magnitude 0.20
+" Translation B / L (mm) ": 0.20 mm; direction label "B". Original cell: " 0.20 B ".
+measurement-35; tooth_ref tooth-5; L9:C61-C69; offsets 565:573; PARSED; raw sign null; raw direction "D"; magnitude 3.20
+" Translation M / D (mm) ": 3.20 mm; direction label "D". Original cell: " 3.20 D ".
+measurement-36; tooth_ref tooth-6; L10:C7-C15; offsets 581:589; PARSED; raw sign null; raw direction "D"; magnitude 0.10
+" Rotation (deg) ": 0.10 deg; direction label "D". Original cell: " 0.10 D ".
+measurement-37; tooth_ref tooth-6; L10:C16-C24; offsets 590:598; PARSED; raw sign null; raw direction "M"; magnitude 1.80
+" Angulation (deg) ": 1.80 deg; direction label "M". Original cell: " 1.80 M ".
+measurement-38; tooth_ref tooth-6; L10:C25-C33; offsets 599:607; PARSED; raw sign null; raw direction "B"; magnitude 5.80
+" Inclination (deg) ": 5.80 deg; direction label "B". Original cell: " 5.80 B ".
+measurement-39; tooth_ref tooth-6; L10:C34-C42; offsets 608:616; PARSED; raw sign null; raw direction "I"; magnitude 0.50
+" Extrusion / Intrusion (mm) ": 0.50 mm; direction label "I". Original cell: " 0.50 I ".
+measurement-40; tooth_ref tooth-6; L10:C43-C51; offsets 617:625; PARSED; raw sign null; raw direction "I"; magnitude 0.70
+" Relative Ext / Int (mm) ": 0.70 mm; direction label "I". Original cell: " 0.70 I ".
+measurement-41; tooth_ref tooth-6; L10:C52-C60; offsets 626:634; PARSED; raw sign null; raw direction "B"; magnitude 0.50
+" Translation B / L (mm) ": 0.50 mm; direction label "B". Original cell: " 0.50 B ".
+measurement-42; tooth_ref tooth-6; L10:C61-C69; offsets 635:643; PARSED; raw sign null; raw direction "D"; magnitude 3.30
+" Translation M / D (mm) ": 3.30 mm; direction label "D". Original cell: " 3.30 D ".
+measurement-43; tooth_ref tooth-7; L11:C7-C15; offsets 651:659; PARSED; raw sign null; raw direction "M"; magnitude 2.50
+" Rotation (deg) ": 2.50 deg; direction label "M". Original cell: " 2.50 M ".
+measurement-44; tooth_ref tooth-7; L11:C16-C24; offsets 660:668; PARSED; raw sign null; raw direction "D"; magnitude 3.90
+" Angulation (deg) ": 3.90 deg; direction label "D". Original cell: " 3.90 D ".
+measurement-45; tooth_ref tooth-7; L11:C25-C33; offsets 669:677; PARSED; raw sign null; raw direction "B"; magnitude 7.20
+" Inclination (deg) ": 7.20 deg; direction label "B". Original cell: " 7.20 B ".
+measurement-46; tooth_ref tooth-7; L11:C34-C42; offsets 678:686; PARSED; raw sign null; raw direction "I"; magnitude 1.70
+" Extrusion / Intrusion (mm) ": 1.70 mm; direction label "I". Original cell: " 1.70 I ".
+measurement-47; tooth_ref tooth-7; L11:C43-C51; offsets 687:695; PARSED; raw sign null; raw direction "I"; magnitude 1.50
+" Relative Ext / Int (mm) ": 1.50 mm; direction label "I". Original cell: " 1.50 I ".
+measurement-48; tooth_ref tooth-7; L11:C52-C60; offsets 696:704; PARSED; raw sign null; raw direction "B"; magnitude 0.40
+" Translation B / L (mm) ": 0.40 mm; direction label "B". Original cell: " 0.40 B ".
+measurement-49; tooth_ref tooth-7; L11:C61-C69; offsets 705:713; PARSED; raw sign null; raw direction "D"; magnitude 3.20
+" Translation M / D (mm) ": 3.20 mm; direction label "D". Original cell: " 3.20 D ".
+measurement-50; tooth_ref tooth-8; L12:C7-C16; offsets 721:730; PARSED; raw sign null; raw direction "D"; magnitude 18.90
+" Rotation (deg) ": 18.90 deg; direction label "D". Original cell: " 18.90 D ".
+measurement-51; tooth_ref tooth-8; L12:C17-C26; offsets 731:740; PARSED; raw sign null; raw direction "D"; magnitude 28.80
+" Angulation (deg) ": 28.80 deg; direction label "D". Original cell: " 28.80 D ".
+measurement-52; tooth_ref tooth-8; L12:C27-C35; offsets 741:749; PARSED; raw sign null; raw direction "L"; magnitude 0.70
+" Inclination (deg) ": 0.70 deg; direction label "L". Original cell: " 0.70 L ".
+measurement-53; tooth_ref tooth-8; L12:C36-C44; offsets 750:758; PARSED; raw sign null; raw direction "I"; magnitude 2.20
+" Extrusion / Intrusion (mm) ": 2.20 mm; direction label "I". Original cell: " 2.20 I ".
+measurement-54; tooth_ref tooth-8; L12:C45-C53; offsets 759:767; PARSED; raw sign null; raw direction "I"; magnitude 0.70
+" Relative Ext / Int (mm) ": 0.70 mm; direction label "I". Original cell: " 0.70 I ".
+measurement-55; tooth_ref tooth-8; L12:C54-C62; offsets 768:776; PARSED; raw sign null; raw direction "L"; magnitude 2.50
+" Translation B / L (mm) ": 2.50 mm; direction label "L". Original cell: " 2.50 L ".
+measurement-56; tooth_ref tooth-8; L12:C63-C71; offsets 777:785; PARSED; raw sign null; raw direction "D"; magnitude 2.10
+" Translation M / D (mm) ": 2.10 mm; direction label "D". Original cell: " 2.10 D ".
+measurement-57; tooth_ref tooth-9; L13:C7-C16; offsets 793:802; PARSED; raw sign null; raw direction "D"; magnitude 11.90
+" Rotation (deg) ": 11.90 deg; direction label "D". Original cell: " 11.90 D ".
+measurement-58; tooth_ref tooth-9; L13:C17-C25; offsets 803:811; PARSED; raw sign null; raw direction "D"; magnitude 1.20
+" Angulation (deg) ": 1.20 deg; direction label "D". Original cell: " 1.20 D ".
+measurement-59; tooth_ref tooth-9; L13:C26-C32; offsets 812:818; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+" Inclination (deg) ": 0.00 deg; explicitly recorded zero. Original cell: " 0.00 ".
+measurement-60; tooth_ref tooth-9; L13:C33-C41; offsets 819:827; PARSED; raw sign null; raw direction "I"; magnitude 2.20
+" Extrusion / Intrusion (mm) ": 2.20 mm; direction label "I". Original cell: " 2.20 I ".
+measurement-61; tooth_ref tooth-9; L13:C42-C50; offsets 828:836; PARSED; raw sign null; raw direction "I"; magnitude 0.80
+" Relative Ext / Int (mm) ": 0.80 mm; direction label "I". Original cell: " 0.80 I ".
+measurement-62; tooth_ref tooth-9; L13:C51-C59; offsets 837:845; PARSED; raw sign null; raw direction "L"; magnitude 2.50
+" Translation B / L (mm) ": 2.50 mm; direction label "L". Original cell: " 2.50 L ".
+measurement-63; tooth_ref tooth-9; L13:C60-C68; offsets 846:854; PARSED; raw sign null; raw direction "M"; magnitude 0.40
+" Translation M / D (mm) ": 0.40 mm; direction label "M". Original cell: " 0.40 M ".
+measurement-64; tooth_ref tooth-10; L14:C7-C15; offsets 862:870; PARSED; raw sign null; raw direction "M"; magnitude 3.30
+" Rotation (deg) ": 3.30 deg; direction label "M". Original cell: " 3.30 M ".
+measurement-65; tooth_ref tooth-10; L14:C16-C24; offsets 871:879; PARSED; raw sign null; raw direction "D"; magnitude 3.40
+" Angulation (deg) ": 3.40 deg; direction label "D". Original cell: " 3.40 D ".
+measurement-66; tooth_ref tooth-10; L14:C25-C33; offsets 880:888; PARSED; raw sign null; raw direction "B"; magnitude 3.20
+" Inclination (deg) ": 3.20 deg; direction label "B". Original cell: " 3.20 B ".
+measurement-67; tooth_ref tooth-10; L14:C34-C42; offsets 889:897; PARSED; raw sign null; raw direction "I"; magnitude 2.20
+" Extrusion / Intrusion (mm) ": 2.20 mm; direction label "I". Original cell: " 2.20 I ".
+measurement-68; tooth_ref tooth-10; L14:C43-C51; offsets 898:906; PARSED; raw sign null; raw direction "I"; magnitude 1.50
+" Relative Ext / Int (mm) ": 1.50 mm; direction label "I". Original cell: " 1.50 I ".
+measurement-69; tooth_ref tooth-10; L14:C52-C60; offsets 907:915; PARSED; raw sign null; raw direction "L"; magnitude 1.20
+" Translation B / L (mm) ": 1.20 mm; direction label "L". Original cell: " 1.20 L ".
+measurement-70; tooth_ref tooth-10; L14:C61-C69; offsets 916:924; PARSED; raw sign null; raw direction "D"; magnitude 1.50
+" Translation M / D (mm) ": 1.50 mm; direction label "D". Original cell: " 1.50 D ".
+measurement-71; tooth_ref tooth-11; L15:C7-C15; offsets 932:940; PARSED; raw sign null; raw direction "D"; magnitude 4.80
+" Rotation (deg) ": 4.80 deg; direction label "D". Original cell: " 4.80 D ".
+measurement-72; tooth_ref tooth-11; L15:C16-C24; offsets 941:949; PARSED; raw sign null; raw direction "M"; magnitude 6.70
+" Angulation (deg) ": 6.70 deg; direction label "M". Original cell: " 6.70 M ".
+measurement-73; tooth_ref tooth-11; L15:C25-C33; offsets 950:958; PARSED; raw sign null; raw direction "B"; magnitude 3.70
+" Inclination (deg) ": 3.70 deg; direction label "B". Original cell: " 3.70 B ".
+measurement-74; tooth_ref tooth-11; L15:C34-C42; offsets 959:967; PARSED; raw sign null; raw direction "I"; magnitude 0.90
+" Extrusion / Intrusion (mm) ": 0.90 mm; direction label "I". Original cell: " 0.90 I ".
+measurement-75; tooth_ref tooth-11; L15:C43-C51; offsets 968:976; PARSED; raw sign null; raw direction "I"; magnitude 0.90
+" Relative Ext / Int (mm) ": 0.90 mm; direction label "I". Original cell: " 0.90 I ".
+measurement-76; tooth_ref tooth-11; L15:C52-C60; offsets 977:985; PARSED; raw sign null; raw direction "B"; magnitude 0.10
+" Translation B / L (mm) ": 0.10 mm; direction label "B". Original cell: " 0.10 B ".
+measurement-77; tooth_ref tooth-11; L15:C61-C69; offsets 986:994; PARSED; raw sign null; raw direction "D"; magnitude 2.00
+" Translation M / D (mm) ": 2.00 mm; direction label "D". Original cell: " 2.00 D ".
+measurement-78; tooth_ref tooth-12; L16:C7-C15; offsets 1002:1010; PARSED; raw sign null; raw direction "M"; magnitude 6.90
+" Rotation (deg) ": 6.90 deg; direction label "M". Original cell: " 6.90 M ".
+measurement-79; tooth_ref tooth-12; L16:C16-C24; offsets 1011:1019; PARSED; raw sign null; raw direction "M"; magnitude 3.80
+" Angulation (deg) ": 3.80 deg; direction label "M". Original cell: " 3.80 M ".
+measurement-80; tooth_ref tooth-12; L16:C25-C33; offsets 1020:1028; PARSED; raw sign null; raw direction "B"; magnitude 1.50
+" Inclination (deg) ": 1.50 deg; direction label "B". Original cell: " 1.50 B ".
+measurement-81; tooth_ref tooth-12; L16:C34-C42; offsets 1029:1037; PARSED; raw sign null; raw direction "I"; magnitude 0.30
+" Extrusion / Intrusion (mm) ": 0.30 mm; direction label "I". Original cell: " 0.30 I ".
+measurement-82; tooth_ref tooth-12; L16:C43-C51; offsets 1038:1046; PARSED; raw sign null; raw direction "I"; magnitude 0.40
+" Relative Ext / Int (mm) ": 0.40 mm; direction label "I". Original cell: " 0.40 I ".
+measurement-83; tooth_ref tooth-12; L16:C52-C60; offsets 1047:1055; PARSED; raw sign null; raw direction "L"; magnitude 0.40
+" Translation B / L (mm) ": 0.40 mm; direction label "L". Original cell: " 0.40 L ".
+measurement-84; tooth_ref tooth-12; L16:C61-C69; offsets 1056:1064; PARSED; raw sign null; raw direction "D"; magnitude 2.30
+" Translation M / D (mm) ": 2.30 mm; direction label "D". Original cell: " 2.30 D ".
+measurement-85; tooth_ref tooth-13; L17:C7-C15; offsets 1072:1080; PARSED; raw sign null; raw direction "D"; magnitude 3.40
+" Rotation (deg) ": 3.40 deg; direction label "D". Original cell: " 3.40 D ".
+measurement-86; tooth_ref tooth-13; L17:C16-C24; offsets 1081:1089; PARSED; raw sign null; raw direction "D"; magnitude 2.40
+" Angulation (deg) ": 2.40 deg; direction label "D". Original cell: " 2.40 D ".
+measurement-87; tooth_ref tooth-13; L17:C25-C33; offsets 1090:1098; PARSED; raw sign null; raw direction "L"; magnitude 1.80
+" Inclination (deg) ": 1.80 deg; direction label "L". Original cell: " 1.80 L ".
+measurement-88; tooth_ref tooth-13; L17:C34-C42; offsets 1099:1107; PARSED; raw sign null; raw direction "I"; magnitude 0.50
+" Extrusion / Intrusion (mm) ": 0.50 mm; direction label "I". Original cell: " 0.50 I ".
+measurement-89; tooth_ref tooth-13; L17:C43-C51; offsets 1108:1116; PARSED; raw sign null; raw direction "I"; magnitude 0.10
+" Relative Ext / Int (mm) ": 0.10 mm; direction label "I". Original cell: " 0.10 I ".
+measurement-90; tooth_ref tooth-13; L17:C52-C60; offsets 1117:1125; PARSED; raw sign null; raw direction "B"; magnitude 0.10
+" Translation B / L (mm) ": 0.10 mm; direction label "B". Original cell: " 0.10 B ".
+measurement-91; tooth_ref tooth-13; L17:C61-C69; offsets 1126:1134; PARSED; raw sign null; raw direction "D"; magnitude 2.10
+" Translation M / D (mm) ": 2.10 mm; direction label "D". Original cell: " 2.10 D ".
+measurement-92; tooth_ref tooth-14; L18:C7-C15; offsets 1142:1150; PARSED; raw sign null; raw direction "D"; magnitude 1.80
+" Rotation (deg) ": 1.80 deg; direction label "D". Original cell: " 1.80 D ".
+measurement-93; tooth_ref tooth-14; L18:C16-C24; offsets 1151:1159; PARSED; raw sign null; raw direction "D"; magnitude 0.10
+" Angulation (deg) ": 0.10 deg; direction label "D". Original cell: " 0.10 D ".
+measurement-94; tooth_ref tooth-14; L18:C25-C33; offsets 1160:1168; PARSED; raw sign null; raw direction "B"; magnitude 0.90
+" Inclination (deg) ": 0.90 deg; direction label "B". Original cell: " 0.90 B ".
+measurement-95; tooth_ref tooth-14; L18:C34-C42; offsets 1169:1177; PARSED; raw sign null; raw direction "E"; magnitude 0.50
+" Extrusion / Intrusion (mm) ": 0.50 mm; direction label "E". Original cell: " 0.50 E ".
+measurement-96; tooth_ref tooth-14; L18:C43-C51; offsets 1178:1186; PARSED; raw sign null; raw direction "E"; magnitude 0.30
+" Relative Ext / Int (mm) ": 0.30 mm; direction label "E". Original cell: " 0.30 E ".
+measurement-97; tooth_ref tooth-14; L18:C52-C60; offsets 1187:1195; PARSED; raw sign null; raw direction "B"; magnitude 0.40
+" Translation B / L (mm) ": 0.40 mm; direction label "B". Original cell: " 0.40 B ".
+measurement-98; tooth_ref tooth-14; L18:C61-C69; offsets 1196:1204; PARSED; raw sign null; raw direction "D"; magnitude 2.10
+" Translation M / D (mm) ": 2.10 mm; direction label "D". Original cell: " 2.10 D ".
+measurement-99; tooth_ref tooth-15; L19:C7-C15; offsets 1212:1220; PARSED; raw sign null; raw direction "D"; magnitude 3.00
+" Rotation (deg) ": 3.00 deg; direction label "D". Original cell: " 3.00 D ".
+measurement-100; tooth_ref tooth-15; L19:C16-C24; offsets 1221:1229; PARSED; raw sign null; raw direction "D"; magnitude 0.20
+" Angulation (deg) ": 0.20 deg; direction label "D". Original cell: " 0.20 D ".
+measurement-101; tooth_ref tooth-15; L19:C25-C33; offsets 1230:1238; PARSED; raw sign null; raw direction "L"; magnitude 2.30
+" Inclination (deg) ": 2.30 deg; direction label "L". Original cell: " 2.30 L ".
+measurement-102; tooth_ref tooth-15; L19:C34-C42; offsets 1239:1247; PARSED; raw sign null; raw direction "E"; magnitude 0.90
+" Extrusion / Intrusion (mm) ": 0.90 mm; direction label "E". Original cell: " 0.90 E ".
+measurement-103; tooth_ref tooth-15; L19:C43-C51; offsets 1248:1256; PARSED; raw sign null; raw direction "E"; magnitude 0.70
+" Relative Ext / Int (mm) ": 0.70 mm; direction label "E". Original cell: " 0.70 E ".
+measurement-104; tooth_ref tooth-15; L19:C52-C60; offsets 1257:1265; PARSED; raw sign null; raw direction "L"; magnitude 0.10
+" Translation B / L (mm) ": 0.10 mm; direction label "L". Original cell: " 0.10 L ".
+measurement-105; tooth_ref tooth-15; L19:C61-C69; offsets 1266:1274; PARSED; raw sign null; raw direction "D"; magnitude 2.20
+" Translation M / D (mm) ": 2.20 mm; direction label "D". Original cell: " 2.20 D ".
+
+RULE EVALUATION LEDGER — CLINICAL AUTHORITY UNCHANGED
+A01 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+A02 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+A03 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+A04 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+A05 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+A06 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+D01 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D02 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D03 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D04 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D05 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D06 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D07 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D08 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D09 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D10 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D11 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D12 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D13 v2.0.0: CONTEXT_REQUIRED; execution ACTIVE; approval NOT APPLICABLE
+D14 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+D15 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D16 v2.0.0: CONTEXT_REQUIRED; execution DEFERRED; approval NOT APPLICABLE
+G01 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+G02 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G03 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G04 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G05 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G06 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+G07 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G08 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G09 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G10 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G11 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G12 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G13 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G14 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G15 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+G16 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+G17 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G18 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+H01 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H02 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H03 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H04 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H05 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H06 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H07 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H08 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H09 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H10 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+H11 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H12 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+L01 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+L02 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+L03 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+L04 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+L05 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+L06 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+N01 v2.0.0: CONTEXT_REQUIRED; execution ACTIVE; approval NOT APPLICABLE
+N02 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+N03 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+N04 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+N05 v2.0.0: CONTEXT_REQUIRED; execution ACTIVE; approval NOT APPLICABLE
+N06 v2.0.0: CONTEXT_REQUIRED; execution ACTIVE; approval NOT APPLICABLE
+N07 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+N08 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+N09 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+N10 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+N11 v2.0.0: CONTEXT_REQUIRED; execution DEFERRED; approval NOT APPLICABLE
+N12 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+N13 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+N14 v2.0.0: CONTEXT_REQUIRED; execution DEFERRED; approval NOT APPLICABLE
+R01 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R02 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R03 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R04 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R05 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R06 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R07 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R08 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R09 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R10 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R11 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R12 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R13 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R14 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+R15 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R16 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T01 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T02 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T03 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T04 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T05 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T06 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T07 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T08 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+
+ANALYTICAL FINDING PROVENANCE
+[
+  {
+    "finding_id": "F0001",
+    "section_id": "ATTACHMENT_OPTIONS",
+    "kind": "INSUFFICIENT_INFORMATION",
+    "text": "Tooth 18: Explicit-zero angular profile; other required movement fields are incomplete. No supported category is selected. Information needed: Unavailable fields: relative_vertical, vertical.",
+    "source_refs": [
+      "measurement-1",
+      "measurement-2",
+      "measurement-3"
+    ],
+    "selected_refs": [
+      "measurement-1",
+      "measurement-2",
+      "measurement-3"
+    ],
+    "demo_rule": "DEMO-ATT-INPUT-INCOMPLETE-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0002",
+    "section_id": "ATTACHMENT_OPTIONS",
+    "kind": "ILLUSTRATIVE_PROPOSAL",
+    "text": "Tooth 17: Combined angular profile; inclination has the largest absolute angular magnitude within this tooth. Tooth 17: 2.30° (D-labelled) rotation; Tooth 17: 0.60° (D-labelled) angulation; Tooth 17: 5.10° (L-labelled) inclination. Illustrative catalog category: Optimized-style category (geometry unspecified). Alternative: Rectangular",
+    "source_refs": [
+      "measurement-8",
+      "measurement-9",
+      "measurement-10"
+    ],
+    "selected_refs": [
+      "measurement-8",
+      "measurement-9",
+      "measurement-10"
+    ],
+    "demo_rule": "DEMO-ATT-INPUT-INCLINATION-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0003",
+    "section_id": "ATTACHMENT_OPTIONS",
+    "kind": "ILLUSTRATIVE_PROPOSAL",
+    "text": "Tooth 16: Combined angular profile; angulation has the largest absolute angular magnitude within this tooth. Tooth 16: 2.60° (D-labelled) rotation; Tooth 16: 2.90° (D-labelled) angulation; Tooth 16: 0.60° (B-labelled) inclination. Illustrative catalog category: Horizontal rectangular. Alternative: Vertical rectangular",
+    "source_refs": [
+      "measurement-15",
+      "measurement-16",
+      "measurement-17"
+    ],
+    "selected_refs": [
+      "measurement-15",
+      "measurement-16",
+      "measurement-17"
+    ],
+    "demo_rule": "DEMO-ATT-INPUT-ANGULATION-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0004",
+    "section_id": "ATTACHMENT_OPTIONS",
+    "kind": "ILLUSTRATIVE_PROPOSAL",
+    "text": "Tooth 15: Combined angular profile; inclination has the largest absolute angular magnitude within this tooth. Tooth 15: 2.20° (D-labelled) rotation; Tooth 15: 0.60° (D-labelled) angulation; Tooth 15: 6.00° (L-labelled) inclination. Illustrative catalog category: Optimized-style category (geometry unspecified). Alternative: Rectangular",
+    "source_refs": [
+      "measurement-22",
+      "measurement-23",
+      "measurement-24"
+    ],
+    "selected_refs": [
+      "measurement-22",
+      "measurement-23",
+      "measurement-24"
+    ],
+    "demo_rule": "DEMO-ATT-INPUT-INCLINATION-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0005",
+    "section_id": "ATTACHMENT_OPTIONS",
+    "kind": "ILLUSTRATIVE_PROPOSAL",
+    "text": "Tooth 14: Combined angular profile; inclination has the largest absolute angular magnitude within this tooth. Tooth 14: 3.70° (D-labelled) rotation; Tooth 14: 3.50° (M-labelled) angulation; Tooth 14: 4.50° (B-labelled) inclination. Illustrative catalog category: Optimized-style category (geometry unspecified). Alternative: Rectangular",
+    "source_refs": [
+      "measurement-29",
+      "measurement-30",
+      "measurement-31"
+    ],
+    "selected_refs": [
+      "measurement-29",
+      "measurement-30",
+      "measurement-31"
+    ],
+    "demo_rule": "DEMO-ATT-INPUT-INCLINATION-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0006",
+    "section_id": "ATTACHMENT_OPTIONS",
+    "kind": "ILLUSTRATIVE_PROPOSAL",
+    "text": "Tooth 13: Combined angular profile; inclination has the largest absolute angular magnitude within this tooth. Tooth 13: 0.10° (D-labelled) rotation; Tooth 13: 1.80° (M-labelled) angulation; Tooth 13: 5.80° (B-labelled) inclination. Illustrative catalog category: Optimized-style category (geometry unspecified). Alternative: Rectangular",
+    "source_refs": [
+      "measurement-36",
+      "measurement-37",
+      "measurement-38"
+    ],
+    "selected_refs": [
+      "measurement-36",
+      "measurement-37",
+      "measurement-38"
+    ],
+    "demo_rule": "DEMO-ATT-INPUT-INCLINATION-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0007",
+    "section_id": "ATTACHMENT_OPTIONS",
+    "kind": "ILLUSTRATIVE_PROPOSAL",
+    "text": "Tooth 12: Combined angular profile; inclination has the largest absolute angular magnitude within this tooth. Tooth 12: 2.50° (M-labelled) rotation; Tooth 12: 3.90° (D-labelled) angulation; Tooth 12: 7.20° (B-labelled) inclination. Illustrative catalog category: Optimized-style category (geometry unspecified). Alternative: Rectangular",
+    "source_refs": [
+      "measurement-43",
+      "measurement-44",
+      "measurement-45"
+    ],
+    "selected_refs": [
+      "measurement-43",
+      "measurement-44",
+      "measurement-45"
+    ],
+    "demo_rule": "DEMO-ATT-INPUT-INCLINATION-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0008",
+    "section_id": "ATTACHMENT_OPTIONS",
+    "kind": "ILLUSTRATIVE_PROPOSAL",
+    "text": "Tooth 11: Combined angular profile; angulation has the largest absolute angular magnitude within this tooth. Tooth 11: 18.90° (D-labelled) rotation; Tooth 11: 28.80° (D-labelled) angulation; Tooth 11: 0.70° (L-labelled) inclination. Illustrative catalog category: Horizontal rectangular. Alternative: Vertical rectangular",
+    "source_refs": [
+      "measurement-50",
+      "measurement-51",
+      "measurement-52"
+    ],
+    "selected_refs": [
+      "measurement-50",
+      "measurement-51",
+      "measurement-52"
+    ],
+    "demo_rule": "DEMO-ATT-INPUT-ANGULATION-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0009",
+    "section_id": "ATTACHMENT_OPTIONS",
+    "kind": "ILLUSTRATIVE_PROPOSAL",
+    "text": "Tooth 21: Combined angular profile; rotation has the largest absolute angular magnitude within this tooth. Tooth 21: 11.90° (D-labelled) rotation; Tooth 21: 1.20° (D-labelled) angulation. Illustrative catalog category: Ellipsoid / oval. Alternative: Vertical rectangular",
+    "source_refs": [
+      "measurement-57",
+      "measurement-58",
+      "measurement-59"
+    ],
+    "selected_refs": [
+      "measurement-57",
+      "measurement-58",
+      "measurement-59"
+    ],
+    "demo_rule": "DEMO-ATT-INPUT-ROTATION-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0010",
+    "section_id": "ATTACHMENT_OPTIONS",
+    "kind": "ILLUSTRATIVE_PROPOSAL",
+    "text": "Tooth 22: Combined angular profile; angulation has the largest absolute angular magnitude within this tooth. Tooth 22: 3.30° (M-labelled) rotation; Tooth 22: 3.40° (D-labelled) angulation; Tooth 22: 3.20° (B-labelled) inclination. Illustrative catalog category: Horizontal rectangular. Alternative: Vertical rectangular",
+    "source_refs": [
+      "measurement-64",
+      "measurement-65",
+      "measurement-66"
+    ],
+    "selected_refs": [
+      "measurement-64",
+      "measurement-65",
+      "measurement-66"
+    ],
+    "demo_rule": "DEMO-ATT-INPUT-ANGULATION-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0011",
+    "section_id": "ATTACHMENT_OPTIONS",
+    "kind": "ILLUSTRATIVE_PROPOSAL",
+    "text": "Tooth 23: Combined angular profile; angulation has the largest absolute angular magnitude within this tooth. Tooth 23: 4.80° (D-labelled) rotation; Tooth 23: 6.70° (M-labelled) angulation; Tooth 23: 3.70° (B-labelled) inclination. Illustrative catalog category: Horizontal rectangular. Alternative: Vertical rectangular",
+    "source_refs": [
+      "measurement-71",
+      "measurement-72",
+      "measurement-73"
+    ],
+    "selected_refs": [
+      "measurement-71",
+      "measurement-72",
+      "measurement-73"
+    ],
+    "demo_rule": "DEMO-ATT-INPUT-ANGULATION-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0012",
+    "section_id": "ATTACHMENT_OPTIONS",
+    "kind": "ILLUSTRATIVE_PROPOSAL",
+    "text": "Tooth 24: Combined angular profile; rotation has the largest absolute angular magnitude within this tooth. Tooth 24: 6.90° (M-labelled) rotation; Tooth 24: 3.80° (M-labelled) angulation; Tooth 24: 1.50° (B-labelled) inclination. Illustrative catalog category: Ellipsoid / oval. Alternative: Vertical rectangular",
+    "source_refs": [
+      "measurement-78",
+      "measurement-79",
+      "measurement-80"
+    ],
+    "selected_refs": [
+      "measurement-78",
+      "measurement-79",
+      "measurement-80"
+    ],
+    "demo_rule": "DEMO-ATT-INPUT-ROTATION-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0013",
+    "section_id": "ATTACHMENT_OPTIONS",
+    "kind": "ILLUSTRATIVE_PROPOSAL",
+    "text": "Tooth 25: Combined angular profile; rotation has the largest absolute angular magnitude within this tooth. Tooth 25: 3.40° (D-labelled) rotation; Tooth 25: 2.40° (D-labelled) angulation; Tooth 25: 1.80° (L-labelled) inclination. Illustrative catalog category: Ellipsoid / oval. Alternative: Vertical rectangular",
+    "source_refs": [
+      "measurement-85",
+      "measurement-86",
+      "measurement-87"
+    ],
+    "selected_refs": [
+      "measurement-85",
+      "measurement-86",
+      "measurement-87"
+    ],
+    "demo_rule": "DEMO-ATT-INPUT-ROTATION-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0014",
+    "section_id": "ATTACHMENT_OPTIONS",
+    "kind": "ILLUSTRATIVE_PROPOSAL",
+    "text": "Tooth 26: Combined angular profile; rotation has the largest absolute angular magnitude within this tooth. Tooth 26: 1.80° (D-labelled) rotation; Tooth 26: 0.10° (D-labelled) angulation; Tooth 26: 0.90° (B-labelled) inclination. Illustrative catalog category: Ellipsoid / oval. Alternative: Vertical rectangular",
+    "source_refs": [
+      "measurement-92",
+      "measurement-93",
+      "measurement-94"
+    ],
+    "selected_refs": [
+      "measurement-92",
+      "measurement-93",
+      "measurement-94"
+    ],
+    "demo_rule": "DEMO-ATT-INPUT-ROTATION-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0015",
+    "section_id": "ATTACHMENT_OPTIONS",
+    "kind": "ILLUSTRATIVE_PROPOSAL",
+    "text": "Tooth 27: Combined angular profile; rotation has the largest absolute angular magnitude within this tooth. Tooth 27: 3.00° (D-labelled) rotation; Tooth 27: 0.20° (D-labelled) angulation; Tooth 27: 2.30° (L-labelled) inclination. Illustrative catalog category: Ellipsoid / oval. Alternative: Vertical rectangular",
+    "source_refs": [
+      "measurement-99",
+      "measurement-100",
+      "measurement-101"
+    ],
+    "selected_refs": [
+      "measurement-99",
+      "measurement-100",
+      "measurement-101"
+    ],
+    "demo_rule": "DEMO-ATT-INPUT-ROTATION-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0016",
+    "section_id": "ATTACHMENT_SCOPE",
+    "kind": "INSUFFICIENT_INFORMATION",
+    "text": "Catalog categories follow documented component-presence and within-tooth angular-dominance toy policies, independent of dataset rank. Dimensions and placement remain unspecified unless supplied. Optimized-style is a category only; clinical suitability and actual attachment need are not established.",
+    "source_refs": [],
+    "selected_refs": [],
+    "demo_rule": "DEMO-ATT-INPUT-SCOPE-v1",
+    "origin": "SIMULATED_DEMO"
+  }
+]
+
+INPUT-DRIVEN POLICY CONTEXT — NOT TMT FACTS
+{
+  "scenario_id": null,
+  "policy_version": "1.0.0",
+  "source_sha256": "6c80673bafaaf9ce2ee93a98c3fab98025032c872469c61c87148ffb51c9c664",
+  "module": "micro",
+  "origin": "INPUT_DRIVEN_POLICY_REVIEW",
+  "notation": "FDI",
+  "objectives": [],
+  "targets": [],
+  "attachment_options": [
+    {
+      "concept": "RECTANGULAR",
+      "geometry": null,
+      "orientation": null,
+      "surface": null,
+      "placement": null
+    },
+    {
+      "concept": "VERTICAL_RECTANGULAR",
+      "geometry": null,
+      "orientation": null,
+      "surface": null,
+      "placement": null
+    },
+    {
+      "concept": "HORIZONTAL_RECTANGULAR",
+      "geometry": null,
+      "orientation": null,
+      "surface": null,
+      "placement": null
+    },
+    {
+      "concept": "OVAL",
+      "geometry": null,
+      "orientation": null,
+      "surface": null,
+      "placement": null
+    },
+    {
+      "concept": "OPTIMIZED_STYLE",
+      "geometry": null,
+      "orientation": null,
+      "surface": null,
+      "placement": null
+    },
+    {
+      "concept": "NO_ATTACHMENT",
+      "geometry": null,
+      "orientation": null,
+      "surface": null,
+      "placement": null
+    }
+  ],
+  "phases": [],
+  "stage_value_basis": "UNSPECIFIED",
+  "support_constraints": []
+}
+
+SYNTHETIC POLICY DECISIONS — NO CLINICAL AUTHORIZATION
+{
+  "policy_set_version": "1.0.0",
+  "origin": "INDEPENDENT_SYNTHETIC_POLICIES",
+  "clinical_authorized": false,
+  "source_sha256": "6c80673bafaaf9ce2ee93a98c3fab98025032c872469c61c87148ffb51c9c664",
+  "decisions": [
+    {
+      "decision_id": "D0001",
+      "finding_id": "F0001",
+      "policy_id": "DEMO-ATT-INPUT-INCOMPLETE-v1",
+      "policy_version": "1.0.0",
+      "dimension": "ATTACHMENT_OPTIONS",
+      "status": "INSUFFICIENT_INFORMATION",
+      "tooth_refs": [
+        "tooth-1"
+      ],
+      "measurement_refs": [
+        "measurement-1",
+        "measurement-2",
+        "measurement-3"
+      ],
+      "context_refs": [
+        "planning_context/attachment_options",
+        "planning_options"
+      ],
+      "rationale": "Tooth 18: Explicit-zero angular profile; other required movement fields are incomplete. ",
+      "proposal": "No supported category is selected.",
+      "alternative": null,
+      "missing_fields": [
+        "Unavailable fields: relative_vertical, vertical"
+      ],
+      "proposed_changes": [],
+      "attachment_primary": null,
+      "attachment_alternative": null
+    },
+    {
+      "decision_id": "D0002",
+      "finding_id": "F0002",
+      "policy_id": "DEMO-ATT-INPUT-INCLINATION-v1",
+      "policy_version": "1.0.0",
+      "dimension": "ATTACHMENT_OPTIONS",
+      "status": "ILLUSTRATIVE_PROPOSAL",
+      "tooth_refs": [
+        "tooth-2"
+      ],
+      "measurement_refs": [
+        "measurement-8",
+        "measurement-9",
+        "measurement-10"
+      ],
+      "context_refs": [
+        "planning_context/attachment_options",
+        "planning_options"
+      ],
+      "rationale": "Tooth 17: Combined angular profile; inclination has the largest absolute angular magnitude within this tooth. Tooth 17: 2.30° (D-labelled) rotation; Tooth 17: 0.60° (D-labelled) angulation; Tooth 17: 5.10° (L-labelled) inclination.",
+      "proposal": "Illustrative catalog category: Optimized-style category (geometry unspecified).",
+      "alternative": "Rectangular",
+      "missing_fields": [],
+      "proposed_changes": [],
+      "attachment_primary": "OPTIMIZED_STYLE",
+      "attachment_alternative": "RECTANGULAR"
+    },
+    {
+      "decision_id": "D0003",
+      "finding_id": "F0003",
+      "policy_id": "DEMO-ATT-INPUT-ANGULATION-v1",
+      "policy_version": "1.0.0",
+      "dimension": "ATTACHMENT_OPTIONS",
+      "status": "ILLUSTRATIVE_PROPOSAL",
+      "tooth_refs": [
+        "tooth-3"
+      ],
+      "measurement_refs": [
+        "measurement-15",
+        "measurement-16",
+        "measurement-17"
+      ],
+      "context_refs": [
+        "planning_context/attachment_options",
+        "planning_options"
+      ],
+      "rationale": "Tooth 16: Combined angular profile; angulation has the largest absolute angular magnitude within this tooth. Tooth 16: 2.60° (D-labelled) rotation; Tooth 16: 2.90° (D-labelled) angulation; Tooth 16: 0.60° (B-labelled) inclination.",
+      "proposal": "Illustrative catalog category: Horizontal rectangular.",
+      "alternative": "Vertical rectangular",
+      "missing_fields": [],
+      "proposed_changes": [],
+      "attachment_primary": "HORIZONTAL_RECTANGULAR",
+      "attachment_alternative": "VERTICAL_RECTANGULAR"
+    },
+    {
+      "decision_id": "D0004",
+      "finding_id": "F0004",
+      "policy_id": "DEMO-ATT-INPUT-INCLINATION-v1",
+      "policy_version": "1.0.0",
+      "dimension": "ATTACHMENT_OPTIONS",
+      "status": "ILLUSTRATIVE_PROPOSAL",
+      "tooth_refs": [
+        "tooth-4"
+      ],
+      "measurement_refs": [
+        "measurement-22",
+        "measurement-23",
+        "measurement-24"
+      ],
+      "context_refs": [
+        "planning_context/attachment_options",
+        "planning_options"
+      ],
+      "rationale": "Tooth 15: Combined angular profile; inclination has the largest absolute angular magnitude within this tooth. Tooth 15: 2.20° (D-labelled) rotation; Tooth 15: 0.60° (D-labelled) angulation; Tooth 15: 6.00° (L-labelled) inclination.",
+      "proposal": "Illustrative catalog category: Optimized-style category (geometry unspecified).",
+      "alternative": "Rectangular",
+      "missing_fields": [],
+      "proposed_changes": [],
+      "attachment_primary": "OPTIMIZED_STYLE",
+      "attachment_alternative": "RECTANGULAR"
+    },
+    {
+      "decision_id": "D0005",
+      "finding_id": "F0005",
+      "policy_id": "DEMO-ATT-INPUT-INCLINATION-v1",
+      "policy_version": "1.0.0",
+      "dimension": "ATTACHMENT_OPTIONS",
+      "status": "ILLUSTRATIVE_PROPOSAL",
+      "tooth_refs": [
+        "tooth-5"
+      ],
+      "measurement_refs": [
+        "measurement-29",
+        "measurement-30",
+        "measurement-31"
+      ],
+      "context_refs": [
+        "planning_context/attachment_options",
+        "planning_options"
+      ],
+      "rationale": "Tooth 14: Combined angular profile; inclination has the largest absolute angular magnitude within this tooth. Tooth 14: 3.70° (D-labelled) rotation; Tooth 14: 3.50° (M-labelled) angulation; Tooth 14: 4.50° (B-labelled) inclination.",
+      "proposal": "Illustrative catalog category: Optimized-style category (geometry unspecified).",
+      "alternative": "Rectangular",
+      "missing_fields": [],
+      "proposed_changes": [],
+      "attachment_primary": "OPTIMIZED_STYLE",
+      "attachment_alternative": "RECTANGULAR"
+    },
+    {
+      "decision_id": "D0006",
+      "finding_id": "F0006",
+      "policy_id": "DEMO-ATT-INPUT-INCLINATION-v1",
+      "policy_version": "1.0.0",
+      "dimension": "ATTACHMENT_OPTIONS",
+      "status": "ILLUSTRATIVE_PROPOSAL",
+      "tooth_refs": [
+        "tooth-6"
+      ],
+      "measurement_refs": [
+        "measurement-36",
+        "measurement-37",
+        "measurement-38"
+      ],
+      "context_refs": [
+        "planning_context/attachment_options",
+        "planning_options"
+      ],
+      "rationale": "Tooth 13: Combined angular profile; inclination has the largest absolute angular magnitude within this tooth. Tooth 13: 0.10° (D-labelled) rotation; Tooth 13: 1.80° (M-labelled) angulation; Tooth 13: 5.80° (B-labelled) inclination.",
+      "proposal": "Illustrative catalog category: Optimized-style category (geometry unspecified).",
+      "alternative": "Rectangular",
+      "missing_fields": [],
+      "proposed_changes": [],
+      "attachment_primary": "OPTIMIZED_STYLE",
+      "attachment_alternative": "RECTANGULAR"
+    },
+    {
+      "decision_id": "D0007",
+      "finding_id": "F0007",
+      "policy_id": "DEMO-ATT-INPUT-INCLINATION-v1",
+      "policy_version": "1.0.0",
+      "dimension": "ATTACHMENT_OPTIONS",
+      "status": "ILLUSTRATIVE_PROPOSAL",
+      "tooth_refs": [
+        "tooth-7"
+      ],
+      "measurement_refs": [
+        "measurement-43",
+        "measurement-44",
+        "measurement-45"
+      ],
+      "context_refs": [
+        "planning_context/attachment_options",
+        "planning_options"
+      ],
+      "rationale": "Tooth 12: Combined angular profile; inclination has the largest absolute angular magnitude within this tooth. Tooth 12: 2.50° (M-labelled) rotation; Tooth 12: 3.90° (D-labelled) angulation; Tooth 12: 7.20° (B-labelled) inclination.",
+      "proposal": "Illustrative catalog category: Optimized-style category (geometry unspecified).",
+      "alternative": "Rectangular",
+      "missing_fields": [],
+      "proposed_changes": [],
+      "attachment_primary": "OPTIMIZED_STYLE",
+      "attachment_alternative": "RECTANGULAR"
+    },
+    {
+      "decision_id": "D0008",
+      "finding_id": "F0008",
+      "policy_id": "DEMO-ATT-INPUT-ANGULATION-v1",
+      "policy_version": "1.0.0",
+      "dimension": "ATTACHMENT_OPTIONS",
+      "status": "ILLUSTRATIVE_PROPOSAL",
+      "tooth_refs": [
+        "tooth-8"
+      ],
+      "measurement_refs": [
+        "measurement-50",
+        "measurement-51",
+        "measurement-52"
+      ],
+      "context_refs": [
+        "planning_context/attachment_options",
+        "planning_options"
+      ],
+      "rationale": "Tooth 11: Combined angular profile; angulation has the largest absolute angular magnitude within this tooth. Tooth 11: 18.90° (D-labelled) rotation; Tooth 11: 28.80° (D-labelled) angulation; Tooth 11: 0.70° (L-labelled) inclination.",
+      "proposal": "Illustrative catalog category: Horizontal rectangular.",
+      "alternative": "Vertical rectangular",
+      "missing_fields": [],
+      "proposed_changes": [],
+      "attachment_primary": "HORIZONTAL_RECTANGULAR",
+      "attachment_alternative": "VERTICAL_RECTANGULAR"
+    },
+    {
+      "decision_id": "D0009",
+      "finding_id": "F0009",
+      "policy_id": "DEMO-ATT-INPUT-ROTATION-v1",
+      "policy_version": "1.0.0",
+      "dimension": "ATTACHMENT_OPTIONS",
+      "status": "ILLUSTRATIVE_PROPOSAL",
+      "tooth_refs": [
+        "tooth-9"
+      ],
+      "measurement_refs": [
+        "measurement-57",
+        "measurement-58",
+        "measurement-59"
+      ],
+      "context_refs": [
+        "planning_context/attachment_options",
+        "planning_options"
+      ],
+      "rationale": "Tooth 21: Combined angular profile; rotation has the largest absolute angular magnitude within this tooth. Tooth 21: 11.90° (D-labelled) rotation; Tooth 21: 1.20° (D-labelled) angulation.",
+      "proposal": "Illustrative catalog category: Ellipsoid / oval.",
+      "alternative": "Vertical rectangular",
+      "missing_fields": [],
+      "proposed_changes": [],
+      "attachment_primary": "OVAL",
+      "attachment_alternative": "VERTICAL_RECTANGULAR"
+    },
+    {
+      "decision_id": "D0010",
+      "finding_id": "F0010",
+      "policy_id": "DEMO-ATT-INPUT-ANGULATION-v1",
+      "policy_version": "1.0.0",
+      "dimension": "ATTACHMENT_OPTIONS",
+      "status": "ILLUSTRATIVE_PROPOSAL",
+      "tooth_refs": [
+        "tooth-10"
+      ],
+      "measurement_refs": [
+        "measurement-64",
+        "measurement-65",
+        "measurement-66"
+      ],
+      "context_refs": [
+        "planning_context/attachment_options",
+        "planning_options"
+      ],
+      "rationale": "Tooth 22: Combined angular profile; angulation has the largest absolute angular magnitude within this tooth. Tooth 22: 3.30° (M-labelled) rotation; Tooth 22: 3.40° (D-labelled) angulation; Tooth 22: 3.20° (B-labelled) inclination.",
+      "proposal": "Illustrative catalog category: Horizontal rectangular.",
+      "alternative": "Vertical rectangular",
+      "missing_fields": [],
+      "proposed_changes": [],
+      "attachment_primary": "HORIZONTAL_RECTANGULAR",
+      "attachment_alternative": "VERTICAL_RECTANGULAR"
+    },
+    {
+      "decision_id": "D0011",
+      "finding_id": "F0011",
+      "policy_id": "DEMO-ATT-INPUT-ANGULATION-v1",
+      "policy_version": "1.0.0",
+      "dimension": "ATTACHMENT_OPTIONS",
+      "status": "ILLUSTRATIVE_PROPOSAL",
+      "tooth_refs": [
+        "tooth-11"
+      ],
+      "measurement_refs": [
+        "measurement-71",
+        "measurement-72",
+        "measurement-73"
+      ],
+      "context_refs": [
+        "planning_context/attachment_options",
+        "planning_options"
+      ],
+      "rationale": "Tooth 23: Combined angular profile; angulation has the largest absolute angular magnitude within this tooth. Tooth 23: 4.80° (D-labelled) rotation; Tooth 23: 6.70° (M-labelled) angulation; Tooth 23: 3.70° (B-labelled) inclination.",
+      "proposal": "Illustrative catalog category: Horizontal rectangular.",
+      "alternative": "Vertical rectangular",
+      "missing_fields": [],
+      "proposed_changes": [],
+      "attachment_primary": "HORIZONTAL_RECTANGULAR",
+      "attachment_alternative": "VERTICAL_RECTANGULAR"
+    },
+    {
+      "decision_id": "D0012",
+      "finding_id": "F0012",
+      "policy_id": "DEMO-ATT-INPUT-ROTATION-v1",
+      "policy_version": "1.0.0",
+      "dimension": "ATTACHMENT_OPTIONS",
+      "status": "ILLUSTRATIVE_PROPOSAL",
+      "tooth_refs": [
+        "tooth-12"
+      ],
+      "measurement_refs": [
+        "measurement-78",
+        "measurement-79",
+        "measurement-80"
+      ],
+      "context_refs": [
+        "planning_context/attachment_options",
+        "planning_options"
+      ],
+      "rationale": "Tooth 24: Combined angular profile; rotation has the largest absolute angular magnitude within this tooth. Tooth 24: 6.90° (M-labelled) rotation; Tooth 24: 3.80° (M-labelled) angulation; Tooth 24: 1.50° (B-labelled) inclination.",
+      "proposal": "Illustrative catalog category: Ellipsoid / oval.",
+      "alternative": "Vertical rectangular",
+      "missing_fields": [],
+      "proposed_changes": [],
+      "attachment_primary": "OVAL",
+      "attachment_alternative": "VERTICAL_RECTANGULAR"
+    },
+    {
+      "decision_id": "D0013",
+      "finding_id": "F0013",
+      "policy_id": "DEMO-ATT-INPUT-ROTATION-v1",
+      "policy_version": "1.0.0",
+      "dimension": "ATTACHMENT_OPTIONS",
+      "status": "ILLUSTRATIVE_PROPOSAL",
+      "tooth_refs": [
+        "tooth-13"
+      ],
+      "measurement_refs": [
+        "measurement-85",
+        "measurement-86",
+        "measurement-87"
+      ],
+      "context_refs": [
+        "planning_context/attachment_options",
+        "planning_options"
+      ],
+      "rationale": "Tooth 25: Combined angular profile; rotation has the largest absolute angular magnitude within this tooth. Tooth 25: 3.40° (D-labelled) rotation; Tooth 25: 2.40° (D-labelled) angulation; Tooth 25: 1.80° (L-labelled) inclination.",
+      "proposal": "Illustrative catalog category: Ellipsoid / oval.",
+      "alternative": "Vertical rectangular",
+      "missing_fields": [],
+      "proposed_changes": [],
+      "attachment_primary": "OVAL",
+      "attachment_alternative": "VERTICAL_RECTANGULAR"
+    },
+    {
+      "decision_id": "D0014",
+      "finding_id": "F0014",
+      "policy_id": "DEMO-ATT-INPUT-ROTATION-v1",
+      "policy_version": "1.0.0",
+      "dimension": "ATTACHMENT_OPTIONS",
+      "status": "ILLUSTRATIVE_PROPOSAL",
+      "tooth_refs": [
+        "tooth-14"
+      ],
+      "measurement_refs": [
+        "measurement-92",
+        "measurement-93",
+        "measurement-94"
+      ],
+      "context_refs": [
+        "planning_context/attachment_options",
+        "planning_options"
+      ],
+      "rationale": "Tooth 26: Combined angular profile; rotation has the largest absolute angular magnitude within this tooth. Tooth 26: 1.80° (D-labelled) rotation; Tooth 26: 0.10° (D-labelled) angulation; Tooth 26: 0.90° (B-labelled) inclination.",
+      "proposal": "Illustrative catalog category: Ellipsoid / oval.",
+      "alternative": "Vertical rectangular",
+      "missing_fields": [],
+      "proposed_changes": [],
+      "attachment_primary": "OVAL",
+      "attachment_alternative": "VERTICAL_RECTANGULAR"
+    },
+    {
+      "decision_id": "D0015",
+      "finding_id": "F0015",
+      "policy_id": "DEMO-ATT-INPUT-ROTATION-v1",
+      "policy_version": "1.0.0",
+      "dimension": "ATTACHMENT_OPTIONS",
+      "status": "ILLUSTRATIVE_PROPOSAL",
+      "tooth_refs": [
+        "tooth-15"
+      ],
+      "measurement_refs": [
+        "measurement-99",
+        "measurement-100",
+        "measurement-101"
+      ],
+      "context_refs": [
+        "planning_context/attachment_options",
+        "planning_options"
+      ],
+      "rationale": "Tooth 27: Combined angular profile; rotation has the largest absolute angular magnitude within this tooth. Tooth 27: 3.00° (D-labelled) rotation; Tooth 27: 0.20° (D-labelled) angulation; Tooth 27: 2.30° (L-labelled) inclination.",
+      "proposal": "Illustrative catalog category: Ellipsoid / oval.",
+      "alternative": "Vertical rectangular",
+      "missing_fields": [],
+      "proposed_changes": [],
+      "attachment_primary": "OVAL",
+      "attachment_alternative": "VERTICAL_RECTANGULAR"
+    },
+    {
+      "decision_id": "D0016",
+      "finding_id": "F0016",
+      "policy_id": "DEMO-ATT-INPUT-SCOPE-v1",
+      "policy_version": "1.0.0",
+      "dimension": "ATTACHMENT_SCOPE",
+      "status": "INSUFFICIENT_INFORMATION",
+      "tooth_refs": [],
+      "measurement_refs": [],
+      "context_refs": [],
+      "rationale": "Catalog categories follow documented component-presence and within-tooth angular-dominance toy policies, independent of dataset rank.",
+      "proposal": "Dimensions and placement remain unspecified unless supplied. Optimized-style is a category only; clinical suitability and actual attachment need are not established.",
+      "alternative": null,
+      "missing_fields": [],
+      "proposed_changes": [],
+      "attachment_primary": null,
+      "attachment_alternative": null
+    }
+  ],
+  "attachment_rows": [
+    {
+      "tooth_ref": "tooth-1",
+      "decision_id": "D0001",
+      "movement_refs": [
+        "measurement-1",
+        "measurement-2",
+        "measurement-3"
+      ],
+      "primary": null,
+      "alternative": null,
+      "outcome": "INSUFFICIENT_INFORMATION",
+      "missing_fields": [
+        "Unavailable fields: relative_vertical, vertical"
+      ]
+    },
+    {
+      "tooth_ref": "tooth-2",
+      "decision_id": "D0002",
+      "movement_refs": [
+        "measurement-8",
+        "measurement-9",
+        "measurement-10"
+      ],
+      "primary": "OPTIMIZED_STYLE",
+      "alternative": "RECTANGULAR",
+      "outcome": "CANDIDATE",
+      "missing_fields": []
+    },
+    {
+      "tooth_ref": "tooth-3",
+      "decision_id": "D0003",
+      "movement_refs": [
+        "measurement-15",
+        "measurement-16",
+        "measurement-17"
+      ],
+      "primary": "HORIZONTAL_RECTANGULAR",
+      "alternative": "VERTICAL_RECTANGULAR",
+      "outcome": "CANDIDATE",
+      "missing_fields": []
+    },
+    {
+      "tooth_ref": "tooth-4",
+      "decision_id": "D0004",
+      "movement_refs": [
+        "measurement-22",
+        "measurement-23",
+        "measurement-24"
+      ],
+      "primary": "OPTIMIZED_STYLE",
+      "alternative": "RECTANGULAR",
+      "outcome": "CANDIDATE",
+      "missing_fields": []
+    },
+    {
+      "tooth_ref": "tooth-5",
+      "decision_id": "D0005",
+      "movement_refs": [
+        "measurement-29",
+        "measurement-30",
+        "measurement-31"
+      ],
+      "primary": "OPTIMIZED_STYLE",
+      "alternative": "RECTANGULAR",
+      "outcome": "CANDIDATE",
+      "missing_fields": []
+    },
+    {
+      "tooth_ref": "tooth-6",
+      "decision_id": "D0006",
+      "movement_refs": [
+        "measurement-36",
+        "measurement-37",
+        "measurement-38"
+      ],
+      "primary": "OPTIMIZED_STYLE",
+      "alternative": "RECTANGULAR",
+      "outcome": "CANDIDATE",
+      "missing_fields": []
+    },
+    {
+      "tooth_ref": "tooth-7",
+      "decision_id": "D0007",
+      "movement_refs": [
+        "measurement-43",
+        "measurement-44",
+        "measurement-45"
+      ],
+      "primary": "OPTIMIZED_STYLE",
+      "alternative": "RECTANGULAR",
+      "outcome": "CANDIDATE",
+      "missing_fields": []
+    },
+    {
+      "tooth_ref": "tooth-8",
+      "decision_id": "D0008",
+      "movement_refs": [
+        "measurement-50",
+        "measurement-51",
+        "measurement-52"
+      ],
+      "primary": "HORIZONTAL_RECTANGULAR",
+      "alternative": "VERTICAL_RECTANGULAR",
+      "outcome": "CANDIDATE",
+      "missing_fields": []
+    },
+    {
+      "tooth_ref": "tooth-9",
+      "decision_id": "D0009",
+      "movement_refs": [
+        "measurement-57",
+        "measurement-58"
+      ],
+      "primary": "OVAL",
+      "alternative": "VERTICAL_RECTANGULAR",
+      "outcome": "CANDIDATE",
+      "missing_fields": []
+    },
+    {
+      "tooth_ref": "tooth-10",
+      "decision_id": "D0010",
+      "movement_refs": [
+        "measurement-64",
+        "measurement-65",
+        "measurement-66"
+      ],
+      "primary": "HORIZONTAL_RECTANGULAR",
+      "alternative": "VERTICAL_RECTANGULAR",
+      "outcome": "CANDIDATE",
+      "missing_fields": []
+    },
+    {
+      "tooth_ref": "tooth-11",
+      "decision_id": "D0011",
+      "movement_refs": [
+        "measurement-71",
+        "measurement-72",
+        "measurement-73"
+      ],
+      "primary": "HORIZONTAL_RECTANGULAR",
+      "alternative": "VERTICAL_RECTANGULAR",
+      "outcome": "CANDIDATE",
+      "missing_fields": []
+    },
+    {
+      "tooth_ref": "tooth-12",
+      "decision_id": "D0012",
+      "movement_refs": [
+        "measurement-78",
+        "measurement-79",
+        "measurement-80"
+      ],
+      "primary": "OVAL",
+      "alternative": "VERTICAL_RECTANGULAR",
+      "outcome": "CANDIDATE",
+      "missing_fields": []
+    },
+    {
+      "tooth_ref": "tooth-13",
+      "decision_id": "D0013",
+      "movement_refs": [
+        "measurement-85",
+        "measurement-86",
+        "measurement-87"
+      ],
+      "primary": "OVAL",
+      "alternative": "VERTICAL_RECTANGULAR",
+      "outcome": "CANDIDATE",
+      "missing_fields": []
+    },
+    {
+      "tooth_ref": "tooth-14",
+      "decision_id": "D0014",
+      "movement_refs": [
+        "measurement-92",
+        "measurement-93",
+        "measurement-94"
+      ],
+      "primary": "OVAL",
+      "alternative": "VERTICAL_RECTANGULAR",
+      "outcome": "CANDIDATE",
+      "missing_fields": []
+    },
+    {
+      "tooth_ref": "tooth-15",
+      "decision_id": "D0015",
+      "movement_refs": [
+        "measurement-99",
+        "measurement-100",
+        "measurement-101"
+      ],
+      "primary": "OVAL",
+      "alternative": "VERTICAL_RECTANGULAR",
+      "outcome": "CANDIDATE",
+      "missing_fields": []
+    }
+  ],
+  "stages": [],
+  "allocation_checks": [],
+  "checks": [],
+  "review_outline": []
+}
+
+USER REVIEW OPTIONS — SOURCE-BOUND, NO CLINICAL AUTHORITY
+{
+  "policy_mode": "SYNTHETIC_REVIEW",
+  "source_sha256": null,
+  "objectives": [],
+  "source_convention": "UNSPECIFIED",
+  "illustration": "NONE",
+  "illustration_measurement_ref": null,
+  "targets": [],
+  "attachment_options": [],
+  "catalog_policy": "CONCEPTS_WITH_SUPPLIED_SPECS",
+  "phases": [],
+  "stage_value_basis": "UNSPECIFIED",
+  "support_constraints": []
+}
+
+SUPPLIED REVIEW DETAILS — UNVERIFIED
+{
+  "attachments": [],
+  "stages": [],
+  "allocations": [],
+  "anchorage_notes": []
+}
+
+ORIGINAL INPUT — VERBATIM
+# SYNTHETIC TEST 01 — COMPLETE MARKDOWN TMT
+
+| Tooth | Rotation (deg) | Angulation (deg) | Inclination (deg) | Extrusion / Intrusion (mm) | Relative Ext / Int (mm) | Translation B / L (mm) | Translation M / D (mm) |
+|---|---|---|---|---|---|---|---|
+| 18 | 0.0 | 0.0 | 0.0 | — | — | 0.0 | 0.0 |
+| 17 | 2.30 D | 0.60 D | 5.10 L | 1.30 E | 0.90 E | 0.30 B | 3.10 D |
+| 16 | 2.60 D | 2.90 D | 0.60 B | 0.60 E | 0.10 E | 0.30 B | 3.10 D |
+| 15 | 2.20 D | 0.60 D | 6.00 L | 0.30 I | 0.40 E | 0.20 B | 3.20 D |
+| 14 | 3.70 D | 3.50 M | 4.50 B | 0.10 I | 0.30 I | 0.20 B | 3.20 D |
+| 13 | 0.10 D | 1.80 M | 5.80 B | 0.50 I | 0.70 I | 0.50 B | 3.30 D |
+| 12 | 2.50 M | 3.90 D | 7.20 B | 1.70 I | 1.50 I | 0.40 B | 3.20 D |
+| 11 | 18.90 D | 28.80 D | 0.70 L | 2.20 I | 0.70 I | 2.50 L | 2.10 D |
+| 21 | 11.90 D | 1.20 D | 0.00 | 2.20 I | 0.80 I | 2.50 L | 0.40 M |
+| 22 | 3.30 M | 3.40 D | 3.20 B | 2.20 I | 1.50 I | 1.20 L | 1.50 D |
+| 23 | 4.80 D | 6.70 M | 3.70 B | 0.90 I | 0.90 I | 0.10 B | 2.00 D |
+| 24 | 6.90 M | 3.80 M | 1.50 B | 0.30 I | 0.40 I | 0.40 L | 2.30 D |
+| 25 | 3.40 D | 2.40 D | 1.80 L | 0.50 I | 0.10 I | 0.10 B | 2.10 D |
+| 26 | 1.80 D | 0.10 D | 0.90 B | 0.50 E | 0.30 E | 0.40 B | 2.10 D |
+| 27 | 3.00 D | 0.20 D | 2.30 L | 0.90 E | 0.70 E | 0.10 L | 2.20 D |
+
+Synthetic demonstration — not for clinical use

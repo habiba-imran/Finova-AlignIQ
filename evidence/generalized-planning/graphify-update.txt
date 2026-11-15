@@ -1,0 +1,12 @@
+[graphify] WARNING: PDF text extraction skipped: 'pypdf' is not installed. Install the pdf extra: uv tool install 'graphifyy[pdf]'
+Updating code graph in . (no LLM needed)...
+[graphify watch] 38 file(s) not classified (no supported extension or shebang), skipped: .env.example, .gitattributes, .gitignore, FINOVA_Published_TMT_Values_Reference.csv, NotoSans-Regular.base64, NotoSansSymbols-Arrows.base64 (+32 more)
+[graphify watch] Incremental: re-extracting 218 of 1051 scanned files that changed since the last build.
+  AST cache: 0/112 files served from cache (0%); 112 to extract
+  AST extraction: 100/112 uncached files (89%) [12 workers]
+  AST extraction: 112/112 uncached files (100%) [12 workers]
+[graphify watch] community set changed since labeling (0 saved labels, 108 communities now; renamed 16 community(ies) by their hub). Run `graphify label` to refresh names with the LLM.
+[graphify watch] Rebuilt: 2193 nodes, 6912 edges, 108 communities
+[graphify watch] graph.json, graph.html and GRAPH_REPORT.md updated in graphify-out
+Code graph updated. For doc/paper/image changes run /graphify --update in your AI assistant.
+Tip: set GEMINI_API_KEY or GOOGLE_API_KEY to use Gemini for semantic extraction.

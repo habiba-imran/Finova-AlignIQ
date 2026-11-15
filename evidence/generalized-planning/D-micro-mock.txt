@@ -1,0 +1,443 @@
+FINOVA ALIGNIQ
+MICRO — Generated synthetic review
+Synthetic demonstration — not for clinical use
+
+AI-assisted report wording.
+Tooth-wise movement-profile attachment review. Successfully parsed with 3 missing values. 3 teeth; 6 measurement positions; 3 recorded numerical values; 3 missing or omitted; 0 invalid or ambiguous.
+
+MODULE REVIEW COMMENTS
+
+TOOTH-WISE ATTACHMENT OPTIONS
+Status: SIMULATED_DEMO
+Tooth 12: Incomplete angular profile. Tooth 12: 2.750° (D-labelled) rotation. No supported category is selected. Information needed: Complete unambiguous rotation, angulation and inclination values in degrees.
+
+Tooth 23: Incomplete angular profile. No supported category is selected. Information needed: Complete unambiguous rotation, angulation and inclination values in degrees.
+
+Tooth 34: Incomplete angular profile. No supported category is selected. Information needed: Complete unambiguous rotation, angulation and inclination values in degrees.
+
+ATTACHMENT ASSUMPTIONS AND LIMITS
+Status: SIMULATED_DEMO
+Catalog categories follow documented component-presence and within-tooth angular-dominance toy policies, independent of dataset rank. Dimensions and placement remain unspecified unless supplied. Optimized-style is a category only; clinical suitability and actual attachment need are not established.
+
+LIMITATIONS
+Source values, units, direction labels and FDI-style token grouping remain unverified. Missing values remain unknown, not zero.
+Independent illustration policies do not establish clinical suitability, safe movement limits, forces or a treatment prescription.
+
+SOURCE AND PROVENANCE
+Report ID: 6cf5cf093bdd001446b74f81b9d757018c96803bb7edc0162bf5976bc2a1c3bd
+Input SHA-256: 286aa60220d20e8ac663be902e85214067a95e8b37d286d43592b466c776c052
+Parser: 0.1.0; engine: 0.5.0; rules: 2.0.0-phase5
+Wording: GROQ_AI; status: GROQ_VALIDATED; provider attempts: 1
+measurement-1; tooth_ref tooth-1; L3:C4-C11; offsets 87:94; PARSED; raw sign null; raw direction "D"; magnitude 2.750
+"Rotation (deg)": 2.750 deg; direction label "D". Original cell: "2.750 D".
+measurement-2; tooth_ref tooth-1; L3:C12-C13; offsets 95:96; MISSING; raw sign null; raw direction null; magnitude None
+"Vertical (mm)": missing; no numerical observation (unknown, not zero). Original cell: "—".
+measurement-3; tooth_ref tooth-2; L4:C4-C5; offsets 100:101; MISSING; raw sign null; raw direction null; magnitude None
+"Rotation (deg)": missing; no numerical observation (unknown, not zero). Original cell: "—".
+measurement-4; tooth_ref tooth-2; L4:C6-C10; offsets 102:106; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Vertical (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-5; tooth_ref tooth-3; L5:C4-C8; offsets 110:114; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Rotation (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-6; tooth_ref tooth-3; L5:C9-C9; offsets 115:115; MISSING; raw sign null; raw direction null; magnitude None
+"Vertical (mm)": missing; no numerical observation (unknown, not zero). Original cell: "".
+
+RULE EVALUATION LEDGER — CLINICAL AUTHORITY UNCHANGED
+A01 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+A02 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+A03 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+A04 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+A05 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+A06 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+D01 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D02 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D03 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D04 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D05 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D06 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D07 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D08 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D09 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D10 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D11 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D12 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D13 v2.0.0: CONTEXT_REQUIRED; execution ACTIVE; approval NOT APPLICABLE
+D14 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+D15 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D16 v2.0.0: CONTEXT_REQUIRED; execution DEFERRED; approval NOT APPLICABLE
+G01 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+G02 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G03 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G04 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G05 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G06 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+G07 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G08 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G09 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G10 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G11 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G12 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G13 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G14 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G15 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+G16 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+G17 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G18 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+H01 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H02 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H03 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H04 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H05 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H06 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H07 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H08 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H09 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H10 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+H11 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H12 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+L01 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+L02 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+L03 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+L04 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+L05 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+L06 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+N01 v2.0.0: CONTEXT_REQUIRED; execution ACTIVE; approval NOT APPLICABLE
+N02 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+N03 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+N04 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+N05 v2.0.0: CONTEXT_REQUIRED; execution ACTIVE; approval NOT APPLICABLE
+N06 v2.0.0: CONTEXT_REQUIRED; execution ACTIVE; approval NOT APPLICABLE
+N07 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+N08 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+N09 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+N10 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+N11 v2.0.0: CONTEXT_REQUIRED; execution DEFERRED; approval NOT APPLICABLE
+N12 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+N13 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+N14 v2.0.0: CONTEXT_REQUIRED; execution DEFERRED; approval NOT APPLICABLE
+R01 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R02 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R03 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R04 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R05 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R06 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R07 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R08 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R09 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R10 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R11 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R12 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R13 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R14 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+R15 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R16 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T01 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T02 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T03 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T04 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T05 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T06 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T07 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T08 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+
+ANALYTICAL FINDING PROVENANCE
+[
+  {
+    "finding_id": "F0001",
+    "section_id": "ATTACHMENT_OPTIONS",
+    "kind": "INSUFFICIENT_INFORMATION",
+    "text": "Tooth 12: Incomplete angular profile. Tooth 12: 2.750° (D-labelled) rotation. No supported category is selected. Information needed: Complete unambiguous rotation, angulation and inclination values in degrees.",
+    "source_refs": [
+      "measurement-1"
+    ],
+    "selected_refs": [
+      "measurement-1"
+    ],
+    "demo_rule": "DEMO-ATT-INPUT-INCOMPLETE-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0002",
+    "section_id": "ATTACHMENT_OPTIONS",
+    "kind": "INSUFFICIENT_INFORMATION",
+    "text": "Tooth 23: Incomplete angular profile. No supported category is selected. Information needed: Complete unambiguous rotation, angulation and inclination values in degrees.",
+    "source_refs": [
+      "measurement-3"
+    ],
+    "selected_refs": [
+      "measurement-3"
+    ],
+    "demo_rule": "DEMO-ATT-INPUT-INCOMPLETE-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0003",
+    "section_id": "ATTACHMENT_OPTIONS",
+    "kind": "INSUFFICIENT_INFORMATION",
+    "text": "Tooth 34: Incomplete angular profile. No supported category is selected. Information needed: Complete unambiguous rotation, angulation and inclination values in degrees.",
+    "source_refs": [
+      "measurement-5"
+    ],
+    "selected_refs": [
+      "measurement-5"
+    ],
+    "demo_rule": "DEMO-ATT-INPUT-INCOMPLETE-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0004",
+    "section_id": "ATTACHMENT_SCOPE",
+    "kind": "INSUFFICIENT_INFORMATION",
+    "text": "Catalog categories follow documented component-presence and within-tooth angular-dominance toy policies, independent of dataset rank. Dimensions and placement remain unspecified unless supplied. Optimized-style is a category only; clinical suitability and actual attachment need are not established.",
+    "source_refs": [],
+    "selected_refs": [],
+    "demo_rule": "DEMO-ATT-INPUT-SCOPE-v1",
+    "origin": "SIMULATED_DEMO"
+  }
+]
+
+INPUT-DRIVEN POLICY CONTEXT — NOT TMT FACTS
+{
+  "scenario_id": null,
+  "policy_version": "1.0.0",
+  "source_sha256": "286aa60220d20e8ac663be902e85214067a95e8b37d286d43592b466c776c052",
+  "module": "micro",
+  "origin": "INPUT_DRIVEN_POLICY_REVIEW",
+  "notation": "FDI",
+  "objectives": [],
+  "targets": [],
+  "attachment_options": [
+    {
+      "concept": "RECTANGULAR",
+      "geometry": null,
+      "orientation": null,
+      "surface": null,
+      "placement": null
+    },
+    {
+      "concept": "VERTICAL_RECTANGULAR",
+      "geometry": null,
+      "orientation": null,
+      "surface": null,
+      "placement": null
+    },
+    {
+      "concept": "HORIZONTAL_RECTANGULAR",
+      "geometry": null,
+      "orientation": null,
+      "surface": null,
+      "placement": null
+    },
+    {
+      "concept": "OVAL",
+      "geometry": null,
+      "orientation": null,
+      "surface": null,
+      "placement": null
+    },
+    {
+      "concept": "OPTIMIZED_STYLE",
+      "geometry": null,
+      "orientation": null,
+      "surface": null,
+      "placement": null
+    },
+    {
+      "concept": "NO_ATTACHMENT",
+      "geometry": null,
+      "orientation": null,
+      "surface": null,
+      "placement": null
+    }
+  ],
+  "phases": [],
+  "stage_value_basis": "UNSPECIFIED",
+  "support_constraints": []
+}
+
+SYNTHETIC POLICY DECISIONS — NO CLINICAL AUTHORIZATION
+{
+  "policy_set_version": "1.0.0",
+  "origin": "INDEPENDENT_SYNTHETIC_POLICIES",
+  "clinical_authorized": false,
+  "source_sha256": "286aa60220d20e8ac663be902e85214067a95e8b37d286d43592b466c776c052",
+  "decisions": [
+    {
+      "decision_id": "D0001",
+      "finding_id": "F0001",
+      "policy_id": "DEMO-ATT-INPUT-INCOMPLETE-v1",
+      "policy_version": "1.0.0",
+      "dimension": "ATTACHMENT_OPTIONS",
+      "status": "INSUFFICIENT_INFORMATION",
+      "tooth_refs": [
+        "tooth-1"
+      ],
+      "measurement_refs": [
+        "measurement-1"
+      ],
+      "context_refs": [
+        "planning_context/attachment_options",
+        "planning_options"
+      ],
+      "rationale": "Tooth 12: Incomplete angular profile. Tooth 12: 2.750° (D-labelled) rotation.",
+      "proposal": "No supported category is selected.",
+      "alternative": null,
+      "missing_fields": [
+        "Complete unambiguous rotation, angulation and inclination values in degrees"
+      ],
+      "proposed_changes": [],
+      "attachment_primary": null,
+      "attachment_alternative": null
+    },
+    {
+      "decision_id": "D0002",
+      "finding_id": "F0002",
+      "policy_id": "DEMO-ATT-INPUT-INCOMPLETE-v1",
+      "policy_version": "1.0.0",
+      "dimension": "ATTACHMENT_OPTIONS",
+      "status": "INSUFFICIENT_INFORMATION",
+      "tooth_refs": [
+        "tooth-2"
+      ],
+      "measurement_refs": [
+        "measurement-3"
+      ],
+      "context_refs": [
+        "planning_context/attachment_options",
+        "planning_options"
+      ],
+      "rationale": "Tooth 23: Incomplete angular profile. ",
+      "proposal": "No supported category is selected.",
+      "alternative": null,
+      "missing_fields": [
+        "Complete unambiguous rotation, angulation and inclination values in degrees"
+      ],
+      "proposed_changes": [],
+      "attachment_primary": null,
+      "attachment_alternative": null
+    },
+    {
+      "decision_id": "D0003",
+      "finding_id": "F0003",
+      "policy_id": "DEMO-ATT-INPUT-INCOMPLETE-v1",
+      "policy_version": "1.0.0",
+      "dimension": "ATTACHMENT_OPTIONS",
+      "status": "INSUFFICIENT_INFORMATION",
+      "tooth_refs": [
+        "tooth-3"
+      ],
+      "measurement_refs": [
+        "measurement-5"
+      ],
+      "context_refs": [
+        "planning_context/attachment_options",
+        "planning_options"
+      ],
+      "rationale": "Tooth 34: Incomplete angular profile. ",
+      "proposal": "No supported category is selected.",
+      "alternative": null,
+      "missing_fields": [
+        "Complete unambiguous rotation, angulation and inclination values in degrees"
+      ],
+      "proposed_changes": [],
+      "attachment_primary": null,
+      "attachment_alternative": null
+    },
+    {
+      "decision_id": "D0004",
+      "finding_id": "F0004",
+      "policy_id": "DEMO-ATT-INPUT-SCOPE-v1",
+      "policy_version": "1.0.0",
+      "dimension": "ATTACHMENT_SCOPE",
+      "status": "INSUFFICIENT_INFORMATION",
+      "tooth_refs": [],
+      "measurement_refs": [],
+      "context_refs": [],
+      "rationale": "Catalog categories follow documented component-presence and within-tooth angular-dominance toy policies, independent of dataset rank.",
+      "proposal": "Dimensions and placement remain unspecified unless supplied. Optimized-style is a category only; clinical suitability and actual attachment need are not established.",
+      "alternative": null,
+      "missing_fields": [],
+      "proposed_changes": [],
+      "attachment_primary": null,
+      "attachment_alternative": null
+    }
+  ],
+  "attachment_rows": [
+    {
+      "tooth_ref": "tooth-1",
+      "decision_id": "D0001",
+      "movement_refs": [
+        "measurement-1"
+      ],
+      "primary": null,
+      "alternative": null,
+      "outcome": "INSUFFICIENT_INFORMATION",
+      "missing_fields": [
+        "Complete unambiguous rotation, angulation and inclination values in degrees"
+      ]
+    },
+    {
+      "tooth_ref": "tooth-2",
+      "decision_id": "D0002",
+      "movement_refs": [
+        "measurement-3"
+      ],
+      "primary": null,
+      "alternative": null,
+      "outcome": "INSUFFICIENT_INFORMATION",
+      "missing_fields": [
+        "Complete unambiguous rotation, angulation and inclination values in degrees"
+      ]
+    },
+    {
+      "tooth_ref": "tooth-3",
+      "decision_id": "D0003",
+      "movement_refs": [
+        "measurement-5"
+      ],
+      "primary": null,
+      "alternative": null,
+      "outcome": "INSUFFICIENT_INFORMATION",
+      "missing_fields": [
+        "Complete unambiguous rotation, angulation and inclination values in degrees"
+      ]
+    }
+  ],
+  "stages": [],
+  "allocation_checks": [],
+  "checks": [],
+  "review_outline": []
+}
+
+USER REVIEW OPTIONS — SOURCE-BOUND, NO CLINICAL AUTHORITY
+{
+  "policy_mode": "SYNTHETIC_REVIEW",
+  "source_sha256": null,
+  "objectives": [],
+  "source_convention": "UNSPECIFIED",
+  "illustration": "NONE",
+  "illustration_measurement_ref": null,
+  "targets": [],
+  "attachment_options": [],
+  "catalog_policy": "CONCEPTS_WITH_SUPPLIED_SPECS",
+  "phases": [],
+  "stage_value_basis": "UNSPECIFIED",
+  "support_constraints": []
+}
+
+SUPPLIED REVIEW DETAILS — UNVERIFIED
+{
+  "attachments": [],
+  "stages": [],
+  "allocations": [],
+  "anchorage_notes": []
+}
+
+ORIGINAL INPUT — VERBATIM
+# SYNTHETIC CLIENT D — missing cells are unknown
+Tooth	Rotation (deg)	Vertical (mm)
+12	2.750 D	—
+23	—	0.00
+34	0.00	
+
+
+Synthetic demonstration — not for clinical use

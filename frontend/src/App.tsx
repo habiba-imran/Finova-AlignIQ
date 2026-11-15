@@ -21,6 +21,10 @@ import SequencingWorkspace from './components/SequencingWorkspace'
 import InteractiveWorkspace from './components/InteractiveWorkspace'
 import { emptyReviewDetails } from './api/interactive'
 import type { InteractiveReport } from './api/interactive'
+import type { ReviewDetails } from './api/interactive'
+import { defaultPlanningOptions } from './api/planningOptions'
+import type { PlanningOptions } from './api/planningOptions'
+import PlanningContextPanel from './components/PlanningContextPanel'
 import { requestSequencingDemoInput } from './api/sequencing'
 import type { SequencingDemoInput } from './api/sequencing'
 
@@ -84,9 +88,12 @@ export default function App({ diagnostics = new URLSearchParams(window.location.
   const [attachmentDemo, setAttachmentDemo] = useState<AttachmentDemoInput | null>(null)
   const [sequencingDemo, setSequencingDemo] = useState<SequencingDemoInput | null>(null)
   const [complete, setComplete] = useState(false)
-  const [reviewDetails, setReviewDetails] = useState(emptyReviewDetails)
+  const [detailsByModule, setDetailsByModule] = useState<Partial<Record<Purpose, ReviewDetails>>>({})
+  const [optionsByModule, setOptionsByModule] = useState<Partial<Record<Purpose, PlanningOptions>>>({})
   const [exampleLoaded, setExampleLoaded] = useState(false)
   const functionalScenario = exampleLoaded && !diagnostics ? SYNTHETIC_SCENARIOS[purpose] : null
+  const reviewDetails = functionalScenario?.review_details ?? detailsByModule[purpose] ?? emptyReviewDetails()
+  const planningOptions = optionsByModule[purpose] ?? defaultPlanningOptions()
   const [reportCache, setReportCache] = useState<Partial<Record<Purpose, InteractiveReport>>>({})
   const [unavailableDemos, setUnavailableDemos] = useState<Partial<Record<Purpose, boolean>>>({})
   const requestRef = useRef<AbortController | null>(null)
@@ -102,7 +109,8 @@ export default function App({ diagnostics = new URLSearchParams(window.location.
 
   function invalidateParse() {
     setExampleLoaded(false)
-    setReviewDetails(emptyReviewDetails())
+    setDetailsByModule({})
+    setOptionsByModule({})
     setReportCache({})
     revisionRef.current += 1
     requestRef.current?.abort()
@@ -174,10 +182,18 @@ export default function App({ diagnostics = new URLSearchParams(window.location.
     editRawText(SYNTHETIC_EXAMPLE)
     if (!diagnostics) {
       setExampleLoaded(true)
-      setReviewDetails(SYNTHETIC_SCENARIOS[purpose].review_details)
     }
     setContext({ ...EMPTY_CONTEXT })
     inputRef.current?.focus()
+  }
+
+  function changePlanningContext(options: PlanningOptions, details: ReviewDetails) {
+    if (!result) return
+    revisionRef.current += 1
+    setOptionsByModule(previous => ({ ...previous, [purpose]: { ...options, source_sha256: result.raw_sha256 } }))
+    setDetailsByModule(previous => ({ ...previous, [purpose]: details }))
+    setReportCache(previous => ({ ...previous, [purpose]: undefined }))
+    setComplete(false)
   }
 
   async function loadPlanningDemo() {
@@ -294,7 +310,6 @@ export default function App({ diagnostics = new URLSearchParams(window.location.
                   if (diagnostics || loading) invalidateParse()
                   else {
                     setComplete(false)
-                    setReviewDetails(exampleLoaded ? SYNTHETIC_SCENARIOS[id].review_details : emptyReviewDetails())
                   }
                   setPurpose(id)
                 } }}
@@ -371,6 +386,7 @@ export default function App({ diagnostics = new URLSearchParams(window.location.
                 </div>
                 <ContextFields value={context} onChange={editContext} />
                 {functionalScenario && <p aria-label="Loaded synthetic example" className="mt-3 text-xs leading-5 text-muted">Synthetic example loaded for Macro, Micro and Nano.</p>}
+                {result && !diagnostics && !functionalScenario && <PlanningContextPanel key={`${purpose}-${result.raw_sha256}`} module={purpose} parsed={result} options={planningOptions} details={reviewDetails} onChange={changePlanningContext} />}
               </div>
             </section>
 
@@ -469,9 +485,9 @@ export default function App({ diagnostics = new URLSearchParams(window.location.
             <h2 id="review-area-heading" className="section-title">Review results</h2>
             <p className="section-note">{complete ? 'Review the DRAFT below, then use the export area when ready.' : 'Run the review below to prepare a DRAFT.'}</p>
           </div>
-          {!diagnostics && <InteractiveWorkspace key={`interactive-${purpose}-${revisionRef.current}`} module={purpose} rawText={rawText} context={context} parsed={result} onComplete={setComplete} reviewDetails={reviewDetails} planningContext={functionalScenario?.planning_context ?? null}
+          {!diagnostics && <InteractiveWorkspace key={`interactive-${purpose}-${revisionRef.current}`} module={purpose} rawText={rawText} context={context} parsed={result} onComplete={setComplete} reviewDetails={reviewDetails} planningContext={functionalScenario?.planning_context ?? null} planningOptions={functionalScenario ? null : planningOptions}
             savedReport={reportCache[purpose] ?? null} onReportChange={report => setReportCache(previous => ({ ...previous, [purpose]: report ?? undefined }))}
-            onDetailsChange={details => { setReviewDetails(details); setReportCache(previous => ({ ...previous, [purpose]: undefined })) }} />}
+            onDetailsChange={details => changePlanningContext(planningOptions, details)} />}
           {diagnostics && purpose === 'macro' && <PlanningWorkspace key={`planning-${revisionRef.current}`} rawText={rawText} context={context} parsed={result} demo={!!demo} onComplete={setComplete} />}
           {diagnostics && purpose === 'micro' && <AttachmentWorkspace key={`attachment-${revisionRef.current}`} rawText={rawText} context={context} parsed={result} demo={!!attachmentDemo} onComplete={setComplete} />}
           {diagnostics && purpose === 'nano' && <SequencingWorkspace key={`sequencing-${revisionRef.current}`} rawText={rawText} context={context} parsed={result} demo={!!sequencingDemo} onComplete={setComplete} />}

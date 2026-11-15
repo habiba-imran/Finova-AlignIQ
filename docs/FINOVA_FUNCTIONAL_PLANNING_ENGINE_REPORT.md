@@ -2,6 +2,12 @@
 
 Date: 2026-11-15. Scope: independently authored synthetic software demonstrations.
 
+The subsequent generalized implementation makes ordinary pasted tables work
+without an example ID. See
+[`FINOVA_GENERALIZED_PLANNING_ENGINE_REPORT.md`](../FINOVA_GENERALIZED_PLANNING_ENGINE_REPORT.md)
+and the reusable policy specification. The original phase evidence below remains
+the record of the explicit-context implementation.
+
 ## Follow-up: one shared synthetic example
 
 The normal interface now has one **Load synthetic example** button. The separate

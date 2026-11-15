@@ -1,0 +1,102 @@
+[
+  {
+    "case": "A",
+    "teeth": 15,
+    "positions": 105,
+    "numeric": 103,
+    "missing": 2,
+    "explicit_zero": 6,
+    "modules": {
+      "macro": {
+        "findings": 8,
+        "review_topics": 0,
+        "stages": 0
+      },
+      "micro": {
+        "findings": 16,
+        "review_topics": 0,
+        "stages": 0
+      },
+      "nano": {
+        "findings": 11,
+        "review_topics": 3,
+        "stages": 0
+      }
+    }
+  },
+  {
+    "case": "B",
+    "teeth": 16,
+    "positions": 112,
+    "numeric": 109,
+    "missing": 3,
+    "explicit_zero": 77,
+    "modules": {
+      "macro": {
+        "findings": 8,
+        "review_topics": 0,
+        "stages": 0
+      },
+      "micro": {
+        "findings": 17,
+        "review_topics": 0,
+        "stages": 0
+      },
+      "nano": {
+        "findings": 16,
+        "review_topics": 3,
+        "stages": 0
+      }
+    }
+  },
+  {
+    "case": "C",
+    "teeth": 8,
+    "positions": 56,
+    "numeric": 56,
+    "missing": 0,
+    "explicit_zero": 37,
+    "modules": {
+      "macro": {
+        "findings": 8,
+        "review_topics": 0,
+        "stages": 0
+      },
+      "micro": {
+        "findings": 9,
+        "review_topics": 0,
+        "stages": 0
+      },
+      "nano": {
+        "findings": 16,
+        "review_topics": 3,
+        "stages": 0
+      }
+    }
+  },
+  {
+    "case": "D",
+    "teeth": 3,
+    "positions": 6,
+    "numeric": 3,
+    "missing": 3,
+    "explicit_zero": 2,
+    "modules": {
+      "macro": {
+        "findings": 5,
+        "review_topics": 0,
+        "stages": 0
+      },
+      "micro": {
+        "findings": 4,
+        "review_topics": 0,
+        "stages": 0
+      },
+      "nano": {
+        "findings": 6,
+        "review_topics": 1,
+        "stages": 0
+      }
+    }
+  }
+]

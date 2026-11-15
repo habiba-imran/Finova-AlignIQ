@@ -1,0 +1,26 @@
+[
+  {
+    "module": "macro",
+    "identical_plan": true,
+    "identical_source": true,
+    "identical_immutable_findings": true,
+    "provider_attempts": 1,
+    "result": "GROQ_VALIDATED"
+  },
+  {
+    "module": "micro",
+    "identical_plan": true,
+    "identical_source": true,
+    "identical_immutable_findings": true,
+    "provider_attempts": 1,
+    "result": "GROQ_UNSUPPORTED_WORDING"
+  },
+  {
+    "module": "nano",
+    "identical_plan": true,
+    "identical_source": true,
+    "identical_immutable_findings": true,
+    "provider_attempts": 1,
+    "result": "GROQ_RATE_LIMIT"
+  }
+]

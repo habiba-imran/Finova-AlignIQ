@@ -46,11 +46,15 @@ for (const sample of samples) test(`${sample.id}: pasted synthetic input works i
     await expect(article.getByText('Standard wording', { exact: true })).toBeVisible()
     if (module.id === 'macro') {
       await expect(article.getByRole('heading', { name: 'Planning comments', exact: true })).toBeVisible()
-      expect(report.sections).toHaveLength(5)
+      expect(report.sections).toHaveLength(4)
     }
     expect(await article.innerText()).not.toMatch(/Groq|transmi|shared with|provider/i)
     const facts = article.getByRole('region', { name: 'Module review comments' })
-    await expect(facts.getByRole('heading', { level: 6 })).toHaveCount(report.sections.length)
+    const visibleSections = report.sections.filter((s: { section_id: string }) => s.section_id !== 'ATTACHMENT_OPTIONS'
+      && !(s.section_id === 'PHASES' && report.functional_plan.review_outline.length))
+    await expect(facts.getByRole('heading', { level: 6 })).toHaveCount(visibleSections.length)
+    expect(report.planning_context.scenario_id).toBeNull()
+    expect(report.planning_context.origin).toBe('INPUT_DRIVEN_POLICY_REVIEW')
     expect(await article.innerText()).not.toMatch(/GROQ_|SEMANTICS_|\b(?:R13|T01|A05|H08)\b|finding_id|rule ledger/)
     await expect(article.getByRole('region', { name: 'Illustrative demo content' })).toHaveCount(0)
     const requests: string[] = []; page.on('request', r => { if (r.url().includes('/api/')) requests.push(r.url()) })

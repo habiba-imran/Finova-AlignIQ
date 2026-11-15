@@ -217,9 +217,17 @@
       "additionalProperties": false,
       "properties": {
         "scenario_id": {
-          "pattern": "^[a-zA-Z0-9_-]{1,60}$",
-          "title": "Scenario Id",
-          "type": "string"
+          "anyOf": [
+            {
+              "pattern": "^[a-zA-Z0-9_-]{1,60}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Scenario Id"
         },
         "policy_version": {
           "const": "1.0.0",
@@ -242,8 +250,11 @@
           "type": "string"
         },
         "origin": {
-          "const": "EXPLICIT_SYNTHETIC_SCENARIO",
           "default": "EXPLICIT_SYNTHETIC_SCENARIO",
+          "enum": [
+            "EXPLICIT_SYNTHETIC_SCENARIO",
+            "INPUT_DRIVEN_POLICY_REVIEW"
+          ],
           "title": "Origin",
           "type": "string"
         },
@@ -313,7 +324,6 @@
         }
       },
       "required": [
-        "scenario_id",
         "source_sha256",
         "module"
       ],
@@ -462,6 +472,131 @@
         "z_mm"
       ],
       "title": "Placement",
+      "type": "object"
+    },
+    "PlanningOptions": {
+      "additionalProperties": false,
+      "description": "Reusable review settings; never a fixture identifier or clinical approval.",
+      "properties": {
+        "policy_mode": {
+          "default": "SYNTHETIC_REVIEW",
+          "enum": [
+            "SYNTHETIC_REVIEW",
+            "EVIDENCE_REVIEW"
+          ],
+          "title": "Policy Mode",
+          "type": "string"
+        },
+        "source_sha256": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Sha256"
+        },
+        "objectives": {
+          "items": {
+            "enum": [
+              "REDISTRIBUTE_TRANSLATIONS",
+              "ANGULAR_CONTROL",
+              "VERTICAL_REVIEW",
+              "STAGE_REVIEW"
+            ],
+            "type": "string"
+          },
+          "maxItems": 4,
+          "title": "Objectives",
+          "type": "array"
+        },
+        "source_convention": {
+          "default": "UNSPECIFIED",
+          "enum": [
+            "UNSPECIFIED",
+            "SOURCE_LABELS_AS_RECORDED"
+          ],
+          "title": "Source Convention",
+          "type": "string"
+        },
+        "illustration": {
+          "default": "NONE",
+          "enum": [
+            "NONE",
+            "HALF_MAGNITUDE"
+          ],
+          "title": "Illustration",
+          "type": "string"
+        },
+        "illustration_measurement_ref": {
+          "anyOf": [
+            {
+              "maxLength": 80,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Illustration Measurement Ref"
+        },
+        "targets": {
+          "items": {
+            "$ref": "#/$defs/MovementTarget"
+          },
+          "maxItems": 64,
+          "title": "Targets",
+          "type": "array"
+        },
+        "attachment_options": {
+          "items": {
+            "$ref": "#/$defs/AttachmentOption"
+          },
+          "maxItems": 6,
+          "title": "Attachment Options",
+          "type": "array"
+        },
+        "catalog_policy": {
+          "default": "CONCEPTS_WITH_SUPPLIED_SPECS",
+          "enum": [
+            "CONCEPTS_WITH_SUPPLIED_SPECS",
+            "SUPPLIED_OPTIONS_ONLY"
+          ],
+          "title": "Catalog Policy",
+          "type": "string"
+        },
+        "phases": {
+          "items": {
+            "$ref": "#/$defs/Phase"
+          },
+          "maxItems": 16,
+          "title": "Phases",
+          "type": "array"
+        },
+        "stage_value_basis": {
+          "default": "UNSPECIFIED",
+          "enum": [
+            "UNSPECIFIED",
+            "INCREMENTS_MATCH_SOURCE_LABELS"
+          ],
+          "title": "Stage Value Basis",
+          "type": "string"
+        },
+        "support_constraints": {
+          "items": {
+            "$ref": "#/$defs/SupportConstraint"
+          },
+          "maxItems": 16,
+          "title": "Support Constraints",
+          "type": "array"
+        }
+      },
+      "title": "PlanningOptions",
       "type": "object"
     },
     "ReviewDetails": {
@@ -871,6 +1006,17 @@
       "anyOf": [
         {
           "$ref": "#/$defs/FunctionalContext"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "planning_options": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/PlanningOptions"
         },
         {
           "type": "null"

@@ -1,0 +1,227 @@
+[
+  {
+    "file": "A-macro-desktop.pdf",
+    "pages": 3,
+    "findings": 8,
+    "exact_attachments": true,
+    "all_visible_facts": true
+  },
+  {
+    "file": "A-macro-mobile.pdf",
+    "pages": 3,
+    "findings": 8,
+    "exact_attachments": true,
+    "all_visible_facts": true,
+    "rendered": false
+  },
+  {
+    "file": "A-micro-desktop.pdf",
+    "pages": 4,
+    "findings": 16,
+    "exact_attachments": true,
+    "all_visible_facts": true
+  },
+  {
+    "file": "A-micro-mobile.pdf",
+    "pages": 4,
+    "findings": 16,
+    "exact_attachments": true,
+    "all_visible_facts": true,
+    "rendered": false
+  },
+  {
+    "file": "A-nano-desktop.pdf",
+    "pages": 3,
+    "findings": 11,
+    "exact_attachments": true,
+    "all_visible_facts": true
+  },
+  {
+    "file": "A-nano-mobile.pdf",
+    "pages": 3,
+    "findings": 11,
+    "exact_attachments": true,
+    "all_visible_facts": true,
+    "rendered": false
+  },
+  {
+    "file": "B-macro-desktop.pdf",
+    "pages": 3,
+    "findings": 8,
+    "exact_attachments": true,
+    "all_visible_facts": true
+  },
+  {
+    "file": "B-macro-mobile.pdf",
+    "pages": 3,
+    "findings": 8,
+    "exact_attachments": true,
+    "all_visible_facts": true,
+    "rendered": false
+  },
+  {
+    "file": "B-micro-desktop.pdf",
+    "pages": 4,
+    "findings": 17,
+    "exact_attachments": true,
+    "all_visible_facts": true
+  },
+  {
+    "file": "B-micro-mobile.pdf",
+    "pages": 4,
+    "findings": 17,
+    "exact_attachments": true,
+    "all_visible_facts": true,
+    "rendered": false
+  },
+  {
+    "file": "B-nano-desktop.pdf",
+    "pages": 3,
+    "findings": 16,
+    "exact_attachments": true,
+    "all_visible_facts": true
+  },
+  {
+    "file": "B-nano-mobile.pdf",
+    "pages": 3,
+    "findings": 16,
+    "exact_attachments": true,
+    "all_visible_facts": true,
+    "rendered": false
+  },
+  {
+    "file": "C-macro-desktop.pdf",
+    "pages": 3,
+    "findings": 8,
+    "exact_attachments": true,
+    "all_visible_facts": true
+  },
+  {
+    "file": "C-macro-mobile.pdf",
+    "pages": 3,
+    "findings": 8,
+    "exact_attachments": true,
+    "all_visible_facts": true,
+    "rendered": false
+  },
+  {
+    "file": "C-micro-desktop.pdf",
+    "pages": 3,
+    "findings": 9,
+    "exact_attachments": true,
+    "all_visible_facts": true
+  },
+  {
+    "file": "C-micro-mobile.pdf",
+    "pages": 3,
+    "findings": 9,
+    "exact_attachments": true,
+    "all_visible_facts": true,
+    "rendered": false
+  },
+  {
+    "file": "C-nano-desktop.pdf",
+    "pages": 3,
+    "findings": 16,
+    "exact_attachments": true,
+    "all_visible_facts": true
+  },
+  {
+    "file": "C-nano-mobile.pdf",
+    "pages": 3,
+    "findings": 16,
+    "exact_attachments": true,
+    "all_visible_facts": true,
+    "rendered": false
+  },
+  {
+    "file": "context-macro-desktop.pdf",
+    "pages": 3,
+    "findings": 9,
+    "exact_attachments": true,
+    "all_visible_facts": true
+  },
+  {
+    "file": "context-macro-mobile.pdf",
+    "pages": 3,
+    "findings": 9,
+    "exact_attachments": true,
+    "all_visible_facts": true,
+    "rendered": false
+  },
+  {
+    "file": "context-micro-desktop.pdf",
+    "pages": 4,
+    "findings": 17,
+    "exact_attachments": true,
+    "all_visible_facts": true
+  },
+  {
+    "file": "context-micro-mobile.pdf",
+    "pages": 4,
+    "findings": 17,
+    "exact_attachments": true,
+    "all_visible_facts": true,
+    "rendered": false
+  },
+  {
+    "file": "context-nano-desktop.pdf",
+    "pages": 2,
+    "findings": 8,
+    "exact_attachments": true,
+    "all_visible_facts": true
+  },
+  {
+    "file": "context-nano-mobile.pdf",
+    "pages": 2,
+    "findings": 8,
+    "exact_attachments": true,
+    "all_visible_facts": true,
+    "rendered": false
+  },
+  {
+    "file": "D-macro-desktop.pdf",
+    "pages": 2,
+    "findings": 5,
+    "exact_attachments": true,
+    "all_visible_facts": true
+  },
+  {
+    "file": "D-macro-mobile.pdf",
+    "pages": 2,
+    "findings": 5,
+    "exact_attachments": true,
+    "all_visible_facts": true,
+    "rendered": false
+  },
+  {
+    "file": "D-micro-desktop.pdf",
+    "pages": 2,
+    "findings": 4,
+    "exact_attachments": true,
+    "all_visible_facts": true
+  },
+  {
+    "file": "D-micro-mobile.pdf",
+    "pages": 2,
+    "findings": 4,
+    "exact_attachments": true,
+    "all_visible_facts": true,
+    "rendered": false
+  },
+  {
+    "file": "D-nano-desktop.pdf",
+    "pages": 2,
+    "findings": 6,
+    "exact_attachments": true,
+    "all_visible_facts": true
+  },
+  {
+    "file": "D-nano-mobile.pdf",
+    "pages": 2,
+    "findings": 6,
+    "exact_attachments": true,
+    "all_visible_facts": true,
+    "rendered": false
+  }
+]

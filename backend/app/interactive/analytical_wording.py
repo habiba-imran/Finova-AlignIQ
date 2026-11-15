@@ -66,6 +66,24 @@ def analytical_wording(parsed, module, sections, findings, *, settings=None, cli
                 "Retain all comparisons, unknowns, demo labels and scope findings in their own sections. "
                 "SIMULATED_DEMO is illustrative only. No clinical predicates, attachment geometry or treatment schedules are authorized.")),
                 dict(role="user", content=json.dumps(payload, separators=(",", ":")))]
+            if len(json.dumps(messages).encode()) > MAX_PROMPT_BYTES:
+                # The model orders sealed local findings; it never needs an
+                # unbounded duplicate of all source cells or comparison members.
+                # Keep the complete values, memberships and decisions in exports.
+                compact = dict(module=module,scope='ORDER_IMMUTABLE_LOCAL_FINDINGS_ONLY',
+                    complete_evidence_retained_locally=True,
+                    source_summary=dict(teeth=len(parsed.teeth),positions=len(parsed.measurements),
+                        numeric=sum(m.numeric_status in {'PARSED','EXPLICIT_ZERO'} and m.field_status!='AMBIGUOUS' for m in parsed.measurements),
+                        unknown=sum(m.numeric_status not in {'PARSED','EXPLICIT_ZERO'} or m.field_status=='AMBIGUOUS' for m in parsed.measurements)),
+                    sections=[dict(section_id=s.section_id,findings=[dict(ref=f.finding_id,kind=f.kind,policy=f.demo_rule)
+                        for f in findings if f.section_id==s.section_id]) for s in sections])
+                if functional_evidence is not None:
+                    compact['policy_summary']=dict(origin=functional_evidence['origin'],clinical_authorized=False,
+                        policy_set_version=functional_evidence['policy_set_version'],
+                        catalog_concepts=[o['concept'] for o in functional_evidence['catalog']],
+                        stages=len(functional_evidence['stages']),stage_basis=functional_evidence['stage_basis'])
+                messages[1]['content']=json.dumps(compact,separators=(',',':'))
+                logger.info('analysis_prompt_compacted module=%s scope=IMMUTABLE_FINDING_ORDER_ONLY findings=%d',module,len(findings))
             schema = {"type": "json_schema", "json_schema": {"name": "finova_analytical_wording_v1", "strict": True,
                 "schema": {"type": "object", "properties": {"sections": {"type": "array", "items": {
                     "type": "object", "properties": {"section_id": {"type": "string"}, "text": {"type": "string"}},

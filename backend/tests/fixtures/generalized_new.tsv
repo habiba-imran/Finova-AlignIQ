@@ -1,0 +1,10 @@
+# SYNTHETIC CLIENT C — novel cross-arch values and combinations
+Tooth	Rotation (deg)	Angulation (deg)	Inclination (deg)	Vertical (mm)	Relative Ext / Int (mm)	Translation B / L (mm)	Translation M / D (mm)
+14	7.250 D	7.250 M	0.000	0.000	0.000	0.375 B	0.000
+22	0.000	0.000	12.345 L	0.000	0.000	0.000	0.000
+27	0.000	0.000	0.000	0.625 E	0.125 E	0.000	0.000
+33	-4.125 M	0.000	0.000	0.000	0.000	0.000	0.875 D
+35	0.000	9.875 D	0.500 B	0.250 I	0.000	0.375 L	0.000
+38	0.000	0.000	0.000	0.000	0.000	0.000	0.000
+42	1.375 D	0.250 M	6.875 B	0.000	0.000	0.125 B	0.500 M
+46	0.000	0.000	0.000	0.000	0.000	0.375 L	0.625 D

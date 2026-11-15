@@ -86,12 +86,12 @@ export function buildPdfPresentation(kind: PdfKind, input: unknown): PdfPresenta
                 return `${m.recognized_label}: ${m.signed_decimal ?? 'unknown'} ${m.unit ?? ''}${m.raw_direction ? ` (${m.raw_direction})` : ''}`
               }).join('\n')
               return [input.parsed.teeth.find(t => t.id === row.tooth_ref)!.raw_identifier.trim(), values,
-                row.primary ? CONCEPT_LABELS[row.primary] : 'No supported candidate', row.alternative ? CONCEPT_LABELS[row.alternative] : 'None supplied',
+                row.primary ? CONCEPT_LABELS[row.primary] : input.planning_context?.origin === 'INPUT_DRIVEN_POLICY_REVIEW' && row.outcome === 'INSUFFICIENT_INFORMATION' ? 'Insufficient information' : 'No supported candidate', row.alternative ? CONCEPT_LABELS[row.alternative] : 'None supplied',
                 input.analytical_findings!.find(f => f.finding_id === d.finding_id)!.text]
             }) })
           continue
         }
-        blocks.push(heading(section.title), text(sectionStatusLabel(section)), ...commentParagraphs(section.text).map(text))
+        blocks.push(heading(section.title), ...(input.planning_context?.origin === 'INPUT_DRIVEN_POLICY_REVIEW' ? [] : [text(sectionStatusLabel(section))]), ...commentParagraphs(section.text).map(text))
         if (section.missing_fields.length) blocks.push(text('Information needed: ' + section.missing_fields.join('; ') + '.'))
       }
       if (presentation.scope) blocks.push(heading('Report scope'), text(presentation.scope))

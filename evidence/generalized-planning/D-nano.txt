@@ -1,0 +1,452 @@
+FINOVA ALIGNIQ
+NANO — Generated synthetic review
+Synthetic demonstration — not for clinical use
+
+Standard report wording.
+Movement coordination and sequencing review. Successfully parsed with 3 missing values. 3 teeth; 6 measurement positions; 3 recorded numerical values; 3 missing or omitted; 0 invalid or ambiguous.
+
+MODULE REVIEW COMMENTS
+
+MOVEMENT PATTERNS AND REVIEW OUTLINE
+Status: SIMULATED_DEMO
+Lower-arch posterior: 1 tooth tokens, 1 available numerical entries across 2 positions. Review movement combinations within this token group.
+
+Upper-arch anterior: 2 tooth tokens, 2 available numerical entries across 4 positions. Review movement combinations within this token group.
+
+Angular component review — rotation: Tooth 12; upper-half boundary 2.750 deg (ties retained); source labels D: 1. Review the recorded components and confirm coordination where they overlap before assigning any actual stages. Alternative: Inspect these movement families separately; use explicit stage records for allocation checks.
+
+STAGE CONSISTENCY CHECKS
+Status: SIMULATED_DEMO
+Stage checks: 0 passed; 0 conflicting; 1 unavailable. Review outline only. Supply stage-bound amounts and compatible conventions for allocation checks.
+
+ILLUSTRATIVE ANCHORAGE REVIEW
+Status: SIMULATED_DEMO
+No supported phase-specific anchorage constraint is available. No anchorage strategy is inferred from total TMT values. Information needed: Explicit fictional phase, support group, active group and stationary-support assumption.
+
+SEQUENCING ASSUMPTIONS AND LIMITS
+Status: SIMULATED_DEMO
+Stages and amounts come only from supplied fictional records, never by dividing source totals. Stage grouping and arithmetic do not establish biological timing, forces, clinical staging limits or a validated treatment schedule.
+
+LIMITATIONS
+Source values, units, direction labels and FDI-style token grouping remain unverified. Missing values remain unknown, not zero.
+Independent illustration policies do not establish clinical suitability, safe movement limits, forces or a treatment prescription.
+
+SOURCE AND PROVENANCE
+Report ID: dd4dac869b5b5d5edb5e449f0bd43e8126a8a6e3d3b24269902620ba84217546
+Input SHA-256: 286aa60220d20e8ac663be902e85214067a95e8b37d286d43592b466c776c052
+Parser: 0.1.0; engine: 0.5.0; rules: 2.0.0-phase5
+Wording: STANDARD_TEMPLATES; status: GROQ_NOT_CONFIGURED; provider attempts: 0
+measurement-1; tooth_ref tooth-1; L3:C4-C11; offsets 87:94; PARSED; raw sign null; raw direction "D"; magnitude 2.750
+"Rotation (deg)": 2.750 deg; direction label "D". Original cell: "2.750 D".
+measurement-2; tooth_ref tooth-1; L3:C12-C13; offsets 95:96; MISSING; raw sign null; raw direction null; magnitude None
+"Vertical (mm)": missing; no numerical observation (unknown, not zero). Original cell: "—".
+measurement-3; tooth_ref tooth-2; L4:C4-C5; offsets 100:101; MISSING; raw sign null; raw direction null; magnitude None
+"Rotation (deg)": missing; no numerical observation (unknown, not zero). Original cell: "—".
+measurement-4; tooth_ref tooth-2; L4:C6-C10; offsets 102:106; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Vertical (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-5; tooth_ref tooth-3; L5:C4-C8; offsets 110:114; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Rotation (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-6; tooth_ref tooth-3; L5:C9-C9; offsets 115:115; MISSING; raw sign null; raw direction null; magnitude None
+"Vertical (mm)": missing; no numerical observation (unknown, not zero). Original cell: "".
+
+RULE EVALUATION LEDGER — CLINICAL AUTHORITY UNCHANGED
+A01 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+A02 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+A03 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+A04 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+A05 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+A06 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+D01 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D02 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D03 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D04 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D05 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D06 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D07 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D08 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D09 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D10 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D11 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D12 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D13 v2.0.0: CONTEXT_REQUIRED; execution ACTIVE; approval NOT APPLICABLE
+D14 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+D15 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D16 v2.0.0: CONTEXT_REQUIRED; execution DEFERRED; approval NOT APPLICABLE
+G01 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+G02 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G03 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G04 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G05 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G06 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+G07 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G08 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G09 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G10 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G11 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G12 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G13 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G14 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G15 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+G16 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+G17 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G18 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+H01 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H02 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H03 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H04 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H05 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H06 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H07 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H08 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H09 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H10 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+H11 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H12 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+L01 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+L02 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+L03 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+L04 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+L05 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+L06 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+N01 v2.0.0: CONTEXT_REQUIRED; execution ACTIVE; approval NOT APPLICABLE
+N02 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+N03 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+N04 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+N05 v2.0.0: CONTEXT_REQUIRED; execution ACTIVE; approval NOT APPLICABLE
+N06 v2.0.0: CONTEXT_REQUIRED; execution ACTIVE; approval NOT APPLICABLE
+N07 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+N08 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+N09 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+N10 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+N11 v2.0.0: CONTEXT_REQUIRED; execution DEFERRED; approval NOT APPLICABLE
+N12 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+N13 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+N14 v2.0.0: CONTEXT_REQUIRED; execution DEFERRED; approval NOT APPLICABLE
+R01 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R02 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R03 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R04 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R05 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R06 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R07 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R08 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R09 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R10 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R11 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R12 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R13 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R14 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+R15 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R16 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T01 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T02 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T03 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T04 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T05 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T06 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T07 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T08 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+
+ANALYTICAL FINDING PROVENANCE
+[
+  {
+    "finding_id": "F0001",
+    "section_id": "PHASES",
+    "kind": "REVIEW_REQUEST",
+    "text": "Lower-arch posterior: 1 tooth tokens, 1 available numerical entries across 2 positions. Review movement combinations within this token group.",
+    "source_refs": [
+      "measurement-5",
+      "measurement-6"
+    ],
+    "selected_refs": [
+      "measurement-5",
+      "measurement-6"
+    ],
+    "demo_rule": "DEMO-STAGE-INPUT-GROUPS-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0002",
+    "section_id": "PHASES",
+    "kind": "REVIEW_REQUEST",
+    "text": "Upper-arch anterior: 2 tooth tokens, 2 available numerical entries across 4 positions. Review movement combinations within this token group.",
+    "source_refs": [
+      "measurement-1",
+      "measurement-2",
+      "measurement-3",
+      "measurement-4"
+    ],
+    "selected_refs": [
+      "measurement-1",
+      "measurement-2",
+      "measurement-3",
+      "measurement-4"
+    ],
+    "demo_rule": "DEMO-STAGE-INPUT-GROUPS-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0003",
+    "section_id": "PHASES",
+    "kind": "REVIEW_REQUEST",
+    "text": "Angular component review — rotation: Tooth 12; upper-half boundary 2.750 deg (ties retained); source labels D: 1. Review the recorded components and confirm coordination where they overlap before assigning any actual stages. Alternative: Inspect these movement families separately; use explicit stage records for allocation checks.",
+    "source_refs": [
+      "measurement-1",
+      "measurement-5"
+    ],
+    "selected_refs": [
+      "measurement-1"
+    ],
+    "demo_rule": "DEMO-STAGE-INPUT-OUTLINE-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0004",
+    "section_id": "STAGE_CHECKS",
+    "kind": "INSUFFICIENT_INFORMATION",
+    "text": "Stage checks: 0 passed; 0 conflicting; 1 unavailable. Review outline only. Supply stage-bound amounts and compatible conventions for allocation checks.",
+    "source_refs": [],
+    "selected_refs": [],
+    "demo_rule": "DEMO-STAGE-CHECKS-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0005",
+    "section_id": "ANCHORAGE",
+    "kind": "INSUFFICIENT_INFORMATION",
+    "text": "No supported phase-specific anchorage constraint is available. No anchorage strategy is inferred from total TMT values. Information needed: Explicit fictional phase, support group, active group and stationary-support assumption.",
+    "source_refs": [],
+    "selected_refs": [],
+    "demo_rule": "DEMO-STAGE-SUPPORT-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0006",
+    "section_id": "SEQUENCE_SCOPE",
+    "kind": "INSUFFICIENT_INFORMATION",
+    "text": "Stages and amounts come only from supplied fictional records, never by dividing source totals. Stage grouping and arithmetic do not establish biological timing, forces, clinical staging limits or a validated treatment schedule.",
+    "source_refs": [],
+    "selected_refs": [],
+    "demo_rule": "DEMO-STAGE-SCOPE-v1",
+    "origin": "SIMULATED_DEMO"
+  }
+]
+
+INPUT-DRIVEN POLICY CONTEXT — NOT TMT FACTS
+{
+  "scenario_id": null,
+  "policy_version": "1.0.0",
+  "source_sha256": "286aa60220d20e8ac663be902e85214067a95e8b37d286d43592b466c776c052",
+  "module": "nano",
+  "origin": "INPUT_DRIVEN_POLICY_REVIEW",
+  "notation": "FDI",
+  "objectives": [],
+  "targets": [],
+  "attachment_options": [],
+  "phases": [],
+  "stage_value_basis": "UNSPECIFIED",
+  "support_constraints": []
+}
+
+SYNTHETIC POLICY DECISIONS — NO CLINICAL AUTHORIZATION
+{
+  "policy_set_version": "1.0.0",
+  "origin": "INDEPENDENT_SYNTHETIC_POLICIES",
+  "clinical_authorized": false,
+  "source_sha256": "286aa60220d20e8ac663be902e85214067a95e8b37d286d43592b466c776c052",
+  "decisions": [
+    {
+      "decision_id": "D0001",
+      "finding_id": "F0001",
+      "policy_id": "DEMO-STAGE-INPUT-GROUPS-v1",
+      "policy_version": "1.0.0",
+      "dimension": "PHASES",
+      "status": "REVIEW_REQUEST",
+      "tooth_refs": [
+        "tooth-3"
+      ],
+      "measurement_refs": [
+        "measurement-5",
+        "measurement-6"
+      ],
+      "context_refs": [],
+      "rationale": "Lower-arch posterior: 1 tooth tokens, 1 available numerical entries across 2 positions.",
+      "proposal": "Review movement combinations within this token group.",
+      "alternative": null,
+      "missing_fields": [],
+      "proposed_changes": [],
+      "attachment_primary": null,
+      "attachment_alternative": null
+    },
+    {
+      "decision_id": "D0002",
+      "finding_id": "F0002",
+      "policy_id": "DEMO-STAGE-INPUT-GROUPS-v1",
+      "policy_version": "1.0.0",
+      "dimension": "PHASES",
+      "status": "REVIEW_REQUEST",
+      "tooth_refs": [
+        "tooth-1",
+        "tooth-2"
+      ],
+      "measurement_refs": [
+        "measurement-1",
+        "measurement-2",
+        "measurement-3",
+        "measurement-4"
+      ],
+      "context_refs": [],
+      "rationale": "Upper-arch anterior: 2 tooth tokens, 2 available numerical entries across 4 positions.",
+      "proposal": "Review movement combinations within this token group.",
+      "alternative": null,
+      "missing_fields": [],
+      "proposed_changes": [],
+      "attachment_primary": null,
+      "attachment_alternative": null
+    },
+    {
+      "decision_id": "D0003",
+      "finding_id": "F0003",
+      "policy_id": "DEMO-STAGE-INPUT-OUTLINE-v1",
+      "policy_version": "1.0.0",
+      "dimension": "PHASES",
+      "status": "REVIEW_REQUEST",
+      "tooth_refs": [
+        "tooth-1",
+        "tooth-3"
+      ],
+      "measurement_refs": [
+        "measurement-1",
+        "measurement-5"
+      ],
+      "context_refs": [],
+      "rationale": "Angular component review — rotation: Tooth 12; upper-half boundary 2.750 deg (ties retained); source labels D: 1.",
+      "proposal": "Review the recorded components and confirm coordination where they overlap before assigning any actual stages.",
+      "alternative": "Inspect these movement families separately; use explicit stage records for allocation checks.",
+      "missing_fields": [],
+      "proposed_changes": [],
+      "attachment_primary": null,
+      "attachment_alternative": null
+    },
+    {
+      "decision_id": "D0004",
+      "finding_id": "F0004",
+      "policy_id": "DEMO-STAGE-CHECKS-v1",
+      "policy_version": "1.0.0",
+      "dimension": "STAGE_CHECKS",
+      "status": "INSUFFICIENT_INFORMATION",
+      "tooth_refs": [],
+      "measurement_refs": [],
+      "context_refs": [
+        "review_details",
+        "planning_context"
+      ],
+      "rationale": "Stage checks: 0 passed; 0 conflicting; 1 unavailable.",
+      "proposal": "Review outline only. Supply stage-bound amounts and compatible conventions for allocation checks.",
+      "alternative": null,
+      "missing_fields": [],
+      "proposed_changes": [],
+      "attachment_primary": null,
+      "attachment_alternative": null
+    },
+    {
+      "decision_id": "D0005",
+      "finding_id": "F0005",
+      "policy_id": "DEMO-STAGE-SUPPORT-v1",
+      "policy_version": "1.0.0",
+      "dimension": "ANCHORAGE",
+      "status": "INSUFFICIENT_INFORMATION",
+      "tooth_refs": [],
+      "measurement_refs": [],
+      "context_refs": [],
+      "rationale": "No supported phase-specific anchorage constraint is available.",
+      "proposal": "No anchorage strategy is inferred from total TMT values.",
+      "alternative": null,
+      "missing_fields": [
+        "Explicit fictional phase, support group, active group and stationary-support assumption"
+      ],
+      "proposed_changes": [],
+      "attachment_primary": null,
+      "attachment_alternative": null
+    },
+    {
+      "decision_id": "D0006",
+      "finding_id": "F0006",
+      "policy_id": "DEMO-STAGE-SCOPE-v1",
+      "policy_version": "1.0.0",
+      "dimension": "SEQUENCE_SCOPE",
+      "status": "INSUFFICIENT_INFORMATION",
+      "tooth_refs": [],
+      "measurement_refs": [],
+      "context_refs": [],
+      "rationale": "Stages and amounts come only from supplied fictional records, never by dividing source totals.",
+      "proposal": "Stage grouping and arithmetic do not establish biological timing, forces, clinical staging limits or a validated treatment schedule.",
+      "alternative": null,
+      "missing_fields": [],
+      "proposed_changes": [],
+      "attachment_primary": null,
+      "attachment_alternative": null
+    }
+  ],
+  "attachment_rows": [],
+  "stages": [],
+  "allocation_checks": [],
+  "checks": [
+    {
+      "code": "STAGE_DATA_NOT_SUPPLIED",
+      "status": "UNAVAILABLE",
+      "message": "Review outline only. Supply stage-bound amounts and compatible conventions for allocation checks.",
+      "source_refs": []
+    }
+  ],
+  "review_outline": [
+    {
+      "outline_id": "R1",
+      "title": "Angular component review",
+      "purpose": "Inspection topic only; no treatment stage, count, duration or allocation is generated.",
+      "tooth_refs": [
+        "tooth-1"
+      ],
+      "measurement_refs": [
+        "measurement-1"
+      ],
+      "decision_id": "D0003",
+      "origin": "ILLUSTRATIVE_REVIEW_OUTLINE",
+      "stage_allocations_generated": false
+    }
+  ]
+}
+
+USER REVIEW OPTIONS — SOURCE-BOUND, NO CLINICAL AUTHORITY
+{
+  "policy_mode": "SYNTHETIC_REVIEW",
+  "source_sha256": null,
+  "objectives": [],
+  "source_convention": "UNSPECIFIED",
+  "illustration": "NONE",
+  "illustration_measurement_ref": null,
+  "targets": [],
+  "attachment_options": [],
+  "catalog_policy": "CONCEPTS_WITH_SUPPLIED_SPECS",
+  "phases": [],
+  "stage_value_basis": "UNSPECIFIED",
+  "support_constraints": []
+}
+
+SUPPLIED REVIEW DETAILS — UNVERIFIED
+{
+  "attachments": [],
+  "stages": [],
+  "allocations": [],
+  "anchorage_notes": []
+}
+
+ORIGINAL INPUT — VERBATIM
+# SYNTHETIC CLIENT D — missing cells are unknown
+Tooth	Rotation (deg)	Vertical (mm)
+12	2.750 D	—
+23	—	0.00
+34	0.00	
+
+
+Synthetic demonstration — not for clinical use

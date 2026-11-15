@@ -37,7 +37,7 @@ class Engine:
             raise ValueError('FUNCTIONAL_CONTEXT_SOURCE_MISMATCH')
         if c.module != submission.module:
             raise ValueError('FUNCTIONAL_CONTEXT_MODULE_MISMATCH')
-        if (parsed.source.context.plan_mode == 'COMPARISON' or
+        if (parsed.source.context.plan_mode == 'COMPARISON' and not getattr(self,'comparison_review_only',False) or
             c.notation == 'FDI' and parsed.source.context.notation not in {'UNKNOWN','FDI'}):
             raise ValueError('FUNCTIONAL_CONTEXT_INVALID')
         if len(set(c.objectives)) != len(c.objectives) or len({o.concept for o in c.attachment_options}) != len(c.attachment_options):
@@ -339,4 +339,6 @@ class Engine:
 
 
 def functional_review(parsed,submission):
+    if submission.planning_context.origin != 'EXPLICIT_SYNTHETIC_SCENARIO':
+        raise ValueError('FUNCTIONAL_CONTEXT_INVALID')
     return Engine(parsed,submission).run()

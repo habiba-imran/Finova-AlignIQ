@@ -1,0 +1,99 @@
+
+> finova-aligniq-frontend@0.0.0 test:e2e
+> playwright test --config=playwright.audit.config.ts --project=desktop --project=mobile --workers=2 e2e/generalized-planning.spec.ts --grep Macro context|Micro uses|Nano accepts
+
+[WebServer] INFO:     Started server process [15800]
+[WebServer] INFO:     Waiting for application startup.
+[WebServer] INFO:     Application startup complete.
+[WebServer] INFO:     Uvicorn running on http://127.0.0.1:8019 (Press CTRL+C to quit)
+[WebServer] (node:25920) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:17784) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 6 tests using 2 workers
+
+(node:29232) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:10360) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 2 [mobile] › e2e\generalized-planning.spec.ts:121:1 › Macro context creates an explicit arithmetic example and removing context suppresses it (18.8s)
+  ok 1 [desktop] › e2e\generalized-planning.spec.ts:121:1 › Macro context creates an explicit arithmetic example and removing context suppresses it (18.8s)
+  x  4 [desktop] › e2e\generalized-planning.spec.ts:155:1 › Micro uses supplied geometry and removes it when its specification is removed (1.5m)
+  x  3 [mobile] › e2e\generalized-planning.spec.ts:155:1 › Micro uses supplied geometry and removes it when its specification is removed (1.5m)
+(node:3988) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:20256) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 5 [mobile] › e2e\generalized-planning.spec.ts:181:1 › Nano accepts supplied stages and support roles; removing a stage withholds dependent strategies (7.5s)
+  ok 6 [desktop] › e2e\generalized-planning.spec.ts:181:1 › Nano accepts supplied stages and support roles; removing a stage withholds dependent strategies (7.6s)
+
+
+  1) [desktop] › e2e\generalized-planning.spec.ts:155:1 › Micro uses supplied geometry and removes it when its specification is removed 
+
+    Test timeout of 90000ms exceeded.
+
+    Error: locator.click: Test timeout of 90000ms exceeded.
+    Call log:
+      - waiting for locator('summary').filter({ hasText: 'Planning context' })
+
+
+      159 |   await page.getByRole('button', { name: 'Parse Table', exact: true }).click()
+      160 |   await page.getByRole('button', { name: /MICRO/ }).click()
+    > 161 |   await page.locator('summary').filter({ hasText: 'Planning context' }).click()
+          |                                                                         ^
+      162 |   await page.getByText('Supplied catalog specifications', { exact: true }).click()
+      163 |   await page.getByRole('combobox', { name: 'Catalog category', exact: true }).selectOption('OVAL')
+      164 |   await page.getByLabel('Width (mm)', { exact: true }).fill('1.234')
+        at C:\Finova AlignIQ\frontend\e2e\generalized-planning.spec.ts:161:73
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\generalized-planning-Micro-1d606-ts-specification-is-removed-desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\generalized-planning-Micro-1d606-ts-specification-is-removed-desktop\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\generalized-planning-Micro-1d606-ts-specification-is-removed-desktop\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\generalized-planning-Micro-1d606-ts-specification-is-removed-desktop\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [mobile] › e2e\generalized-planning.spec.ts:155:1 › Micro uses supplied geometry and removes it when its specification is removed 
+
+    Test timeout of 90000ms exceeded.
+
+    Error: locator.click: Test timeout of 90000ms exceeded.
+    Call log:
+      - waiting for locator('summary').filter({ hasText: 'Planning context' })
+
+
+      159 |   await page.getByRole('button', { name: 'Parse Table', exact: true }).click()
+      160 |   await page.getByRole('button', { name: /MICRO/ }).click()
+    > 161 |   await page.locator('summary').filter({ hasText: 'Planning context' }).click()
+          |                                                                         ^
+      162 |   await page.getByText('Supplied catalog specifications', { exact: true }).click()
+      163 |   await page.getByRole('combobox', { name: 'Catalog category', exact: true }).selectOption('OVAL')
+      164 |   await page.getByLabel('Width (mm)', { exact: true }).fill('1.234')
+        at C:\Finova AlignIQ\frontend\e2e\generalized-planning.spec.ts:161:73
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\generalized-planning-Micro-1d606-ts-specification-is-removed-mobile\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\generalized-planning-Micro-1d606-ts-specification-is-removed-mobile\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\generalized-planning-Micro-1d606-ts-specification-is-removed-mobile\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\generalized-planning-Micro-1d606-ts-specification-is-removed-mobile\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2 failed
+    [desktop] › e2e\generalized-planning.spec.ts:155:1 › Micro uses supplied geometry and removes it when its specification is removed 
+    [mobile] › e2e\generalized-planning.spec.ts:155:1 › Micro uses supplied geometry and removes it when its specification is removed 
+  4 passed (2.2m)

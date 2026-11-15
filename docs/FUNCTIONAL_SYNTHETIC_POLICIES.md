@@ -1,5 +1,10 @@
 # Independent functional demonstration policies, version 1.0.0
 
+The normal client workflow now uses the reusable input-driven policies in
+[GENERALIZED_REVIEW_POLICIES.md](GENERALIZED_REVIEW_POLICIES.md), without loading
+an example. The policies below describe the retained explicit-context/example
+path and its regression fixtures.
+
 These are original software demonstration policies, not validated orthodontic
 rules or reconstructions of PMCEASY internals. Their results always have
 `clinical_authorized=false`, origin `INDEPENDENT_SYNTHETIC_POLICIES` and an explicit

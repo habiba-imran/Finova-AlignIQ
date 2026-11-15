@@ -87,11 +87,11 @@ class SupportConstraint(ScenarioContract):
 
 
 class FunctionalContext(ScenarioContract):
-    scenario_id: str = Field(pattern=r'^[a-zA-Z0-9_-]{1,60}$')
+    scenario_id: str | None = Field(default=None, pattern=r'^[a-zA-Z0-9_-]{1,60}$')
     policy_version: Literal['1.0.0'] = '1.0.0'
     source_sha256: Digest
     module: Literal['macro', 'micro', 'nano']
-    origin: Literal['EXPLICIT_SYNTHETIC_SCENARIO'] = 'EXPLICIT_SYNTHETIC_SCENARIO'
+    origin: Literal['EXPLICIT_SYNTHETIC_SCENARIO','INPUT_DRIVEN_POLICY_REVIEW'] = 'EXPLICIT_SYNTHETIC_SCENARIO'
     notation: Literal['FDI', 'UNVERIFIED'] = 'UNVERIFIED'
     objectives: list[Literal['REDISTRIBUTE_TRANSLATIONS', 'ANGULAR_CONTROL', 'VERTICAL_REVIEW', 'STAGE_REVIEW']] = Field(default_factory=list, max_length=4)
     targets: list[MovementTarget] = Field(default_factory=list, max_length=64)
@@ -100,6 +100,28 @@ class FunctionalContext(ScenarioContract):
     stage_value_basis: Literal['UNSPECIFIED', 'INCREMENTS_MATCH_SOURCE_LABELS'] = 'UNSPECIFIED'
     support_constraints: list[SupportConstraint] = Field(default_factory=list, max_length=16)
 
+    @model_validator(mode='after')
+    def context_origin(self):
+        if (self.origin == 'EXPLICIT_SYNTHETIC_SCENARIO') != (self.scenario_id is not None):
+            raise ValueError('Scenario identifiers belong only to explicitly loaded examples')
+        return self
+
+
+class PlanningOptions(ScenarioContract):
+    """Reusable review settings; never a fixture identifier or clinical approval."""
+    policy_mode: Literal['SYNTHETIC_REVIEW','EVIDENCE_REVIEW'] = 'SYNTHETIC_REVIEW'
+    source_sha256: Digest | None = None
+    objectives: list[Literal['REDISTRIBUTE_TRANSLATIONS','ANGULAR_CONTROL','VERTICAL_REVIEW','STAGE_REVIEW']] = Field(default_factory=list,max_length=4)
+    source_convention: Literal['UNSPECIFIED','SOURCE_LABELS_AS_RECORDED'] = 'UNSPECIFIED'
+    illustration: Literal['NONE','HALF_MAGNITUDE'] = 'NONE'
+    illustration_measurement_ref: str | None = Field(default=None,max_length=80)
+    targets: list[MovementTarget] = Field(default_factory=list,max_length=64)
+    attachment_options: list[AttachmentOption] = Field(default_factory=list,max_length=6)
+    catalog_policy: Literal['CONCEPTS_WITH_SUPPLIED_SPECS','SUPPLIED_OPTIONS_ONLY'] = 'CONCEPTS_WITH_SUPPLIED_SPECS'
+    phases: list[Phase] = Field(default_factory=list,max_length=16)
+    stage_value_basis: Literal['UNSPECIFIED','INCREMENTS_MATCH_SOURCE_LABELS'] = 'UNSPECIFIED'
+    support_constraints: list[SupportConstraint] = Field(default_factory=list,max_length=16)
+
 
 class Decision(Contract):
     decision_id: str
@@ -107,7 +129,7 @@ class Decision(Contract):
     policy_id: str
     policy_version: Literal['1.0.0'] = '1.0.0'
     dimension: str
-    status: Literal['ILLUSTRATIVE_PROPOSAL', 'INSUFFICIENT_INFORMATION', 'NOT_APPLICABLE', 'CONFLICT']
+    status: Literal['ILLUSTRATIVE_PROPOSAL', 'REVIEW_REQUEST', 'INSUFFICIENT_INFORMATION', 'NOT_APPLICABLE', 'CONFLICT']
     tooth_refs: list[str]
     measurement_refs: list[str]
     context_refs: list[str]
@@ -126,7 +148,7 @@ class Candidate(Contract):
     movement_refs: list[str]
     primary: Concept | None
     alternative: Concept | None
-    outcome: Literal['CANDIDATE', 'NO_ATTACHMENT', 'INSUFFICIENT_INFORMATION']
+    outcome: Literal['CANDIDATE', 'NO_ATTACHMENT', 'NO_CANDIDATE', 'INSUFFICIENT_INFORMATION']
     missing_fields: list[str]
 
 
@@ -162,6 +184,17 @@ class AllocationCheck(Contract):
     status: Literal['MATCH', 'MISMATCH', 'UNAVAILABLE', 'NOT_COMPARABLE']
 
 
+class ReviewOutline(Contract):
+    outline_id: str
+    title: str
+    purpose: str
+    tooth_refs: list[str]
+    measurement_refs: list[str]
+    decision_id: str
+    origin: Literal['ILLUSTRATIVE_REVIEW_OUTLINE'] = 'ILLUSTRATIVE_REVIEW_OUTLINE'
+    stage_allocations_generated: Literal[False] = False
+
+
 class FunctionalPlan(Contract):
     policy_set_version: Literal['1.0.0'] = '1.0.0'
     origin: Literal['INDEPENDENT_SYNTHETIC_POLICIES'] = 'INDEPENDENT_SYNTHETIC_POLICIES'
@@ -172,3 +205,4 @@ class FunctionalPlan(Contract):
     stages: list[StageRow] = Field(default_factory=list)
     allocation_checks: list[AllocationCheck] = Field(default_factory=list)
     checks: list[PlanCheck] = Field(default_factory=list)
+    review_outline: list[ReviewOutline] = Field(default_factory=list)

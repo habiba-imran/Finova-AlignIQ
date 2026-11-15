@@ -2,8 +2,10 @@ import { isParseResult } from './parse'
 import type { ContextClaims, Measurement, ParseResult } from './parse'
 import { isDraftReview } from './review'
 import type { DraftReview } from './review'
-import { FUNCTIONAL_SECTIONS, isFunctionalContext, isFunctionalPlan } from './functional'
+import { functionalSectionTitles, isFunctionalContext, isFunctionalPlan } from './functional'
 import type { FunctionalContext, FunctionalPlan } from './functional'
+import { isPlanningOptions } from './planningOptions'
+import type { PlanningOptions } from './planningOptions'
 
 export type DemoModule = 'macro' | 'micro' | 'nano'
 export interface AttachmentDetail {
@@ -48,6 +50,7 @@ export interface InteractiveReport {
   report_format?: 'MOVEMENT_PROFILE_V1' | 'MODULE_SPECIFIC_V1' | 'ANALYTICAL_V1' | 'FUNCTIONAL_DEMO_V1'
   planning_context?: FunctionalContext | null
   functional_plan?: FunctionalPlan | null
+  planning_options?: PlanningOptions | null
   analytical_findings?: AnalyticalFinding[]
   sections?: ModuleSection[]
   review_details?: ReviewDetails
@@ -87,13 +90,14 @@ export function isInteractiveReport(v: unknown): v is InteractiveReport {
       observed.push(m.id); return true
     })
   }) || new Set(observed).size !== observed.length || observed.length !== parsed.measurements.length) return false
-  if (v.report_format !== 'FUNCTIONAL_DEMO_V1' && (v.planning_context != null || v.functional_plan != null)) return false
+  if (v.report_format !== 'FUNCTIONAL_DEMO_V1' && (v.planning_context != null || v.functional_plan != null || v.planning_options != null)) return false
   if (v.report_format === 'ANALYTICAL_V1' || v.report_format === 'FUNCTIONAL_DEMO_V1') {
     const functional = v.report_format === 'FUNCTIONAL_DEMO_V1'
     if (v.illustrations.length || !Array.isArray(v.sections) || !isReviewDetails(v.review_details)
       || !functional && Object.values(v.review_details).some(rows => rows.length) || !Array.isArray(v.analytical_findings)
       || v.generation.output_validation !== 'GROUNDED_ANALYTICAL_WORDING_V1') return false
-    const expected = (functional ? FUNCTIONAL_SECTIONS : ANALYTICAL_SECTIONS)[v.module as DemoModule] as Record<string, string>
+    if (functional && (!isFunctionalContext(v.planning_context) || !obj(v.functional_plan) || !Array.isArray(v.functional_plan.stages))) return false
+    const expected = functional ? functionalSectionTitles(v.module as DemoModule, v.planning_context as FunctionalContext, v.review_details, v.functional_plan as unknown as FunctionalPlan) : ANALYTICAL_SECTIONS[v.module as DemoModule] as Record<string, string>
     const knownRefs = new Set(parsed.measurements.map(m => m.id)), ids = new Set<string>()
     if (v.sections.length !== Object.keys(expected).length) return false
     if (!v.analytical_findings.every(f => {
@@ -108,6 +112,9 @@ export function isInteractiveReport(v: unknown): v is InteractiveReport {
     const findings = v.analytical_findings as AnalyticalFinding[], seen = new Set<string>()
     if (functional && (!isFunctionalContext(v.planning_context) || v.planning_context.module !== v.module
       || !isFunctionalPlan(v.functional_plan, v.planning_context, parsed, v.review_details, findings))) return false
+    if (functional && (v.planning_context as FunctionalContext).origin === 'INPUT_DRIVEN_POLICY_REVIEW'
+      && (!isPlanningOptions(v.planning_options) || v.planning_options.source_sha256 !== null && v.planning_options.source_sha256 !== parsed.raw_sha256)) return false
+    if (functional && (v.planning_context as FunctionalContext).origin === 'EXPLICIT_SYNTHETIC_SCENARIO' && v.planning_options != null) return false
     if (!functional && (v.planning_context != null || v.functional_plan != null)) return false
     return v.sections.every(s => {
       if (!obj(s) || !str(s.section_id) || seen.has(s.section_id) || s.title !== expected[s.section_id]
@@ -181,13 +188,14 @@ function isReviewDetails(value: unknown): value is ReviewDetails {
     && (value.anchorage_notes as unknown[]).length <= 32 && (value.anchorage_notes as unknown[]).every(row => exact(row, ['tooth_ref', 'note']) && text(row.tooth_ref, 80) && str(row.note) && row.note.trim().length > 0 && row.note.length <= 240)
 }
 
-export async function requestInteractiveReview(module: DemoModule, rawText: string, context: ContextClaims, hash: string, receipt: string | null | undefined, signal: AbortSignal, details: ReviewDetails = emptyReviewDetails(), planningContext: FunctionalContext | null = null): Promise<InteractiveReport> {
+export async function requestInteractiveReview(module: DemoModule, rawText: string, context: ContextClaims, hash: string, receipt: string | null | undefined, signal: AbortSignal, details: ReviewDetails = emptyReviewDetails(), planningContext: FunctionalContext | null = null, planningOptions: PlanningOptions | null = null): Promise<InteractiveReport> {
   const supplied = module === 'micro' ? { ...emptyReviewDetails(), attachments: details.attachments } : module === 'nano' ? { ...details, attachments: [] } : emptyReviewDetails()
   if (!isReviewDetails(supplied)) throw new Error('DETAILS_ERROR:' + (module === 'micro'
     ? 'Check attachment details. Use decimal numbers for dimensions in mm, or leave unknown dimensions blank.'
     : 'Check sequencing details. Stage IDs and positive whole-number orders are required; durations need whole days, amounts need decimal numbers and units, and anchorage notes need text.'))
+  if (planningOptions && !isPlanningOptions(planningOptions)) throw new Error('DETAILS_ERROR:Check the optional planning values and use complete decimal dimensions or leave them unknown.')
   const response = await fetch('/api/v1/interactive/review', { method: 'POST', headers: { 'Content-Type': 'application/json' }, signal,
-    body: JSON.stringify({ module, raw_text: rawText, raw_sha256: hash, source_claim: 'Unknown', context, synthetic_data_confirmed: true, ...(planningContext ? { planning_context: planningContext } : {}), ...(Object.values(supplied).some(rows => rows.length) ? { review_details: supplied } : {}), ...(receipt ? { recovery_receipt: receipt } : {}) }) })
+    body: JSON.stringify({ module, raw_text: rawText, raw_sha256: hash, source_claim: 'Unknown', context, synthetic_data_confirmed: true, ...(planningContext ? { planning_context: planningContext } : planningOptions ? { planning_options: planningOptions } : {}), ...(Object.values(supplied).some(rows => rows.length) ? { review_details: supplied } : {}), ...(receipt ? { recovery_receipt: receipt } : {}) }) })
   if (!response.ok) {
     if (response.status === 422) {
       const error = await response.json().catch(() => null)
@@ -204,6 +212,7 @@ export async function requestInteractiveReview(module: DemoModule, rawText: stri
         ANCHORAGE_REFERENCE_INVALID: 'Enter text for every anchorage note and choose a current tooth or the overall plan.',
       }
       if (error?.detail in messages) throw new Error('DETAILS_ERROR:' + messages[error.detail])
+      if (planningOptions && Array.isArray(error?.detail)) throw new Error('DETAILS_ERROR:Check the optional context: complete decimal values, source references and unique stage IDs are required.')
     }
     throw new Error(response.status === 409 ? 'REPARSE_REQUIRED' : response.status === 422 ? 'PARSE_REQUIRED' : 'REVIEW_UNAVAILABLE')
   }
@@ -212,7 +221,9 @@ export async function requestInteractiveReview(module: DemoModule, rawText: stri
   if (data.report_format === 'MODULE_SPECIFIC_V1' || data.report_format === 'ANALYTICAL_V1' || data.report_format === 'FUNCTIONAL_DEMO_V1') {
     const canonical = (v: unknown): string => JSON.stringify(v, (_key, item: unknown) => obj(item) ? Object.fromEntries(Object.entries(item).sort(([a], [b]) => a.localeCompare(b))) : item)
     if (canonical(data.review_details) !== canonical(supplied)) throw new Error('INVALID_RESPONSE')
-    if (canonical(data.planning_context ?? null) !== canonical(planningContext)) throw new Error('INVALID_RESPONSE')
+    if (data.planning_context?.origin === 'INPUT_DRIVEN_POLICY_REVIEW') {
+      if (!planningOptions || planningContext || canonical(data.planning_options) !== canonical(planningOptions)) throw new Error('INVALID_RESPONSE')
+    } else if (canonical(data.planning_context ?? null) !== canonical(planningContext)) throw new Error('INVALID_RESPONSE')
   }
   return data
 }
