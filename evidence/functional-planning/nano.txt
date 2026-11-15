@@ -1,0 +1,1376 @@
+FINOVA ALIGNIQ
+NANO — Generated synthetic review
+Synthetic demonstration — not for clinical use
+
+Standard report wording.
+TMT-based sequencing review: movement context, translations and vertical movements. Successfully parsed with 0 missing values. 8 teeth; 56 measurement positions; 56 recorded numerical values; 0 missing or omitted; 0 invalid or ambiguous.
+
+MODULE REVIEW COMMENTS
+
+ORDERED PHASES AND MOVEMENTS
+Status: SIMULATED_DEMO
+Phase P1, stage S1 (supplied order 1); Upper-arch anterior; buccolingual. Supplied stage movements: Tooth 11: 0.40 mm; source label L. Stage-group sum: 0.40 mm.
+
+Phase P1, stage S1 (supplied order 1); Upper-arch anterior; vertical. Supplied stage movements: Tooth 21: 0.20 mm; source label I. Stage-group sum: 0.20 mm.
+
+Phase P1, stage S1 (supplied order 1); Lower-arch anterior; mesiodistal. Supplied stage movements: Tooth 31: 0.50 mm; source label D. Stage-group sum: 0.50 mm.
+
+Phase P1, stage S1 (supplied order 1); Upper-arch posterior; rotation. Supplied stage movements: Tooth 16: 0.00 deg. Stage-group sum: 0.00 deg.
+
+Phase P1, stage S1 (supplied order 1); Lower-arch posterior; rotation. Supplied stage movements: Tooth 36: 0.00 deg. Stage-group sum: 0.00 deg.
+
+Phase P2, stage S2 (supplied order 2); Upper-arch anterior; buccolingual. Supplied stage movements: Tooth 11: 0.60 mm; source label L. Stage-group sum: 0.60 mm.
+
+Phase P2, stage S2 (supplied order 2); Upper-arch anterior; vertical. Supplied stage movements: Tooth 21: 0.40 mm; source label I. Stage-group sum: 0.40 mm.
+
+Phase P2, stage S2 (supplied order 2); Lower-arch anterior; mesiodistal. Supplied stage movements: Tooth 31: 0.70 mm; source label D. Stage-group sum: 0.70 mm.
+
+Phase P2, stage S2 (supplied order 2); Upper-arch posterior; rotation. Supplied stage movements: Tooth 26: 0.00 deg. Stage-group sum: 0.00 deg.
+
+Phase P3, stage S3 (supplied order 3); Upper-arch anterior; rotation. Supplied stage movements: Tooth 11: 2.00 deg; source label D. Stage-group sum: 2.00 deg.
+
+Phase P3, stage S3 (supplied order 3); Lower-arch anterior; angulation. Supplied stage movements: Tooth 41: 1.00 deg; source label M. Stage-group sum: 1.00 deg.
+
+Phase P3, stage S3 (supplied order 3); Lower-arch posterior; rotation. Supplied stage movements: Tooth 46: 0.00 deg. Stage-group sum: 0.00 deg.
+
+STAGE CONSISTENCY CHECKS
+Status: SIMULATED_DEMO
+Stage checks: 1 passed; 0 conflicting; 0 unavailable. Stage IDs, order, references, phase membership and supplied allocation totals agree with the declared source convention.
+
+ILLUSTRATIVE ANCHORAGE REVIEW
+Status: SIMULATED_DEMO
+Phase P1: scenario-supplied support teeth 16, 36; active teeth 11, 21, 31. Illustrative support strategy: track the supplied support group while reviewing the assigned active movements. Stationary support is a fictional assumption, not a finding inferred from missing assignments. No force or clinical anchorage prescription is calculated. Alternative: Review a different explicitly supplied support grouping before accepting this fictional sequence.
+
+Phase P2: scenario-supplied support teeth 26; active teeth 11, 21, 31. Illustrative support strategy: track the supplied support group while reviewing the assigned active movements. Stationary support is a fictional assumption, not a finding inferred from missing assignments. No force or clinical anchorage prescription is calculated. Alternative: Review a different explicitly supplied support grouping before accepting this fictional sequence.
+
+Phase P3: scenario-supplied support teeth 46; active teeth 11, 41. Illustrative support strategy: track the supplied support group while reviewing the assigned active movements. Stationary support is a fictional assumption, not a finding inferred from missing assignments. No force or clinical anchorage prescription is calculated. Alternative: Review a different explicitly supplied support grouping before accepting this fictional sequence.
+
+SEQUENCING ASSUMPTIONS AND LIMITS
+Status: SIMULATED_DEMO
+Stages and amounts come only from supplied fictional records, never by dividing source totals. Stage grouping and arithmetic do not establish biological timing, forces, clinical staging limits or a validated treatment schedule.
+
+LIMITATIONS
+Values describe the parsed source only. Tooth tokens, axes, directions, units and source conventions are not independently clinically verified.
+Missing, omitted, invalid and ambiguous values remain unknown; explicit zero applies only to its recorded cell. No achieved movement, suitability or safety conclusion is inferred.
+Clinical attachment, staging, anchorage, force, timing, diagnosis and treatment predicates remain unevaluated. No clinical approval is recorded.
+
+SOURCE AND PROVENANCE
+Report ID: 3a468b4457eb5d0de47feb5d0ab43fdf47b92b0f00e354b87411e926902d5365
+Input SHA-256: 05f351da882789101d63f8ab3267e1829bc3860a44e29da6332d80d5caa75623
+Parser: 0.1.0; engine: 0.5.0; rules: 2.0.0-phase5
+Wording: STANDARD_TEMPLATES; status: GROQ_NOT_CONFIGURED; provider attempts: 0
+measurement-1; tooth_ref tooth-1; L3:C4-C10; offsets 189:195; PARSED; raw sign null; raw direction "D"; magnitude 2.00
+"Rotation (deg)": 2.00 deg; direction label "D". Original cell: "2.00 D".
+measurement-2; tooth_ref tooth-1; L3:C11-C15; offsets 196:200; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Angulation (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-3; tooth_ref tooth-1; L3:C16-C20; offsets 201:205; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Inclination (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-4; tooth_ref tooth-1; L3:C21-C25; offsets 206:210; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Vertical (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-5; tooth_ref tooth-1; L3:C26-C30; offsets 211:215; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Relative Ext / Int (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-6; tooth_ref tooth-1; L3:C31-C37; offsets 216:222; PARSED; raw sign null; raw direction "L"; magnitude 1.00
+"Translation B / L (mm)": 1.00 mm; direction label "L". Original cell: "1.00 L".
+measurement-7; tooth_ref tooth-1; L3:C38-C42; offsets 223:227; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Translation M / D (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-8; tooth_ref tooth-2; L4:C4-C8; offsets 231:235; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Rotation (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-9; tooth_ref tooth-2; L4:C9-C13; offsets 236:240; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Angulation (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-10; tooth_ref tooth-2; L4:C14-C18; offsets 241:245; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Inclination (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-11; tooth_ref tooth-2; L4:C19-C25; offsets 246:252; PARSED; raw sign null; raw direction "I"; magnitude 0.60
+"Vertical (mm)": 0.60 mm; direction label "I". Original cell: "0.60 I".
+measurement-12; tooth_ref tooth-2; L4:C26-C30; offsets 253:257; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Relative Ext / Int (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-13; tooth_ref tooth-2; L4:C31-C35; offsets 258:262; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Translation B / L (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-14; tooth_ref tooth-2; L4:C36-C40; offsets 263:267; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Translation M / D (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-15; tooth_ref tooth-3; L5:C4-C8; offsets 271:275; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Rotation (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-16; tooth_ref tooth-3; L5:C9-C13; offsets 276:280; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Angulation (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-17; tooth_ref tooth-3; L5:C14-C18; offsets 281:285; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Inclination (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-18; tooth_ref tooth-3; L5:C19-C23; offsets 286:290; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Vertical (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-19; tooth_ref tooth-3; L5:C24-C28; offsets 291:295; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Relative Ext / Int (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-20; tooth_ref tooth-3; L5:C29-C33; offsets 296:300; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Translation B / L (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-21; tooth_ref tooth-3; L5:C34-C38; offsets 301:305; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Translation M / D (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-22; tooth_ref tooth-4; L6:C4-C8; offsets 309:313; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Rotation (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-23; tooth_ref tooth-4; L6:C9-C13; offsets 314:318; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Angulation (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-24; tooth_ref tooth-4; L6:C14-C18; offsets 319:323; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Inclination (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-25; tooth_ref tooth-4; L6:C19-C23; offsets 324:328; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Vertical (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-26; tooth_ref tooth-4; L6:C24-C28; offsets 329:333; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Relative Ext / Int (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-27; tooth_ref tooth-4; L6:C29-C33; offsets 334:338; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Translation B / L (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-28; tooth_ref tooth-4; L6:C34-C38; offsets 339:343; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Translation M / D (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-29; tooth_ref tooth-5; L7:C4-C8; offsets 347:351; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Rotation (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-30; tooth_ref tooth-5; L7:C9-C13; offsets 352:356; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Angulation (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-31; tooth_ref tooth-5; L7:C14-C18; offsets 357:361; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Inclination (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-32; tooth_ref tooth-5; L7:C19-C23; offsets 362:366; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Vertical (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-33; tooth_ref tooth-5; L7:C24-C28; offsets 367:371; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Relative Ext / Int (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-34; tooth_ref tooth-5; L7:C29-C33; offsets 372:376; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Translation B / L (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-35; tooth_ref tooth-5; L7:C34-C40; offsets 377:383; PARSED; raw sign null; raw direction "D"; magnitude 1.20
+"Translation M / D (mm)": 1.20 mm; direction label "D". Original cell: "1.20 D".
+measurement-36; tooth_ref tooth-6; L8:C4-C8; offsets 387:391; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Rotation (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-37; tooth_ref tooth-6; L8:C9-C15; offsets 392:398; PARSED; raw sign null; raw direction "M"; magnitude 1.00
+"Angulation (deg)": 1.00 deg; direction label "M". Original cell: "1.00 M".
+measurement-38; tooth_ref tooth-6; L8:C16-C20; offsets 399:403; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Inclination (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-39; tooth_ref tooth-6; L8:C21-C25; offsets 404:408; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Vertical (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-40; tooth_ref tooth-6; L8:C26-C30; offsets 409:413; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Relative Ext / Int (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-41; tooth_ref tooth-6; L8:C31-C35; offsets 414:418; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Translation B / L (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-42; tooth_ref tooth-6; L8:C36-C40; offsets 419:423; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Translation M / D (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-43; tooth_ref tooth-7; L9:C4-C8; offsets 427:431; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Rotation (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-44; tooth_ref tooth-7; L9:C9-C13; offsets 432:436; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Angulation (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-45; tooth_ref tooth-7; L9:C14-C18; offsets 437:441; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Inclination (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-46; tooth_ref tooth-7; L9:C19-C23; offsets 442:446; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Vertical (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-47; tooth_ref tooth-7; L9:C24-C28; offsets 447:451; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Relative Ext / Int (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-48; tooth_ref tooth-7; L9:C29-C33; offsets 452:456; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Translation B / L (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-49; tooth_ref tooth-7; L9:C34-C38; offsets 457:461; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Translation M / D (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-50; tooth_ref tooth-8; L10:C4-C8; offsets 465:469; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Rotation (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-51; tooth_ref tooth-8; L10:C9-C13; offsets 470:474; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Angulation (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-52; tooth_ref tooth-8; L10:C14-C18; offsets 475:479; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Inclination (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-53; tooth_ref tooth-8; L10:C19-C23; offsets 480:484; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Vertical (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-54; tooth_ref tooth-8; L10:C24-C28; offsets 485:489; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Relative Ext / Int (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-55; tooth_ref tooth-8; L10:C29-C33; offsets 490:494; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Translation B / L (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-56; tooth_ref tooth-8; L10:C34-C38; offsets 495:499; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Translation M / D (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+
+RULE EVALUATION LEDGER — CLINICAL AUTHORITY UNCHANGED
+A01 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+A02 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+A03 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+A04 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+A05 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+A06 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+D01 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D02 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D03 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D04 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D05 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D06 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D07 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D08 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D09 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D10 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D11 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D12 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D13 v2.0.0: CONTEXT_REQUIRED; execution ACTIVE; approval NOT APPLICABLE
+D14 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+D15 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D16 v2.0.0: CONTEXT_REQUIRED; execution DEFERRED; approval NOT APPLICABLE
+G01 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+G02 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G03 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G04 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G05 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G06 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+G07 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G08 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+G09 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G10 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+G11 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G12 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G13 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G14 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G15 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+G16 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+G17 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G18 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+H01 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H02 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H03 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H04 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H05 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H06 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H07 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H08 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H09 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H10 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+H11 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H12 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+L01 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+L02 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+L03 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+L04 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+L05 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+L06 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+N01 v2.0.0: CONTEXT_REQUIRED; execution ACTIVE; approval NOT APPLICABLE
+N02 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+N03 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+N04 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+N05 v2.0.0: CONTEXT_REQUIRED; execution ACTIVE; approval NOT APPLICABLE
+N06 v2.0.0: CONTEXT_REQUIRED; execution ACTIVE; approval NOT APPLICABLE
+N07 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+N08 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+N09 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+N10 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+N11 v2.0.0: CONTEXT_REQUIRED; execution DEFERRED; approval NOT APPLICABLE
+N12 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+N13 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+N14 v2.0.0: CONTEXT_REQUIRED; execution DEFERRED; approval NOT APPLICABLE
+R01 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R02 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R03 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R04 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R05 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R06 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R07 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R08 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R09 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R10 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R11 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R12 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R13 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R14 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+R15 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R16 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T01 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T02 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T03 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T04 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T05 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T06 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T07 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T08 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+
+ANALYTICAL FINDING PROVENANCE
+[
+  {
+    "finding_id": "F0001",
+    "section_id": "PHASES",
+    "kind": "ILLUSTRATIVE_PROPOSAL",
+    "text": "Phase P1, stage S1 (supplied order 1); Upper-arch anterior; buccolingual. Supplied stage movements: Tooth 11: 0.40 mm; source label L. Stage-group sum: 0.40 mm.",
+    "source_refs": [
+      "measurement-6"
+    ],
+    "selected_refs": [
+      "measurement-6"
+    ],
+    "demo_rule": "DEMO-STAGE-GROUP-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0002",
+    "section_id": "PHASES",
+    "kind": "ILLUSTRATIVE_PROPOSAL",
+    "text": "Phase P1, stage S1 (supplied order 1); Upper-arch anterior; vertical. Supplied stage movements: Tooth 21: 0.20 mm; source label I. Stage-group sum: 0.20 mm.",
+    "source_refs": [
+      "measurement-11"
+    ],
+    "selected_refs": [
+      "measurement-11"
+    ],
+    "demo_rule": "DEMO-STAGE-GROUP-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0003",
+    "section_id": "PHASES",
+    "kind": "ILLUSTRATIVE_PROPOSAL",
+    "text": "Phase P1, stage S1 (supplied order 1); Lower-arch anterior; mesiodistal. Supplied stage movements: Tooth 31: 0.50 mm; source label D. Stage-group sum: 0.50 mm.",
+    "source_refs": [
+      "measurement-35"
+    ],
+    "selected_refs": [
+      "measurement-35"
+    ],
+    "demo_rule": "DEMO-STAGE-GROUP-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0004",
+    "section_id": "PHASES",
+    "kind": "ILLUSTRATIVE_PROPOSAL",
+    "text": "Phase P1, stage S1 (supplied order 1); Upper-arch posterior; rotation. Supplied stage movements: Tooth 16: 0.00 deg. Stage-group sum: 0.00 deg.",
+    "source_refs": [
+      "measurement-15"
+    ],
+    "selected_refs": [
+      "measurement-15"
+    ],
+    "demo_rule": "DEMO-STAGE-GROUP-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0005",
+    "section_id": "PHASES",
+    "kind": "ILLUSTRATIVE_PROPOSAL",
+    "text": "Phase P1, stage S1 (supplied order 1); Lower-arch posterior; rotation. Supplied stage movements: Tooth 36: 0.00 deg. Stage-group sum: 0.00 deg.",
+    "source_refs": [
+      "measurement-43"
+    ],
+    "selected_refs": [
+      "measurement-43"
+    ],
+    "demo_rule": "DEMO-STAGE-GROUP-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0006",
+    "section_id": "PHASES",
+    "kind": "ILLUSTRATIVE_PROPOSAL",
+    "text": "Phase P2, stage S2 (supplied order 2); Upper-arch anterior; buccolingual. Supplied stage movements: Tooth 11: 0.60 mm; source label L. Stage-group sum: 0.60 mm.",
+    "source_refs": [
+      "measurement-6"
+    ],
+    "selected_refs": [
+      "measurement-6"
+    ],
+    "demo_rule": "DEMO-STAGE-GROUP-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0007",
+    "section_id": "PHASES",
+    "kind": "ILLUSTRATIVE_PROPOSAL",
+    "text": "Phase P2, stage S2 (supplied order 2); Upper-arch anterior; vertical. Supplied stage movements: Tooth 21: 0.40 mm; source label I. Stage-group sum: 0.40 mm.",
+    "source_refs": [
+      "measurement-11"
+    ],
+    "selected_refs": [
+      "measurement-11"
+    ],
+    "demo_rule": "DEMO-STAGE-GROUP-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0008",
+    "section_id": "PHASES",
+    "kind": "ILLUSTRATIVE_PROPOSAL",
+    "text": "Phase P2, stage S2 (supplied order 2); Lower-arch anterior; mesiodistal. Supplied stage movements: Tooth 31: 0.70 mm; source label D. Stage-group sum: 0.70 mm.",
+    "source_refs": [
+      "measurement-35"
+    ],
+    "selected_refs": [
+      "measurement-35"
+    ],
+    "demo_rule": "DEMO-STAGE-GROUP-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0009",
+    "section_id": "PHASES",
+    "kind": "ILLUSTRATIVE_PROPOSAL",
+    "text": "Phase P2, stage S2 (supplied order 2); Upper-arch posterior; rotation. Supplied stage movements: Tooth 26: 0.00 deg. Stage-group sum: 0.00 deg.",
+    "source_refs": [
+      "measurement-22"
+    ],
+    "selected_refs": [
+      "measurement-22"
+    ],
+    "demo_rule": "DEMO-STAGE-GROUP-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0010",
+    "section_id": "PHASES",
+    "kind": "ILLUSTRATIVE_PROPOSAL",
+    "text": "Phase P3, stage S3 (supplied order 3); Upper-arch anterior; rotation. Supplied stage movements: Tooth 11: 2.00 deg; source label D. Stage-group sum: 2.00 deg.",
+    "source_refs": [
+      "measurement-1"
+    ],
+    "selected_refs": [
+      "measurement-1"
+    ],
+    "demo_rule": "DEMO-STAGE-GROUP-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0011",
+    "section_id": "PHASES",
+    "kind": "ILLUSTRATIVE_PROPOSAL",
+    "text": "Phase P3, stage S3 (supplied order 3); Lower-arch anterior; angulation. Supplied stage movements: Tooth 41: 1.00 deg; source label M. Stage-group sum: 1.00 deg.",
+    "source_refs": [
+      "measurement-37"
+    ],
+    "selected_refs": [
+      "measurement-37"
+    ],
+    "demo_rule": "DEMO-STAGE-GROUP-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0012",
+    "section_id": "PHASES",
+    "kind": "ILLUSTRATIVE_PROPOSAL",
+    "text": "Phase P3, stage S3 (supplied order 3); Lower-arch posterior; rotation. Supplied stage movements: Tooth 46: 0.00 deg. Stage-group sum: 0.00 deg.",
+    "source_refs": [
+      "measurement-50"
+    ],
+    "selected_refs": [
+      "measurement-50"
+    ],
+    "demo_rule": "DEMO-STAGE-GROUP-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0013",
+    "section_id": "ANCHORAGE",
+    "kind": "ILLUSTRATIVE_PROPOSAL",
+    "text": "Phase P1: scenario-supplied support teeth 16, 36; active teeth 11, 21, 31. Illustrative support strategy: track the supplied support group while reviewing the assigned active movements. Stationary support is a fictional assumption, not a finding inferred from missing assignments. No force or clinical anchorage prescription is calculated. Alternative: Review a different explicitly supplied support grouping before accepting this fictional sequence.",
+    "source_refs": [
+      "measurement-6",
+      "measurement-11",
+      "measurement-35",
+      "measurement-15",
+      "measurement-43"
+    ],
+    "selected_refs": [
+      "measurement-6",
+      "measurement-11",
+      "measurement-35",
+      "measurement-15",
+      "measurement-43"
+    ],
+    "demo_rule": "DEMO-STAGE-SUPPORT-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0014",
+    "section_id": "ANCHORAGE",
+    "kind": "ILLUSTRATIVE_PROPOSAL",
+    "text": "Phase P2: scenario-supplied support teeth 26; active teeth 11, 21, 31. Illustrative support strategy: track the supplied support group while reviewing the assigned active movements. Stationary support is a fictional assumption, not a finding inferred from missing assignments. No force or clinical anchorage prescription is calculated. Alternative: Review a different explicitly supplied support grouping before accepting this fictional sequence.",
+    "source_refs": [
+      "measurement-6",
+      "measurement-11",
+      "measurement-35",
+      "measurement-22"
+    ],
+    "selected_refs": [
+      "measurement-6",
+      "measurement-11",
+      "measurement-35",
+      "measurement-22"
+    ],
+    "demo_rule": "DEMO-STAGE-SUPPORT-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0015",
+    "section_id": "ANCHORAGE",
+    "kind": "ILLUSTRATIVE_PROPOSAL",
+    "text": "Phase P3: scenario-supplied support teeth 46; active teeth 11, 41. Illustrative support strategy: track the supplied support group while reviewing the assigned active movements. Stationary support is a fictional assumption, not a finding inferred from missing assignments. No force or clinical anchorage prescription is calculated. Alternative: Review a different explicitly supplied support grouping before accepting this fictional sequence.",
+    "source_refs": [
+      "measurement-1",
+      "measurement-37",
+      "measurement-50"
+    ],
+    "selected_refs": [
+      "measurement-1",
+      "measurement-37",
+      "measurement-50"
+    ],
+    "demo_rule": "DEMO-STAGE-SUPPORT-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0016",
+    "section_id": "STAGE_CHECKS",
+    "kind": "ILLUSTRATIVE_PROPOSAL",
+    "text": "Stage checks: 1 passed; 0 conflicting; 0 unavailable. Stage IDs, order, references, phase membership and supplied allocation totals agree with the declared source convention.",
+    "source_refs": [],
+    "selected_refs": [],
+    "demo_rule": "DEMO-STAGE-CHECKS-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0017",
+    "section_id": "SEQUENCE_SCOPE",
+    "kind": "INSUFFICIENT_INFORMATION",
+    "text": "Stages and amounts come only from supplied fictional records, never by dividing source totals. Stage grouping and arithmetic do not establish biological timing, forces, clinical staging limits or a validated treatment schedule.",
+    "source_refs": [],
+    "selected_refs": [],
+    "demo_rule": "DEMO-STAGE-SCOPE-v1",
+    "origin": "SIMULATED_DEMO"
+  }
+]
+
+EXPLICIT FICTIONAL SCENARIO CONTEXT — NOT TMT FACTS
+{
+  "scenario_id": "nano-phases",
+  "policy_version": "1.0.0",
+  "source_sha256": "05f351da882789101d63f8ab3267e1829bc3860a44e29da6332d80d5caa75623",
+  "module": "nano",
+  "origin": "EXPLICIT_SYNTHETIC_SCENARIO",
+  "notation": "FDI",
+  "objectives": [
+    "STAGE_REVIEW"
+  ],
+  "targets": [],
+  "attachment_options": [],
+  "phases": [
+    {
+      "phase_id": "P1",
+      "label": "Initial supplied allocations",
+      "stage_ids": [
+        "S1"
+      ]
+    },
+    {
+      "phase_id": "P2",
+      "label": "Translation follow-through",
+      "stage_ids": [
+        "S2"
+      ]
+    },
+    {
+      "phase_id": "P3",
+      "label": "Angular finishing",
+      "stage_ids": [
+        "S3"
+      ]
+    }
+  ],
+  "stage_value_basis": "INCREMENTS_MATCH_SOURCE_LABELS",
+  "support_constraints": [
+    {
+      "phase_id": "P1",
+      "support_tooth_refs": [
+        "tooth-3",
+        "tooth-7"
+      ],
+      "active_tooth_refs": [
+        "tooth-1",
+        "tooth-2",
+        "tooth-5"
+      ],
+      "assumption": "STATIONARY_IN_FICTIONAL_SCENARIO"
+    },
+    {
+      "phase_id": "P2",
+      "support_tooth_refs": [
+        "tooth-4"
+      ],
+      "active_tooth_refs": [
+        "tooth-1",
+        "tooth-2",
+        "tooth-5"
+      ],
+      "assumption": "STATIONARY_IN_FICTIONAL_SCENARIO"
+    },
+    {
+      "phase_id": "P3",
+      "support_tooth_refs": [
+        "tooth-8"
+      ],
+      "active_tooth_refs": [
+        "tooth-1",
+        "tooth-6"
+      ],
+      "assumption": "STATIONARY_IN_FICTIONAL_SCENARIO"
+    }
+  ]
+}
+
+SYNTHETIC POLICY DECISIONS — NO CLINICAL AUTHORIZATION
+{
+  "policy_set_version": "1.0.0",
+  "origin": "INDEPENDENT_SYNTHETIC_POLICIES",
+  "clinical_authorized": false,
+  "source_sha256": "05f351da882789101d63f8ab3267e1829bc3860a44e29da6332d80d5caa75623",
+  "decisions": [
+    {
+      "decision_id": "D0001",
+      "finding_id": "F0001",
+      "policy_id": "DEMO-STAGE-GROUP-v1",
+      "policy_version": "1.0.0",
+      "dimension": "PHASES",
+      "status": "ILLUSTRATIVE_PROPOSAL",
+      "tooth_refs": [
+        "tooth-1"
+      ],
+      "measurement_refs": [
+        "measurement-6"
+      ],
+      "context_refs": [
+        "review_details/stages/0",
+        "review_details/allocations",
+        "planning_context/phases"
+      ],
+      "rationale": "Phase P1, stage S1 (supplied order 1); Upper-arch anterior; buccolingual.",
+      "proposal": "Supplied stage movements: Tooth 11: 0.40 mm; source label L. Stage-group sum: 0.40 mm.",
+      "alternative": null,
+      "missing_fields": [],
+      "proposed_changes": [],
+      "attachment_primary": null,
+      "attachment_alternative": null
+    },
+    {
+      "decision_id": "D0002",
+      "finding_id": "F0002",
+      "policy_id": "DEMO-STAGE-GROUP-v1",
+      "policy_version": "1.0.0",
+      "dimension": "PHASES",
+      "status": "ILLUSTRATIVE_PROPOSAL",
+      "tooth_refs": [
+        "tooth-2"
+      ],
+      "measurement_refs": [
+        "measurement-11"
+      ],
+      "context_refs": [
+        "review_details/stages/0",
+        "review_details/allocations",
+        "planning_context/phases"
+      ],
+      "rationale": "Phase P1, stage S1 (supplied order 1); Upper-arch anterior; vertical.",
+      "proposal": "Supplied stage movements: Tooth 21: 0.20 mm; source label I. Stage-group sum: 0.20 mm.",
+      "alternative": null,
+      "missing_fields": [],
+      "proposed_changes": [],
+      "attachment_primary": null,
+      "attachment_alternative": null
+    },
+    {
+      "decision_id": "D0003",
+      "finding_id": "F0003",
+      "policy_id": "DEMO-STAGE-GROUP-v1",
+      "policy_version": "1.0.0",
+      "dimension": "PHASES",
+      "status": "ILLUSTRATIVE_PROPOSAL",
+      "tooth_refs": [
+        "tooth-5"
+      ],
+      "measurement_refs": [
+        "measurement-35"
+      ],
+      "context_refs": [
+        "review_details/stages/0",
+        "review_details/allocations",
+        "planning_context/phases"
+      ],
+      "rationale": "Phase P1, stage S1 (supplied order 1); Lower-arch anterior; mesiodistal.",
+      "proposal": "Supplied stage movements: Tooth 31: 0.50 mm; source label D. Stage-group sum: 0.50 mm.",
+      "alternative": null,
+      "missing_fields": [],
+      "proposed_changes": [],
+      "attachment_primary": null,
+      "attachment_alternative": null
+    },
+    {
+      "decision_id": "D0004",
+      "finding_id": "F0004",
+      "policy_id": "DEMO-STAGE-GROUP-v1",
+      "policy_version": "1.0.0",
+      "dimension": "PHASES",
+      "status": "ILLUSTRATIVE_PROPOSAL",
+      "tooth_refs": [
+        "tooth-3"
+      ],
+      "measurement_refs": [
+        "measurement-15"
+      ],
+      "context_refs": [
+        "review_details/stages/0",
+        "review_details/allocations",
+        "planning_context/phases"
+      ],
+      "rationale": "Phase P1, stage S1 (supplied order 1); Upper-arch posterior; rotation.",
+      "proposal": "Supplied stage movements: Tooth 16: 0.00 deg. Stage-group sum: 0.00 deg.",
+      "alternative": null,
+      "missing_fields": [],
+      "proposed_changes": [],
+      "attachment_primary": null,
+      "attachment_alternative": null
+    },
+    {
+      "decision_id": "D0005",
+      "finding_id": "F0005",
+      "policy_id": "DEMO-STAGE-GROUP-v1",
+      "policy_version": "1.0.0",
+      "dimension": "PHASES",
+      "status": "ILLUSTRATIVE_PROPOSAL",
+      "tooth_refs": [
+        "tooth-7"
+      ],
+      "measurement_refs": [
+        "measurement-43"
+      ],
+      "context_refs": [
+        "review_details/stages/0",
+        "review_details/allocations",
+        "planning_context/phases"
+      ],
+      "rationale": "Phase P1, stage S1 (supplied order 1); Lower-arch posterior; rotation.",
+      "proposal": "Supplied stage movements: Tooth 36: 0.00 deg. Stage-group sum: 0.00 deg.",
+      "alternative": null,
+      "missing_fields": [],
+      "proposed_changes": [],
+      "attachment_primary": null,
+      "attachment_alternative": null
+    },
+    {
+      "decision_id": "D0006",
+      "finding_id": "F0006",
+      "policy_id": "DEMO-STAGE-GROUP-v1",
+      "policy_version": "1.0.0",
+      "dimension": "PHASES",
+      "status": "ILLUSTRATIVE_PROPOSAL",
+      "tooth_refs": [
+        "tooth-1"
+      ],
+      "measurement_refs": [
+        "measurement-6"
+      ],
+      "context_refs": [
+        "review_details/stages/1",
+        "review_details/allocations",
+        "planning_context/phases"
+      ],
+      "rationale": "Phase P2, stage S2 (supplied order 2); Upper-arch anterior; buccolingual.",
+      "proposal": "Supplied stage movements: Tooth 11: 0.60 mm; source label L. Stage-group sum: 0.60 mm.",
+      "alternative": null,
+      "missing_fields": [],
+      "proposed_changes": [],
+      "attachment_primary": null,
+      "attachment_alternative": null
+    },
+    {
+      "decision_id": "D0007",
+      "finding_id": "F0007",
+      "policy_id": "DEMO-STAGE-GROUP-v1",
+      "policy_version": "1.0.0",
+      "dimension": "PHASES",
+      "status": "ILLUSTRATIVE_PROPOSAL",
+      "tooth_refs": [
+        "tooth-2"
+      ],
+      "measurement_refs": [
+        "measurement-11"
+      ],
+      "context_refs": [
+        "review_details/stages/1",
+        "review_details/allocations",
+        "planning_context/phases"
+      ],
+      "rationale": "Phase P2, stage S2 (supplied order 2); Upper-arch anterior; vertical.",
+      "proposal": "Supplied stage movements: Tooth 21: 0.40 mm; source label I. Stage-group sum: 0.40 mm.",
+      "alternative": null,
+      "missing_fields": [],
+      "proposed_changes": [],
+      "attachment_primary": null,
+      "attachment_alternative": null
+    },
+    {
+      "decision_id": "D0008",
+      "finding_id": "F0008",
+      "policy_id": "DEMO-STAGE-GROUP-v1",
+      "policy_version": "1.0.0",
+      "dimension": "PHASES",
+      "status": "ILLUSTRATIVE_PROPOSAL",
+      "tooth_refs": [
+        "tooth-5"
+      ],
+      "measurement_refs": [
+        "measurement-35"
+      ],
+      "context_refs": [
+        "review_details/stages/1",
+        "review_details/allocations",
+        "planning_context/phases"
+      ],
+      "rationale": "Phase P2, stage S2 (supplied order 2); Lower-arch anterior; mesiodistal.",
+      "proposal": "Supplied stage movements: Tooth 31: 0.70 mm; source label D. Stage-group sum: 0.70 mm.",
+      "alternative": null,
+      "missing_fields": [],
+      "proposed_changes": [],
+      "attachment_primary": null,
+      "attachment_alternative": null
+    },
+    {
+      "decision_id": "D0009",
+      "finding_id": "F0009",
+      "policy_id": "DEMO-STAGE-GROUP-v1",
+      "policy_version": "1.0.0",
+      "dimension": "PHASES",
+      "status": "ILLUSTRATIVE_PROPOSAL",
+      "tooth_refs": [
+        "tooth-4"
+      ],
+      "measurement_refs": [
+        "measurement-22"
+      ],
+      "context_refs": [
+        "review_details/stages/1",
+        "review_details/allocations",
+        "planning_context/phases"
+      ],
+      "rationale": "Phase P2, stage S2 (supplied order 2); Upper-arch posterior; rotation.",
+      "proposal": "Supplied stage movements: Tooth 26: 0.00 deg. Stage-group sum: 0.00 deg.",
+      "alternative": null,
+      "missing_fields": [],
+      "proposed_changes": [],
+      "attachment_primary": null,
+      "attachment_alternative": null
+    },
+    {
+      "decision_id": "D0010",
+      "finding_id": "F0010",
+      "policy_id": "DEMO-STAGE-GROUP-v1",
+      "policy_version": "1.0.0",
+      "dimension": "PHASES",
+      "status": "ILLUSTRATIVE_PROPOSAL",
+      "tooth_refs": [
+        "tooth-1"
+      ],
+      "measurement_refs": [
+        "measurement-1"
+      ],
+      "context_refs": [
+        "review_details/stages/2",
+        "review_details/allocations",
+        "planning_context/phases"
+      ],
+      "rationale": "Phase P3, stage S3 (supplied order 3); Upper-arch anterior; rotation.",
+      "proposal": "Supplied stage movements: Tooth 11: 2.00 deg; source label D. Stage-group sum: 2.00 deg.",
+      "alternative": null,
+      "missing_fields": [],
+      "proposed_changes": [],
+      "attachment_primary": null,
+      "attachment_alternative": null
+    },
+    {
+      "decision_id": "D0011",
+      "finding_id": "F0011",
+      "policy_id": "DEMO-STAGE-GROUP-v1",
+      "policy_version": "1.0.0",
+      "dimension": "PHASES",
+      "status": "ILLUSTRATIVE_PROPOSAL",
+      "tooth_refs": [
+        "tooth-6"
+      ],
+      "measurement_refs": [
+        "measurement-37"
+      ],
+      "context_refs": [
+        "review_details/stages/2",
+        "review_details/allocations",
+        "planning_context/phases"
+      ],
+      "rationale": "Phase P3, stage S3 (supplied order 3); Lower-arch anterior; angulation.",
+      "proposal": "Supplied stage movements: Tooth 41: 1.00 deg; source label M. Stage-group sum: 1.00 deg.",
+      "alternative": null,
+      "missing_fields": [],
+      "proposed_changes": [],
+      "attachment_primary": null,
+      "attachment_alternative": null
+    },
+    {
+      "decision_id": "D0012",
+      "finding_id": "F0012",
+      "policy_id": "DEMO-STAGE-GROUP-v1",
+      "policy_version": "1.0.0",
+      "dimension": "PHASES",
+      "status": "ILLUSTRATIVE_PROPOSAL",
+      "tooth_refs": [
+        "tooth-8"
+      ],
+      "measurement_refs": [
+        "measurement-50"
+      ],
+      "context_refs": [
+        "review_details/stages/2",
+        "review_details/allocations",
+        "planning_context/phases"
+      ],
+      "rationale": "Phase P3, stage S3 (supplied order 3); Lower-arch posterior; rotation.",
+      "proposal": "Supplied stage movements: Tooth 46: 0.00 deg. Stage-group sum: 0.00 deg.",
+      "alternative": null,
+      "missing_fields": [],
+      "proposed_changes": [],
+      "attachment_primary": null,
+      "attachment_alternative": null
+    },
+    {
+      "decision_id": "D0013",
+      "finding_id": "F0013",
+      "policy_id": "DEMO-STAGE-SUPPORT-v1",
+      "policy_version": "1.0.0",
+      "dimension": "ANCHORAGE",
+      "status": "ILLUSTRATIVE_PROPOSAL",
+      "tooth_refs": [
+        "tooth-1",
+        "tooth-2",
+        "tooth-5",
+        "tooth-3",
+        "tooth-7"
+      ],
+      "measurement_refs": [
+        "measurement-6",
+        "measurement-11",
+        "measurement-35",
+        "measurement-15",
+        "measurement-43"
+      ],
+      "context_refs": [
+        "planning_context/support_constraints/0"
+      ],
+      "rationale": "Phase P1: scenario-supplied support teeth 16, 36; active teeth 11, 21, 31.",
+      "proposal": "Illustrative support strategy: track the supplied support group while reviewing the assigned active movements. Stationary support is a fictional assumption, not a finding inferred from missing assignments. No force or clinical anchorage prescription is calculated.",
+      "alternative": "Review a different explicitly supplied support grouping before accepting this fictional sequence.",
+      "missing_fields": [],
+      "proposed_changes": [],
+      "attachment_primary": null,
+      "attachment_alternative": null
+    },
+    {
+      "decision_id": "D0014",
+      "finding_id": "F0014",
+      "policy_id": "DEMO-STAGE-SUPPORT-v1",
+      "policy_version": "1.0.0",
+      "dimension": "ANCHORAGE",
+      "status": "ILLUSTRATIVE_PROPOSAL",
+      "tooth_refs": [
+        "tooth-1",
+        "tooth-2",
+        "tooth-5",
+        "tooth-4"
+      ],
+      "measurement_refs": [
+        "measurement-6",
+        "measurement-11",
+        "measurement-35",
+        "measurement-22"
+      ],
+      "context_refs": [
+        "planning_context/support_constraints/1"
+      ],
+      "rationale": "Phase P2: scenario-supplied support teeth 26; active teeth 11, 21, 31.",
+      "proposal": "Illustrative support strategy: track the supplied support group while reviewing the assigned active movements. Stationary support is a fictional assumption, not a finding inferred from missing assignments. No force or clinical anchorage prescription is calculated.",
+      "alternative": "Review a different explicitly supplied support grouping before accepting this fictional sequence.",
+      "missing_fields": [],
+      "proposed_changes": [],
+      "attachment_primary": null,
+      "attachment_alternative": null
+    },
+    {
+      "decision_id": "D0015",
+      "finding_id": "F0015",
+      "policy_id": "DEMO-STAGE-SUPPORT-v1",
+      "policy_version": "1.0.0",
+      "dimension": "ANCHORAGE",
+      "status": "ILLUSTRATIVE_PROPOSAL",
+      "tooth_refs": [
+        "tooth-1",
+        "tooth-6",
+        "tooth-8"
+      ],
+      "measurement_refs": [
+        "measurement-1",
+        "measurement-37",
+        "measurement-50"
+      ],
+      "context_refs": [
+        "planning_context/support_constraints/2"
+      ],
+      "rationale": "Phase P3: scenario-supplied support teeth 46; active teeth 11, 41.",
+      "proposal": "Illustrative support strategy: track the supplied support group while reviewing the assigned active movements. Stationary support is a fictional assumption, not a finding inferred from missing assignments. No force or clinical anchorage prescription is calculated.",
+      "alternative": "Review a different explicitly supplied support grouping before accepting this fictional sequence.",
+      "missing_fields": [],
+      "proposed_changes": [],
+      "attachment_primary": null,
+      "attachment_alternative": null
+    },
+    {
+      "decision_id": "D0016",
+      "finding_id": "F0016",
+      "policy_id": "DEMO-STAGE-CHECKS-v1",
+      "policy_version": "1.0.0",
+      "dimension": "STAGE_CHECKS",
+      "status": "ILLUSTRATIVE_PROPOSAL",
+      "tooth_refs": [],
+      "measurement_refs": [],
+      "context_refs": [
+        "review_details",
+        "planning_context"
+      ],
+      "rationale": "Stage checks: 1 passed; 0 conflicting; 0 unavailable.",
+      "proposal": "Stage IDs, order, references, phase membership and supplied allocation totals agree with the declared source convention.",
+      "alternative": null,
+      "missing_fields": [],
+      "proposed_changes": [],
+      "attachment_primary": null,
+      "attachment_alternative": null
+    },
+    {
+      "decision_id": "D0017",
+      "finding_id": "F0017",
+      "policy_id": "DEMO-STAGE-SCOPE-v1",
+      "policy_version": "1.0.0",
+      "dimension": "SEQUENCE_SCOPE",
+      "status": "INSUFFICIENT_INFORMATION",
+      "tooth_refs": [],
+      "measurement_refs": [],
+      "context_refs": [],
+      "rationale": "Stages and amounts come only from supplied fictional records, never by dividing source totals.",
+      "proposal": "Stage grouping and arithmetic do not establish biological timing, forces, clinical staging limits or a validated treatment schedule.",
+      "alternative": null,
+      "missing_fields": [],
+      "proposed_changes": [],
+      "attachment_primary": null,
+      "attachment_alternative": null
+    }
+  ],
+  "attachment_rows": [],
+  "stages": [
+    {
+      "stage_id": "S1",
+      "order": 1,
+      "phase_id": "P1",
+      "duration_days": null,
+      "movements": [
+        {
+          "tooth_ref": "tooth-1",
+          "measurement_ref": "measurement-6",
+          "amount": "0.40",
+          "unit": "mm",
+          "source_direction": "L"
+        },
+        {
+          "tooth_ref": "tooth-2",
+          "measurement_ref": "measurement-11",
+          "amount": "0.20",
+          "unit": "mm",
+          "source_direction": "I"
+        },
+        {
+          "tooth_ref": "tooth-5",
+          "measurement_ref": "measurement-35",
+          "amount": "0.50",
+          "unit": "mm",
+          "source_direction": "D"
+        },
+        {
+          "tooth_ref": "tooth-3",
+          "measurement_ref": "measurement-15",
+          "amount": "0.00",
+          "unit": "deg",
+          "source_direction": null
+        },
+        {
+          "tooth_ref": "tooth-7",
+          "measurement_ref": "measurement-43",
+          "amount": "0.00",
+          "unit": "deg",
+          "source_direction": null
+        }
+      ],
+      "decision_ids": [
+        "D0001",
+        "D0002",
+        "D0003",
+        "D0004",
+        "D0005"
+      ]
+    },
+    {
+      "stage_id": "S2",
+      "order": 2,
+      "phase_id": "P2",
+      "duration_days": null,
+      "movements": [
+        {
+          "tooth_ref": "tooth-1",
+          "measurement_ref": "measurement-6",
+          "amount": "0.60",
+          "unit": "mm",
+          "source_direction": "L"
+        },
+        {
+          "tooth_ref": "tooth-2",
+          "measurement_ref": "measurement-11",
+          "amount": "0.40",
+          "unit": "mm",
+          "source_direction": "I"
+        },
+        {
+          "tooth_ref": "tooth-5",
+          "measurement_ref": "measurement-35",
+          "amount": "0.70",
+          "unit": "mm",
+          "source_direction": "D"
+        },
+        {
+          "tooth_ref": "tooth-4",
+          "measurement_ref": "measurement-22",
+          "amount": "0.00",
+          "unit": "deg",
+          "source_direction": null
+        }
+      ],
+      "decision_ids": [
+        "D0006",
+        "D0007",
+        "D0008",
+        "D0009"
+      ]
+    },
+    {
+      "stage_id": "S3",
+      "order": 3,
+      "phase_id": "P3",
+      "duration_days": null,
+      "movements": [
+        {
+          "tooth_ref": "tooth-1",
+          "measurement_ref": "measurement-1",
+          "amount": "2.00",
+          "unit": "deg",
+          "source_direction": "D"
+        },
+        {
+          "tooth_ref": "tooth-6",
+          "measurement_ref": "measurement-37",
+          "amount": "1.00",
+          "unit": "deg",
+          "source_direction": "M"
+        },
+        {
+          "tooth_ref": "tooth-8",
+          "measurement_ref": "measurement-50",
+          "amount": "0.00",
+          "unit": "deg",
+          "source_direction": null
+        }
+      ],
+      "decision_ids": [
+        "D0010",
+        "D0011",
+        "D0012"
+      ]
+    }
+  ],
+  "allocation_checks": [
+    {
+      "measurement_ref": "measurement-1",
+      "source_total": "2.00",
+      "allocated_total": "2.00",
+      "unit": "deg",
+      "status": "MATCH"
+    },
+    {
+      "measurement_ref": "measurement-6",
+      "source_total": "1.00",
+      "allocated_total": "1.00",
+      "unit": "mm",
+      "status": "MATCH"
+    },
+    {
+      "measurement_ref": "measurement-11",
+      "source_total": "0.60",
+      "allocated_total": "0.60",
+      "unit": "mm",
+      "status": "MATCH"
+    },
+    {
+      "measurement_ref": "measurement-15",
+      "source_total": "0.00",
+      "allocated_total": "0.00",
+      "unit": "deg",
+      "status": "MATCH"
+    },
+    {
+      "measurement_ref": "measurement-22",
+      "source_total": "0.00",
+      "allocated_total": "0.00",
+      "unit": "deg",
+      "status": "MATCH"
+    },
+    {
+      "measurement_ref": "measurement-35",
+      "source_total": "1.20",
+      "allocated_total": "1.20",
+      "unit": "mm",
+      "status": "MATCH"
+    },
+    {
+      "measurement_ref": "measurement-37",
+      "source_total": "1.00",
+      "allocated_total": "1.00",
+      "unit": "deg",
+      "status": "MATCH"
+    },
+    {
+      "measurement_ref": "measurement-43",
+      "source_total": "0.00",
+      "allocated_total": "0.00",
+      "unit": "deg",
+      "status": "MATCH"
+    },
+    {
+      "measurement_ref": "measurement-50",
+      "source_total": "0.00",
+      "allocated_total": "0.00",
+      "unit": "deg",
+      "status": "MATCH"
+    }
+  ],
+  "checks": [
+    {
+      "code": "STAGE_DATA_CONSISTENT",
+      "status": "PASS",
+      "message": "Stage IDs, order, references, phase membership and supplied allocation totals agree with the declared source convention.",
+      "source_refs": []
+    }
+  ]
+}
+
+SUPPLIED REVIEW DETAILS — UNVERIFIED
+{
+  "attachments": [],
+  "stages": [
+    {
+      "stage_id": "S1",
+      "order": 1,
+      "duration_days": null
+    },
+    {
+      "stage_id": "S2",
+      "order": 2,
+      "duration_days": null
+    },
+    {
+      "stage_id": "S3",
+      "order": 3,
+      "duration_days": null
+    }
+  ],
+  "allocations": [
+    {
+      "stage_id": "S1",
+      "tooth_ref": "tooth-1",
+      "measurement_ref": "measurement-6",
+      "amount": "0.40",
+      "unit": "mm"
+    },
+    {
+      "stage_id": "S2",
+      "tooth_ref": "tooth-1",
+      "measurement_ref": "measurement-6",
+      "amount": "0.60",
+      "unit": "mm"
+    },
+    {
+      "stage_id": "S3",
+      "tooth_ref": "tooth-1",
+      "measurement_ref": "measurement-1",
+      "amount": "2.00",
+      "unit": "deg"
+    },
+    {
+      "stage_id": "S1",
+      "tooth_ref": "tooth-2",
+      "measurement_ref": "measurement-11",
+      "amount": "0.20",
+      "unit": "mm"
+    },
+    {
+      "stage_id": "S2",
+      "tooth_ref": "tooth-2",
+      "measurement_ref": "measurement-11",
+      "amount": "0.40",
+      "unit": "mm"
+    },
+    {
+      "stage_id": "S1",
+      "tooth_ref": "tooth-5",
+      "measurement_ref": "measurement-35",
+      "amount": "0.50",
+      "unit": "mm"
+    },
+    {
+      "stage_id": "S2",
+      "tooth_ref": "tooth-5",
+      "measurement_ref": "measurement-35",
+      "amount": "0.70",
+      "unit": "mm"
+    },
+    {
+      "stage_id": "S3",
+      "tooth_ref": "tooth-6",
+      "measurement_ref": "measurement-37",
+      "amount": "1.00",
+      "unit": "deg"
+    },
+    {
+      "stage_id": "S1",
+      "tooth_ref": "tooth-3",
+      "measurement_ref": "measurement-15",
+      "amount": "0.00",
+      "unit": "deg"
+    },
+    {
+      "stage_id": "S2",
+      "tooth_ref": "tooth-4",
+      "measurement_ref": "measurement-22",
+      "amount": "0.00",
+      "unit": "deg"
+    },
+    {
+      "stage_id": "S1",
+      "tooth_ref": "tooth-7",
+      "measurement_ref": "measurement-43",
+      "amount": "0.00",
+      "unit": "deg"
+    },
+    {
+      "stage_id": "S3",
+      "tooth_ref": "tooth-8",
+      "measurement_ref": "measurement-50",
+      "amount": "0.00",
+      "unit": "deg"
+    }
+  ],
+  "anchorage_notes": []
+}
+
+ORIGINAL INPUT — VERBATIM
+# SYNTHETIC FUNCTIONAL SCENARIO — nano-phases
+Tooth	Rotation (deg)	Angulation (deg)	Inclination (deg)	Vertical (mm)	Relative Ext / Int (mm)	Translation B / L (mm)	Translation M / D (mm)
+11	2.00 D	0.00	0.00	0.00	0.00	1.00 L	0.00
+21	0.00	0.00	0.00	0.60 I	0.00	0.00	0.00
+16	0.00	0.00	0.00	0.00	0.00	0.00	0.00
+26	0.00	0.00	0.00	0.00	0.00	0.00	0.00
+31	0.00	0.00	0.00	0.00	0.00	0.00	1.20 D
+41	0.00	1.00 M	0.00	0.00	0.00	0.00	0.00
+36	0.00	0.00	0.00	0.00	0.00	0.00	0.00
+46	0.00	0.00	0.00	0.00	0.00	0.00	0.00
+
+Synthetic demonstration — not for clinical use

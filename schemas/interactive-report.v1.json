@@ -32,6 +32,71 @@
       "title": "AdapterInfo",
       "type": "object"
     },
+    "AllocationCheck": {
+      "additionalProperties": false,
+      "properties": {
+        "measurement_ref": {
+          "title": "Measurement Ref",
+          "type": "string"
+        },
+        "source_total": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Source Total"
+        },
+        "allocated_total": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Allocated Total"
+        },
+        "unit": {
+          "anyOf": [
+            {
+              "enum": [
+                "mm",
+                "deg"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Unit"
+        },
+        "status": {
+          "enum": [
+            "MATCH",
+            "MISMATCH",
+            "UNAVAILABLE",
+            "NOT_COMPARABLE"
+          ],
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "measurement_ref",
+        "source_total",
+        "allocated_total",
+        "unit",
+        "status"
+      ],
+      "title": "AllocationCheck",
+      "type": "object"
+    },
     "AnalyticalFinding": {
       "additionalProperties": false,
       "properties": {
@@ -324,6 +389,83 @@
       "title": "AttachmentDetail",
       "type": "object"
     },
+    "AttachmentOption": {
+      "additionalProperties": false,
+      "properties": {
+        "concept": {
+          "enum": [
+            "RECTANGULAR",
+            "VERTICAL_RECTANGULAR",
+            "HORIZONTAL_RECTANGULAR",
+            "OVAL",
+            "OPTIMIZED_STYLE",
+            "NO_ATTACHMENT"
+          ],
+          "title": "Concept",
+          "type": "string"
+        },
+        "geometry": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Geometry"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "orientation": {
+          "anyOf": [
+            {
+              "enum": [
+                "VERTICAL",
+                "HORIZONTAL",
+                "UNSPECIFIED"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Orientation"
+        },
+        "surface": {
+          "anyOf": [
+            {
+              "enum": [
+                "BUCCAL",
+                "LINGUAL"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Surface"
+        },
+        "placement": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Placement"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "concept"
+      ],
+      "title": "AttachmentOption",
+      "type": "object"
+    },
     "AxisCoverage": {
       "additionalProperties": false,
       "description": "Declared positions only; no expected clinical axes are invented.",
@@ -375,6 +517,237 @@
         }
       },
       "title": "AxisCoverage",
+      "type": "object"
+    },
+    "Candidate": {
+      "additionalProperties": false,
+      "properties": {
+        "tooth_ref": {
+          "title": "Tooth Ref",
+          "type": "string"
+        },
+        "decision_id": {
+          "title": "Decision Id",
+          "type": "string"
+        },
+        "movement_refs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Movement Refs",
+          "type": "array"
+        },
+        "primary": {
+          "anyOf": [
+            {
+              "enum": [
+                "RECTANGULAR",
+                "VERTICAL_RECTANGULAR",
+                "HORIZONTAL_RECTANGULAR",
+                "OVAL",
+                "OPTIMIZED_STYLE",
+                "NO_ATTACHMENT"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Primary"
+        },
+        "alternative": {
+          "anyOf": [
+            {
+              "enum": [
+                "RECTANGULAR",
+                "VERTICAL_RECTANGULAR",
+                "HORIZONTAL_RECTANGULAR",
+                "OVAL",
+                "OPTIMIZED_STYLE",
+                "NO_ATTACHMENT"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Alternative"
+        },
+        "outcome": {
+          "enum": [
+            "CANDIDATE",
+            "NO_ATTACHMENT",
+            "INSUFFICIENT_INFORMATION"
+          ],
+          "title": "Outcome",
+          "type": "string"
+        },
+        "missing_fields": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Missing Fields",
+          "type": "array"
+        }
+      },
+      "required": [
+        "tooth_ref",
+        "decision_id",
+        "movement_refs",
+        "primary",
+        "alternative",
+        "outcome",
+        "missing_fields"
+      ],
+      "title": "Candidate",
+      "type": "object"
+    },
+    "Decision": {
+      "additionalProperties": false,
+      "properties": {
+        "decision_id": {
+          "title": "Decision Id",
+          "type": "string"
+        },
+        "finding_id": {
+          "title": "Finding Id",
+          "type": "string"
+        },
+        "policy_id": {
+          "title": "Policy Id",
+          "type": "string"
+        },
+        "policy_version": {
+          "const": "1.0.0",
+          "default": "1.0.0",
+          "title": "Policy Version",
+          "type": "string"
+        },
+        "dimension": {
+          "title": "Dimension",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "ILLUSTRATIVE_PROPOSAL",
+            "INSUFFICIENT_INFORMATION",
+            "NOT_APPLICABLE",
+            "CONFLICT"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "tooth_refs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Tooth Refs",
+          "type": "array"
+        },
+        "measurement_refs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Measurement Refs",
+          "type": "array"
+        },
+        "context_refs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Context Refs",
+          "type": "array"
+        },
+        "rationale": {
+          "title": "Rationale",
+          "type": "string"
+        },
+        "proposal": {
+          "title": "Proposal",
+          "type": "string"
+        },
+        "alternative": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Alternative"
+        },
+        "missing_fields": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Missing Fields",
+          "type": "array"
+        },
+        "proposed_changes": {
+          "items": {
+            "$ref": "#/$defs/MovementTarget"
+          },
+          "title": "Proposed Changes",
+          "type": "array"
+        },
+        "attachment_primary": {
+          "anyOf": [
+            {
+              "enum": [
+                "RECTANGULAR",
+                "VERTICAL_RECTANGULAR",
+                "HORIZONTAL_RECTANGULAR",
+                "OVAL",
+                "OPTIMIZED_STYLE",
+                "NO_ATTACHMENT"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Attachment Primary"
+        },
+        "attachment_alternative": {
+          "anyOf": [
+            {
+              "enum": [
+                "RECTANGULAR",
+                "VERTICAL_RECTANGULAR",
+                "HORIZONTAL_RECTANGULAR",
+                "OVAL",
+                "OPTIMIZED_STYLE",
+                "NO_ATTACHMENT"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Attachment Alternative"
+        }
+      },
+      "required": [
+        "decision_id",
+        "finding_id",
+        "policy_id",
+        "dimension",
+        "status",
+        "tooth_refs",
+        "measurement_refs",
+        "context_refs",
+        "rationale",
+        "proposal"
+      ],
+      "title": "Decision",
       "type": "object"
     },
     "DraftReview": {
@@ -772,6 +1145,181 @@
       "title": "Finding",
       "type": "object"
     },
+    "FunctionalContext": {
+      "additionalProperties": false,
+      "properties": {
+        "scenario_id": {
+          "pattern": "^[a-zA-Z0-9_-]{1,60}$",
+          "title": "Scenario Id",
+          "type": "string"
+        },
+        "policy_version": {
+          "const": "1.0.0",
+          "default": "1.0.0",
+          "title": "Policy Version",
+          "type": "string"
+        },
+        "source_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Source Sha256",
+          "type": "string"
+        },
+        "module": {
+          "enum": [
+            "macro",
+            "micro",
+            "nano"
+          ],
+          "title": "Module",
+          "type": "string"
+        },
+        "origin": {
+          "const": "EXPLICIT_SYNTHETIC_SCENARIO",
+          "default": "EXPLICIT_SYNTHETIC_SCENARIO",
+          "title": "Origin",
+          "type": "string"
+        },
+        "notation": {
+          "default": "UNVERIFIED",
+          "enum": [
+            "FDI",
+            "UNVERIFIED"
+          ],
+          "title": "Notation",
+          "type": "string"
+        },
+        "objectives": {
+          "items": {
+            "enum": [
+              "REDISTRIBUTE_TRANSLATIONS",
+              "ANGULAR_CONTROL",
+              "VERTICAL_REVIEW",
+              "STAGE_REVIEW"
+            ],
+            "type": "string"
+          },
+          "maxItems": 4,
+          "title": "Objectives",
+          "type": "array"
+        },
+        "targets": {
+          "items": {
+            "$ref": "#/$defs/MovementTarget"
+          },
+          "maxItems": 64,
+          "title": "Targets",
+          "type": "array"
+        },
+        "attachment_options": {
+          "items": {
+            "$ref": "#/$defs/AttachmentOption"
+          },
+          "maxItems": 6,
+          "title": "Attachment Options",
+          "type": "array"
+        },
+        "phases": {
+          "items": {
+            "$ref": "#/$defs/Phase"
+          },
+          "maxItems": 16,
+          "title": "Phases",
+          "type": "array"
+        },
+        "stage_value_basis": {
+          "default": "UNSPECIFIED",
+          "enum": [
+            "UNSPECIFIED",
+            "INCREMENTS_MATCH_SOURCE_LABELS"
+          ],
+          "title": "Stage Value Basis",
+          "type": "string"
+        },
+        "support_constraints": {
+          "items": {
+            "$ref": "#/$defs/SupportConstraint"
+          },
+          "maxItems": 16,
+          "title": "Support Constraints",
+          "type": "array"
+        }
+      },
+      "required": [
+        "scenario_id",
+        "source_sha256",
+        "module"
+      ],
+      "title": "FunctionalContext",
+      "type": "object"
+    },
+    "FunctionalPlan": {
+      "additionalProperties": false,
+      "properties": {
+        "policy_set_version": {
+          "const": "1.0.0",
+          "default": "1.0.0",
+          "title": "Policy Set Version",
+          "type": "string"
+        },
+        "origin": {
+          "const": "INDEPENDENT_SYNTHETIC_POLICIES",
+          "default": "INDEPENDENT_SYNTHETIC_POLICIES",
+          "title": "Origin",
+          "type": "string"
+        },
+        "clinical_authorized": {
+          "const": false,
+          "default": false,
+          "title": "Clinical Authorized",
+          "type": "boolean"
+        },
+        "source_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Source Sha256",
+          "type": "string"
+        },
+        "decisions": {
+          "items": {
+            "$ref": "#/$defs/Decision"
+          },
+          "title": "Decisions",
+          "type": "array"
+        },
+        "attachment_rows": {
+          "items": {
+            "$ref": "#/$defs/Candidate"
+          },
+          "title": "Attachment Rows",
+          "type": "array"
+        },
+        "stages": {
+          "items": {
+            "$ref": "#/$defs/StageRow"
+          },
+          "title": "Stages",
+          "type": "array"
+        },
+        "allocation_checks": {
+          "items": {
+            "$ref": "#/$defs/AllocationCheck"
+          },
+          "title": "Allocation Checks",
+          "type": "array"
+        },
+        "checks": {
+          "items": {
+            "$ref": "#/$defs/PlanCheck"
+          },
+          "title": "Checks",
+          "type": "array"
+        }
+      },
+      "required": [
+        "source_sha256"
+      ],
+      "title": "FunctionalPlan",
+      "type": "object"
+    },
     "GenerationInfo": {
       "additionalProperties": false,
       "properties": {
@@ -861,6 +1409,36 @@
         "accepted_comments"
       ],
       "title": "GenerationInfo",
+      "type": "object"
+    },
+    "Geometry": {
+      "additionalProperties": false,
+      "properties": {
+        "width_mm": {
+          "maxLength": 24,
+          "pattern": "^[+-]?(?:\\d+(?:\\.\\d*)?|\\.\\d+)$",
+          "title": "Width Mm",
+          "type": "string"
+        },
+        "height_mm": {
+          "maxLength": 24,
+          "pattern": "^[+-]?(?:\\d+(?:\\.\\d*)?|\\.\\d+)$",
+          "title": "Height Mm",
+          "type": "string"
+        },
+        "depth_mm": {
+          "maxLength": 24,
+          "pattern": "^[+-]?(?:\\d+(?:\\.\\d*)?|\\.\\d+)$",
+          "title": "Depth Mm",
+          "type": "string"
+        }
+      },
+      "required": [
+        "width_mm",
+        "height_mm",
+        "depth_mm"
+      ],
+      "title": "Geometry",
       "type": "object"
     },
     "Illustration": {
@@ -1105,6 +1683,51 @@
         "text"
       ],
       "title": "ModuleSection",
+      "type": "object"
+    },
+    "MovementTarget": {
+      "additionalProperties": false,
+      "properties": {
+        "measurement_ref": {
+          "maxLength": 80,
+          "minLength": 1,
+          "title": "Measurement Ref",
+          "type": "string"
+        },
+        "amount": {
+          "maxLength": 24,
+          "pattern": "^[+-]?(?:\\d+(?:\\.\\d*)?|\\.\\d+)$",
+          "title": "Amount",
+          "type": "string"
+        },
+        "unit": {
+          "enum": [
+            "mm",
+            "deg"
+          ],
+          "title": "Unit",
+          "type": "string"
+        },
+        "source_direction": {
+          "anyOf": [
+            {
+              "maxLength": 4,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Direction"
+        }
+      },
+      "required": [
+        "measurement_ref",
+        "amount",
+        "unit"
+      ],
+      "title": "MovementTarget",
       "type": "object"
     },
     "ObservedMeasurement": {
@@ -1689,6 +2312,111 @@
         "header_span"
       ],
       "title": "ParsedMeasurement",
+      "type": "object"
+    },
+    "Phase": {
+      "additionalProperties": false,
+      "properties": {
+        "phase_id": {
+          "maxLength": 40,
+          "minLength": 1,
+          "title": "Phase Id",
+          "type": "string"
+        },
+        "label": {
+          "maxLength": 80,
+          "minLength": 1,
+          "title": "Label",
+          "type": "string"
+        },
+        "stage_ids": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 64,
+          "minItems": 1,
+          "title": "Stage Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "phase_id",
+        "label",
+        "stage_ids"
+      ],
+      "title": "Phase",
+      "type": "object"
+    },
+    "Placement": {
+      "additionalProperties": false,
+      "properties": {
+        "frame": {
+          "const": "FICTIONAL_TOOTH_LOCAL_MM",
+          "title": "Frame",
+          "type": "string"
+        },
+        "x_mm": {
+          "maxLength": 24,
+          "pattern": "^[+-]?(?:\\d+(?:\\.\\d*)?|\\.\\d+)$",
+          "title": "X Mm",
+          "type": "string"
+        },
+        "y_mm": {
+          "maxLength": 24,
+          "pattern": "^[+-]?(?:\\d+(?:\\.\\d*)?|\\.\\d+)$",
+          "title": "Y Mm",
+          "type": "string"
+        },
+        "z_mm": {
+          "maxLength": 24,
+          "pattern": "^[+-]?(?:\\d+(?:\\.\\d*)?|\\.\\d+)$",
+          "title": "Z Mm",
+          "type": "string"
+        }
+      },
+      "required": [
+        "frame",
+        "x_mm",
+        "y_mm",
+        "z_mm"
+      ],
+      "title": "Placement",
+      "type": "object"
+    },
+    "PlanCheck": {
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "title": "Code",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "PASS",
+            "CONFLICT",
+            "UNAVAILABLE"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "message": {
+          "title": "Message",
+          "type": "string"
+        },
+        "source_refs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Source Refs",
+          "type": "array"
+        }
+      },
+      "required": [
+        "code",
+        "status",
+        "message"
+      ],
+      "title": "PlanCheck",
       "type": "object"
     },
     "PlanningGenerationInfo": {
@@ -2394,6 +3122,125 @@
       "title": "SourceSpan",
       "type": "object"
     },
+    "StageMovement": {
+      "additionalProperties": false,
+      "properties": {
+        "tooth_ref": {
+          "title": "Tooth Ref",
+          "type": "string"
+        },
+        "measurement_ref": {
+          "title": "Measurement Ref",
+          "type": "string"
+        },
+        "amount": {
+          "anyOf": [
+            {
+              "maxLength": 24,
+              "pattern": "^[+-]?(?:\\d+(?:\\.\\d*)?|\\.\\d+)$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Amount"
+        },
+        "unit": {
+          "anyOf": [
+            {
+              "enum": [
+                "mm",
+                "deg"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Unit"
+        },
+        "source_direction": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Source Direction"
+        }
+      },
+      "required": [
+        "tooth_ref",
+        "measurement_ref",
+        "amount",
+        "unit",
+        "source_direction"
+      ],
+      "title": "StageMovement",
+      "type": "object"
+    },
+    "StageRow": {
+      "additionalProperties": false,
+      "properties": {
+        "stage_id": {
+          "title": "Stage Id",
+          "type": "string"
+        },
+        "order": {
+          "title": "Order",
+          "type": "integer"
+        },
+        "phase_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Phase Id"
+        },
+        "duration_days": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Duration Days"
+        },
+        "movements": {
+          "items": {
+            "$ref": "#/$defs/StageMovement"
+          },
+          "title": "Movements",
+          "type": "array"
+        },
+        "decision_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Decision Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "stage_id",
+        "order",
+        "phase_id",
+        "duration_days",
+        "movements"
+      ],
+      "title": "StageRow",
+      "type": "object"
+    },
     "SuppliedAllocation": {
       "additionalProperties": false,
       "properties": {
@@ -2489,6 +3336,48 @@
         "order"
       ],
       "title": "SuppliedStage",
+      "type": "object"
+    },
+    "SupportConstraint": {
+      "additionalProperties": false,
+      "properties": {
+        "phase_id": {
+          "maxLength": 40,
+          "minLength": 1,
+          "title": "Phase Id",
+          "type": "string"
+        },
+        "support_tooth_refs": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 32,
+          "minItems": 1,
+          "title": "Support Tooth Refs",
+          "type": "array"
+        },
+        "active_tooth_refs": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 32,
+          "minItems": 1,
+          "title": "Active Tooth Refs",
+          "type": "array"
+        },
+        "assumption": {
+          "const": "STATIONARY_IN_FICTIONAL_SCENARIO",
+          "title": "Assumption",
+          "type": "string"
+        }
+      },
+      "required": [
+        "phase_id",
+        "support_tooth_refs",
+        "active_tooth_refs",
+        "assumption"
+      ],
+      "title": "SupportConstraint",
       "type": "object"
     },
     "ToothIdentifier": {
@@ -2693,10 +3582,33 @@
       "enum": [
         "MOVEMENT_PROFILE_V1",
         "MODULE_SPECIFIC_V1",
-        "ANALYTICAL_V1"
+        "ANALYTICAL_V1",
+        "FUNCTIONAL_DEMO_V1"
       ],
       "title": "Report Format",
       "type": "string"
+    },
+    "planning_context": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/FunctionalContext"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "functional_plan": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/FunctionalPlan"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
     },
     "analytical_findings": {
       "items": {

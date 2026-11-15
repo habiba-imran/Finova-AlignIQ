@@ -1,0 +1,737 @@
+FINOVA ALIGNIQ
+MACRO — Generated synthetic review
+Synthetic demonstration — not for clinical use
+
+AI-assisted report wording.
+Programmed movement profile. Successfully parsed with 0 missing values. 16 teeth; 112 measurement positions; 112 recorded numerical values; 0 missing or omitted; 0 invalid or ambiguous.
+
+MODULE REVIEW COMMENTS
+
+SAGITTAL PROPOSALS
+Status: SIMULATED_DEMO
+The supplied objective and targets coincide with coupled nonzero components. Coupled evidence: Tooth 16: 1.00° (D-labelled) rotation; Tooth 16: 0.50° (D-labelled) angulation; Tooth 17: 1.20° (D-labelled) rotation; Tooth 17: 0.20° (D-labelled) angulation. Illustrative technician request — Tooth 16: change mesiodistal from 2.00 mm (D-labelled) to 1.00 mm (D-labelled); Tooth 17: change mesiodistal from 2.00 mm (D-labelled) to 1.00 mm (D-labelled). Targets come from the fictional scenario; they are not calculated clinical limits. Alternative: Retain the source values and request a separate review of the coupled components.
+
+TRANSVERSE PROPOSALS
+Status: SIMULATED_DEMO
+The supplied objective and targets coincide with coupled nonzero components. Coupled evidence: Tooth 11: 2.00° (D-labelled) rotation; Tooth 11: 1.00° (D-labelled) angulation; Tooth 11: 1.00° (B-labelled) inclination; Tooth 21: 1.00° (D-labelled) rotation; Tooth 21: 0.50° (D-labelled) angulation; Tooth 21: 0.50° (B-labelled) inclination. Illustrative technician request — Tooth 11: change buccolingual from 1.60 mm (L-labelled) to 1.20 mm (L-labelled); Tooth 21: change buccolingual from 1.60 mm (L-labelled) to 1.20 mm (L-labelled). Targets come from the fictional scenario; they are not calculated clinical limits. Alternative: Retain the source values and request a separate review of the coupled components.
+
+VERTICAL PROPOSALS
+Status: SIMULATED_DEMO
+The supplied objective and targets coincide with coupled nonzero components. Coupled evidence: Tooth 12: 0.50 mm (I-labelled) relative vertical. Illustrative technician request — Tooth 12: change vertical from 1.00 mm (I-labelled) to 0.80 mm (I-labelled). Targets come from the fictional scenario; they are not calculated clinical limits. Alternative: Retain the source values and request a separate review of the coupled components. Keep absolute and relative vertical fields separate.
+
+ADDITIONAL CONSIDERATIONS
+Status: SIMULATED_DEMO
+The supplied objective and targets coincide with coupled nonzero components. Coupled evidence: Tooth 11: 1.00° (D-labelled) angulation; Tooth 11: 1.00° (B-labelled) inclination. Illustrative technician request — Tooth 11: change rotation from 2.00° (D-labelled) to 1.50 deg (D-labelled). Targets come from the fictional scenario; they are not calculated clinical limits. Alternative: Retain the source values and request a separate review of the coupled components.
+
+No validated clinical policy or patient-specific assessment is supplied. IPR, extraction, surgery, auxiliaries and clinical anchorage modifications remain unevaluated. Information needed: Independent clinical assessment, appropriate source records and an approved policy.
+
+LIMITATIONS
+Values describe the parsed source only. Tooth tokens, axes, directions, units and source conventions are not independently clinically verified.
+Missing, omitted, invalid and ambiguous values remain unknown; explicit zero applies only to its recorded cell. No achieved movement, suitability or safety conclusion is inferred.
+Clinical attachment, staging, anchorage, force, timing, diagnosis and treatment predicates remain unevaluated. No clinical approval is recorded.
+
+SOURCE AND PROVENANCE
+Report ID: f6672c9d5de1591c1f3311ec4fc8872a3ebd27b1c883eee752b3e31318cabb01
+Input SHA-256: 73c3776e7a18f797937fea9f01007327aba028dfad0ac698c990aa92dc1cc937
+Parser: 0.1.0; engine: 0.5.0; rules: 2.0.0-phase5
+Wording: GROQ_AI; status: GROQ_VALIDATED; provider attempts: 1
+measurement-1; tooth_ref tooth-1; L3:C4-C10; offsets 196:202; PARSED; raw sign null; raw direction "D"; magnitude 2.00
+"Rotation (deg)": 2.00 deg; direction label "D". Original cell: "2.00 D".
+measurement-2; tooth_ref tooth-1; L3:C11-C17; offsets 203:209; PARSED; raw sign null; raw direction "D"; magnitude 1.00
+"Angulation (deg)": 1.00 deg; direction label "D". Original cell: "1.00 D".
+measurement-3; tooth_ref tooth-1; L3:C18-C24; offsets 210:216; PARSED; raw sign null; raw direction "B"; magnitude 1.00
+"Inclination (deg)": 1.00 deg; direction label "B". Original cell: "1.00 B".
+measurement-4; tooth_ref tooth-1; L3:C25-C31; offsets 217:223; PARSED; raw sign null; raw direction "I"; magnitude 1.00
+"Vertical (mm)": 1.00 mm; direction label "I". Original cell: "1.00 I".
+measurement-5; tooth_ref tooth-1; L3:C32-C38; offsets 224:230; PARSED; raw sign null; raw direction "I"; magnitude 0.20
+"Relative Ext / Int (mm)": 0.20 mm; direction label "I". Original cell: "0.20 I".
+measurement-6; tooth_ref tooth-1; L3:C39-C45; offsets 231:237; PARSED; raw sign null; raw direction "L"; magnitude 1.60
+"Translation B / L (mm)": 1.60 mm; direction label "L". Original cell: "1.60 L".
+measurement-7; tooth_ref tooth-1; L3:C46-C52; offsets 238:244; PARSED; raw sign null; raw direction "D"; magnitude 1.00
+"Translation M / D (mm)": 1.00 mm; direction label "D". Original cell: "1.00 D".
+measurement-8; tooth_ref tooth-2; L4:C4-C10; offsets 248:254; PARSED; raw sign null; raw direction "D"; magnitude 0.50
+"Rotation (deg)": 0.50 deg; direction label "D". Original cell: "0.50 D".
+measurement-9; tooth_ref tooth-2; L4:C11-C15; offsets 255:259; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Angulation (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-10; tooth_ref tooth-2; L4:C16-C22; offsets 260:266; PARSED; raw sign null; raw direction "B"; magnitude 1.00
+"Inclination (deg)": 1.00 deg; direction label "B". Original cell: "1.00 B".
+measurement-11; tooth_ref tooth-2; L4:C23-C29; offsets 267:273; PARSED; raw sign null; raw direction "I"; magnitude 1.00
+"Vertical (mm)": 1.00 mm; direction label "I". Original cell: "1.00 I".
+measurement-12; tooth_ref tooth-2; L4:C30-C36; offsets 274:280; PARSED; raw sign null; raw direction "I"; magnitude 0.50
+"Relative Ext / Int (mm)": 0.50 mm; direction label "I". Original cell: "0.50 I".
+measurement-13; tooth_ref tooth-2; L4:C37-C43; offsets 281:287; PARSED; raw sign null; raw direction "B"; magnitude 0.40
+"Translation B / L (mm)": 0.40 mm; direction label "B". Original cell: "0.40 B".
+measurement-14; tooth_ref tooth-2; L4:C44-C50; offsets 288:294; PARSED; raw sign null; raw direction "D"; magnitude 1.50
+"Translation M / D (mm)": 1.50 mm; direction label "D". Original cell: "1.50 D".
+measurement-15; tooth_ref tooth-3; L5:C4-C8; offsets 298:302; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Rotation (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-16; tooth_ref tooth-3; L5:C9-C13; offsets 303:307; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Angulation (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-17; tooth_ref tooth-3; L5:C14-C18; offsets 308:312; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Inclination (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-18; tooth_ref tooth-3; L5:C19-C23; offsets 313:317; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Vertical (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-19; tooth_ref tooth-3; L5:C24-C28; offsets 318:322; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Relative Ext / Int (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-20; tooth_ref tooth-3; L5:C29-C33; offsets 323:327; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Translation B / L (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-21; tooth_ref tooth-3; L5:C34-C38; offsets 328:332; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Translation M / D (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-22; tooth_ref tooth-4; L6:C4-C8; offsets 336:340; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Rotation (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-23; tooth_ref tooth-4; L6:C9-C13; offsets 341:345; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Angulation (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-24; tooth_ref tooth-4; L6:C14-C18; offsets 346:350; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Inclination (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-25; tooth_ref tooth-4; L6:C19-C23; offsets 351:355; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Vertical (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-26; tooth_ref tooth-4; L6:C24-C28; offsets 356:360; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Relative Ext / Int (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-27; tooth_ref tooth-4; L6:C29-C33; offsets 361:365; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Translation B / L (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-28; tooth_ref tooth-4; L6:C34-C38; offsets 366:370; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Translation M / D (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-29; tooth_ref tooth-5; L7:C4-C8; offsets 374:378; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Rotation (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-30; tooth_ref tooth-5; L7:C9-C13; offsets 379:383; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Angulation (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-31; tooth_ref tooth-5; L7:C14-C18; offsets 384:388; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Inclination (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-32; tooth_ref tooth-5; L7:C19-C23; offsets 389:393; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Vertical (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-33; tooth_ref tooth-5; L7:C24-C28; offsets 394:398; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Relative Ext / Int (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-34; tooth_ref tooth-5; L7:C29-C33; offsets 399:403; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Translation B / L (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-35; tooth_ref tooth-5; L7:C34-C38; offsets 404:408; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Translation M / D (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-36; tooth_ref tooth-6; L8:C4-C10; offsets 412:418; PARSED; raw sign null; raw direction "D"; magnitude 1.00
+"Rotation (deg)": 1.00 deg; direction label "D". Original cell: "1.00 D".
+measurement-37; tooth_ref tooth-6; L8:C11-C17; offsets 419:425; PARSED; raw sign null; raw direction "D"; magnitude 0.50
+"Angulation (deg)": 0.50 deg; direction label "D". Original cell: "0.50 D".
+measurement-38; tooth_ref tooth-6; L8:C18-C22; offsets 426:430; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Inclination (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-39; tooth_ref tooth-6; L8:C23-C27; offsets 431:435; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Vertical (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-40; tooth_ref tooth-6; L8:C28-C32; offsets 436:440; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Relative Ext / Int (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-41; tooth_ref tooth-6; L8:C33-C39; offsets 441:447; PARSED; raw sign null; raw direction "B"; magnitude 0.20
+"Translation B / L (mm)": 0.20 mm; direction label "B". Original cell: "0.20 B".
+measurement-42; tooth_ref tooth-6; L8:C40-C46; offsets 448:454; PARSED; raw sign null; raw direction "D"; magnitude 2.00
+"Translation M / D (mm)": 2.00 mm; direction label "D". Original cell: "2.00 D".
+measurement-43; tooth_ref tooth-7; L9:C4-C10; offsets 458:464; PARSED; raw sign null; raw direction "D"; magnitude 1.20
+"Rotation (deg)": 1.20 deg; direction label "D". Original cell: "1.20 D".
+measurement-44; tooth_ref tooth-7; L9:C11-C17; offsets 465:471; PARSED; raw sign null; raw direction "D"; magnitude 0.20
+"Angulation (deg)": 0.20 deg; direction label "D". Original cell: "0.20 D".
+measurement-45; tooth_ref tooth-7; L9:C18-C22; offsets 472:476; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Inclination (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-46; tooth_ref tooth-7; L9:C23-C27; offsets 477:481; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Vertical (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-47; tooth_ref tooth-7; L9:C28-C32; offsets 482:486; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Relative Ext / Int (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-48; tooth_ref tooth-7; L9:C33-C39; offsets 487:493; PARSED; raw sign null; raw direction "B"; magnitude 0.20
+"Translation B / L (mm)": 0.20 mm; direction label "B". Original cell: "0.20 B".
+measurement-49; tooth_ref tooth-7; L9:C40-C46; offsets 494:500; PARSED; raw sign null; raw direction "D"; magnitude 2.00
+"Translation M / D (mm)": 2.00 mm; direction label "D". Original cell: "2.00 D".
+measurement-50; tooth_ref tooth-8; L10:C4-C8; offsets 504:508; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Rotation (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-51; tooth_ref tooth-8; L10:C9-C13; offsets 509:513; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Angulation (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-52; tooth_ref tooth-8; L10:C14-C18; offsets 514:518; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Inclination (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-53; tooth_ref tooth-8; L10:C19-C23; offsets 519:523; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Vertical (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-54; tooth_ref tooth-8; L10:C24-C28; offsets 524:528; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Relative Ext / Int (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-55; tooth_ref tooth-8; L10:C29-C33; offsets 529:533; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Translation B / L (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-56; tooth_ref tooth-8; L10:C34-C38; offsets 534:538; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Translation M / D (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-57; tooth_ref tooth-9; L11:C4-C10; offsets 542:548; PARSED; raw sign null; raw direction "D"; magnitude 1.00
+"Rotation (deg)": 1.00 deg; direction label "D". Original cell: "1.00 D".
+measurement-58; tooth_ref tooth-9; L11:C11-C17; offsets 549:555; PARSED; raw sign null; raw direction "D"; magnitude 0.50
+"Angulation (deg)": 0.50 deg; direction label "D". Original cell: "0.50 D".
+measurement-59; tooth_ref tooth-9; L11:C18-C24; offsets 556:562; PARSED; raw sign null; raw direction "B"; magnitude 0.50
+"Inclination (deg)": 0.50 deg; direction label "B". Original cell: "0.50 B".
+measurement-60; tooth_ref tooth-9; L11:C25-C31; offsets 563:569; PARSED; raw sign null; raw direction "I"; magnitude 1.00
+"Vertical (mm)": 1.00 mm; direction label "I". Original cell: "1.00 I".
+measurement-61; tooth_ref tooth-9; L11:C32-C38; offsets 570:576; PARSED; raw sign null; raw direction "I"; magnitude 0.20
+"Relative Ext / Int (mm)": 0.20 mm; direction label "I". Original cell: "0.20 I".
+measurement-62; tooth_ref tooth-9; L11:C39-C45; offsets 577:583; PARSED; raw sign null; raw direction "L"; magnitude 1.60
+"Translation B / L (mm)": 1.60 mm; direction label "L". Original cell: "1.60 L".
+measurement-63; tooth_ref tooth-9; L11:C46-C52; offsets 584:590; PARSED; raw sign null; raw direction "D"; magnitude 1.00
+"Translation M / D (mm)": 1.00 mm; direction label "D". Original cell: "1.00 D".
+measurement-64; tooth_ref tooth-10; L12:C4-C8; offsets 594:598; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Rotation (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-65; tooth_ref tooth-10; L12:C9-C13; offsets 599:603; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Angulation (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-66; tooth_ref tooth-10; L12:C14-C18; offsets 604:608; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Inclination (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-67; tooth_ref tooth-10; L12:C19-C23; offsets 609:613; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Vertical (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-68; tooth_ref tooth-10; L12:C24-C28; offsets 614:618; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Relative Ext / Int (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-69; tooth_ref tooth-10; L12:C29-C33; offsets 619:623; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Translation B / L (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-70; tooth_ref tooth-10; L12:C34-C38; offsets 624:628; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Translation M / D (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-71; tooth_ref tooth-11; L13:C4-C8; offsets 632:636; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Rotation (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-72; tooth_ref tooth-11; L13:C9-C13; offsets 637:641; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Angulation (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-73; tooth_ref tooth-11; L13:C14-C18; offsets 642:646; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Inclination (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-74; tooth_ref tooth-11; L13:C19-C23; offsets 647:651; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Vertical (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-75; tooth_ref tooth-11; L13:C24-C28; offsets 652:656; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Relative Ext / Int (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-76; tooth_ref tooth-11; L13:C29-C33; offsets 657:661; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Translation B / L (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-77; tooth_ref tooth-11; L13:C34-C38; offsets 662:666; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Translation M / D (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-78; tooth_ref tooth-12; L14:C4-C8; offsets 670:674; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Rotation (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-79; tooth_ref tooth-12; L14:C9-C13; offsets 675:679; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Angulation (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-80; tooth_ref tooth-12; L14:C14-C18; offsets 680:684; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Inclination (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-81; tooth_ref tooth-12; L14:C19-C23; offsets 685:689; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Vertical (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-82; tooth_ref tooth-12; L14:C24-C28; offsets 690:694; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Relative Ext / Int (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-83; tooth_ref tooth-12; L14:C29-C33; offsets 695:699; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Translation B / L (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-84; tooth_ref tooth-12; L14:C34-C38; offsets 700:704; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Translation M / D (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-85; tooth_ref tooth-13; L15:C4-C8; offsets 708:712; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Rotation (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-86; tooth_ref tooth-13; L15:C9-C13; offsets 713:717; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Angulation (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-87; tooth_ref tooth-13; L15:C14-C18; offsets 718:722; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Inclination (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-88; tooth_ref tooth-13; L15:C19-C23; offsets 723:727; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Vertical (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-89; tooth_ref tooth-13; L15:C24-C28; offsets 728:732; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Relative Ext / Int (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-90; tooth_ref tooth-13; L15:C29-C33; offsets 733:737; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Translation B / L (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-91; tooth_ref tooth-13; L15:C34-C38; offsets 738:742; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Translation M / D (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-92; tooth_ref tooth-14; L16:C4-C8; offsets 746:750; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Rotation (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-93; tooth_ref tooth-14; L16:C9-C13; offsets 751:755; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Angulation (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-94; tooth_ref tooth-14; L16:C14-C18; offsets 756:760; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Inclination (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-95; tooth_ref tooth-14; L16:C19-C23; offsets 761:765; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Vertical (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-96; tooth_ref tooth-14; L16:C24-C28; offsets 766:770; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Relative Ext / Int (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-97; tooth_ref tooth-14; L16:C29-C33; offsets 771:775; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Translation B / L (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-98; tooth_ref tooth-14; L16:C34-C38; offsets 776:780; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Translation M / D (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-99; tooth_ref tooth-15; L17:C4-C8; offsets 784:788; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Rotation (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-100; tooth_ref tooth-15; L17:C9-C13; offsets 789:793; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Angulation (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-101; tooth_ref tooth-15; L17:C14-C18; offsets 794:798; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Inclination (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-102; tooth_ref tooth-15; L17:C19-C23; offsets 799:803; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Vertical (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-103; tooth_ref tooth-15; L17:C24-C28; offsets 804:808; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Relative Ext / Int (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-104; tooth_ref tooth-15; L17:C29-C33; offsets 809:813; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Translation B / L (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-105; tooth_ref tooth-15; L17:C34-C38; offsets 814:818; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Translation M / D (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-106; tooth_ref tooth-16; L18:C4-C8; offsets 822:826; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Rotation (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-107; tooth_ref tooth-16; L18:C9-C13; offsets 827:831; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Angulation (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-108; tooth_ref tooth-16; L18:C14-C18; offsets 832:836; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Inclination (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-109; tooth_ref tooth-16; L18:C19-C23; offsets 837:841; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Vertical (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-110; tooth_ref tooth-16; L18:C24-C28; offsets 842:846; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Relative Ext / Int (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-111; tooth_ref tooth-16; L18:C29-C33; offsets 847:851; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Translation B / L (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-112; tooth_ref tooth-16; L18:C34-C38; offsets 852:856; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Translation M / D (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+
+RULE EVALUATION LEDGER — CLINICAL AUTHORITY UNCHANGED
+A01 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+A02 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+A03 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+A04 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+A05 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+A06 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+D01 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D02 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D03 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D04 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D05 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D06 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D07 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D08 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D09 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D10 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D11 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D12 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D13 v2.0.0: CONTEXT_REQUIRED; execution ACTIVE; approval NOT APPLICABLE
+D14 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+D15 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D16 v2.0.0: CONTEXT_REQUIRED; execution DEFERRED; approval NOT APPLICABLE
+G01 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+G02 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G03 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G04 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G05 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G06 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+G07 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G08 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+G09 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G10 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+G11 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G12 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G13 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G14 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G15 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+G16 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+G17 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G18 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+H01 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H02 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H03 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H04 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H05 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H06 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H07 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H08 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H09 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H10 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+H11 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H12 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+L01 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+L02 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+L03 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+L04 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+L05 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+L06 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+N01 v2.0.0: CONTEXT_REQUIRED; execution ACTIVE; approval NOT APPLICABLE
+N02 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+N03 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+N04 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+N05 v2.0.0: CONTEXT_REQUIRED; execution ACTIVE; approval NOT APPLICABLE
+N06 v2.0.0: CONTEXT_REQUIRED; execution ACTIVE; approval NOT APPLICABLE
+N07 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+N08 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+N09 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+N10 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+N11 v2.0.0: CONTEXT_REQUIRED; execution DEFERRED; approval NOT APPLICABLE
+N12 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+N13 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+N14 v2.0.0: CONTEXT_REQUIRED; execution DEFERRED; approval NOT APPLICABLE
+R01 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R02 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R03 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R04 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R05 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R06 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R07 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R08 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R09 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R10 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R11 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R12 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R13 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R14 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+R15 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R16 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T01 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T02 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T03 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T04 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T05 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T06 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T07 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T08 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+
+ANALYTICAL FINDING PROVENANCE
+[
+  {
+    "finding_id": "F0001",
+    "section_id": "SAGITTAL",
+    "kind": "ILLUSTRATIVE_PROPOSAL",
+    "text": "The supplied objective and targets coincide with coupled nonzero components. Coupled evidence: Tooth 16: 1.00° (D-labelled) rotation; Tooth 16: 0.50° (D-labelled) angulation; Tooth 17: 1.20° (D-labelled) rotation; Tooth 17: 0.20° (D-labelled) angulation. Illustrative technician request — Tooth 16: change mesiodistal from 2.00 mm (D-labelled) to 1.00 mm (D-labelled); Tooth 17: change mesiodistal from 2.00 mm (D-labelled) to 1.00 mm (D-labelled). Targets come from the fictional scenario; they are not calculated clinical limits. Alternative: Retain the source values and request a separate review of the coupled components.",
+    "source_refs": [
+      "measurement-42",
+      "measurement-36",
+      "measurement-37",
+      "measurement-49",
+      "measurement-43",
+      "measurement-44"
+    ],
+    "selected_refs": [
+      "measurement-42",
+      "measurement-36",
+      "measurement-37",
+      "measurement-49",
+      "measurement-43",
+      "measurement-44"
+    ],
+    "demo_rule": "DEMO-PLAN-SAGITTAL-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0002",
+    "section_id": "TRANSVERSE",
+    "kind": "ILLUSTRATIVE_PROPOSAL",
+    "text": "The supplied objective and targets coincide with coupled nonzero components. Coupled evidence: Tooth 11: 2.00° (D-labelled) rotation; Tooth 11: 1.00° (D-labelled) angulation; Tooth 11: 1.00° (B-labelled) inclination; Tooth 21: 1.00° (D-labelled) rotation; Tooth 21: 0.50° (D-labelled) angulation; Tooth 21: 0.50° (B-labelled) inclination. Illustrative technician request — Tooth 11: change buccolingual from 1.60 mm (L-labelled) to 1.20 mm (L-labelled); Tooth 21: change buccolingual from 1.60 mm (L-labelled) to 1.20 mm (L-labelled). Targets come from the fictional scenario; they are not calculated clinical limits. Alternative: Retain the source values and request a separate review of the coupled components.",
+    "source_refs": [
+      "measurement-6",
+      "measurement-1",
+      "measurement-2",
+      "measurement-3",
+      "measurement-62",
+      "measurement-57",
+      "measurement-58",
+      "measurement-59"
+    ],
+    "selected_refs": [
+      "measurement-6",
+      "measurement-1",
+      "measurement-2",
+      "measurement-3",
+      "measurement-62",
+      "measurement-57",
+      "measurement-58",
+      "measurement-59"
+    ],
+    "demo_rule": "DEMO-PLAN-TRANSVERSE-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0003",
+    "section_id": "VERTICAL",
+    "kind": "ILLUSTRATIVE_PROPOSAL",
+    "text": "The supplied objective and targets coincide with coupled nonzero components. Coupled evidence: Tooth 12: 0.50 mm (I-labelled) relative vertical. Illustrative technician request — Tooth 12: change vertical from 1.00 mm (I-labelled) to 0.80 mm (I-labelled). Targets come from the fictional scenario; they are not calculated clinical limits. Alternative: Retain the source values and request a separate review of the coupled components. Keep absolute and relative vertical fields separate.",
+    "source_refs": [
+      "measurement-11",
+      "measurement-12"
+    ],
+    "selected_refs": [
+      "measurement-11",
+      "measurement-12"
+    ],
+    "demo_rule": "DEMO-PLAN-VERTICAL-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0004",
+    "section_id": "ADDITIONAL",
+    "kind": "ILLUSTRATIVE_PROPOSAL",
+    "text": "The supplied objective and targets coincide with coupled nonzero components. Coupled evidence: Tooth 11: 1.00° (D-labelled) angulation; Tooth 11: 1.00° (B-labelled) inclination. Illustrative technician request — Tooth 11: change rotation from 2.00° (D-labelled) to 1.50 deg (D-labelled). Targets come from the fictional scenario; they are not calculated clinical limits. Alternative: Retain the source values and request a separate review of the coupled components.",
+    "source_refs": [
+      "measurement-1",
+      "measurement-2",
+      "measurement-3"
+    ],
+    "selected_refs": [
+      "measurement-1",
+      "measurement-2",
+      "measurement-3"
+    ],
+    "demo_rule": "DEMO-PLAN-ANGULAR-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0005",
+    "section_id": "ADDITIONAL",
+    "kind": "INSUFFICIENT_INFORMATION",
+    "text": "No validated clinical policy or patient-specific assessment is supplied. IPR, extraction, surgery, auxiliaries and clinical anchorage modifications remain unevaluated. Information needed: Independent clinical assessment, appropriate source records and an approved policy.",
+    "source_refs": [],
+    "selected_refs": [],
+    "demo_rule": "DEMO-PLAN-CONTEXT-v1",
+    "origin": "SIMULATED_DEMO"
+  }
+]
+
+EXPLICIT FICTIONAL SCENARIO CONTEXT — NOT TMT FACTS
+{
+  "scenario_id": "macro-distribution",
+  "policy_version": "1.0.0",
+  "source_sha256": "73c3776e7a18f797937fea9f01007327aba028dfad0ac698c990aa92dc1cc937",
+  "module": "macro",
+  "origin": "EXPLICIT_SYNTHETIC_SCENARIO",
+  "notation": "FDI",
+  "objectives": [
+    "REDISTRIBUTE_TRANSLATIONS",
+    "VERTICAL_REVIEW",
+    "ANGULAR_CONTROL"
+  ],
+  "targets": [
+    {
+      "measurement_ref": "measurement-42",
+      "amount": "1.00",
+      "unit": "mm",
+      "source_direction": "D"
+    },
+    {
+      "measurement_ref": "measurement-49",
+      "amount": "1.00",
+      "unit": "mm",
+      "source_direction": "D"
+    },
+    {
+      "measurement_ref": "measurement-6",
+      "amount": "1.20",
+      "unit": "mm",
+      "source_direction": "L"
+    },
+    {
+      "measurement_ref": "measurement-62",
+      "amount": "1.20",
+      "unit": "mm",
+      "source_direction": "L"
+    },
+    {
+      "measurement_ref": "measurement-11",
+      "amount": "0.80",
+      "unit": "mm",
+      "source_direction": "I"
+    },
+    {
+      "measurement_ref": "measurement-1",
+      "amount": "1.50",
+      "unit": "deg",
+      "source_direction": "D"
+    }
+  ],
+  "attachment_options": [],
+  "phases": [],
+  "stage_value_basis": "UNSPECIFIED",
+  "support_constraints": []
+}
+
+SYNTHETIC POLICY DECISIONS — NO CLINICAL AUTHORIZATION
+{
+  "policy_set_version": "1.0.0",
+  "origin": "INDEPENDENT_SYNTHETIC_POLICIES",
+  "clinical_authorized": false,
+  "source_sha256": "73c3776e7a18f797937fea9f01007327aba028dfad0ac698c990aa92dc1cc937",
+  "decisions": [
+    {
+      "decision_id": "D0001",
+      "finding_id": "F0001",
+      "policy_id": "DEMO-PLAN-SAGITTAL-v1",
+      "policy_version": "1.0.0",
+      "dimension": "SAGITTAL",
+      "status": "ILLUSTRATIVE_PROPOSAL",
+      "tooth_refs": [
+        "tooth-6",
+        "tooth-7"
+      ],
+      "measurement_refs": [
+        "measurement-42",
+        "measurement-36",
+        "measurement-37",
+        "measurement-49",
+        "measurement-43",
+        "measurement-44"
+      ],
+      "context_refs": [
+        "planning_context/objectives",
+        "planning_context/targets"
+      ],
+      "rationale": "The supplied objective and targets coincide with coupled nonzero components. Coupled evidence: Tooth 16: 1.00° (D-labelled) rotation; Tooth 16: 0.50° (D-labelled) angulation; Tooth 17: 1.20° (D-labelled) rotation; Tooth 17: 0.20° (D-labelled) angulation.",
+      "proposal": "Illustrative technician request — Tooth 16: change mesiodistal from 2.00 mm (D-labelled) to 1.00 mm (D-labelled); Tooth 17: change mesiodistal from 2.00 mm (D-labelled) to 1.00 mm (D-labelled). Targets come from the fictional scenario; they are not calculated clinical limits.",
+      "alternative": "Retain the source values and request a separate review of the coupled components.",
+      "missing_fields": [],
+      "proposed_changes": [
+        {
+          "measurement_ref": "measurement-42",
+          "amount": "1.00",
+          "unit": "mm",
+          "source_direction": "D"
+        },
+        {
+          "measurement_ref": "measurement-49",
+          "amount": "1.00",
+          "unit": "mm",
+          "source_direction": "D"
+        }
+      ],
+      "attachment_primary": null,
+      "attachment_alternative": null
+    },
+    {
+      "decision_id": "D0002",
+      "finding_id": "F0002",
+      "policy_id": "DEMO-PLAN-TRANSVERSE-v1",
+      "policy_version": "1.0.0",
+      "dimension": "TRANSVERSE",
+      "status": "ILLUSTRATIVE_PROPOSAL",
+      "tooth_refs": [
+        "tooth-1",
+        "tooth-9"
+      ],
+      "measurement_refs": [
+        "measurement-6",
+        "measurement-1",
+        "measurement-2",
+        "measurement-3",
+        "measurement-62",
+        "measurement-57",
+        "measurement-58",
+        "measurement-59"
+      ],
+      "context_refs": [
+        "planning_context/objectives",
+        "planning_context/targets"
+      ],
+      "rationale": "The supplied objective and targets coincide with coupled nonzero components. Coupled evidence: Tooth 11: 2.00° (D-labelled) rotation; Tooth 11: 1.00° (D-labelled) angulation; Tooth 11: 1.00° (B-labelled) inclination; Tooth 21: 1.00° (D-labelled) rotation; Tooth 21: 0.50° (D-labelled) angulation; Tooth 21: 0.50° (B-labelled) inclination.",
+      "proposal": "Illustrative technician request — Tooth 11: change buccolingual from 1.60 mm (L-labelled) to 1.20 mm (L-labelled); Tooth 21: change buccolingual from 1.60 mm (L-labelled) to 1.20 mm (L-labelled). Targets come from the fictional scenario; they are not calculated clinical limits.",
+      "alternative": "Retain the source values and request a separate review of the coupled components.",
+      "missing_fields": [],
+      "proposed_changes": [
+        {
+          "measurement_ref": "measurement-6",
+          "amount": "1.20",
+          "unit": "mm",
+          "source_direction": "L"
+        },
+        {
+          "measurement_ref": "measurement-62",
+          "amount": "1.20",
+          "unit": "mm",
+          "source_direction": "L"
+        }
+      ],
+      "attachment_primary": null,
+      "attachment_alternative": null
+    },
+    {
+      "decision_id": "D0003",
+      "finding_id": "F0003",
+      "policy_id": "DEMO-PLAN-VERTICAL-v1",
+      "policy_version": "1.0.0",
+      "dimension": "VERTICAL",
+      "status": "ILLUSTRATIVE_PROPOSAL",
+      "tooth_refs": [
+        "tooth-2"
+      ],
+      "measurement_refs": [
+        "measurement-11",
+        "measurement-12"
+      ],
+      "context_refs": [
+        "planning_context/objectives",
+        "planning_context/targets"
+      ],
+      "rationale": "The supplied objective and targets coincide with coupled nonzero components. Coupled evidence: Tooth 12: 0.50 mm (I-labelled) relative vertical.",
+      "proposal": "Illustrative technician request — Tooth 12: change vertical from 1.00 mm (I-labelled) to 0.80 mm (I-labelled). Targets come from the fictional scenario; they are not calculated clinical limits.",
+      "alternative": "Retain the source values and request a separate review of the coupled components. Keep absolute and relative vertical fields separate.",
+      "missing_fields": [],
+      "proposed_changes": [
+        {
+          "measurement_ref": "measurement-11",
+          "amount": "0.80",
+          "unit": "mm",
+          "source_direction": "I"
+        }
+      ],
+      "attachment_primary": null,
+      "attachment_alternative": null
+    },
+    {
+      "decision_id": "D0004",
+      "finding_id": "F0004",
+      "policy_id": "DEMO-PLAN-ANGULAR-v1",
+      "policy_version": "1.0.0",
+      "dimension": "ADDITIONAL",
+      "status": "ILLUSTRATIVE_PROPOSAL",
+      "tooth_refs": [
+        "tooth-1"
+      ],
+      "measurement_refs": [
+        "measurement-1",
+        "measurement-2",
+        "measurement-3"
+      ],
+      "context_refs": [
+        "planning_context/objectives",
+        "planning_context/targets"
+      ],
+      "rationale": "The supplied objective and targets coincide with coupled nonzero components. Coupled evidence: Tooth 11: 1.00° (D-labelled) angulation; Tooth 11: 1.00° (B-labelled) inclination.",
+      "proposal": "Illustrative technician request — Tooth 11: change rotation from 2.00° (D-labelled) to 1.50 deg (D-labelled). Targets come from the fictional scenario; they are not calculated clinical limits.",
+      "alternative": "Retain the source values and request a separate review of the coupled components.",
+      "missing_fields": [],
+      "proposed_changes": [
+        {
+          "measurement_ref": "measurement-1",
+          "amount": "1.50",
+          "unit": "deg",
+          "source_direction": "D"
+        }
+      ],
+      "attachment_primary": null,
+      "attachment_alternative": null
+    },
+    {
+      "decision_id": "D0005",
+      "finding_id": "F0005",
+      "policy_id": "DEMO-PLAN-CONTEXT-v1",
+      "policy_version": "1.0.0",
+      "dimension": "ADDITIONAL",
+      "status": "INSUFFICIENT_INFORMATION",
+      "tooth_refs": [],
+      "measurement_refs": [],
+      "context_refs": [],
+      "rationale": "No validated clinical policy or patient-specific assessment is supplied.",
+      "proposal": "IPR, extraction, surgery, auxiliaries and clinical anchorage modifications remain unevaluated.",
+      "alternative": null,
+      "missing_fields": [
+        "Independent clinical assessment, appropriate source records and an approved policy"
+      ],
+      "proposed_changes": [],
+      "attachment_primary": null,
+      "attachment_alternative": null
+    }
+  ],
+  "attachment_rows": [],
+  "stages": [],
+  "allocation_checks": [],
+  "checks": []
+}
+
+SUPPLIED REVIEW DETAILS — UNVERIFIED
+{
+  "attachments": [],
+  "stages": [],
+  "allocations": [],
+  "anchorage_notes": []
+}
+
+ORIGINAL INPUT — VERBATIM
+# SYNTHETIC FUNCTIONAL SCENARIO — macro-distribution
+Tooth	Rotation (deg)	Angulation (deg)	Inclination (deg)	Vertical (mm)	Relative Ext / Int (mm)	Translation B / L (mm)	Translation M / D (mm)
+11	2.00 D	1.00 D	1.00 B	1.00 I	0.20 I	1.60 L	1.00 D
+12	0.50 D	0.00	1.00 B	1.00 I	0.50 I	0.40 B	1.50 D
+13	0.00	0.00	0.00	0.00	0.00	0.00	0.00
+14	0.00	0.00	0.00	0.00	0.00	0.00	0.00
+15	0.00	0.00	0.00	0.00	0.00	0.00	0.00
+16	1.00 D	0.50 D	0.00	0.00	0.00	0.20 B	2.00 D
+17	1.20 D	0.20 D	0.00	0.00	0.00	0.20 B	2.00 D
+18	0.00	0.00	0.00	0.00	0.00	0.00	0.00
+21	1.00 D	0.50 D	0.50 B	1.00 I	0.20 I	1.60 L	1.00 D
+22	0.00	0.00	0.00	0.00	0.00	0.00	0.00
+23	0.00	0.00	0.00	0.00	0.00	0.00	0.00
+24	0.00	0.00	0.00	0.00	0.00	0.00	0.00
+25	0.00	0.00	0.00	0.00	0.00	0.00	0.00
+26	0.00	0.00	0.00	0.00	0.00	0.00	0.00
+27	0.00	0.00	0.00	0.00	0.00	0.00	0.00
+28	0.00	0.00	0.00	0.00	0.00	0.00	0.00
+
+Synthetic demonstration — not for clinical use

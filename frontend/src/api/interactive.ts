@@ -2,6 +2,8 @@ import { isParseResult } from './parse'
 import type { ContextClaims, Measurement, ParseResult } from './parse'
 import { isDraftReview } from './review'
 import type { DraftReview } from './review'
+import { FUNCTIONAL_SECTIONS, isFunctionalContext, isFunctionalPlan } from './functional'
+import type { FunctionalContext, FunctionalPlan } from './functional'
 
 export type DemoModule = 'macro' | 'micro' | 'nano'
 export interface AttachmentDetail {
@@ -43,7 +45,9 @@ export interface InteractiveReport {
   wording_notice: string; summary: string; export_text: string; limitations: string[]
   observations: { tooth_ref: string; original_tooth: string; text: string; evidence_status: 'PARSED_SOURCE_ONLY'; measurements: Measurement[] }[]
   illustrations: { tooth_ref: string; original_tooth: string; label: string; text: string; origin: 'SIMULATED_DEMO'; clinical_status: 'NOT_EVALUATED' }[]
-  report_format?: 'MOVEMENT_PROFILE_V1' | 'MODULE_SPECIFIC_V1' | 'ANALYTICAL_V1'
+  report_format?: 'MOVEMENT_PROFILE_V1' | 'MODULE_SPECIFIC_V1' | 'ANALYTICAL_V1' | 'FUNCTIONAL_DEMO_V1'
+  planning_context?: FunctionalContext | null
+  functional_plan?: FunctionalPlan | null
   analytical_findings?: AnalyticalFinding[]
   sections?: ModuleSection[]
   review_details?: ReviewDetails
@@ -64,7 +68,7 @@ export function isInteractiveReport(v: unknown): v is InteractiveReport {
       : v.generation.output_validation === 'GROUNDED_MODULE_WORDING_V1'
         ? v.report_format !== 'MODULE_SPECIFIC_V1' || v.module === 'macro' || v.generation.eligible_wording_findings !== 4
         : v.generation.output_validation === 'GROUNDED_ANALYTICAL_WORDING_V1'
-          ? v.report_format !== 'ANALYTICAL_V1' || !Array.isArray(v.sections) || v.generation.eligible_wording_findings !== v.sections.length
+          ? !['ANALYTICAL_V1', 'FUNCTIONAL_DEMO_V1'].includes(String(v.report_format)) || !Array.isArray(v.sections) || v.generation.eligible_wording_findings !== v.sections.length
           : v.generation.output_validation !== 'CLOSED_WORDING_AND_LOCAL_FACTS_V1' || v.generation.eligible_wording_findings !== 4)
     || (Number(v.generation.attempts) > 0 ? v.generation.provider !== 'GROQ' || v.generation.model !== 'openai/gpt-oss-120b' : v.generation.provider !== null || v.generation.model !== null)
     || (v.generation.used_mode === 'GROQ_AI' ? v.generation.accepted_comments !== v.generation.eligible_wording_findings || Number(v.generation.attempts) < 1 || v.generation.reason !== 'GROQ_VALIDATED' : v.generation.accepted_comments !== 0)
@@ -83,11 +87,13 @@ export function isInteractiveReport(v: unknown): v is InteractiveReport {
       observed.push(m.id); return true
     })
   }) || new Set(observed).size !== observed.length || observed.length !== parsed.measurements.length) return false
-  if (v.report_format === 'ANALYTICAL_V1') {
+  if (v.report_format !== 'FUNCTIONAL_DEMO_V1' && (v.planning_context != null || v.functional_plan != null)) return false
+  if (v.report_format === 'ANALYTICAL_V1' || v.report_format === 'FUNCTIONAL_DEMO_V1') {
+    const functional = v.report_format === 'FUNCTIONAL_DEMO_V1'
     if (v.illustrations.length || !Array.isArray(v.sections) || !isReviewDetails(v.review_details)
-      || Object.values(v.review_details).some(rows => rows.length) || !Array.isArray(v.analytical_findings)
+      || !functional && Object.values(v.review_details).some(rows => rows.length) || !Array.isArray(v.analytical_findings)
       || v.generation.output_validation !== 'GROUNDED_ANALYTICAL_WORDING_V1') return false
-    const expected = ANALYTICAL_SECTIONS[v.module as DemoModule] as Record<string, string>
+    const expected = (functional ? FUNCTIONAL_SECTIONS : ANALYTICAL_SECTIONS)[v.module as DemoModule] as Record<string, string>
     const knownRefs = new Set(parsed.measurements.map(m => m.id)), ids = new Set<string>()
     if (v.sections.length !== Object.keys(expected).length) return false
     if (!v.analytical_findings.every(f => {
@@ -100,12 +106,15 @@ export function isInteractiveReport(v: unknown): v is InteractiveReport {
       ids.add(f.finding_id); return true
     })) return false
     const findings = v.analytical_findings as AnalyticalFinding[], seen = new Set<string>()
+    if (functional && (!isFunctionalContext(v.planning_context) || v.planning_context.module !== v.module
+      || !isFunctionalPlan(v.functional_plan, v.planning_context, parsed, v.review_details, findings))) return false
+    if (!functional && (v.planning_context != null || v.functional_plan != null)) return false
     return v.sections.every(s => {
       if (!obj(s) || !str(s.section_id) || seen.has(s.section_id) || s.title !== expected[s.section_id]
         || !str(s.text) || !Array.isArray(s.source_refs) || !s.source_refs.every(ref => str(ref) && knownRefs.has(ref))
         || !Array.isArray(s.missing_fields) || !s.missing_fields.every(str)) return false
       const own = findings.filter(f => f.section_id === s.section_id)
-      const status = s.section_id === 'ATTACHMENT_DEMO' ? 'SIMULATED_DEMO' : own.some(f => f.source_refs.length) ? 'SOURCE_REPORTED' : 'UNAVAILABLE'
+      const status = functional || s.section_id === 'ATTACHMENT_DEMO' ? 'SIMULATED_DEMO' : own.some(f => f.source_refs.length) ? 'SOURCE_REPORTED' : 'UNAVAILABLE'
       if (s.status !== status || !own.length) return false
       const paragraphs = s.text.split(/\n\n/), expectedTexts = own.map(f => f.text)
       if (paragraphs.length !== expectedTexts.length || new Set(paragraphs).size !== paragraphs.length || paragraphs.some(p => !expectedTexts.includes(p))) return false
@@ -172,17 +181,20 @@ function isReviewDetails(value: unknown): value is ReviewDetails {
     && (value.anchorage_notes as unknown[]).length <= 32 && (value.anchorage_notes as unknown[]).every(row => exact(row, ['tooth_ref', 'note']) && text(row.tooth_ref, 80) && str(row.note) && row.note.trim().length > 0 && row.note.length <= 240)
 }
 
-export async function requestInteractiveReview(module: DemoModule, rawText: string, context: ContextClaims, hash: string, receipt: string | null | undefined, signal: AbortSignal, details: ReviewDetails = emptyReviewDetails()): Promise<InteractiveReport> {
+export async function requestInteractiveReview(module: DemoModule, rawText: string, context: ContextClaims, hash: string, receipt: string | null | undefined, signal: AbortSignal, details: ReviewDetails = emptyReviewDetails(), planningContext: FunctionalContext | null = null): Promise<InteractiveReport> {
   const supplied = module === 'micro' ? { ...emptyReviewDetails(), attachments: details.attachments } : module === 'nano' ? { ...details, attachments: [] } : emptyReviewDetails()
   if (!isReviewDetails(supplied)) throw new Error('DETAILS_ERROR:' + (module === 'micro'
     ? 'Check attachment details. Use decimal numbers for dimensions in mm, or leave unknown dimensions blank.'
     : 'Check sequencing details. Stage IDs and positive whole-number orders are required; durations need whole days, amounts need decimal numbers and units, and anchorage notes need text.'))
   const response = await fetch('/api/v1/interactive/review', { method: 'POST', headers: { 'Content-Type': 'application/json' }, signal,
-    body: JSON.stringify({ module, raw_text: rawText, raw_sha256: hash, source_claim: 'Unknown', context, synthetic_data_confirmed: true, ...(Object.values(supplied).some(rows => rows.length) ? { review_details: supplied } : {}), ...(receipt ? { recovery_receipt: receipt } : {}) }) })
+    body: JSON.stringify({ module, raw_text: rawText, raw_sha256: hash, source_claim: 'Unknown', context, synthetic_data_confirmed: true, ...(planningContext ? { planning_context: planningContext } : {}), ...(Object.values(supplied).some(rows => rows.length) ? { review_details: supplied } : {}), ...(receipt ? { recovery_receipt: receipt } : {}) }) })
   if (!response.ok) {
     if (response.status === 422) {
       const error = await response.json().catch(() => null)
       const messages: Record<string, string> = {
+        FUNCTIONAL_CONTEXT_SOURCE_MISMATCH: 'The fictional scenario belongs to a different table. Reload a scenario or clear it before reviewing.',
+        FUNCTIONAL_CONTEXT_MODULE_MISMATCH: 'Use the review module associated with the selected fictional scenario.',
+        FUNCTIONAL_CONTEXT_INVALID: 'Check the supplied fictional scenario references, units and catalog options.',
         DETAILS_MODULE_MISMATCH: 'Use attachment details in Micro and stage details in Nano.',
         ATTACHMENT_REFERENCE_INVALID: 'Choose a current tooth for each attachment record, with one record per tooth.',
         ATTACHMENT_CHOICE_CONFLICT: 'Design and placement details require a supplied attachment choice.',
@@ -197,9 +209,10 @@ export async function requestInteractiveReview(module: DemoModule, rawText: stri
   }
   const data: unknown = await response.json()
   if (!isInteractiveReport(data) || data.module !== module || data.parsed.raw_sha256 !== hash || data.parsed.raw_text !== rawText) throw new Error('INVALID_RESPONSE')
-  if (data.report_format === 'MODULE_SPECIFIC_V1' || data.report_format === 'ANALYTICAL_V1') {
+  if (data.report_format === 'MODULE_SPECIFIC_V1' || data.report_format === 'ANALYTICAL_V1' || data.report_format === 'FUNCTIONAL_DEMO_V1') {
     const canonical = (v: unknown): string => JSON.stringify(v, (_key, item: unknown) => obj(item) ? Object.fromEntries(Object.entries(item).sort(([a], [b]) => a.localeCompare(b))) : item)
     if (canonical(data.review_details) !== canonical(supplied)) throw new Error('INVALID_RESPONSE')
+    if (canonical(data.planning_context ?? null) !== canonical(planningContext)) throw new Error('INVALID_RESPONSE')
   }
   return data
 }

@@ -18,7 +18,7 @@ REF = re.compile(r"\{(F\d{4})\}")
 MAX_PROMPT_BYTES = 24_000
 
 
-def analytical_wording(parsed, module, sections, findings, *, settings=None, client=None):
+def analytical_wording(parsed, module, sections, findings, *, settings=None, client=None, functional_evidence=None):
     logger.info("analysis_ai_requested module=%s requested=True", module)
     reason, attempts, accepted = "GROQ_NOT_CONFIGURED", 0, 0
     chosen = sections
@@ -51,6 +51,8 @@ def analytical_wording(parsed, module, sections, findings, *, settings=None, cli
                     compared=comparison_ref(f.source_refs), selected=[evidence_aliases[r] for r in f.selected_refs])
                     for f in findings if f.section_id == s.section_id]) for s in sections])
             payload["comparison_sets"] = {alias: [evidence_aliases[r] for r in refs] for refs, alias in comparison_sets.items()}
+            if functional_evidence is not None:
+                payload['approved_synthetic_decisions'] = functional_evidence
             # Grouping/selection was computed locally. Complete analytical claims
             # remain immutable locally, including tokens and exact scalar precision.
             messages = [dict(role="system", content=(

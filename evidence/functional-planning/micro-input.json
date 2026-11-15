@@ -1,0 +1,104 @@
+{
+  "label": "Fictional attachment catalog",
+  "module": "micro",
+  "raw_text": "# SYNTHETIC FUNCTIONAL SCENARIO \u2014 micro-catalog\nTooth\tRotation (deg)\tAngulation (deg)\tInclination (deg)\tVertical (mm)\tRelative Ext / Int (mm)\tTranslation B / L (mm)\tTranslation M / D (mm)\n11\t2.00 D\t1.00 D\t0.00\t0.00\t0.00\t0.00\t0.00\n12\t2.00 D\t0.00\t0.00\t0.00\t0.00\t0.00\t0.00\n13\t0.00\t1.00 D\t0.00\t0.00\t0.00\t0.00\t0.00\n14\t0.00\t0.00\t1.00 B\t0.00\t0.00\t0.00\t0.00\n15\t0.00\t0.00\t0.00\t1.00 I\t0.20 I\t0.00\t0.00\n16\t0.00\t0.00\t0.00\t0.00\t0.00\t0.00\t0.00\n17\t\u2014\t0.00\t0.00\t0.00\t0.00\t0.00\t0.00\n18\t0.00\t0.00\t0.00\t0.00\t0.00\t0.00\t1.00 D",
+  "planning_context": {
+    "scenario_id": "micro-catalog",
+    "policy_version": "1.0.0",
+    "source_sha256": "3bbc10bb52d11484f20287f9de0bd326e12b63f7a84631bccf493e67fdb97b4b",
+    "module": "micro",
+    "origin": "EXPLICIT_SYNTHETIC_SCENARIO",
+    "notation": "FDI",
+    "objectives": [],
+    "targets": [],
+    "attachment_options": [
+      {
+        "concept": "RECTANGULAR",
+        "geometry": {
+          "width_mm": "2.000",
+          "height_mm": "2.000",
+          "depth_mm": "0.800"
+        },
+        "orientation": "UNSPECIFIED",
+        "surface": "BUCCAL",
+        "placement": {
+          "frame": "FICTIONAL_TOOTH_LOCAL_MM",
+          "x_mm": "0.000",
+          "y_mm": "0.000",
+          "z_mm": "0.000"
+        }
+      },
+      {
+        "concept": "VERTICAL_RECTANGULAR",
+        "geometry": {
+          "width_mm": "2.000",
+          "height_mm": "3.000",
+          "depth_mm": "1.000"
+        },
+        "orientation": "VERTICAL",
+        "surface": "BUCCAL",
+        "placement": {
+          "frame": "FICTIONAL_TOOTH_LOCAL_MM",
+          "x_mm": "0.000",
+          "y_mm": "0.000",
+          "z_mm": "0.000"
+        }
+      },
+      {
+        "concept": "HORIZONTAL_RECTANGULAR",
+        "geometry": {
+          "width_mm": "3.000",
+          "height_mm": "2.000",
+          "depth_mm": "1.000"
+        },
+        "orientation": "HORIZONTAL",
+        "surface": "BUCCAL",
+        "placement": {
+          "frame": "FICTIONAL_TOOTH_LOCAL_MM",
+          "x_mm": "0.000",
+          "y_mm": "0.000",
+          "z_mm": "0.000"
+        }
+      },
+      {
+        "concept": "OVAL",
+        "geometry": {
+          "width_mm": "2.000",
+          "height_mm": "2.500",
+          "depth_mm": "0.800"
+        },
+        "orientation": "UNSPECIFIED",
+        "surface": "BUCCAL",
+        "placement": {
+          "frame": "FICTIONAL_TOOTH_LOCAL_MM",
+          "x_mm": "0.000",
+          "y_mm": "0.000",
+          "z_mm": "0.000"
+        }
+      },
+      {
+        "concept": "OPTIMIZED_STYLE",
+        "geometry": null,
+        "orientation": null,
+        "surface": null,
+        "placement": null
+      },
+      {
+        "concept": "NO_ATTACHMENT",
+        "geometry": null,
+        "orientation": null,
+        "surface": null,
+        "placement": null
+      }
+    ],
+    "phases": [],
+    "stage_value_basis": "UNSPECIFIED",
+    "support_constraints": []
+  },
+  "review_details": {
+    "attachments": [],
+    "stages": [],
+    "allocations": [],
+    "anchorage_notes": []
+  }
+}

@@ -5,6 +5,8 @@ import type { DemoModule, InteractiveReport, ReviewDetails } from '../api/intera
 import type { AutomaticParseResult, ContextClaims, ParseResult } from '../api/parse'
 import PdfExportButton from './PdfExportButton'
 import { commentParagraphs, moduleReviewPresentation } from '../reviewPresentation'
+import FunctionalResults from './FunctionalResults'
+import type { FunctionalContext } from '../api/functional'
 
 const TITLES = { macro: 'Planning', micro: 'Attachment', nano: 'Sequencing' }
 const ACTIONS = { macro: 'Run Planning Assistant', micro: 'Run Attachment Review', nano: 'Run Sequencing Review' }
@@ -33,8 +35,8 @@ function partialParseExplanation(parsed: ParseResult): string {
   return 'All available movement values were parsed successfully. Omitted or unassigned cells are preserved as unknown rather than assumed to be zero.'
 }
 
-export default function InteractiveWorkspace({ module, rawText, context, parsed, onComplete, reviewDetails = emptyReviewDetails(), savedReport = null, onReportChange = () => {} }: {
-  module: DemoModule; rawText: string; context: ContextClaims; parsed: AutomaticParseResult; onComplete: (complete: boolean) => void; reviewDetails?: ReviewDetails; onDetailsChange?: (details: ReviewDetails) => void; savedReport?: InteractiveReport | null; onReportChange?: (report: InteractiveReport | null) => void
+export default function InteractiveWorkspace({ module, rawText, context, parsed, onComplete, reviewDetails = emptyReviewDetails(), savedReport = null, onReportChange = () => {}, planningContext = null }: {
+  module: DemoModule; rawText: string; context: ContextClaims; parsed: AutomaticParseResult; onComplete: (complete: boolean) => void; reviewDetails?: ReviewDetails; onDetailsChange?: (details: ReviewDetails) => void; savedReport?: InteractiveReport | null; onReportChange?: (report: InteractiveReport | null) => void; planningContext?: FunctionalContext | null
 }) {
   const [report, setReport] = useState<InteractiveReport | null>(savedReport)
   const [loading, setLoading] = useState(false), [error, setError] = useState(''), [notice, setNotice] = useState('')
@@ -52,7 +54,7 @@ export default function InteractiveWorkspace({ module, rawText, context, parsed,
     pending.current = controller; setLoading(true); setError(''); setNotice(''); setReport(null); onReportChange(null); onComplete(false)
     const timer = window.setTimeout(() => controller.abort(), 55_000)
     try {
-      const result = await requestInteractiveReview(module, rawText, context, parsed.raw_sha256, parsed.pipeline.recovery_receipt, controller.signal, reviewDetails)
+      const result = await requestInteractiveReview(module, rawText, context, parsed.raw_sha256, parsed.pipeline.recovery_receipt, controller.signal, reviewDetails, planningContext)
       if (revision.current === current) { setReport(result); onReportChange(result); onComplete(true) }
     } catch (e) {
       if (revision.current !== current) return
@@ -136,6 +138,7 @@ export default function InteractiveWorkspace({ module, rawText, context, parsed,
         </div>
         <p role="status" className="mt-4 text-sm text-brand"><span>{report.generation.used_mode === 'GROQ_AI' ? 'AI-assisted wording' : 'Standard wording'}</span>{report.generation.used_mode !== 'GROQ_AI' && <span className="text-muted"> · AI-assisted wording unavailable.</span>}</p>
         <p className="mt-3 text-sm leading-7">{report.summary}</p>
+        {report.functional_plan && <FunctionalResults report={report} />}
         {report.parsed.status === 'PARTIAL' && (
           <div className="mt-3 rounded-lg border border-notice-line bg-notice/40 p-3.5 text-xs leading-6 text-notice-ink">
             <span className="font-semibold text-ink">Parse status note: </span>
@@ -144,7 +147,7 @@ export default function InteractiveWorkspace({ module, rawText, context, parsed,
         )}
         {!!report.sections?.length && <section aria-label="Module review comments" className="mt-6 space-y-4">
           <h5 className="text-base font-semibold">{module === 'macro' ? 'Planning comments' : module === 'micro' ? 'Attachment review comments' : 'Sequencing review comments'}</h5>
-          {presentation?.sections.map(section => <div key={section.section_id} className="comment-card">
+          {presentation?.sections.filter(section => !(report.functional_plan && (section.section_id === 'ATTACHMENT_OPTIONS' || section.section_id === 'PHASES' && report.functional_plan.stages.length > 0))).map(section => <div key={section.section_id} className="comment-card">
             <div className="flex flex-wrap items-center justify-between gap-2"><h6 className="text-base font-semibold">{section.title}</h6><span className="rounded-md bg-canvas px-2 py-1 text-xs text-muted">{sectionStatusLabel(section)}</span></div>
             <div className="mt-3 space-y-3 text-sm leading-7 [overflow-wrap:anywhere]">{commentParagraphs(section.text).map((paragraph, index) => <p key={index} className="whitespace-pre-wrap">{paragraph}</p>)}</div>
             {!!section.missing_fields.length && <p className="mt-3 text-xs leading-6 text-notice-ink"><strong>Information needed:</strong> {section.missing_fields.join('; ')}.</p>}

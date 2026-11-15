@@ -1,0 +1,187 @@
+{
+  "label": "Fictional phases and support groups",
+  "module": "nano",
+  "raw_text": "# SYNTHETIC FUNCTIONAL SCENARIO \u2014 nano-phases\nTooth\tRotation (deg)\tAngulation (deg)\tInclination (deg)\tVertical (mm)\tRelative Ext / Int (mm)\tTranslation B / L (mm)\tTranslation M / D (mm)\n11\t2.00 D\t0.00\t0.00\t0.00\t0.00\t1.00 L\t0.00\n21\t0.00\t0.00\t0.00\t0.60 I\t0.00\t0.00\t0.00\n16\t0.00\t0.00\t0.00\t0.00\t0.00\t0.00\t0.00\n26\t0.00\t0.00\t0.00\t0.00\t0.00\t0.00\t0.00\n31\t0.00\t0.00\t0.00\t0.00\t0.00\t0.00\t1.20 D\n41\t0.00\t1.00 M\t0.00\t0.00\t0.00\t0.00\t0.00\n36\t0.00\t0.00\t0.00\t0.00\t0.00\t0.00\t0.00\n46\t0.00\t0.00\t0.00\t0.00\t0.00\t0.00\t0.00",
+  "planning_context": {
+    "scenario_id": "nano-phases",
+    "policy_version": "1.0.0",
+    "source_sha256": "05f351da882789101d63f8ab3267e1829bc3860a44e29da6332d80d5caa75623",
+    "module": "nano",
+    "origin": "EXPLICIT_SYNTHETIC_SCENARIO",
+    "notation": "FDI",
+    "objectives": [
+      "STAGE_REVIEW"
+    ],
+    "targets": [],
+    "attachment_options": [],
+    "phases": [
+      {
+        "phase_id": "P1",
+        "label": "Initial supplied allocations",
+        "stage_ids": [
+          "S1"
+        ]
+      },
+      {
+        "phase_id": "P2",
+        "label": "Translation follow-through",
+        "stage_ids": [
+          "S2"
+        ]
+      },
+      {
+        "phase_id": "P3",
+        "label": "Angular finishing",
+        "stage_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "stage_value_basis": "INCREMENTS_MATCH_SOURCE_LABELS",
+    "support_constraints": [
+      {
+        "phase_id": "P1",
+        "support_tooth_refs": [
+          "tooth-3",
+          "tooth-7"
+        ],
+        "active_tooth_refs": [
+          "tooth-1",
+          "tooth-2",
+          "tooth-5"
+        ],
+        "assumption": "STATIONARY_IN_FICTIONAL_SCENARIO"
+      },
+      {
+        "phase_id": "P2",
+        "support_tooth_refs": [
+          "tooth-4"
+        ],
+        "active_tooth_refs": [
+          "tooth-1",
+          "tooth-2",
+          "tooth-5"
+        ],
+        "assumption": "STATIONARY_IN_FICTIONAL_SCENARIO"
+      },
+      {
+        "phase_id": "P3",
+        "support_tooth_refs": [
+          "tooth-8"
+        ],
+        "active_tooth_refs": [
+          "tooth-1",
+          "tooth-6"
+        ],
+        "assumption": "STATIONARY_IN_FICTIONAL_SCENARIO"
+      }
+    ]
+  },
+  "review_details": {
+    "attachments": [],
+    "stages": [
+      {
+        "stage_id": "S1",
+        "order": 1,
+        "duration_days": null
+      },
+      {
+        "stage_id": "S2",
+        "order": 2,
+        "duration_days": null
+      },
+      {
+        "stage_id": "S3",
+        "order": 3,
+        "duration_days": null
+      }
+    ],
+    "allocations": [
+      {
+        "stage_id": "S1",
+        "tooth_ref": "tooth-1",
+        "measurement_ref": "measurement-6",
+        "amount": "0.40",
+        "unit": "mm"
+      },
+      {
+        "stage_id": "S2",
+        "tooth_ref": "tooth-1",
+        "measurement_ref": "measurement-6",
+        "amount": "0.60",
+        "unit": "mm"
+      },
+      {
+        "stage_id": "S3",
+        "tooth_ref": "tooth-1",
+        "measurement_ref": "measurement-1",
+        "amount": "2.00",
+        "unit": "deg"
+      },
+      {
+        "stage_id": "S1",
+        "tooth_ref": "tooth-2",
+        "measurement_ref": "measurement-11",
+        "amount": "0.20",
+        "unit": "mm"
+      },
+      {
+        "stage_id": "S2",
+        "tooth_ref": "tooth-2",
+        "measurement_ref": "measurement-11",
+        "amount": "0.40",
+        "unit": "mm"
+      },
+      {
+        "stage_id": "S1",
+        "tooth_ref": "tooth-5",
+        "measurement_ref": "measurement-35",
+        "amount": "0.50",
+        "unit": "mm"
+      },
+      {
+        "stage_id": "S2",
+        "tooth_ref": "tooth-5",
+        "measurement_ref": "measurement-35",
+        "amount": "0.70",
+        "unit": "mm"
+      },
+      {
+        "stage_id": "S3",
+        "tooth_ref": "tooth-6",
+        "measurement_ref": "measurement-37",
+        "amount": "1.00",
+        "unit": "deg"
+      },
+      {
+        "stage_id": "S1",
+        "tooth_ref": "tooth-3",
+        "measurement_ref": "measurement-15",
+        "amount": "0.00",
+        "unit": "deg"
+      },
+      {
+        "stage_id": "S2",
+        "tooth_ref": "tooth-4",
+        "measurement_ref": "measurement-22",
+        "amount": "0.00",
+        "unit": "deg"
+      },
+      {
+        "stage_id": "S1",
+        "tooth_ref": "tooth-7",
+        "measurement_ref": "measurement-43",
+        "amount": "0.00",
+        "unit": "deg"
+      },
+      {
+        "stage_id": "S3",
+        "tooth_ref": "tooth-8",
+        "measurement_ref": "measurement-50",
+        "amount": "0.00",
+        "unit": "deg"
+      }
+    ],
+    "anchorage_notes": []
+  }
+}

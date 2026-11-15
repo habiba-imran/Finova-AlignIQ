@@ -136,6 +136,334 @@
       "title": "AttachmentDetail",
       "type": "object"
     },
+    "AttachmentOption": {
+      "additionalProperties": false,
+      "properties": {
+        "concept": {
+          "enum": [
+            "RECTANGULAR",
+            "VERTICAL_RECTANGULAR",
+            "HORIZONTAL_RECTANGULAR",
+            "OVAL",
+            "OPTIMIZED_STYLE",
+            "NO_ATTACHMENT"
+          ],
+          "title": "Concept",
+          "type": "string"
+        },
+        "geometry": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Geometry"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "orientation": {
+          "anyOf": [
+            {
+              "enum": [
+                "VERTICAL",
+                "HORIZONTAL",
+                "UNSPECIFIED"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Orientation"
+        },
+        "surface": {
+          "anyOf": [
+            {
+              "enum": [
+                "BUCCAL",
+                "LINGUAL"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Surface"
+        },
+        "placement": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Placement"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "concept"
+      ],
+      "title": "AttachmentOption",
+      "type": "object"
+    },
+    "FunctionalContext": {
+      "additionalProperties": false,
+      "properties": {
+        "scenario_id": {
+          "pattern": "^[a-zA-Z0-9_-]{1,60}$",
+          "title": "Scenario Id",
+          "type": "string"
+        },
+        "policy_version": {
+          "const": "1.0.0",
+          "default": "1.0.0",
+          "title": "Policy Version",
+          "type": "string"
+        },
+        "source_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Source Sha256",
+          "type": "string"
+        },
+        "module": {
+          "enum": [
+            "macro",
+            "micro",
+            "nano"
+          ],
+          "title": "Module",
+          "type": "string"
+        },
+        "origin": {
+          "const": "EXPLICIT_SYNTHETIC_SCENARIO",
+          "default": "EXPLICIT_SYNTHETIC_SCENARIO",
+          "title": "Origin",
+          "type": "string"
+        },
+        "notation": {
+          "default": "UNVERIFIED",
+          "enum": [
+            "FDI",
+            "UNVERIFIED"
+          ],
+          "title": "Notation",
+          "type": "string"
+        },
+        "objectives": {
+          "items": {
+            "enum": [
+              "REDISTRIBUTE_TRANSLATIONS",
+              "ANGULAR_CONTROL",
+              "VERTICAL_REVIEW",
+              "STAGE_REVIEW"
+            ],
+            "type": "string"
+          },
+          "maxItems": 4,
+          "title": "Objectives",
+          "type": "array"
+        },
+        "targets": {
+          "items": {
+            "$ref": "#/$defs/MovementTarget"
+          },
+          "maxItems": 64,
+          "title": "Targets",
+          "type": "array"
+        },
+        "attachment_options": {
+          "items": {
+            "$ref": "#/$defs/AttachmentOption"
+          },
+          "maxItems": 6,
+          "title": "Attachment Options",
+          "type": "array"
+        },
+        "phases": {
+          "items": {
+            "$ref": "#/$defs/Phase"
+          },
+          "maxItems": 16,
+          "title": "Phases",
+          "type": "array"
+        },
+        "stage_value_basis": {
+          "default": "UNSPECIFIED",
+          "enum": [
+            "UNSPECIFIED",
+            "INCREMENTS_MATCH_SOURCE_LABELS"
+          ],
+          "title": "Stage Value Basis",
+          "type": "string"
+        },
+        "support_constraints": {
+          "items": {
+            "$ref": "#/$defs/SupportConstraint"
+          },
+          "maxItems": 16,
+          "title": "Support Constraints",
+          "type": "array"
+        }
+      },
+      "required": [
+        "scenario_id",
+        "source_sha256",
+        "module"
+      ],
+      "title": "FunctionalContext",
+      "type": "object"
+    },
+    "Geometry": {
+      "additionalProperties": false,
+      "properties": {
+        "width_mm": {
+          "maxLength": 24,
+          "pattern": "^[+-]?(?:\\d+(?:\\.\\d*)?|\\.\\d+)$",
+          "title": "Width Mm",
+          "type": "string"
+        },
+        "height_mm": {
+          "maxLength": 24,
+          "pattern": "^[+-]?(?:\\d+(?:\\.\\d*)?|\\.\\d+)$",
+          "title": "Height Mm",
+          "type": "string"
+        },
+        "depth_mm": {
+          "maxLength": 24,
+          "pattern": "^[+-]?(?:\\d+(?:\\.\\d*)?|\\.\\d+)$",
+          "title": "Depth Mm",
+          "type": "string"
+        }
+      },
+      "required": [
+        "width_mm",
+        "height_mm",
+        "depth_mm"
+      ],
+      "title": "Geometry",
+      "type": "object"
+    },
+    "MovementTarget": {
+      "additionalProperties": false,
+      "properties": {
+        "measurement_ref": {
+          "maxLength": 80,
+          "minLength": 1,
+          "title": "Measurement Ref",
+          "type": "string"
+        },
+        "amount": {
+          "maxLength": 24,
+          "pattern": "^[+-]?(?:\\d+(?:\\.\\d*)?|\\.\\d+)$",
+          "title": "Amount",
+          "type": "string"
+        },
+        "unit": {
+          "enum": [
+            "mm",
+            "deg"
+          ],
+          "title": "Unit",
+          "type": "string"
+        },
+        "source_direction": {
+          "anyOf": [
+            {
+              "maxLength": 4,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Direction"
+        }
+      },
+      "required": [
+        "measurement_ref",
+        "amount",
+        "unit"
+      ],
+      "title": "MovementTarget",
+      "type": "object"
+    },
+    "Phase": {
+      "additionalProperties": false,
+      "properties": {
+        "phase_id": {
+          "maxLength": 40,
+          "minLength": 1,
+          "title": "Phase Id",
+          "type": "string"
+        },
+        "label": {
+          "maxLength": 80,
+          "minLength": 1,
+          "title": "Label",
+          "type": "string"
+        },
+        "stage_ids": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 64,
+          "minItems": 1,
+          "title": "Stage Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "phase_id",
+        "label",
+        "stage_ids"
+      ],
+      "title": "Phase",
+      "type": "object"
+    },
+    "Placement": {
+      "additionalProperties": false,
+      "properties": {
+        "frame": {
+          "const": "FICTIONAL_TOOTH_LOCAL_MM",
+          "title": "Frame",
+          "type": "string"
+        },
+        "x_mm": {
+          "maxLength": 24,
+          "pattern": "^[+-]?(?:\\d+(?:\\.\\d*)?|\\.\\d+)$",
+          "title": "X Mm",
+          "type": "string"
+        },
+        "y_mm": {
+          "maxLength": 24,
+          "pattern": "^[+-]?(?:\\d+(?:\\.\\d*)?|\\.\\d+)$",
+          "title": "Y Mm",
+          "type": "string"
+        },
+        "z_mm": {
+          "maxLength": 24,
+          "pattern": "^[+-]?(?:\\d+(?:\\.\\d*)?|\\.\\d+)$",
+          "title": "Z Mm",
+          "type": "string"
+        }
+      },
+      "required": [
+        "frame",
+        "x_mm",
+        "y_mm",
+        "z_mm"
+      ],
+      "title": "Placement",
+      "type": "object"
+    },
     "ReviewDetails": {
       "additionalProperties": false,
       "properties": {
@@ -420,6 +748,48 @@
       ],
       "title": "SuppliedStage",
       "type": "object"
+    },
+    "SupportConstraint": {
+      "additionalProperties": false,
+      "properties": {
+        "phase_id": {
+          "maxLength": 40,
+          "minLength": 1,
+          "title": "Phase Id",
+          "type": "string"
+        },
+        "support_tooth_refs": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 32,
+          "minItems": 1,
+          "title": "Support Tooth Refs",
+          "type": "array"
+        },
+        "active_tooth_refs": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 32,
+          "minItems": 1,
+          "title": "Active Tooth Refs",
+          "type": "array"
+        },
+        "assumption": {
+          "const": "STATIONARY_IN_FICTIONAL_SCENARIO",
+          "title": "Assumption",
+          "type": "string"
+        }
+      },
+      "required": [
+        "phase_id",
+        "support_tooth_refs",
+        "active_tooth_refs",
+        "assumption"
+      ],
+      "title": "SupportConstraint",
+      "type": "object"
     }
   },
   "additionalProperties": false,
@@ -496,6 +866,17 @@
     },
     "review_details": {
       "$ref": "#/$defs/ReviewDetails"
+    },
+    "planning_context": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/FunctionalContext"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
     }
   },
   "required": [

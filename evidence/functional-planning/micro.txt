@@ -1,0 +1,920 @@
+FINOVA ALIGNIQ
+MICRO — Generated synthetic review
+Synthetic demonstration — not for clinical use
+
+Standard report wording.
+TMT-based attachment review: rotation, angulation and inclination observations. Successfully parsed with 1 missing value. 8 teeth; 56 measurement positions; 55 recorded numerical values; 1 missing or omitted; 0 invalid or ambiguous.
+
+MODULE REVIEW COMMENTS
+
+TOOTH-WISE ATTACHMENT OPTIONS
+Status: SIMULATED_DEMO
+Tooth 11 — Tooth 11: 2.00° (D-labelled) rotation; Tooth 11: 1.00° (D-labelled) angulation. The combined rotation/angulation profile matches the toy catalog rule. Illustrative candidate: Vertical rectangular. Fictional supplied dimensions: 2.000 × 3.000 × 1.000 mm. Supplied orientation: vertical. Supplied surface: buccal. Supplied fictional local position: (0.000, 0.000, 0.000) mm; frame FICTIONAL_TOOTH_LOCAL_MM. Alternative: Horizontal rectangular
+
+Tooth 12 — Tooth 12: 2.00° (D-labelled) rotation. Nonzero rotation matches the toy oval rule. Illustrative candidate: Ellipsoid / oval. Fictional supplied dimensions: 2.000 × 2.500 × 0.800 mm. Supplied orientation: unspecified. Supplied surface: buccal. Supplied fictional local position: (0.000, 0.000, 0.000) mm; frame FICTIONAL_TOOTH_LOCAL_MM. Alternative: Rectangular
+
+Tooth 13 — Tooth 13: 1.00° (D-labelled) angulation. Nonzero angulation matches the toy horizontal-rectangle rule. Illustrative candidate: Horizontal rectangular. Fictional supplied dimensions: 3.000 × 2.000 × 1.000 mm. Supplied orientation: horizontal. Supplied surface: buccal. Supplied fictional local position: (0.000, 0.000, 0.000) mm; frame FICTIONAL_TOOTH_LOCAL_MM. Alternative: Vertical rectangular
+
+Tooth 14 — Tooth 14: 1.00° (B-labelled) inclination. Nonzero inclination matches the toy optimized-style category rule. Illustrative candidate: Optimized-style category (geometry unspecified). Alternative: Rectangular Information needed: geometry; orientation; surface; placement.
+
+Tooth 15 — Tooth 15: 1.00 mm (I-labelled) vertical; Tooth 15: 0.20 mm (I-labelled) relative vertical. The zero-angular/nonzero-vertical profile matches the toy rectangular rule. Illustrative candidate: Rectangular. Fictional supplied dimensions: 2.000 × 2.000 × 0.800 mm. Supplied orientation: unspecified. Supplied surface: buccal. Supplied fictional local position: (0.000, 0.000, 0.000) mm; frame FICTIONAL_TOOTH_LOCAL_MM. Alternative: Ellipsoid / oval
+
+Tooth 16 — All seven source fields are explicitly zero. The complete explicit-zero profile matches the fictional no-attachment rule. Illustrative candidate: No attachment in this fictional scenario.
+
+Tooth 17 — Required movement evidence is incomplete or unsupported. The profile has no complete applicable toy rule. No candidate can be selected from the supplied evidence and catalog. Information needed: Complete unambiguous rotation, angulation and inclination values in degrees.
+
+Tooth 18 — Tooth 18: 1.00 mm (D-labelled) mesiodistal. The profile has no complete applicable toy rule. No candidate can be selected from the supplied evidence and catalog. Information needed: A toy policy for this translation-only profile.
+
+ATTACHMENT ASSUMPTIONS AND LIMITS
+Status: SIMULATED_DEMO
+These independent toy mappings use component presence, not dataset rank or tooth order. Catalog geometry and placement are explicitly supplied fictional examples. No clinical suitability or proprietary optimized-attachment specification is established.
+
+LIMITATIONS
+Successfully parsed with 1 missing value. Missing values remain unknown, not zero.
+Values describe the parsed source only. Tooth tokens, axes, directions, units and source conventions are not independently clinically verified.
+Missing, omitted, invalid and ambiguous values remain unknown; explicit zero applies only to its recorded cell. No achieved movement, suitability or safety conclusion is inferred.
+Clinical attachment, staging, anchorage, force, timing, diagnosis and treatment predicates remain unevaluated. No clinical approval is recorded.
+
+SOURCE AND PROVENANCE
+Report ID: 2e9143131b93d0a2f1714d6eb98331a6c7f7e2b74c2bbaf990c9ecbcdfefa394
+Input SHA-256: 3bbc10bb52d11484f20287f9de0bd326e12b63f7a84631bccf493e67fdb97b4b
+Parser: 0.1.0; engine: 0.5.0; rules: 2.0.0-phase5
+Wording: STANDARD_TEMPLATES; status: GROQ_NOT_CONFIGURED; provider attempts: 0
+measurement-1; tooth_ref tooth-1; L3:C4-C10; offsets 191:197; PARSED; raw sign null; raw direction "D"; magnitude 2.00
+"Rotation (deg)": 2.00 deg; direction label "D". Original cell: "2.00 D".
+measurement-2; tooth_ref tooth-1; L3:C11-C17; offsets 198:204; PARSED; raw sign null; raw direction "D"; magnitude 1.00
+"Angulation (deg)": 1.00 deg; direction label "D". Original cell: "1.00 D".
+measurement-3; tooth_ref tooth-1; L3:C18-C22; offsets 205:209; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Inclination (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-4; tooth_ref tooth-1; L3:C23-C27; offsets 210:214; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Vertical (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-5; tooth_ref tooth-1; L3:C28-C32; offsets 215:219; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Relative Ext / Int (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-6; tooth_ref tooth-1; L3:C33-C37; offsets 220:224; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Translation B / L (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-7; tooth_ref tooth-1; L3:C38-C42; offsets 225:229; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Translation M / D (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-8; tooth_ref tooth-2; L4:C4-C10; offsets 233:239; PARSED; raw sign null; raw direction "D"; magnitude 2.00
+"Rotation (deg)": 2.00 deg; direction label "D". Original cell: "2.00 D".
+measurement-9; tooth_ref tooth-2; L4:C11-C15; offsets 240:244; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Angulation (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-10; tooth_ref tooth-2; L4:C16-C20; offsets 245:249; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Inclination (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-11; tooth_ref tooth-2; L4:C21-C25; offsets 250:254; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Vertical (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-12; tooth_ref tooth-2; L4:C26-C30; offsets 255:259; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Relative Ext / Int (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-13; tooth_ref tooth-2; L4:C31-C35; offsets 260:264; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Translation B / L (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-14; tooth_ref tooth-2; L4:C36-C40; offsets 265:269; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Translation M / D (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-15; tooth_ref tooth-3; L5:C4-C8; offsets 273:277; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Rotation (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-16; tooth_ref tooth-3; L5:C9-C15; offsets 278:284; PARSED; raw sign null; raw direction "D"; magnitude 1.00
+"Angulation (deg)": 1.00 deg; direction label "D". Original cell: "1.00 D".
+measurement-17; tooth_ref tooth-3; L5:C16-C20; offsets 285:289; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Inclination (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-18; tooth_ref tooth-3; L5:C21-C25; offsets 290:294; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Vertical (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-19; tooth_ref tooth-3; L5:C26-C30; offsets 295:299; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Relative Ext / Int (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-20; tooth_ref tooth-3; L5:C31-C35; offsets 300:304; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Translation B / L (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-21; tooth_ref tooth-3; L5:C36-C40; offsets 305:309; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Translation M / D (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-22; tooth_ref tooth-4; L6:C4-C8; offsets 313:317; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Rotation (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-23; tooth_ref tooth-4; L6:C9-C13; offsets 318:322; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Angulation (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-24; tooth_ref tooth-4; L6:C14-C20; offsets 323:329; PARSED; raw sign null; raw direction "B"; magnitude 1.00
+"Inclination (deg)": 1.00 deg; direction label "B". Original cell: "1.00 B".
+measurement-25; tooth_ref tooth-4; L6:C21-C25; offsets 330:334; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Vertical (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-26; tooth_ref tooth-4; L6:C26-C30; offsets 335:339; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Relative Ext / Int (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-27; tooth_ref tooth-4; L6:C31-C35; offsets 340:344; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Translation B / L (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-28; tooth_ref tooth-4; L6:C36-C40; offsets 345:349; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Translation M / D (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-29; tooth_ref tooth-5; L7:C4-C8; offsets 353:357; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Rotation (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-30; tooth_ref tooth-5; L7:C9-C13; offsets 358:362; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Angulation (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-31; tooth_ref tooth-5; L7:C14-C18; offsets 363:367; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Inclination (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-32; tooth_ref tooth-5; L7:C19-C25; offsets 368:374; PARSED; raw sign null; raw direction "I"; magnitude 1.00
+"Vertical (mm)": 1.00 mm; direction label "I". Original cell: "1.00 I".
+measurement-33; tooth_ref tooth-5; L7:C26-C32; offsets 375:381; PARSED; raw sign null; raw direction "I"; magnitude 0.20
+"Relative Ext / Int (mm)": 0.20 mm; direction label "I". Original cell: "0.20 I".
+measurement-34; tooth_ref tooth-5; L7:C33-C37; offsets 382:386; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Translation B / L (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-35; tooth_ref tooth-5; L7:C38-C42; offsets 387:391; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Translation M / D (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-36; tooth_ref tooth-6; L8:C4-C8; offsets 395:399; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Rotation (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-37; tooth_ref tooth-6; L8:C9-C13; offsets 400:404; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Angulation (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-38; tooth_ref tooth-6; L8:C14-C18; offsets 405:409; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Inclination (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-39; tooth_ref tooth-6; L8:C19-C23; offsets 410:414; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Vertical (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-40; tooth_ref tooth-6; L8:C24-C28; offsets 415:419; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Relative Ext / Int (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-41; tooth_ref tooth-6; L8:C29-C33; offsets 420:424; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Translation B / L (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-42; tooth_ref tooth-6; L8:C34-C38; offsets 425:429; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Translation M / D (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-43; tooth_ref tooth-7; L9:C4-C5; offsets 433:434; MISSING; raw sign null; raw direction null; magnitude None
+"Rotation (deg)": missing; no numerical observation (unknown, not zero). Original cell: "—".
+measurement-44; tooth_ref tooth-7; L9:C6-C10; offsets 435:439; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Angulation (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-45; tooth_ref tooth-7; L9:C11-C15; offsets 440:444; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Inclination (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-46; tooth_ref tooth-7; L9:C16-C20; offsets 445:449; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Vertical (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-47; tooth_ref tooth-7; L9:C21-C25; offsets 450:454; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Relative Ext / Int (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-48; tooth_ref tooth-7; L9:C26-C30; offsets 455:459; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Translation B / L (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-49; tooth_ref tooth-7; L9:C31-C35; offsets 460:464; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Translation M / D (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-50; tooth_ref tooth-8; L10:C4-C8; offsets 468:472; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Rotation (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-51; tooth_ref tooth-8; L10:C9-C13; offsets 473:477; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Angulation (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-52; tooth_ref tooth-8; L10:C14-C18; offsets 478:482; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Inclination (deg)": 0.00 deg; explicitly recorded zero. Original cell: "0.00".
+measurement-53; tooth_ref tooth-8; L10:C19-C23; offsets 483:487; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Vertical (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-54; tooth_ref tooth-8; L10:C24-C28; offsets 488:492; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Relative Ext / Int (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-55; tooth_ref tooth-8; L10:C29-C33; offsets 493:497; EXPLICIT_ZERO; raw sign null; raw direction null; magnitude 0.00
+"Translation B / L (mm)": 0.00 mm; explicitly recorded zero. Original cell: "0.00".
+measurement-56; tooth_ref tooth-8; L10:C34-C40; offsets 498:504; PARSED; raw sign null; raw direction "D"; magnitude 1.00
+"Translation M / D (mm)": 1.00 mm; direction label "D". Original cell: "1.00 D".
+
+RULE EVALUATION LEDGER — CLINICAL AUTHORITY UNCHANGED
+A01 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+A02 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+A03 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+A04 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+A05 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+A06 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+D01 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D02 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D03 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D04 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D05 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D06 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D07 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D08 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D09 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D10 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D11 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D12 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D13 v2.0.0: CONTEXT_REQUIRED; execution ACTIVE; approval NOT APPLICABLE
+D14 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+D15 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+D16 v2.0.0: CONTEXT_REQUIRED; execution DEFERRED; approval NOT APPLICABLE
+G01 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+G02 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G03 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G04 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G05 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G06 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+G07 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G08 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G09 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G10 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G11 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G12 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G13 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G14 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G15 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+G16 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+G17 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+G18 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+H01 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H02 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H03 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H04 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H05 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H06 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H07 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H08 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H09 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H10 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+H11 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+H12 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+L01 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+L02 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+L03 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+L04 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+L05 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+L06 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+N01 v2.0.0: CONTEXT_REQUIRED; execution ACTIVE; approval NOT APPLICABLE
+N02 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+N03 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+N04 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+N05 v2.0.0: CONTEXT_REQUIRED; execution ACTIVE; approval NOT APPLICABLE
+N06 v2.0.0: CONTEXT_REQUIRED; execution ACTIVE; approval NOT APPLICABLE
+N07 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+N08 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+N09 v2.0.0: SEMANTICS_UNKNOWN; execution ACTIVE; approval NOT APPLICABLE
+N10 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+N11 v2.0.0: CONTEXT_REQUIRED; execution DEFERRED; approval NOT APPLICABLE
+N12 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+N13 v2.0.0: OBSERVED; execution ACTIVE; approval NOT APPLICABLE
+N14 v2.0.0: CONTEXT_REQUIRED; execution DEFERRED; approval NOT APPLICABLE
+R01 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R02 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R03 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R04 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R05 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R06 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R07 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R08 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R09 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R10 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R11 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R12 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R13 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R14 v2.0.0: NOT_APPLICABLE; execution ACTIVE; approval NOT APPLICABLE
+R15 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+R16 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T01 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T02 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T03 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T04 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T05 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T06 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T07 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+T08 v2.0.0: DISABLED; execution DISABLED; approval NOT APPROVED
+
+ANALYTICAL FINDING PROVENANCE
+[
+  {
+    "finding_id": "F0001",
+    "section_id": "ATTACHMENT_OPTIONS",
+    "kind": "ILLUSTRATIVE_PROPOSAL",
+    "text": "Tooth 11 — Tooth 11: 2.00° (D-labelled) rotation; Tooth 11: 1.00° (D-labelled) angulation. The combined rotation/angulation profile matches the toy catalog rule. Illustrative candidate: Vertical rectangular. Fictional supplied dimensions: 2.000 × 3.000 × 1.000 mm. Supplied orientation: vertical. Supplied surface: buccal. Supplied fictional local position: (0.000, 0.000, 0.000) mm; frame FICTIONAL_TOOTH_LOCAL_MM. Alternative: Horizontal rectangular",
+    "source_refs": [
+      "measurement-1",
+      "measurement-2",
+      "measurement-3"
+    ],
+    "selected_refs": [
+      "measurement-1",
+      "measurement-2",
+      "measurement-3"
+    ],
+    "demo_rule": "DEMO-ATT-COMBINED-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0002",
+    "section_id": "ATTACHMENT_OPTIONS",
+    "kind": "ILLUSTRATIVE_PROPOSAL",
+    "text": "Tooth 12 — Tooth 12: 2.00° (D-labelled) rotation. Nonzero rotation matches the toy oval rule. Illustrative candidate: Ellipsoid / oval. Fictional supplied dimensions: 2.000 × 2.500 × 0.800 mm. Supplied orientation: unspecified. Supplied surface: buccal. Supplied fictional local position: (0.000, 0.000, 0.000) mm; frame FICTIONAL_TOOTH_LOCAL_MM. Alternative: Rectangular",
+    "source_refs": [
+      "measurement-8",
+      "measurement-9",
+      "measurement-10"
+    ],
+    "selected_refs": [
+      "measurement-8",
+      "measurement-9",
+      "measurement-10"
+    ],
+    "demo_rule": "DEMO-ATT-ROTATION-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0003",
+    "section_id": "ATTACHMENT_OPTIONS",
+    "kind": "ILLUSTRATIVE_PROPOSAL",
+    "text": "Tooth 13 — Tooth 13: 1.00° (D-labelled) angulation. Nonzero angulation matches the toy horizontal-rectangle rule. Illustrative candidate: Horizontal rectangular. Fictional supplied dimensions: 3.000 × 2.000 × 1.000 mm. Supplied orientation: horizontal. Supplied surface: buccal. Supplied fictional local position: (0.000, 0.000, 0.000) mm; frame FICTIONAL_TOOTH_LOCAL_MM. Alternative: Vertical rectangular",
+    "source_refs": [
+      "measurement-15",
+      "measurement-16",
+      "measurement-17"
+    ],
+    "selected_refs": [
+      "measurement-15",
+      "measurement-16",
+      "measurement-17"
+    ],
+    "demo_rule": "DEMO-ATT-ANGULATION-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0004",
+    "section_id": "ATTACHMENT_OPTIONS",
+    "kind": "ILLUSTRATIVE_PROPOSAL",
+    "text": "Tooth 14 — Tooth 14: 1.00° (B-labelled) inclination. Nonzero inclination matches the toy optimized-style category rule. Illustrative candidate: Optimized-style category (geometry unspecified). Alternative: Rectangular Information needed: geometry; orientation; surface; placement.",
+    "source_refs": [
+      "measurement-22",
+      "measurement-23",
+      "measurement-24"
+    ],
+    "selected_refs": [
+      "measurement-22",
+      "measurement-23",
+      "measurement-24"
+    ],
+    "demo_rule": "DEMO-ATT-INCLINATION-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0005",
+    "section_id": "ATTACHMENT_OPTIONS",
+    "kind": "ILLUSTRATIVE_PROPOSAL",
+    "text": "Tooth 15 — Tooth 15: 1.00 mm (I-labelled) vertical; Tooth 15: 0.20 mm (I-labelled) relative vertical. The zero-angular/nonzero-vertical profile matches the toy rectangular rule. Illustrative candidate: Rectangular. Fictional supplied dimensions: 2.000 × 2.000 × 0.800 mm. Supplied orientation: unspecified. Supplied surface: buccal. Supplied fictional local position: (0.000, 0.000, 0.000) mm; frame FICTIONAL_TOOTH_LOCAL_MM. Alternative: Ellipsoid / oval",
+    "source_refs": [
+      "measurement-29",
+      "measurement-30",
+      "measurement-31",
+      "measurement-32",
+      "measurement-33",
+      "measurement-34",
+      "measurement-35"
+    ],
+    "selected_refs": [
+      "measurement-29",
+      "measurement-30",
+      "measurement-31",
+      "measurement-32",
+      "measurement-33",
+      "measurement-34",
+      "measurement-35"
+    ],
+    "demo_rule": "DEMO-ATT-VERTICAL-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0006",
+    "section_id": "ATTACHMENT_OPTIONS",
+    "kind": "ILLUSTRATIVE_PROPOSAL",
+    "text": "Tooth 16 — All seven source fields are explicitly zero. The complete explicit-zero profile matches the fictional no-attachment rule. Illustrative candidate: No attachment in this fictional scenario.",
+    "source_refs": [
+      "measurement-36",
+      "measurement-37",
+      "measurement-38",
+      "measurement-39",
+      "measurement-40",
+      "measurement-41",
+      "measurement-42"
+    ],
+    "selected_refs": [
+      "measurement-36",
+      "measurement-37",
+      "measurement-38",
+      "measurement-39",
+      "measurement-40",
+      "measurement-41",
+      "measurement-42"
+    ],
+    "demo_rule": "DEMO-ATT-ZERO-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0007",
+    "section_id": "ATTACHMENT_OPTIONS",
+    "kind": "INSUFFICIENT_INFORMATION",
+    "text": "Tooth 17 — Required movement evidence is incomplete or unsupported. The profile has no complete applicable toy rule. No candidate can be selected from the supplied evidence and catalog. Information needed: Complete unambiguous rotation, angulation and inclination values in degrees.",
+    "source_refs": [
+      "measurement-43",
+      "measurement-44",
+      "measurement-45"
+    ],
+    "selected_refs": [
+      "measurement-43",
+      "measurement-44",
+      "measurement-45"
+    ],
+    "demo_rule": "DEMO-ATT-INCOMPLETE-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0008",
+    "section_id": "ATTACHMENT_OPTIONS",
+    "kind": "INSUFFICIENT_INFORMATION",
+    "text": "Tooth 18 — Tooth 18: 1.00 mm (D-labelled) mesiodistal. The profile has no complete applicable toy rule. No candidate can be selected from the supplied evidence and catalog. Information needed: A toy policy for this translation-only profile.",
+    "source_refs": [
+      "measurement-50",
+      "measurement-51",
+      "measurement-52",
+      "measurement-53",
+      "measurement-54",
+      "measurement-55",
+      "measurement-56"
+    ],
+    "selected_refs": [
+      "measurement-50",
+      "measurement-51",
+      "measurement-52",
+      "measurement-53",
+      "measurement-54",
+      "measurement-55",
+      "measurement-56"
+    ],
+    "demo_rule": "DEMO-ATT-INCOMPLETE-v1",
+    "origin": "SIMULATED_DEMO"
+  },
+  {
+    "finding_id": "F0009",
+    "section_id": "ATTACHMENT_SCOPE",
+    "kind": "INSUFFICIENT_INFORMATION",
+    "text": "These independent toy mappings use component presence, not dataset rank or tooth order. Catalog geometry and placement are explicitly supplied fictional examples. No clinical suitability or proprietary optimized-attachment specification is established.",
+    "source_refs": [],
+    "selected_refs": [],
+    "demo_rule": "DEMO-ATT-SCOPE-v1",
+    "origin": "SIMULATED_DEMO"
+  }
+]
+
+EXPLICIT FICTIONAL SCENARIO CONTEXT — NOT TMT FACTS
+{
+  "scenario_id": "micro-catalog",
+  "policy_version": "1.0.0",
+  "source_sha256": "3bbc10bb52d11484f20287f9de0bd326e12b63f7a84631bccf493e67fdb97b4b",
+  "module": "micro",
+  "origin": "EXPLICIT_SYNTHETIC_SCENARIO",
+  "notation": "FDI",
+  "objectives": [],
+  "targets": [],
+  "attachment_options": [
+    {
+      "concept": "RECTANGULAR",
+      "geometry": {
+        "width_mm": "2.000",
+        "height_mm": "2.000",
+        "depth_mm": "0.800"
+      },
+      "orientation": "UNSPECIFIED",
+      "surface": "BUCCAL",
+      "placement": {
+        "frame": "FICTIONAL_TOOTH_LOCAL_MM",
+        "x_mm": "0.000",
+        "y_mm": "0.000",
+        "z_mm": "0.000"
+      }
+    },
+    {
+      "concept": "VERTICAL_RECTANGULAR",
+      "geometry": {
+        "width_mm": "2.000",
+        "height_mm": "3.000",
+        "depth_mm": "1.000"
+      },
+      "orientation": "VERTICAL",
+      "surface": "BUCCAL",
+      "placement": {
+        "frame": "FICTIONAL_TOOTH_LOCAL_MM",
+        "x_mm": "0.000",
+        "y_mm": "0.000",
+        "z_mm": "0.000"
+      }
+    },
+    {
+      "concept": "HORIZONTAL_RECTANGULAR",
+      "geometry": {
+        "width_mm": "3.000",
+        "height_mm": "2.000",
+        "depth_mm": "1.000"
+      },
+      "orientation": "HORIZONTAL",
+      "surface": "BUCCAL",
+      "placement": {
+        "frame": "FICTIONAL_TOOTH_LOCAL_MM",
+        "x_mm": "0.000",
+        "y_mm": "0.000",
+        "z_mm": "0.000"
+      }
+    },
+    {
+      "concept": "OVAL",
+      "geometry": {
+        "width_mm": "2.000",
+        "height_mm": "2.500",
+        "depth_mm": "0.800"
+      },
+      "orientation": "UNSPECIFIED",
+      "surface": "BUCCAL",
+      "placement": {
+        "frame": "FICTIONAL_TOOTH_LOCAL_MM",
+        "x_mm": "0.000",
+        "y_mm": "0.000",
+        "z_mm": "0.000"
+      }
+    },
+    {
+      "concept": "OPTIMIZED_STYLE",
+      "geometry": null,
+      "orientation": null,
+      "surface": null,
+      "placement": null
+    },
+    {
+      "concept": "NO_ATTACHMENT",
+      "geometry": null,
+      "orientation": null,
+      "surface": null,
+      "placement": null
+    }
+  ],
+  "phases": [],
+  "stage_value_basis": "UNSPECIFIED",
+  "support_constraints": []
+}
+
+SYNTHETIC POLICY DECISIONS — NO CLINICAL AUTHORIZATION
+{
+  "policy_set_version": "1.0.0",
+  "origin": "INDEPENDENT_SYNTHETIC_POLICIES",
+  "clinical_authorized": false,
+  "source_sha256": "3bbc10bb52d11484f20287f9de0bd326e12b63f7a84631bccf493e67fdb97b4b",
+  "decisions": [
+    {
+      "decision_id": "D0001",
+      "finding_id": "F0001",
+      "policy_id": "DEMO-ATT-COMBINED-v1",
+      "policy_version": "1.0.0",
+      "dimension": "ATTACHMENT_OPTIONS",
+      "status": "ILLUSTRATIVE_PROPOSAL",
+      "tooth_refs": [
+        "tooth-1"
+      ],
+      "measurement_refs": [
+        "measurement-1",
+        "measurement-2",
+        "measurement-3"
+      ],
+      "context_refs": [
+        "planning_context/attachment_options"
+      ],
+      "rationale": "Tooth 11 — Tooth 11: 2.00° (D-labelled) rotation; Tooth 11: 1.00° (D-labelled) angulation. The combined rotation/angulation profile matches the toy catalog rule.",
+      "proposal": "Illustrative candidate: Vertical rectangular. Fictional supplied dimensions: 2.000 × 3.000 × 1.000 mm. Supplied orientation: vertical. Supplied surface: buccal. Supplied fictional local position: (0.000, 0.000, 0.000) mm; frame FICTIONAL_TOOTH_LOCAL_MM.",
+      "alternative": "Horizontal rectangular",
+      "missing_fields": [],
+      "proposed_changes": [],
+      "attachment_primary": "VERTICAL_RECTANGULAR",
+      "attachment_alternative": "HORIZONTAL_RECTANGULAR"
+    },
+    {
+      "decision_id": "D0002",
+      "finding_id": "F0002",
+      "policy_id": "DEMO-ATT-ROTATION-v1",
+      "policy_version": "1.0.0",
+      "dimension": "ATTACHMENT_OPTIONS",
+      "status": "ILLUSTRATIVE_PROPOSAL",
+      "tooth_refs": [
+        "tooth-2"
+      ],
+      "measurement_refs": [
+        "measurement-8",
+        "measurement-9",
+        "measurement-10"
+      ],
+      "context_refs": [
+        "planning_context/attachment_options"
+      ],
+      "rationale": "Tooth 12 — Tooth 12: 2.00° (D-labelled) rotation. Nonzero rotation matches the toy oval rule.",
+      "proposal": "Illustrative candidate: Ellipsoid / oval. Fictional supplied dimensions: 2.000 × 2.500 × 0.800 mm. Supplied orientation: unspecified. Supplied surface: buccal. Supplied fictional local position: (0.000, 0.000, 0.000) mm; frame FICTIONAL_TOOTH_LOCAL_MM.",
+      "alternative": "Rectangular",
+      "missing_fields": [],
+      "proposed_changes": [],
+      "attachment_primary": "OVAL",
+      "attachment_alternative": "RECTANGULAR"
+    },
+    {
+      "decision_id": "D0003",
+      "finding_id": "F0003",
+      "policy_id": "DEMO-ATT-ANGULATION-v1",
+      "policy_version": "1.0.0",
+      "dimension": "ATTACHMENT_OPTIONS",
+      "status": "ILLUSTRATIVE_PROPOSAL",
+      "tooth_refs": [
+        "tooth-3"
+      ],
+      "measurement_refs": [
+        "measurement-15",
+        "measurement-16",
+        "measurement-17"
+      ],
+      "context_refs": [
+        "planning_context/attachment_options"
+      ],
+      "rationale": "Tooth 13 — Tooth 13: 1.00° (D-labelled) angulation. Nonzero angulation matches the toy horizontal-rectangle rule.",
+      "proposal": "Illustrative candidate: Horizontal rectangular. Fictional supplied dimensions: 3.000 × 2.000 × 1.000 mm. Supplied orientation: horizontal. Supplied surface: buccal. Supplied fictional local position: (0.000, 0.000, 0.000) mm; frame FICTIONAL_TOOTH_LOCAL_MM.",
+      "alternative": "Vertical rectangular",
+      "missing_fields": [],
+      "proposed_changes": [],
+      "attachment_primary": "HORIZONTAL_RECTANGULAR",
+      "attachment_alternative": "VERTICAL_RECTANGULAR"
+    },
+    {
+      "decision_id": "D0004",
+      "finding_id": "F0004",
+      "policy_id": "DEMO-ATT-INCLINATION-v1",
+      "policy_version": "1.0.0",
+      "dimension": "ATTACHMENT_OPTIONS",
+      "status": "ILLUSTRATIVE_PROPOSAL",
+      "tooth_refs": [
+        "tooth-4"
+      ],
+      "measurement_refs": [
+        "measurement-22",
+        "measurement-23",
+        "measurement-24"
+      ],
+      "context_refs": [
+        "planning_context/attachment_options"
+      ],
+      "rationale": "Tooth 14 — Tooth 14: 1.00° (B-labelled) inclination. Nonzero inclination matches the toy optimized-style category rule.",
+      "proposal": "Illustrative candidate: Optimized-style category (geometry unspecified).",
+      "alternative": "Rectangular",
+      "missing_fields": [
+        "geometry",
+        "orientation",
+        "surface",
+        "placement"
+      ],
+      "proposed_changes": [],
+      "attachment_primary": "OPTIMIZED_STYLE",
+      "attachment_alternative": "RECTANGULAR"
+    },
+    {
+      "decision_id": "D0005",
+      "finding_id": "F0005",
+      "policy_id": "DEMO-ATT-VERTICAL-v1",
+      "policy_version": "1.0.0",
+      "dimension": "ATTACHMENT_OPTIONS",
+      "status": "ILLUSTRATIVE_PROPOSAL",
+      "tooth_refs": [
+        "tooth-5"
+      ],
+      "measurement_refs": [
+        "measurement-29",
+        "measurement-30",
+        "measurement-31",
+        "measurement-32",
+        "measurement-33",
+        "measurement-34",
+        "measurement-35"
+      ],
+      "context_refs": [
+        "planning_context/attachment_options"
+      ],
+      "rationale": "Tooth 15 — Tooth 15: 1.00 mm (I-labelled) vertical; Tooth 15: 0.20 mm (I-labelled) relative vertical. The zero-angular/nonzero-vertical profile matches the toy rectangular rule.",
+      "proposal": "Illustrative candidate: Rectangular. Fictional supplied dimensions: 2.000 × 2.000 × 0.800 mm. Supplied orientation: unspecified. Supplied surface: buccal. Supplied fictional local position: (0.000, 0.000, 0.000) mm; frame FICTIONAL_TOOTH_LOCAL_MM.",
+      "alternative": "Ellipsoid / oval",
+      "missing_fields": [],
+      "proposed_changes": [],
+      "attachment_primary": "RECTANGULAR",
+      "attachment_alternative": "OVAL"
+    },
+    {
+      "decision_id": "D0006",
+      "finding_id": "F0006",
+      "policy_id": "DEMO-ATT-ZERO-v1",
+      "policy_version": "1.0.0",
+      "dimension": "ATTACHMENT_OPTIONS",
+      "status": "ILLUSTRATIVE_PROPOSAL",
+      "tooth_refs": [
+        "tooth-6"
+      ],
+      "measurement_refs": [
+        "measurement-36",
+        "measurement-37",
+        "measurement-38",
+        "measurement-39",
+        "measurement-40",
+        "measurement-41",
+        "measurement-42"
+      ],
+      "context_refs": [
+        "planning_context/attachment_options"
+      ],
+      "rationale": "Tooth 16 — All seven source fields are explicitly zero. The complete explicit-zero profile matches the fictional no-attachment rule.",
+      "proposal": "Illustrative candidate: No attachment in this fictional scenario.",
+      "alternative": null,
+      "missing_fields": [],
+      "proposed_changes": [],
+      "attachment_primary": "NO_ATTACHMENT",
+      "attachment_alternative": null
+    },
+    {
+      "decision_id": "D0007",
+      "finding_id": "F0007",
+      "policy_id": "DEMO-ATT-INCOMPLETE-v1",
+      "policy_version": "1.0.0",
+      "dimension": "ATTACHMENT_OPTIONS",
+      "status": "INSUFFICIENT_INFORMATION",
+      "tooth_refs": [
+        "tooth-7"
+      ],
+      "measurement_refs": [
+        "measurement-43",
+        "measurement-44",
+        "measurement-45"
+      ],
+      "context_refs": [
+        "planning_context/attachment_options"
+      ],
+      "rationale": "Tooth 17 — Required movement evidence is incomplete or unsupported. The profile has no complete applicable toy rule.",
+      "proposal": "No candidate can be selected from the supplied evidence and catalog.",
+      "alternative": null,
+      "missing_fields": [
+        "Complete unambiguous rotation, angulation and inclination values in degrees"
+      ],
+      "proposed_changes": [],
+      "attachment_primary": null,
+      "attachment_alternative": null
+    },
+    {
+      "decision_id": "D0008",
+      "finding_id": "F0008",
+      "policy_id": "DEMO-ATT-INCOMPLETE-v1",
+      "policy_version": "1.0.0",
+      "dimension": "ATTACHMENT_OPTIONS",
+      "status": "INSUFFICIENT_INFORMATION",
+      "tooth_refs": [
+        "tooth-8"
+      ],
+      "measurement_refs": [
+        "measurement-50",
+        "measurement-51",
+        "measurement-52",
+        "measurement-53",
+        "measurement-54",
+        "measurement-55",
+        "measurement-56"
+      ],
+      "context_refs": [
+        "planning_context/attachment_options"
+      ],
+      "rationale": "Tooth 18 — Tooth 18: 1.00 mm (D-labelled) mesiodistal. The profile has no complete applicable toy rule.",
+      "proposal": "No candidate can be selected from the supplied evidence and catalog.",
+      "alternative": null,
+      "missing_fields": [
+        "A toy policy for this translation-only profile"
+      ],
+      "proposed_changes": [],
+      "attachment_primary": null,
+      "attachment_alternative": null
+    },
+    {
+      "decision_id": "D0009",
+      "finding_id": "F0009",
+      "policy_id": "DEMO-ATT-SCOPE-v1",
+      "policy_version": "1.0.0",
+      "dimension": "ATTACHMENT_SCOPE",
+      "status": "INSUFFICIENT_INFORMATION",
+      "tooth_refs": [],
+      "measurement_refs": [],
+      "context_refs": [],
+      "rationale": "These independent toy mappings use component presence, not dataset rank or tooth order.",
+      "proposal": "Catalog geometry and placement are explicitly supplied fictional examples. No clinical suitability or proprietary optimized-attachment specification is established.",
+      "alternative": null,
+      "missing_fields": [],
+      "proposed_changes": [],
+      "attachment_primary": null,
+      "attachment_alternative": null
+    }
+  ],
+  "attachment_rows": [
+    {
+      "tooth_ref": "tooth-1",
+      "decision_id": "D0001",
+      "movement_refs": [
+        "measurement-1",
+        "measurement-2"
+      ],
+      "primary": "VERTICAL_RECTANGULAR",
+      "alternative": "HORIZONTAL_RECTANGULAR",
+      "outcome": "CANDIDATE",
+      "missing_fields": []
+    },
+    {
+      "tooth_ref": "tooth-2",
+      "decision_id": "D0002",
+      "movement_refs": [
+        "measurement-8"
+      ],
+      "primary": "OVAL",
+      "alternative": "RECTANGULAR",
+      "outcome": "CANDIDATE",
+      "missing_fields": []
+    },
+    {
+      "tooth_ref": "tooth-3",
+      "decision_id": "D0003",
+      "movement_refs": [
+        "measurement-16"
+      ],
+      "primary": "HORIZONTAL_RECTANGULAR",
+      "alternative": "VERTICAL_RECTANGULAR",
+      "outcome": "CANDIDATE",
+      "missing_fields": []
+    },
+    {
+      "tooth_ref": "tooth-4",
+      "decision_id": "D0004",
+      "movement_refs": [
+        "measurement-24"
+      ],
+      "primary": "OPTIMIZED_STYLE",
+      "alternative": "RECTANGULAR",
+      "outcome": "CANDIDATE",
+      "missing_fields": [
+        "geometry",
+        "orientation",
+        "surface",
+        "placement"
+      ]
+    },
+    {
+      "tooth_ref": "tooth-5",
+      "decision_id": "D0005",
+      "movement_refs": [
+        "measurement-32",
+        "measurement-33"
+      ],
+      "primary": "RECTANGULAR",
+      "alternative": "OVAL",
+      "outcome": "CANDIDATE",
+      "missing_fields": []
+    },
+    {
+      "tooth_ref": "tooth-6",
+      "decision_id": "D0006",
+      "movement_refs": [
+        "measurement-36",
+        "measurement-37",
+        "measurement-38",
+        "measurement-39",
+        "measurement-40",
+        "measurement-41",
+        "measurement-42"
+      ],
+      "primary": "NO_ATTACHMENT",
+      "alternative": null,
+      "outcome": "NO_ATTACHMENT",
+      "missing_fields": []
+    },
+    {
+      "tooth_ref": "tooth-7",
+      "decision_id": "D0007",
+      "movement_refs": [
+        "measurement-43",
+        "measurement-44",
+        "measurement-45"
+      ],
+      "primary": null,
+      "alternative": null,
+      "outcome": "INSUFFICIENT_INFORMATION",
+      "missing_fields": [
+        "Complete unambiguous rotation, angulation and inclination values in degrees"
+      ]
+    },
+    {
+      "tooth_ref": "tooth-8",
+      "decision_id": "D0008",
+      "movement_refs": [
+        "measurement-56"
+      ],
+      "primary": null,
+      "alternative": null,
+      "outcome": "INSUFFICIENT_INFORMATION",
+      "missing_fields": [
+        "A toy policy for this translation-only profile"
+      ]
+    }
+  ],
+  "stages": [],
+  "allocation_checks": [],
+  "checks": []
+}
+
+SUPPLIED REVIEW DETAILS — UNVERIFIED
+{
+  "attachments": [],
+  "stages": [],
+  "allocations": [],
+  "anchorage_notes": []
+}
+
+ORIGINAL INPUT — VERBATIM
+# SYNTHETIC FUNCTIONAL SCENARIO — micro-catalog
+Tooth	Rotation (deg)	Angulation (deg)	Inclination (deg)	Vertical (mm)	Relative Ext / Int (mm)	Translation B / L (mm)	Translation M / D (mm)
+11	2.00 D	1.00 D	0.00	0.00	0.00	0.00	0.00
+12	2.00 D	0.00	0.00	0.00	0.00	0.00	0.00
+13	0.00	1.00 D	0.00	0.00	0.00	0.00	0.00
+14	0.00	0.00	1.00 B	0.00	0.00	0.00	0.00
+15	0.00	0.00	0.00	1.00 I	0.20 I	0.00	0.00
+16	0.00	0.00	0.00	0.00	0.00	0.00	0.00
+17	—	0.00	0.00	0.00	0.00	0.00	0.00
+18	0.00	0.00	0.00	0.00	0.00	0.00	1.00 D
+
+Synthetic demonstration — not for clinical use

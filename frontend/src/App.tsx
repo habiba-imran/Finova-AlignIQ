@@ -23,6 +23,8 @@ import { emptyReviewDetails } from './api/interactive'
 import type { InteractiveReport } from './api/interactive'
 import { requestSequencingDemoInput } from './api/sequencing'
 import type { SequencingDemoInput } from './api/sequencing'
+import { SCENARIOS, requestFunctionalScenario } from './api/functional'
+import type { FunctionalScenario } from './api/functional'
 
 type Purpose = 'macro' | 'micro' | 'nano'
 
@@ -85,6 +87,7 @@ export default function App({ diagnostics = new URLSearchParams(window.location.
   const [sequencingDemo, setSequencingDemo] = useState<SequencingDemoInput | null>(null)
   const [complete, setComplete] = useState(false)
   const [reviewDetails, setReviewDetails] = useState(emptyReviewDetails)
+  const [functionalScenario, setFunctionalScenario] = useState<FunctionalScenario | null>(null)
   const [reportCache, setReportCache] = useState<Partial<Record<Purpose, InteractiveReport>>>({})
   const [unavailableDemos, setUnavailableDemos] = useState<Partial<Record<Purpose, boolean>>>({})
   const requestRef = useRef<AbortController | null>(null)
@@ -99,6 +102,7 @@ export default function App({ diagnostics = new URLSearchParams(window.location.
   useEffect(() => { document.title = `Finova AlignIQ · ${copy.heading}` }, [copy.heading])
 
   function invalidateParse() {
+    setFunctionalScenario(null)
     setReviewDetails(emptyReviewDetails())
     setReportCache({})
     revisionRef.current += 1
@@ -171,6 +175,25 @@ export default function App({ diagnostics = new URLSearchParams(window.location.
     editRawText(SYNTHETIC_EXAMPLE)
     setContext({ ...EMPTY_CONTEXT })
     inputRef.current?.focus()
+  }
+
+  async function loadFunctionalScenario(id: string) {
+    invalidateParse()
+    const controller = new AbortController(), revision = ++revisionRef.current
+    requestRef.current = controller; setLoading(true)
+    const timeout = window.setTimeout(() => controller.abort(), 20_000)
+    try {
+      const scenario = await requestFunctionalScenario(id, controller.signal)
+      if (revision !== revisionRef.current) return
+      setRawText(scenario.raw_text); setPurpose(scenario.module); setFunctionalScenario(scenario)
+      setReviewDetails(scenario.review_details); setContext({ ...EMPTY_CONTEXT }); setSyntheticFixture(undefined)
+      setHasParsedOnce(false); inputRef.current?.focus()
+    } catch {
+      if (revision === revisionRef.current) setError('The fictional scenario could not be loaded. Your existing source text is preserved.')
+    } finally {
+      window.clearTimeout(timeout)
+      if (revision === revisionRef.current) { requestRef.current = null; setLoading(false) }
+    }
   }
 
   async function loadPlanningDemo() {
@@ -283,7 +306,7 @@ export default function App({ diagnostics = new URLSearchParams(window.location.
                 type="button"
                 key={id}
                 aria-pressed={purpose === id}
-                onClick={() => { if (purpose !== id) { if (diagnostics || loading) invalidateParse(); else setComplete(false); setPurpose(id) } }}
+                onClick={() => { if (purpose !== id) { if (diagnostics || loading || functionalScenario) invalidateParse(); else setComplete(false); setPurpose(id) } }}
                 className={`module-tab ${purpose === id ? 'module-tab-active' : ''}`}
               >
                 <span className="module-tab-code">{module.code}</span>
@@ -356,6 +379,15 @@ export default function App({ diagnostics = new URLSearchParams(window.location.
                   <button type="button" onClick={clearText} disabled={rawText.length === 0} className="button button-danger"><Trash2 size={14} aria-hidden="true" />Clear</button>
                 </div>
                 <ContextFields value={context} onChange={editContext} />
+                {!diagnostics && <details className="mt-4 rounded-lg border border-line p-3 text-sm leading-6">
+                  <summary className="cursor-pointer font-medium">Optional fictional planning scenarios</summary>
+                  <p className="mt-2 text-xs text-muted">Load a separate fictional table with explicit objectives, attachment options or stage records. These examples do not validate treatment decisions.</p>
+                  <div className="mt-3 flex flex-wrap gap-2">{SCENARIOS.map(s => <button type="button" key={s.id} className="button button-secondary text-xs" disabled={loading} onClick={() => void loadFunctionalScenario(s.id)}>{s.label}</button>)}</div>
+                </details>}
+                {functionalScenario && <aside aria-label="Selected fictional scenario" className="mt-3 rounded-lg border border-notice-line bg-notice/40 p-3 text-xs leading-6">
+                  <strong>{functionalScenario.label}</strong><p>Explicit scenario context is active for {functionalScenario.module.toUpperCase()}. Editing the source/settings or changing modules clears this context.</p>
+                  <p>{functionalScenario.planning_context.targets.length} supplied modification targets · {functionalScenario.planning_context.attachment_options.length} catalog options · {functionalScenario.review_details.stages.length} supplied stages.</p>
+                </aside>}
               </div>
             </section>
 
@@ -454,7 +486,7 @@ export default function App({ diagnostics = new URLSearchParams(window.location.
             <h2 id="review-area-heading" className="section-title">Review results</h2>
             <p className="section-note">{complete ? 'Review the DRAFT below, then use the export area when ready.' : 'Run the review below to prepare a DRAFT.'}</p>
           </div>
-          {!diagnostics && <InteractiveWorkspace key={`interactive-${purpose}-${revisionRef.current}`} module={purpose} rawText={rawText} context={context} parsed={result} onComplete={setComplete} reviewDetails={reviewDetails}
+          {!diagnostics && <InteractiveWorkspace key={`interactive-${purpose}-${revisionRef.current}`} module={purpose} rawText={rawText} context={context} parsed={result} onComplete={setComplete} reviewDetails={reviewDetails} planningContext={functionalScenario?.planning_context ?? null}
             savedReport={reportCache[purpose] ?? null} onReportChange={report => setReportCache(previous => ({ ...previous, [purpose]: report ?? undefined }))}
             onDetailsChange={details => { setReviewDetails(details); setReportCache(previous => ({ ...previous, [purpose]: undefined })) }} />}
           {diagnostics && purpose === 'macro' && <PlanningWorkspace key={`planning-${revisionRef.current}`} rawText={rawText} context={context} parsed={result} demo={!!demo} onComplete={setComplete} />}

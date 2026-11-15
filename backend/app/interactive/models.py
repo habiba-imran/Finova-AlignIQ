@@ -5,6 +5,7 @@ from app.domain.models import Contract, ParseResult, ParsedMeasurement
 from app.review.models import DraftReview, ReviewSubmission
 from app.reports.models import GenerationInfo
 from app.semantics.models import Digest
+from app.functional.models import FunctionalContext, FunctionalPlan
 
 
 class SuppliedContract(Contract):
@@ -57,6 +58,7 @@ class InteractiveSubmission(ReviewSubmission):
     module: Literal["macro", "micro", "nano"] = "macro"
     raw_sha256: Digest
     review_details: ReviewDetails = Field(default_factory=ReviewDetails)
+    planning_context: FunctionalContext | None = None
 
 
 class ToothObservation(Contract):
@@ -121,7 +123,9 @@ class InteractiveReport(Contract):
     summary: str
     observations: list[ToothObservation]
     illustrations: list[Illustration]
-    report_format: Literal["MOVEMENT_PROFILE_V1", "MODULE_SPECIFIC_V1", "ANALYTICAL_V1"] = "MOVEMENT_PROFILE_V1"
+    report_format: Literal["MOVEMENT_PROFILE_V1", "MODULE_SPECIFIC_V1", "ANALYTICAL_V1", "FUNCTIONAL_DEMO_V1"] = "MOVEMENT_PROFILE_V1"
+    planning_context: FunctionalContext | None = None
+    functional_plan: FunctionalPlan | None = None
     analytical_findings: list[AnalyticalFinding] = Field(default_factory=list)
     sections: list[ModuleSection] = Field(default_factory=list)
     review_details: ReviewDetails = Field(default_factory=ReviewDetails)

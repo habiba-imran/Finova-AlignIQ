@@ -1,0 +1,66 @@
+{
+  "label": "Fictional distribution modification",
+  "module": "macro",
+  "raw_text": "# SYNTHETIC FUNCTIONAL SCENARIO \u2014 macro-distribution\nTooth\tRotation (deg)\tAngulation (deg)\tInclination (deg)\tVertical (mm)\tRelative Ext / Int (mm)\tTranslation B / L (mm)\tTranslation M / D (mm)\n11\t2.00 D\t1.00 D\t1.00 B\t1.00 I\t0.20 I\t1.60 L\t1.00 D\n12\t0.50 D\t0.00\t1.00 B\t1.00 I\t0.50 I\t0.40 B\t1.50 D\n13\t0.00\t0.00\t0.00\t0.00\t0.00\t0.00\t0.00\n14\t0.00\t0.00\t0.00\t0.00\t0.00\t0.00\t0.00\n15\t0.00\t0.00\t0.00\t0.00\t0.00\t0.00\t0.00\n16\t1.00 D\t0.50 D\t0.00\t0.00\t0.00\t0.20 B\t2.00 D\n17\t1.20 D\t0.20 D\t0.00\t0.00\t0.00\t0.20 B\t2.00 D\n18\t0.00\t0.00\t0.00\t0.00\t0.00\t0.00\t0.00\n21\t1.00 D\t0.50 D\t0.50 B\t1.00 I\t0.20 I\t1.60 L\t1.00 D\n22\t0.00\t0.00\t0.00\t0.00\t0.00\t0.00\t0.00\n23\t0.00\t0.00\t0.00\t0.00\t0.00\t0.00\t0.00\n24\t0.00\t0.00\t0.00\t0.00\t0.00\t0.00\t0.00\n25\t0.00\t0.00\t0.00\t0.00\t0.00\t0.00\t0.00\n26\t0.00\t0.00\t0.00\t0.00\t0.00\t0.00\t0.00\n27\t0.00\t0.00\t0.00\t0.00\t0.00\t0.00\t0.00\n28\t0.00\t0.00\t0.00\t0.00\t0.00\t0.00\t0.00",
+  "planning_context": {
+    "scenario_id": "macro-distribution",
+    "policy_version": "1.0.0",
+    "source_sha256": "73c3776e7a18f797937fea9f01007327aba028dfad0ac698c990aa92dc1cc937",
+    "module": "macro",
+    "origin": "EXPLICIT_SYNTHETIC_SCENARIO",
+    "notation": "FDI",
+    "objectives": [
+      "REDISTRIBUTE_TRANSLATIONS",
+      "VERTICAL_REVIEW",
+      "ANGULAR_CONTROL"
+    ],
+    "targets": [
+      {
+        "measurement_ref": "measurement-42",
+        "amount": "1.00",
+        "unit": "mm",
+        "source_direction": "D"
+      },
+      {
+        "measurement_ref": "measurement-49",
+        "amount": "1.00",
+        "unit": "mm",
+        "source_direction": "D"
+      },
+      {
+        "measurement_ref": "measurement-6",
+        "amount": "1.20",
+        "unit": "mm",
+        "source_direction": "L"
+      },
+      {
+        "measurement_ref": "measurement-62",
+        "amount": "1.20",
+        "unit": "mm",
+        "source_direction": "L"
+      },
+      {
+        "measurement_ref": "measurement-11",
+        "amount": "0.80",
+        "unit": "mm",
+        "source_direction": "I"
+      },
+      {
+        "measurement_ref": "measurement-1",
+        "amount": "1.50",
+        "unit": "deg",
+        "source_direction": "D"
+      }
+    ],
+    "attachment_options": [],
+    "phases": [],
+    "stage_value_basis": "UNSPECIFIED",
+    "support_constraints": []
+  },
+  "review_details": {
+    "attachments": [],
+    "stages": [],
+    "allocations": [],
+    "anchorage_notes": []
+  }
+}

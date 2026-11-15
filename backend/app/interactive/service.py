@@ -16,6 +16,8 @@ from app.reports.settings import load_settings
 from app.reports.validation import private_json
 from app.review.service import review_table
 from app.semantics.fixtures import digest_json
+from app.functional.engine import functional_review
+from app.functional.provider import provider_evidence
 
 WORDINGS = {
     "F0001": ("The parsed source values are described below.", "The following observations summarize the values recorded in the synthetic table."),
@@ -97,11 +99,17 @@ def generate_interactive(submission, *, settings=None, client=None):
     if parsed.status in {"INVALID", "UNSUPPORTED"} or not parsed.measurements:
         raise ValueError("PARSE_REQUIRED")
     review = review_table(submission)
-    validate_details(parsed, submission)
+    if submission.planning_context is None:
+        validate_details(parsed, submission)
     has_details = any((submission.review_details.attachments, submission.review_details.stages,
                        submission.review_details.allocations, submission.review_details.anchorage_notes))
     findings = []
-    if has_details:
+    functional_plan = None
+    if submission.planning_context is not None:
+        sections, findings, functional_plan = functional_review(parsed,submission)
+        sections, generation = analytical_wording(parsed,submission.module,sections,findings,settings=settings,client=client,
+            functional_evidence=provider_evidence(parsed,submission.planning_context,functional_plan))
+    elif has_details:
         sections, generation = module_sections(parsed, submission, settings=settings, client=client)
     else:
         sections, findings = analyze(parsed, submission.module)
@@ -134,7 +142,8 @@ def generate_interactive(submission, *, settings=None, client=None):
             if unresolved else parse_note + " Missing values remain unknown, not zero.")
     body = dict(module=submission.module, parsed=parsed, engine_review=review, generation=generation,
         wording_notice=notice, summary=summary, observations=observations, illustrations=illustrations, limitations=limitations,
-        report_format="MODULE_SPECIFIC_V1" if has_details else "ANALYTICAL_V1", analytical_findings=findings,
+        report_format="FUNCTIONAL_DEMO_V1" if functional_plan else "MODULE_SPECIFIC_V1" if has_details else "ANALYTICAL_V1", analytical_findings=findings,
+        planning_context=submission.planning_context,functional_plan=functional_plan,
         sections=sections, review_details=submission.review_details)
     report_id = digest_json({k: v.model_dump(mode="json") if hasattr(v, "model_dump") else
         [x.model_dump(mode="json") if hasattr(x, "model_dump") else x for x in v] if isinstance(v, list) else v for k, v in body.items()})
@@ -163,6 +172,9 @@ def generate_interactive(submission, *, settings=None, client=None):
     lines += [f"{e.rule_id} v{e.version}: {e.status}; execution {e.execution}; approval {e.approval_status}" for e in review.evaluations]
     if findings:
         lines += ["", "ANALYTICAL FINDING PROVENANCE", json.dumps([f.model_dump(mode="json") for f in findings], ensure_ascii=False, indent=2)]
+    if functional_plan is not None:
+        lines += ['', 'EXPLICIT FICTIONAL SCENARIO CONTEXT — NOT TMT FACTS', submission.planning_context.model_dump_json(indent=2),
+            '', 'SYNTHETIC POLICY DECISIONS — NO CLINICAL AUTHORIZATION', functional_plan.model_dump_json(indent=2)]
     lines += ["", "SUPPLIED REVIEW DETAILS — UNVERIFIED", submission.review_details.model_dump_json(indent=2),
         "", "ORIGINAL INPUT — VERBATIM", parsed.raw_text, "", "Synthetic demonstration — not for clinical use"]
     return InteractiveReport(report_id=report_id, export_text="\n".join(lines) + "\n", **body)

@@ -9,7 +9,7 @@ export function commentParagraphs(text: string): string[] {
 
 export function moduleReviewPresentation(report: InteractiveReport) {
   const sections = report.sections ?? []
-  if (report.report_format === 'ANALYTICAL_V1') return { sections, scope: null }
+  if (report.report_format === 'ANALYTICAL_V1' || report.report_format === 'FUNCTIONAL_DEMO_V1') return { sections, scope: null }
   const automatic = report.module !== 'macro' && sections.some(section => section.status === 'SOURCE_REPORTED')
     && !!report.review_details && Object.values(report.review_details).every(rows => rows.length === 0)
   if (!automatic) return { sections, scope: null }

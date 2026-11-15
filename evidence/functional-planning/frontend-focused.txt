@@ -1,0 +1,14 @@
+
+> finova-aligniq-frontend@0.0.0 test
+> vitest run FunctionalPlanning.test.tsx --maxWorkers=2 --reporter=dot
+
+
+ RUN  v4.1.12 C:/Finova AlignIQ/frontend
+
+·············
+
+ Test Files  1 passed (1)
+      Tests  13 passed (13)
+   Start at  14:28:01
+   Duration  15.83s (transform 1.78s, setup 1.20s, import 3.47s, tests 3.40s, environment 5.42s)
+

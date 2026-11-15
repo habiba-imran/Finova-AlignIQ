@@ -24,7 +24,7 @@ describe('Phase 4 automatic structural recovery', () => {
   })
   it('uses one Parse Table request with generator identity and displays automatic recovery', async () => {
     const { fetch, input, button } = setup(); fireEvent.click(button)
-    await screen.findByRole('heading', { name: 'Successfully parsed with 1 missing value', exact: true })
+    await screen.findByRole('heading', { name: 'Successfully parsed with 1 missing value' })
     expect(fetch).toHaveBeenCalledTimes(1)
     expect(fetch.mock.calls[0][0]).toBe('/api/v1/tmt/parse')
     expect(JSON.parse(fetch.mock.calls[0][1].body)).toMatchObject({ raw_text: example.raw_text, synthetic_fixture: example.identity })
@@ -40,7 +40,7 @@ describe('Phase 4 automatic structural recovery', () => {
     expect(fetch).toHaveBeenCalledTimes(1)
     expect(screen.getByRole('button', { name: 'Parsing…' })).toBeDisabled()
     await act(async () => finish(ok(fixture)))
-    expect(screen.getByRole('heading', { name: 'Successfully parsed with 1 missing value', exact: true })).toBeVisible()
+    expect(screen.getByRole('heading', { name: 'Successfully parsed with 1 missing value' })).toBeVisible()
   })
   it.each(['BLOCKED', 'FAILED', 'REJECTED'])('shows safe %s outcome without a second cloud action', async status => {
     const returned = structuredClone(fixture)

@@ -1,0 +1,18 @@
+
+> finova-aligniq-frontend@0.0.0 build
+> tsc --noEmit && vite build
+
+vite v7.3.8 building client environment for production...
+transforming...
+✓ 1926 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                     0.71 kB │ gzip:     0.41 kB
+dist/assets/index-CLws1TyT.css     48.60 kB │ gzip:     8.17 kB
+dist/assets/index-DOPiKuaK.js   2,384.39 kB │ gzip: 1,008.85 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 15.84s

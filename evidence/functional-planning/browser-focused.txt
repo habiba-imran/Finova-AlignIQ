@@ -1,0 +1,113 @@
+
+> finova-aligniq-frontend@0.0.0 test:e2e
+> playwright test e2e/functional-planning.spec.ts --config=playwright.audit.config.ts --project=desktop --project=mobile --workers=2
+
+[WebServer] INFO:     Started server process [16720]
+[WebServer] INFO:     Waiting for application startup.
+[WebServer] INFO:     Application startup complete.
+[WebServer] INFO:     Uvicorn running on http://127.0.0.1:8019 (Press CTRL+C to quit)
+[WebServer] (node:3480) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:2052) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 6 tests using 2 workers
+
+(node:9456) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:25432) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 2 [mobile] › e2e\functional-planning.spec.ts:13:29 › macro: functional policy scenario, exact exports and context invalidation (9.6s)
+  ok 1 [desktop] › e2e\functional-planning.spec.ts:13:29 › macro: functional policy scenario, exact exports and context invalidation (10.0s)
+  x  3 [mobile] › e2e\functional-planning.spec.ts:13:29 › micro: functional policy scenario, exact exports and context invalidation (8.4s)
+  x  4 [desktop] › e2e\functional-planning.spec.ts:13:29 › micro: functional policy scenario, exact exports and context invalidation (8.7s)
+(node:13076) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:7020) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 5 [mobile] › e2e\functional-planning.spec.ts:13:29 › nano: functional policy scenario, exact exports and context invalidation (7.1s)
+  ok 6 [desktop] › e2e\functional-planning.spec.ts:13:29 › nano: functional policy scenario, exact exports and context invalidation (8.1s)
+
+
+  1) [desktop] › e2e\functional-planning.spec.ts:13:29 › micro: functional policy scenario, exact exports and context invalidation 
+
+    Error: expect(locator).toHaveCount(expected) failed
+
+    Locator:  getByRole('article').getByText('No supported candidate', { exact: true })
+    Expected: 2
+    Received: 0
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveCount" getByRole('article').getByText('No supported candidate', { exact: true }) with timeout 5000ms
+      - waiting for getByRole('article').getByText('No supported candidate', { exact: true })
+        13 × locator resolved to 0 elements
+           - unexpected value "0"
+
+
+      43 |     await article.getByText('Tooth 11 details', { exact: true }).click()
+      44 |     await expect(article).toContainText('Fictional supplied dimensions: 2.000 × 3.000 × 1.000 mm')
+    > 45 |     await expect(article.getByText('No supported candidate', { exact: true })).toHaveCount(2)
+         |                                                                                ^
+      46 |   } else {
+      47 |     await expect(article).toContainText('Angular finishing · S3 · supplied order 3')
+      48 |     for (const id of ['S1', 'S2', 'S3']) await article.getByText(`Stage ${id} movements and assumptions`, { exact: true }).click()
+        at C:\Finova AlignIQ\frontend\e2e\functional-planning.spec.ts:45:80
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\functional-planning-micro--99a97-ts-and-context-invalidation-desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\functional-planning-micro--99a97-ts-and-context-invalidation-desktop\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\functional-planning-micro--99a97-ts-and-context-invalidation-desktop\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\functional-planning-micro--99a97-ts-and-context-invalidation-desktop\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [mobile] › e2e\functional-planning.spec.ts:13:29 › micro: functional policy scenario, exact exports and context invalidation 
+
+    Error: expect(locator).toHaveCount(expected) failed
+
+    Locator:  getByRole('article').getByText('No supported candidate', { exact: true })
+    Expected: 2
+    Received: 0
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveCount" getByRole('article').getByText('No supported candidate', { exact: true }) with timeout 5000ms
+      - waiting for getByRole('article').getByText('No supported candidate', { exact: true })
+        13 × locator resolved to 0 elements
+           - unexpected value "0"
+
+
+      43 |     await article.getByText('Tooth 11 details', { exact: true }).click()
+      44 |     await expect(article).toContainText('Fictional supplied dimensions: 2.000 × 3.000 × 1.000 mm')
+    > 45 |     await expect(article.getByText('No supported candidate', { exact: true })).toHaveCount(2)
+         |                                                                                ^
+      46 |   } else {
+      47 |     await expect(article).toContainText('Angular finishing · S3 · supplied order 3')
+      48 |     for (const id of ['S1', 'S2', 'S3']) await article.getByText(`Stage ${id} movements and assumptions`, { exact: true }).click()
+        at C:\Finova AlignIQ\frontend\e2e\functional-planning.spec.ts:45:80
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\functional-planning-micro--99a97-ts-and-context-invalidation-mobile\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\functional-planning-micro--99a97-ts-and-context-invalidation-mobile\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\functional-planning-micro--99a97-ts-and-context-invalidation-mobile\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\functional-planning-micro--99a97-ts-and-context-invalidation-mobile\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2 failed
+    [desktop] › e2e\functional-planning.spec.ts:13:29 › micro: functional policy scenario, exact exports and context invalidation 
+    [mobile] › e2e\functional-planning.spec.ts:13:29 › micro: functional policy scenario, exact exports and context invalidation 
+  4 passed (50.0s)
