@@ -2,7 +2,7 @@
 import json
 
 from app.interactive.models import ModuleGenerationInfo, ModuleSection
-from app.interactive.narrative import load_planning_settings, planning_wording
+from app.interactive.narrative import fact as movement_fact, load_planning_settings, planning_wording
 
 
 def quote(value):
@@ -47,7 +47,38 @@ def module_sections(parsed, submission, *, settings=None, client=None):
         definitions.append(dict(section_id=key, title=title, facts=facts, source_refs=list(refs),
             missing_fields=list(dict.fromkeys(missing)), status="SUPPLIED_UNVERIFIED" if supplied else "UNAVAILABLE"))
 
-    if submission.module == "micro":
+    if not any((details.attachments, details.stages, details.allocations, details.anchorage_notes)):
+        def profile(key, title, families):
+            selected = [m for m in parsed.measurements if m.recognized_label in families]
+            grouped = {}
+            for movement in selected:
+                grouped.setdefault(movement_fact(movement), []).append(quote(teeth[movement.tooth_ref]))
+            facts = [f"a TMT record for original tooth token{'s' if len(tokens) > 1 else ''} {', '.join(tokens)}: {description}" for description, tokens in grouped.items()]
+            section(key, title, facts or [f"an unreported {title.lower()} field in the supplied TMT; its values remain unknown"],
+                [m.id for m in selected])
+            definitions[-1]["status"] = "SOURCE_REPORTED" if selected else "UNAVAILABLE"
+
+        numerical = sum(m.numeric_status in {"PARSED", "EXPLICIT_ZERO"} for m in parsed.measurements)
+        missing = sum(m.numeric_status in {"MISSING", "NOT_PRESENT"} for m in parsed.measurements)
+        coverage = f"a TMT movement profile covering {len(teeth)} original tooth rows and {len(parsed.measurements)} measurement positions, with {numerical} recorded numerical values and {missing} missing or omitted positions; these are programmed source values, not achieved movements"
+        if submission.module == "micro":
+            profile("ATTACHMENT_RECORDS", "Rotation review", {"rotation"})
+            profile("ATTACHMENT_DESIGN", "Angulation and inclination review", {"angulation", "inclination"})
+            section("ATTACHMENT_PLACEMENT", "Movement coverage", [coverage], [m.id for m in parsed.measurements])
+            definitions[-1]["status"] = "SOURCE_REPORTED"
+            section("ATTACHMENT_LIMITS", "Attachment decisions", ["a TMT-based attachment review draft; attachment selection, dimensions and placement are not prescribed by these movement observations"])
+        else:
+            context_facts = [coverage]
+            refs = [m.id for m in parsed.measurements]
+            if parsed.source.context.stage_index is not None:
+                context_facts.append(f"an unverified source-context stage index of {parsed.source.context.stage_index}; this is context rather than a stage-by-stage movement schedule")
+                refs.append("parsed/source/context")
+            section("STAGE_RECORDS", "Movement context", context_facts, refs)
+            definitions[-1]["status"] = "SOURCE_REPORTED"
+            profile("STAGE_ALLOCATIONS", "Translation review", {"buccolingual", "mesiodistal"})
+            profile("ANCHORAGE_RECORDS", "Vertical movement review", {"vertical", "relative_vertical", "extrusion", "intrusion"})
+            section("SEQUENCING_LIMITS", "Sequencing decisions", ["a TMT-based sequencing review draft; recorded movements have not been divided into stages, and stage counts, timing and anchorage prescriptions are not established"])
+    elif submission.module == "micro":
         rows = details.attachments
         refs = [f"review_details/attachments/{index}" for index in range(len(rows))]
         decisions, designs, placements = [], [], []

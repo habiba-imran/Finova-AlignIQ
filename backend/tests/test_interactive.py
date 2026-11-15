@@ -69,7 +69,7 @@ def test_illustrative_choices_are_independent_of_movement_values():
         a = generate_interactive(submission(module=module), settings=ReportSettings())
         b = generate_interactive(submission(ROWS.replace("-2.7500 M", "999.9500 D"), module), settings=ReportSettings())
         assert a.illustrations == b.illustrations == []
-        assert a.sections == b.sections
+        assert (a.sections != b.sections) == (module == "micro")
         assert a.observations != b.observations
 
 

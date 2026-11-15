@@ -12,15 +12,17 @@ def test_three_modules_have_distinct_content_and_identical_source_values():
     assert reports["macro"].sections == []
     assert [section.section_id for section in reports["micro"].sections] == ["ATTACHMENT_RECORDS", "ATTACHMENT_DESIGN", "ATTACHMENT_PLACEMENT", "ATTACHMENT_LIMITS"]
     assert [section.section_id for section in reports["nano"].sections] == ["STAGE_RECORDS", "STAGE_ALLOCATIONS", "ANCHORAGE_RECORDS", "SEQUENCING_LIMITS"]
-    assert all(section.status == "UNAVAILABLE" for module in ("micro", "nano") for section in reports[module].sections)
+    assert all(any(section.status == "SOURCE_REPORTED" for section in reports[module].sections) for module in ("micro", "nano"))
+    assert all(reports[module].sections[-1].status == "UNAVAILABLE" for module in ("micro", "nano"))
     for report in reports.values():
         assert report.parsed.measurements == reports["macro"].parsed.measurements
         assert len(report.engine_review.evaluations) == 96 and report.clinical_analysis_enabled is False
         assert not report.illustrations
         assert "Illustrative" not in report.export_text and "fictional demonstration group" not in report.export_text
-    assert "attachment" in reports["micro"].sections[0].text
-    assert "stage" in reports["nano"].sections[0].text
-    assert "-2.7500" not in " ".join(section.text for section in reports["micro"].sections)
+    assert "-2.7500" in reports["micro"].sections[0].text
+    assert "1.2300" in reports["nano"].sections[1].text
+    assert "0.1250" in reports["nano"].sections[2].text
+    assert all(not section.missing_fields for module in ("micro", "nano") for section in reports[module].sections)
 
 
 def test_supplied_attachment_details_remain_unverified_and_never_reach_groq_as_free_text():
@@ -70,9 +72,9 @@ def test_unverified_context_stage_index_is_reported_without_creating_a_schedule(
     from app.domain.models import SourceContext
     report = generate_interactive(submission(module="nano", context=SourceContext(stage_index=5)), settings=ReportSettings())
     assert "source-context stage index of 5" in report.sections[0].text
-    assert report.sections[0].status == "SUPPLIED_UNVERIFIED"
-    assert report.sections[0].missing_fields and not report.review_details.stages
-    assert report.sections[1].status == "UNAVAILABLE"
+    assert report.sections[0].status == "SOURCE_REPORTED"
+    assert not report.sections[0].missing_fields and not report.review_details.stages
+    assert report.sections[1].status == "SOURCE_REPORTED"
 
 
 def test_contract_capabilities_require_no_provider_call_or_development_gate(monkeypatch):

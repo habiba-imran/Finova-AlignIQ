@@ -22,7 +22,7 @@ const summaries = moduleArgument >= 0 && existsSync(summaryPath) ? JSON.parse(re
 try {
   const capability = await page.request.get(origin + '/api/v1/interactive/capabilities', { timeout: 60_000 })
   assert.equal(capability.status(), 200, 'Updated backend has not deployed')
-  assert.equal((await capability.json()).revision, 'module-reviews-2026-11-15-v1')
+  assert.equal((await capability.json()).revision, 'tmt-reviews-2026-11-15-v2')
   for (const module of modules) {
     await page.setViewportSize({ width: 1440, height: 1000 })
     await page.goto(origin)
@@ -32,27 +32,7 @@ try {
     await page.getByRole('button', { name: 'Parse Table', exact: true }).click()
     const parsed = await (await parseResponse).json()
     assert.equal(parsed.measurements.length, 112)
-    if (module === 'micro') {
-      await page.getByText('Add supplied attachment details (optional)', { exact: true }).click()
-      await page.getByRole('button', { name: 'Add attachment record' }).click()
-      await page.getByLabel('Attachment 1 tooth', { exact: true }).selectOption(parsed.teeth[1].id)
-      await page.getByLabel('Attachment 1 choice', { exact: true }).selectOption('ATTACHMENT')
-      for (const [label, value] of [['design', 'Supplied synthetic design'], ['width (mm)', '1.2300'], ['height (mm)', '0.50'], ['depth (mm)', '0.75'], ['surface', 'Supplied buccal surface'], ['orientation', 'Supplied vertical orientation']]) await page.getByLabel('Attachment 1 ' + label, { exact: true }).fill(value)
-    }
-    if (module === 'nano') {
-      await page.getByText('Add supplied sequencing details (optional)', { exact: true }).click()
-      await page.getByRole('button', { name: 'Add stage record' }).click()
-      for (const [label, value] of [['ID', 'SUPPLIED-1'], ['order', '1'], ['duration (days)', '7']]) await page.getByLabel('Stage 1 ' + label, { exact: true }).fill(value)
-      await page.getByRole('button', { name: 'Add movement allocation' }).click()
-      const movement = parsed.measurements.find(m => m.unit === 'mm' && m.numeric_status === 'PARSED')
-      await page.getByLabel('Allocation 1 stage', { exact: true }).selectOption('SUPPLIED-1')
-      await page.getByLabel('Allocation 1 tooth', { exact: true }).selectOption(movement.tooth_ref)
-      await page.getByLabel('Allocation 1 movement', { exact: true }).selectOption(movement.id)
-      assert.equal(await page.getByLabel('Allocation 1 stage amount', { exact: true }).inputValue(), '')
-      await page.getByLabel('Allocation 1 stage amount', { exact: true }).fill('0.1250')
-      await page.getByRole('button', { name: 'Add anchorage note' }).click()
-      await page.getByLabel('Anchorage 1 supplied note', { exact: true }).fill('Supplied synthetic anchorage note.')
-    }
+    assert.equal(await page.getByLabel('Supplied review details').count(), 0)
     const reviewResponse = page.waitForResponse(r => r.url().endsWith('/api/v1/interactive/review'), { timeout: 60_000 })
     const action = { macro: 'Run Planning Assistant', micro: 'Run Attachment Review', nano: 'Run Sequencing Review' }[module]
     await page.getByRole('button', { name: action, exact: true }).click()

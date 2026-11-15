@@ -10,8 +10,6 @@ const cases = [
   { module: 'macro', supplied: false, action: 'Run Planning Assistant' },
   { module: 'micro', supplied: false, action: 'Run Attachment Review' },
   { module: 'nano', supplied: false, action: 'Run Sequencing Review' },
-  { module: 'micro', supplied: true, action: 'Run Attachment Review' },
-  { module: 'nano', supplied: true, action: 'Run Sequencing Review' },
 ] as const
 
 for (const item of cases) test(`${item.module} ${item.supplied ? 'supplied' : 'TMT only'}: distinct comments and exact PDF`, async ({ page }, testInfo) => {
@@ -23,29 +21,7 @@ for (const item of cases) test(`${item.module} ${item.supplied ? 'supplied' : 'T
   await page.getByRole('button', { name: 'Parse Table', exact: true }).click()
   const parsed = await (await pendingParse).json()
   await expect(page.getByRole('region', { name: 'Structured TMT table' })).toBeVisible()
-  if (item.supplied) {
-    await page.getByText(item.module === 'micro' ? 'Add supplied attachment details (optional)' : 'Add supplied sequencing details (optional)').click()
-    if (item.module === 'micro') {
-      await page.getByRole('button', { name: 'Add attachment record' }).click()
-      await page.getByLabel('Attachment 1 tooth').selectOption(parsed.teeth[0].id)
-      await page.getByLabel('Attachment 1 choice').selectOption('ATTACHMENT')
-      for (const [label, value] of [['design', 'Supplied oval design'], ['width (mm)', '1.2300'], ['height (mm)', '0.50'], ['depth (mm)', '0.75'], ['surface', 'Supplied buccal surface'], ['orientation', 'Supplied vertical orientation']]) await page.getByLabel('Attachment 1 ' + label).fill(value)
-    } else {
-      await page.getByRole('button', { name: 'Add stage record' }).click()
-      await page.getByLabel('Stage 1 ID').fill('SUPPLIED-1')
-      await page.getByLabel('Stage 1 order').fill('1')
-      await page.getByLabel('Stage 1 duration (days)').fill('7')
-      await page.getByRole('button', { name: 'Add movement allocation' }).click()
-      const movement = parsed.measurements.find((m: { unit: string }) => m.unit === 'mm')
-      await page.getByLabel('Allocation 1 stage', { exact: true }).selectOption('SUPPLIED-1')
-      await page.getByLabel('Allocation 1 tooth').selectOption(movement.tooth_ref)
-      await page.getByLabel('Allocation 1 movement').selectOption(movement.id)
-      await expect(page.getByLabel('Allocation 1 stage amount')).toHaveValue('')
-      await page.getByLabel('Allocation 1 stage amount').fill('0.1250')
-      await page.getByRole('button', { name: 'Add anchorage note' }).click()
-      await page.getByLabel('Anchorage 1 supplied note').fill('Supplied synthetic anchorage note.')
-    }
-  }
+  await expect(page.getByLabel('Supplied review details')).toHaveCount(0)
   const pendingReport = page.waitForResponse(response => response.url().endsWith('/api/v1/interactive/review'))
   await page.getByRole('button', { name: item.action, exact: true }).click()
   const response = await pendingReport, report = await response.json()
@@ -61,8 +37,10 @@ for (const item of cases) test(`${item.module} ${item.supplied ? 'supplied' : 'T
     const comments = article.getByRole('region', { name: 'Module review comments' })
     for (const section of report.sections) await expect(comments.getByText(section.text, { exact: true })).toBeVisible()
     expect(report.sections.at(-1).status).toBe('UNAVAILABLE')
-    expect(report.sections[0].status).toBe(item.supplied ? 'SUPPLIED_UNVERIFIED' : 'UNAVAILABLE')
-    if (item.supplied) await expect(comments).toContainText(item.module === 'micro' ? '1.2300 mm' : '0.1250 mm')
+    expect(report.sections[0].status).toBe('SOURCE_REPORTED')
+    await expect(comments).not.toContainText('because no')
+    await expect(comments).not.toContainText('Information needed:')
+    await expect(comments).toContainText(item.module === 'micro' ? '0.1250' : '1.2300')
   }
   expect(await article.innerText()).not.toMatch(/Groq|provider|Illustrative|fictional demonstration group/i)
   const presentation = buildPdfPresentation('interactive', report)

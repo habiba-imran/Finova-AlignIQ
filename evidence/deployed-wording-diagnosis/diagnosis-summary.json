@@ -1,0 +1,73 @@
+{
+  "site": "https://frontend-lr7x.vercel.app/",
+  "initial_production": {
+    "requested_mode": "AUTO",
+    "used_mode": "STANDARD_TEMPLATES",
+    "reason": "GROQ_UNSUPPORTED_WORDING",
+    "provider": "GROQ",
+    "model": "openai/gpt-oss-120b",
+    "attempts": 1,
+    "eligible_wording_findings": 16,
+    "accepted_comments": 0,
+    "real_patient_transmission_enabled": false,
+    "output_validation": "GROUNDED_PLANNING_WORDING_V1"
+  },
+  "final_production": {
+    "requested_mode": "AUTO",
+    "used_mode": "GROQ_AI",
+    "reason": "GROQ_VALIDATED",
+    "provider": "GROQ",
+    "model": "openai/gpt-oss-120b",
+    "attempts": 1,
+    "eligible_wording_findings": 16,
+    "accepted_comments": 16,
+    "real_patient_transmission_enabled": false,
+    "output_validation": "GROUNDED_PLANNING_WORDING_V1"
+  },
+  "local_modules": {
+    "macro": {
+      "requested_mode": "AUTO",
+      "used_mode": "GROQ_AI",
+      "reason": "GROQ_VALIDATED",
+      "provider": "GROQ",
+      "model": "openai/gpt-oss-120b",
+      "attempts": 1,
+      "eligible_wording_findings": 16,
+      "accepted_comments": 16,
+      "real_patient_transmission_enabled": false,
+      "output_validation": "GROUNDED_PLANNING_WORDING_V1"
+    },
+    "micro": {
+      "requested_mode": "AUTO",
+      "used_mode": "GROQ_AI",
+      "reason": "GROQ_VALIDATED",
+      "provider": "GROQ",
+      "model": "openai/gpt-oss-120b",
+      "attempts": 2,
+      "eligible_wording_findings": 16,
+      "accepted_comments": 16,
+      "real_patient_transmission_enabled": false,
+      "output_validation": "GROUNDED_PLANNING_WORDING_V1"
+    },
+    "nano": {
+      "requested_mode": "AUTO",
+      "used_mode": "GROQ_AI",
+      "reason": "GROQ_VALIDATED",
+      "provider": "GROQ",
+      "model": "openai/gpt-oss-120b",
+      "attempts": 1,
+      "eligible_wording_findings": 16,
+      "accepted_comments": 16,
+      "real_patient_transmission_enabled": false,
+      "output_validation": "GROUNDED_PLANNING_WORDING_V1"
+    }
+  },
+  "tests": {
+    "backend_passed": 1060,
+    "browser_ui_pdf_passed": 6,
+    "frontend_passed": 254,
+    "frontend_failed": 4,
+    "build": "passed"
+  },
+  "commit_push_deployment_performed_by_this_assistant": false
+}

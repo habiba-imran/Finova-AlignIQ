@@ -1,0 +1,435 @@
+....FFFFFFFFF.FF.............F...F..................................     [100%]
+================================== FAILURES ===================================
+_ test_arbitrary_source_cells_and_provenance_preserved[micro-Tooth\tRotation (deg)\tExtrusion (mm)\tMesial/Distal (mm)\n11\t-2.7500 M\t0\t1.2300 D\n12\t0\t\u2014\t0.450 L\n13\t3.25 D\t0.1250\t\n14\t-1.50\tN/A\t0-12] _
+
+raw = 'Tooth\tRotation (deg)\tExtrusion (mm)\tMesial/Distal (mm)\n11\t-2.7500 M\t0\t1.2300 D\n12\t0\t�\t0.450 L\n13\t3.25 D\t0.1250\t\n14\t-1.50\tN/A\t0'
+count = 12, module = 'micro'
+
+    @pytest.mark.parametrize("raw,count", [(ROWS, 12), (COLUMNS, 6), (MARKDOWN, 4), (LARGE, 112)])
+    @pytest.mark.parametrize("module", ["macro", "micro", "nano"])
+    def test_arbitrary_source_cells_and_provenance_preserved(raw, count, module):
+        request = submission(raw, module)
+        parsed = resolve(request)
+>       report = generate_interactive(request, settings=ReportSettings())
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_interactive.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+app\interactive\service.py:105: in generate_interactive
+    sections, generation = module_sections(parsed, submission, settings=settings, client=client)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app\interactive\module_reports.py:65: in module_sections
+    profile("ATTACHMENT_RECORDS", "Rotation review", {"rotation"})
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+key = 'ATTACHMENT_RECORDS', title = 'Rotation review', families = {'rotation'}
+
+    def profile(key, title, families):
+        selected = [m for m in parsed.measurements if m.recognized_label in families]
+        grouped = {}
+        for movement in selected:
+>           grouped.setdefault(fact(movement), []).append(quote(teeth[movement.tooth_ref]))
+                               ^^^^
+E           NameError: cannot access free variable 'fact' where it is not associated with a value in enclosing scope
+
+app\interactive\module_reports.py:55: NameError
+_ test_arbitrary_source_cells_and_provenance_preserved[micro-Movement\t21\t22\t23\nRotation (deg)\t4.500 D\t0\t-1.250 M\nExtrusion (mm)\t0.250\t\u2014\t0.500-6] _
+
+raw = 'Movement\t21\t22\t23\nRotation (deg)\t4.500 D\t0\t-1.250 M\nExtrusion (mm)\t0.250\t�\t0.500'
+count = 6, module = 'micro'
+
+    @pytest.mark.parametrize("raw,count", [(ROWS, 12), (COLUMNS, 6), (MARKDOWN, 4), (LARGE, 112)])
+    @pytest.mark.parametrize("module", ["macro", "micro", "nano"])
+    def test_arbitrary_source_cells_and_provenance_preserved(raw, count, module):
+        request = submission(raw, module)
+        parsed = resolve(request)
+>       report = generate_interactive(request, settings=ReportSettings())
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_interactive.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+app\interactive\service.py:105: in generate_interactive
+    sections, generation = module_sections(parsed, submission, settings=settings, client=client)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app\interactive\module_reports.py:65: in module_sections
+    profile("ATTACHMENT_RECORDS", "Rotation review", {"rotation"})
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+key = 'ATTACHMENT_RECORDS', title = 'Rotation review', families = {'rotation'}
+
+    def profile(key, title, families):
+        selected = [m for m in parsed.measurements if m.recognized_label in families]
+        grouped = {}
+        for movement in selected:
+>           grouped.setdefault(fact(movement), []).append(quote(teeth[movement.tooth_ref]))
+                               ^^^^
+E           NameError: cannot access free variable 'fact' where it is not associated with a value in enclosing scope
+
+app\interactive\module_reports.py:55: NameError
+_ test_arbitrary_source_cells_and_provenance_preserved[micro-| Tooth | Rotation (deg) | Extrusion (mm) |\n| --- | --- | --- |\n| 31 | -3.4500 M | 0.2200 |\n| 32 | 0 | N/A |-4] _
+
+raw = '| Tooth | Rotation (deg) | Extrusion (mm) |\n| --- | --- | --- |\n| 31 | -3.4500 M | 0.2200 |\n| 32 | 0 | N/A |'
+count = 4, module = 'micro'
+
+    @pytest.mark.parametrize("raw,count", [(ROWS, 12), (COLUMNS, 6), (MARKDOWN, 4), (LARGE, 112)])
+    @pytest.mark.parametrize("module", ["macro", "micro", "nano"])
+    def test_arbitrary_source_cells_and_provenance_preserved(raw, count, module):
+        request = submission(raw, module)
+        parsed = resolve(request)
+>       report = generate_interactive(request, settings=ReportSettings())
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_interactive.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+app\interactive\service.py:105: in generate_interactive
+    sections, generation = module_sections(parsed, submission, settings=settings, client=client)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app\interactive\module_reports.py:65: in module_sections
+    profile("ATTACHMENT_RECORDS", "Rotation review", {"rotation"})
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+key = 'ATTACHMENT_RECORDS', title = 'Rotation review', families = {'rotation'}
+
+    def profile(key, title, families):
+        selected = [m for m in parsed.measurements if m.recognized_label in families]
+        grouped = {}
+        for movement in selected:
+>           grouped.setdefault(fact(movement), []).append(quote(teeth[movement.tooth_ref]))
+                               ^^^^
+E           NameError: cannot access free variable 'fact' where it is not associated with a value in enclosing scope
+
+app\interactive\module_reports.py:55: NameError
+_ test_arbitrary_source_cells_and_provenance_preserved[micro-Tooth\tRotation (deg)\tInclination (deg)\tAngulation (deg)\tExtrusion (mm)\tIntrusion (mm)\tMesial/Distal (mm)\tBuccal/Lingual (mm)\n18\t0.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n17\t1.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n16\t2.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n15\t3.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n14\t4.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n13\t5.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n12\t6.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n11\t7.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n21\t8.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n22\t9.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n23\t10.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n24\t11.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n25\t12.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n26\t13.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n27\t14.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n28\t15.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B-112] _
+
+raw = 'Tooth\tRotation (deg)\tInclination (deg)\tAngulation (deg)\tExtrusion (mm)\tIntrusion (mm)\tMesial/Distal (mm)\tBucca... B\n27\t14.1250 D\t-1.5000\t0\t0.2000\t�\t1.2300 D\t0.4500 B\n28\t15.1250 D\t-1.5000\t0\t0.2000\t�\t1.2300 D\t0.4500 B'
+count = 112, module = 'micro'
+
+    @pytest.mark.parametrize("raw,count", [(ROWS, 12), (COLUMNS, 6), (MARKDOWN, 4), (LARGE, 112)])
+    @pytest.mark.parametrize("module", ["macro", "micro", "nano"])
+    def test_arbitrary_source_cells_and_provenance_preserved(raw, count, module):
+        request = submission(raw, module)
+        parsed = resolve(request)
+>       report = generate_interactive(request, settings=ReportSettings())
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_interactive.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+app\interactive\service.py:105: in generate_interactive
+    sections, generation = module_sections(parsed, submission, settings=settings, client=client)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app\interactive\module_reports.py:65: in module_sections
+    profile("ATTACHMENT_RECORDS", "Rotation review", {"rotation"})
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+key = 'ATTACHMENT_RECORDS', title = 'Rotation review', families = {'rotation'}
+
+    def profile(key, title, families):
+        selected = [m for m in parsed.measurements if m.recognized_label in families]
+        grouped = {}
+        for movement in selected:
+>           grouped.setdefault(fact(movement), []).append(quote(teeth[movement.tooth_ref]))
+                               ^^^^
+E           NameError: cannot access free variable 'fact' where it is not associated with a value in enclosing scope
+
+app\interactive\module_reports.py:55: NameError
+_ test_arbitrary_source_cells_and_provenance_preserved[nano-Tooth\tRotation (deg)\tExtrusion (mm)\tMesial/Distal (mm)\n11\t-2.7500 M\t0\t1.2300 D\n12\t0\t\u2014\t0.450 L\n13\t3.25 D\t0.1250\t\n14\t-1.50\tN/A\t0-12] _
+
+raw = 'Tooth\tRotation (deg)\tExtrusion (mm)\tMesial/Distal (mm)\n11\t-2.7500 M\t0\t1.2300 D\n12\t0\t�\t0.450 L\n13\t3.25 D\t0.1250\t\n14\t-1.50\tN/A\t0'
+count = 12, module = 'nano'
+
+    @pytest.mark.parametrize("raw,count", [(ROWS, 12), (COLUMNS, 6), (MARKDOWN, 4), (LARGE, 112)])
+    @pytest.mark.parametrize("module", ["macro", "micro", "nano"])
+    def test_arbitrary_source_cells_and_provenance_preserved(raw, count, module):
+        request = submission(raw, module)
+        parsed = resolve(request)
+>       report = generate_interactive(request, settings=ReportSettings())
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_interactive.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+app\interactive\service.py:105: in generate_interactive
+    sections, generation = module_sections(parsed, submission, settings=settings, client=client)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app\interactive\module_reports.py:78: in module_sections
+    profile("STAGE_ALLOCATIONS", "Translation review", {"buccolingual", "mesiodistal"})
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+key = 'STAGE_ALLOCATIONS', title = 'Translation review'
+families = {'buccolingual', 'mesiodistal'}
+
+    def profile(key, title, families):
+        selected = [m for m in parsed.measurements if m.recognized_label in families]
+        grouped = {}
+        for movement in selected:
+>           grouped.setdefault(fact(movement), []).append(quote(teeth[movement.tooth_ref]))
+                               ^^^^
+E           NameError: cannot access free variable 'fact' where it is not associated with a value in enclosing scope
+
+app\interactive\module_reports.py:55: NameError
+_ test_arbitrary_source_cells_and_provenance_preserved[nano-Movement\t21\t22\t23\nRotation (deg)\t4.500 D\t0\t-1.250 M\nExtrusion (mm)\t0.250\t\u2014\t0.500-6] _
+
+raw = 'Movement\t21\t22\t23\nRotation (deg)\t4.500 D\t0\t-1.250 M\nExtrusion (mm)\t0.250\t�\t0.500'
+count = 6, module = 'nano'
+
+    @pytest.mark.parametrize("raw,count", [(ROWS, 12), (COLUMNS, 6), (MARKDOWN, 4), (LARGE, 112)])
+    @pytest.mark.parametrize("module", ["macro", "micro", "nano"])
+    def test_arbitrary_source_cells_and_provenance_preserved(raw, count, module):
+        request = submission(raw, module)
+        parsed = resolve(request)
+>       report = generate_interactive(request, settings=ReportSettings())
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_interactive.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+app\interactive\service.py:105: in generate_interactive
+    sections, generation = module_sections(parsed, submission, settings=settings, client=client)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app\interactive\module_reports.py:79: in module_sections
+    profile("ANCHORAGE_RECORDS", "Vertical movement review", {"vertical", "relative_vertical", "extrusion", "intrusion"})
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+key = 'ANCHORAGE_RECORDS', title = 'Vertical movement review'
+families = {'extrusion', 'intrusion', 'relative_vertical', 'vertical'}
+
+    def profile(key, title, families):
+        selected = [m for m in parsed.measurements if m.recognized_label in families]
+        grouped = {}
+        for movement in selected:
+>           grouped.setdefault(fact(movement), []).append(quote(teeth[movement.tooth_ref]))
+                               ^^^^
+E           NameError: cannot access free variable 'fact' where it is not associated with a value in enclosing scope
+
+app\interactive\module_reports.py:55: NameError
+_ test_arbitrary_source_cells_and_provenance_preserved[nano-| Tooth | Rotation (deg) | Extrusion (mm) |\n| --- | --- | --- |\n| 31 | -3.4500 M | 0.2200 |\n| 32 | 0 | N/A |-4] _
+
+raw = '| Tooth | Rotation (deg) | Extrusion (mm) |\n| --- | --- | --- |\n| 31 | -3.4500 M | 0.2200 |\n| 32 | 0 | N/A |'
+count = 4, module = 'nano'
+
+    @pytest.mark.parametrize("raw,count", [(ROWS, 12), (COLUMNS, 6), (MARKDOWN, 4), (LARGE, 112)])
+    @pytest.mark.parametrize("module", ["macro", "micro", "nano"])
+    def test_arbitrary_source_cells_and_provenance_preserved(raw, count, module):
+        request = submission(raw, module)
+        parsed = resolve(request)
+>       report = generate_interactive(request, settings=ReportSettings())
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_interactive.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+app\interactive\service.py:105: in generate_interactive
+    sections, generation = module_sections(parsed, submission, settings=settings, client=client)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app\interactive\module_reports.py:79: in module_sections
+    profile("ANCHORAGE_RECORDS", "Vertical movement review", {"vertical", "relative_vertical", "extrusion", "intrusion"})
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+key = 'ANCHORAGE_RECORDS', title = 'Vertical movement review'
+families = {'extrusion', 'intrusion', 'relative_vertical', 'vertical'}
+
+    def profile(key, title, families):
+        selected = [m for m in parsed.measurements if m.recognized_label in families]
+        grouped = {}
+        for movement in selected:
+>           grouped.setdefault(fact(movement), []).append(quote(teeth[movement.tooth_ref]))
+                               ^^^^
+E           NameError: cannot access free variable 'fact' where it is not associated with a value in enclosing scope
+
+app\interactive\module_reports.py:55: NameError
+_ test_arbitrary_source_cells_and_provenance_preserved[nano-Tooth\tRotation (deg)\tInclination (deg)\tAngulation (deg)\tExtrusion (mm)\tIntrusion (mm)\tMesial/Distal (mm)\tBuccal/Lingual (mm)\n18\t0.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n17\t1.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n16\t2.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n15\t3.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n14\t4.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n13\t5.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n12\t6.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n11\t7.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n21\t8.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n22\t9.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n23\t10.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n24\t11.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n25\t12.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n26\t13.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n27\t14.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n28\t15.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B-112] _
+
+raw = 'Tooth\tRotation (deg)\tInclination (deg)\tAngulation (deg)\tExtrusion (mm)\tIntrusion (mm)\tMesial/Distal (mm)\tBucca... B\n27\t14.1250 D\t-1.5000\t0\t0.2000\t�\t1.2300 D\t0.4500 B\n28\t15.1250 D\t-1.5000\t0\t0.2000\t�\t1.2300 D\t0.4500 B'
+count = 112, module = 'nano'
+
+    @pytest.mark.parametrize("raw,count", [(ROWS, 12), (COLUMNS, 6), (MARKDOWN, 4), (LARGE, 112)])
+    @pytest.mark.parametrize("module", ["macro", "micro", "nano"])
+    def test_arbitrary_source_cells_and_provenance_preserved(raw, count, module):
+        request = submission(raw, module)
+        parsed = resolve(request)
+>       report = generate_interactive(request, settings=ReportSettings())
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_interactive.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+app\interactive\service.py:105: in generate_interactive
+    sections, generation = module_sections(parsed, submission, settings=settings, client=client)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app\interactive\module_reports.py:78: in module_sections
+    profile("STAGE_ALLOCATIONS", "Translation review", {"buccolingual", "mesiodistal"})
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+key = 'STAGE_ALLOCATIONS', title = 'Translation review'
+families = {'buccolingual', 'mesiodistal'}
+
+    def profile(key, title, families):
+        selected = [m for m in parsed.measurements if m.recognized_label in families]
+        grouped = {}
+        for movement in selected:
+>           grouped.setdefault(fact(movement), []).append(quote(teeth[movement.tooth_ref]))
+                               ^^^^
+E           NameError: cannot access free variable 'fact' where it is not associated with a value in enclosing scope
+
+app\interactive\module_reports.py:55: NameError
+________ test_illustrative_choices_are_independent_of_movement_values _________
+
+    def test_illustrative_choices_are_independent_of_movement_values():
+        for module in ("micro", "nano"):
+>           a = generate_interactive(submission(module=module), settings=ReportSettings())
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_interactive.py:69: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+app\interactive\service.py:105: in generate_interactive
+    sections, generation = module_sections(parsed, submission, settings=settings, client=client)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app\interactive\module_reports.py:65: in module_sections
+    profile("ATTACHMENT_RECORDS", "Rotation review", {"rotation"})
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+key = 'ATTACHMENT_RECORDS', title = 'Rotation review', families = {'rotation'}
+
+    def profile(key, title, families):
+        selected = [m for m in parsed.measurements if m.recognized_label in families]
+        grouped = {}
+        for movement in selected:
+>           grouped.setdefault(fact(movement), []).append(quote(teeth[movement.tooth_ref]))
+                               ^^^^
+E           NameError: cannot access free variable 'fact' where it is not associated with a value in enclosing scope
+
+app\interactive\module_reports.py:55: NameError
+__________ test_groq_grounded_module_payload_and_local_facts[micro] ___________
+
+module = 'micro'
+
+    @pytest.mark.parametrize("module", ["macro", "micro", "nano"])
+    def test_groq_grounded_module_payload_and_local_facts(module):
+        settings, client, captured = provider()
+        request = submission("Patient: PRIVATE_PATIENT_ABC\n" + LARGE, module)
+>       report = generate_interactive(request, settings=settings, client=client)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_interactive.py:96: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+app\interactive\service.py:105: in generate_interactive
+    sections, generation = module_sections(parsed, submission, settings=settings, client=client)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app\interactive\module_reports.py:65: in module_sections
+    profile("ATTACHMENT_RECORDS", "Rotation review", {"rotation"})
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+key = 'ATTACHMENT_RECORDS', title = 'Rotation review', families = {'rotation'}
+
+    def profile(key, title, families):
+        selected = [m for m in parsed.measurements if m.recognized_label in families]
+        grouped = {}
+        for movement in selected:
+>           grouped.setdefault(fact(movement), []).append(quote(teeth[movement.tooth_ref]))
+                               ^^^^
+E           NameError: cannot access free variable 'fact' where it is not associated with a value in enclosing scope
+
+app\interactive\module_reports.py:55: NameError
+___________ test_groq_grounded_module_payload_and_local_facts[nano] ___________
+
+module = 'nano'
+
+    @pytest.mark.parametrize("module", ["macro", "micro", "nano"])
+    def test_groq_grounded_module_payload_and_local_facts(module):
+        settings, client, captured = provider()
+        request = submission("Patient: PRIVATE_PATIENT_ABC\n" + LARGE, module)
+>       report = generate_interactive(request, settings=settings, client=client)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_interactive.py:96: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+app\interactive\service.py:105: in generate_interactive
+    sections, generation = module_sections(parsed, submission, settings=settings, client=client)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app\interactive\module_reports.py:78: in module_sections
+    profile("STAGE_ALLOCATIONS", "Translation review", {"buccolingual", "mesiodistal"})
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+key = 'STAGE_ALLOCATIONS', title = 'Translation review'
+families = {'buccolingual', 'mesiodistal'}
+
+    def profile(key, title, families):
+        selected = [m for m in parsed.measurements if m.recognized_label in families]
+        grouped = {}
+        for movement in selected:
+>           grouped.setdefault(fact(movement), []).append(quote(teeth[movement.tooth_ref]))
+                               ^^^^
+E           NameError: cannot access free variable 'fact' where it is not associated with a value in enclosing scope
+
+app\interactive\module_reports.py:55: NameError
+____ test_three_modules_have_distinct_content_and_identical_source_values _____
+
+    def test_three_modules_have_distinct_content_and_identical_source_values():
+>       reports = {module: generate_interactive(submission(module=module), settings=ReportSettings()) for module in ("macro", "micro", "nano")}
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_module_reports.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+app\interactive\service.py:105: in generate_interactive
+    sections, generation = module_sections(parsed, submission, settings=settings, client=client)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app\interactive\module_reports.py:65: in module_sections
+    profile("ATTACHMENT_RECORDS", "Rotation review", {"rotation"})
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+key = 'ATTACHMENT_RECORDS', title = 'Rotation review', families = {'rotation'}
+
+    def profile(key, title, families):
+        selected = [m for m in parsed.measurements if m.recognized_label in families]
+        grouped = {}
+        for movement in selected:
+>           grouped.setdefault(fact(movement), []).append(quote(teeth[movement.tooth_ref]))
+                               ^^^^
+E           NameError: cannot access free variable 'fact' where it is not associated with a value in enclosing scope
+
+app\interactive\module_reports.py:55: NameError
+_ test_unverified_context_stage_index_is_reported_without_creating_a_schedule _
+
+    def test_unverified_context_stage_index_is_reported_without_creating_a_schedule():
+        from app.domain.models import SourceContext
+>       report = generate_interactive(submission(module="nano", context=SourceContext(stage_index=5)), settings=ReportSettings())
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_module_reports.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+app\interactive\service.py:105: in generate_interactive
+    sections, generation = module_sections(parsed, submission, settings=settings, client=client)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app\interactive\module_reports.py:78: in module_sections
+    profile("STAGE_ALLOCATIONS", "Translation review", {"buccolingual", "mesiodistal"})
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+key = 'STAGE_ALLOCATIONS', title = 'Translation review'
+families = {'buccolingual', 'mesiodistal'}
+
+    def profile(key, title, families):
+        selected = [m for m in parsed.measurements if m.recognized_label in families]
+        grouped = {}
+        for movement in selected:
+>           grouped.setdefault(fact(movement), []).append(quote(teeth[movement.tooth_ref]))
+                               ^^^^
+E           NameError: cannot access free variable 'fact' where it is not associated with a value in enclosing scope
+
+app\interactive\module_reports.py:55: NameError
+============================== warnings summary ===============================
+.venv\Lib\site-packages\fastapi\testclient.py:1
+  C:\Finova AlignIQ\backend\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/test_interactive.py::test_arbitrary_source_cells_and_provenance_preserved[micro-Tooth\tRotation (deg)\tExtrusion (mm)\tMesial/Distal (mm)\n11\t-2.7500 M\t0\t1.2300 D\n12\t0\t\u2014\t0.450 L\n13\t3.25 D\t0.1250\t\n14\t-1.50\tN/A\t0-12]
+FAILED tests/test_interactive.py::test_arbitrary_source_cells_and_provenance_preserved[micro-Movement\t21\t22\t23\nRotation (deg)\t4.500 D\t0\t-1.250 M\nExtrusion (mm)\t0.250\t\u2014\t0.500-6]
+FAILED tests/test_interactive.py::test_arbitrary_source_cells_and_provenance_preserved[micro-| Tooth | Rotation (deg) | Extrusion (mm) |\n| --- | --- | --- |\n| 31 | -3.4500 M | 0.2200 |\n| 32 | 0 | N/A |-4]
+FAILED tests/test_interactive.py::test_arbitrary_source_cells_and_provenance_preserved[micro-Tooth\tRotation (deg)\tInclination (deg)\tAngulation (deg)\tExtrusion (mm)\tIntrusion (mm)\tMesial/Distal (mm)\tBuccal/Lingual (mm)\n18\t0.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n17\t1.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n16\t2.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n15\t3.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n14\t4.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n13\t5.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n12\t6.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n11\t7.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n21\t8.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n22\t9.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n23\t10.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n24\t11.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n25\t12.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n26\t13.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n27\t14.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n28\t15.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B-112]
+FAILED tests/test_interactive.py::test_arbitrary_source_cells_and_provenance_preserved[nano-Tooth\tRotation (deg)\tExtrusion (mm)\tMesial/Distal (mm)\n11\t-2.7500 M\t0\t1.2300 D\n12\t0\t\u2014\t0.450 L\n13\t3.25 D\t0.1250\t\n14\t-1.50\tN/A\t0-12]
+FAILED tests/test_interactive.py::test_arbitrary_source_cells_and_provenance_preserved[nano-Movement\t21\t22\t23\nRotation (deg)\t4.500 D\t0\t-1.250 M\nExtrusion (mm)\t0.250\t\u2014\t0.500-6]
+FAILED tests/test_interactive.py::test_arbitrary_source_cells_and_provenance_preserved[nano-| Tooth | Rotation (deg) | Extrusion (mm) |\n| --- | --- | --- |\n| 31 | -3.4500 M | 0.2200 |\n| 32 | 0 | N/A |-4]
+FAILED tests/test_interactive.py::test_arbitrary_source_cells_and_provenance_preserved[nano-Tooth\tRotation (deg)\tInclination (deg)\tAngulation (deg)\tExtrusion (mm)\tIntrusion (mm)\tMesial/Distal (mm)\tBuccal/Lingual (mm)\n18\t0.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n17\t1.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n16\t2.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n15\t3.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n14\t4.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n13\t5.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n12\t6.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n11\t7.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n21\t8.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n22\t9.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n23\t10.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n24\t11.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n25\t12.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n26\t13.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n27\t14.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B\n28\t15.1250 D\t-1.5000\t0\t0.2000\t\u2014\t1.2300 D\t0.4500 B-112]
+FAILED tests/test_interactive.py::test_illustrative_choices_are_independent_of_movement_values
+FAILED tests/test_interactive.py::test_groq_grounded_module_payload_and_local_facts[micro]
+FAILED tests/test_interactive.py::test_groq_grounded_module_payload_and_local_facts[nano]
+FAILED tests/test_module_reports.py::test_three_modules_have_distinct_content_and_identical_source_values
+FAILED tests/test_module_reports.py::test_unverified_context_stage_index_is_reported_without_creating_a_schedule
+13 failed, 55 passed, 1 warning in 15.65s

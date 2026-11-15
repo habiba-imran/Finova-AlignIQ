@@ -1,10 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
 import { ArrowRight, Check, Copy, Download, FileCheck2, RotateCcw } from 'lucide-react'
-import { emptyReviewDetails, requestInteractiveReview } from '../api/interactive'
+import { emptyReviewDetails, requestInteractiveReview, sectionStatusLabel } from '../api/interactive'
 import type { DemoModule, InteractiveReport, ReviewDetails } from '../api/interactive'
 import type { AutomaticParseResult, ContextClaims, ParseResult } from '../api/parse'
 import PdfExportButton from './PdfExportButton'
-import ReviewDetailsFields from './ReviewDetailsFields'
 
 const TITLES = { macro: 'Planning', micro: 'Attachment', nano: 'Sequencing' }
 const ACTIONS = { macro: 'Run Planning Assistant', micro: 'Run Attachment Review', nano: 'Run Sequencing Review' }
@@ -33,7 +32,7 @@ function partialParseExplanation(parsed: ParseResult): string {
   return 'All available movement values were parsed successfully. Omitted or unassigned cells are preserved as unknown rather than assumed to be zero.'
 }
 
-export default function InteractiveWorkspace({ module, rawText, context, parsed, onComplete, reviewDetails = emptyReviewDetails(), onDetailsChange = () => {}, savedReport = null, onReportChange = () => {} }: {
+export default function InteractiveWorkspace({ module, rawText, context, parsed, onComplete, reviewDetails = emptyReviewDetails(), savedReport = null, onReportChange = () => {} }: {
   module: DemoModule; rawText: string; context: ContextClaims; parsed: AutomaticParseResult; onComplete: (complete: boolean) => void; reviewDetails?: ReviewDetails; onDetailsChange?: (details: ReviewDetails) => void; savedReport?: InteractiveReport | null; onReportChange?: (report: InteractiveReport | null) => void
 }) {
   const [report, setReport] = useState<InteractiveReport | null>(savedReport)
@@ -81,10 +80,7 @@ export default function InteractiveWorkspace({ module, rawText, context, parsed,
   return <section className="panel" aria-label={`${TITLES[module]} synthetic review`}>
     <div className="panel-heading"><div className="flex items-center gap-2.5"><FileCheck2 size={17} className="text-brand" aria-hidden="true" /><h3 className="panel-title">{TITLES[module]} review</h3></div></div>
     <div className="p-5 sm:p-7">
-      <p className="text-sm leading-7 text-muted">{module === 'macro' ? 'Prepare readable planning comments from the programmed movements in your table.' : module === 'micro' ? 'Prepare attachment-review comments from the recorded movements. Attachment choices and placement require separate supporting evidence.' : 'Prepare sequencing-review comments from the recorded movements. Stage order and anchorage require separate supporting evidence.'}</p>
-      <ReviewDetailsFields module={module} parsed={parsed} value={reviewDetails} disabled={loading} onChange={value => {
-        revision.current++; pending.current?.abort(); pending.current = null; setLoading(false); setReport(null); setError(''); setNotice(''); onComplete(false); onDetailsChange(value)
-      }} />
+      <p className="text-sm leading-7 text-muted">{module === 'macro' ? 'Prepare readable planning comments from the programmed movements in your table.' : module === 'micro' ? 'Generate attachment-review draft comments directly from the rotation, angulation and inclination recorded in your TMT.' : 'Generate sequencing-review draft comments directly from the translations, vertical movements and context recorded in your TMT.'}</p>
       {report ? (
         <div className="mt-4 flex flex-wrap items-center gap-3">
           <span className="inline-flex items-center gap-2 rounded-lg border border-brand/25 bg-brand-soft px-3.5 py-2.5 text-[13px] font-semibold text-brand">
@@ -146,7 +142,7 @@ export default function InteractiveWorkspace({ module, rawText, context, parsed,
         {!!report.sections?.length && <section aria-label="Module review comments" className="mt-6 space-y-4">
           <h5 className="text-base font-semibold">{module === 'micro' ? 'Attachment review comments' : 'Sequencing review comments'}</h5>
           {report.sections.map(section => <div key={section.section_id} className="comment-card">
-            <div className="flex flex-wrap items-center justify-between gap-2"><h6 className="text-base font-semibold">{section.title}</h6><span className="rounded-md bg-canvas px-2 py-1 text-xs text-muted">{section.status === 'UNAVAILABLE' ? 'Unavailable' : 'Supplied · unverified'}</span></div>
+            <div className="flex flex-wrap items-center justify-between gap-2"><h6 className="text-base font-semibold">{section.title}</h6><span className="rounded-md bg-canvas px-2 py-1 text-xs text-muted">{sectionStatusLabel(section)}</span></div>
             <p className="mt-2 whitespace-pre-wrap text-sm leading-7 [overflow-wrap:anywhere]">{section.text}</p>
             {!!section.missing_fields.length && <p className="mt-3 text-xs leading-6 text-notice-ink"><strong>Information needed:</strong> {section.missing_fields.join('; ')}.</p>}
           </div>)}

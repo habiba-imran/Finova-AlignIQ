@@ -118,7 +118,7 @@ def generate_interactive(submission, *, settings=None, client=None):
     numeric = sum(m.numeric_status in {"PARSED", "EXPLICIT_ZERO"} for m in parsed.measurements)
     missing = sum(m.numeric_status in {"MISSING", "NOT_PRESENT"} for m in parsed.measurements)
     other = len(parsed.measurements) - numeric - missing
-    lead = {"macro": "Programmed movement profile.", "micro": "Attachment information review. Supplied choices, design and placement are reviewed separately from movement values.", "nano": "Sequencing information review. Supplied stages, allocations and anchorage notes are reviewed separately from pasted movement values."}[submission.module]
+    lead = {"macro": "Programmed movement profile.", "micro": "TMT-based attachment review: rotation, angulation and inclination observations.", "nano": "TMT-based sequencing review: movement context, translations and vertical movements."}[submission.module]
     summary = f"{lead} {len(observations)} tooth tokens; {len(parsed.measurements)} measurement positions; {numeric} recorded numerical values; {missing} missing or omitted; {other} invalid or ambiguous."
     notice = "AI-assisted report wording." if generation.used_mode == "GROQ_AI" else "Standard report wording."
     limitations = list(LIMITATIONS)

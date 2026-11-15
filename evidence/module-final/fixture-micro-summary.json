@@ -16,7 +16,7 @@
   "sections": [
     {
       "id": "ATTACHMENT_RECORDS",
-      "status": "UNAVAILABLE"
+      "status": "SOURCE_REPORTED"
     },
     {
       "id": "ATTACHMENT_DESIGN",
@@ -24,7 +24,7 @@
     },
     {
       "id": "ATTACHMENT_PLACEMENT",
-      "status": "UNAVAILABLE"
+      "status": "SOURCE_REPORTED"
     },
     {
       "id": "ATTACHMENT_LIMITS",

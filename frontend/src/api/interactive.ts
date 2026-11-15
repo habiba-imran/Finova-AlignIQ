@@ -18,6 +18,15 @@ export const MODULE_SECTIONS = {
   micro: { ATTACHMENT_RECORDS: 'Supplied attachment choices', ATTACHMENT_DESIGN: 'Design and dimensions', ATTACHMENT_PLACEMENT: 'Placement information', ATTACHMENT_LIMITS: 'Attachment review limits' },
   nano: { STAGE_RECORDS: 'Supplied stage information', STAGE_ALLOCATIONS: 'Supplied movement allocations', ANCHORAGE_RECORDS: 'Supplied anchorage notes', SEQUENCING_LIMITS: 'Sequencing review limits' },
 }
+export const TMT_SECTIONS = {
+  micro: { ATTACHMENT_RECORDS: 'Rotation review', ATTACHMENT_DESIGN: 'Angulation and inclination review', ATTACHMENT_PLACEMENT: 'Movement coverage', ATTACHMENT_LIMITS: 'Attachment decisions' },
+  nano: { STAGE_RECORDS: 'Movement context', STAGE_ALLOCATIONS: 'Translation review', ANCHORAGE_RECORDS: 'Vertical movement review', SEQUENCING_LIMITS: 'Sequencing decisions' },
+}
+export function sectionStatusLabel(section: ModuleSection): string {
+  return section.status === 'SOURCE_REPORTED' ? 'From TMT · unverified'
+    : section.status === 'SUPPLIED_UNVERIFIED' ? 'Supplied · unverified'
+      : section.section_id.endsWith('_LIMITS') && !section.missing_fields.length ? 'Not prescribed' : 'Unavailable'
+}
 export interface InteractiveReport {
   schema_version: '1.0.0'; module: DemoModule; report_id: string
   draft_status: 'Synthetic demonstration — not for clinical use'; clinical_analysis_enabled: false
@@ -80,14 +89,17 @@ export function isInteractiveReport(v: unknown): v is InteractiveReport {
     if (v.module === 'macro') return v.sections.length === 0 && Object.values(details).every(rows => rows.length === 0)
     if (v.module === 'micro' ? details.stages.length || details.allocations.length || details.anchorage_notes.length : details.attachments.length) return false
     if (v.generation.output_validation !== 'GROUNDED_MODULE_WORDING_V1' || v.sections.length !== 4) return false
-    const expected = MODULE_SECTIONS[v.module as 'micro' | 'nano'], seen = new Set<string>()
+    const module = v.module as 'micro' | 'nano'
+    const automatic = Object.values(details).every(rows => rows.length === 0) && v.sections[0]?.title === Object.values(TMT_SECTIONS[module])[0]
+    const expected = automatic ? TMT_SECTIONS[module] : MODULE_SECTIONS[module], seen = new Set<string>()
     const allowedRefs = new Set(['parsed/source/context', ...parsed.measurements.map(m => m.id), ...Object.entries(details).flatMap(([key, rows]) => rows.map((_: unknown, i: number) => `review_details/${key}/${i}`))])
     return v.sections.every(section => {
       if (!obj(section) || !str(section.section_id) || seen.has(section.section_id) || !(section.section_id in expected)
         || section.title !== expected[section.section_id as keyof typeof expected] || !str(section.text)
-        || !['SUPPLIED_UNVERIFIED', 'UNAVAILABLE'].includes(String(section.status))
+        || !(automatic ? ['SOURCE_REPORTED', 'UNAVAILABLE'] : ['SUPPLIED_UNVERIFIED', 'UNAVAILABLE']).includes(String(section.status))
         || section.section_id.endsWith('_LIMITS') && section.status !== 'UNAVAILABLE'
         || !Array.isArray(section.source_refs) || !section.source_refs.every(ref => str(ref) && allowedRefs.has(ref))
+        || section.status === 'SOURCE_REPORTED' && !section.source_refs.length
         || !Array.isArray(section.missing_fields) || !section.missing_fields.every(str)) return false
       seen.add(section.section_id); return true
     })

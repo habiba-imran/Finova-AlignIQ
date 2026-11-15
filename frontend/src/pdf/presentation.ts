@@ -5,7 +5,7 @@ import { isSequencingDraft, SEQUENCE_SECTIONS } from '../api/sequencing'
 import { isFinalDraftReport } from '../api/report'
 import type { FinalDraftReport, ReportComment } from '../api/report'
 import type { PdfKind } from './reportPdf'
-import { isInteractiveReport } from '../api/interactive'
+import { isInteractiveReport, sectionStatusLabel } from '../api/interactive'
 
 export type PdfBlock = { type: 'heading'; text: string } | { type: 'text'; text: string } | { type: 'table'; headers: string[]; widths: number[]; rows: string[][] }
 export interface PdfPresentation {
@@ -72,7 +72,7 @@ export function buildPdfPresentation(kind: PdfKind, input: unknown): PdfPresenta
     const blocks: PdfBlock[] = []
     if (input.sections?.length) {
       for (const section of input.sections) {
-        blocks.push(heading(section.title), text(section.status === 'UNAVAILABLE' ? 'Unavailable' : 'Supplied - unverified'), text(section.text))
+        blocks.push(heading(section.title), text(sectionStatusLabel(section)), text(section.text))
         if (section.missing_fields.length) blocks.push(text('Information needed: ' + section.missing_fields.join('; ') + '.'))
       }
     } else {

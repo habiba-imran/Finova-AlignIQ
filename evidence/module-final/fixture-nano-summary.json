@@ -16,15 +16,15 @@
   "sections": [
     {
       "id": "STAGE_RECORDS",
-      "status": "UNAVAILABLE"
+      "status": "SOURCE_REPORTED"
     },
     {
       "id": "STAGE_ALLOCATIONS",
-      "status": "UNAVAILABLE"
+      "status": "SOURCE_REPORTED"
     },
     {
       "id": "ANCHORAGE_RECORDS",
-      "status": "UNAVAILABLE"
+      "status": "SOURCE_REPORTED"
     },
     {
       "id": "SEQUENCING_LIMITS",

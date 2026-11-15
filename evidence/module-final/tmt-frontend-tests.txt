@@ -1,0 +1,67 @@
+
+ RUN  v4.1.12 C:/Finova AlignIQ/frontend
+
+ ❯ src/ModuleReports.test.tsx (5 tests | 3 failed) 3417ms
+   × micro generates TMT comments without extra forms 1744ms
+   × nano generates TMT comments without extra forms 757ms
+   × keeps an unchanged completed report in memory across module navigation without another request 892ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/ModuleReports.test.tsx > micro generates TMT comments without extra forms
+Error: expect(element).toHaveTextContent()
+
+Expected element to have text content:
+  -2.7500
+Received:
+  Attachment review commentsSupplied attachment choicesUnavailableAn attachment review with no supplied attachment choices for the 4 parsed tooth rows.Information needed: Tooth-wise attachment choices.Design and dimensionsUnavailableUnavailable attachment design and geometry assessments because no attachment design records were supplied.Information needed: Attachment design and dimensions.Placement informationUnavailableUnavailable attachment placement assessments because no surface or orientation records were supplied.Information needed: Attachment surface and orientation.Attachment review limitsUnavailableAn unavailable independent attachment-indication assessment; TMT movement magnitudes alone do not establish attachment need, design or placement.Information needed: Independent attachment indication and suitability assessment.
+ ❯ src/ModuleReports.test.tsx:31:20
+     29|   const comments = within(article).getByLabelText('Module review comme…
+     30|   expect(within(comments).getAllByRole('heading', { level: 6 })).toHav…
+     31|   expect(comments).toHaveTextContent(module === 'micro' ? '-2.7500' : …
+       |                    ^
+     32|   expect(within(comments).getAllByText('From TMT · unverified', { exac…
+     33|   expect(comments).toHaveTextContent(module === 'micro' ? 'Rotation re…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  src/ModuleReports.test.tsx > nano generates TMT comments without extra forms
+Error: expect(element).toHaveTextContent()
+
+Expected element to have text content:
+  1.2300
+Received:
+  Sequencing review commentsSupplied stage informationUnavailableA sequencing review with no supplied stage IDs, order or timing information.Information needed: Stage IDs and order.Supplied movement allocationsUnavailableUnavailable stage-specific movement allocations; the pasted TMT values have not been assigned to stages.Information needed: Explicit stage-to-movement allocations.Supplied anchorage notesUnavailableAn unavailable anchorage review because no anchorage information was supplied.Information needed: Supplied anchorage information.Sequencing review limitsUnavailableAn unavailable independent sequencing-suitability assessment; no optimized order, stage count, force, timing or anchorage requirement is inferred from pasted TMT values.Information needed: Independent assessment of sequencing and anchorage suitability.
+ ❯ src/ModuleReports.test.tsx:31:20
+     29|   const comments = within(article).getByLabelText('Module review comme…
+     30|   expect(within(comments).getAllByRole('heading', { level: 6 })).toHav…
+     31|   expect(comments).toHaveTextContent(module === 'micro' ? '-2.7500' : …
+       |                    ^
+     32|   expect(within(comments).getAllByText('From TMT · unverified', { exac…
+     33|   expect(comments).toHaveTextContent(module === 'micro' ? 'Rotation re…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  src/ModuleReports.test.tsx > keeps an unchanged completed report in memory across module navigation without another request
+Error: expect(element).toHaveTextContent()
+
+Expected element to have text content:
+  Rotation review
+Received:
+  micro · Generated resultsAttachment reportCopyExport TXTExport PDFStandard wording · AI-assisted wording unavailable.Attachment information review. Supplied choices, design and placement are reviewed separately from movement values. 4 tooth tokens; 12 measurement positions; 9 recorded numerical values; 3 missing or omitted; 0 invalid or ambiguous.Parse status note: All available movement values were parsed successfully. Marked as partial because 3 cells contain omitted or missing value (e.g. "—") in Extrusion (mm), Mesial/Distal (mm). Rather than guessing or assuming missing values are zero, Finova retains them as unknown.Attachment review commentsSupplied attachment choicesUnavailableAn attachment review with no supplied attachment choices for the 4 parsed tooth rows.Information needed: Tooth-wise attachment choices.Design and dimensionsUnavailableUnavailable attachment design and geometry assessments because no attachment design records were supplied.Information needed: Attachment design and dimensions.Placement informationUnavailableUnavailable attachment placement assessments because no surface or orientation records were supplied.Information needed: Attachment surface and orientation.Attachment review limitsUnavailableAn unavailable independent attachment-indication assessment; TMT movement magnitudes alone do not establish attachment need, design or placement.Information needed: Independent attachment indication and suitability assessment.Source movement valuesTooth token 11Rotation (deg): -2.7500 MExtrusion (mm): 0Mesial/Distal (mm): 1.2300 DTooth token 12Rotation (deg): 0Extrusion (mm): —Mesial/Distal (mm): 0.450 LTooth token 13Rotation (deg): 3.25 DExtrusion (mm): 0.1250Mesial/Distal (mm): Tooth token 14Rotation (deg): -1.50Extrusion (mm): N/AMesial/Distal (mm): 0Source conventions and anatomy remain unverified. No clinical suitability, attachment indication, stage schedule or anchorage prescription is established. Complete exports retain source values and provenance.
+ ❯ src/ModuleReports.test.tsx:61:39
+     59|   expect(screen.queryByRole('article')).not.toBeInTheDocument()
+     60|   fireEvent.click(nav.getByRole('button', { name: /MICRO/ }))
+     61|   expect(screen.getByRole('article')).toHaveTextContent('Rotation revi…
+       |                                       ^
+     62|   expect(fetch).toHaveBeenCalledTimes(2)
+     63|   fireEvent.change(screen.getByRole('textbox', { name: 'Raw TMT text' …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  1 failed | 2 passed (3)
+      Tests  3 failed | 38 passed (41)
+   Start at  05:30:42
+   Duration  47.46s (transform 3.53s, setup 22.79s, import 7.14s, tests 18.36s, environment 31.26s)
+
