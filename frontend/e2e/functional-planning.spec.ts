@@ -5,18 +5,19 @@ import { PDFArray, PDFDict, PDFDocument, PDFHexString, PDFName, PDFRawStream, de
 import { isInteractiveReport } from '../src/api/interactive'
 
 const modules = [
-  { module: 'macro', load: 'Load Macro planning scenario', run: 'Run Planning Assistant' },
-  { module: 'micro', load: 'Load Micro attachment scenario', run: 'Run Attachment Review' },
-  { module: 'nano', load: 'Load Nano sequencing scenario', run: 'Run Sequencing Review' },
+  { module: 'macro', run: 'Run Planning Assistant' },
+  { module: 'micro', run: 'Run Attachment Review' },
+  { module: 'nano', run: 'Run Sequencing Review' },
 ] as const
 
 for (const item of modules) test(`${item.module}: functional policy scenario, exact exports and context invalidation`, async ({ page, context }, testInfo) => {
   test.setTimeout(90000)
   await context.grantPermissions(['clipboard-read', 'clipboard-write'])
   await page.goto('/')
-  await page.getByText('Optional fictional planning scenarios', { exact: true }).click()
-  await page.getByRole('button', { name: item.load, exact: true }).click()
-  await expect(page.getByLabel('Selected fictional scenario')).toBeVisible()
+  await page.getByRole('button', { name: new RegExp(item.module.toUpperCase()) }).click()
+  await expect(page.getByText('Optional fictional planning scenarios', { exact: true })).toHaveCount(0)
+  await page.getByRole('button', { name: 'Load synthetic example', exact: true }).click()
+  await expect(page.getByLabel('Loaded synthetic example')).toBeVisible()
   const original = await page.getByRole('textbox', { name: 'Raw TMT text' }).inputValue()
   await page.getByRole('button', { name: 'Parse Table', exact: true }).click()
   await expect(page.getByRole('region', { name: 'Structured TMT table' })).toBeVisible()
@@ -33,20 +34,19 @@ for (const item of modules) test(`${item.module}: functional policy scenario, ex
   await expect(article).toBeVisible()
   await expect(article).toContainText('Explicit fictional scenario')
   if (item.module === 'macro') {
-    await expect(article).toContainText('change mesiodistal from 2.00 mm (D-labelled) to 1.00 mm (D-labelled)')
+    await expect(article).toContainText('change mesiodistal from 3.10 mm (D-labelled) to 2.50 mm (D-labelled)')
     expect(report.functional_plan.decisions.filter((d: { status: string }) => d.status === 'ILLUSTRATIVE_PROPOSAL')).toHaveLength(4)
   } else if (item.module === 'micro') {
     const table = article.getByRole('table')
-    await expect(table.getByRole('row')).toHaveCount(9)
+    await expect(table.getByRole('row')).toHaveCount(16)
     await expect(table).toContainText('Vertical rectangular')
-    await expect(table).toContainText('No attachment in this fictional scenario')
     await article.getByText('Tooth 11 details', { exact: true }).click()
     await expect(article).toContainText('Fictional supplied dimensions: 2.000 × 3.000 × 1.000 mm')
-    await expect(table.getByRole('cell').filter({ hasText: /^No supported candidate/ })).toHaveCount(2)
+    await expect(table.getByRole('cell').filter({ hasText: /^No supported candidate/ })).toHaveCount(1)
   } else {
-    await expect(article).toContainText('Angular finishing · S3 · supplied order 3')
+    await expect(article).toContainText('Remaining supplied movements · S3 · supplied order 3')
     for (const id of ['S1', 'S2', 'S3']) await article.getByText(`Stage ${id} movements and assumptions`, { exact: true }).click()
-    await expect(article).toContainText('Tooth 11: 0.40 mm')
+    await expect(article).toContainText('Tooth 11: 1.00 mm')
     await expect(article).toContainText('source label L')
     await article.getByText('Stage-to-total consistency', { exact: true }).click()
     expect(report.functional_plan.allocation_checks.every((c: { status: string }) => c.status === 'MATCH')).toBe(true)
@@ -63,7 +63,7 @@ for (const item of modules) test(`${item.module}: functional policy scenario, ex
   const pdfPending = page.waitForEvent('download')
   await article.getByRole('button', { name: 'Export PDF', exact: true }).click()
   const download = await pdfPending
-  const folder = resolve(process.cwd(), '../evidence/functional-planning/pdfs')
+  const folder = resolve(process.cwd(), '../evidence/unified-synthetic-example/pdfs')
   mkdirSync(folder, { recursive: true })
   await download.saveAs(resolve(folder, `${item.module}-${testInfo.project.name}.pdf`))
   writeFileSync(resolve(folder, `${item.module}-${testInfo.project.name}.json`), JSON.stringify(report, null, 2))
@@ -82,6 +82,41 @@ for (const item of modules) test(`${item.module}: functional policy scenario, ex
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)
   await page.screenshot({ path: testInfo.outputPath(`${item.module}-functional.png`), fullPage: true })
   await page.getByRole('textbox', { name: 'Raw TMT text' }).fill(original + '\n')
-  await expect(page.getByLabel('Selected fictional scenario')).toHaveCount(0)
+  await expect(page.getByLabel('Loaded synthetic example')).toHaveCount(0)
   await expect(page.getByRole('article')).toHaveCount(0)
+})
+
+test('one load and one parse serve all three modules; source edits remove the extra context', async ({ page }) => {
+  await page.goto('/')
+  await page.getByRole('button', { name: 'Load synthetic example', exact: true }).click()
+  const input = page.getByRole('textbox', { name: 'Raw TMT text' })
+  const original = await input.inputValue()
+  await page.getByRole('button', { name: 'Parse Table', exact: true }).click()
+  await expect(page.getByRole('region', { name: 'Structured TMT table' })).toBeVisible()
+  let hash = ''
+  for (const item of modules) {
+    await page.getByRole('button', { name: new RegExp(item.module.toUpperCase()) }).click()
+    await expect(page.getByLabel('Loaded synthetic example')).toBeVisible()
+    const pending = page.waitForResponse(r => r.url().endsWith('/api/v1/interactive/review'))
+    await page.getByRole('button', { name: item.run, exact: true }).click()
+    const response = await pending, report = await response.json()
+    expect(response.status()).toBe(200)
+    expect(isInteractiveReport(report)).toBe(true)
+    expect(report.planning_context.module).toBe(item.module)
+    hash ||= report.parsed.raw_sha256
+    expect(report.parsed.raw_sha256).toBe(hash)
+    await expect(page.getByRole('article')).toBeVisible()
+    await expect(input).toHaveValue(original)
+  }
+  await page.getByRole('button', { name: /MACRO/ }).click()
+  await expect(page.getByRole('article')).toBeVisible()
+  await input.fill(original + '\n')
+  await expect(page.getByLabel('Loaded synthetic example')).toHaveCount(0)
+  await page.getByRole('button', { name: 'Parse Table', exact: true }).click()
+  const pending = page.waitForResponse(r => r.url().endsWith('/api/v1/interactive/review'))
+  await page.getByRole('button', { name: 'Run Planning Assistant', exact: true }).click()
+  const response = await pending, ordinary = await response.json()
+  expect(response.request().postDataJSON().planning_context).toBeUndefined()
+  expect(ordinary.report_format).toBe('ANALYTICAL_V1')
+  expect(ordinary.functional_plan).toBeNull()
 })

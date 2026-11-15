@@ -48,7 +48,7 @@ def analytical_wording(parsed, module, sections, findings, *, settings=None, cli
             payload = dict(module=module, evidence_columns=["ref", "tooth", "family", "exact_scalar", "unit", "source_label", "state"],
                 evidence=evidence, sections=[dict(section_id=s.section_id,
                 findings=[dict(ref=f.finding_id, kind=f.kind, origin=f.origin, demo_rule=f.demo_rule,
-                    compared=comparison_ref(f.source_refs), selected=[evidence_aliases[r] for r in f.selected_refs])
+                    compared=comparison_ref(f.source_refs), selected='compared' if functional_evidence is not None and f.selected_refs == f.source_refs else [evidence_aliases[r] for r in f.selected_refs])
                     for f in findings if f.section_id == s.section_id]) for s in sections])
             payload["comparison_sets"] = {alias: [evidence_aliases[r] for r in refs] for refs, alias in comparison_sets.items()}
             if functional_evidence is not None:
@@ -59,6 +59,7 @@ def analytical_wording(parsed, module, sections, findings, *, settings=None, cli
                 "Compose concise professional analytical review wording from approved structured findings. "
                 "Return JSON with sections: [{section_id, text}]. One item per supplied section. "
                 "The evidence records and selected/compared references explain each approved finding; do not recompute them. "
+                "A selected value of 'compared' means the same referenced comparison set. "
                 "Use each own finding reference exactly once, in braces, e.g. {F0001}. Each becomes a complete immutable analytical sentence locally. "
                 "Arrange these whole sentences into short paragraphs separated by two newlines. Output only placeholders and whitespace. "
                 "Do not type facts, numbers, labels, conclusions, new advice or connective words outside placeholders. "

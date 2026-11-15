@@ -1,0 +1,1014 @@
+{
+  "raw_text": "# SYNTHETIC TEST 01 \u2014 COMPLETE MARKDOWN TMT\n\n| Tooth | Rotation (deg) | Angulation (deg) | Inclination (deg) | Extrusion / Intrusion (mm) | Relative Ext / Int (mm) | Translation B / L (mm) | Translation M / D (mm) |\n|---|---|---|---|---|---|---|---|\n| 18 | 0.0 | 0.0 | 0.0 | \u2014 | \u2014 | 0.0 | 0.0 |\n| 17 | 2.30 D | 0.60 D | 5.10 L | 1.30 E | 0.90 E | 0.30 B | 3.10 D |\n| 16 | 2.60 D | 2.90 D | 0.60 B | 0.60 E | 0.10 E | 0.30 B | 3.10 D |\n| 15 | 2.20 D | 0.60 D | 6.00 L | 0.30 I | 0.40 E | 0.20 B | 3.20 D |\n| 14 | 3.70 D | 3.50 M | 4.50 B | 0.10 I | 0.30 I | 0.20 B | 3.20 D |\n| 13 | 0.10 D | 1.80 M | 5.80 B | 0.50 I | 0.70 I | 0.50 B | 3.30 D |\n| 12 | 2.50 M | 3.90 D | 7.20 B | 1.70 I | 1.50 I | 0.40 B | 3.20 D |\n| 11 | 18.90 D | 28.80 D | 0.70 L | 2.20 I | 0.70 I | 2.50 L | 2.10 D |\n| 21 | 11.90 D | 1.20 D | 0.00 | 2.20 I | 0.80 I | 2.50 L | 0.40 M |\n| 22 | 3.30 M | 3.40 D | 3.20 B | 2.20 I | 1.50 I | 1.20 L | 1.50 D |\n| 23 | 4.80 D | 6.70 M | 3.70 B | 0.90 I | 0.90 I | 0.10 B | 2.00 D |\n| 24 | 6.90 M | 3.80 M | 1.50 B | 0.30 I | 0.40 I | 0.40 L | 2.30 D |\n| 25 | 3.40 D | 2.40 D | 1.80 L | 0.50 I | 0.10 I | 0.10 B | 2.10 D |\n| 26 | 1.80 D | 0.10 D | 0.90 B | 0.50 E | 0.30 E | 0.40 B | 2.10 D |\n| 27 | 3.00 D | 0.20 D | 2.30 L | 0.90 E | 0.70 E | 0.10 L | 2.20 D |\n",
+  "modules": {
+    "macro": {
+      "label": "All-in-one synthetic example",
+      "module": "macro",
+      "raw_text": "# SYNTHETIC TEST 01 \u2014 COMPLETE MARKDOWN TMT\n\n| Tooth | Rotation (deg) | Angulation (deg) | Inclination (deg) | Extrusion / Intrusion (mm) | Relative Ext / Int (mm) | Translation B / L (mm) | Translation M / D (mm) |\n|---|---|---|---|---|---|---|---|\n| 18 | 0.0 | 0.0 | 0.0 | \u2014 | \u2014 | 0.0 | 0.0 |\n| 17 | 2.30 D | 0.60 D | 5.10 L | 1.30 E | 0.90 E | 0.30 B | 3.10 D |\n| 16 | 2.60 D | 2.90 D | 0.60 B | 0.60 E | 0.10 E | 0.30 B | 3.10 D |\n| 15 | 2.20 D | 0.60 D | 6.00 L | 0.30 I | 0.40 E | 0.20 B | 3.20 D |\n| 14 | 3.70 D | 3.50 M | 4.50 B | 0.10 I | 0.30 I | 0.20 B | 3.20 D |\n| 13 | 0.10 D | 1.80 M | 5.80 B | 0.50 I | 0.70 I | 0.50 B | 3.30 D |\n| 12 | 2.50 M | 3.90 D | 7.20 B | 1.70 I | 1.50 I | 0.40 B | 3.20 D |\n| 11 | 18.90 D | 28.80 D | 0.70 L | 2.20 I | 0.70 I | 2.50 L | 2.10 D |\n| 21 | 11.90 D | 1.20 D | 0.00 | 2.20 I | 0.80 I | 2.50 L | 0.40 M |\n| 22 | 3.30 M | 3.40 D | 3.20 B | 2.20 I | 1.50 I | 1.20 L | 1.50 D |\n| 23 | 4.80 D | 6.70 M | 3.70 B | 0.90 I | 0.90 I | 0.10 B | 2.00 D |\n| 24 | 6.90 M | 3.80 M | 1.50 B | 0.30 I | 0.40 I | 0.40 L | 2.30 D |\n| 25 | 3.40 D | 2.40 D | 1.80 L | 0.50 I | 0.10 I | 0.10 B | 2.10 D |\n| 26 | 1.80 D | 0.10 D | 0.90 B | 0.50 E | 0.30 E | 0.40 B | 2.10 D |\n| 27 | 3.00 D | 0.20 D | 2.30 L | 0.90 E | 0.70 E | 0.10 L | 2.20 D |\n",
+      "planning_context": {
+        "scenario_id": "all-in-one",
+        "policy_version": "1.0.0",
+        "source_sha256": "3b206a550e67474892a325de4ee386aca06b79d57da7494fa6343c1d04ce2f07",
+        "module": "macro",
+        "origin": "EXPLICIT_SYNTHETIC_SCENARIO",
+        "notation": "FDI",
+        "objectives": [
+          "REDISTRIBUTE_TRANSLATIONS",
+          "VERTICAL_REVIEW",
+          "ANGULAR_CONTROL"
+        ],
+        "targets": [
+          {
+            "measurement_ref": "measurement-21",
+            "amount": "2.50",
+            "unit": "mm",
+            "source_direction": "D"
+          },
+          {
+            "measurement_ref": "measurement-14",
+            "amount": "2.50",
+            "unit": "mm",
+            "source_direction": "D"
+          },
+          {
+            "measurement_ref": "measurement-55",
+            "amount": "2.00",
+            "unit": "mm",
+            "source_direction": "L"
+          },
+          {
+            "measurement_ref": "measurement-62",
+            "amount": "2.00",
+            "unit": "mm",
+            "source_direction": "L"
+          },
+          {
+            "measurement_ref": "measurement-46",
+            "amount": "1.50",
+            "unit": "mm",
+            "source_direction": "I"
+          },
+          {
+            "measurement_ref": "measurement-50",
+            "amount": "15.00",
+            "unit": "deg",
+            "source_direction": "D"
+          }
+        ],
+        "attachment_options": [],
+        "phases": [],
+        "stage_value_basis": "UNSPECIFIED",
+        "support_constraints": []
+      },
+      "review_details": {
+        "attachments": [],
+        "stages": [],
+        "allocations": [],
+        "anchorage_notes": []
+      }
+    },
+    "micro": {
+      "label": "All-in-one synthetic example",
+      "module": "micro",
+      "raw_text": "# SYNTHETIC TEST 01 \u2014 COMPLETE MARKDOWN TMT\n\n| Tooth | Rotation (deg) | Angulation (deg) | Inclination (deg) | Extrusion / Intrusion (mm) | Relative Ext / Int (mm) | Translation B / L (mm) | Translation M / D (mm) |\n|---|---|---|---|---|---|---|---|\n| 18 | 0.0 | 0.0 | 0.0 | \u2014 | \u2014 | 0.0 | 0.0 |\n| 17 | 2.30 D | 0.60 D | 5.10 L | 1.30 E | 0.90 E | 0.30 B | 3.10 D |\n| 16 | 2.60 D | 2.90 D | 0.60 B | 0.60 E | 0.10 E | 0.30 B | 3.10 D |\n| 15 | 2.20 D | 0.60 D | 6.00 L | 0.30 I | 0.40 E | 0.20 B | 3.20 D |\n| 14 | 3.70 D | 3.50 M | 4.50 B | 0.10 I | 0.30 I | 0.20 B | 3.20 D |\n| 13 | 0.10 D | 1.80 M | 5.80 B | 0.50 I | 0.70 I | 0.50 B | 3.30 D |\n| 12 | 2.50 M | 3.90 D | 7.20 B | 1.70 I | 1.50 I | 0.40 B | 3.20 D |\n| 11 | 18.90 D | 28.80 D | 0.70 L | 2.20 I | 0.70 I | 2.50 L | 2.10 D |\n| 21 | 11.90 D | 1.20 D | 0.00 | 2.20 I | 0.80 I | 2.50 L | 0.40 M |\n| 22 | 3.30 M | 3.40 D | 3.20 B | 2.20 I | 1.50 I | 1.20 L | 1.50 D |\n| 23 | 4.80 D | 6.70 M | 3.70 B | 0.90 I | 0.90 I | 0.10 B | 2.00 D |\n| 24 | 6.90 M | 3.80 M | 1.50 B | 0.30 I | 0.40 I | 0.40 L | 2.30 D |\n| 25 | 3.40 D | 2.40 D | 1.80 L | 0.50 I | 0.10 I | 0.10 B | 2.10 D |\n| 26 | 1.80 D | 0.10 D | 0.90 B | 0.50 E | 0.30 E | 0.40 B | 2.10 D |\n| 27 | 3.00 D | 0.20 D | 2.30 L | 0.90 E | 0.70 E | 0.10 L | 2.20 D |\n",
+      "planning_context": {
+        "scenario_id": "all-in-one",
+        "policy_version": "1.0.0",
+        "source_sha256": "3b206a550e67474892a325de4ee386aca06b79d57da7494fa6343c1d04ce2f07",
+        "module": "micro",
+        "origin": "EXPLICIT_SYNTHETIC_SCENARIO",
+        "notation": "FDI",
+        "objectives": [],
+        "targets": [],
+        "attachment_options": [
+          {
+            "concept": "RECTANGULAR",
+            "geometry": {
+              "width_mm": "2.000",
+              "height_mm": "2.000",
+              "depth_mm": "0.800"
+            },
+            "orientation": "UNSPECIFIED",
+            "surface": "BUCCAL",
+            "placement": {
+              "frame": "FICTIONAL_TOOTH_LOCAL_MM",
+              "x_mm": "0.000",
+              "y_mm": "0.000",
+              "z_mm": "0.000"
+            }
+          },
+          {
+            "concept": "VERTICAL_RECTANGULAR",
+            "geometry": {
+              "width_mm": "2.000",
+              "height_mm": "3.000",
+              "depth_mm": "1.000"
+            },
+            "orientation": "VERTICAL",
+            "surface": "BUCCAL",
+            "placement": {
+              "frame": "FICTIONAL_TOOTH_LOCAL_MM",
+              "x_mm": "0.000",
+              "y_mm": "0.000",
+              "z_mm": "0.000"
+            }
+          },
+          {
+            "concept": "HORIZONTAL_RECTANGULAR",
+            "geometry": {
+              "width_mm": "3.000",
+              "height_mm": "2.000",
+              "depth_mm": "1.000"
+            },
+            "orientation": "HORIZONTAL",
+            "surface": "BUCCAL",
+            "placement": {
+              "frame": "FICTIONAL_TOOTH_LOCAL_MM",
+              "x_mm": "0.000",
+              "y_mm": "0.000",
+              "z_mm": "0.000"
+            }
+          },
+          {
+            "concept": "OVAL",
+            "geometry": {
+              "width_mm": "2.000",
+              "height_mm": "2.500",
+              "depth_mm": "0.800"
+            },
+            "orientation": "UNSPECIFIED",
+            "surface": "BUCCAL",
+            "placement": {
+              "frame": "FICTIONAL_TOOTH_LOCAL_MM",
+              "x_mm": "0.000",
+              "y_mm": "0.000",
+              "z_mm": "0.000"
+            }
+          },
+          {
+            "concept": "OPTIMIZED_STYLE",
+            "geometry": null,
+            "orientation": null,
+            "surface": null,
+            "placement": null
+          },
+          {
+            "concept": "NO_ATTACHMENT",
+            "geometry": null,
+            "orientation": null,
+            "surface": null,
+            "placement": null
+          }
+        ],
+        "phases": [],
+        "stage_value_basis": "UNSPECIFIED",
+        "support_constraints": []
+      },
+      "review_details": {
+        "attachments": [],
+        "stages": [],
+        "allocations": [],
+        "anchorage_notes": []
+      }
+    },
+    "nano": {
+      "label": "All-in-one synthetic example",
+      "module": "nano",
+      "raw_text": "# SYNTHETIC TEST 01 \u2014 COMPLETE MARKDOWN TMT\n\n| Tooth | Rotation (deg) | Angulation (deg) | Inclination (deg) | Extrusion / Intrusion (mm) | Relative Ext / Int (mm) | Translation B / L (mm) | Translation M / D (mm) |\n|---|---|---|---|---|---|---|---|\n| 18 | 0.0 | 0.0 | 0.0 | \u2014 | \u2014 | 0.0 | 0.0 |\n| 17 | 2.30 D | 0.60 D | 5.10 L | 1.30 E | 0.90 E | 0.30 B | 3.10 D |\n| 16 | 2.60 D | 2.90 D | 0.60 B | 0.60 E | 0.10 E | 0.30 B | 3.10 D |\n| 15 | 2.20 D | 0.60 D | 6.00 L | 0.30 I | 0.40 E | 0.20 B | 3.20 D |\n| 14 | 3.70 D | 3.50 M | 4.50 B | 0.10 I | 0.30 I | 0.20 B | 3.20 D |\n| 13 | 0.10 D | 1.80 M | 5.80 B | 0.50 I | 0.70 I | 0.50 B | 3.30 D |\n| 12 | 2.50 M | 3.90 D | 7.20 B | 1.70 I | 1.50 I | 0.40 B | 3.20 D |\n| 11 | 18.90 D | 28.80 D | 0.70 L | 2.20 I | 0.70 I | 2.50 L | 2.10 D |\n| 21 | 11.90 D | 1.20 D | 0.00 | 2.20 I | 0.80 I | 2.50 L | 0.40 M |\n| 22 | 3.30 M | 3.40 D | 3.20 B | 2.20 I | 1.50 I | 1.20 L | 1.50 D |\n| 23 | 4.80 D | 6.70 M | 3.70 B | 0.90 I | 0.90 I | 0.10 B | 2.00 D |\n| 24 | 6.90 M | 3.80 M | 1.50 B | 0.30 I | 0.40 I | 0.40 L | 2.30 D |\n| 25 | 3.40 D | 2.40 D | 1.80 L | 0.50 I | 0.10 I | 0.10 B | 2.10 D |\n| 26 | 1.80 D | 0.10 D | 0.90 B | 0.50 E | 0.30 E | 0.40 B | 2.10 D |\n| 27 | 3.00 D | 0.20 D | 2.30 L | 0.90 E | 0.70 E | 0.10 L | 2.20 D |\n",
+      "planning_context": {
+        "scenario_id": "all-in-one",
+        "policy_version": "1.0.0",
+        "source_sha256": "3b206a550e67474892a325de4ee386aca06b79d57da7494fa6343c1d04ce2f07",
+        "module": "nano",
+        "origin": "EXPLICIT_SYNTHETIC_SCENARIO",
+        "notation": "FDI",
+        "objectives": [
+          "STAGE_REVIEW"
+        ],
+        "targets": [],
+        "attachment_options": [],
+        "phases": [
+          {
+            "phase_id": "P1",
+            "label": "Initial supplied movements",
+            "stage_ids": [
+              "S1"
+            ]
+          },
+          {
+            "phase_id": "P2",
+            "label": "Vertical follow-through",
+            "stage_ids": [
+              "S2"
+            ]
+          },
+          {
+            "phase_id": "P3",
+            "label": "Remaining supplied movements",
+            "stage_ids": [
+              "S3"
+            ]
+          }
+        ],
+        "stage_value_basis": "INCREMENTS_MATCH_SOURCE_LABELS",
+        "support_constraints": [
+          {
+            "phase_id": "P1",
+            "support_tooth_refs": [
+              "tooth-15"
+            ],
+            "active_tooth_refs": [
+              "tooth-2",
+              "tooth-3",
+              "tooth-4",
+              "tooth-5",
+              "tooth-6",
+              "tooth-7",
+              "tooth-8",
+              "tooth-9",
+              "tooth-10",
+              "tooth-11",
+              "tooth-12",
+              "tooth-13",
+              "tooth-14"
+            ],
+            "assumption": "STATIONARY_IN_FICTIONAL_SCENARIO"
+          },
+          {
+            "phase_id": "P2",
+            "support_tooth_refs": [
+              "tooth-15"
+            ],
+            "active_tooth_refs": [
+              "tooth-2",
+              "tooth-3",
+              "tooth-4",
+              "tooth-5",
+              "tooth-6",
+              "tooth-7",
+              "tooth-8",
+              "tooth-9",
+              "tooth-10",
+              "tooth-11",
+              "tooth-12",
+              "tooth-13"
+            ],
+            "assumption": "STATIONARY_IN_FICTIONAL_SCENARIO"
+          },
+          {
+            "phase_id": "P3",
+            "support_tooth_refs": [
+              "tooth-14"
+            ],
+            "active_tooth_refs": [
+              "tooth-2",
+              "tooth-3",
+              "tooth-4",
+              "tooth-5",
+              "tooth-6",
+              "tooth-7",
+              "tooth-8",
+              "tooth-9",
+              "tooth-10",
+              "tooth-11",
+              "tooth-12",
+              "tooth-13",
+              "tooth-15"
+            ],
+            "assumption": "STATIONARY_IN_FICTIONAL_SCENARIO"
+          }
+        ]
+      },
+      "review_details": {
+        "attachments": [],
+        "stages": [
+          {
+            "stage_id": "S1",
+            "order": 1,
+            "duration_days": null
+          },
+          {
+            "stage_id": "S2",
+            "order": 2,
+            "duration_days": null
+          },
+          {
+            "stage_id": "S3",
+            "order": 3,
+            "duration_days": null
+          }
+        ],
+        "allocations": [
+          {
+            "stage_id": "S3",
+            "tooth_ref": "tooth-2",
+            "measurement_ref": "measurement-8",
+            "amount": "2.30",
+            "unit": "deg"
+          },
+          {
+            "stage_id": "S3",
+            "tooth_ref": "tooth-2",
+            "measurement_ref": "measurement-9",
+            "amount": "0.60",
+            "unit": "deg"
+          },
+          {
+            "stage_id": "S3",
+            "tooth_ref": "tooth-2",
+            "measurement_ref": "measurement-10",
+            "amount": "5.10",
+            "unit": "deg"
+          },
+          {
+            "stage_id": "S2",
+            "tooth_ref": "tooth-2",
+            "measurement_ref": "measurement-11",
+            "amount": "1.30",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S2",
+            "tooth_ref": "tooth-2",
+            "measurement_ref": "measurement-12",
+            "amount": "0.90",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S1",
+            "tooth_ref": "tooth-2",
+            "measurement_ref": "measurement-13",
+            "amount": "0.30",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S1",
+            "tooth_ref": "tooth-2",
+            "measurement_ref": "measurement-14",
+            "amount": "3.10",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S3",
+            "tooth_ref": "tooth-3",
+            "measurement_ref": "measurement-15",
+            "amount": "2.60",
+            "unit": "deg"
+          },
+          {
+            "stage_id": "S3",
+            "tooth_ref": "tooth-3",
+            "measurement_ref": "measurement-16",
+            "amount": "2.90",
+            "unit": "deg"
+          },
+          {
+            "stage_id": "S3",
+            "tooth_ref": "tooth-3",
+            "measurement_ref": "measurement-17",
+            "amount": "0.60",
+            "unit": "deg"
+          },
+          {
+            "stage_id": "S2",
+            "tooth_ref": "tooth-3",
+            "measurement_ref": "measurement-18",
+            "amount": "0.60",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S2",
+            "tooth_ref": "tooth-3",
+            "measurement_ref": "measurement-19",
+            "amount": "0.10",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S1",
+            "tooth_ref": "tooth-3",
+            "measurement_ref": "measurement-20",
+            "amount": "0.30",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S1",
+            "tooth_ref": "tooth-3",
+            "measurement_ref": "measurement-21",
+            "amount": "3.10",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S3",
+            "tooth_ref": "tooth-4",
+            "measurement_ref": "measurement-22",
+            "amount": "2.20",
+            "unit": "deg"
+          },
+          {
+            "stage_id": "S3",
+            "tooth_ref": "tooth-4",
+            "measurement_ref": "measurement-23",
+            "amount": "0.60",
+            "unit": "deg"
+          },
+          {
+            "stage_id": "S3",
+            "tooth_ref": "tooth-4",
+            "measurement_ref": "measurement-24",
+            "amount": "6.00",
+            "unit": "deg"
+          },
+          {
+            "stage_id": "S2",
+            "tooth_ref": "tooth-4",
+            "measurement_ref": "measurement-25",
+            "amount": "0.30",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S2",
+            "tooth_ref": "tooth-4",
+            "measurement_ref": "measurement-26",
+            "amount": "0.40",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S1",
+            "tooth_ref": "tooth-4",
+            "measurement_ref": "measurement-27",
+            "amount": "0.20",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S1",
+            "tooth_ref": "tooth-4",
+            "measurement_ref": "measurement-28",
+            "amount": "3.20",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S3",
+            "tooth_ref": "tooth-5",
+            "measurement_ref": "measurement-29",
+            "amount": "3.70",
+            "unit": "deg"
+          },
+          {
+            "stage_id": "S3",
+            "tooth_ref": "tooth-5",
+            "measurement_ref": "measurement-30",
+            "amount": "3.50",
+            "unit": "deg"
+          },
+          {
+            "stage_id": "S3",
+            "tooth_ref": "tooth-5",
+            "measurement_ref": "measurement-31",
+            "amount": "4.50",
+            "unit": "deg"
+          },
+          {
+            "stage_id": "S2",
+            "tooth_ref": "tooth-5",
+            "measurement_ref": "measurement-32",
+            "amount": "0.10",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S2",
+            "tooth_ref": "tooth-5",
+            "measurement_ref": "measurement-33",
+            "amount": "0.30",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S1",
+            "tooth_ref": "tooth-5",
+            "measurement_ref": "measurement-34",
+            "amount": "0.20",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S1",
+            "tooth_ref": "tooth-5",
+            "measurement_ref": "measurement-35",
+            "amount": "3.20",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S3",
+            "tooth_ref": "tooth-6",
+            "measurement_ref": "measurement-36",
+            "amount": "0.10",
+            "unit": "deg"
+          },
+          {
+            "stage_id": "S3",
+            "tooth_ref": "tooth-6",
+            "measurement_ref": "measurement-37",
+            "amount": "1.80",
+            "unit": "deg"
+          },
+          {
+            "stage_id": "S3",
+            "tooth_ref": "tooth-6",
+            "measurement_ref": "measurement-38",
+            "amount": "5.80",
+            "unit": "deg"
+          },
+          {
+            "stage_id": "S2",
+            "tooth_ref": "tooth-6",
+            "measurement_ref": "measurement-39",
+            "amount": "0.50",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S2",
+            "tooth_ref": "tooth-6",
+            "measurement_ref": "measurement-40",
+            "amount": "0.70",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S1",
+            "tooth_ref": "tooth-6",
+            "measurement_ref": "measurement-41",
+            "amount": "0.50",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S1",
+            "tooth_ref": "tooth-6",
+            "measurement_ref": "measurement-42",
+            "amount": "3.30",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S3",
+            "tooth_ref": "tooth-7",
+            "measurement_ref": "measurement-43",
+            "amount": "2.50",
+            "unit": "deg"
+          },
+          {
+            "stage_id": "S3",
+            "tooth_ref": "tooth-7",
+            "measurement_ref": "measurement-44",
+            "amount": "3.90",
+            "unit": "deg"
+          },
+          {
+            "stage_id": "S3",
+            "tooth_ref": "tooth-7",
+            "measurement_ref": "measurement-45",
+            "amount": "7.20",
+            "unit": "deg"
+          },
+          {
+            "stage_id": "S2",
+            "tooth_ref": "tooth-7",
+            "measurement_ref": "measurement-46",
+            "amount": "1.70",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S2",
+            "tooth_ref": "tooth-7",
+            "measurement_ref": "measurement-47",
+            "amount": "1.50",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S1",
+            "tooth_ref": "tooth-7",
+            "measurement_ref": "measurement-48",
+            "amount": "0.40",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S1",
+            "tooth_ref": "tooth-7",
+            "measurement_ref": "measurement-49",
+            "amount": "3.20",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S3",
+            "tooth_ref": "tooth-8",
+            "measurement_ref": "measurement-50",
+            "amount": "18.90",
+            "unit": "deg"
+          },
+          {
+            "stage_id": "S3",
+            "tooth_ref": "tooth-8",
+            "measurement_ref": "measurement-51",
+            "amount": "28.80",
+            "unit": "deg"
+          },
+          {
+            "stage_id": "S3",
+            "tooth_ref": "tooth-8",
+            "measurement_ref": "measurement-52",
+            "amount": "0.70",
+            "unit": "deg"
+          },
+          {
+            "stage_id": "S2",
+            "tooth_ref": "tooth-8",
+            "measurement_ref": "measurement-53",
+            "amount": "2.20",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S2",
+            "tooth_ref": "tooth-8",
+            "measurement_ref": "measurement-54",
+            "amount": "0.70",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S1",
+            "tooth_ref": "tooth-8",
+            "measurement_ref": "measurement-55",
+            "amount": "1.00",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S2",
+            "tooth_ref": "tooth-8",
+            "measurement_ref": "measurement-55",
+            "amount": "1.50",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S1",
+            "tooth_ref": "tooth-8",
+            "measurement_ref": "measurement-56",
+            "amount": "2.10",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S3",
+            "tooth_ref": "tooth-9",
+            "measurement_ref": "measurement-57",
+            "amount": "11.90",
+            "unit": "deg"
+          },
+          {
+            "stage_id": "S3",
+            "tooth_ref": "tooth-9",
+            "measurement_ref": "measurement-58",
+            "amount": "1.20",
+            "unit": "deg"
+          },
+          {
+            "stage_id": "S2",
+            "tooth_ref": "tooth-9",
+            "measurement_ref": "measurement-60",
+            "amount": "2.20",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S2",
+            "tooth_ref": "tooth-9",
+            "measurement_ref": "measurement-61",
+            "amount": "0.80",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S1",
+            "tooth_ref": "tooth-9",
+            "measurement_ref": "measurement-62",
+            "amount": "2.50",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S1",
+            "tooth_ref": "tooth-9",
+            "measurement_ref": "measurement-63",
+            "amount": "0.40",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S3",
+            "tooth_ref": "tooth-10",
+            "measurement_ref": "measurement-64",
+            "amount": "3.30",
+            "unit": "deg"
+          },
+          {
+            "stage_id": "S3",
+            "tooth_ref": "tooth-10",
+            "measurement_ref": "measurement-65",
+            "amount": "3.40",
+            "unit": "deg"
+          },
+          {
+            "stage_id": "S3",
+            "tooth_ref": "tooth-10",
+            "measurement_ref": "measurement-66",
+            "amount": "3.20",
+            "unit": "deg"
+          },
+          {
+            "stage_id": "S2",
+            "tooth_ref": "tooth-10",
+            "measurement_ref": "measurement-67",
+            "amount": "2.20",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S2",
+            "tooth_ref": "tooth-10",
+            "measurement_ref": "measurement-68",
+            "amount": "1.50",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S1",
+            "tooth_ref": "tooth-10",
+            "measurement_ref": "measurement-69",
+            "amount": "1.20",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S1",
+            "tooth_ref": "tooth-10",
+            "measurement_ref": "measurement-70",
+            "amount": "1.50",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S3",
+            "tooth_ref": "tooth-11",
+            "measurement_ref": "measurement-71",
+            "amount": "4.80",
+            "unit": "deg"
+          },
+          {
+            "stage_id": "S3",
+            "tooth_ref": "tooth-11",
+            "measurement_ref": "measurement-72",
+            "amount": "6.70",
+            "unit": "deg"
+          },
+          {
+            "stage_id": "S3",
+            "tooth_ref": "tooth-11",
+            "measurement_ref": "measurement-73",
+            "amount": "3.70",
+            "unit": "deg"
+          },
+          {
+            "stage_id": "S2",
+            "tooth_ref": "tooth-11",
+            "measurement_ref": "measurement-74",
+            "amount": "0.90",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S2",
+            "tooth_ref": "tooth-11",
+            "measurement_ref": "measurement-75",
+            "amount": "0.90",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S1",
+            "tooth_ref": "tooth-11",
+            "measurement_ref": "measurement-76",
+            "amount": "0.10",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S1",
+            "tooth_ref": "tooth-11",
+            "measurement_ref": "measurement-77",
+            "amount": "2.00",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S3",
+            "tooth_ref": "tooth-12",
+            "measurement_ref": "measurement-78",
+            "amount": "6.90",
+            "unit": "deg"
+          },
+          {
+            "stage_id": "S3",
+            "tooth_ref": "tooth-12",
+            "measurement_ref": "measurement-79",
+            "amount": "3.80",
+            "unit": "deg"
+          },
+          {
+            "stage_id": "S3",
+            "tooth_ref": "tooth-12",
+            "measurement_ref": "measurement-80",
+            "amount": "1.50",
+            "unit": "deg"
+          },
+          {
+            "stage_id": "S2",
+            "tooth_ref": "tooth-12",
+            "measurement_ref": "measurement-81",
+            "amount": "0.30",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S2",
+            "tooth_ref": "tooth-12",
+            "measurement_ref": "measurement-82",
+            "amount": "0.40",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S1",
+            "tooth_ref": "tooth-12",
+            "measurement_ref": "measurement-83",
+            "amount": "0.40",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S1",
+            "tooth_ref": "tooth-12",
+            "measurement_ref": "measurement-84",
+            "amount": "2.30",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S3",
+            "tooth_ref": "tooth-13",
+            "measurement_ref": "measurement-85",
+            "amount": "3.40",
+            "unit": "deg"
+          },
+          {
+            "stage_id": "S3",
+            "tooth_ref": "tooth-13",
+            "measurement_ref": "measurement-86",
+            "amount": "2.40",
+            "unit": "deg"
+          },
+          {
+            "stage_id": "S3",
+            "tooth_ref": "tooth-13",
+            "measurement_ref": "measurement-87",
+            "amount": "1.80",
+            "unit": "deg"
+          },
+          {
+            "stage_id": "S2",
+            "tooth_ref": "tooth-13",
+            "measurement_ref": "measurement-88",
+            "amount": "0.50",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S2",
+            "tooth_ref": "tooth-13",
+            "measurement_ref": "measurement-89",
+            "amount": "0.10",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S1",
+            "tooth_ref": "tooth-13",
+            "measurement_ref": "measurement-90",
+            "amount": "0.10",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S1",
+            "tooth_ref": "tooth-13",
+            "measurement_ref": "measurement-91",
+            "amount": "2.10",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S1",
+            "tooth_ref": "tooth-14",
+            "measurement_ref": "measurement-92",
+            "amount": "1.80",
+            "unit": "deg"
+          },
+          {
+            "stage_id": "S1",
+            "tooth_ref": "tooth-14",
+            "measurement_ref": "measurement-93",
+            "amount": "0.10",
+            "unit": "deg"
+          },
+          {
+            "stage_id": "S1",
+            "tooth_ref": "tooth-14",
+            "measurement_ref": "measurement-94",
+            "amount": "0.90",
+            "unit": "deg"
+          },
+          {
+            "stage_id": "S1",
+            "tooth_ref": "tooth-14",
+            "measurement_ref": "measurement-95",
+            "amount": "0.50",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S1",
+            "tooth_ref": "tooth-14",
+            "measurement_ref": "measurement-96",
+            "amount": "0.30",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S1",
+            "tooth_ref": "tooth-14",
+            "measurement_ref": "measurement-97",
+            "amount": "0.40",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S1",
+            "tooth_ref": "tooth-14",
+            "measurement_ref": "measurement-98",
+            "amount": "2.10",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S3",
+            "tooth_ref": "tooth-15",
+            "measurement_ref": "measurement-99",
+            "amount": "3.00",
+            "unit": "deg"
+          },
+          {
+            "stage_id": "S3",
+            "tooth_ref": "tooth-15",
+            "measurement_ref": "measurement-100",
+            "amount": "0.20",
+            "unit": "deg"
+          },
+          {
+            "stage_id": "S3",
+            "tooth_ref": "tooth-15",
+            "measurement_ref": "measurement-101",
+            "amount": "2.30",
+            "unit": "deg"
+          },
+          {
+            "stage_id": "S3",
+            "tooth_ref": "tooth-15",
+            "measurement_ref": "measurement-102",
+            "amount": "0.90",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S3",
+            "tooth_ref": "tooth-15",
+            "measurement_ref": "measurement-103",
+            "amount": "0.70",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S3",
+            "tooth_ref": "tooth-15",
+            "measurement_ref": "measurement-104",
+            "amount": "0.10",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S3",
+            "tooth_ref": "tooth-15",
+            "measurement_ref": "measurement-105",
+            "amount": "2.20",
+            "unit": "mm"
+          },
+          {
+            "stage_id": "S1",
+            "tooth_ref": "tooth-15",
+            "measurement_ref": "measurement-99",
+            "amount": "0.00",
+            "unit": "deg"
+          },
+          {
+            "stage_id": "S2",
+            "tooth_ref": "tooth-15",
+            "measurement_ref": "measurement-99",
+            "amount": "0.00",
+            "unit": "deg"
+          },
+          {
+            "stage_id": "S3",
+            "tooth_ref": "tooth-14",
+            "measurement_ref": "measurement-92",
+            "amount": "0.00",
+            "unit": "deg"
+          }
+        ],
+        "anchorage_notes": []
+      }
+    }
+  }
+}

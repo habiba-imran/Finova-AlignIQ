@@ -16,7 +16,6 @@ export const FUNCTIONAL_SECTIONS = {
   nano: { PHASES: 'Ordered phases and movements', STAGE_CHECKS: 'Stage consistency checks', ANCHORAGE: 'Illustrative anchorage review', SEQUENCE_SCOPE: 'Sequencing assumptions and limits' },
 }
 export const CONCEPT_LABELS: Record<Concept, string> = { RECTANGULAR: 'Rectangular', VERTICAL_RECTANGULAR: 'Vertical rectangular', HORIZONTAL_RECTANGULAR: 'Horizontal rectangular', OVAL: 'Ellipsoid / oval', OPTIMIZED_STYLE: 'Optimized-style category (geometry unspecified)', NO_ATTACHMENT: 'No attachment in this fictional scenario' }
-export const SCENARIOS = [{ id: 'macro-distribution', label: 'Load Macro planning scenario' }, { id: 'micro-catalog', label: 'Load Micro attachment scenario' }, { id: 'nano-phases', label: 'Load Nano sequencing scenario' }]
 const obj = (v: unknown): v is Record<string, unknown> => !!v && typeof v === 'object' && !Array.isArray(v)
 const str = (v: unknown): v is string => typeof v === 'string'
 const strings = (v: unknown): v is string[] => Array.isArray(v) && v.every(str)

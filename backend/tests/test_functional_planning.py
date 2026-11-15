@@ -3,6 +3,7 @@ import copy
 from decimal import Decimal, localcontext
 import hashlib
 import json
+from pathlib import Path
 
 from fastapi.testclient import TestClient
 import httpx
@@ -16,6 +17,42 @@ from app.main import app
 from app.reports.settings import ReportSettings
 from app.reports.groq_client import GroqClient
 from test_analytical_pipeline import RAW, mock_provider
+
+
+@pytest.mark.parametrize('module',['macro','micro','nano'])
+def test_shared_example_has_one_unchanged_source_and_module_specific_context(module):
+    bundle = json.loads((Path(__file__).resolve().parents[2]/'examples/functional-all-in-one.json').read_text(encoding='utf-8'))
+    item = bundle['modules'][module]
+    assert item['raw_text'] == bundle['raw_text'] == RAW + '\n'
+    assert {m['planning_context']['source_sha256'] for m in bundle['modules'].values()} == {hashlib.sha256(bundle['raw_text'].encode()).hexdigest()}
+    r = generate_interactive(InteractiveSubmission(module=module,raw_text=bundle['raw_text'],raw_sha256=item['planning_context']['source_sha256'],synthetic_data_confirmed=True,planning_context=item['planning_context'],review_details=item['review_details']),settings=ReportSettings())
+    assert r.planning_context.module == module and not r.functional_plan.clinical_authorized
+    assert len(r.parsed.measurements) == 105 and r.parsed.coverage.missing == 2
+    assert len(r.engine_review.evaluations) == 96
+    assert sum(e.execution == 'DISABLED' for e in r.engine_review.evaluations) == 27
+    if module == 'macro':
+        assert sum(len(d.proposed_changes) for d in r.functional_plan.decisions) == 6
+    elif module == 'micro':
+        assert len(r.functional_plan.attachment_rows) == 15
+        assert sum(row.primary is None for row in r.functional_plan.attachment_rows) == 1
+    else:
+        assert len(r.functional_plan.stages) == 3 and len(r.review_details.allocations) == 101
+        assert len(r.functional_plan.allocation_checks) == 97
+        assert all(c.status == 'MATCH' for c in r.functional_plan.allocation_checks)
+        assert all(c.status == 'PASS' for c in r.functional_plan.checks)
+        assert sum(d.dimension == 'ANCHORAGE' and d.status == 'ILLUSTRATIVE_PROPOSAL' for d in r.functional_plan.decisions) == 3
+
+
+@pytest.mark.parametrize('module',['macro','micro','nano'])
+def test_shared_example_still_supports_one_automatic_grounded_wording_request(module):
+    bundle=json.loads((Path(__file__).resolve().parents[2]/'examples/functional-all-in-one.json').read_text(encoding='utf-8'))
+    item=bundle['modules'][module]
+    settings,client,calls=mock_provider()
+    submission=InteractiveSubmission(module=module,raw_text=bundle['raw_text'],raw_sha256=item['planning_context']['source_sha256'],synthetic_data_confirmed=True,planning_context=item['planning_context'],review_details=item['review_details'])
+    r=generate_interactive(submission,settings=settings,client=client)
+    assert len(calls)==1 and r.generation.used_mode=='GROQ_AI'
+    assert r.generation.reason=='GROQ_VALIDATED' and not r.functional_plan.clinical_authorized
+    assert len(json.dumps(calls[0]['messages']).encode()) < 24000
 
 
 def request(name='macro-distribution', **changes):

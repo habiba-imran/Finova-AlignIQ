@@ -1,0 +1,29 @@
+
+> finova-aligniq-frontend@0.0.0 test:e2e
+> playwright test --config=playwright.audit.config.ts --project=desktop --project=mobile --workers=2 e2e/functional-planning.spec.ts
+
+[WebServer] INFO:     Started server process [14052]
+[WebServer] INFO:     Waiting for application startup.
+[WebServer] INFO:     Application startup complete.
+[WebServer] INFO:     Uvicorn running on http://127.0.0.1:8019 (Press CTRL+C to quit)
+[WebServer] (node:18572) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:31112) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 8 tests using 2 workers
+
+(node:6104) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:28592) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 [mobile] › e2e\functional-planning.spec.ts:13:29 › macro: functional policy scenario, exact exports and context invalidation (11.6s)
+  ok 2 [desktop] › e2e\functional-planning.spec.ts:13:29 › macro: functional policy scenario, exact exports and context invalidation (12.2s)
+  ok 3 [mobile] › e2e\functional-planning.spec.ts:13:29 › micro: functional policy scenario, exact exports and context invalidation (9.0s)
+  ok 4 [desktop] › e2e\functional-planning.spec.ts:13:29 › micro: functional policy scenario, exact exports and context invalidation (9.4s)
+  ok 5 [mobile] › e2e\functional-planning.spec.ts:13:29 › nano: functional policy scenario, exact exports and context invalidation (9.6s)
+  ok 6 [desktop] › e2e\functional-planning.spec.ts:13:29 › nano: functional policy scenario, exact exports and context invalidation (11.2s)
+  ok 7 [mobile] › e2e\functional-planning.spec.ts:89:1 › one load and one parse serve all three modules; source edits remove the extra context (9.8s)
+  ok 8 [desktop] › e2e\functional-planning.spec.ts:89:1 › one load and one parse serve all three modules; source edits remove the extra context (9.6s)
+
+  8 passed (1.6m)

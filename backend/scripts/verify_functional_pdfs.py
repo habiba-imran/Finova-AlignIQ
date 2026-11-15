@@ -1,5 +1,6 @@
 """Check every final fictional-policy fact and exact attachments; render all pages."""
 import hashlib
+import argparse
 import json
 from pathlib import Path
 import re
@@ -8,7 +9,6 @@ from pypdf import PdfReader
 from PIL import Image, ImageDraw
 
 ROOT=Path(__file__).resolve().parents[2]
-OUTPUT=ROOT/'evidence/functional-planning'
 
 
 def normalize(value):
@@ -16,8 +16,13 @@ def normalize(value):
 
 
 def main():
+    args=argparse.ArgumentParser()
+    args.add_argument('--evidence-dir',default='evidence/functional-planning')
+    output=(ROOT/args.parse_args().evidence_dir).resolve()
+    if not output.is_relative_to(ROOT/'evidence'):
+        raise ValueError('Evidence output must remain inside the repository evidence directory')
     results=[]
-    for path in sorted((OUTPUT/'pdfs').glob('*.pdf')):
+    for path in sorted((output/'pdfs').glob('*.pdf')):
         reader=PdfReader(path)
         report=json.loads(reader.attachments['validated-report.json'][0])
         assert reader.attachments['report.txt'][0]==report['export_text'].encode()
@@ -37,7 +42,7 @@ def main():
         for section in report['sections']:
             assert normalize(section['title']) in text
         assert '{F0' not in text
-        folder=OUTPUT/'renders'/path.stem
+        folder=output/'renders'/path.stem
         folder.mkdir(parents=True,exist_ok=True)
         for old in folder.glob('page-*.png'): old.unlink()
         subprocess.run(['pdftoppm','-scale-to','1100','-png',str(path),str(folder/'page')],check=True,capture_output=True)
@@ -51,7 +56,7 @@ def main():
         sheet.save(folder/'contact.png')
         results.append(dict(file=path.name,pages=len(reader.pages),findings=len(report['analytical_findings']),exact_attachments=True,all_visible_facts=True))
     assert len(results)==6,'Expected three modules at desktop and mobile widths'
-    (OUTPUT/'pdf-verification.json').write_text(json.dumps(results,indent=2)+'\n',encoding='utf-8')
+    (output/'pdf-verification.json').write_text(json.dumps(results,indent=2)+'\n',encoding='utf-8')
     print(json.dumps(results,indent=2))
 
 

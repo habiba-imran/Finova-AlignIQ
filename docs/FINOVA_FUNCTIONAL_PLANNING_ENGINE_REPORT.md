@@ -2,6 +2,31 @@
 
 Date: 2026-11-15. Scope: independently authored synthetic software demonstrations.
 
+## Follow-up: one shared synthetic example
+
+The normal interface now has one **Load synthetic example** button. The separate
+optional-scenarios panel, three loader buttons and verbose context/count banner
+were removed. Loading the existing 15-tooth table also loads separately authored
+Macro objectives/targets, Micro catalog parameters and Nano stage/support records
+from `examples/functional-all-in-one.json`. This preserves the original source
+text, 105 positions, 103 numeric values and two missing values.
+
+All three tabs share the same table, source hash and parse. Switching tabs selects
+the appropriate supplied context and retains completed module reports. Editing
+source/settings or clearing the input removes all example context and cached
+reports, including when the edited text is subsequently pasted back unchanged.
+Loading the example is local and causes no network/provider call. Ordinary pasted
+tables continue without any silently attached context.
+
+The shared preset contains six Macro targets, six Micro catalog concepts and
+three Nano stages with 101 literal allocation records. All 97 compared source
+fields match their supplied stage sums; three explicit phase-specific support
+constraints pass the existing checks. Stage records are authored example data,
+not a runtime-generated treatment schedule. The earlier three API fixtures remain
+for regression coverage; the normal UI presents one case. The original phase
+description and validation results below document the earlier implementation.
+Follow-up verification evidence is in `evidence/unified-synthetic-example/`.
+
 ## Result
 
 Implemented three distinct optional functional pathways alongside the existing

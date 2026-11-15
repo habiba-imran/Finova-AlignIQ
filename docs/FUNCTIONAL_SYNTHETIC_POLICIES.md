@@ -31,9 +31,15 @@ retained; it does not release vendor semantics. Non-decimal/non-finite scalar
 strings, inconsistent orientation or geometry on a
 no-attachment option are rejected. No user input can authorize clinical output.
 
-Built-in scenarios load a separate fictional table and complete context only after
-an explicit click. Editing source/settings or changing modules clears that context.
-No scenario data are inferred or silently attached from a matching table alone.
+The normal UI has one explicit **Load synthetic example** button. It loads the
+existing 15-tooth table together with separately authored module contexts from
+`examples/functional-all-in-one.json`. All three tabs share the same source and
+parse; switching tabs selects only the corresponding supplied context. Editing
+source/settings or clearing the table removes all example context and cached
+reports. No scenario data are inferred or silently attached from a matching table alone.
+Stage amounts/assignments are literal preset records in that asset; runtime never
+constructs a sequence from total TMT values. The three earlier module-specific
+fixtures remain available for API regression coverage, without extra normal-UI loaders.
 Custom structured contexts use the same API contracts; no large intake form is
 required for ordinary analysis. Legacy supplied-detail reports remain separate.
 
