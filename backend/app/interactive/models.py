@@ -87,10 +87,25 @@ class ModuleGenerationInfo(GenerationInfo):
 class ModuleSection(Contract):
     section_id: str
     title: str
-    status: Literal["SOURCE_REPORTED", "SUPPLIED_UNVERIFIED", "UNAVAILABLE"]
+    status: Literal["SOURCE_REPORTED", "SUPPLIED_UNVERIFIED", "UNAVAILABLE", "SIMULATED_DEMO"]
     text: str
     source_refs: list[str] = Field(default_factory=list)
     missing_fields: list[str] = Field(default_factory=list)
+
+
+class AnalyticalFinding(Contract):
+    finding_id: str
+    section_id: str
+    kind: str
+    text: str
+    source_refs: list[str]
+    selected_refs: list[str] = Field(default_factory=list)
+    demo_rule: str | None = None
+    origin: Literal["DESCRIPTIVE_COMPARISON", "SIMULATED_DEMO"] = "DESCRIPTIVE_COMPARISON"
+
+
+class AnalyticalGenerationInfo(GenerationInfo):
+    output_validation: Literal["GROUNDED_ANALYTICAL_WORDING_V1"] = "GROUNDED_ANALYTICAL_WORDING_V1"
 
 
 class InteractiveReport(Contract):
@@ -101,12 +116,13 @@ class InteractiveReport(Contract):
     clinical_analysis_enabled: Literal[False] = False
     parsed: ParseResult
     engine_review: DraftReview
-    generation: GenerationInfo | PlanningGenerationInfo | ModuleGenerationInfo
+    generation: GenerationInfo | PlanningGenerationInfo | ModuleGenerationInfo | AnalyticalGenerationInfo
     wording_notice: str
     summary: str
     observations: list[ToothObservation]
     illustrations: list[Illustration]
-    report_format: Literal["MOVEMENT_PROFILE_V1", "MODULE_SPECIFIC_V1"] = "MOVEMENT_PROFILE_V1"
+    report_format: Literal["MOVEMENT_PROFILE_V1", "MODULE_SPECIFIC_V1", "ANALYTICAL_V1"] = "MOVEMENT_PROFILE_V1"
+    analytical_findings: list[AnalyticalFinding] = Field(default_factory=list)
     sections: list[ModuleSection] = Field(default_factory=list)
     review_details: ReviewDetails = Field(default_factory=ReviewDetails)
     limitations: list[str]

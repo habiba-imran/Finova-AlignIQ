@@ -9,16 +9,16 @@ from test_interactive import ROWS, submission, provider
 
 def test_three_modules_have_distinct_content_and_identical_source_values():
     reports = {module: generate_interactive(submission(module=module), settings=ReportSettings()) for module in ("macro", "micro", "nano")}
-    assert reports["macro"].sections == []
-    assert [section.section_id for section in reports["micro"].sections] == ["ATTACHMENT_RECORDS", "ATTACHMENT_DESIGN", "ATTACHMENT_PLACEMENT", "ATTACHMENT_LIMITS"]
-    assert [section.section_id for section in reports["nano"].sections] == ["STAGE_RECORDS", "STAGE_ALLOCATIONS", "ANCHORAGE_RECORDS", "SEQUENCING_LIMITS"]
+    assert len(reports["macro"].sections) == 5
+    assert [section.section_id for section in reports["micro"].sections] == ["ANGULAR_FOCUS", "ATTACHMENT_DEMO", "ANGULAR_COVERAGE", "ATTACHMENT_SCOPE"]
+    assert [section.section_id for section in reports["nano"].sections] == ["DISTRIBUTION", "TRANSLATIONS", "VERTICAL_PATTERNS", "MULTI_COMPONENT", "SEQUENCE_REVIEW"]
     assert all(any(section.status == "SOURCE_REPORTED" for section in reports[module].sections) for module in ("micro", "nano"))
-    assert all(reports[module].sections[-1].status == "UNAVAILABLE" for module in ("micro", "nano"))
+    assert reports["micro"].sections[-1].status == "UNAVAILABLE"
     for report in reports.values():
         assert report.parsed.measurements == reports["macro"].parsed.measurements
         assert len(report.engine_review.evaluations) == 96 and report.clinical_analysis_enabled is False
         assert not report.illustrations
-        assert "Illustrative" not in report.export_text and "fictional demonstration group" not in report.export_text
+        assert "fictional demonstration group" not in report.export_text
     assert "-2.7500" in reports["micro"].sections[0].text
     assert "1.2300" in reports["nano"].sections[1].text
     assert "0.1250" in reports["nano"].sections[2].text
@@ -71,7 +71,7 @@ def test_stage_reference_without_amount_does_not_copy_source_total_or_assume_zer
 def test_unverified_context_stage_index_is_reported_without_creating_a_schedule():
     from app.domain.models import SourceContext
     report = generate_interactive(submission(module="nano", context=SourceContext(stage_index=5)), settings=ReportSettings())
-    assert "source-context stage index of 5" in report.sections[0].text
+    assert "source-context stage index: 5" in report.sections[0].text
     assert report.sections[0].status == "SOURCE_REPORTED"
     assert not report.sections[0].missing_fields and not report.review_details.stages
     assert report.sections[1].status == "SOURCE_REPORTED"

@@ -32,6 +32,162 @@
       "title": "AdapterInfo",
       "type": "object"
     },
+    "AnalyticalFinding": {
+      "additionalProperties": false,
+      "properties": {
+        "finding_id": {
+          "title": "Finding Id",
+          "type": "string"
+        },
+        "section_id": {
+          "title": "Section Id",
+          "type": "string"
+        },
+        "kind": {
+          "title": "Kind",
+          "type": "string"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "source_refs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Source Refs",
+          "type": "array"
+        },
+        "selected_refs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Selected Refs",
+          "type": "array"
+        },
+        "demo_rule": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Demo Rule"
+        },
+        "origin": {
+          "default": "DESCRIPTIVE_COMPARISON",
+          "enum": [
+            "DESCRIPTIVE_COMPARISON",
+            "SIMULATED_DEMO"
+          ],
+          "title": "Origin",
+          "type": "string"
+        }
+      },
+      "required": [
+        "finding_id",
+        "section_id",
+        "kind",
+        "text",
+        "source_refs"
+      ],
+      "title": "AnalyticalFinding",
+      "type": "object"
+    },
+    "AnalyticalGenerationInfo": {
+      "additionalProperties": false,
+      "properties": {
+        "requested_mode": {
+          "enum": [
+            "AUTO",
+            "GROQ",
+            "TEMPLATES"
+          ],
+          "title": "Requested Mode",
+          "type": "string"
+        },
+        "used_mode": {
+          "enum": [
+            "STANDARD_TEMPLATES",
+            "GROQ_AI",
+            "MIXED"
+          ],
+          "title": "Used Mode",
+          "type": "string"
+        },
+        "reason": {
+          "title": "Reason",
+          "type": "string"
+        },
+        "provider": {
+          "anyOf": [
+            {
+              "const": "GROQ",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Provider"
+        },
+        "model": {
+          "anyOf": [
+            {
+              "const": "openai/gpt-oss-120b",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Model"
+        },
+        "attempts": {
+          "maximum": 2,
+          "minimum": 0,
+          "title": "Attempts",
+          "type": "integer"
+        },
+        "eligible_wording_findings": {
+          "minimum": 0,
+          "title": "Eligible Wording Findings",
+          "type": "integer"
+        },
+        "accepted_comments": {
+          "minimum": 0,
+          "title": "Accepted Comments",
+          "type": "integer"
+        },
+        "real_patient_transmission_enabled": {
+          "const": false,
+          "default": false,
+          "title": "Real Patient Transmission Enabled",
+          "type": "boolean"
+        },
+        "output_validation": {
+          "const": "GROUNDED_ANALYTICAL_WORDING_V1",
+          "default": "GROUNDED_ANALYTICAL_WORDING_V1",
+          "title": "Output Validation",
+          "type": "string"
+        }
+      },
+      "required": [
+        "requested_mode",
+        "used_mode",
+        "reason",
+        "attempts",
+        "eligible_wording_findings",
+        "accepted_comments"
+      ],
+      "title": "AnalyticalGenerationInfo",
+      "type": "object"
+    },
     "AnchorageNote": {
       "additionalProperties": false,
       "properties": {
@@ -917,7 +1073,8 @@
           "enum": [
             "SOURCE_REPORTED",
             "SUPPLIED_UNVERIFIED",
-            "UNAVAILABLE"
+            "UNAVAILABLE",
+            "SIMULATED_DEMO"
           ],
           "title": "Status",
           "type": "string"
@@ -2502,6 +2659,9 @@
         },
         {
           "$ref": "#/$defs/ModuleGenerationInfo"
+        },
+        {
+          "$ref": "#/$defs/AnalyticalGenerationInfo"
         }
       ],
       "title": "Generation"
@@ -2532,10 +2692,18 @@
       "default": "MOVEMENT_PROFILE_V1",
       "enum": [
         "MOVEMENT_PROFILE_V1",
-        "MODULE_SPECIFIC_V1"
+        "MODULE_SPECIFIC_V1",
+        "ANALYTICAL_V1"
       ],
       "title": "Report Format",
       "type": "string"
+    },
+    "analytical_findings": {
+      "items": {
+        "$ref": "#/$defs/AnalyticalFinding"
+      },
+      "title": "Analytical Findings",
+      "type": "array"
     },
     "sections": {
       "items": {

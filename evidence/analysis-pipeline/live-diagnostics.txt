@@ -1,0 +1,53 @@
+analysis_ai_requested module=macro
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+analysis_groq_result module=macro contacted=True response_received=True code=GROQ_RESPONSE_RECEIVED attempts=1
+analysis_wording_complete module=macro contacted=True validated=True fallback=False code=GROQ_VALIDATED attempts=1
+analysis_ai_requested module=micro
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+analysis_groq_result module=micro contacted=True response_received=False code=GROQ_RATE_LIMIT attempts=1
+analysis_wording_complete module=micro contacted=True validated=False fallback=True code=GROQ_RATE_LIMIT attempts=1
+analysis_ai_requested module=nano
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+analysis_groq_result module=nano contacted=True response_received=False code=GROQ_RATE_LIMIT attempts=1
+analysis_wording_complete module=nano contacted=True validated=False fallback=True code=GROQ_RATE_LIMIT attempts=1
+[
+  {
+    "module": "macro",
+    "requested_mode": "AUTO",
+    "used_mode": "GROQ_AI",
+    "reason": "GROQ_VALIDATED",
+    "provider": "GROQ",
+    "model": "openai/gpt-oss-120b",
+    "attempts": 1,
+    "eligible_wording_findings": 5,
+    "accepted_comments": 5,
+    "real_patient_transmission_enabled": false,
+    "output_validation": "GROUNDED_ANALYTICAL_WORDING_V1"
+  },
+  {
+    "module": "micro",
+    "requested_mode": "AUTO",
+    "used_mode": "STANDARD_TEMPLATES",
+    "reason": "GROQ_RATE_LIMIT",
+    "provider": "GROQ",
+    "model": "openai/gpt-oss-120b",
+    "attempts": 1,
+    "eligible_wording_findings": 4,
+    "accepted_comments": 0,
+    "real_patient_transmission_enabled": false,
+    "output_validation": "GROUNDED_ANALYTICAL_WORDING_V1"
+  },
+  {
+    "module": "nano",
+    "requested_mode": "AUTO",
+    "used_mode": "STANDARD_TEMPLATES",
+    "reason": "GROQ_RATE_LIMIT",
+    "provider": "GROQ",
+    "model": "openai/gpt-oss-120b",
+    "attempts": 1,
+    "eligible_wording_findings": 5,
+    "accepted_comments": 0,
+    "real_patient_transmission_enabled": false,
+    "output_validation": "GROUNDED_ANALYTICAL_WORDING_V1"
+  }
+]

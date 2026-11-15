@@ -29,6 +29,12 @@ def main():
             assert report["illustrations"] == []
             text = normalized(" ".join(page.extract_text() for page in reader.pages))
             comments = report["sections"] or report["observations"]
+            automatic = report["sections"] and any(section["status"] == "SOURCE_REPORTED" for section in report["sections"]) and not any(report["review_details"].values())
+            if automatic and "Report scope" in text:
+                comments = [section for section in comments if not section["section_id"].endswith("_LIMITS")]
+                scope = ("Movement observations only. Attachment selection, dimensions, placement and clinical suitability are not assessed."
+                    if report["module"] == "micro" else "Movement observations only. Stage schedules, timing, anchorage and clinical suitability are not assessed.")
+                assert normalized(scope) in text
             for comment in comments:
                 assert normalized(comment["text"]) in text, (path.name, comment.get("section_id", comment.get("tooth_ref")))
             assert "Illustrative attachment examples" not in text and "Illustrative sequencing examples" not in text

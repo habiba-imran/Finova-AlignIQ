@@ -13,7 +13,13 @@ export interface SuppliedAllocation { stage_id: string; tooth_ref: string; measu
 export interface AnchorageNote { tooth_ref: string | null; note: string }
 export interface ReviewDetails { attachments: AttachmentDetail[]; stages: SuppliedStage[]; allocations: SuppliedAllocation[]; anchorage_notes: AnchorageNote[] }
 export const emptyReviewDetails = (): ReviewDetails => ({ attachments: [], stages: [], allocations: [], anchorage_notes: [] })
-export interface ModuleSection { section_id: string; title: string; status: 'SOURCE_REPORTED' | 'SUPPLIED_UNVERIFIED' | 'UNAVAILABLE'; text: string; source_refs: string[]; missing_fields: string[] }
+export interface ModuleSection { section_id: string; title: string; status: 'SOURCE_REPORTED' | 'SUPPLIED_UNVERIFIED' | 'UNAVAILABLE' | 'SIMULATED_DEMO'; text: string; source_refs: string[]; missing_fields: string[] }
+export interface AnalyticalFinding { finding_id: string; section_id: string; kind: string; text: string; source_refs: string[]; selected_refs: string[]; demo_rule: string | null; origin: 'DESCRIPTIVE_COMPARISON' | 'SIMULATED_DEMO' }
+export const ANALYTICAL_SECTIONS = {
+  macro: { SAGITTAL: 'Sagittal / Mesiodistal movement', TRANSVERSE: 'Transverse / Buccolingual movement', VERTICAL: 'Vertical movement', ANGULAR: 'Additional angular observations', SUMMARY: 'Overall movement summary' },
+  micro: { ANGULAR_FOCUS: 'Priority tooth profiles', ATTACHMENT_DEMO: 'Illustrative attachment considerations', ANGULAR_COVERAGE: 'Angular review coverage', ATTACHMENT_SCOPE: 'Attachment review scope' },
+  nano: { DISTRIBUTION: 'Arch and tooth-group distribution', TRANSLATIONS: 'Translation concentrations', VERTICAL_PATTERNS: 'Vertical concentrations', MULTI_COMPONENT: 'Multiple notable components', SEQUENCE_REVIEW: 'Sequencing review considerations' },
+}
 export const MODULE_SECTIONS = {
   micro: { ATTACHMENT_RECORDS: 'Supplied attachment choices', ATTACHMENT_DESIGN: 'Design and dimensions', ATTACHMENT_PLACEMENT: 'Placement information', ATTACHMENT_LIMITS: 'Attachment review limits' },
   nano: { STAGE_RECORDS: 'Supplied stage information', STAGE_ALLOCATIONS: 'Supplied movement allocations', ANCHORAGE_RECORDS: 'Supplied anchorage notes', SEQUENCING_LIMITS: 'Sequencing review limits' },
@@ -23,7 +29,8 @@ export const TMT_SECTIONS = {
   nano: { STAGE_RECORDS: 'Movement context', STAGE_ALLOCATIONS: 'Translation review', ANCHORAGE_RECORDS: 'Vertical movement review', SEQUENCING_LIMITS: 'Sequencing decisions' },
 }
 export function sectionStatusLabel(section: ModuleSection): string {
-  return section.status === 'SOURCE_REPORTED' ? 'From TMT · unverified'
+  return section.status === 'SIMULATED_DEMO' ? 'Illustration only · unvalidated'
+    : section.status === 'SOURCE_REPORTED' ? 'From TMT · unverified'
     : section.status === 'SUPPLIED_UNVERIFIED' ? 'Supplied · unverified'
       : section.section_id.endsWith('_LIMITS') && !section.missing_fields.length ? 'Not prescribed' : 'Unavailable'
 }
@@ -32,11 +39,12 @@ export interface InteractiveReport {
   draft_status: 'Synthetic demonstration — not for clinical use'; clinical_analysis_enabled: false
   parsed: ParseResult; engine_review: DraftReview
   generation: { requested_mode: 'AUTO'; used_mode: 'GROQ_AI' | 'STANDARD_TEMPLATES'; reason: string; attempts: number; accepted_comments: number; real_patient_transmission_enabled: false
-    provider: 'GROQ' | null; model: 'openai/gpt-oss-120b' | null; eligible_wording_findings: number; output_validation: 'CLOSED_WORDING_AND_LOCAL_FACTS_V1' | 'GROUNDED_PLANNING_WORDING_V1' | 'GROUNDED_MODULE_WORDING_V1' }
+    provider: 'GROQ' | null; model: 'openai/gpt-oss-120b' | null; eligible_wording_findings: number; output_validation: 'CLOSED_WORDING_AND_LOCAL_FACTS_V1' | 'GROUNDED_PLANNING_WORDING_V1' | 'GROUNDED_MODULE_WORDING_V1' | 'GROUNDED_ANALYTICAL_WORDING_V1' }
   wording_notice: string; summary: string; export_text: string; limitations: string[]
   observations: { tooth_ref: string; original_tooth: string; text: string; evidence_status: 'PARSED_SOURCE_ONLY'; measurements: Measurement[] }[]
   illustrations: { tooth_ref: string; original_tooth: string; label: string; text: string; origin: 'SIMULATED_DEMO'; clinical_status: 'NOT_EVALUATED' }[]
-  report_format?: 'MOVEMENT_PROFILE_V1' | 'MODULE_SPECIFIC_V1'
+  report_format?: 'MOVEMENT_PROFILE_V1' | 'MODULE_SPECIFIC_V1' | 'ANALYTICAL_V1'
+  analytical_findings?: AnalyticalFinding[]
   sections?: ModuleSection[]
   review_details?: ReviewDetails
 }
@@ -55,7 +63,9 @@ export function isInteractiveReport(v: unknown): v is InteractiveReport {
       ? v.generation.eligible_wording_findings !== v.observations.length
       : v.generation.output_validation === 'GROUNDED_MODULE_WORDING_V1'
         ? v.report_format !== 'MODULE_SPECIFIC_V1' || v.module === 'macro' || v.generation.eligible_wording_findings !== 4
-        : v.generation.output_validation !== 'CLOSED_WORDING_AND_LOCAL_FACTS_V1' || v.generation.eligible_wording_findings !== 4)
+        : v.generation.output_validation === 'GROUNDED_ANALYTICAL_WORDING_V1'
+          ? v.report_format !== 'ANALYTICAL_V1' || !Array.isArray(v.sections) || v.generation.eligible_wording_findings !== v.sections.length
+          : v.generation.output_validation !== 'CLOSED_WORDING_AND_LOCAL_FACTS_V1' || v.generation.eligible_wording_findings !== 4)
     || (Number(v.generation.attempts) > 0 ? v.generation.provider !== 'GROQ' || v.generation.model !== 'openai/gpt-oss-120b' : v.generation.provider !== null || v.generation.model !== null)
     || (v.generation.used_mode === 'GROQ_AI' ? v.generation.accepted_comments !== v.generation.eligible_wording_findings || Number(v.generation.attempts) < 1 || v.generation.reason !== 'GROQ_VALIDATED' : v.generation.accepted_comments !== 0)
     || !['wording_notice', 'summary', 'export_text'].every(k => str(v[k])) || !Array.isArray(v.limitations) || !v.limitations.every(str)
@@ -73,6 +83,36 @@ export function isInteractiveReport(v: unknown): v is InteractiveReport {
       observed.push(m.id); return true
     })
   }) || new Set(observed).size !== observed.length || observed.length !== parsed.measurements.length) return false
+  if (v.report_format === 'ANALYTICAL_V1') {
+    if (v.illustrations.length || !Array.isArray(v.sections) || !isReviewDetails(v.review_details)
+      || Object.values(v.review_details).some(rows => rows.length) || !Array.isArray(v.analytical_findings)
+      || v.generation.output_validation !== 'GROUNDED_ANALYTICAL_WORDING_V1') return false
+    const expected = ANALYTICAL_SECTIONS[v.module as DemoModule] as Record<string, string>
+    const knownRefs = new Set(parsed.measurements.map(m => m.id)), ids = new Set<string>()
+    if (v.sections.length !== Object.keys(expected).length) return false
+    if (!v.analytical_findings.every(f => {
+      if (!obj(f) || !str(f.finding_id) || ids.has(f.finding_id) || !/^F\d{4}$/.test(f.finding_id)
+        || !str(f.section_id) || !(f.section_id in expected) || !str(f.kind) || !str(f.text) || !f.text.trim()
+        || !Array.isArray(f.source_refs) || !f.source_refs.every(ref => str(ref) && knownRefs.has(ref))
+        || !Array.isArray(f.selected_refs) || !f.selected_refs.every(ref => str(ref) && (f.source_refs as unknown[]).includes(ref))
+        || !['DESCRIPTIVE_COMPARISON', 'SIMULATED_DEMO'].includes(String(f.origin))
+        || (f.origin === 'SIMULATED_DEMO' ? !str(f.demo_rule) || !/^DEMO-[A-Z-]+-v1$/.test(f.demo_rule) : f.demo_rule !== null)) return false
+      ids.add(f.finding_id); return true
+    })) return false
+    const findings = v.analytical_findings as AnalyticalFinding[], seen = new Set<string>()
+    return v.sections.every(s => {
+      if (!obj(s) || !str(s.section_id) || seen.has(s.section_id) || s.title !== expected[s.section_id]
+        || !str(s.text) || !Array.isArray(s.source_refs) || !s.source_refs.every(ref => str(ref) && knownRefs.has(ref))
+        || !Array.isArray(s.missing_fields) || !s.missing_fields.every(str)) return false
+      const own = findings.filter(f => f.section_id === s.section_id)
+      const status = s.section_id === 'ATTACHMENT_DEMO' ? 'SIMULATED_DEMO' : own.some(f => f.source_refs.length) ? 'SOURCE_REPORTED' : 'UNAVAILABLE'
+      if (s.status !== status || !own.length) return false
+      const paragraphs = s.text.split(/\n\n/), expectedTexts = own.map(f => f.text)
+      if (paragraphs.length !== expectedTexts.length || new Set(paragraphs).size !== paragraphs.length || paragraphs.some(p => !expectedTexts.includes(p))) return false
+      if (JSON.stringify([...new Set(own.flatMap(f => f.source_refs))]) !== JSON.stringify(s.source_refs)) return false
+      seen.add(s.section_id); return true
+    })
+  }
   if (v.report_format === 'MODULE_SPECIFIC_V1') {
     if (v.illustrations.length || !Array.isArray(v.sections) || !isReviewDetails(v.review_details)) return false
     const details = v.review_details, knownTeeth = new Set(parsed.teeth.map(tooth => tooth.id))
@@ -157,7 +197,7 @@ export async function requestInteractiveReview(module: DemoModule, rawText: stri
   }
   const data: unknown = await response.json()
   if (!isInteractiveReport(data) || data.module !== module || data.parsed.raw_sha256 !== hash || data.parsed.raw_text !== rawText) throw new Error('INVALID_RESPONSE')
-  if (data.report_format === 'MODULE_SPECIFIC_V1') {
+  if (data.report_format === 'MODULE_SPECIFIC_V1' || data.report_format === 'ANALYTICAL_V1') {
     const canonical = (v: unknown): string => JSON.stringify(v, (_key, item: unknown) => obj(item) ? Object.fromEntries(Object.entries(item).sort(([a], [b]) => a.localeCompare(b))) : item)
     if (canonical(data.review_details) !== canonical(supplied)) throw new Error('INVALID_RESPONSE')
   }

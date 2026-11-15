@@ -6,6 +6,7 @@ import { isFinalDraftReport } from '../api/report'
 import type { FinalDraftReport, ReportComment } from '../api/report'
 import type { PdfKind } from './reportPdf'
 import { isInteractiveReport, sectionStatusLabel } from '../api/interactive'
+import { commentParagraphs, moduleReviewPresentation } from '../reviewPresentation'
 
 export type PdfBlock = { type: 'heading'; text: string } | { type: 'text'; text: string } | { type: 'table'; headers: string[]; widths: number[]; rows: string[][] }
 export interface PdfPresentation {
@@ -71,10 +72,12 @@ export function buildPdfPresentation(kind: PdfKind, input: unknown): PdfPresenta
   if (kind === 'interactive' && isInteractiveReport(input)) {
     const blocks: PdfBlock[] = []
     if (input.sections?.length) {
-      for (const section of input.sections) {
-        blocks.push(heading(section.title), text(sectionStatusLabel(section)), text(section.text))
+      const presentation = moduleReviewPresentation(input)
+      for (const section of presentation.sections) {
+        blocks.push(heading(section.title), text(sectionStatusLabel(section)), ...commentParagraphs(section.text).map(text))
         if (section.missing_fields.length) blocks.push(text('Information needed: ' + section.missing_fields.join('; ') + '.'))
       }
+      if (presentation.scope) blocks.push(heading('Report scope'), text(presentation.scope))
     } else {
       blocks.push(heading(input.module === 'macro' ? 'Planning comments' : input.module === 'micro' ? 'Attachment review comments' : 'Sequencing review comments'))
       for (const o of input.observations) blocks.push(heading(`Tooth token ${o.original_tooth}`), text(o.text))

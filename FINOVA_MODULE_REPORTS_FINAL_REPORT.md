@@ -1,5 +1,15 @@
 # Finova AlignIQ — final module reports
 
+## Presentation correction — 15 November 2026
+
+Status: verified local changes only. Automatic approval review blocked the commit/deployment because the original instructions prohibited publishing. Explicit user approval is required before this presentation correction can be committed or deployed.
+
+The normal flow now generates TMT-only Micro/Nano observations without supplementary forms. This update separates the clinical scope notice from observation results: “Attachment decisions / Not prescribed” and “Sequencing decisions / Not prescribed” are replaced in the visible UI/PDF by one concise **Report scope** note. Source fields that are actually missing remain visibly unavailable. Observations are displayed as spaced sentence paragraphs, preserving all wording, exact decimals, explicit zeros and unknown statements.
+
+The original scope wording, all four internal sections and provenance remain unchanged in complete TXT/JSON exports and PDF attachments. No backend report generation, clinical rules, Groq prompts/settings/limits, credentials or provider retries were changed by this presentation update. A stale privacy test from the preceding TMT-only implementation was corrected to check varying temporary-reference counts while continuing to exclude source values and private text from Micro/Nano provider payloads.
+
+Validation: **44 focused frontend tests**, **68 backend report/privacy/wording tests**, **6 desktop/mobile browser/PDF cases**, TypeScript and production build passed. Micro/Nano PDF text and exact attachments were checked separately. Browser checks used a provider-disabled local backend; no live Groq calls were made. Earlier verification and deployment results below are historical snapshots.
+
 15 November 2026. This report supersedes the earlier movement-only Micro/Nano wording descriptions.
 
 ## Implemented behavior

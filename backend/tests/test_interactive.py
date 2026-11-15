@@ -64,12 +64,12 @@ def test_arbitrary_source_cells_and_provenance_preserved(raw, count, module):
     assert "RULE EVALUATION LEDGER" in report.export_text
 
 
-def test_illustrative_choices_are_independent_of_movement_values():
+def test_analytical_choices_follow_recorded_values():
     for module in ("micro", "nano"):
         a = generate_interactive(submission(module=module), settings=ReportSettings())
         b = generate_interactive(submission(ROWS.replace("-2.7500 M", "999.9500 D"), module), settings=ReportSettings())
         assert a.illustrations == b.illustrations == []
-        assert (a.sections != b.sections) == (module == "micro")
+        assert a.sections != b.sections
         assert a.observations != b.observations
 
 
@@ -79,7 +79,9 @@ def provider(status=200, mutate=None):
     def handler(request):
         captured.append(json.loads(request.content))
         data = json.loads(captured[-1]["messages"][1]["content"])
-        if "programmed_movements" in data:
+        if "sections" in data:
+            output = {"sections": [{"section_id": s["section_id"], "text": "\n\n".join("{" + f["ref"] + "}" for f in s["findings"])} for s in data["sections"]]}
+        elif "programmed_movements" in data:
             openings = ["The recorded profile includes ", "This entry records ", "Programmed movement components are "]
             output = {"comments": [{"tooth_ref": t["tooth_ref"], "text": openings[i % len(openings)] + " and ".join("{" + m["ref"] + "}" for m in t["movements"]) + "."} for i, t in enumerate(data["programmed_movements"])]}
         else:
@@ -95,7 +97,7 @@ def test_groq_grounded_module_payload_and_local_facts(module):
     request = submission("Patient: PRIVATE_PATIENT_ABC\n" + LARGE, module)
     report = generate_interactive(request, settings=settings, client=client)
     assert report.generation.used_mode == "GROQ_AI"
-    assert report.generation.accepted_comments == (16 if module == "macro" else 4) and report.generation.attempts == 1
+    assert report.generation.accepted_comments == len(report.sections) and report.generation.attempts == 1
     assert report.wording_notice == "AI-assisted report wording."
     payload = json.dumps(captured)
     for value in ("PRIVATE_PATIENT_ABC", "PRIVATE_SERVER_KEY", request.raw_sha256, "Rotation", "Mesial", "Patient"):
@@ -103,12 +105,10 @@ def test_groq_grounded_module_payload_and_local_facts(module):
     assert "0.4500" in report.export_text and "1.2300" in report.export_text
     other_settings, other_client, other_captured = provider()
     generate_interactive(submission(ROWS, module), settings=other_settings, client=other_client)
-    if module == "macro":
-        assert captured != other_captured
-        assert "1.2300" in payload and "0.4500" in payload
-    else:
-        assert captured == other_captured  # No attachment/stage facts were supplied in either TMT.
-        assert "1.2300" not in payload and "0.4500" not in payload
+    assert captured != other_captured
+    assert "1.2300" in payload and "0.4500" in payload
+    data = json.loads(captured[0]["messages"][1]["content"])
+    assert len(data["sections"]) == len(report.sections) and data["comparison_sets"]
     assert "raw_text" not in payload and "source_version" not in payload
 
 
@@ -125,7 +125,7 @@ def test_provider_failure_honest_fallback(status):
 
 @pytest.mark.parametrize("bad_text", ["Use 2.000 mm attachments", "Recommended extraction", "All movements are clinically safe", "Recorded values 99", "<script>bad</script>"])
 def test_unsupported_groq_numbers_and_decisions_rejected(bad_text):
-    settings, client, _ = provider(mutate=lambda d: d["comments"][0].update(text=bad_text))
+    settings, client, _ = provider(mutate=lambda d: d["sections"][0].update(text=bad_text))
     report = generate_interactive(submission(), settings=settings, client=client)
     assert report.generation.used_mode == "STANDARD_TEMPLATES"
     assert report.generation.reason == "GROQ_UNSUPPORTED_WORDING"
@@ -133,7 +133,7 @@ def test_unsupported_groq_numbers_and_decisions_rejected(bad_text):
 
 
 def test_duplicate_or_incomplete_wording_is_rejected():
-    for mutate in (lambda d: d["comments"].pop(), lambda d: d["comments"].__setitem__(1, d["comments"][0])):
+    for mutate in (lambda d: d["sections"].pop(), lambda d: d["sections"].__setitem__(1, d["sections"][0])):
         settings, client, _ = provider(mutate=mutate)
         report = generate_interactive(submission(), settings=settings, client=client)
         assert report.generation.used_mode == "STANDARD_TEMPLATES"
@@ -145,6 +145,7 @@ def test_backend_key_automatically_enables_grounded_wording(monkeypatch):
     monkeypatch.setenv("FINOVA_GROQ_SYNTHETIC_ENABLED", "false")
     monkeypatch.setattr("app.interactive.service.GroqClient", lambda config: client)
     monkeypatch.setattr("app.interactive.narrative.GroqClient", lambda config: client)
+    monkeypatch.setattr("app.interactive.analytical_wording.GroqClient", lambda config: client)
     report = generate_interactive(submission())
     assert report.generation.used_mode == "GROQ_AI" and len(captured) == 1
 

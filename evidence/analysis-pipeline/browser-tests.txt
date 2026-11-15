@@ -1,0 +1,213 @@
+
+> finova-aligniq-frontend@0.0.0 test:e2e
+> playwright test --config=playwright.audit.config.ts --project=desktop --project=mobile
+
+[WebServer] INFO:     Started server process [19732]
+[WebServer] INFO:     Waiting for application startup.
+[WebServer] INFO:     Application startup complete.
+[WebServer] INFO:     Uvicorn running on http://127.0.0.1:8019 (Press CTRL+C to quit)
+[WebServer] (node:29448) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:12792) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 106 tests using 1 worker
+
+(node:22600) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok   1 [desktop] › e2e\analysis-pipeline.spec.ts:14:29 › macro: 15-tooth analytical UI, Copy, TXT, PDF and cache agree (8.8s)
+  ok   2 [desktop] › e2e\analysis-pipeline.spec.ts:14:29 › micro: 15-tooth analytical UI, Copy, TXT, PDF and cache agree (6.7s)
+  ok   3 [desktop] › e2e\analysis-pipeline.spec.ts:14:29 › nano: 15-tooth analytical UI, Copy, TXT, PDF and cache agree (9.0s)
+  ok   4 [desktop] › e2e\attachments.spec.ts:3:1 › Micro demo runs real validation, displays supplied choices and exports the exact DRAFT (4.9s)
+  ok   5 [desktop] › e2e\attachments.spec.ts:57:1 › ordinary Micro input never derives an attachment or geometry from movement size (2.7s)
+  ok   6 [desktop] › e2e\attachments.spec.ts:79:1 › Micro error retains input and explicit retry; purpose switch invalidates the result (3.0s)
+  ok   7 [desktop] › e2e\audit.spec.ts:3:1 › switching between all three loaded demos preserves text but cannot carry demo authority (5.1s)
+  ok   8 [desktop] › e2e\automatic.spec.ts:6:1 › source indicators are automatic, unverified and do not alter tooth metadata (2.0s)
+  ok   9 [desktop] › e2e\automatic.spec.ts:26:1 › Markdown parses deterministically with cloud disabled and raw text survives (1.4s)
+  ok  10 [desktop] › e2e\automatic.spec.ts:38:1 › mocked development recovery runs through one explicit parse without another checkbox (1.4s)
+  ok  11 [desktop] › e2e\automatic.spec.ts:60:1 › generated input with cloud disabled is retained and arbitrary edits remove authorization (1.5s)
+  ok  12 [desktop] › e2e\automatic.spec.ts:75:1 › ordinary non-TMT input is rejected without cloud traffic (1.3s)
+  ok  13 [desktop] › e2e\clean-ui.spec.ts:4:1 › normal workspace has one source, concise results and visible exports in all three modules (4.7s)
+  ok  14 [desktop] › e2e\clean-ui.spec.ts:31:1 › unavailable demo is disabled with a short message and retains original input (1.1s)
+  ok  15 [desktop] › e2e\clean-ui.spec.ts:44:1 › automatic AI wording uses one review action and no main UI selection (1.5s)
+  ok  16 [desktop] › e2e\interactive.spec.ts:16:31 › rows: pasted synthetic input works in all three modules (3.4s)
+  ok  17 [desktop] › e2e\interactive.spec.ts:16:31 › columns: pasted synthetic input works in all three modules (3.3s)
+  ok  18 [desktop] › e2e\interactive.spec.ts:16:31 › markdown: pasted synthetic input works in all three modules (3.2s)
+  ok  19 [desktop] › e2e\interactive.spec.ts:16:31 › large: pasted synthetic input works in all three modules (14.2s)
+  ok  20 [desktop] › e2e\interactive.spec.ts:96:1 › unsupported input keeps a clear error and cannot generate a fabricated report (1.0s)
+  ok  21 [desktop] › e2e\interactive.spec.ts:105:31 › macro: approved AI comments are prominent in the UI and PDF (6.0s)
+  ok  22 [desktop] › e2e\interactive.spec.ts:105:31 › micro: approved AI comments are prominent in the UI and PDF (6.3s)
+  ok  23 [desktop] › e2e\interactive.spec.ts:105:31 › nano: approved AI comments are prominent in the UI and PDF (5.9s)
+  ok  24 [desktop] › e2e\module-final.spec.ts:16:27 › macro TMT only: distinct comments and exact PDF (5.2s)
+  x   25 [desktop] › e2e\module-final.spec.ts:16:27 › micro TMT only: distinct comments and exact PDF (8.7s)
+(node:18332) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  26 [desktop] › e2e\module-final.spec.ts:16:27 › nano TMT only: distinct comments and exact PDF (8.3s)
+  ok  27 [desktop] › e2e\motion.spec.ts:9:1 › module indicator and result entrance are brief, purposeful and do not preserve stale content (2.4s)
+  ok  28 [desktop] › e2e\motion.spec.ts:38:1 › loading controls expose a spinner and busy state while the explicit request is pending (2.8s)
+  ok  29 [desktop] › e2e\motion.spec.ts:67:3 › reduced motion › keeps results immediately visible and collapses decorative durations (1.9s)
+  ok  30 [desktop] › e2e\parse.spec.ts:3:1 › explicit parse preserves raw text and returns exact lexical values through the real API (1.9s)
+  ok  31 [desktop] › e2e\parse.spec.ts:44:1 › synthetic demo parses without claiming vendor verification and clears without persistence (3.3s)
+  ok  32 [desktop] › e2e\parse.spec.ts:63:1 › markup remains inert in both previews and unknown layout abstains (1.5s)
+  ok  33 [desktop] › e2e\pdf.spec.ts:10:31 › macro PDF contains exact complete report and validated evidence, with no export requests (5.3s)
+  ok  34 [desktop] › e2e\pdf.spec.ts:10:31 › micro PDF contains exact complete report and validated evidence, with no export requests (4.4s)
+  ok  35 [desktop] › e2e\pdf.spec.ts:10:31 › nano PDF contains exact complete report and validated evidence, with no export requests (5.0s)
+  ok  36 [desktop] › e2e\pdf.spec.ts:55:1 › generic labels parse with exact zero and missing values while normal review remains unauthorized (2.0s)
+  ok  37 [desktop] › e2e\planning.spec.ts:4:1 › fixed synthetic Planning Assistant completes the real pipeline and exports exact DRAFT comments (4.2s)
+  ok  38 [desktop] › e2e\planning.spec.ts:66:1 › ordinary unknown vendor input abstains, cannot select comments and performs no external transmission (2.0s)
+  ok  39 [desktop] › e2e\planning.spec.ts:88:1 › review-purpose navigation works by keyboard; all modules have distinct intake (1.1s)
+  ok  40 [desktop] › e2e\planning.spec.ts:105:1 › planning errors keep input and allow explicit retry; changing wording removes the prior draft (2.0s)
+  ok  41 [desktop] › e2e\polish.spec.ts:3:1 › shared empty states, aligned summaries, evidence disclosure and export order remain cohesive (9.5s)
+  ok  42 [desktop] › e2e\presentation.spec.ts:5:1 › parse presentation promotes movement inspection and keeps raw source and diagnostics available (3.0s)
+  ok  43 [desktop] › e2e\presentation.spec.ts:49:1 › result reports remain the workflow destination and Micro stacks into readable cards at 375 (3.0s)
+  ok  44 [desktop] › e2e\report.spec.ts:3:1 › final report uses templates for unverified data and copies/downloads a complete local DRAFT (5.1s)
+  ok  45 [desktop] › e2e\responsive.spec.ts:5:1 › context heading, compact module tabs and layout remain usable at every target width (3.3s)
+  ok  46 [desktop] › e2e\responsive.spec.ts:52:1 › workflow progress distinguishes input, completed inspection, active review and available export (4.4s)
+  ok  47 [desktop] › e2e\review.spec.ts:3:1 › explicit draft review uses the real API, abstains on vendor claims and preserves raw input (5.1s)
+  ok  48 [desktop] › e2e\sequencing.spec.ts:3:1 › Nano demo runs real stages/guards, separates arch and side notes, and exports exact DRAFT (4.4s)
+  ok  49 [desktop] › e2e\sequencing.spec.ts:57:1 › normal Nano input preserves zero/missing values while withholding sequence and anchorage (2.2s)
+  ok  50 [desktop] › e2e\sequencing.spec.ts:82:1 › Nano error permits explicit retry; navigation preserves input and clears its draft (2.1s)
+  ok  51 [desktop] › e2e\wording-correction.spec.ts:8:3 › macro: actual corrected wording reaches UI and PDF (5.2s)
+  ok  52 [desktop] › e2e\wording-correction.spec.ts:8:3 › micro: actual corrected wording reaches UI and PDF (5.7s)
+  ok  53 [desktop] › e2e\wording-correction.spec.ts:8:3 › nano: actual corrected wording reaches UI and PDF (5.6s)
+(node:30640) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  54 [mobile] › e2e\analysis-pipeline.spec.ts:14:29 › macro: 15-tooth analytical UI, Copy, TXT, PDF and cache agree (6.7s)
+  ok  55 [mobile] › e2e\analysis-pipeline.spec.ts:14:29 › micro: 15-tooth analytical UI, Copy, TXT, PDF and cache agree (6.1s)
+  ok  56 [mobile] › e2e\analysis-pipeline.spec.ts:14:29 › nano: 15-tooth analytical UI, Copy, TXT, PDF and cache agree (7.3s)
+  ok  57 [mobile] › e2e\attachments.spec.ts:3:1 › Micro demo runs real validation, displays supplied choices and exports the exact DRAFT (3.5s)
+  ok  58 [mobile] › e2e\attachments.spec.ts:57:1 › ordinary Micro input never derives an attachment or geometry from movement size (1.9s)
+  ok  59 [mobile] › e2e\attachments.spec.ts:79:1 › Micro error retains input and explicit retry; purpose switch invalidates the result (2.1s)
+  ok  60 [mobile] › e2e\audit.spec.ts:3:1 › switching between all three loaded demos preserves text but cannot carry demo authority (4.5s)
+  ok  61 [mobile] › e2e\automatic.spec.ts:6:1 › source indicators are automatic, unverified and do not alter tooth metadata (1.5s)
+  ok  62 [mobile] › e2e\automatic.spec.ts:26:1 › Markdown parses deterministically with cloud disabled and raw text survives (1.2s)
+  ok  63 [mobile] › e2e\automatic.spec.ts:38:1 › mocked development recovery runs through one explicit parse without another checkbox (1.2s)
+  ok  64 [mobile] › e2e\automatic.spec.ts:60:1 › generated input with cloud disabled is retained and arbitrary edits remove authorization (1.3s)
+  ok  65 [mobile] › e2e\automatic.spec.ts:75:1 › ordinary non-TMT input is rejected without cloud traffic (1.0s)
+  ok  66 [mobile] › e2e\clean-ui.spec.ts:4:1 › normal workspace has one source, concise results and visible exports in all three modules (3.4s)
+  ok  67 [mobile] › e2e\clean-ui.spec.ts:31:1 › unavailable demo is disabled with a short message and retains original input (1.1s)
+  ok  68 [mobile] › e2e\clean-ui.spec.ts:44:1 › automatic AI wording uses one review action and no main UI selection (1.3s)
+  ok  69 [mobile] › e2e\interactive.spec.ts:16:31 › rows: pasted synthetic input works in all three modules (3.3s)
+  ok  70 [mobile] › e2e\interactive.spec.ts:16:31 › columns: pasted synthetic input works in all three modules (3.1s)
+  ok  71 [mobile] › e2e\interactive.spec.ts:16:31 › markdown: pasted synthetic input works in all three modules (2.9s)
+  ok  72 [mobile] › e2e\interactive.spec.ts:16:31 › large: pasted synthetic input works in all three modules (14.3s)
+  ok  73 [mobile] › e2e\interactive.spec.ts:96:1 › unsupported input keeps a clear error and cannot generate a fabricated report (1.0s)
+  ok  74 [mobile] › e2e\interactive.spec.ts:105:31 › macro: approved AI comments are prominent in the UI and PDF (5.7s)
+  ok  75 [mobile] › e2e\interactive.spec.ts:105:31 › micro: approved AI comments are prominent in the UI and PDF (6.2s)
+  ok  76 [mobile] › e2e\interactive.spec.ts:105:31 › nano: approved AI comments are prominent in the UI and PDF (6.0s)
+  ok  77 [mobile] › e2e\module-final.spec.ts:16:27 › macro TMT only: distinct comments and exact PDF (5.1s)
+  x   78 [mobile] › e2e\module-final.spec.ts:16:27 › micro TMT only: distinct comments and exact PDF (8.1s)
+(node:16276) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  79 [mobile] › e2e\module-final.spec.ts:16:27 › nano TMT only: distinct comments and exact PDF (7.3s)
+  ok  80 [mobile] › e2e\motion.spec.ts:9:1 › module indicator and result entrance are brief, purposeful and do not preserve stale content (2.3s)
+  ok  81 [mobile] › e2e\motion.spec.ts:38:1 › loading controls expose a spinner and busy state while the explicit request is pending (2.7s)
+  ok  82 [mobile] › e2e\motion.spec.ts:67:3 › reduced motion › keeps results immediately visible and collapses decorative durations (1.9s)
+  ok  83 [mobile] › e2e\parse.spec.ts:3:1 › explicit parse preserves raw text and returns exact lexical values through the real API (1.9s)
+  ok  84 [mobile] › e2e\parse.spec.ts:44:1 › synthetic demo parses without claiming vendor verification and clears without persistence (2.8s)
+  ok  85 [mobile] › e2e\parse.spec.ts:63:1 › markup remains inert in both previews and unknown layout abstains (1.5s)
+  ok  86 [mobile] › e2e\pdf.spec.ts:10:31 › macro PDF contains exact complete report and validated evidence, with no export requests (5.0s)
+  ok  87 [mobile] › e2e\pdf.spec.ts:10:31 › micro PDF contains exact complete report and validated evidence, with no export requests (4.0s)
+  ok  88 [mobile] › e2e\pdf.spec.ts:10:31 › nano PDF contains exact complete report and validated evidence, with no export requests (4.7s)
+  ok  89 [mobile] › e2e\pdf.spec.ts:55:1 › generic labels parse with exact zero and missing values while normal review remains unauthorized (1.8s)
+  ok  90 [mobile] › e2e\planning.spec.ts:4:1 › fixed synthetic Planning Assistant completes the real pipeline and exports exact DRAFT comments (3.6s)
+  ok  91 [mobile] › e2e\planning.spec.ts:66:1 › ordinary unknown vendor input abstains, cannot select comments and performs no external transmission (1.9s)
+  ok  92 [mobile] › e2e\planning.spec.ts:88:1 › review-purpose navigation works by keyboard; all modules have distinct intake (1.1s)
+  ok  93 [mobile] › e2e\planning.spec.ts:105:1 › planning errors keep input and allow explicit retry; changing wording removes the prior draft (1.9s)
+  ok  94 [mobile] › e2e\polish.spec.ts:3:1 › shared empty states, aligned summaries, evidence disclosure and export order remain cohesive (7.4s)
+  ok  95 [mobile] › e2e\presentation.spec.ts:5:1 › parse presentation promotes movement inspection and keeps raw source and diagnostics available (2.8s)
+  ok  96 [mobile] › e2e\presentation.spec.ts:49:1 › result reports remain the workflow destination and Micro stacks into readable cards at 375 (3.1s)
+  ok  97 [mobile] › e2e\report.spec.ts:3:1 › final report uses templates for unverified data and copies/downloads a complete local DRAFT (4.8s)
+  ok  98 [mobile] › e2e\responsive.spec.ts:5:1 › context heading, compact module tabs and layout remain usable at every target width (3.5s)
+  ok  99 [mobile] › e2e\responsive.spec.ts:52:1 › workflow progress distinguishes input, completed inspection, active review and available export (4.4s)
+  ok 100 [mobile] › e2e\review.spec.ts:3:1 › explicit draft review uses the real API, abstains on vendor claims and preserves raw input (3.7s)
+  ok 101 [mobile] › e2e\sequencing.spec.ts:3:1 › Nano demo runs real stages/guards, separates arch and side notes, and exports exact DRAFT (4.0s)
+  ok 102 [mobile] › e2e\sequencing.spec.ts:57:1 › normal Nano input preserves zero/missing values while withholding sequence and anchorage (2.0s)
+  ok 103 [mobile] › e2e\sequencing.spec.ts:82:1 › Nano error permits explicit retry; navigation preserves input and clears its draft (2.1s)
+  ok 104 [mobile] › e2e\wording-correction.spec.ts:8:3 › macro: actual corrected wording reaches UI and PDF (5.6s)
+  ok 105 [mobile] › e2e\wording-correction.spec.ts:8:3 › micro: actual corrected wording reaches UI and PDF (5.5s)
+  ok 106 [mobile] › e2e\wording-correction.spec.ts:8:3 › nano: actual corrected wording reaches UI and PDF (5.8s)
+
+
+  1) [desktop] › e2e\module-final.spec.ts:16:27 › micro TMT only: distinct comments and exact PDF ──
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByRole('article', { name: 'Generated synthetic report' }).getByRole('region', { name: 'Module review comments' })
+    Expected substring: "0.1250"
+    Received string:    "Attachment review commentsPriority tooth profilesFrom TMT · unverifiedTooth 28: rotation 15.1250° (D-labelled) (dataset maximum); inclination -1.5000° (no direction label) (dataset maximum).Highlighted by within-table angular ranking, without a clinical severity classification.Tooth 27: rotation 14.1250° (D-labelled) (second distinct magnitude); inclination -1.5000° (no direction label) (dataset maximum).Highlighted by within-table angular ranking, without a clinical severity classification.Tooth 11: inclination -1.5000° (no direction label) (dataset maximum).Highlighted by within-table angular ranking, without a clinical severity classification.Tooth 12: inclination -1.5000° (no direction label) (dataset maximum).Highlighted by within-table angular ranking, without a clinical severity classification.Tooth 13: inclination -1.5000° (no direction label) (dataset maximum).Highlighted by within-table angular ranking, without a clinical severity classification.Illustrative attachment considerationsIllustration only · unvalidatedTooth 28 — illustrative candidate: combined angular-control attachment review, triggered by the angular ranks above.An alternative is to review the angular components separately.Tooth 27 — illustrative candidate: inclination-control attachment review, triggered by the angular ranks above.Tooth 11 — illustrative candidate: inclination-control attachment review, triggered by the angular ranks above.Tooth 12 — illustrative candidate: inclination-control attachment review, triggered by the angular ranks above.Tooth 13 — illustrative candidate: inclination-control attachment review, triggered by the angular ranks above.Angular review coverageFrom TMT · unverified5 priority profiles shown from 16 tooth rows.Only the two largest distinct nonzero magnitudes per angular family enter the demo shortlist; ties are ranked by number of family maxima, then number of shortlisted components, then token.At most five profiles are shown.Attachment review scopeUnavailableIllustrative rules are independent synthetic demonstrations.They establish no attachment need, shape, dimensions, orientation or placement.Validated attachment indications and suitability remain unavailable; all existing clinical predicates remain disabled."
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toContainText" getByRole('article', { name: 'Generated synthetic report' }).getByRole('region', { name: 'Module review comments' }) with timeout 5000ms
+      - waiting for getByRole('article', { name: 'Generated synthetic report' }).getByRole('region', { name: 'Module review comments' })
+        13 × locator resolved to <section class="mt-6 space-y-4" aria-label="Module review comments">…</section>
+           - unexpected value "Attachment review commentsPriority tooth profilesFrom TMT · unverifiedTooth 28: rotation 15.1250° (D-labelled) (dataset maximum); inclination -1.5000° (no direction label) (dataset maximum).Highlighted by within-table angular ranking, without a clinical severity classification.Tooth 27: rotation 14.1250° (D-labelled) (second distinct magnitude); inclination -1.5000° (no direction label) (dataset maximum).Highlighted by within-table angular ranking, without a clinical severity classification.Tooth 11: inclination -1.5000° (no direction label) (dataset maximum).Highlighted by within-table angular ranking, without a clinical severity classification.Tooth 12: inclination -1.5000° (no direction label) (dataset maximum).Highlighted by within-table angular ranking, without a clinical severity classification.Tooth 13: inclination -1.5000° (no direction label) (dataset maximum).Highlighted by within-table angular ranking, without a clinical severity classification.Illustrative attachment considerationsIllustration only · unvalidatedTooth 28 — illustrative candidate: combined angular-control attachment review, triggered by the angular ranks above.An alternative is to review the angular components separately.Tooth 27 — illustrative candidate: inclination-control attachment review, triggered by the angular ranks above.Tooth 11 — illustrative candidate: inclination-control attachment review, triggered by the angular ranks above.Tooth 12 — illustrative candidate: inclination-control attachment review, triggered by the angular ranks above.Tooth 13 — illustrative candidate: inclination-control attachment review, triggered by the angular ranks above.Angular review coverageFrom TMT · unverified5 priority profiles shown from 16 tooth rows.Only the two largest distinct nonzero magnitudes per angular family enter the demo shortlist; ties are ranked by number of family maxima, then number of shortlisted components, then token.At most five profiles are shown.Attachment review scopeUnavailableIllustrative rules are independent synthetic demonstrations.They establish no attachment need, shape, dimensions, orientation or placement.Validated attachment indications and suitability remain unavailable; all existing clinical predicates remain disabled."
+
+
+      45 |     await expect(comments).not.toContainText('because no')
+      46 |     await expect(comments).not.toContainText('Information needed:')
+    > 47 |     await expect(comments).toContainText(item.module === 'micro' ? '0.1250' : '1.2300')
+         |                            ^
+      48 |   }
+      49 |   expect(await article.innerText()).not.toMatch(/Groq|provider|fictional demonstration group/i)
+      50 |   const presentation = buildPdfPresentation('interactive', report)
+        at C:\Finova AlignIQ\frontend\e2e\module-final.spec.ts:47:28
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\module-final-micro-TMT-only-distinct-comments-and-exact-PDF-desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\module-final-micro-TMT-only-distinct-comments-and-exact-PDF-desktop\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\module-final-micro-TMT-only-distinct-comments-and-exact-PDF-desktop\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\module-final-micro-TMT-only-distinct-comments-and-exact-PDF-desktop\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [mobile] › e2e\module-final.spec.ts:16:27 › micro TMT only: distinct comments and exact PDF ───
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByRole('article', { name: 'Generated synthetic report' }).getByRole('region', { name: 'Module review comments' })
+    Expected substring: "0.1250"
+    Received string:    "Attachment review commentsPriority tooth profilesFrom TMT · unverifiedTooth 28: rotation 15.1250° (D-labelled) (dataset maximum); inclination -1.5000° (no direction label) (dataset maximum).Highlighted by within-table angular ranking, without a clinical severity classification.Tooth 27: rotation 14.1250° (D-labelled) (second distinct magnitude); inclination -1.5000° (no direction label) (dataset maximum).Highlighted by within-table angular ranking, without a clinical severity classification.Tooth 11: inclination -1.5000° (no direction label) (dataset maximum).Highlighted by within-table angular ranking, without a clinical severity classification.Tooth 12: inclination -1.5000° (no direction label) (dataset maximum).Highlighted by within-table angular ranking, without a clinical severity classification.Tooth 13: inclination -1.5000° (no direction label) (dataset maximum).Highlighted by within-table angular ranking, without a clinical severity classification.Illustrative attachment considerationsIllustration only · unvalidatedTooth 28 — illustrative candidate: combined angular-control attachment review, triggered by the angular ranks above.An alternative is to review the angular components separately.Tooth 27 — illustrative candidate: inclination-control attachment review, triggered by the angular ranks above.Tooth 11 — illustrative candidate: inclination-control attachment review, triggered by the angular ranks above.Tooth 12 — illustrative candidate: inclination-control attachment review, triggered by the angular ranks above.Tooth 13 — illustrative candidate: inclination-control attachment review, triggered by the angular ranks above.Angular review coverageFrom TMT · unverified5 priority profiles shown from 16 tooth rows.Only the two largest distinct nonzero magnitudes per angular family enter the demo shortlist; ties are ranked by number of family maxima, then number of shortlisted components, then token.At most five profiles are shown.Attachment review scopeUnavailableIllustrative rules are independent synthetic demonstrations.They establish no attachment need, shape, dimensions, orientation or placement.Validated attachment indications and suitability remain unavailable; all existing clinical predicates remain disabled."
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toContainText" getByRole('article', { name: 'Generated synthetic report' }).getByRole('region', { name: 'Module review comments' }) with timeout 5000ms
+      - waiting for getByRole('article', { name: 'Generated synthetic report' }).getByRole('region', { name: 'Module review comments' })
+        13 × locator resolved to <section class="mt-6 space-y-4" aria-label="Module review comments">…</section>
+           - unexpected value "Attachment review commentsPriority tooth profilesFrom TMT · unverifiedTooth 28: rotation 15.1250° (D-labelled) (dataset maximum); inclination -1.5000° (no direction label) (dataset maximum).Highlighted by within-table angular ranking, without a clinical severity classification.Tooth 27: rotation 14.1250° (D-labelled) (second distinct magnitude); inclination -1.5000° (no direction label) (dataset maximum).Highlighted by within-table angular ranking, without a clinical severity classification.Tooth 11: inclination -1.5000° (no direction label) (dataset maximum).Highlighted by within-table angular ranking, without a clinical severity classification.Tooth 12: inclination -1.5000° (no direction label) (dataset maximum).Highlighted by within-table angular ranking, without a clinical severity classification.Tooth 13: inclination -1.5000° (no direction label) (dataset maximum).Highlighted by within-table angular ranking, without a clinical severity classification.Illustrative attachment considerationsIllustration only · unvalidatedTooth 28 — illustrative candidate: combined angular-control attachment review, triggered by the angular ranks above.An alternative is to review the angular components separately.Tooth 27 — illustrative candidate: inclination-control attachment review, triggered by the angular ranks above.Tooth 11 — illustrative candidate: inclination-control attachment review, triggered by the angular ranks above.Tooth 12 — illustrative candidate: inclination-control attachment review, triggered by the angular ranks above.Tooth 13 — illustrative candidate: inclination-control attachment review, triggered by the angular ranks above.Angular review coverageFrom TMT · unverified5 priority profiles shown from 16 tooth rows.Only the two largest distinct nonzero magnitudes per angular family enter the demo shortlist; ties are ranked by number of family maxima, then number of shortlisted components, then token.At most five profiles are shown.Attachment review scopeUnavailableIllustrative rules are independent synthetic demonstrations.They establish no attachment need, shape, dimensions, orientation or placement.Validated attachment indications and suitability remain unavailable; all existing clinical predicates remain disabled."
+
+
+      45 |     await expect(comments).not.toContainText('because no')
+      46 |     await expect(comments).not.toContainText('Information needed:')
+    > 47 |     await expect(comments).toContainText(item.module === 'micro' ? '15.1250' : '1.2300')
+         |                            ^
+      48 |   }
+      49 |   expect(await article.innerText()).not.toMatch(/Groq|provider|fictional demonstration group/i)
+      50 |   const presentation = buildPdfPresentation('interactive', report)
+        at C:\Finova AlignIQ\frontend\e2e\module-final.spec.ts:47:28
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\module-final-micro-TMT-only-distinct-comments-and-exact-PDF-mobile\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\module-final-micro-TMT-only-distinct-comments-and-exact-PDF-mobile\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\module-final-micro-TMT-only-distinct-comments-and-exact-PDF-mobile\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\module-final-micro-TMT-only-distinct-comments-and-exact-PDF-mobile\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2 failed
+    [desktop] › e2e\module-final.spec.ts:16:27 › micro TMT only: distinct comments and exact PDF ───
+    [mobile] › e2e\module-final.spec.ts:16:27 › micro TMT only: distinct comments and exact PDF ────
+  104 passed (7.3m)

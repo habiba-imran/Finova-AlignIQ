@@ -1,0 +1,16 @@
+[
+  {
+    "module": "micro",
+    "pages": 2,
+    "scope_visible": true,
+    "observation_wording_preserved": true,
+    "attachments_exact": true
+  },
+  {
+    "module": "nano",
+    "pages": 2,
+    "scope_visible": true,
+    "observation_wording_preserved": true,
+    "attachments_exact": true
+  }
+]

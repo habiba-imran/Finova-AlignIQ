@@ -1,0 +1,9 @@
+
+ RUN  v4.1.12 C:/Finova AlignIQ/frontend
+
+
+ Test Files  4 passed (4)
+      Tests  44 passed (44)
+   Start at  12:32:38
+   Duration  37.39s (transform 2.44s, setup 3.26s, import 5.66s, tests 11.10s, environment 49.97s)
+

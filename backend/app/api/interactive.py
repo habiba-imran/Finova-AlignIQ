@@ -10,7 +10,7 @@ router = APIRouter()
 def interactive_capabilities():
     # Public contract identification only: no keys, environment, raw input,
     # development-route switches or clinical authority are exposed.
-    return {"report_format": "MODULE_SPECIFIC_V1", "revision": "tmt-reviews-2026-11-15-v2",
+    return {"report_format": "MODULE_SPECIFIC_V1", "analytical_report_format": "ANALYTICAL_V1", "revision": "analytical-reviews-2026-11-15-v1",
         "modules": ["macro", "micro", "nano"], "supplied_review_details": True, "clinical_analysis_enabled": False}
 
 

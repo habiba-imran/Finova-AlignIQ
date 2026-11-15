@@ -4,6 +4,7 @@ import { mkdirSync } from 'node:fs'
 import { resolve } from 'node:path'
 import samples from '../../examples/interactive-synthetic-tmts.json' with { type: 'json' }
 import { buildPdfPresentation } from '../src/pdf/presentation'
+import { commentParagraphs, moduleReviewPresentation } from '../src/reviewPresentation'
 
 const sample = samples.find(row => row.id === 'large')!
 const cases = [
@@ -26,25 +27,28 @@ for (const item of cases) test(`${item.module} ${item.supplied ? 'supplied' : 'T
   await page.getByRole('button', { name: item.action, exact: true }).click()
   const response = await pendingReport, report = await response.json()
   expect(response.status()).toBe(200)
-  expect(report.report_format).toBe('MODULE_SPECIFIC_V1')
+  expect(report.report_format).toBe('ANALYTICAL_V1')
   expect(report.parsed.measurements).toEqual(parsed.measurements)
   expect(report.engine_review.evaluations).toHaveLength(96)
   expect(report.illustrations).toEqual([])
   const article = page.getByRole('article', { name: 'Generated synthetic report' })
   await expect(article).toBeVisible()
   if (item.module !== 'macro') {
-    expect(report.sections).toHaveLength(4)
+    expect(report.sections).toHaveLength(item.module === 'micro' ? 4 : 5)
     const comments = article.getByRole('region', { name: 'Module review comments' })
-    for (const section of report.sections) await expect(comments.getByText(section.text, { exact: true })).toBeVisible()
-    expect(report.sections.at(-1).status).toBe('UNAVAILABLE')
+    for (const section of moduleReviewPresentation(report).sections) for (const paragraph of commentParagraphs(section.text)) await expect(comments.getByText(paragraph, { exact: true }).first()).toBeVisible()
+    await expect(comments.getByRole('heading', { level: 6 })).toHaveCount(report.sections.length)
+    await expect(article.getByLabel('Report scope')).toHaveCount(0)
+    await expect(article).not.toContainText('Not prescribed')
+    expect(report.sections.at(-1).status).toBe(item.module === 'micro' ? 'UNAVAILABLE' : 'SOURCE_REPORTED')
     expect(report.sections[0].status).toBe('SOURCE_REPORTED')
     await expect(comments).not.toContainText('because no')
     await expect(comments).not.toContainText('Information needed:')
-    await expect(comments).toContainText(item.module === 'micro' ? '0.1250' : '1.2300')
+    await expect(comments).toContainText(item.module === 'micro' ? '15.1250' : '1.2300')
   }
-  expect(await article.innerText()).not.toMatch(/Groq|provider|Illustrative|fictional demonstration group/i)
+  expect(await article.innerText()).not.toMatch(/Groq|provider|fictional demonstration group/i)
   const presentation = buildPdfPresentation('interactive', report)
-  for (const section of report.sections) expect(presentation.blocks.some(block => block.type === 'text' && block.text === section.text)).toBe(true)
+  for (const section of moduleReviewPresentation(report).sections) for (const paragraph of commentParagraphs(section.text)) expect(presentation.blocks.some(block => block.type === 'text' && block.text === paragraph)).toBe(true)
   let exportRequests = 0
   page.on('request', request => { if (request.url().includes('/api/')) exportRequests++ })
   const pendingDownload = page.waitForEvent('download')
@@ -53,7 +57,7 @@ for (const item of cases) test(`${item.module} ${item.supplied ? 'supplied' : 'T
   const filename = `${item.module}-${item.supplied ? 'supplied' : 'tmt-only'}.pdf`
   await download.saveAs(testInfo.outputPath(filename))
   if (testInfo.project.name === 'desktop') {
-    const output = resolve(process.cwd(), '../evidence/module-final/pdfs')
+    const output = resolve(process.cwd(), '../evidence/analysis-pipeline/regression-pdfs')
     mkdirSync(output, { recursive: true }); await download.saveAs(resolve(output, filename))
   }
   const stream = await download.createReadStream(), chunks: Buffer[] = []

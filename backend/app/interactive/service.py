@@ -1,14 +1,14 @@
-"""Descriptive review without promoting source claims to clinical authority.
+"""Analytical synthetic reports and separate supplied-record reviews.
 
-Macro uses minimized movement records; Micro/Nano use purpose-specific supplied
-records and explicit unavailable findings. Complete facts are inserted locally
-after validation, without promoting supplied details to clinical decisions.
+Deterministic cross-tooth findings precede bounded provider wording. Complete
+facts and provenance remain local; source claims never grant clinical authority.
 """
 import json
 
 from app.interactive.models import InteractiveReport, ToothObservation
 from app.interactive.module_reports import module_sections, validate_details
-from app.interactive.narrative import planning_wording
+from app.interactive.analysis import analyze
+from app.interactive.analytical_wording import analytical_wording
 from app.parser.receipts import resolve
 from app.reports.groq_client import GroqClient
 from app.reports.models import GenerationInfo, WordingBatch
@@ -98,12 +98,15 @@ def generate_interactive(submission, *, settings=None, client=None):
         raise ValueError("PARSE_REQUIRED")
     review = review_table(submission)
     validate_details(parsed, submission)
-    sections = []
-    if submission.module == "macro":
-        narratives, generation = planning_wording(parsed, module=submission.module, settings=settings, client=client)
-    else:
+    has_details = any((submission.review_details.attachments, submission.review_details.stages,
+                       submission.review_details.allocations, submission.review_details.anchorage_notes))
+    findings = []
+    if has_details:
         sections, generation = module_sections(parsed, submission, settings=settings, client=client)
-        narratives = None
+    else:
+        sections, findings = analyze(parsed, submission.module)
+        sections, generation = analytical_wording(parsed, submission.module, sections, findings, settings=settings, client=client)
+    narratives = None
     phrases = {ref: options[0] for ref, options in WORDINGS.items()}
     observations, illustrations = [], []
     by_tooth = {}
@@ -123,10 +126,15 @@ def generate_interactive(submission, *, settings=None, client=None):
     notice = "AI-assisted report wording." if generation.used_mode == "GROQ_AI" else "Standard report wording."
     limitations = list(LIMITATIONS)
     if parsed.status == "PARTIAL":
-        limitations.insert(0, "This table was partially parsed. Unresolved content remains in the original input and is not interpreted; inspect the marked table before using these observations.")
+        unresolved = any(i.severity == "ERROR" for i in parsed.issues) or any(
+            m.field_status == "AMBIGUOUS" or m.numeric_status not in {"PARSED", "EXPLICIT_ZERO", "MISSING", "NOT_PRESENT"}
+            for m in parsed.measurements)
+        limitations.insert(0, "Some entries could not be parsed reliably. Unresolved values remain unknown; inspect the marked source table."
+            if unresolved else "Available values were parsed successfully. Missing positions and unrecognized fields remain explicit; partial coverage is not a numerical parsing error.")
     body = dict(module=submission.module, parsed=parsed, engine_review=review, generation=generation,
         wording_notice=notice, summary=summary, observations=observations, illustrations=illustrations, limitations=limitations,
-        report_format="MODULE_SPECIFIC_V1", sections=sections, review_details=submission.review_details)
+        report_format="MODULE_SPECIFIC_V1" if has_details else "ANALYTICAL_V1", analytical_findings=findings,
+        sections=sections, review_details=submission.review_details)
     report_id = digest_json({k: v.model_dump(mode="json") if hasattr(v, "model_dump") else
         [x.model_dump(mode="json") if hasattr(x, "model_dump") else x for x in v] if isinstance(v, list) else v for k, v in body.items()})
     lines = ["FINOVA ALIGNIQ", f"{submission.module.upper()} — Generated synthetic review", "Synthetic demonstration — not for clinical use", "", notice, summary,
@@ -137,11 +145,12 @@ def generate_interactive(submission, *, settings=None, client=None):
             lines += ["", section.title.upper(), f"Status: {section.status}", section.text]
             if section.missing_fields:
                 lines += ["Information needed: " + "; ".join(section.missing_fields)]
-        lines += ["", "SOURCE MOVEMENT VALUES — NOT ATTACHMENT OR STAGE DECISIONS"]
+        # Complete cells are already retained once in SOURCE AND PROVENANCE.
     else:
         lines += ["TOOTH-WISE MOVEMENT COMMENTS"]
-    for o in observations:
-        lines += ["", f"Tooth token {quoted(o.original_tooth)}", o.text]
+    if not sections:
+        for o in observations:
+            lines += ["", f"Tooth {o.original_tooth.strip()}", o.text]
     lines += ["", "LIMITATIONS", *limitations, "", "SOURCE AND PROVENANCE", f"Report ID: {report_id}", f"Input SHA-256: {parsed.raw_sha256}",
         f"Parser: {parsed.parser_version}; engine: {review.engine_version}; rules: {review.rule_set_version}",
         f"Wording: {generation.used_mode}; status: {generation.reason}; provider attempts: {generation.attempts}"]
@@ -151,6 +160,8 @@ def generate_interactive(submission, *, settings=None, client=None):
             lines += [f"{m.id}; tooth_ref {o.tooth_ref}; {location}; {m.numeric_status}; raw sign {quoted(m.raw_sign)}; raw direction {quoted(m.raw_direction)}; magnitude {m.magnitude_decimal}", cell_text(m)]
     lines += ["", "RULE EVALUATION LEDGER — CLINICAL AUTHORITY UNCHANGED"]
     lines += [f"{e.rule_id} v{e.version}: {e.status}; execution {e.execution}; approval {e.approval_status}" for e in review.evaluations]
+    if findings:
+        lines += ["", "ANALYTICAL FINDING PROVENANCE", json.dumps([f.model_dump(mode="json") for f in findings], ensure_ascii=False, indent=2)]
     lines += ["", "SUPPLIED REVIEW DETAILS — UNVERIFIED", submission.review_details.model_dump_json(indent=2),
         "", "ORIGINAL INPUT — VERBATIM", parsed.raw_text, "", "Synthetic demonstration — not for clinical use"]
     return InteractiveReport(report_id=report_id, export_text="\n".join(lines) + "\n", **body)

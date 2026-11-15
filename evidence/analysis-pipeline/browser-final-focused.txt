@@ -1,0 +1,33 @@
+
+> finova-aligniq-frontend@0.0.0 test:e2e
+> playwright test e2e/analysis-pipeline.spec.ts e2e/module-final.spec.ts --config=playwright.audit.config.ts --project=desktop --project=mobile
+
+[WebServer] INFO:     Started server process [23380]
+[WebServer] INFO:     Waiting for application startup.
+[WebServer] INFO:     Application startup complete.
+[WebServer] INFO:     Uvicorn running on http://127.0.0.1:8019 (Press CTRL+C to quit)
+[WebServer] (node:31224) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:15580) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 12 tests using 1 worker
+
+(node:31148) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 [desktop] › e2e\analysis-pipeline.spec.ts:14:29 › macro: 15-tooth analytical UI, Copy, TXT, PDF and cache agree (9.9s)
+  ok  2 [desktop] › e2e\analysis-pipeline.spec.ts:14:29 › micro: 15-tooth analytical UI, Copy, TXT, PDF and cache agree (6.1s)
+  ok  3 [desktop] › e2e\analysis-pipeline.spec.ts:14:29 › nano: 15-tooth analytical UI, Copy, TXT, PDF and cache agree (7.0s)
+  ok  4 [desktop] › e2e\module-final.spec.ts:16:27 › macro TMT only: distinct comments and exact PDF (5.6s)
+  ok  5 [desktop] › e2e\module-final.spec.ts:16:27 › micro TMT only: distinct comments and exact PDF (6.1s)
+  ok  6 [desktop] › e2e\module-final.spec.ts:16:27 › nano TMT only: distinct comments and exact PDF (6.8s)
+(node:24944) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  7 [mobile] › e2e\analysis-pipeline.spec.ts:14:29 › macro: 15-tooth analytical UI, Copy, TXT, PDF and cache agree (6.7s)
+  ok  8 [mobile] › e2e\analysis-pipeline.spec.ts:14:29 › micro: 15-tooth analytical UI, Copy, TXT, PDF and cache agree (5.6s)
+  ok  9 [mobile] › e2e\analysis-pipeline.spec.ts:14:29 › nano: 15-tooth analytical UI, Copy, TXT, PDF and cache agree (6.7s)
+  ok 10 [mobile] › e2e\module-final.spec.ts:16:27 › macro TMT only: distinct comments and exact PDF (4.7s)
+  ok 11 [mobile] › e2e\module-final.spec.ts:16:27 › micro TMT only: distinct comments and exact PDF (5.4s)
+  ok 12 [mobile] › e2e\module-final.spec.ts:16:27 › nano TMT only: distinct comments and exact PDF (6.4s)
+
+  12 passed (1.6m)

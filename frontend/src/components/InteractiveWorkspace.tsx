@@ -4,6 +4,7 @@ import { emptyReviewDetails, requestInteractiveReview, sectionStatusLabel } from
 import type { DemoModule, InteractiveReport, ReviewDetails } from '../api/interactive'
 import type { AutomaticParseResult, ContextClaims, ParseResult } from '../api/parse'
 import PdfExportButton from './PdfExportButton'
+import { commentParagraphs, moduleReviewPresentation } from '../reviewPresentation'
 
 const TITLES = { macro: 'Planning', micro: 'Attachment', nano: 'Sequencing' }
 const ACTIONS = { macro: 'Run Planning Assistant', micro: 'Run Attachment Review', nano: 'Run Sequencing Review' }
@@ -43,6 +44,7 @@ export default function InteractiveWorkspace({ module, rawText, context, parsed,
   useEffect(() => { if (report) { onComplete(true); heading.current?.focus(); heading.current?.scrollIntoView?.({ block: 'start', behavior: 'instant' }) } }, [report])
   useEffect(() => { if (error) errorHeading.current?.focus() }, [error])
   const supported = !['INVALID', 'UNSUPPORTED'].includes(parsed.status) && parsed.measurements.length > 0
+  const presentation = report ? moduleReviewPresentation(report) : null
   async function run() {
     if (pending.current || !supported) return
     const current = ++revision.current, controller = new AbortController()
@@ -140,22 +142,23 @@ export default function InteractiveWorkspace({ module, rawText, context, parsed,
           </div>
         )}
         {!!report.sections?.length && <section aria-label="Module review comments" className="mt-6 space-y-4">
-          <h5 className="text-base font-semibold">{module === 'micro' ? 'Attachment review comments' : 'Sequencing review comments'}</h5>
-          {report.sections.map(section => <div key={section.section_id} className="comment-card">
+          <h5 className="text-base font-semibold">{module === 'macro' ? 'Planning comments' : module === 'micro' ? 'Attachment review comments' : 'Sequencing review comments'}</h5>
+          {presentation?.sections.map(section => <div key={section.section_id} className="comment-card">
             <div className="flex flex-wrap items-center justify-between gap-2"><h6 className="text-base font-semibold">{section.title}</h6><span className="rounded-md bg-canvas px-2 py-1 text-xs text-muted">{sectionStatusLabel(section)}</span></div>
-            <p className="mt-2 whitespace-pre-wrap text-sm leading-7 [overflow-wrap:anywhere]">{section.text}</p>
+            <div className="mt-3 space-y-3 text-sm leading-7 [overflow-wrap:anywhere]">{commentParagraphs(section.text).map((paragraph, index) => <p key={index} className="whitespace-pre-wrap">{paragraph}</p>)}</div>
             {!!section.missing_fields.length && <p className="mt-3 text-xs leading-6 text-notice-ink"><strong>Information needed:</strong> {section.missing_fields.join('; ')}.</p>}
           </div>)}
         </section>}
-        {report.sections?.length ? <details className="mt-5 text-sm text-muted"><summary className="cursor-pointer font-medium">Source movement values</summary><ul className="mt-3 space-y-3">{report.observations.map(o => <li key={o.tooth_ref}><strong>Tooth token {o.original_tooth}</strong><ul className="mt-1 text-xs leading-6">{o.measurements.map(m => <li key={m.id}>{m.raw_label.trim()}: {m.raw_value ?? 'Missing'}</li>)}</ul></li>)}</ul></details> : <section aria-label="Factual tooth-wise observations" className="mt-6">
+        {report.sections?.length ? <details className="mt-5 text-sm text-muted"><summary className="cursor-pointer font-medium">Source movement values</summary><ul className="mt-3 space-y-3">{report.observations.map(o => <li key={o.tooth_ref}><strong>Tooth {o.original_tooth.trim()}</strong><ul className="mt-1 text-xs leading-6">{o.measurements.map(m => <li key={m.id}>{m.raw_label.trim()}: {m.raw_value ?? 'Missing'}</li>)}</ul></li>)}</ul></details> : <section aria-label="Factual tooth-wise observations" className="mt-6">
           <h5 className="text-base font-semibold">{module === 'macro' ? 'Planning comments' : module === 'micro' ? 'Attachment review comments' : 'Sequencing review comments'}</h5>
           <p className="mt-1 text-xs leading-6 text-muted">Programmed movements only. Missing values remain unknown; direction labels are preserved as supplied.</p>
           <ul className="mt-4 space-y-3">{report.observations.map(o => <li key={o.tooth_ref} className="comment-card">
-            <h6 className="font-semibold">Tooth token {o.original_tooth}</h6><p className="mt-2 whitespace-pre-wrap text-sm leading-7 [overflow-wrap:anywhere]">{o.text}</p>
+            <h6 className="font-semibold">Tooth {o.original_tooth.trim()}</h6><p className="mt-2 whitespace-pre-wrap text-sm leading-7 [overflow-wrap:anywhere]">{o.text}</p>
             <details className="mt-3 text-xs leading-6 text-muted"><summary className="cursor-pointer font-medium">Source values</summary><ul className="mt-2 space-y-1">{o.measurements.map(m => <li key={m.id}>{m.raw_label.trim()}: {m.raw_value ?? 'Missing'}</li>)}</ul></details>
           </li>)}</ul>
         </section>}
-        <p className="mt-5 text-xs leading-6 text-muted">Source conventions and anatomy remain unverified. No clinical suitability, attachment indication, stage schedule or anchorage prescription is established. Complete exports retain source values and provenance.</p>
+        {presentation?.scope ? <aside aria-label="Report scope" className="mt-5 border-t border-line pt-4 text-xs leading-6 text-muted"><strong className="font-semibold">Report scope. </strong>{presentation.scope} Source conventions and anatomy remain unverified. Complete exports retain source values and provenance.</aside>
+          : <p className="mt-5 text-xs leading-6 text-muted">Source conventions and anatomy remain unverified. No clinical suitability, attachment indication, stage schedule or anchorage prescription is established. Complete exports retain source values and provenance.</p>}
       </article>}
     </div>
   </section>
