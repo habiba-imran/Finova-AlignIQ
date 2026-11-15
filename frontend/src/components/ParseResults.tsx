@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Braces, ChevronDown } from 'lucide-react'
 import type { Measurement, ParseResult } from '../api/parse'
+import { missingValuesParseLabel } from '../api/parse'
 
 const titles = { PARSED_UNVERIFIED: 'Structure parsed · semantics unverified', PARTIAL: 'Partial lexical parse', UNSUPPORTED: 'Unsupported layout', INVALID: 'Invalid structure' }
 const humanize = (value: string) => value.replaceAll('_', ' ').toLowerCase()
@@ -30,7 +31,7 @@ export default function ParseResults({ result }: { result: ParseResult }) {
   return <section aria-labelledby="structured-heading" className="panel motion-enter mt-4">
     <div className="panel-heading">
       <div className="flex min-w-0 items-center gap-2.5"><Braces size={17} className="shrink-0 text-brand" aria-hidden="true" /><h3 id="structured-heading" className="panel-title">Structured lexical preview</h3></div>
-      <span className="report-badge">{titles[result.status]}</span>
+      <span className="report-badge">{missingValuesParseLabel(result) ?? titles[result.status]}</span>
     </div>
     <div className="p-5 sm:p-6">
       <div className="rounded-xl border border-notice-line bg-notice p-4 text-sm leading-6 text-notice-ink">

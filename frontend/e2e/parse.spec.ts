@@ -46,7 +46,7 @@ test('synthetic demo parses without claiming vendor verification and clears with
   await page.getByRole('button', { name: 'Load synthetic example' }).click()
   await expect(page.getByRole('button', { name: 'Parse Table', exact: true })).toBeEnabled()
   await page.getByRole('button', { name: 'Parse Table', exact: true }).click()
-  await expect(page.getByText('Partial lexical parse')).toBeVisible()
+  await expect(page.getByRole('heading', { name: /Successfully parsed with [0-9]+ missing values?/ })).toBeVisible()
   await expect(page.getByRole('button', { name: 'Analyze', exact: true })).toBeDisabled()
   await expect(page.getByRole('heading', { name: 'Parsing warnings and errors' })).toBeVisible()
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)

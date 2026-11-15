@@ -1,0 +1,50 @@
+[
+  {
+    "file": "macro-desktop.pdf",
+    "pages": 3,
+    "sections": 5,
+    "exact_attachments": true,
+    "all_visible_findings": true,
+    "positions": 105
+  },
+  {
+    "file": "macro-mobile.pdf",
+    "pages": 3,
+    "sections": 5,
+    "exact_attachments": true,
+    "all_visible_findings": true,
+    "positions": 105
+  },
+  {
+    "file": "micro-desktop.pdf",
+    "pages": 2,
+    "sections": 4,
+    "exact_attachments": true,
+    "all_visible_findings": true,
+    "positions": 105
+  },
+  {
+    "file": "micro-mobile.pdf",
+    "pages": 2,
+    "sections": 4,
+    "exact_attachments": true,
+    "all_visible_findings": true,
+    "positions": 105
+  },
+  {
+    "file": "nano-desktop.pdf",
+    "pages": 3,
+    "sections": 5,
+    "exact_attachments": true,
+    "all_visible_findings": true,
+    "positions": 105
+  },
+  {
+    "file": "nano-mobile.pdf",
+    "pages": 3,
+    "sections": 5,
+    "exact_attachments": true,
+    "all_visible_findings": true,
+    "positions": 105
+  }
+]

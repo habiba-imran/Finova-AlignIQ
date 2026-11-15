@@ -20,6 +20,7 @@ for (const item of modules) test(`${item.module}: 15-tooth analytical UI, Copy, 
   await page.getByRole('textbox', { name: 'Raw TMT text' }).fill(raw)
   await page.getByRole('button', { name: 'Parse Table', exact: true }).click()
   await expect(page.getByRole('region', { name: 'Structured TMT table' })).toBeVisible()
+  await expect(page.getByRole('heading', { name: 'Successfully parsed with 2 missing values', exact: true })).toBeVisible()
   const pending = page.waitForResponse(r => r.url().endsWith('/api/v1/interactive/review'))
   await page.getByRole('button', { name: item.action, exact: true }).click()
   const report = await (await pending).json()
@@ -29,11 +30,27 @@ for (const item of modules) test(`${item.module}: 15-tooth analytical UI, Copy, 
   expect(report.parsed.measurements.filter((m: { numeric_status: string }) => ['PARSED', 'EXPLICIT_ZERO'].includes(m.numeric_status))).toHaveLength(103)
   const article = page.getByRole('article')
   await expect(article.getByRole('heading', { name: item.first, exact: true })).toBeVisible()
-  await expect(article).toContainText('All available movement values were parsed successfully')
+  await expect(article).toContainText('Successfully parsed with 2 missing values')
+  await expect(article).not.toContainText('Marked as partial because')
+  await expect(article).not.toContainText('0.40–0.40 mm')
+  if (item.module === 'nano') {
+    const measurements = new Map(report.parsed.measurements.map((m: { id: string; recognized_label: string; tooth_ref: string }) => [m.id, m]))
+    const tokens = new Map(report.parsed.teeth.map((t: { id: string; token: string }) => [t.id, t.token]))
+    const selected = report.analytical_findings.filter((f: { kind: string; selected_refs: string[] }) => f.kind === 'CONCENTRATION'
+      && (measurements.get(f.selected_refs[0]) as { recognized_label: string }).recognized_label === 'buccolingual')
+      .flatMap((f: { selected_refs: string[] }) => f.selected_refs.map(ref => tokens.get((measurements.get(ref) as { tooth_ref: string }).tooth_ref)))
+    expect(selected.sort()).toEqual(['11', '12', '13', '21', '22', '24', '26'])
+    expect(new Set(selected).size).toBe(7)
+    await expect(article).toContainText('Tooth 24 in upper-arch posterior, L source label, 0.40 mm')
+  }
   for (const section of report.sections) {
     const card = article.locator('.comment-card').filter({ has: page.getByRole('heading', { name: section.title, exact: true }) })
     for (const paragraph of commentParagraphs(section.text)) await expect(card.getByText(paragraph, { exact: true }).first()).toBeVisible()
   }
+  const source = article.locator('details').filter({ has: page.getByText('Source movement values', { exact: true }) })
+  await source.locator('summary').click()
+  await expect(source.locator('li li')).toHaveCount(105)
+  await source.locator('summary').click()
   const requests: string[] = []
   page.on('request', request => { if (request.url().includes('/api/')) requests.push(request.url()) })
   await article.getByRole('button', { name: 'Copy', exact: true }).click()
@@ -46,7 +63,7 @@ for (const item of modules) test(`${item.module}: 15-tooth analytical UI, Copy, 
   const pdfPending = page.waitForEvent('download')
   await article.getByRole('button', { name: 'Export PDF', exact: true }).click()
   const download = await pdfPending
-  const folder = resolve(process.cwd(), '../evidence/analysis-pipeline/pdfs')
+  const folder = resolve(process.cwd(), '../evidence/final-analysis-qa/pdfs')
   mkdirSync(folder, { recursive: true })
   await download.saveAs(resolve(folder, `${item.module}-${testInfo.project.name}.pdf`))
   const stream = await download.createReadStream(), chunks: Buffer[] = []

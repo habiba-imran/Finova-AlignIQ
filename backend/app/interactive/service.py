@@ -121,16 +121,17 @@ def generate_interactive(submission, *, settings=None, client=None):
     numeric = sum(m.numeric_status in {"PARSED", "EXPLICIT_ZERO"} for m in parsed.measurements)
     missing = sum(m.numeric_status in {"MISSING", "NOT_PRESENT"} for m in parsed.measurements)
     other = len(parsed.measurements) - numeric - missing
+    unresolved = any(i.severity == "ERROR" for i in parsed.issues) or any(
+        m.field_status == "AMBIGUOUS" or m.numeric_status not in {"PARSED", "EXPLICIT_ZERO", "MISSING", "NOT_PRESENT"}
+        for m in parsed.measurements)
+    parse_note = f"Successfully parsed with {missing} missing value{'s' if missing != 1 else ''}." if not unresolved and all(m.recognized_label for m in parsed.measurements) else "Review the marked source entries for parsing limitations."
     lead = {"macro": "Programmed movement profile.", "micro": "TMT-based attachment review: rotation, angulation and inclination observations.", "nano": "TMT-based sequencing review: movement context, translations and vertical movements."}[submission.module]
-    summary = f"{lead} {len(observations)} tooth tokens; {len(parsed.measurements)} measurement positions; {numeric} recorded numerical values; {missing} missing or omitted; {other} invalid or ambiguous."
+    summary = f"{lead} {parse_note} {len(observations)} teeth; {len(parsed.measurements)} measurement positions; {numeric} recorded numerical values; {missing} missing or omitted; {other} invalid or ambiguous."
     notice = "AI-assisted report wording." if generation.used_mode == "GROQ_AI" else "Standard report wording."
     limitations = list(LIMITATIONS)
     if parsed.status == "PARTIAL":
-        unresolved = any(i.severity == "ERROR" for i in parsed.issues) or any(
-            m.field_status == "AMBIGUOUS" or m.numeric_status not in {"PARSED", "EXPLICIT_ZERO", "MISSING", "NOT_PRESENT"}
-            for m in parsed.measurements)
         limitations.insert(0, "Some entries could not be parsed reliably. Unresolved values remain unknown; inspect the marked source table."
-            if unresolved else "Available values were parsed successfully. Missing positions and unrecognized fields remain explicit; partial coverage is not a numerical parsing error.")
+            if unresolved else parse_note + " Missing values remain unknown, not zero.")
     body = dict(module=submission.module, parsed=parsed, engine_review=review, generation=generation,
         wording_notice=notice, summary=summary, observations=observations, illustrations=illustrations, limitations=limitations,
         report_format="MODULE_SPECIFIC_V1" if has_details else "ANALYTICAL_V1", analytical_findings=findings,

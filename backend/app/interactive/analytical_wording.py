@@ -19,7 +19,7 @@ MAX_PROMPT_BYTES = 24_000
 
 
 def analytical_wording(parsed, module, sections, findings, *, settings=None, client=None):
-    logger.info("analysis_ai_requested module=%s", module)
+    logger.info("analysis_ai_requested module=%s requested=True", module)
     reason, attempts, accepted = "GROQ_NOT_CONFIGURED", 0, 0
     chosen = sections
     try:
@@ -71,18 +71,19 @@ def analytical_wording(parsed, module, sections, findings, *, settings=None, cli
                 reason = "GROQ_PROMPT_LIMIT"
             else:
                 config = settings.model_copy(update={"max_retries": 0, "max_completion_tokens": min(settings.max_completion_tokens, max(1024, len(findings)*24))})
+                logger.info("analysis_groq_attempt module=%s requested=True attempted=True", module)
                 result = (client or GroqClient(config)).generate(messages, response_schema=schema)
                 attempts, reason = result.attempts, result.code
-                logger.info("analysis_groq_result module=%s contacted=%s response_received=%s code=%s attempts=%d",
-                    module, attempts > 0, result.content is not None, reason, attempts)
+                logger.info("analysis_groq_result module=%s contacted=%s provider_responded=%s http_status=%s response_received=%s code=%s attempts=%d",
+                    module, attempts > 0, result.http_status is not None, result.http_status, result.content is not None, reason, attempts)
                 if result.content is not None:
                     validated = validate_analytical(result.content, sections, findings)
                     if validated is None:
                         reason = "GROQ_UNSUPPORTED_WORDING"
                     else:
                         chosen, accepted, reason = validated, len(sections), "GROQ_VALIDATED"
-    logger.info("analysis_wording_complete module=%s contacted=%s validated=%s fallback=%s code=%s attempts=%d",
-        module, attempts > 0, bool(accepted), not bool(accepted), reason, attempts)
+    logger.info("analysis_wording_complete module=%s requested=True attempted=%s contacted=%s succeeded=%s validated=%s fallback=%s code=%s attempts=%d",
+        module, attempts > 0, attempts > 0, bool(accepted), bool(accepted), not bool(accepted), reason, attempts)
     return chosen, AnalyticalGenerationInfo(requested_mode="AUTO", used_mode="GROQ_AI" if accepted else "STANDARD_TEMPLATES",
         reason=reason, attempts=attempts, provider="GROQ" if attempts else None,
         model="openai/gpt-oss-120b" if attempts else None, eligible_wording_findings=len(sections), accepted_comments=accepted)

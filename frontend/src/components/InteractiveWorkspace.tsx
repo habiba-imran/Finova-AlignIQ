@@ -19,7 +19,7 @@ function partialParseExplanation(parsed: ParseResult): string {
 
   if (missingCount > 0 && unrecognizedLabels.length === 0) {
     const cols = missingLabels.length > 0 ? ` in ${missingLabels.slice(0, 3).join(', ')}${missingLabels.length > 3 ? '…' : ''}` : ''
-    return `All available movement values were parsed successfully. Marked as partial because ${missingCount} cell${missingCount === 1 ? ' contains an' : 's contain'} omitted or missing value (e.g. "—")${cols}. Rather than guessing or assuming missing values are zero, Finova retains them as unknown.`
+    return `Successfully parsed with ${missingCount} missing value${missingCount === 1 ? '' : 's'}${cols}. Missing values remain unknown, not zero.`
   }
 
   if (unrecognizedLabels.length > 0 && missingCount === 0) {
@@ -45,6 +45,7 @@ export default function InteractiveWorkspace({ module, rawText, context, parsed,
   useEffect(() => { if (error) errorHeading.current?.focus() }, [error])
   const supported = !['INVALID', 'UNSUPPORTED'].includes(parsed.status) && parsed.measurements.length > 0
   const presentation = report ? moduleReviewPresentation(report) : null
+  const sourceRows = report?.observations.filter(o => o.measurements.length > 0) ?? []
   async function run() {
     if (pending.current || !supported) return
     const current = ++revision.current, controller = new AbortController()
@@ -149,12 +150,12 @@ export default function InteractiveWorkspace({ module, rawText, context, parsed,
             {!!section.missing_fields.length && <p className="mt-3 text-xs leading-6 text-notice-ink"><strong>Information needed:</strong> {section.missing_fields.join('; ')}.</p>}
           </div>)}
         </section>}
-        {report.sections?.length ? <details className="mt-5 text-sm text-muted"><summary className="cursor-pointer font-medium">Source movement values</summary><ul className="mt-3 space-y-3">{report.observations.map(o => <li key={o.tooth_ref}><strong>Tooth {o.original_tooth.trim()}</strong><ul className="mt-1 text-xs leading-6">{o.measurements.map(m => <li key={m.id}>{m.raw_label.trim()}: {m.raw_value ?? 'Missing'}</li>)}</ul></li>)}</ul></details> : <section aria-label="Factual tooth-wise observations" className="mt-6">
+        {report.sections?.length ? (!!sourceRows.length && <details className="mt-5 text-sm text-muted"><summary className="cursor-pointer font-medium">Source movement values</summary><ul className="mt-3 space-y-3">{sourceRows.map(o => <li key={o.tooth_ref}><strong>Tooth {o.original_tooth.trim()}</strong><ul className="mt-1 text-xs leading-6">{o.measurements.map(m => <li key={m.id}>{m.raw_label.trim()}: {m.raw_value ?? 'Missing'}</li>)}</ul></li>)}</ul></details>) : <section aria-label="Factual tooth-wise observations" className="mt-6">
           <h5 className="text-base font-semibold">{module === 'macro' ? 'Planning comments' : module === 'micro' ? 'Attachment review comments' : 'Sequencing review comments'}</h5>
           <p className="mt-1 text-xs leading-6 text-muted">Programmed movements only. Missing values remain unknown; direction labels are preserved as supplied.</p>
           <ul className="mt-4 space-y-3">{report.observations.map(o => <li key={o.tooth_ref} className="comment-card">
             <h6 className="font-semibold">Tooth {o.original_tooth.trim()}</h6><p className="mt-2 whitespace-pre-wrap text-sm leading-7 [overflow-wrap:anywhere]">{o.text}</p>
-            <details className="mt-3 text-xs leading-6 text-muted"><summary className="cursor-pointer font-medium">Source values</summary><ul className="mt-2 space-y-1">{o.measurements.map(m => <li key={m.id}>{m.raw_label.trim()}: {m.raw_value ?? 'Missing'}</li>)}</ul></details>
+            {!!o.measurements.length && <details className="mt-3 text-xs leading-6 text-muted"><summary className="cursor-pointer font-medium">Source values</summary><ul className="mt-2 space-y-1">{o.measurements.map(m => <li key={m.id}>{m.raw_label.trim()}: {m.raw_value ?? 'Missing'}</li>)}</ul></details>}
           </li>)}</ul>
         </section>}
         {presentation?.scope ? <aside aria-label="Report scope" className="mt-5 border-t border-line pt-4 text-xs leading-6 text-muted"><strong className="font-semibold">Report scope. </strong>{presentation.scope} Source conventions and anatomy remain unverified. Complete exports retain source values and provenance.</aside>

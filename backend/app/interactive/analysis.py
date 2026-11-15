@@ -25,6 +25,11 @@ SECTION_TITLES = {
 }
 
 
+def magnitude_range(low, high, unit="mm"):
+    """Display a single source magnitude once; comparison precision is unchanged."""
+    return f"{low} {unit}" if low == high else f"{low}–{high} {unit}"
+
+
 class Analysis:
     def __init__(self, parsed):
         self.parsed = parsed
@@ -71,7 +76,8 @@ class Analysis:
                     continue
                 self.add(section, "ABSENT_FIELD", f"No {label} field was supplied; comparisons for this field are unavailable.")
             elif unavailable:
-                self.add(section, "INCOMPLETE_COMPARISON", f"{self.tokens(unavailable)}: {label} unavailable in {len(unavailable)} positions (missing, ambiguous, invalid or unit unknown). Rankings use available comparable entries only; unknown is not zero.", cells, unavailable)
+                reasons = sorted({"ambiguous" if m.field_status == "AMBIGUOUS" else "unit unknown" if m.numeric_status in {"PARSED", "EXPLICIT_ZERO"} else m.numeric_status.lower().replace("not_present", "omitted") for m in unavailable})
+                self.add(section, "INCOMPLETE_COMPARISON", f"{self.tokens(unavailable)}: {label} unavailable in {len(unavailable)} position{'s' if len(unavailable) != 1 else ''} ({', '.join(reasons)}). Unknown values are excluded from comparisons.", cells, unavailable)
 
     def compare(self, section, families, distributions=True):
         for family in families:
@@ -90,12 +96,12 @@ class Analysis:
             if distributions:
                 labels = Counter(m.raw_direction or "unlabelled" for m in cells)
                 counts = "; ".join(f"{key}: {count}" for key, count in sorted(labels.items()))
-                self.add(section, "DIRECTION_DISTRIBUTION", f"{label.capitalize()} source-label distribution: {counts}. Labels are retained without inferring anatomical direction.", cells, cells)
+                self.add(section, "DIRECTION_DISTRIBUTION", f"{label.capitalize()} source-label distribution: {counts}.", cells, cells)
             low = min(m.magnitude_decimal for m in cells)
             if low != high:
                 lows = [m for m in cells if m.magnitude_decimal == low]
                 # A range compares magnitudes; never subtract signed movements.
-                self.add(section, "RANGE", f"{label.capitalize()} magnitude range: {low}–{high} {'°' if family in ANGULAR else 'mm'}; smallest at {self.tokens(lows).lower()}.", cells, lows + winners)
+                self.add(section, "RANGE", f"{label.capitalize()} magnitude range: {magnitude_range(low, high, '°' if family in ANGULAR else 'mm')}; smallest at {self.tokens(lows).lower()}.", cells, lows + winners)
         self.coverage(section, families)
 
     def repeated(self, section, families):
@@ -141,9 +147,11 @@ class Analysis:
             groups = defaultdict(list)
             for m in selected:
                 groups[(self.token_group(self.teeth[m.tooth_ref]), m.raw_direction or "unlabelled")].append(m)
-            for (name, direction), group in sorted(groups.items(), key=lambda pair: (-len(pair[1]), pair[0]))[:3]:
+            # Groups partition the entire selected set. A display limit here used
+            # to drop qualifying ties belonging to a fourth arch/label group.
+            for (name, direction), group in sorted(groups.items(), key=lambda pair: (-len(pair[1]), pair[0])):
                 low, high = min(m.magnitude_decimal for m in group), max(m.magnitude_decimal for m in group)
-                self.add(section, "CONCENTRATION", f"{LABELS[family].capitalize()}: {self.tokens(group)} in {name.lower()}, {direction} source label, magnitudes {low}–{high} mm; {len(group)} of {len(cells)} nonzero comparable entries, selected from the upper half (ties retained).", cells, group)
+                self.add(section, "CONCENTRATION", f"{LABELS[family].capitalize()}: {self.tokens(group)} in {name.lower()}, {direction} source label, {magnitude_range(low, high)}; {len(group)} of {len(cells)} nonzero entries in this field's upper half (ties retained).", cells, group)
             runs = defaultdict(list)
             for m in selected:
                 tooth = self.teeth[m.tooth_ref]
@@ -165,7 +173,7 @@ class Analysis:
 
     def add_run(self, section, family, cells, group, direction):
         low, high = min(m.magnitude_decimal for m in group), max(m.magnitude_decimal for m in group)
-        self.add(section, "CONTIGUOUS_TOKEN_PATTERN", f"{self.tokens(group)} form a consecutive FDI-style token run among the upper-half {LABELS[family]} entries: {direction or 'unlabelled'} source label, magnitudes {low}–{high} mm.", cells, group)
+        self.add(section, "CONTIGUOUS_TOKEN_PATTERN", f"{self.tokens(group)} form a consecutive FDI-style token run among the upper-half {LABELS[family]} entries: {direction or 'unlabelled'} source label, {magnitude_range(low, high)}.", cells, group)
 
     def micro(self):
         ranks, maxima = defaultdict(list), defaultdict(list)
@@ -198,8 +206,8 @@ class Analysis:
         if not any(f.section_id == "ATTACHMENT_DEMO" for f in self.findings):
             self.add("ATTACHMENT_DEMO", "UNKNOWN_CANDIDATE", "Illustrative attachment candidate unknown: the angular-only demonstration has insufficient comparable evidence.", all_angular, demo_rule="DEMO-ANGULAR-RANK-v1")
         self.coverage("ANGULAR_COVERAGE", ANGULAR)
-        self.add("ANGULAR_COVERAGE", "REVIEW_COVERAGE", f"{len(priority)} priority profiles shown from {len(self.teeth)} tooth rows. Only the two largest distinct nonzero magnitudes per angular family enter the demo shortlist; ties are ranked by number of family maxima, then number of shortlisted components, then token. At most five profiles are shown. These within-table ranks are not clinical severity classifications.", all_angular)
-        self.add("ATTACHMENT_SCOPE", "SCOPE", "Illustrative rules are independent synthetic demonstrations. They establish no attachment need, shape, dimensions, orientation or placement. Validated attachment indications and suitability remain unavailable; all existing clinical predicates remain disabled.")
+        self.add("ANGULAR_COVERAGE", "REVIEW_COVERAGE", f"{len(priority)} priority profiles shown from {len(self.teeth)} teeth. The shortlist uses the two largest distinct nonzero magnitudes per angular field, ordered by number of maxima, highlighted components, then tooth identifier. Up to five profiles are shown; these ranks are not clinical severity classifications.", all_angular)
+        self.add("ATTACHMENT_SCOPE", "SCOPE", "Illustrative attachment review only. Clinical need, shape, dimensions, orientation and placement are not established.")
 
     def nano(self):
         self.distribution("DISTRIBUTION")
@@ -225,7 +233,7 @@ class Analysis:
             self.add("MULTI_COMPONENT", "NO_MULTI_COMPONENT", "No tooth has multiple components in the dataset's upper-quarter comparison, or comparable data are insufficient.", self.cells)
         else:
             self.add("MULTI_COMPONENT", "MULTI_COMPONENT_SCOPE", "Each listed tooth has multiple components in their family's upper quarter of nonzero magnitudes (ties retained). Review their coexistence without inferring simultaneous delivery.", self.cells)
-        self.add("SEQUENCE_REVIEW", "REVIEW_CONSIDERATION", "Review the translation concentrations, repeated vertical entries and multi-component teeth together before supplying any sequencing plan. Half/quarter rankings describe this dataset, not clinical thresholds or a delivery order. A total TMT contains no stage-by-stage movement binding; no stage count, timing, force or anchorage prescription can be calculated.", self.cells)
+        self.add("SEQUENCE_REVIEW", "REVIEW_CONSIDERATION", "Review translation and vertical clusters alongside teeth with multiple highlighted components. These ranks describe this table, not clinical thresholds. Total movements do not establish a stage schedule, timing, force or anchorage prescription.", self.cells)
         self.add("SEQUENCE_REVIEW", "SIMULATED_REVIEW_ORDER", "Illustrative review order only: inspect translation clusters, then vertical clusters, then cross-check teeth shared by those profiles. This is a simulated order for reviewing information, not a calculated movement sequence or treatment schedule.", self.cells, demo_rule="DEMO-REVIEW-ORDER-v1")
 
     def run(self, module):

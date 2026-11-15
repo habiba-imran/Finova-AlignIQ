@@ -1,5 +1,6 @@
 """Read-only content/attachment checks and complete page renders of test PDFs."""
 import hashlib
+import argparse
 import json
 import re
 from pathlib import Path
@@ -17,6 +18,12 @@ def normalized(value):
 
 
 def main():
+    global OUTPUT
+    args = argparse.ArgumentParser()
+    args.add_argument("--output", default="evidence/analysis-pipeline")
+    OUTPUT = (ROOT / args.parse_args().output).resolve()
+    if not OUTPUT.is_relative_to(ROOT):
+        raise ValueError("OUTPUT_OUTSIDE_PROJECT")
     results = []
     for path in sorted((OUTPUT / "pdfs").glob("*.pdf")):
         reader = PdfReader(path)

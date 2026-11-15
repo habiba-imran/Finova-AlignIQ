@@ -94,6 +94,14 @@ const strings = (value: unknown) => Array.isArray(value) && value.every(string)
 const span = (value: unknown) => value === null || (object(value) && Number.isInteger(value.line) && Number.isInteger(value.column_start))
 const adapter = (value: unknown) => object(value) && string(value.id) && string(value.version) && value.verified === false
 
+/** Display wording only: retain the parser's original PARTIAL classification. */
+export function missingValuesParseLabel(result: ParseResult): string | null {
+  if (result.status !== 'PARTIAL' || result.coverage.missing < 1 || result.issues.some(i => i.severity === 'ERROR')
+    || !result.measurements.length || result.measurements.some(m => !m.recognized_label || m.field_status === 'AMBIGUOUS'
+      || !['PARSED', 'EXPLICIT_ZERO', 'MISSING', 'NOT_PRESENT'].includes(m.numeric_status))) return null
+  return `Successfully parsed with ${result.coverage.missing} missing value${result.coverage.missing === 1 ? '' : 's'}`
+}
+
 // Validate the fields used for rendering. Full authoritative contracts are exported JSON Schemas.
 export function isParseResult(value: unknown): value is ParseResult {
   if (!object(value) || value.schema_version !== '1.0.0' || !string(value.raw_text)

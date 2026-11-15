@@ -54,7 +54,8 @@ never calculated. Selection depends on evidence and is invariant to tooth row or
 Show available arch/group coverage. For each translation or vertical family,
 select the upper half of nonzero comparable position magnitudes with all boundary
 ties retained; split these into disclosed token group/source-label concentrations,
-showing up to three largest groups. Repeated profiles retain the original labels.
+showing every qualifying group exactly once. No display cap may discard a selected
+entry or boundary tie. Repeated profiles retain the original labels.
 
 For multi-component review select the upper quarter of nonzero magnitudes in
 each family, ties retained. Show at most four teeth with two or more selected

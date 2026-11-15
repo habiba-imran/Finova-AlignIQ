@@ -1,0 +1,41 @@
+[
+  {
+    "module": "macro",
+    "requested_mode": "AUTO",
+    "used_mode": "STANDARD_TEMPLATES",
+    "reason": "GROQ_NOT_CONFIGURED",
+    "provider": null,
+    "model": null,
+    "attempts": 0,
+    "eligible_wording_findings": 5,
+    "accepted_comments": 0,
+    "real_patient_transmission_enabled": false,
+    "output_validation": "GROUNDED_ANALYTICAL_WORDING_V1"
+  },
+  {
+    "module": "micro",
+    "requested_mode": "AUTO",
+    "used_mode": "STANDARD_TEMPLATES",
+    "reason": "GROQ_NOT_CONFIGURED",
+    "provider": null,
+    "model": null,
+    "attempts": 0,
+    "eligible_wording_findings": 4,
+    "accepted_comments": 0,
+    "real_patient_transmission_enabled": false,
+    "output_validation": "GROUNDED_ANALYTICAL_WORDING_V1"
+  },
+  {
+    "module": "nano",
+    "requested_mode": "AUTO",
+    "used_mode": "STANDARD_TEMPLATES",
+    "reason": "GROQ_NOT_CONFIGURED",
+    "provider": null,
+    "model": null,
+    "attempts": 0,
+    "eligible_wording_findings": 5,
+    "accepted_comments": 0,
+    "real_patient_transmission_enabled": false,
+    "output_validation": "GROUNDED_ANALYTICAL_WORDING_V1"
+  }
+]

@@ -1,0 +1,307 @@
+{
+  "fields": [
+    {
+      "field": "rotation",
+      "positions": 15,
+      "numeric": 15,
+      "missing": 0,
+      "explicit_zero": 1,
+      "maximum_magnitude": "18.90",
+      "maximum_teeth": [
+        "11"
+      ],
+      "source_label_counts": {
+        "unlabelled": 1,
+        "D": 11,
+        "M": 3
+      }
+    },
+    {
+      "field": "angulation",
+      "positions": 15,
+      "numeric": 15,
+      "missing": 0,
+      "explicit_zero": 1,
+      "maximum_magnitude": "28.80",
+      "maximum_teeth": [
+        "11"
+      ],
+      "source_label_counts": {
+        "unlabelled": 1,
+        "D": 10,
+        "M": 4
+      }
+    },
+    {
+      "field": "inclination",
+      "positions": 15,
+      "numeric": 15,
+      "missing": 0,
+      "explicit_zero": 2,
+      "maximum_magnitude": "7.20",
+      "maximum_teeth": [
+        "12"
+      ],
+      "source_label_counts": {
+        "unlabelled": 2,
+        "L": 5,
+        "B": 8
+      }
+    },
+    {
+      "field": "vertical",
+      "positions": 15,
+      "numeric": 14,
+      "missing": 1,
+      "explicit_zero": 0,
+      "maximum_magnitude": "2.20",
+      "maximum_teeth": [
+        "11",
+        "21",
+        "22"
+      ],
+      "source_label_counts": {
+        "E": 4,
+        "I": 10
+      }
+    },
+    {
+      "field": "relative_vertical",
+      "positions": 15,
+      "numeric": 14,
+      "missing": 1,
+      "explicit_zero": 0,
+      "maximum_magnitude": "1.50",
+      "maximum_teeth": [
+        "12",
+        "22"
+      ],
+      "source_label_counts": {
+        "E": 5,
+        "I": 9
+      }
+    },
+    {
+      "field": "buccolingual",
+      "positions": 15,
+      "numeric": 15,
+      "missing": 0,
+      "explicit_zero": 1,
+      "maximum_magnitude": "2.50",
+      "maximum_teeth": [
+        "11",
+        "21"
+      ],
+      "source_label_counts": {
+        "unlabelled": 1,
+        "B": 9,
+        "L": 5
+      }
+    },
+    {
+      "field": "mesiodistal",
+      "positions": 15,
+      "numeric": 15,
+      "missing": 0,
+      "explicit_zero": 1,
+      "maximum_magnitude": "3.30",
+      "maximum_teeth": [
+        "13"
+      ],
+      "source_label_counts": {
+        "unlabelled": 1,
+        "D": 13,
+        "M": 1
+      }
+    }
+  ],
+  "concentration_groups": [
+    {
+      "field": "mesiodistal",
+      "teeth": [
+        "17",
+        "16",
+        "15",
+        "14",
+        "24"
+      ],
+      "scalars": [
+        "3.10",
+        "3.10",
+        "3.20",
+        "3.20",
+        "2.30"
+      ],
+      "source_labels": [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D"
+      ],
+      "text": "Mesiodistal translation: Teeth 14, 15, 16, 17, 24 in upper-arch posterior, D source label, 2.30\u20133.20 mm; 5 of 14 nonzero entries in this field's upper half (ties retained)."
+    },
+    {
+      "field": "mesiodistal",
+      "teeth": [
+        "13",
+        "12"
+      ],
+      "scalars": [
+        "3.30",
+        "3.20"
+      ],
+      "source_labels": [
+        "D",
+        "D"
+      ],
+      "text": "Mesiodistal translation: Teeth 12, 13 in upper-arch anterior, D source label, 3.20\u20133.30 mm; 2 of 14 nonzero entries in this field's upper half (ties retained)."
+    },
+    {
+      "field": "buccolingual",
+      "teeth": [
+        "11",
+        "21",
+        "22"
+      ],
+      "scalars": [
+        "2.50",
+        "2.50",
+        "1.20"
+      ],
+      "source_labels": [
+        "L",
+        "L",
+        "L"
+      ],
+      "text": "Buccolingual translation: Teeth 11, 21, 22 in upper-arch anterior, L source label, 1.20\u20132.50 mm; 3 of 14 nonzero entries in this field's upper half (ties retained)."
+    },
+    {
+      "field": "buccolingual",
+      "teeth": [
+        "13",
+        "12"
+      ],
+      "scalars": [
+        "0.50",
+        "0.40"
+      ],
+      "source_labels": [
+        "B",
+        "B"
+      ],
+      "text": "Buccolingual translation: Teeth 12, 13 in upper-arch anterior, B source label, 0.40\u20130.50 mm; 2 of 14 nonzero entries in this field's upper half (ties retained)."
+    },
+    {
+      "field": "buccolingual",
+      "teeth": [
+        "26"
+      ],
+      "scalars": [
+        "0.40"
+      ],
+      "source_labels": [
+        "B"
+      ],
+      "text": "Buccolingual translation: Tooth 26 in upper-arch posterior, B source label, 0.40 mm; 1 of 14 nonzero entries in this field's upper half (ties retained)."
+    },
+    {
+      "field": "buccolingual",
+      "teeth": [
+        "24"
+      ],
+      "scalars": [
+        "0.40"
+      ],
+      "source_labels": [
+        "L"
+      ],
+      "text": "Buccolingual translation: Tooth 24 in upper-arch posterior, L source label, 0.40 mm; 1 of 14 nonzero entries in this field's upper half (ties retained)."
+    },
+    {
+      "field": "vertical",
+      "teeth": [
+        "12",
+        "11",
+        "21",
+        "22",
+        "23"
+      ],
+      "scalars": [
+        "1.70",
+        "2.20",
+        "2.20",
+        "2.20",
+        "0.90"
+      ],
+      "source_labels": [
+        "I",
+        "I",
+        "I",
+        "I",
+        "I"
+      ],
+      "text": "Vertical movement: Teeth 11, 12, 21, 22, 23 in upper-arch anterior, I source label, 0.90\u20132.20 mm; 5 of 14 nonzero entries in this field's upper half (ties retained)."
+    },
+    {
+      "field": "vertical",
+      "teeth": [
+        "17",
+        "27"
+      ],
+      "scalars": [
+        "1.30",
+        "0.90"
+      ],
+      "source_labels": [
+        "E",
+        "E"
+      ],
+      "text": "Vertical movement: Teeth 17, 27 in upper-arch posterior, E source label, 0.90\u20131.30 mm; 2 of 14 nonzero entries in this field's upper half (ties retained)."
+    },
+    {
+      "field": "relative_vertical",
+      "teeth": [
+        "13",
+        "12",
+        "11",
+        "21",
+        "22",
+        "23"
+      ],
+      "scalars": [
+        "0.70",
+        "1.50",
+        "0.70",
+        "0.80",
+        "1.50",
+        "0.90"
+      ],
+      "source_labels": [
+        "I",
+        "I",
+        "I",
+        "I",
+        "I",
+        "I"
+      ],
+      "text": "Relative vertical movement: Teeth 11, 12, 13, 21, 22, 23 in upper-arch anterior, I source label, 0.70\u20131.50 mm; 6 of 14 nonzero entries in this field's upper half (ties retained)."
+    },
+    {
+      "field": "relative_vertical",
+      "teeth": [
+        "17",
+        "27"
+      ],
+      "scalars": [
+        "0.90",
+        "0.70"
+      ],
+      "source_labels": [
+        "E",
+        "E"
+      ],
+      "text": "Relative vertical movement: Teeth 17, 27 in upper-arch posterior, E source label, 0.70\u20130.90 mm; 2 of 14 nonzero entries in this field's upper half (ties retained)."
+    }
+  ]
+}

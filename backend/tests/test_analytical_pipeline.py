@@ -40,7 +40,7 @@ def test_benchmark_exact_parser_and_complete_provenance(module):
     assert sum(m.numeric_status in {"MISSING", "NOT_PRESENT"} for m in original.measurements) == 2
     assert not any(m.numeric_status in {"INVALID", "AMBIGUOUS"} for m in original.measurements)
     assert report.parsed == original
-    assert "Available values were parsed successfully" in report.limitations[0]
+    assert "Successfully parsed with 2 missing values" in report.limitations[0]
     for m in original.measurements:
         assert m.span and RAW[m.span.start:m.span.end] == m.raw_value
         assert m.id in report.export_text

@@ -4,9 +4,14 @@ import App from './App'
 import { isInteractiveReport } from './api/interactive'
 import { buildPdfPresentation } from './pdf/presentation'
 import { commentParagraphs } from './reviewPresentation'
-import macro from '../../evidence/analysis-pipeline/macro.json'
-import micro from '../../evidence/analysis-pipeline/micro.json'
-import nano from '../../evidence/analysis-pipeline/nano.json'
+import macro from '../../evidence/final-analysis-qa/macro.json'
+import micro from '../../evidence/final-analysis-qa/micro.json'
+import nano from '../../evidence/final-analysis-qa/nano.json'
+import InteractiveWorkspace from './components/InteractiveWorkspace'
+import type { InteractiveReport } from './api/interactive'
+import type { AutomaticParseResult, ParseResult } from './api/parse'
+import { EMPTY_CONTEXT } from './api/parse'
+import { missingValuesParseLabel } from './api/parse'
 import parseFixture from './test/fixtures/interactive-input.json'
 
 afterEach(() => { vi.unstubAllGlobals(); vi.restoreAllMocks() })
@@ -60,4 +65,23 @@ it('rejects promoted demo status, forged evidence, altered facts and missing sec
   const missing = structuredClone(nano)
   missing.sections.pop()
   expect(isInteractiveReport(missing)).toBe(false)
+})
+
+it.each([true, false])('does not show empty source disclosures with sections=%s', sections => {
+  const report = structuredClone(macro) as InteractiveReport
+  report.observations = report.observations.map(o => ({ ...o, measurements: [] }))
+  if (!sections) report.sections = []
+  const parsed = { ...report.parsed, pipeline: parseFixture.pipeline } as AutomaticParseResult
+  render(<InteractiveWorkspace module="macro" rawText={parsed.raw_text} context={EMPTY_CONTEXT} parsed={parsed}
+    savedReport={report} onComplete={vi.fn()} />)
+  expect(screen.queryByText('Source movement values', { exact: true })).not.toBeInTheDocument()
+  expect(screen.queryByText('Source values', { exact: true })).not.toBeInTheDocument()
+})
+
+it('uses successful missing-value wording without changing parser status or hiding errors', () => {
+  const result = structuredClone(macro.parsed) as unknown as ParseResult
+  expect(missingValuesParseLabel(result)).toBe('Successfully parsed with 2 missing values')
+  expect(result.status).toBe('PARTIAL')
+  result.issues.push({ ...result.issues[0], severity: 'ERROR', code: 'UNIT_CONFLICT' })
+  expect(missingValuesParseLabel(result)).toBeNull()
 })

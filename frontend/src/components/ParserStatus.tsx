@@ -1,4 +1,5 @@
 import type { AutomaticParseResult } from '../api/parse'
+import { missingValuesParseLabel } from '../api/parse'
 
 const issueLabels: Record<string, string> = {
   EMPTY_INPUT: 'Add a table with headings and at least one tooth row.',
@@ -29,7 +30,7 @@ export default function ParserStatus({ result, demonstration = false }: { result
       : result.status === 'INVALID' ? 'Table needs correction'
         : result.status === 'UNSUPPORTED' ? 'Unsupported input'
       : !result.measurements.length ? 'Unsupported input'
-        : result.status === 'PARTIAL' ? 'Partially parsed' : 'Table ready'
+        : missingValuesParseLabel(result) ?? (result.status === 'PARTIAL' ? 'Partially parsed' : 'Table ready')
   const errors = result.issues.filter(i => i.severity === 'ERROR')
   const groups = [...new Set(result.issues.filter(i => i.severity !== 'INFO').map(i => i.code))]
     .filter(code => issueLabels[code] || errors.some(i => i.code === code))

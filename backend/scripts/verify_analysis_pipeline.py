@@ -22,9 +22,12 @@ def main():
     modes = args.add_mutually_exclusive_group()
     modes.add_argument("--live", action="store_true")
     modes.add_argument("--mock", action="store_true")
+    args.add_argument("--output", default="evidence/analysis-pipeline")
     options = args.parse_args()
     live = options.live
-    output = ROOT / "evidence/analysis-pipeline"
+    output = (ROOT / options.output).resolve()
+    if not output.is_relative_to(ROOT):
+        raise ValueError("OUTPUT_OUTSIDE_PROJECT")
     output.mkdir(parents=True, exist_ok=True)
     raw = (ROOT / "backend/tests/fixtures/analysis_15_tooth.md").read_text(encoding="utf-8")
     if live:
