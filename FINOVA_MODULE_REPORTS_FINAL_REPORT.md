@@ -42,8 +42,19 @@ The prototype notice and unverified-source distinction remain visible. Partial p
 | Real local Micro, supplied details | **4/4 AI comments accepted**, one attempt |
 | Real local Nano, supplied details | **4/4 AI comments accepted**, one attempt |
 | Real local large Macro | Reached Groq; first response required correction, then Groq returned a daily-quota rate limit. No false AI status was shown |
-| Production | Update not published at the time of this draft |
+| Production Macro | **16/16 AI comments accepted**, one attempt, with the user's 16-tooth/112-position synthetic table |
+| Production Micro/Nano | Distinct supplied-detail reports and PDFs passed; Groq returned `GROQ_RATE_LIMIT`. A spaced Micro recheck was also rate-limited. Production AI availability for these two modules is **not claimed** |
+| Production PDFs | All three downloads passed: Macro **4 pages**, Micro **2 pages**, Nano **2 pages**; all eight pages rendered and visually inspected; exact TXT/JSON attachments and matching UI comments; zero export API/provider calls |
+| Production layout | All three reports checked at **1440px and 375px**, without viewport overflow |
 
-Evidence is stored in `evidence/module-final/`. `backend/scripts/verify_final_modules.py` generates offline fixtures and supports explicitly requested live synthetic checks. `frontend/scripts/verify-module-deployment.mjs --run-live` performs three bounded production synthetic reviews, desktop/mobile checks and downloads each PDF. `backend/scripts/verify_module_pdfs.py` verifies visible comments and exact attachments and renders all PDF pages with Poppler for visual review.
+## Published revision and remaining external limit
+
+Implementation commit `81b132d` was pushed to the existing `main` branch. Vercel served `/assets/index-CngGCJaA.js`, matching the verified local production bundle. After Render's rollout, the deployed capabilities endpoint returned HTTP 200 with revision `module-reviews-2026-11-15-v1`. No environment values, credentials, security controls or production development-route settings were changed.
+
+The production checks used the user's supplied synthetic table: 16 tooth rows, 112 positions, 103 recorded numerical values and nine unknown/missing positions. They preserved all 96 rules and 27 disabled clinical predicates. Macro used actual accepted provider wording. Micro/Nano generated their correct purpose-specific standard reports while the provider was rate-limited; both separately passed real local AI checks with four accepted comments each. There is no evidence that another environment-variable change is required, and no unconditional provider-availability claim is made.
+
+The persistent upstream rate limit is outside the report/PDF implementation. It must clear, or the configured account's capacity must be addressed, before Micro/Nano AI wording can be verified on production. The UI keeps the concise unavailable state, and **Re-run Review** permits a new explicit attempt later. No automatic rate-limit retry loop or key rotation was added.
+
+Evidence is stored in `evidence/module-final/`, including `deployed/summary.json` and the initial `deployed/first-pass-summary.json`. `backend/scripts/verify_final_modules.py` generates offline fixtures and supports explicitly requested live synthetic checks. `frontend/scripts/verify-module-deployment.mjs --run-live` performs three bounded production synthetic reviews, desktop/mobile checks and downloads each PDF; optional `--module micro` limits a subsequent check to one module. `backend/scripts/verify_module_pdfs.py` verifies visible comments and exact attachments and renders all PDF pages with Poppler for visual review.
 
 AI availability depends on the configured account's upstream quota and service availability. These engineering checks do not establish clinical validation, vendor compatibility or suitability for patient care.

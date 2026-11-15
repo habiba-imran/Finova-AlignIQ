@@ -33,5 +33,26 @@
     "comments": 4,
     "exact_attachments": true,
     "source_positions": 112
+  },
+  {
+    "file": "evidence/module-final/deployed/macro.pdf",
+    "pages": 4,
+    "comments": 16,
+    "exact_attachments": true,
+    "source_positions": 112
+  },
+  {
+    "file": "evidence/module-final/deployed/micro.pdf",
+    "pages": 2,
+    "comments": 4,
+    "exact_attachments": true,
+    "source_positions": 112
+  },
+  {
+    "file": "evidence/module-final/deployed/nano.pdf",
+    "pages": 2,
+    "comments": 4,
+    "exact_attachments": true,
+    "source_positions": 112
   }
 ]

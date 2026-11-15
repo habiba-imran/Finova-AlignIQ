@@ -1,12 +1,12 @@
 // Explicit, bounded synthetic production check. Exports make no provider calls.
 import assert from 'node:assert/strict'
-import { readFileSync, mkdirSync, writeFileSync } from 'node:fs'
+import { existsSync, readFileSync, mkdirSync, writeFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { gzipSync } from 'node:zlib'
 import { chromium } from '@playwright/test'
 import { PDFArray, PDFDict, PDFDocument, PDFHexString, PDFName, PDFRawStream, decodePDFRawStream } from 'pdf-lib'
 
-if (!process.argv.includes('--run-live')) throw new Error('Use --run-live to authorize three synthetic review requests.')
+if (!process.argv.includes('--run-live')) throw new Error('Use --run-live to authorize bounded synthetic review requests.')
 const root = resolve(import.meta.dirname, '../..')
 const output = resolve(root, 'evidence/module-final/deployed')
 mkdirSync(output, { recursive: true })
@@ -14,12 +14,16 @@ const raw = JSON.parse(readFileSync(resolve(root, 'evidence/planning-wording/use
 const origin = 'https://frontend-lr7x.vercel.app'
 const browser = await chromium.launch()
 const page = await browser.newPage({ viewport: { width: 1440, height: 1000 }, reducedMotion: 'reduce' })
-const summaries = []
+const moduleArgument = process.argv.indexOf('--module')
+const modules = moduleArgument < 0 ? ['macro', 'micro', 'nano'] : [process.argv[moduleArgument + 1]]
+assert.ok(modules.every(module => ['macro', 'micro', 'nano'].includes(module)), 'Use --module macro, micro or nano')
+const summaryPath = resolve(output, 'summary.json')
+const summaries = moduleArgument >= 0 && existsSync(summaryPath) ? JSON.parse(readFileSync(summaryPath, 'utf8')).reports : []
 try {
   const capability = await page.request.get(origin + '/api/v1/interactive/capabilities', { timeout: 60_000 })
   assert.equal(capability.status(), 200, 'Updated backend has not deployed')
   assert.equal((await capability.json()).revision, 'module-reviews-2026-11-15-v1')
-  for (const module of ['macro', 'micro', 'nano']) {
+  for (const module of modules) {
     await page.setViewportSize({ width: 1440, height: 1000 })
     await page.goto(origin)
     await page.getByRole('navigation', { name: 'Review purpose' }).getByRole('button', { name: new RegExp(module.toUpperCase()) }).click()
@@ -91,7 +95,9 @@ try {
     }
     writeFileSync(resolve(output, module + '.json.gz'), gzipSync(JSON.stringify(report)))
     const summary = { module, generation: report.generation, sections: report.sections.map(s => ({ id: s.section_id, status: s.status })), pdf_pages: pdf.getPageCount(), source_positions: parsed.measurements.length, rules: 96, exact_attachments: true, export_api_calls: 0, widths: [1440, 375] }
-    summaries.push(summary)
+    const previous = summaries.findIndex(row => row.module === module)
+    if (previous < 0) summaries.push(summary)
+    else summaries[previous] = summary
     writeFileSync(resolve(output, 'summary.json'), JSON.stringify({ checked_at: new Date().toISOString(), origin, reports: summaries }, null, 2))
     console.log(JSON.stringify(summary))
   }
